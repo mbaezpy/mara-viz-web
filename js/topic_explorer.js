@@ -35,8 +35,8 @@ export async function init({ mount } = {}) {
     if(cachePromise) return cachePromise;
     const signal = abortController.signal;
     cachePromise = Promise.all([
-      fetch('/data/topic_authors.json', { signal }).then(r => r.ok ? r.json() : {} ).catch(()=>({})),
-      fetch('/data/topic_summary.json', { signal }).then(r => r.ok ? r.json() : {} ).catch(()=>({}))
+      fetch('data/topic_authors.json', { signal }).then(r => r.ok ? r.json() : {} ).catch(()=>({})),
+      fetch('data/topic_summary.json', { signal }).then(r => r.ok ? r.json() : {} ).catch(()=>({}))
     ]).then(([authors, summary]) => { authorsCache = authors; topicSummary = summary; return {authors, summary}; });
     return cachePromise;
   }
