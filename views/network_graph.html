@@ -1,0 +1,280 @@
+
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin:0; }
+  #chart { width:100%; height:90vh; border-bottom:1px solid #ddd; }
+  .node { stroke: #fff; stroke-width: 1px; cursor: pointer; }
+  .link { stroke: #999; stroke-opacity: 0.6; }
+  .tooltip {
+    position: absolute;
+    padding:6px 8px;
+    background: rgba(0,0,0,0.8);
+    color:#fff; border-radius:4px; pointer-events:none;
+    font-size:12px;
+  }
+  #panel {
+    padding:8px;
+    height:10vh;
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .btn { padding:6px 10px; border-radius:4px; border:1px solid #ccc; background:#f7f7f7; cursor:pointer; }
+</style>
+
+
+<div id="chart"></div>
+<div id="panel">
+  <div><strong>Click a node</strong> to focus (star layout). Click background to reset.</div>
+  <div style="margin-left:auto">
+    <button id="resetBtn" class="btn">Reset layout</button>
+  </div>
+</div>
+<div id="tooltip" class="tooltip" style="display:none"></div>
+
+<!-- D3 v7 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+/* ---------- Sample data ----------
+   Replace `data` with your processed OpenAlex-derived graph:
+   nodes: { id, label, pubs, local }  // pubs = number of publications (used for node size)
+   links: { source, target, weight }  // weight = number of coauthored works
+*/
+const data = {
+  nodes: [
+    {id:"A1", label:"Christian G. Bien", pubs:12, local:true},
+    {id:"A2", label:"Ulrich Specht", pubs:8, local:true},
+    {id:"A3", label:"Alois Ebner", pubs:5, local:true},
+    {id:"A4", label:"Steffi Koch", pubs:3, local:false},
+    {id:"A5", label:"External Author X", pubs:6, local:false},
+    {id:"A6", label:"External Author Y", pubs:2, local:false}
+  ],
+  links: [
+    {source:"A1", target:"A2", weight:4},
+    {source:"A1", target:"A3", weight:2},
+    {source:"A2", target:"A3", weight:1},
+    {source:"A1", target:"A4", weight:1},
+    {source:"A3", target:"A5", weight:1},
+    {source:"A1", target:"A5", weight:2},
+    {source:"A5", target:"A6", weight:1}
+  ]
+};
+
+/* ---------- setup SVG + zoom ---------- */
+const container = d3.select("#chart");
+const width = container.node().clientWidth;
+const height = container.node().clientHeight || 800;
+
+const svg = container.append("svg")
+  .attr("width", "100%")
+  .attr("height", height)
+  .attr("viewBox", [0,0,width,height])
+  .call(d3.zoom().scaleExtent([0.1, 4]).on("zoom", (event) => g.attr("transform", event.transform)))
+  .on("dblclick.zoom", null); // disable dblclick zoom
+
+const g = svg.append("g");
+
+const linkG = g.append("g").attr("class","links");
+const nodeG = g.append("g").attr("class","nodes");
+
+const tooltip = d3.select("#tooltip");
+
+/* ---------- scales ---------- */
+const pubExtent = d3.extent(data.nodes, d => d.pubs);
+const rScale = d3.scaleSqrt().domain(pubExtent).range([6, 24]); // node radius
+const colorLocal = d => d.local ? "#1f77b4" : "#ff7f0e";
+const linkWidth = d3.scaleSqrt().domain(d3.extent(data.links, d => d.weight)).range([1,6]);
+
+/* ---------- build graph elements ---------- */
+const link = linkG.selectAll("line")
+  .data(data.links)
+  .enter().append("line")
+  .attr("class","link")
+  .attr("stroke-width", d => linkWidth(d.weight));
+
+const node = nodeG.selectAll("g")
+  .data(data.nodes)
+  .enter().append("g")
+  .attr("class","node")
+  .call(drag(simulation)); // drag will be defined later
+
+node.append("circle")
+  .attr("r", d => rScale(d.pubs))
+  .attr("fill", d => colorLocal(d))
+  .attr("stroke", "#fff")
+  .attr("stroke-width", 1.2);
+
+node.append("title")
+  .text(d => `${d.label}\npubs: ${d.pubs}`);
+
+node.on("mouseover", (event,d) => {
+  tooltip.style("display","block")
+         .html(`<strong>${d.label}</strong><br/>pubs: ${d.pubs}<br/>local: ${d.local ? "yes":"no"}`)
+         .style("left", (event.pageX+10)+"px")
+         .style("top", (event.pageY+10)+"px");
+})
+.on("mousemove", (event) => {
+  tooltip.style("left", (event.pageX+10)+"px")
+         .style("top", (event.pageY+10)+"px");
+})
+.on("mouseout", () => tooltip.style("display","none"));
+
+/* ---------- simulation ---------- */
+const simulation = d3.forceSimulation(data.nodes)
+  .force("link", d3.forceLink(data.links).id(d => d.id).distance(d => 80 - Math.min(60, d.weight*6)).strength(0.6))
+  .force("charge", d3.forceManyBody().strength(-160))
+  .force("center", d3.forceCenter(width/2, height/2))
+  .force("collision", d3.forceCollide().radius(d => rScale(d.pubs)+6))
+  .on("tick", ticked);
+
+/* ---------- ticks ---------- */
+function ticked() {
+  link.attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
+
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+/* ---------- interactivity: click to focus (star layout) ---------- */
+let isStar = false;
+let lastFocused = null;
+const adjacency = buildAdjacency(data); // helper below
+
+node.on("click", (event,d) => {
+  event.stopPropagation(); // prevent background handler
+  if (isStar && lastFocused && lastFocused.id === d.id) {
+    resetLayout();
+    return;
+  }
+  focusStar(d);
+});
+
+/* click background to reset */
+svg.on("click", (event) => {
+  // clicked on background
+  if (isStar) resetLayout();
+});
+
+/* reset button */
+d3.select("#resetBtn").on("click", resetLayout);
+
+/* ---------- functions ---------- */
+
+function buildAdjacency(graph) {
+  // map node id -> set of neighbor node ids
+  const adj = new Map();
+  graph.nodes.forEach(n => adj.set(n.id, new Set()));
+  graph.links.forEach(l => {
+    adj.get(l.source).add(l.target);
+    adj.get(l.target).add(l.source);
+  });
+  return adj;
+}
+
+function focusStar(centerNode) {
+  isStar = true;
+  lastFocused = centerNode;
+  // stop simulation
+  simulation.stop();
+
+  // compute neighbors
+  const neighIds = Array.from(adjacency.get(centerNode.id) || []);
+  const neighbors = data.nodes.filter(n => neighIds.includes(n.id));
+  const centerX = width/2, centerY = height/2;
+
+  // compute radial positions
+  const radius = Math.max(120, 40 + neighbors.length * 10);
+  neighbors.forEach((n,i) => {
+    const angle = (i/Math.max(1,neighbors.length)) * 2 * Math.PI;
+    n.fx = centerX + Math.cos(angle) * radius;
+    n.fy = centerY + Math.sin(angle) * radius;
+  });
+
+  // fix center node to middle
+  centerNode.fx = centerX;
+  centerNode.fy = centerY;
+
+  // release other nodes (so they don't draw)
+  data.nodes.forEach(n => {
+    if (n.id !== centerNode.id && !neighIds.includes(n.id)) {
+      // move off-canvas gracefully
+      n.fx = centerX + (Math.random()-0.5) * (width);
+      n.fy = centerY + (Math.random()-0.5) * (height);
+    }
+  });
+
+  // transition node positions visually
+  node.transition().duration(600).attrTween("transform", function(d) {
+    const ix = d.x, iy = d.y;
+    const tx = (d.fx !== undefined) ? d.fx : d.x;
+    const ty = (d.fy !== undefined) ? d.fy : d.y;
+    return t => {
+      d.x = ix + (tx-ix)*t;
+      d.y = iy + (ty-iy)*t;
+      return `translate(${d.x},${d.y})`;
+    };
+  });
+
+  // show only star edges (center->neighbors)
+  link.transition().duration(400).style("opacity", l => (l.source.id===centerNode.id || l.target.id===centerNode.id) ? 1 : 0.05);
+  // reposition links to updated node positions
+  ticked();
+
+  // show a small info panel (optional)
+  showInfo(centerNode, neighbors.length);
+}
+
+function resetLayout() {
+  isStar = false;
+  lastFocused = null;
+  // clear fixed positions
+  data.nodes.forEach(n => { n.fx = null; n.fy = null; });
+  // restore link opacity
+  link.transition().duration(400).style("opacity", 1);
+
+  // restart simulation
+  simulation.alpha(1).restart();
+
+  // clear info
+  showInfo(null, null);
+}
+
+function showInfo(centerNode, nNeigh) {
+  const panel = d3.select("#panel");
+  if (!centerNode) {
+    panel.selectAll(".info").remove();
+    return;
+  }
+  panel.selectAll(".info").remove();
+  panel.append("div").attr("class","info").html(`<strong>${centerNode.label}</strong> — pubs: ${centerNode.pubs} — coauthors: ${nNeigh}`);
+}
+
+/* ---------- drag behavior helper ---------- */
+function drag(sim) {
+  function dragstarted(event, d) {
+    if (!event.active) sim.alphaTarget(0.3).restart();
+    d.fx = d.x; d.fy = d.y;
+  }
+  function dragged(event, d) {
+    d.fx = event.x; d.fy = event.y;
+  }
+  function dragended(event, d) {
+    if (!event.active) sim.alphaTarget(0);
+    // leave pinned after drag (optional)
+    // d.fx = null; d.fy = null;
+  }
+  return d3.drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended);
+}
+
+/* ---------- nice fit on load: center and run few ticks then stabilize ---------- */
+setTimeout(() => {
+  simulation.alpha(0.9).restart();
+  setTimeout(() => simulation.alphaTarget(0), 1200);
+}, 50);
+</script>
+
+

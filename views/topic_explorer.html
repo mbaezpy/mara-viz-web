@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="./css/topic_explorer.css">
+
+<div id="topic-explorer-container" class="topic-explorer-view">
+  <div class="app">
+    <div class="stage" aria-label="Zoomable topic map">
+      <div class="stage-inner">
+        <div class="breadcrumbs" id="breadcrumbs" aria-live="polite"></div>
+
+        <!-- main svg -->
+        <svg id="viz" role="img" tabindex="0" aria-describedby="viz-desc" viewBox="-466 -466 932 932"></svg>
+
+        <p id="viz-desc" hidden>Circle packing of topics. Click a circle to zoom in; click the background to zoom out. Details appear in the right panel.</p>
+
+        <!-- tooltip -->
+        <div class="tooltip" id="tooltip"></div>
+      </div>
+    </div>
+
+    <!-- right panel -->
+    <aside class="panel" id="panel" aria-label="Topic details">
+      <div id="panel-content">
+        <p class="meta">Select a topic bubble to see details here.</p>
+        <div class="skeleton" style="height:120px"></div>
+      </div>
+    </aside>
+  </div>
+</div>

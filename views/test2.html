@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Co-authorship network — To slider live + Apply (fixed scale)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin:0; }
+  #chart { width:100%; height:78vh; border-bottom:1px solid #ddd; background:#fff; }
+  .node { stroke: #fff; stroke-width: 1px; cursor: pointer; }
+  .link { stroke: #999; stroke-opacity: 0.6; }
+  .tooltip {
+    position: absolute;
+    padding:6px 8px;
+    background: rgba(0,0,0,0.85);
+    color:#fff; border-radius:4px; pointer-events:none;
+    font-size:12px; max-width:420px;
+  }
+  #panel {
+    padding:8px;
+    height:22vh;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    box-sizing: border-box;
+    flex-wrap:wrap;
+  }
+  .btn { padding:6px 10px; border-radius:4px; border:1px solid #ccc; background:#f7f7f7; cursor:pointer; }
+  .status { color:#666; margin-left:8px; }
+  .small { font-size:13px; color:#444; }
+  .control-group { display:flex; gap:6px; align-items:center; }
+  .muted { color:#666; font-size:12px; margin-left:8px; }
+  .range-inline { display:flex; gap:6px; align-items:center; }
+  input[type="number"] { width:72px; padding:4px; }
+  .debug-note { font-size:12px; color:#666; margin-left:8px; }
+</style>
+</head>
+<body>
+
+<div id="chart"></div>
+
+<div id="panel">
+  <div>
+    <strong>Click a node</strong> to focus. Click background to reset.
+    <div class="small" id="status">Loading graph...</div>
+    <div class="small muted" id="filterSummary"></div>
+  </div>
+
+  <div style="margin-left:auto; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+
+    <div class="control-group">
+      <label style="font-size:13px">Institutional authors</label>
+      <select id="instAuthorSelect">
+        <option value="any">any authorship</option>
+        <option value="main">main authorship</option>
+      </select>
+      <div class="muted">applies to local authors (source)</div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">Collaborating authors</label>
+      <select id="collabAuthorSelect">
+        <option value="any">any authorship</option>
+        <option value="main">main authorship</option>
+      </select>
+      <div class="muted">applies to collaborators (target)</div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">From</label>
+      <div id="fromFixed" class="muted">—</div>
+      <div class="muted">fixed (from JSON config)</div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">To (live preview)</label>
+      <div class="range-inline">
+        <input id="yearToRange" type="range" min="2000" max="2025" step="1" value="2025" />
+        <span id="yearToVal">2025</span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">Edge threshold</label>
+      <input id="edgeSlider" type="range" min="1" max="10" step="1" value="1" style="width:120px"/>
+      <span id="edgeVal" style="width:28px;text-align:center">1</span>
+    </div>
+
+    <div class="control-group">
+      <input id="searchBox" placeholder="Search author..." style="width:220px"/>
+    </div>
+
+    <div class="control-group">
+      <button id="applyFiltersBtn" class="btn">Apply filters</button>
+      <button id="resetBtn" class="btn">Reset layout</button>
+      <button id="dumpBtn" class="btn" title="Debug dump">Debug dump</button>
+    </div>
+
+  </div>
+</div>
+
+<div id="tooltip" class="tooltip" style="display:none"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+/* ------------- Config ------------- */
+const JSON_PATH = "/data/oa_coauth.json"; // adjust as needed
+const TRANS_DUR = 450;
+const SIM_ALPHA = 0.9;
+const COOL_TIMEOUT = 900;
+
+/* ------------- DOM + globals ------------- */
+const container = d3.select("#chart");
+const statusEl = d3.select("#status");
+const filterSummaryEl = d3.select("#filterSummary");
+const tooltip = d3.select("#tooltip");
+
+const svg = container.append("svg")
+  .attr("width","100%")
+  .attr("height", container.node().clientHeight || 720)
+  .call(d3.zoom().scaleExtent([0.1,4]).on("zoom", (e) => g.attr("transform", e.transform)))
+  .on("dblclick.zoom", null);
+
+const g = svg.append("g");
+const linkG = g.append("g").attr("class","links");
+const nodeG = g.append("g").attr("class","nodes");
+
+let simulation = null;
+let linkForce = null;
+let graph = null; // loaded graph (nodes + linksAll, config, etc.)
+
+/* ------------- helpers & normalization ------------- */
+function prefixSum(arr){ const out=[]; let s=0; for(let i=0;i<(arr||[]).length;i++){ s += (arr[i]||0); out[i]=s; } return out; }
+function bisectRightLE(arr,x){ if(!Array.isArray(arr)) return -1; let lo=0,hi=arr.length-1,ans=-1; while(lo<=hi){ const m=(lo+hi)>>1; if(arr[m]<=x){ ans=m; lo=m+1; } else hi=m-1; } return ans; }
+function cumRangeFromCumArrays(yearsArr,cumArr,fromY,toY){
+  if(!Array.isArray(yearsArr)||!Array.isArray(cumArr)||yearsArr.length!==cumArr.length) return 0;
+  const iTo = bisectRightLE(yearsArr,toY);
+  if(iTo < 0) return 0;
+  const iFromPrev = bisectRightLE(yearsArr,fromY-1);
+  const toVal = cumArr[iTo]||0;
+  const fromPrevVal = (iFromPrev >= 0 ? (cumArr[iFromPrev]||0) : 0);
+  return Math.max(0, toVal - fromPrevVal);
+}
+function sumCountsInWindowMap(m,fromY,toY){ if(!m||typeof m!=="object") return 0; let s=0; for(const [ys,c] of Object.entries(m)){ const y=+ys; if(y>=fromY&&y<=toY) s+= (+c||0);} return s; }
+
+/* Normalize link arrays: produce pub_years, counts_by_year_cum, role_pair_counts_by_year_arrays/cum */
+function normalizeLinkArrays(l){
+  if(!Array.isArray(l.pub_years)) l.pub_years = Array.isArray(l.pub_years)?l.pub_years:[];
+  if(!Array.isArray(l.counts_by_year) && l.counts_by_year && typeof l.counts_by_year === "object"){
+    const keys = Object.keys(l.counts_by_year).map(s=>+s).filter(x=>!isNaN(x)).sort((a,b)=>a-b);
+    const yrs = (Array.isArray(l.pub_years) && l.pub_years.length) ? l.pub_years : keys;
+    l.pub_years = yrs;
+    l.counts_by_year = yrs.map(y => +(l.counts_by_year[String(y)]||0));
+  } else {
+    l.counts_by_year = Array.isArray(l.counts_by_year) ? l.counts_by_year : [];
+  }
+  l.counts_by_year_cum = (Array.isArray(l.counts_by_year_cum) && l.counts_by_year_cum.length===l.counts_by_year.length) ? l.counts_by_year_cum : prefixSum(l.counts_by_year);
+
+  l.role_pair_counts_by_year_arrays = l.role_pair_counts_by_year_arrays || {};
+  l.role_pair_counts_by_year_cum = l.role_pair_counts_by_year_cum || {};
+  const roles = ["either_main","both_main","source_main","target_main"];
+  roles.forEach(role=>{
+    if(Array.isArray(l.role_pair_counts_by_year_cum[role]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_cum[role].length===l.pub_years.length){
+      // ok
+    } else if(Array.isArray(l.role_pair_counts_by_year_arrays[role]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_arrays[role].length===l.pub_years.length){
+      l.role_pair_counts_by_year_cum[role] = prefixSum(l.role_pair_counts_by_year_arrays[role]);
+    } else if(l.role_pair_counts_by_year && l.role_pair_counts_by_year[role] && typeof l.role_pair_counts_by_year[role]==="object"){
+      const yrs = (Array.isArray(l.pub_years) && l.pub_years.length) ? l.pub_years : Object.keys(l.role_pair_counts_by_year[role]).map(s=>+s).filter(x=>!isNaN(x)).sort((a,b)=>a-b);
+      const arr = yrs.map(y => +(l.role_pair_counts_by_year[role][String(y)]||0));
+      l.role_pair_counts_by_year_arrays[role] = arr;
+      l.role_pair_counts_by_year_cum[role] = prefixSum(arr);
+      if (!Array.isArray(l.pub_years) || l.pub_years.length === 0) l.pub_years = yrs;
+    } else {
+      l.role_pair_counts_by_year_arrays[role] = Array.isArray(l.role_pair_counts_by_year_arrays[role]) ? l.role_pair_counts_by_year_arrays[role] : (Array.isArray(l.pub_years) ? l.pub_years.map(_=>0) : []);
+      l.role_pair_counts_by_year_cum[role] = prefixSum(l.role_pair_counts_by_year_arrays[role]);
+    }
+  });
+
+  l._weight = +(l.weight_full ?? l.papers_count ?? l._weight ?? 0);
+  l._w_frac = +(l.weight_fractional ?? l._w_frac ?? (l._weight>0?1:0));
+}
+
+/* Normalize node arrays */
+function normalizeNodeArrays(n){
+  n.pub_years = Array.isArray(n.pub_years)? n.pub_years : [];
+  if(Array.isArray(n.main_pubs_by_year) && n.pub_years.length === n.main_pubs_by_year.length){
+    n.main_pubs_by_year_cum = Array.isArray(n.main_pubs_by_year_cum) && n.main_pubs_by_year_cum.length===n.pub_years.length ? n.main_pubs_by_year_cum : prefixSum(n.main_pubs_by_year);
+  } else if(n.main_pubs_by_year && typeof n.main_pubs_by_year === "object"){
+    const yrs = (Array.isArray(n.pub_years) && n.pub_years.length) ? n.pub_years : Object.keys(n.main_pubs_by_year).map(s=>+s).filter(x=>!isNaN(x)).sort((a,b)=>a-b);
+    n.pub_years = yrs;
+    n.main_pubs_by_year = yrs.map(y => +(n.main_pubs_by_year[String(y)]||0));
+    n.main_pubs_by_year_cum = prefixSum(n.main_pubs_by_year);
+  } else {
+    if(!Array.isArray(n.main_pubs_by_year)) n.main_pubs_by_year = (Array.isArray(n.pub_years) ? n.pub_years.map(_=>0) : []);
+    if(!Array.isArray(n.main_pubs_by_year_cum) || n.main_pubs_by_year_cum.length !== n.pub_years.length) n.main_pubs_by_year_cum = prefixSum(n.main_pubs_by_year);
+  }
+
+  // ensure counts_by_year arrays for nodes if present as map
+  if(!Array.isArray(n.counts_by_year) && n.counts_by_year && typeof n.counts_by_year === "object"){
+    const keys = Object.keys(n.counts_by_year).map(s=>+s).filter(x=>!isNaN(x)).sort((a,b)=>a-b);
+    const yrs = (Array.isArray(n.pub_years) && n.pub_years.length) ? n.pub_years : keys;
+    n.pub_years = yrs;
+    n.counts_by_year = yrs.map(y => +(n.counts_by_year[String(y)]||0));
+  } else {
+    n.counts_by_year = Array.isArray(n.counts_by_year) ? n.counts_by_year : [];
+  }
+  n.counts_by_year_cum = (Array.isArray(n.counts_by_year_cum) && n.counts_by_year_cum.length === n.counts_by_year.length) ? n.counts_by_year_cum : prefixSum(n.counts_by_year);
+}
+
+/* Compute node cumulative (simple function used by baseline & preview)
+   instFilter: "any" or "main"
+*/
+function computeNodeCumulative(node, instFilter, fromY, toY){
+  if(!node) return 0;
+  if(instFilter === "main"){
+    if(Array.isArray(node.pub_years) && Array.isArray(node.main_pubs_by_year_cum) && node.pub_years.length === node.main_pubs_by_year_cum.length){
+      return cumRangeFromCumArrays(node.pub_years, node.main_pubs_by_year_cum, fromY, toY);
+    }
+    if(node.main_pubs_by_year && typeof node.main_pubs_by_year === "object") return sumCountsInWindowMap(node.main_pubs_by_year, fromY, toY);
+    // fallback: if no main arrays, try to approximate from papers list if available
+  }
+  // default / "any"
+  if(Array.isArray(node.pub_years) && Array.isArray(node.counts_by_year_cum) && node.pub_years.length === node.counts_by_year_cum.length){
+    return cumRangeFromCumArrays(node.pub_years, node.counts_by_year_cum, fromY, toY);
+  }
+  if(node.counts_by_year && typeof node.counts_by_year === "object") return sumCountsInWindowMap(node.counts_by_year, fromY, toY);
+  // ultimate fallback: return pub_count if years not available and range covers full node existence
+  return +(node.pub_count || node.pubs || 0);
+}
+
+/* Compute combined role key (for links) */
+function computeCombinedRoleKey(instFilter, collabFilter) {
+  if(instFilter === "any" && collabFilter === "any") return "counts_by_year";
+  if(instFilter === "main" && collabFilter === "any") return "source_main";
+  if(instFilter === "any" && collabFilter === "main") return "target_main";
+  if(instFilter === "main" && collabFilter === "main") return "both_main";
+  return "counts_by_year";
+}
+
+/* compute weight using available cumulative arrays or fallback to maps / per-paper scan */
+function computeWeightForLinkCombined(l, instFilter, collabFilter, fromY, toY){
+  const key = computeCombinedRoleKey(instFilter, collabFilter);
+
+  if(key === "counts_by_year"){
+    if(Array.isArray(l.pub_years) && Array.isArray(l.counts_by_year_cum) && l.pub_years.length === l.counts_by_year_cum.length){
+      return cumRangeFromCumArrays(l.pub_years, l.counts_by_year_cum, fromY, toY);
+    }
+    if(l.counts_by_year && typeof l.counts_by_year === "object") return sumCountsInWindowMap(l.counts_by_year, fromY, toY);
+  } else {
+    if(l.role_pair_counts_by_year_cum && Array.isArray(l.role_pair_counts_by_year_cum[key]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_cum[key].length === l.pub_years.length){
+      return cumRangeFromCumArrays(l.pub_years, l.role_pair_counts_by_year_cum[key], fromY, toY);
+    }
+    if(l.role_pair_counts_by_year_arrays && Array.isArray(l.role_pair_counts_by_year_arrays[key]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_arrays[key].length===l.pub_years.length){
+      const cum = prefixSum(l.role_pair_counts_by_year_arrays[key]);
+      return cumRangeFromCumArrays(l.pub_years, cum, fromY, toY);
+    }
+    if(l.role_pair_counts_by_year && l.role_pair_counts_by_year[key] && typeof l.role_pair_counts_by_year[key] === "object"){
+      return sumCountsInWindowMap(l.role_pair_counts_by_year[key], fromY, toY);
+    }
+    if(l.role_pair_totals && typeof l.role_pair_totals[key] !== "undefined") return +l.role_pair_totals[key];
+  }
+
+  if(Array.isArray(l.papers) && l.papers.length){
+    let s=0;
+    for(const p of l.papers){
+      const y = + (p.year ?? p.pub_year ?? p.year_published ?? 0);
+      if(isNaN(y) || y < fromY || y > toY) continue;
+      const srcMain = (p.source_pos === "first" || p.source_pos === "last");
+      const tgtMain = (p.target_pos === "first" || p.target_pos === "last");
+      if(key === "counts_by_year") s++;
+      else if(key === "source_main" && srcMain) s++;
+      else if(key === "target_main" && tgtMain) s++;
+      else if(key === "both_main" && srcMain && tgtMain) s++;
+    }
+    return s;
+  }
+
+  return +(l._weight || 0);
+}
+
+/* ------------- baseline computation (anchor scales) ------------- */
+function computeBaselineNodeMaps(g){
+  if(!g) return;
+  const defaultFrom = (g.config && Number.isInteger(g.config.min_year)) ? g.config.min_year : g._computed_min_year || 2000;
+  const defaultTo   = (g.config && Number.isInteger(g.config.max_year)) ? g.config.max_year : g._computed_max_year || new Date().getFullYear();
+
+  const mapAny = new Map();
+  const mapMain = new Map();
+  g.nodes.forEach(n=>{
+    const vAny = computeNodeCumulative(n, "any", defaultFrom, defaultTo);
+    const vMain = computeNodeCumulative(n, "main", defaultFrom, defaultTo);
+    mapAny.set(n.id, vAny);
+    mapMain.set(n.id, vMain);
+    n._cum_full_any = vAny;
+    n._cum_full_main = vMain;
+  });
+  g._baselineNodeCumAnyMap = mapAny;
+  g._baselineNodeCumMainMap = mapMain;
+  g._baselineNodeCumAnyMax = d3.max(Array.from(mapAny.values())) || 1;
+  g._baselineNodeCumMainMax = d3.max(Array.from(mapMain.values())) || 1;
+}
+
+function updateToLive(toY){
+  if(!graph) return;
+  const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+  const instFilter = d3.select("#instAuthorSelect").node().value;
+  const collabFilter = d3.select("#collabAuthorSelect").node().value;
+  const edgeThreshold = +d3.select("#edgeSlider").node().value;
+
+  // recompute link preview weights
+  graph.linksAll.forEach(l=>{
+    l._weight_current = computeWeightForLinkCombined(l, instFilter, collabFilter, fromY, toY);
+    l._w_frac_current = (l._weight_current && l._weight) ? (l._weight_current / (l._weight || 1)) : (l._weight_current>0?1:0);
+  });
+
+  // update link visuals already present in DOM (do not rebind or restart sim)
+  linkG.selectAll("line").each(function(d){
+    const el = d3.select(this);
+    const w = d._weight_current ?? d._weight ?? 0;
+    if(w < edgeThreshold) el.style("display","none");
+    else {
+      el.style("display", null);
+      if(window._linkWidth) el.transition().duration(170).attr("stroke-width", window._linkWidth(w));
+      if(window._linkOpacity) el.transition().duration(170).style("opacity", window._linkOpacity(d._w_frac_current ?? d._w_frac ?? 1));
+    }
+  });
+
+  // NODE SIZE: compute per-node preview incident-weight (sum of link._weight_current)
+  const nodeMetricMap = new Map(graph.nodes.map(n=>[n.id,0]));
+  graph.linksAll.forEach(l=>{
+    const w = l._weight_current || 0;
+    if(w <= 0) return;
+    const sid = (typeof l.source === "object") ? l.source.id : l.source;
+    const tid = (typeof l.target === "object") ? l.target.id : l.target;
+    if(sid) nodeMetricMap.set(sid, (nodeMetricMap.get(sid)||0) + w);
+    if(tid) nodeMetricMap.set(tid, (nodeMetricMap.get(tid)||0) + w);
+  });
+
+  // anchor scale: pick baseline max according to instFilter
+  const baselineMax = (instFilter === "main" ? graph._baselineNodeCumMainMax : graph._baselineNodeCumAnyMax) || 1;
+  const rScaleLive = d3.scaleSqrt().domain([0, Math.max(1, baselineMax)]).range([5,28]);
+  window._rScale = rScaleLive;
+
+  // animate node radius change using anchored scale — compute node value as cumulative up to toY
+  nodeG.selectAll("g.node").select("circle").each(function(d){
+    const el = d3.select(this);
+    const nodeVal = computeNodeCumulative(d, instFilter, fromY, toY);
+    el.transition().duration(200).attr("r", rScaleLive(nodeVal));
+    const ring = d3.select(this.parentNode).select(".local-ring");
+    if(ring.size()) ring.transition().duration(200).attr("r", rScaleLive(nodeVal) + 4);
+  });
+
+  // ------------------ VISIBILITY: mirror Apply semantics ------------------
+  // Build preview adjacency from links with _weight_current > 0
+  let previewLinks = graph.linksAll.filter(l => l._weight_current > 0);
+  if(instFilter === "main"){
+    previewLinks = previewLinks.filter(l=>{
+      const sid = (typeof l.source === "object") ? l.source.id : l.source;
+      const tid = (typeof l.target === "object") ? l.target.id : l.target;
+      const sNode = graph.nodesById.get(sid);
+      const tNode = graph.nodesById.get(tid);
+      return (sNode && sNode.is_local) || (tNode && tNode.is_local);
+    });
+  }
+  const previewAdj = buildAdjacency({nodes: graph.nodes, links: previewLinks});
+
+  // nodes that have positive cumulative up to toY
+  const nodePreviewMap = new Map();
+  graph.nodes.forEach(n => { nodePreviewMap.set(n.id, computeNodeCumulative(n, instFilter, fromY, toY)); });
+
+  // visible nodes from links meeting threshold
+  const visibleNodeIdsFromLinks = new Set();
+  previewLinks.forEach(l => {
+    if((l._weight_current || 0) >= edgeThreshold){
+      const sid = (typeof l.source === "object") ? l.source.id : l.source;
+      const tid = (typeof l.target === "object") ? l.target.id : l.target;
+      if(sid) visibleNodeIdsFromLinks.add(sid);
+      if(tid) visibleNodeIdsFromLinks.add(tid);
+    }
+  });
+
+  // union with nodes having positive cumulative
+  const visibleNodeIds = new Set(visibleNodeIdsFromLinks);
+  for(const [id, val] of nodePreviewMap.entries()){
+    if(val > 0) visibleNodeIds.add(id);
+  }
+
+  // prune for main-main: keep only local nodes OR nodes that have at least one local neighbor in previewAdj
+  if(instFilter === "main" && collabFilter === "main"){
+    const pruned = new Set();
+    visibleNodeIds.forEach(id => {
+      const node = graph.nodesById.get(id);
+      if(!node) return;
+      if(node.is_local){ pruned.add(id); return; }
+      const neigh = previewAdj.get(id) || new Set();
+      let hasLocalNeighbor = false;
+      for(const nid of neigh){ const n = graph.nodesById.get(nid); if(n && n.is_local){ hasLocalNeighbor = true; break; } }
+      if(hasLocalNeighbor) pruned.add(id);
+    });
+    visibleNodeIds.clear();
+    pruned.forEach(x=>visibleNodeIds.add(x));
+  }
+
+  // apply opacity + pointer-events
+  nodeG.selectAll("g.node").transition().duration(120)
+    .style("opacity", d => visibleNodeIds.has(d.id) ? 1 : 0.12)
+    .style("pointer-events", d => visibleNodeIds.has(d.id) ? "auto" : "none");
+
+  updateFilterSummary();
+}
+
+/* ------------- Fetch and initialize ------------- */
+fetch(JSON_PATH).then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+.then(data => {
+  if(!data || !Array.isArray(data.nodes) || !Array.isArray(data.links)) throw new Error("JSON missing nodes/links");
+
+  // normalize nodes and links
+  data.nodes.forEach(n=>{
+    n.pub_count = +(n.pub_count ?? n.pubs ?? 1);
+    n.pubs = n.pub_count;
+    n.weighted_degree = +(n.weighted_degree ?? 0);
+    n.is_local = !!n.is_local;
+    n.label = n.label ?? n.id;
+    normalizeNodeArrays(n);
+  });
+  data.links.forEach(l => normalizeLinkArrays(l));
+  data.linksAll = data.links.slice();
+
+  // nodesById and resolve endpoints
+  data.nodesById = new Map(data.nodes.map(n=>[n.id,n]));
+  const nodesById = data.nodesById;
+  data.linksAll.forEach(l=>{
+    if(typeof l.source === "string" || typeof l.source === "number"){
+      const s = nodesById.get(l.source); if(s) l.source = s;
+    }
+    if(typeof l.target === "string" || typeof l.target === "number"){
+      const t = nodesById.get(l.target); if(t) l.target = t;
+    }
+  });
+
+  // compute min/max years, prefer config if available
+  let minY = Infinity, maxY = -Infinity;
+  if(data.config && Number.isInteger(data.config.min_year) && Number.isInteger(data.config.max_year)){
+    minY = data.config.min_year; maxY = data.config.max_year;
+  } else {
+    data.linksAll.forEach(l=>{
+      if(Array.isArray(l.pub_years) && l.pub_years.length){
+        const yrs = l.pub_years.map(y=>+y).filter(y=>!isNaN(y));
+        if(yrs.length){ minY = Math.min(minY, yrs[0]); maxY = Math.max(maxY, yrs[yrs.length-1]); }
+      }
+      if(l.counts_by_year && typeof l.counts_by_year === "object"){ for(const y of Object.keys(l.counts_by_year)){ const yy=+y; if(!isNaN(yy)){ minY=Math.min(minY,yy); maxY=Math.max(maxY,yy); } } }
+      if(l.role_pair_counts_by_year){ Object.values(l.role_pair_counts_by_year).forEach(obj=>{ if(!obj) return; for(const y of Object.keys(obj)){ const yy=+y; if(!isNaN(yy)){ minY=Math.min(minY,yy); maxY=Math.max(maxY,yy); } } }); }
+      if(Array.isArray(l.papers)) l.papers.forEach(p=>{ const yy=+ (p.year ?? p.pub_year ?? 0); if(!isNaN(yy)){ minY=Math.min(minY,yy); maxY=Math.max(maxY,yy);} });
+    });
+    data.nodes.forEach(n=>{ if(n.first_year && +n.first_year>=1800) minY = Math.min(minY, +n.first_year); if(n.last_year && +n.last_year>=1800) maxY = Math.max(maxY, +n.last_year); });
+    if(!isFinite(minY)) minY = 2000;
+    if(!isFinite(maxY)) maxY = new Date().getFullYear();
+  }
+
+  data._computed_min_year = minY;
+  data._computed_max_year = maxY;
+
+  // compute baseline node maps BEFORE render
+  computeBaselineNodeMaps(data);
+
+  // UI: set From fixed and To slider range
+  const fromVal = (data.config && Number.isInteger(data.config.min_year)) ? data.config.min_year : minY;
+  d3.select("#fromFixed").text(fromVal);
+  const toRange = d3.select("#yearToRange").attr("min", fromVal).attr("max", maxY).property("value", maxY);
+  d3.select("#yearToVal").text(toRange.node().value);
+
+  statusEl.text(`Loaded graph — ${data.nodes.length} nodes, ${data.linksAll.length} links.`);
+  graph = data;
+
+  renderGraph(graph);
+
+  // wire live To slider
+  d3.select("#yearToRange").on("input", function(){
+    const toVal = +this.value;
+    d3.select("#yearToVal").text(toVal);
+    updateToLive(toVal);
+  });
+
+}).catch(err => { console.error(err); statusEl.text("Error loading graph: "+err.message); });
+
+/* ------------- renderGraph (initial DOM and simulation) ------------- */
+function renderGraph(graph){
+  linkG.selectAll("*").remove();
+  nodeG.selectAll("*").remove();
+
+  const nodes = graph.nodes;
+  let linksCurrent = graph.linksAll.slice();
+
+  // anchor rScale to baseline global max for 'any' (initial)
+  const baselineMaxAny = graph._baselineNodeCumAnyMax || 1;
+  const rScale = d3.scaleSqrt().domain([0, Math.max(1, baselineMaxAny)]).range([5,28]);
+  window._rScale = rScale;
+
+  // link scales
+  const linkWeightValues = graph.linksAll.map(d => +d._weight);
+  let linkWeightExtent = d3.extent(linkWeightValues);
+  if(linkWeightExtent[0] === linkWeightExtent[1]){ linkWeightExtent[0] = Math.max(0, linkWeightExtent[0]-1); linkWeightExtent[1] = linkWeightExtent[1]+1; }
+  const linkWidth = d3.scaleSqrt().domain(linkWeightExtent).range([0.6,6]);
+  const linkOpacity = d3.scaleLinear().domain([0,1]).range([0.12,1]);
+  window._linkWidth = (w) => linkWidth(w);
+  window._linkOpacity = (f) => linkOpacity(f);
+
+  const MIN_LINK_DIST = 30, MAX_LINK_DIST = 180;
+  function weightToDistance(w){ const base = Math.sqrt((w||0)+1); return Math.max(MIN_LINK_DIST, Math.min(MAX_LINK_DIST, Math.round(MAX_LINK_DIST / base))); }
+
+  // initial DOM: create all link elements (we'll control visibility later)
+  const linkSel = linkG.selectAll("line")
+    .data(linksCurrent, d => d.id ?? `${(d.source.id||d.source)}|${(d.target.id||d.target)}`)
+    .enter().append("line")
+    .attr("class","link")
+    .attr("stroke-width", d => linkWidth(d._weight))
+    .style("opacity", d => linkOpacity(d._w_frac))
+    .style("display", d => (d._weight >= +d3.select("#edgeSlider").node().value) ? null : "none");
+
+  // nodes
+  const nodeSel = nodeG.selectAll("g")
+    .data(nodes, d=>d.id)
+    .enter().append("g")
+    .attr("class","node")
+    .call(d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
+
+  nodeSel.append("circle")
+    .attr("r", d => rScale( computeNodeCumulative(d, "any", graph._computed_min_year, +d3.select("#yearToRange").node().value) ))
+    .attr("fill", d => d.is_local ? "#1f77b4" : "#ff7f0e")
+    .attr("stroke","#fff").attr("stroke-width",1.2);
+
+  nodeSel.append("circle")
+    .attr("class","local-ring")
+    .attr("r", d => rScale( computeNodeCumulative(d, "any", graph._computed_min_year, +d3.select("#yearToRange").node().value) ) + 4)
+    .attr("fill","none")
+    .attr("stroke", d => d.is_local ? "#003f5c" : "#999")
+    .attr("stroke-width", d => d.is_local ? 1.6 : 0.6)
+    .attr("stroke-dasharray", d => d.is_local ? "4,2" : "1,0")
+    .style("opacity", d => d.is_local ? 0.9 : 0.1);
+
+  nodeSel.on("mouseover", (event,d) => {
+    const toY = +d3.select("#yearToRange").node().value;
+    const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+    const instFilter = d3.select("#instAuthorSelect").node().value;
+    const cumulative = computeNodeCumulative(d, instFilter, fromY, toY);
+    const baseline = instFilter === "main" ? d._cum_full_main : d._cum_full_any;
+    tooltip.style("display","block").html(
+      `<strong>${d.label || d.id}</strong><br/><small>id: ${d.id}</small><br/>pub_count: ${d.pub_count} — weighted_degree: ${d.weighted_degree ?? "?"}<br/>preview To: ${toY} (From: ${fromY})<hr/>
+      <div style="font-weight:bold">Debug metrics</div>
+      node cumulative (preview): ${cumulative} <br/>
+      baseline full cumulative (${instFilter}): ${baseline} <br/>
+      pub_years length: ${Array.isArray(d.pub_years)?d.pub_years.length:0}
+      <hr/><div style="font-size:12px;color:#ddd">Open console for full dump (dump button)</div>`
+    ).style("left",(event.pageX+10)+"px").style("top",(event.pageY+10)+"px");
+
+    // console debug (helpful)
+    console.log("NODE DEBUG:", {
+      id: d.id, label: d.label, pub_count: d.pub_count,
+      previewTo: toY, previewFrom: fromY, instFilter,
+      previewCum: cumulative, baselineAny: d._cum_full_any, baselineMain: d._cum_full_main,
+      pub_years: d.pub_years, counts_by_year_cum: d.counts_by_year_cum, main_pubs_by_year_cum: d.main_pubs_by_year_cum
+    });
+  }).on("mousemove",(event)=>{ tooltip.style("left",(event.pageX+10)+"px").style("top",(event.pageY+10)+"px"); })
+    .on("mouseout", ()=> tooltip.style("display","none"));
+
+  // simulation and linkForce (keep linkForce reference for updates)
+  linkForce = d3.forceLink(linksCurrent).id(d=>d.id).distance(d => weightToDistance(d._weight)).strength(0.7);
+  simulation = d3.forceSimulation(nodes)
+    .force("link", linkForce)
+    .force("charge", d3.forceManyBody().strength(-160))
+    .force("center", d3.forceCenter(container.node().clientWidth/2, container.node().clientHeight/2))
+    .force("collision", d3.forceCollide().radius(d => rScale( computeNodeCumulative(d, "any", graph._computed_min_year, +d3.select("#yearToRange").node().value) ) + 6))
+    .on("tick", ticked);
+
+  function ticked(){
+    linkG.selectAll("line").attr("x1", d=>d.source.x).attr("y1", d=>d.source.y).attr("x2", d=>d.target.x).attr("y2", d=>d.target.y);
+    nodeG.selectAll("g").attr("transform", d=>`translate(${d.x},${d.y})`);
+  }
+
+  // adjacency map for star focus (make it mutable so we can rebuild after apply)
+  let adjacency = buildAdjacency({nodes:nodes, links:graph.linksAll});
+
+  // interactions
+  let isStar=false, lastFocused=null;
+  nodeG.selectAll("g.node").on("click",(event,d)=>{
+    event.stopPropagation();
+    if(isStar && lastFocused && lastFocused.id === d.id){ resetLayout(); return; }
+    focusStar(d);
+  });
+
+  svg.on("click", ()=>{ if(isStar) resetLayout(); });
+  d3.select("#resetBtn").on("click", resetLayout);
+
+  setTimeout(()=>{ simulation.alpha(0.9).restart(); setTimeout(()=>simulation.alphaTarget(0),1200); }, 50);
+
+function focusStar(centerNode){
+  isStar = true;
+  lastFocused = centerNode;
+
+  // live filter settings
+  const instFilter = d3.select("#instAuthorSelect").node().value;
+  const collabFilter = d3.select("#collabAuthorSelect").node().value;
+  const toY = +d3.select("#yearToRange").node().value;
+  const edgeThreshold = +d3.select("#edgeSlider").node().value;
+
+  // Build preview link set using current live _weight_current values and inst=main rule
+  let previewLinks = graph.linksAll.filter(l => (l._weight_current || 0) >= edgeThreshold);
+
+  if(instFilter === "main"){
+    previewLinks = previewLinks.filter(l => {
+      const sid = (typeof l.source === "object") ? l.source.id : l.source;
+      const tid = (typeof l.target === "object") ? l.target.id : l.target;
+      const sNode = graph.nodesById.get(sid);
+      const tNode = graph.nodesById.get(tid);
+      return (sNode && sNode.is_local) || (tNode && tNode.is_local);
+    });
+  }
+
+  // Compute neighbor ids for the center node from the preview links
+  const centerId = centerNode.id;
+  const neighIdsSet = new Set();
+  previewLinks.forEach(l=>{
+    const sid = (typeof l.source === "object") ? l.source.id : l.source;
+    const tid = (typeof l.target === "object") ? l.target.id : l.target;
+    if(sid === centerId) neighIdsSet.add(tid);
+    else if(tid === centerId) neighIdsSet.add(sid);
+  });
+  const neighIds = Array.from(neighIdsSet);
+
+  // Resolve neighbor node objects (only nodes in graph.nodes)
+  const neighbors = graph.nodes.filter(n => neighIdsSet.has(n.id));
+
+  // layout neighbors in a ring around center
+  const centerX = container.node().clientWidth / 2;
+  const centerY = container.node().clientHeight / 2;
+  const innerRadius = Math.max(120, 40 + neighbors.length * 12);
+  neighbors.forEach((n,i) => {
+    const angle = (i / Math.max(1, neighbors.length)) * 2 * Math.PI;
+    n.fx = centerX + Math.cos(angle) * innerRadius;
+    n.fy = centerY + Math.sin(angle) * innerRadius;
+  });
+  centerNode.fx = centerX;
+  centerNode.fy = centerY;
+
+  // Show only center + its neighbors; hide others (respect pointer-events)
+  nodeG.selectAll("g.node").transition().duration(TRANS_DUR)
+    .style("opacity", d => (d.id === centerId || neighIdsSet.has(d.id)) ? 1 : 0)
+    .on("end", function(d){
+      if(!(d.id === centerId || neighIdsSet.has(d.id))) d3.select(this).style("pointer-events","none");
+    });
+
+  // Update link visuals: display only preview links (those >= edgeThreshold)
+  // For displayed links, highlight those connected to the center (opacity=1), dim others (0.08)
+  linkG.selectAll("line").each(function(l){
+    const el = d3.select(this);
+    const lw = (l._weight_current || l._weight || 0);
+    // Decide if this link is part of previewLinks (and not pruned by inst=main)
+    const inPreview = (lw >= edgeThreshold) && previewLinks.some(pl => {
+      const pSid = (typeof pl.source === "object") ? pl.source.id : pl.source;
+      const pTid = (typeof pl.target === "object") ? pl.target.id : pl.target;
+      const lSid = (typeof l.source === "object") ? l.source.id : l.source;
+      const lTid = (typeof l.target === "object") ? l.target.id : l.target;
+      return (pSid === lSid && pTid === lTid) || (pSid === lTid && pTid === lSid);
+    });
+
+    if(!inPreview){
+      el.style("display","none");
+      return;
+    }
+    el.style("display", null);
+    el.transition().duration(TRANS_DUR)
+      .style("opacity", ( (typeof l.source === "object" ? l.source.id : l.source) === centerId || (typeof l.target === "object" ? l.target.id : l.target) === centerId ) ? 1 : 0.08);
+  });
+
+  // restart simulation gently so pinned nodes remain and layout looks correct
+  simulation.alpha(SIM_ALPHA).restart();
+  setTimeout(()=>simulation.alphaTarget(0), COOL_TIMEOUT);
+
+  statusEl.text(`Focused: ${centerNode.label || centerNode.id} — ${neighbors.length} coauthors`);
+  showInfo(centerNode, neighbors.length);
+}
+
+
+  function resetLayout(){
+    isStar=false; lastFocused=null;
+    nodeG.selectAll("g.node").style("pointer-events","auto");
+    nodeG.selectAll("g.node").transition().duration(TRANS_DUR).style("opacity",1);
+    linkG.selectAll("line").transition().duration(TRANS_DUR).style("opacity", d => (d._w_frac ? window._linkOpacity(d._w_frac) : 1));
+    nodes.forEach(n=>{ n.fx=null; n.fy=null; });
+    simulation.alpha(SIM_ALPHA).restart(); setTimeout(()=>simulation.alphaTarget(0), COOL_TIMEOUT);
+    statusEl.text(`Graph: ${nodes.length} nodes, ${graph.linksAll.length} links.`);
+    d3.select("#panel").selectAll(".info").remove();
+  }
+
+  // UI hooks
+  const edgeSlider = d3.select("#edgeSlider");
+  const edgeVal = d3.select("#edgeVal");
+  const searchBox = d3.select("#searchBox");
+  const instSelect = d3.select("#instAuthorSelect");
+  const collabSelect = d3.select("#collabAuthorSelect");
+  const applyBtn = d3.select("#applyFiltersBtn");
+
+  // quick live edge threshold (no recompute weights)
+  edgeSlider.on("input", ()=>{
+    const thr = +edgeSlider.node().value; edgeVal.text(thr);
+    linkG.selectAll("line").style("display", d => ( (d._weight_current ?? d._weight) >= thr ? null : "none" ));
+    const visibleNodeIds = new Set(graph.linksAll.filter(l => ((l._weight_current ?? l._weight) >= thr)).flatMap(l => [ (typeof l.source === "object" ? l.source.id : l.source), (typeof l.target === "object" ? l.target.id : l.target) ]));
+    nodeG.selectAll("g.node").transition().duration(160).style("opacity", d => visibleNodeIds.has(d.id) ? 1 : 0.12);
+    updateFilterSummary();
+  });
+
+  // APPLY button: reset live time slider (To) AND reset live edge slider to its minimum,
+  // then compute permanent network using role filters + full range.
+  applyBtn.on("click", ()=>{
+    const defaultFrom = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+    const defaultTo = graph.config && Number.isInteger(graph.config.max_year) ? graph.config.max_year : graph._computed_max_year || new Date().getFullYear();
+    d3.select("#yearToRange").property("value", defaultTo);
+    d3.select("#yearToVal").text(defaultTo);
+
+    // reset live edge slider to its minimum
+    const edgeEl = d3.select("#edgeSlider");
+    const edgeMin = +edgeEl.attr("min") || 0;
+    edgeEl.property("value", edgeMin);
+    d3.select("#edgeVal").text(edgeMin);
+
+    // then run full apply using roles + full window
+    applyFilters();
+
+    statusEl.text(`Filters applied (time reset to full range ${defaultFrom}–${defaultTo}, edge reset to ${edgeMin}).`);
+  });
+
+  d3.select("#searchBox").on("keydown", function(event){ if(event.key === "Enter"){ const q=this.value.trim().toLowerCase(); if(!q) return; const found = nodes.find(n => (n.label||"").toLowerCase().includes(q)); if(found){ nodeG.selectAll("g.node").filter(d=>d.id===found.id).dispatch("click"); setTimeout(()=> centerOnNode(found,1.6),250);} else alert("No match"); }});
+
+  // debug dump hook
+  d3.select("#dumpBtn").on("click", debugDumpTopNodes);
+
+  // expose functions
+  window._graph = graph;
+  window._sim = simulation;
+  window._linkForce = linkForce;
+  window._applyFilters = applyFilters;
+
+  // initial apply (use roles = any/any and full-time window)
+  applyFilters();
+
+  function applyFilters(){
+    if(!graph) return;
+    const instFilter = d3.select("#instAuthorSelect").node().value;
+    const collabFilter = d3.select("#collabAuthorSelect").node().value;
+    const defaultFrom = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+    const defaultTo = graph.config && Number.isInteger(graph.config.max_year) ? graph.config.max_year : graph._computed_max_year || new Date().getFullYear();
+    const edgeThreshold = +d3.select("#edgeSlider").node().value;
+
+    // 1) compute permanent link preview weights for full window (role filters)
+    graph.linksAll.forEach(l=>{
+      l._weight_current = computeWeightForLinkCombined(l, instFilter, collabFilter, defaultFrom, defaultTo);
+      l._w_frac_current = (l._weight_current && l._weight) ? (l._weight_current / (l._weight || 1)) : (l._weight_current>0?1:0);
+    });
+
+    // 2) initial candidate links (weight > 0)
+    let activeLinksForPhysics = graph.linksAll.filter(l => l._weight_current > 0);
+
+    // 3) if inst=main, drop purely-external links (we only want links that touch at least one local node)
+    if(instFilter === "main"){
+      activeLinksForPhysics = activeLinksForPhysics.filter(l => {
+        const sid = (typeof l.source === "object") ? l.source.id : l.source;
+        const tid = (typeof l.target === "object") ? l.target.id : l.target;
+        const sNode = graph.nodesById.get(sid);
+        const tNode = graph.nodesById.get(tid);
+        const sLocal = sNode && sNode.is_local;
+        const tLocal = tNode && tNode.is_local;
+        return sLocal || tLocal;
+      });
+    }
+
+    // 4) compute node cumulatives (role-filtered) for the full window (used for node sizes & visibility)
+    const nodeCumulatives = new Map();
+    graph.nodes.forEach(n=>{
+      const val = computeNodeCumulative(n, instFilter, defaultFrom, defaultTo);
+      nodeCumulatives.set(n.id, val);
+    });
+
+    // 5) build visibleNodeIds: (A) nodes touching a link above edgeThreshold OR (B) nodes with cumulative > 0
+    const visibleNodeIdsFromLinks = new Set(activeLinksForPhysics
+      .filter(l => (l._weight_current >= edgeThreshold))
+      .flatMap(l => [ (typeof l.source === "object" ? l.source.id : l.source), (typeof l.target === "object" ? l.target.id : l.target) ])
+    );
+    const visibleNodeIds = new Set(visibleNodeIdsFromLinks);
+    for(const [id,val] of nodeCumulatives.entries()){
+      if(val > 0) visibleNodeIds.add(id);
+    }
+
+    // 6) special prune for inst=main & collab=main:
+    //    keep only local nodes OR external nodes that are connected (in the candidate activeLinksForPhysics) to at least one local node.
+    if(instFilter === "main" && collabFilter === "main"){
+      // adjacency for candidate links
+      const adj = buildAdjacency({nodes: graph.nodes, links: activeLinksForPhysics});
+      const pruned = new Set();
+      visibleNodeIds.forEach(id => {
+        const node = graph.nodesById.get(id);
+        if(!node) return;
+        if(node.is_local){ pruned.add(id); return; }
+        // node is external: keep only if it has at least one local neighbor
+        const neigh = adj.get(id) || new Set();
+        let hasLocal = false;
+        for(const nid of neigh){ const n = graph.nodesById.get(nid); if(n && n.is_local){ hasLocal = true; break; } }
+        if(hasLocal) pruned.add(id);
+      });
+      // replace visibleNodeIds with pruned
+      visibleNodeIds.clear();
+      pruned.forEach(x=>visibleNodeIds.add(x));
+    }
+
+    // 7) now compute visibleNodes array (these are the nodes we will render + simulate)
+    const visibleNodes = graph.nodes.filter(n => visibleNodeIds.has(n.id));
+
+    // 8) prune activeLinksForPhysics so it contains only links between visible nodes
+    const visibleNodeSet = new Set(visibleNodes.map(n => n.id));
+    activeLinksForPhysics = activeLinksForPhysics.filter(l => {
+      const sid = (typeof l.source === "object") ? l.source.id : l.source;
+      const tid = (typeof l.target === "object") ? l.target.id : l.target;
+      return visibleNodeSet.has(sid) && visibleNodeSet.has(tid);
+    });
+
+    // 9) DATA JOIN - LINKS (stable key)
+    const linkKey = d => d.id ?? `${(typeof d.source === "object" ? d.source.id : d.source)}|${(typeof d.target === "object" ? d.target.id : d.target)}`;
+    let linkSel = linkG.selectAll("line").data(activeLinksForPhysics, linkKey);
+    // exit links
+    linkSel.exit().transition().duration(250).style("opacity",0).remove();
+    // enter links
+    const linkEnter = linkSel.enter().append("line")
+      .attr("class","link")
+      .style("opacity",0)
+      .attr("stroke-width", d => (window._linkWidth ? window._linkWidth(d._weight_current||d._weight||1) : 1));
+    // merge
+    linkSel = linkEnter.merge(linkSel);
+    linkSel.transition().duration(350)
+      .attr("stroke-width", d => (window._linkWidth ? window._linkWidth(d._weight_current||d._weight||1) : 1))
+      .style("opacity", d => (window._linkOpacity ? window._linkOpacity(d._w_frac_current ?? d._w_frac ?? 1) : 1))
+      .style("display", d => ((d._weight_current ?? d._weight) >= edgeThreshold ? null : "none"));
+
+    // 10) DATA JOIN - NODES (we remove orphan externals by not including them here)
+    // key = node.id
+    let nodeSel = nodeG.selectAll("g.node").data(visibleNodes, d => d.id);
+
+    // exit nodes: transition out then remove and also remove from simulation nodes
+    const nodeExit = nodeSel.exit();
+    nodeExit.select("circle").transition().duration(280).attr("r",0);
+    nodeExit.transition().duration(300).style("opacity",0).remove();
+
+    // enter nodes: create DOM and wire events + drag
+    const nodeEnter = nodeSel.enter().append("g")
+      .attr("class","node")
+      .call(d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
+
+    nodeEnter.append("circle")
+      .attr("r", 0)
+      .attr("fill", d => d.is_local ? "#1f77b4" : "#ff7f0e")
+      .attr("stroke","#fff").attr("stroke-width",1.2);
+
+    nodeEnter.append("circle")
+      .attr("class","local-ring")
+      .attr("r", 0)
+      .attr("fill","none")
+      .attr("stroke", d => d.is_local ? "#003f5c" : "#999")
+      .attr("stroke-width", d => d.is_local ? 1.6 : 0.6)
+      .attr("stroke-dasharray", d => d.is_local ? "4,2" : "1,0")
+      .style("opacity", d => d.is_local ? 0.9 : 0.1);
+
+    // add mouse events to enter selection (same as initial render)
+    nodeEnter.on("mouseover", (event,d) => {
+      const toY = +d3.select("#yearToRange").node().value;
+      const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+      const inst = d3.select("#instAuthorSelect").node().value;
+      const cumulative = computeNodeCumulative(d, inst, fromY, toY);
+      const baseline = inst === "main" ? d._cum_full_main : d._cum_full_any;
+      tooltip.style("display","block").html(
+        `<strong>${d.label || d.id}</strong><br/><small>id: ${d.id}</small><br/>pub_count: ${d.pub_count} — weighted_degree: ${d.weighted_degree ?? "?"}<br/>preview To: ${toY} (From: ${fromY})<hr/>
+        node cumulative (preview): ${cumulative} <br/>
+        baseline full cumulative (${inst}): ${baseline}`
+      ).style("left",(event.pageX+10)+"px").style("top",(event.pageY+10)+"px");
+      console.log("NODE DEBUG:", { id:d.id, previewCum:cumulative, baselineAny:d._cum_full_any, baselineMain:d._cum_full_main });
+    }).on("mousemove",(event)=>{ tooltip.style("left",(event.pageX+10)+"px").style("top",(event.pageY+10)+"px"); })
+      .on("mouseout", ()=> tooltip.style("display","none"));
+
+    // merge selection: update radii and rings
+    nodeSel = nodeEnter.merge(nodeSel);
+
+    // compute anchored radius scale
+    const baselineMax = (instFilter === "main" ? graph._baselineNodeCumMainMax : graph._baselineNodeCumAnyMax) || 1;
+    const rS = d3.scaleSqrt().domain([0, Math.max(1, baselineMax)]).range([5,28]);
+    window._rScale = rS;
+
+    // compute radii for visible nodes from nodeCumulatives
+    nodeSel.select("circle").transition().duration(400).attr("r", d => {
+      const val = +(nodeCumulatives.get(d.id) || 0);
+      return rS(val);
+    });
+    nodeSel.select(".local-ring").transition().duration(400).attr("r", d => rS(+(nodeCumulatives.get(d.id) || 0)) + 4);
+
+    // 11) update simulation nodes and linkForce links to match visible sets
+    // attach objects to simulation
+    const simNodes = visibleNodes;
+    simulation.nodes(simNodes);
+    try {
+      linkForce.links(activeLinksForPhysics);
+    } catch(e) {
+      linkForce = d3.forceLink(activeLinksForPhysics).id(d=>d.id).distance(d => 50).strength(0.7);
+      simulation.force("link", linkForce);
+    }
+
+    // recompute link distances (based on _weight_current)
+    linkForce.distance(d => {
+      const w = d._weight_current || d._weight || 1;
+      const base = Math.sqrt((w||0)+1);
+      return Math.max(30, Math.min(180, Math.round(180 / base)));
+    });
+
+    // 12) update collision force based on the visible node radii
+    const newCollision = d3.forceCollide().radius(d => {
+      const val = +(nodeCumulatives.get(d.id) || 0);
+      return rS(val) + 6;
+    });
+    simulation.force("collision", newCollision);
+
+    // small centering nudges to keep components near center (optional but helpful)
+    const centerX = container.node().clientWidth / 2;
+    const centerY = container.node().clientHeight / 2;
+    simulation.force("x", d3.forceX(centerX).strength(0.01));
+    simulation.force("y", d3.forceY(centerY).strength(0.01));
+
+    // 13) restart sim
+    simulation.alpha(0.9).restart();
+    setTimeout(()=>simulation.alphaTarget(0), 1100);
+
+    // 14) update status & summary
+    statusEl.text(`Visible nodes: ${visibleNodes.length} / ${graph.nodes.length} — visible links: ${activeLinksForPhysics.length}`);
+    updateFilterSummary();
+
+    // 15) rebuild adjacency used by focusStar (so star uses visible graph)
+    adjacency = buildAdjacency({nodes: simNodes, links: activeLinksForPhysics});
+    graph._adjacencyActive = adjacency;
+  }
+
+
+} // end renderGraph
+
+/* ------------- utility helpers ------------- */
+function buildAdjacency(arg1,arg2){
+  let nodes=null, links=null;
+  if(Array.isArray(arg1) && Array.isArray(arg2)){ nodes=arg1; links=arg2; }
+  else if(arg1 && typeof arg1 === "object"){
+    if(Array.isArray(arg1.nodes)) nodes = arg1.nodes;
+    if(Array.isArray(arg1.links)) links = arg1.links;
+    if(!links && Array.isArray(arg1.linksAll)) links = arg1.linksAll;
+    if(!nodes && Array.isArray(links)){ const ids = new Set(); links.forEach(l => { const s = (typeof l.source === "object")?l.source.id:l.source; const t = (typeof l.target==="object")?l.target.id:l.target; if(s) ids.add(s); if(t) ids.add(t); }); nodes = Array.from(ids).map(id=>({id})); }
+  }
+  nodes = Array.isArray(nodes)? nodes : [];
+  links = Array.isArray(links)? links : [];
+  const adj = new Map(); nodes.forEach(n=>adj.set(n.id,new Set())); links.forEach(l=>{ const s=(typeof l.source==="object")?l.source.id:l.source; const t=(typeof l.target==="object")?l.target.id:l.target; if(!s||!t) return; if(!adj.has(s)) adj.set(s,new Set()); if(!adj.has(t)) adj.set(t,new Set()); adj.get(s).add(t); adj.get(t).add(s); });
+  return adj;
+}
+function centerOnNode(d, zoom=1.6){
+  const svgW = container.node().clientWidth, svgH = container.node().clientHeight;
+  const x = d.x, y = d.y; const transform = d3.zoomIdentity.translate(svgW/2 - x*zoom, svgH/2 - y*zoom).scale(zoom);
+  svg.transition().duration(600).call(d3.zoom().transform, transform);
+}
+function showInfo(centerNode, nNeigh){ const panel = d3.select("#panel"); panel.selectAll(".info").remove(); if(!centerNode) return; panel.append("div").attr("class","info").html(`<strong>${centerNode.label || centerNode.id}</strong> — pubs: ${centerNode.pubs || "?"} — coauthors: ${nNeigh}`); }
+function dragstarted(event,d){ if(!event.active && simulation) simulation.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; }
+function dragged(event,d){ d.fx = event.x; d.fy = event.y; }
+function dragended(event,d){ if(!event.active && simulation) simulation.alphaTarget(0); }
+
+function updateFilterSummary(){
+  if(!graph) return;
+  const inst = d3.select("#instAuthorSelect").node().value;
+  const coll = d3.select("#collabAuthorSelect").node().value;
+  const from = graph && graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year;
+  const to = +d3.select("#yearToRange").node().value;
+  const thr = +d3.select("#edgeSlider").node().value;
+  filterSummaryEl.text(`Inst:${inst} | Collab:${coll} | Years:${from}–${to} (live) | Edge≥${thr}`);
+}
+
+/* ------------- debug dump ------------- */
+function debugDumpTopNodes(){
+  if(!graph) { console.log("no graph"); return; }
+  const instFilter = d3.select("#instAuthorSelect").node().value;
+  const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+  const toY = +d3.select("#yearToRange").node().value;
+  const rows = graph.nodes.map(n=>{
+    const preview = computeNodeCumulative(n, instFilter, fromY, toY);
+    const baseline = instFilter === "main" ? n._cum_full_main : n._cum_full_any;
+    return { id:n.id, label:n.label, pub_count:n.pub_count, preview, baseline, pub_years_len: Array.isArray(n.pub_years)?n.pub_years.length:0 };
+  }).sort((a,b)=> (b.preview - a.preview) || (b.baseline - a.baseline));
+  console.group("DEBUG DUMP — To="+toY+" inst="+instFilter);
+  console.log("Baseline max (any):", graph._baselineNodeCumAnyMax, "Baseline max (main):", graph._baselineNodeCumMainMax);
+  console.table(rows.slice(0,80));
+  console.groupEnd();
+}
+
+</script>
+</body>
+</html>

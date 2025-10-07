@@ -1,0 +1,386 @@
+{
+  "name": "Research Topics",
+  "topic_id": "",
+  "size": 391,
+  "sample": "",
+  "description": "",
+  "children": [
+    {
+      "name": "Pharmacology & Therapeutics",
+      "topic_id": "A",
+      "size": 77,
+      "sample": "",
+      "description": "High-level category: Pharmacology & Therapeutics",
+      "children": [
+        {
+          "name": "A-Brivaracetam & Levetiracetam adjunctive trials",
+          "topic_id": "A.0",
+          "size": 10,
+          "sample": "A randomized, double-blind, placebo-controlled, multicenter, parallel-group study to evaluate the efficacy and safety of adjunctive brivaracetam in adult patients with uncontrolled partial-onset seizures",
+          "description": "Pooled Phase III, QoL, meta-analyses",
+          "children": []
+        },
+        {
+          "name": "A-Cenobamate / AMPA-antagonist early-phase trials",
+          "topic_id": "A.1",
+          "size": 9,
+          "sample": "Dose-dependent suppression of human photoparoxysmal response with the competitive AMPA/kainate receptor antagonist BGG492: Clear PK/PD relationship",
+          "description": "Cenobamate & BGG-492 early trials",
+          "children": []
+        },
+        {
+          "name": "A-Real-world adjunctive therapy (Lacosamide, Rufinamide, Sulthiame, tVNS)",
+          "topic_id": "A.2",
+          "size": 7,
+          "sample": "Levetiracetam vs. sulthiame in benign epilepsy with centrotemporal spikes in childhood: a double-blinded, randomized, controlled trial (German HEAD Study)",
+          "description": "Mixed RWD add-on drug effectiveness",
+          "children": []
+        },
+        {
+          "name": "A-Pregabalin / Retigabine add-on studies & women-specific Rx",
+          "topic_id": "A.3",
+          "size": 6,
+          "sample": "Efficacy and safety of pregabalin in refractory focal epilepsy with and without comorbid anxiety disorders - results of an open-label, parallel group, investigator-initiated, proof-of-concept study",
+          "description": "Pregabalin, retigabine studies, women-focused treatment",
+          "children": []
+        },
+        {
+          "name": "A-Therapeutic drug monitoring (Lacosamide, Rufinamide, Stiripentol)",
+          "topic_id": "A.6",
+          "size": 17,
+          "sample": "Fluctuation of lacosamide serum concentrations during the day and occurrence of adverse drug reactions--first clinical experience",
+          "description": "TDM studies for multiple AEDs",
+          "children": []
+        },
+        {
+          "name": "A-Drug safety events (Topiramate, Perampanel, Retigabine) & SE",
+          "topic_id": "A.13",
+          "size": 12,
+          "sample": "Topiramate overdose: a case report of a patient with extremely high topiramate serum concentrations and nonconvulsive status epilepticus",
+          "description": "Drug safety case reports & status epilepticus",
+          "children": []
+        },
+        {
+          "name": "A-Everolimus therapy in TSC (EXIST-3 etc.)",
+          "topic_id": "A.14",
+          "size": 8,
+          "sample": "Everolimus in tuberous sclerosis patients with intractable epilepsy: a treatment option?",
+          "description": "Everolimus trials for TSC",
+          "children": []
+        },
+        {
+          "name": "A-Fenfluramine trials & long-term outcomes in Dravet",
+          "topic_id": "A.15",
+          "size": 8,
+          "sample": "Individualized treatment approaches: Fenfluramine, a novel antiepileptic medication for the treatment of seizures in Dravet syndrome",
+          "description": "Fenfluramine clinical studies in Dravet syndrome",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Genetic & Structural Etiologies",
+      "topic_id": "B",
+      "size": 36,
+      "sample": "",
+      "description": "High-level category: Genetic & Structural Etiologies",
+      "children": [
+        {
+          "name": "B-Monogenic developmental & epileptic encephalopathies",
+          "topic_id": "B.0",
+          "size": 14,
+          "sample": "Mutations in STAMBP, encoding a deubiquitinating enzyme, cause microcephaly-capillary malformation syndrome",
+          "description": "Monogenic epilepsy syndromes",
+          "children": []
+        },
+        {
+          "name": "B-Somatic & lesion-related variants (SLC35A2, RAS/MAPK)",
+          "topic_id": "B.1",
+          "size": 9,
+          "sample": "Sturge-Weber syndrome: clinical and radiological correlates in 86 patients",
+          "description": "Somatic mutations in epilepsy",
+          "children": []
+        },
+        {
+          "name": "B-Metabolic / GLUT1 / West-syndrome genotype–phenotype",
+          "topic_id": "B.2",
+          "size": 3,
+          "sample": "Do Glut1 (glucose transporter type 1) defects exist in epilepsy patients responding to a ketogenic diet?",
+          "description": "Metabolic and genetic epilepsies",
+          "children": []
+        },
+        {
+          "name": "B-Focal cortical dysplasia & TSC tuber pathology",
+          "topic_id": "B.12",
+          "size": 10,
+          "sample": "No evidence for human papillomavirus infection in focal cortical dysplasia IIb",
+          "description": "Structural malformations and pathology",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Autoimmune / Inflammatory",
+      "topic_id": "C",
+      "size": 90,
+      "sample": "",
+      "description": "High-level category: Autoimmune / Inflammatory",
+      "children": [
+        {
+          "name": "C-Autoimmune encephalitis: reviews & diagnostic approach",
+          "topic_id": "C.0",
+          "size": 10,
+          "sample": "Value of autoantibodies for prediction of treatment response in patients with autoimmune epilepsy: review of the literature and suggestions for clinical management",
+          "description": "Reviews and clinical diagnostic approaches",
+          "children": []
+        },
+        {
+          "name": "C-Immune-mediated epilepsies – clinical spectrum & paediatric focus",
+          "topic_id": "C.1",
+          "size": 12,
+          "sample": "[Immune-mediated epilepsy and encephalopathy]",
+          "description": "Clinical spectrum of immune epilepsies",
+          "children": []
+        },
+        {
+          "name": "C-Innate/adaptive immunity & FIRES / immunotherapy concepts",
+          "topic_id": "C.2",
+          "size": 5,
+          "sample": "Epileptic encephalitis: the role of the innate and adaptive immune system",
+          "description": "Immunity in FIRES and epilepsy",
+          "children": []
+        },
+        {
+          "name": "C-Neural antibody case-series (GlyR, CASPR2, anti-neuronal)",
+          "topic_id": "C.3",
+          "size": 7,
+          "sample": "Autoantibodies and epilepsy",
+          "description": "Case series of antibody-positive epilepsy",
+          "children": []
+        },
+        {
+          "name": "C-VGKC/LGI1/CASPR2 limbic encephalitis",
+          "topic_id": "C.9",
+          "size": 21,
+          "sample": "Creutzfeldt-Jakob disease mimicking autoimmune encephalitis with CASPR2 antibodies",
+          "description": "Autoimmune limbic encephalitis",
+          "children": []
+        },
+        {
+          "name": "C-CASPR2 & LGI1 antibody phenotypes / titres",
+          "topic_id": "C.17",
+          "size": 7,
+          "sample": "Contactin-Associated Protein-like 2 Antibodies: Tackling the Issue of Syndrome Diversity",
+          "description": "Phenotypes and titres in CASPR2 & LGI1",
+          "children": []
+        },
+        {
+          "name": "C-Rasmussen encephalitis therapy & CD8 pathogenesis",
+          "topic_id": "C.18",
+          "size": 7,
+          "sample": "Rasmussen encephalitis: incidence and course under randomized therapy with tacrolimus or intravenous immunoglobulins",
+          "description": "Rasmussen's encephalitis studies",
+          "children": []
+        },
+        {
+          "name": "C-Neuronal surface antibody syndromes – umbrella reviews",
+          "topic_id": "C.19",
+          "size": 10,
+          "sample": "[Antibody-associated diseases of the gray matter of the CNS: diagnosis and treatment]",
+          "description": "Reviews of neuronal antibody syndromes",
+          "children": []
+        },
+        {
+          "name": "C-Experimental models of NMDAR / GAD antibody epileptogenicity",
+          "topic_id": "C.22",
+          "size": 6,
+          "sample": "Stereotactic injection of cerebrospinal fluid from anti-NMDA receptor encephalitis into rat dentate gyrus impairs NMDA receptor function",
+          "description": "Animal and in-vitro autoimmune epilepsy models",
+          "children": []
+        },
+        {
+          "name": "C-GAD65 & T-cell pathology in TLE",
+          "topic_id": "C.23",
+          "size": 5,
+          "sample": "Treatment of immune-mediated temporal lobe epilepsy with GAD antibodies",
+          "description": "GAD65 antibody pathology",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Surgery & Outcomes",
+      "topic_id": "D",
+      "size": 25,
+      "sample": "",
+      "description": "High-level category: Surgery & Outcomes",
+      "children": [
+        {
+          "name": "D-Epilepsy surgery trends, withdrawal timing, histopathology",
+          "topic_id": "D.7",
+          "size": 25,
+          "sample": "Absolute spike frequency and etiology predict the surgical outcome in epilepsy due to amygdala lesions",
+          "description": "Surgical trends and outcomes",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Rehabilitation & Psychosocial",
+      "topic_id": "E",
+      "size": 25,
+      "sample": "",
+      "description": "High-level category: Rehabilitation & Psychosocial",
+      "children": [
+        {
+          "name": "E-Vocational rehabilitation & epilepsy nursing",
+          "topic_id": "E.0",
+          "size": 15,
+          "sample": "[Evaluation of the epilepsy basic training course IBF (Information, Counselling, Teaching) for staff members of services for people with disabilities]",
+          "description": "Vocational and nursing rehab programs",
+          "children": []
+        },
+        {
+          "name": "E-Young-adult residential rehab & transition care",
+          "topic_id": "E.1",
+          "size": 6,
+          "sample": "A time-limited residential unit for young adults with epilepsy and mild cognitive impairment: results of a prospective pre-post-study",
+          "description": "Residential and transition programs",
+          "children": []
+        },
+        {
+          "name": "E-Parental / family psycho-education (FAMOSES, SAPE)",
+          "topic_id": "E.2",
+          "size": 4,
+          "sample": "The psychoeducational program for children with epilepsy and their parents (FAMOSES): results of a controlled pilot study and a survey of parent satisfaction over a five-year period",
+          "description": "Family-centered education programs",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Cognition, Behaviour & QoL",
+      "topic_id": "F",
+      "size": 92,
+      "sample": "",
+      "description": "High-level category: Cognition, Behaviour & QoL",
+      "children": [
+        {
+          "name": "F-Language & memory fMRI / postoperative cognition",
+          "topic_id": "F.4",
+          "size": 24,
+          "sample": "Presurgical language fMRI activation correlates with postsurgical verbal memory decline in left-sided temporal lobe epilepsy",
+          "description": "Neuroimaging of language and memory",
+          "children": [
+            {
+              "name": "F-Emotion processing & striatal / amygdala reactivity",
+              "topic_id": "F.4.1",
+              "size": 12,
+              "sample": "Alterations of decision making and underlying neural correlates after resection of a mediofrontal cortical dysplasia: A single case study",
+              "description": "Emotion and amygdala studies",
+              "children": []
+            },
+            {
+              "name": "F-Face/scene processing after temporal resections",
+              "topic_id": "F.4.2",
+              "size": 4,
+              "sample": "Lesion side matters - an fMRI study on the association between neural correlates of watching dynamic fearful faces and their evaluation in patients with temporal lobe epilepsy",
+              "description": "Face and scene perception post-surgery",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "F-Disease burden & prescription patterns (Germany cohorts)",
+          "topic_id": "F.5",
+          "size": 22,
+          "sample": "[Rapid detection of a depressive disorder in persons with epilepsy. Validation of a German version of the NDDI-E]",
+          "description": "Disease burden studies",
+          "children": [
+            {
+              "name": "F-Attitudes, stigma, counselling (SAPE, ESSS-G)",
+              "topic_id": "F.5.1",
+              "size": 12,
+              "sample": "Quality of life, anxiety and depression in adult patients after add-on of levetiracetam and conversion to levetiracetam monotherapy",
+              "description": "Surveys on epilepsy attitudes",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "F-Psychiatric comorbidity, PNES, postsurgical psychiatry",
+          "topic_id": "F.8",
+          "size": 21,
+          "sample": "Ictal affective symptoms in temporal lobe epilepsy are related to gender and age",
+          "description": "Psychiatric outcomes in epilepsy",
+          "children": []
+        },
+        {
+          "name": "F-Hippocampal sclerosis imaging & real-life cognition",
+          "topic_id": "F.10",
+          "size": 13,
+          "sample": "Imaging of patients with hippocampal sclerosis at 7 Tesla: initial results",
+          "description": "Hippocampal sclerosis and cognition",
+          "children": []
+        },
+        {
+          "name": "F-Memory, amnesia & subjective complaints",
+          "topic_id": "F.21",
+          "size": 6,
+          "sample": "Social cognition in a case of amnesia with neurodevelopmental mechanisms",
+          "description": "Memory complaints in epilepsy",
+          "children": []
+        },
+        {
+          "name": "F-Pediatric cognition, Rolandic epilepsy & outcome prediction",
+          "topic_id": "F.24",
+          "size": 6,
+          "sample": "Intelligence quotient improves after antiepileptic drug withdrawal following pediatric epilepsy surgery",
+          "description": "Pediatric cognition studies",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Diagnostics & Monitoring / Basic-Neuro",
+      "topic_id": "G",
+      "size": 41,
+      "sample": "",
+      "description": "High-level category: Diagnostics & Monitoring / Basic-Neuro",
+      "children": [
+        {
+          "name": "G-Diagnostics: MRI protocols, HS classification, wearable seizure detection",
+          "topic_id": "G.11",
+          "size": 22,
+          "sample": "[Clinical application of functional MRI for chronic epilepsy]",
+          "description": "Neuroimaging and detection tools",
+          "children": []
+        },
+        {
+          "name": "G-Rare semiology & MRI-negative frontal/PNES overlap",
+          "topic_id": "G.16",
+          "size": 11,
+          "sample": "Secondarily generalized seizures in temporal lobe epilepsy",
+          "description": "Uncommon seizure semiology",
+          "children": []
+        },
+        {
+          "name": "G-Registries: SE (SENSE), SUDEP trends, safety initiatives",
+          "topic_id": "G.20",
+          "size": 8,
+          "sample": "Vagus nerve stimulation: outcome and predictors of seizure freedom in long-term follow-up",
+          "description": "Registry-based studies",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Other research topics",
+      "topic_id": "Z",
+      "size": 5,
+      "sample": "Comparison of propofol pharmacokinetic and pharmacodynamic models for awake craniotomy: A prospective observational study",
+      "description": "",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Co-authorship network — oa_coauth (To slider only)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin:0; }
+  #chart { width:100%; height:78vh; border-bottom:1px solid #ddd; background:#fff; }
+  .node { stroke: #fff; stroke-width: 1px; cursor: pointer; }
+  .link { stroke: #999; stroke-opacity: 0.6; }
+  .tooltip {
+    position: absolute;
+    padding:6px 8px;
+    background: rgba(0,0,0,0.8);
+    color:#fff; border-radius:4px; pointer-events:none;
+    font-size:12px;
+  }
+  #panel {
+    padding:8px;
+    height:22vh;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    box-sizing: border-box;
+    flex-wrap:wrap;
+  }
+  .btn { padding:6px 10px; border-radius:4px; border:1px solid #ccc; background:#f7f7f7; cursor:pointer; }
+  .status { color:#666; margin-left:8px; }
+  .small { font-size:13px; color:#444; }
+  .control-group { display:flex; gap:6px; align-items:center; }
+  .muted { color:#666; font-size:12px; margin-left:8px; }
+  .range-inline { display:flex; gap:6px; align-items:center; }
+  input[type="number"] { width:72px; padding:4px; }
+</style>
+</head>
+<body>
+
+<div id="chart"></div>
+
+<div id="panel">
+  <div>
+    <strong>Click a node</strong> to focus. Click background to reset.
+    <div class="small" id="status">Loading graph...</div>
+    <div class="small muted" id="filterSummary"></div>
+  </div>
+
+  <div style="margin-left:auto; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+
+    <div class="control-group">
+      <label style="font-size:13px">Institutional authors</label>
+      <select id="instAuthorSelect">
+        <option value="any">any authorship</option>
+        <option value="main">main authorship</option>
+      </select>
+      <div class="muted">applies to local authors (source)</div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">Collaborating authors</label>
+      <select id="collabAuthorSelect">
+        <option value="any">any authorship</option>
+        <option value="main">main authorship</option>
+      </select>
+      <div class="muted">applies to collaborators (target)</div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">From</label>
+      <div id="fromFixed" class="muted">—</div>
+      <div class="muted">fixed (from JSON config)</div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">To (slide — live)</label>
+      <div class="range-inline">
+        <input id="yearToRange" type="range" min="2000" max="2025" step="1" value="2025" />
+        <span id="yearToVal">2025</span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">Edge threshold</label>
+      <input id="edgeSlider" type="range" min="0" max="10" step="1" value="1" style="width:120px"/>
+      <span id="edgeVal" style="width:28px;text-align:center">1</span>
+    </div>
+
+    <div class="control-group">
+      <label style="font-size:13px">Node size</label>
+      <select id="sizeSelect">
+        <option value="pub_count">pub_count</option>
+        <option value="weighted_degree">weighted_degree</option>
+        <option value="main_pubs">main_pubs (filtered)</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <input id="searchBox" placeholder="Search author..." style="width:220px"/>
+    </div>
+
+    <div class="control-group">
+      <button id="applyFiltersBtn" class="btn">Apply filters</button>
+      <button id="resetBtn" class="btn">Reset layout</button>
+    </div>
+
+  </div>
+</div>
+
+<div id="tooltip" class="tooltip" style="display:none"></div>
+
+<!-- D3 v7 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+/* ================= CONFIG ================= */
+const JSON_PATH = "/data/oa_coauth.json";
+const TRANS_DUR = 500;
+const SIM_ALPHA = 0.9;
+const COOL_TIMEOUT = 900;
+
+/* ================= setup ================= */
+const container = d3.select("#chart");
+const statusEl = d3.select("#status");
+const filterSummaryEl = d3.select("#filterSummary");
+const tooltip = d3.select("#tooltip");
+
+const svg = container.append("svg")
+  .attr("width", "100%")
+  .attr("height", container.node().clientHeight || 720)
+  .call(d3.zoom().scaleExtent([0.1, 4]).on("zoom", (event) => g.attr("transform", event.transform)))
+  .on("dblclick.zoom", null);
+
+const g = svg.append("g");
+const linkG = g.append("g").attr("class","links");
+const nodeG = g.append("g").attr("class","nodes");
+
+let simulation = null;
+let graphGlobal = null;
+
+/* ---------------- helpers ---------------- */
+function prefixSum(arr){ const out=[]; let s=0; for(let i=0;i<(arr||[]).length;i++){ s += (arr[i]||0); out[i]=s; } return out; }
+function bisectRightLE(arr,x){ if(!Array.isArray(arr)) return -1; let lo=0,hi=arr.length-1,ans=-1; while(lo<=hi){ const m=(lo+hi)>>1; if(arr[m]<=x){ans=m; lo=m+1;} else hi=m-1;} return ans; }
+function cumRangeFromCumArrays(yearsArr,cumArr,fromY,toY){
+  if(!Array.isArray(yearsArr)||!Array.isArray(cumArr)||yearsArr.length!==cumArr.length) return 0;
+  const iTo = bisectRightLE(yearsArr,toY);
+  if(iTo < 0) return 0;
+  const iFromPrev = bisectRightLE(yearsArr,fromY-1);
+  const toVal = cumArr[iTo]||0;
+  const fromPrevVal = (iFromPrev >= 0 ? (cumArr[iFromPrev]||0) : 0);
+  return Math.max(0, toVal - fromPrevVal);
+}
+function sumCountsInWindowMap(m,fromY,toY){ if(!m||typeof m!=="object") return 0; let s=0; for(const [ys,c] of Object.entries(m)){ const y=+ys; if(y>=fromY&&y<=toY) s+= (+c||0);} return s; }
+
+/* ---------------- normalization ---------------- */
+function normalizeLinkArrays(l){
+  // ensure pub_years is array if provided; counts_by_year may be object or array
+  if (!Array.isArray(l.pub_years)) l.pub_years = Array.isArray(l.pub_years) ? l.pub_years : [];
+  // if counts_by_year is object -> convert to arrays aligned to pub_years if possible
+  if (!Array.isArray(l.counts_by_year) && l.counts_by_year && typeof l.counts_by_year === "object") {
+    const keys = Object.keys(l.counts_by_year).map(s=>+s).filter(x=>!isNaN(x)).sort((a,b)=>a-b);
+    const yrs = (Array.isArray(l.pub_years) && l.pub_years.length) ? l.pub_years : keys;
+    l.pub_years = yrs;
+    l.counts_by_year = yrs.map(y => +(l.counts_by_year[String(y)]||0));
+  } else if (Array.isArray(l.counts_by_year)) {
+    // keep arrays but do not invent years if pub_years missing
+    if (!Array.isArray(l.pub_years) || l.pub_years.length !== l.counts_by_year.length) {
+      // leave pub_years empty to signify "unknown alignment"; cumulative still computable
+      if (!Array.isArray(l.pub_years)) l.pub_years = [];
+    }
+  } else {
+    l.counts_by_year = Array.isArray(l.counts_by_year) ? l.counts_by_year : [];
+  }
+
+  // ensure cumulative
+  l.counts_by_year_cum = (Array.isArray(l.counts_by_year_cum) && l.counts_by_year_cum.length === l.counts_by_year.length)
+    ? l.counts_by_year_cum
+    : prefixSum(l.counts_by_year);
+
+  // role-pair arrays/cum handling (attempt to normalize similar to your schema)
+  l.role_pair_counts_by_year_arrays = l.role_pair_counts_by_year_arrays || {};
+  l.role_pair_counts_by_year_cum = l.role_pair_counts_by_year_cum || {};
+  const roles = ["either_main","both_main","source_main","target_main"];
+  roles.forEach(role=>{
+    if(Array.isArray(l.role_pair_counts_by_year_cum[role]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_cum[role].length===l.pub_years.length){
+      // ok
+    } else if(Array.isArray(l.role_pair_counts_by_year_arrays[role]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_arrays[role].length===l.pub_years.length){
+      l.role_pair_counts_by_year_cum[role] = prefixSum(l.role_pair_counts_by_year_arrays[role]);
+    } else if(l.role_pair_counts_by_year && l.role_pair_counts_by_year[role] && typeof l.role_pair_counts_by_year[role]==="object"){
+      const yrs = (Array.isArray(l.pub_years) && l.pub_years.length) ? l.pub_years : Object.keys(l.role_pair_counts_by_year[role]).map(s=>+s).filter(x=>!isNaN(x)).sort((a,b)=>a-b);
+      const arr = yrs.map(y => +(l.role_pair_counts_by_year[role][String(y)]||0));
+      l.role_pair_counts_by_year_arrays[role] = arr;
+      l.role_pair_counts_by_year_cum[role] = prefixSum(arr);
+      if (!Array.isArray(l.pub_years) || l.pub_years.length === 0) l.pub_years = yrs;
+    } else {
+      l.role_pair_counts_by_year_arrays[role] = l.role_pair_counts_by_year_arrays[role] && Array.isArray(l.role_pair_counts_by_year_arrays[role]) ? l.role_pair_counts_by_year_arrays[role] : (Array.isArray(l.pub_years) ? l.pub_years.map(_=>0) : []);
+      l.role_pair_counts_by_year_cum[role] = prefixSum(l.role_pair_counts_by_year_arrays[role]);
+    }
+  });
+
+  l._weight = +(l.weight_full ?? l.papers_count ?? l._weight ?? 0);
+  l._w_frac = +(l.weight_fractional ?? l._w_frac ?? (l._weight>0?1:0));
+}
+
+function normalizeNodeArrays(n){
+  n.pub_years = Array.isArray(n.pub_years)? n.pub_years : [];
+  if(Array.isArray(n.main_pubs_by_year) && n.pub_years.length === n.main_pubs_by_year.length){
+    n.main_pubs_by_year_cum = Array.isArray(n.main_pubs_by_year_cum) && n.main_pubs_by_year_cum.length===n.pub_years.length ? n.main_pubs_by_year_cum : prefixSum(n.main_pubs_by_year);
+  } else if(n.main_pubs_by_year && typeof n.main_pubs_by_year === "object"){
+    const yrs = (Array.isArray(n.pub_years) && n.pub_years.length) ? n.pub_years : Object.keys(n.main_pubs_by_year).map(s=>+s).filter(x=>!isNaN(x)).sort((a,b)=>a-b);
+    n.pub_years = yrs;
+    n.main_pubs_by_year = yrs.map(y => +(n.main_pubs_by_year[String(y)]||0));
+    n.main_pubs_by_year_cum = prefixSum(n.main_pubs_by_year);
+  } else {
+    if(!Array.isArray(n.main_pubs_by_year)) n.main_pubs_by_year = (Array.isArray(n.pub_years) ? n.pub_years.map(_=>0) : []);
+    if(!Array.isArray(n.main_pubs_by_year_cum) || n.main_pubs_by_year_cum.length !== n.pub_years.length) n.main_pubs_by_year_cum = prefixSum(n.main_pubs_by_year);
+  }
+}
+
+/* ---------------- combined weight logic (unchanged) ---------------- */
+function computeCombinedRoleKey(instFilter, collabFilter) {
+  if(instFilter === "any" && collabFilter === "any") return "counts_by_year";
+  if(instFilter === "main" && collabFilter === "any") return "source_main";
+  if(instFilter === "any" && collabFilter === "main") return "target_main";
+  if(instFilter === "main" && collabFilter === "main") return "both_main";
+  return "counts_by_year";
+}
+
+function computeWeightForLinkCombined(l, instFilter, collabFilter, fromY, toY){
+  const key = computeCombinedRoleKey(instFilter, collabFilter);
+  if(key === "counts_by_year"){
+    if(Array.isArray(l.pub_years) && Array.isArray(l.counts_by_year_cum) && l.pub_years.length === l.counts_by_year_cum.length){
+      return cumRangeFromCumArrays(l.pub_years, l.counts_by_year_cum, fromY, toY);
+    }
+    if(l.counts_by_year && typeof l.counts_by_year === "object") return sumCountsInWindowMap(l.counts_by_year, fromY, toY);
+  } else {
+    if(l.role_pair_counts_by_year_cum && Array.isArray(l.role_pair_counts_by_year_cum[key]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_cum[key].length === l.pub_years.length){
+      return cumRangeFromCumArrays(l.pub_years, l.role_pair_counts_by_year_cum[key], fromY, toY);
+    }
+    if(l.role_pair_counts_by_year_arrays && Array.isArray(l.role_pair_counts_by_year_arrays[key]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_arrays[key].length===l.pub_years.length){
+      const cum = prefixSum(l.role_pair_counts_by_year_arrays[key]);
+      return cumRangeFromCumArrays(l.pub_years, cum, fromY, toY);
+    }
+    if(l.role_pair_counts_by_year && l.role_pair_counts_by_year[key] && typeof l.role_pair_counts_by_year[key] === "object"){
+      return sumCountsInWindowMap(l.role_pair_counts_by_year[key], fromY, toY);
+    }
+    if(l.role_pair_totals && typeof l.role_pair_totals[key] !== "undefined") return +l.role_pair_totals[key];
+  }
+
+  // fallback scan per-paper if available
+  if(Array.isArray(l.papers) && l.papers.length){
+    let s=0;
+    for(const p of l.papers){
+      const y = +p.year; if(isNaN(y) || y<fromY || y>toY) continue;
+      const srcMain = (p.source_pos === "first" || p.source_pos === "last");
+      const tgtMain = (p.target_pos === "first" || p.target_pos === "last");
+      if(key === "counts_by_year") s++;
+      else if(key === "source_main" && srcMain) s++;
+      else if(key === "target_main" && tgtMain) s++;
+      else if(key === "both_main" && srcMain && tgtMain) s++;
+    }
+    return s;
+  }
+  return +(l._weight || 0);
+}
+
+/* ---------------- live To scrubbing (no layout restart) ---------------- */
+function updateToLive(toY){
+  if(!graphGlobal) return;
+  const fromY = graphGlobal.config && Number.isInteger(graphGlobal.config.min_year) ? graphGlobal.config.min_year : graphGlobal._computed_min_year || 2000;
+  const instFilter = d3.select("#instAuthorSelect").node().value;
+  const collabFilter = d3.select("#collabAuthorSelect").node().value;
+  const edgeThreshold = +d3.select("#edgeSlider").node().value;
+
+  // recompute link current weights (From→To)
+  graphGlobal.linksAll.forEach(l=>{
+    l._weight_current = computeWeightForLinkCombined(l, instFilter, collabFilter, fromY, toY);
+    l._w_frac_current = (l._weight_current && l._weight) ? (l._weight_current / (l._weight || 1)) : (l._weight_current > 0 ? 1 : 0);
+  });
+
+  // update link visuals (existing elements)
+  linkG.selectAll("line").each(function(d){
+    const el = d3.select(this);
+    const w = d._weight_current ?? d._weight ?? 0;
+    if(w < edgeThreshold){ el.style("display","none"); }
+    else {
+      el.style("display", null);
+      if(window._linkWidth) el.transition().duration(160).attr("stroke-width", window._linkWidth(w));
+      if(window._linkOpacity) el.transition().duration(160).style("opacity", window._linkOpacity(d._w_frac_current ?? d._w_frac ?? 1));
+    }
+  });
+
+  // update node sizes visually (no simulation restart)
+  const sizeMetric = d3.select("#sizeSelect").node().value;
+  let nodeMetricMap = null;
+  if(sizeMetric === "main_pubs"){
+    nodeMetricMap = new Map(graphGlobal.nodes.map(n=>[n.id,0]));
+    graphGlobal.linksAll.forEach(l=>{
+      const sid = (typeof l.source === "object") ? l.source.id : l.source;
+      const tid = (typeof l.target === "object") ? l.target.id : l.target;
+      const srcMainCount = computeWeightForLinkCombined(l, "main", "any", fromY, toY);
+      const tgtMainCount = computeWeightForLinkCombined(l, "any", "main", fromY, toY);
+      if(graphGlobal.nodesById.get(sid) && graphGlobal.nodesById.get(sid).is_local){
+        nodeMetricMap.set(sid, (nodeMetricMap.get(sid)||0) + srcMainCount);
+      }
+      if(graphGlobal.nodesById.get(tid) && !graphGlobal.nodesById.get(tid).is_local){
+        nodeMetricMap.set(tid, (nodeMetricMap.get(tid)||0) + tgtMainCount);
+      }
+    });
+  }
+
+  // animate node updates
+  nodeG.selectAll("g.node").select("circle").each(function(d){
+    const el = d3.select(this);
+    let val;
+    if(sizeMetric === "main_pubs" && nodeMetricMap){ val = +(nodeMetricMap.get(d.id) || 0); }
+    else { val = +(d[sizeMetric] ?? d.pub_count ?? d.pubs ?? 1); }
+    if(window._rScale) el.transition().duration(200).attr("r", window._rScale(val));
+    const ring = d3.select(this.parentNode).select(".local-ring");
+    if(ring.size() && window._rScale) ring.transition().duration(200).attr("r", window._rScale(val) + 4);
+  });
+
+  // dim nodes below threshold quickly
+  const visibleNodeIds = new Set(graphGlobal.linksAll.filter(l => (l._weight_current >= edgeThreshold)).flatMap(l => [ (typeof l.source ==="object"?l.source.id:l.source), (typeof l.target==="object"?l.target.id:l.target) ]));
+  nodeG.selectAll("g.node").transition().duration(120).style("opacity", d => visibleNodeIds.has(d.id)?1:0.12).style("pointer-events", d => visibleNodeIds.has(d.id) ? "auto" : "none");
+
+  // update filter summary
+  updateFilterSummary();
+}
+
+/* ---------------- fetch + init ---------------- */
+fetch(JSON_PATH).then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+.then(graph=>{
+  if(!graph || !Array.isArray(graph.nodes) || !Array.isArray(graph.links)) throw new Error("JSON missing nodes/links array");
+
+  // normalize nodes & links
+  graph.nodes.forEach(n=>{
+    n.pub_count = +(n.pub_count ?? n.pubs ?? 1);
+    n.pubs = n.pub_count;
+    n.weighted_degree = +(n.weighted_degree ?? 0);
+    n.is_local = !!n.is_local;
+    n.label = n.label ?? n.id;
+    normalizeNodeArrays(n);
+  });
+  graph.links.forEach(l => normalizeLinkArrays(l));
+  graph.linksAll = graph.links.slice();
+
+  // create nodesById map and resolve link endpoints to objects where possible
+  graph.nodesById = new Map(graph.nodes.map(n=>[n.id,n]));
+  const nodeById = graph.nodesById;
+  graph.linksAll.forEach(l=>{
+    if(typeof l.source === "string" || typeof l.source === "number"){
+      const s = nodeById.get(l.source); if(s) l.source = s;
+    }
+    if(typeof l.target === "string" || typeof l.target === "number"){
+      const t = nodeById.get(l.target); if(t) l.target = t;
+    }
+  });
+
+  // Use config.min_year / max_year if present, else compute as before (robust)
+  let minY = Infinity, maxY = -Infinity;
+  // fast path: prefer config
+  if(graph.config && Number.isInteger(graph.config.min_year) && Number.isInteger(graph.config.max_year)){
+    minY = graph.config.min_year;
+    maxY = graph.config.max_year;
+  } else {
+    // compute robustly from link/year sources (ignore implausible years)
+    graph.linksAll.forEach(l=>{
+      if (Array.isArray(l.pub_years) && l.pub_years.length) {
+        const realYears = l.pub_years.map(y=>+y).filter(y=>!isNaN(y) && y >= 1800 && y <= 2100);
+        if(realYears.length){ minY = Math.min(minY, realYears[0]); maxY = Math.max(maxY, realYears[realYears.length-1]); }
+      }
+      if (l.counts_by_year && typeof l.counts_by_year === "object" && !Array.isArray(l.counts_by_year)) {
+        for (const y of Object.keys(l.counts_by_year)) {
+          const yy = +y;
+          if (!isNaN(yy) && yy >= 1800 && yy <= 2100) { minY = Math.min(minY, yy); maxY = Math.max(maxY, yy); }
+        }
+      }
+      if (l.role_pair_counts_by_year) {
+        Object.values(l.role_pair_counts_by_year).forEach(obj=>{ if(!obj) return; for(const y of Object.keys(obj)){ const yy=+y; if(!isNaN(yy) && yy >= 1800 && yy <= 2100){ minY=Math.min(minY,yy); maxY=Math.max(maxY,yy); } }});
+      }
+      if (Array.isArray(l.papers)) l.papers.forEach(p=>{ const yy=+p.year; if(!isNaN(yy) && yy >= 1800 && yy <= 2100){ minY=Math.min(minY,yy); maxY=Math.max(maxY,yy);} });
+    });
+    graph.nodes.forEach(n=>{ if(n.first_year && +n.first_year >= 1800) minY = Math.min(minY, +n.first_year); if(n.last_year && +n.last_year >= 1800) maxY = Math.max(maxY, +n.last_year); });
+    if(!isFinite(minY)) minY = 2000;
+    if(!isFinite(maxY)) maxY = new Date().getFullYear();
+  }
+
+  // persist computed range so other parts can refer to it
+  graph._computed_min_year = minY;
+  graph._computed_max_year = maxY;
+
+  // set UI: show fixed From (from config) and set To slider min/max
+  const fromVal = (graph.config && Number.isInteger(graph.config.min_year)) ? graph.config.min_year : minY;
+  d3.select("#fromFixed").text(fromVal);
+  const toRange = d3.select("#yearToRange").attr("min", fromVal).attr("max", maxY).property("value", maxY);
+  d3.select("#yearToVal").text(toRange.node().value);
+
+  statusEl.text(`Loaded graph — ${graph.nodes.length} nodes, ${graph.linksAll.length} links.`);
+  graphGlobal = graph;
+  renderGraph(graphGlobal);
+
+  // live To slider update
+  d3.select("#yearToRange").on("input", function(){
+    const toVal = +this.value;
+    d3.select("#yearToVal").text(toVal);
+    updateToLive(toVal);
+  });
+
+}).catch(err => { console.error(err); statusEl.text("Error loading graph: "+err.message); });
+
+/* ---------------- renderGraph implementation ---------------- */
+function renderGraph(graph){
+  linkG.selectAll("*").remove();
+  nodeG.selectAll("*").remove();
+
+  const nodes = graph.nodes;
+  let linksCurrent = graph.linksAll.slice();
+
+  // scales
+  const NODE_SIZE_BY_DEFAULT = "pub_count";
+  const nodeSizeMetric = NODE_SIZE_BY_DEFAULT;
+  const nodeSizeValues = nodes.map(d => +(d[nodeSizeMetric] ?? d.pub_count ?? d.pubs ?? 1));
+  let nodeSizeExtent = d3.extent(nodeSizeValues);
+  if(nodeSizeExtent[0] === nodeSizeExtent[1]){ nodeSizeExtent[0] = Math.max(0, nodeSizeExtent[0]-1); nodeSizeExtent[1] = nodeSizeExtent[1]+1; }
+  let rScale = d3.scaleSqrt().domain(nodeSizeExtent).range([5, 28]);
+  window._rScale = rScale;
+
+  const linkWeightValues = graph.linksAll.map(d => +d._weight);
+  let linkWeightExtent = d3.extent(linkWeightValues);
+  if(linkWeightExtent[0] === linkWeightExtent[1]){ linkWeightExtent[0] = Math.max(0, linkWeightExtent[0]-1); linkWeightExtent[1] = linkWeightExtent[1]+1; }
+  let linkWidth = d3.scaleSqrt().domain(linkWeightExtent).range([0.6, 6]);
+  let linkOpacity = d3.scaleLinear().domain([0,1]).range([0.12,1]);
+  window._linkWidth = linkWidth;
+  window._linkOpacity = linkOpacity;
+
+  const MIN_LINK_DIST = 30;
+  const MAX_LINK_DIST = 180;
+  function weightToDistance(w){ const base = Math.sqrt((w||0)+1); return Math.max(MIN_LINK_DIST, Math.min(MAX_LINK_DIST, Math.round(MAX_LINK_DIST / base))); }
+
+  // initial DOM creation
+  let link = linkG.selectAll("line")
+    .data(linksCurrent, d => d.id ?? `${(d.source.id||d.source)}|${(d.target.id||d.target)}`)
+    .enter().append("line")
+    .attr("class","link")
+    .attr("stroke-width", d => linkWidth(d._weight))
+    .style("opacity", d => linkOpacity(d._w_frac))
+    .style("display", d => (d._weight >= +d3.select("#edgeSlider").node().value) ? null : "none");
+
+  let node = nodeG.selectAll("g")
+    .data(nodes, d => d.id)
+    .enter().append("g")
+    .attr("class","node")
+    .call(d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
+
+  node.append("circle")
+    .attr("r", d => rScale(+(d.pub_count ?? d.pubs ?? 1)))
+    .attr("fill", d => d.is_local ? "#1f77b4" : "#ff7f0e")
+    .attr("stroke", "#fff").attr("stroke-width",1.2);
+
+  node.append("circle")
+    .attr("class","local-ring")
+    .attr("r", d => rScale(+(d.pub_count ?? d.pubs ?? 1)) + 4)
+    .attr("fill","none")
+    .attr("stroke", d => d.is_local ? "#003f5c" : "#999")
+    .attr("stroke-width", d => d.is_local ? 1.6 : 0.6)
+    .attr("stroke-dasharray", d => d.is_local ? "4,2" : "1,0")
+    .style("opacity", d => d.is_local ? 0.9 : 0.1);
+
+  node.on("mouseover", (event,d) => {
+    tooltip.style("display","block").html(`<strong>${d.label || d.id}</strong><br/>pubs: ${d.pubs}<br/>local: ${d.is_local ? "yes":"no"}<br/>weighted_degree: ${d.weighted_degree ?? "?"}`)
+      .style("left",(event.pageX+10)+"px").style("top",(event.pageY+10)+"px");
+  }).on("mousemove",(event)=>{ tooltip.style("left",(event.pageX+10)+"px").style("top",(event.pageY+10)+"px"); })
+    .on("mouseout", ()=> tooltip.style("display","none"));
+
+  // simulation
+  simulation = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(linksCurrent).id(d=>d.id).distance(d=>weightToDistance(d._weight)).strength(0.7))
+    .force("charge", d3.forceManyBody().strength(-160))
+    .force("center", d3.forceCenter(container.node().clientWidth/2, container.node().clientHeight/2))
+    .force("collision", d3.forceCollide().radius(d => rScale(+(d.pub_count ?? d.pubs ?? 1)) + 6))
+    .on("tick", ticked);
+
+  function ticked(){
+    link.attr("x1", d=>d.source.x).attr("y1", d=>d.source.y).attr("x2", d=>d.target.x).attr("y2", d=>d.target.y);
+    node.attr("transform", d=>`translate(${d.x},${d.y})`);
+  }
+
+  const adjacency = buildAdjacency({nodes:nodes, links:graph.linksAll});
+
+  // star-focus
+  let isStar=false, lastFocused=null;
+  node.on("click",(event,d)=>{
+    event.stopPropagation();
+    if(isStar && lastFocused && lastFocused.id === d.id){ resetLayout(); return; }
+    focusStar(d);
+  });
+
+  svg.on("click", ()=>{ if(isStar) resetLayout(); });
+  d3.select("#resetBtn").on("click", resetLayout);
+
+  setTimeout(()=>{ simulation.alpha(0.9).restart(); setTimeout(()=>simulation.alphaTarget(0),1200); }, 50);
+
+  function focusStar(centerNode){
+    isStar=true; lastFocused=centerNode;
+    const neighIds = Array.from(adjacency.get(centerNode.id) || []);
+    const neighbors = nodes.filter(n => neighIds.includes(n.id));
+    const centerX = container.node().clientWidth/2; const centerY=container.node().clientHeight/2;
+    const innerRadius = Math.max(120, 40 + neighbors.length * 12);
+    neighbors.forEach((n,i)=>{ const angle = (i/Math.max(1,neighbors.length))*2*Math.PI; n.fx = centerX + Math.cos(angle)*innerRadius; n.fy = centerY + Math.sin(angle)*innerRadius; });
+    centerNode.fx = centerX; centerNode.fy = centerY;
+
+    node.transition().duration(TRANS_DUR).style("opacity", d => (d.id === centerNode.id || neighIds.includes(d.id)) ? 1 : 0)
+      .on("end", function(d){ if(!(d.id === centerNode.id || neighIds.includes(d.id))) d3.select(this).style("pointer-events","none"); });
+
+    link.transition().duration(TRANS_DUR).style("opacity", l => (l.source.id === centerNode.id || l.target.id === centerNode.id) ? 1 : 0);
+    simulation.alpha(SIM_ALPHA).restart(); setTimeout(()=>simulation.alphaTarget(0), COOL_TIMEOUT);
+    statusEl.text(`Focused: ${centerNode.label || centerNode.id} — ${neighbors.length} coauthors`);
+    showInfo(centerNode, neighbors.length);
+  }
+
+  function resetLayout(){
+    isStar=false; lastFocused=null;
+    node.style("pointer-events","auto");
+    node.transition().duration(TRANS_DUR).style("opacity",1);
+    link.transition().duration(TRANS_DUR).style("opacity", d => (d._w_frac ? linkOpacity(d._w_frac) : 1));
+    nodes.forEach(n=>{ n.fx=null; n.fy=null; });
+    simulation.alpha(SIM_ALPHA).restart(); setTimeout(()=>simulation.alphaTarget(0), COOL_TIMEOUT);
+    statusEl.text(`Graph: ${nodes.length} nodes, ${graph.linksAll.length} links.`);
+    d3.select("#panel").selectAll(".info").remove();
+  }
+
+  // UI references
+  const edgeSlider = d3.select("#edgeSlider");
+  const edgeVal = d3.select("#edgeVal");
+  const sizeSelect = d3.select("#sizeSelect");
+  const searchBox = d3.select("#searchBox");
+  const instSelect = d3.select("#instAuthorSelect");
+  const collabSelect = d3.select("#collabAuthorSelect");
+  const applyFiltersBtn = d3.select("#applyFiltersBtn");
+
+  // applyFilters: full rebind + restart (used when inst/collab or size changes)
+  function applyFilters(){
+    const instFilter = instSelect.node().value;
+    const collabFilter = collabSelect.node().value;
+    const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+    const toY = +d3.select("#yearToRange").node().value;
+    const edgeThreshold = +edgeSlider.node().value;
+    const sizeMetric = sizeSelect.node().value;
+    edgeVal.text(edgeThreshold);
+
+    const f = Math.min(fromY,toY), t = Math.max(fromY,toY);
+
+    // recompute link current weights
+    graph.linksAll.forEach(l=>{
+      l._weight_current = computeWeightForLinkCombined(l, instFilter, collabFilter, f, t);
+      l._w_frac_current = (l._weight_current && l._weight) ? (l._weight_current / (l._weight || 1)) : (l._weight_current > 0 ? 1 : 0);
+    });
+
+    // compute nodeMetricMap for main_pubs if needed
+    let nodeMetricMap = null;
+    if(sizeMetric === "main_pubs"){
+      nodeMetricMap = new Map(nodes.map(n=>[n.id,0]));
+      graph.linksAll.forEach(l=>{
+        const srcMainCount = computeWeightForLinkCombined(l, "main", "any", f, t);
+        const tgtMainCount = computeWeightForLinkCombined(l, "any", "main", f, t);
+        if(srcMainCount>0){
+          const sid = (typeof l.source === "object")? l.source.id : l.source;
+          nodeMetricMap.set(sid, (nodeMetricMap.get(sid)||0) + srcMainCount);
+        }
+        if(tgtMainCount>0){
+          const tid = (typeof l.target === "object")? l.target.id : l.target;
+          nodeMetricMap.set(tid, (nodeMetricMap.get(tid)||0) + tgtMainCount);
+        }
+      });
+    }
+
+    // filtered links by threshold
+    const filteredLinks = graph.linksAll.filter(l => (l._weight_current >= edgeThreshold));
+    const linkKey = d => d.id ?? `${(d.source.id||d.source)}|${(d.target.id||d.target)}`;
+
+    // rebind links
+    let link = linkG.selectAll("line").data(filteredLinks, linkKey);
+    link.exit().transition().duration(250).style("opacity",0).remove();
+    const linkEnter = link.enter().append("line").attr("class","link").style("opacity",0).attr("stroke-width", d => (window._linkWidth?window._linkWidth(d._weight_current||d._weight||1):1));
+    link = linkEnter.merge(link);
+    link.transition().duration(350)
+      .attr("stroke-width", d => (window._linkWidth?window._linkWidth(d._weight_current||d._weight||1):1))
+      .style("opacity", d => (window._linkOpacity?window._linkOpacity(d._w_frac_current ?? d._w_frac ?? 1):1));
+
+    // update node sizes
+    let sizeVals;
+    if(sizeMetric === "main_pubs" && nodeMetricMap) sizeVals = nodes.map(n=> +(nodeMetricMap.get(n.id) || 0));
+    else sizeVals = nodes.map(n=> +(n[sizeMetric] ?? n.pub_count ?? n.pubs ?? 1));
+    let newExtent = d3.extent(sizeVals); if(newExtent[0]===newExtent[1]) newExtent[1] = newExtent[0]+1;
+    const rS = d3.scaleSqrt().domain(newExtent).range([5,28]); window._rScale = rS;
+    node.select("circle").transition().duration(400).attr("r", d => {
+      const val = sizeMetric === "main_pubs" && nodeMetricMap ? +(nodeMetricMap.get(d.id)||0) : +(d[sizeMetric] ?? d.pub_count ?? d.pubs ?? 1);
+      return rS(val);
+    });
+    node.select(".local-ring").transition().duration(400).attr("r", d => rS( sizeMetric === "main_pubs" && nodeMetricMap ? +(nodeMetricMap.get(d.id)||0) : +(d[sizeMetric] ?? d.pub_count ?? d.pubs ?? 1) ) + 4);
+
+    // dim nodes outside filtered set
+    const visibleNodeIds = new Set(filteredLinks.flatMap(l => [ (l.source.id||l.source), (l.target.id||l.target) ]));
+    node.transition().duration(300).style("opacity", d => visibleNodeIds.has(d.id) ? 1 : 0.12)
+        .style("pointer-events", d => visibleNodeIds.has(d.id) ? "auto" : "none");
+
+    // update forces & rebind links
+    try{ simulation.force("link").links(filteredLinks); } catch(e){}
+    simulation.force("link").distance(d => weightToDistance(d._weight_current || d._weight || 1));
+    simulation.alpha(0.9).restart(); setTimeout(()=>simulation.alphaTarget(0), 1100);
+
+    statusEl.text(`Visible nodes: ${visibleNodeIds.size} / ${nodes.length} — visible links: ${filteredLinks.length}`);
+    updateFilterSummary();
+  } // end applyFilters
+
+  // edge slider quick update
+  d3.select("#edgeSlider").on("input", ()=>{
+    const thr = +d3.select("#edgeSlider").node().value; d3.select("#edgeVal").text(thr);
+    linkG.selectAll("line").style("display", d => (d._weight_current >= thr || d._weight >= thr) ? null : "none");
+    const visibleNodeIds = new Set(graph.linksAll.filter(l => (l._weight_current >= thr || l._weight >= thr)).flatMap(l => [ (l.source.id||l.source), (l.target.id||l.target) ]));
+    nodeG.selectAll("g.node").transition().duration(160).style("opacity", d => visibleNodeIds.has(d.id) ? 1 : 0.12);
+  });
+
+  // apply filters button and size select
+  d3.select("#applyFiltersBtn").on("click", ()=> applyFilters());
+  d3.select("#sizeSelect").on("change", ()=> applyFilters());
+
+  // search
+  d3.select("#searchBox").on("keydown", function(event){ if(event.key === "Enter"){ const q=this.value.trim().toLowerCase(); if(!q) return; const found = nodes.find(n => n.label.toLowerCase().includes(q)); if(found){ d3.selectAll(".node").filter(d => d.id === found.id).dispatch("click"); setTimeout(()=> centerOnNode(found,1.6),250);} else alert("No match"); }});
+
+  // expose
+  window._graph = graph; window._sim = simulation; window._applyFilters = applyFilters;
+
+  // initial apply (use config min as from)
+  applyFilters();
+}
+
+/* ---------------- helpers ---------------- */
+function buildAdjacency(arg1,arg2){
+  let nodes=null, links=null;
+  if(Array.isArray(arg1) && Array.isArray(arg2)){ nodes=arg1; links=arg2; }
+  else if(arg1 && typeof arg1 === "object"){
+    if(Array.isArray(arg1.nodes)) nodes = arg1.nodes;
+    if(Array.isArray(arg1.links)) links = arg1.links;
+    if(!links && Array.isArray(arg1.linksAll)) links = arg1.linksAll;
+    if(!nodes && Array.isArray(links)){ const ids = new Set(); links.forEach(l => { const s = (typeof l.source === "object")?l.source.id:l.source; const t = (typeof l.target==="object")?l.target.id:l.target; if(s) ids.add(s); if(t) ids.add(t); }); nodes = Array.from(ids).map(id=>({id})); }
+  }
+  nodes = Array.isArray(nodes)? nodes : [];
+  links = Array.isArray(links)? links : [];
+  const adj = new Map(); nodes.forEach(n=>adj.set(n.id,new Set())); links.forEach(l=>{ const s=(typeof l.source==="object")?l.source.id:l.source; const t=(typeof l.target==="object")?l.target.id:l.target; if(!s||!t) return; if(!adj.has(s)) adj.set(s,new Set()); if(!adj.has(t)) adj.set(t,new Set()); adj.get(s).add(t); adj.get(t).add(s); });
+  return adj;
+}
+
+function centerOnNode(d, zoom=1.6){
+  const svgW = container.node().clientWidth, svgH = container.node().clientHeight;
+  const x = d.x, y = d.y; const transform = d3.zoomIdentity.translate(svgW/2 - x*zoom, svgH/2 - y*zoom).scale(zoom);
+  svg.transition().duration(600).call(d3.zoom().transform, transform);
+}
+function showInfo(centerNode, nNeigh){ const panel = d3.select("#panel"); panel.selectAll(".info").remove(); if(!centerNode) return; panel.append("div").attr("class","info").html(`<strong>${centerNode.label || centerNode.id}</strong> — pubs: ${centerNode.pubs || "?"} — coauthors: ${nNeigh}`); }
+function dragstarted(event,d){ if(!event.active && simulation) simulation.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; }
+function dragged(event,d){ d.fx = event.x; d.fy = event.y; }
+function dragended(event,d){ if(!event.active && simulation) simulation.alphaTarget(0); }
+
+function updateFilterSummary(){
+  const inst = d3.select("#instAuthorSelect").node().value;
+  const coll = d3.select("#collabAuthorSelect").node().value;
+  const from = graphGlobal && graphGlobal.config && Number.isInteger(graphGlobal.config.min_year) ? graphGlobal.config.min_year : graphGlobal._computed_min_year;
+  const to = +d3.select("#yearToRange").node().value;
+  const thr = +d3.select("#edgeSlider").node().value;
+  filterSummaryEl.text(`Inst:${inst} | Collab:${coll} | Years:${from}–${to} | Edge≥${thr}`);
+}
+</script>
+</body>
+</html>

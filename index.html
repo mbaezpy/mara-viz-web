@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Viz</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="main-tabs">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="Logo" onerror="this.style.display='none'">
+      <div class="brand-text">
+        <div class="brand-title">Research Viz</div>
+        <!--div class="brand-sub">Analytics</div-->
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <button data-view="topic_explorer" class="active">Topic Explorer</button>
+      <button data-view="publications_chart">Publications Over Time</button>
+      <button data-view="network_graph">Collaboration Network</button>
+    </nav>
+  </header>
+  <main id="main-view"></main>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script type="module" src="js/main.js"></script>  
+</body>
+</html>

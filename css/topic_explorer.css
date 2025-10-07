@@ -1,0 +1,76 @@
+
+ #topic-explorer-container {width: 100%;}
+  .app{ display:flex; gap:0; height:100%;  overflow:hidden; } 
+  .stage{ flex:1 1 auto; min-width: 0; display:flex; align-items:stretch; justify-content:center; position:relative; }
+  .stage-inner{ width:100%; height:100%; position:relative; }
+
+  svg{ width:100%; height:100%; display:block; outline:none; background: var(--bg); }
+  circle{ cursor:pointer; stroke: #00000014; stroke-width: 0.75px; transition: stroke .15s ease; }
+  .node--leaf{ fill:#ffffff; }
+  .node--focus{ outline: 3px solid var(--focus); outline-offset: 4px; }
+  /* Hover + selection cues */
+  circle.is-hover{ stroke:#00000066; }
+  circle.is-selected{ stroke:#334155; stroke-width:1.5px; }
+
+  .labels text{ font-size:12px; text-anchor:middle; pointer-events:none; fill: var(--ink); filter: drop-shadow(0 1px 0 #ffffff); }
+
+  .breadcrumbs{ position:absolute; left:16px; top:12px; background: var(--panel-bg); border:1px solid var(--tooltip-border); border-radius: 10px; padding:6px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display:flex; flex-wrap:wrap; gap:6px; align-items:center; z-index:2; }
+  .breadcrumbs span{ color: var(--muted); }
+  .crumb{ display:inline-flex; gap:8px; align-items:center; }
+  .crumb a{ color: var(--ink); text-decoration:none; font-weight:600; }
+  .crumb a:hover{ text-decoration:underline; }
+
+  .panel{ width: 360px; max-width: 42vw; background: var(--panel-bg); border-left: 1px solid var(--tooltip-border); box-shadow: -8px 0 24px rgba(0,0,0,0.05); padding: 16px 16px 24px; overflow:auto; }
+  .panel h2{ margin:0 0 4px; font-size:18px; line-height:1.2; }
+  .panel .meta{ color: var(--muted); font-size:12px; margin-bottom: 12px; }
+  .panel section{ margin-top: 16px; }
+  .panel h3{ margin:0 0 8px; font-size:13px; letter-spacing: .2px; color: var(--muted); text-transform: uppercase; }
+  .panel .desc{ font-size: 14px; color: var(--ink); background: var(--chip); border-radius: 12px; padding: 10px; }
+
+  .chips{ display:flex; flex-wrap: wrap; gap:8px; }
+  .chip{ background: var(--chip); border:1px solid #e2e8f0; border-radius: 999px; padding:6px 10px; font-size:13px; }
+
+  .list{ list-style:none; padding:0; margin:0; display:grid; gap:4px; }
+  /* .list.compact li{ padding:4px 6px; font-size:12px; display:flex; justify-content:space-between; align-items:center; border:1px solid #e2e8f0; border-radius:8px; background:#fff; } */
+  .line1 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.list.compact li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* or stretch */
+  padding: 4px 6px;
+  font-size: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+  .j-title{ flex:1; color: var(--muted); overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+  .badge{ font-weight:600; color: var(--ink); background: var(--chip); border-radius:999px; padding:2px 6px; font-size:11px; }
+  .list small{ color: var(--muted); }
+  .list a{ color: inherit; text-decoration:none;}
+  .list li{ padding:8px 10px; border:1px solid #e2e8f0; border-radius: 12px; background:#fff; }
+
+
+
+  /* .list{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+  .list li{ padding:8px 10px; border:1px solid #e2e8f0; border-radius: 12px; background:#fff; }
+  .list a{ color: inherit; text-decoration:none; }
+  .list small{ color: var(--muted); } */
+
+  .tooltip{ position:absolute; pointer-events:none; background: var(--tooltip-bg); border:1px solid var(--tooltip-border); padding:8px 10px; border-radius:10px; font-size:12px; max-width:280px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); opacity:0; transform: translate(-50%,-120%); white-space:nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .skeleton{ position:relative; overflow:hidden; background: #f1f5f9; border-radius:12px; min-height: 64px; }
+  .skeleton::after{ content:""; position:absolute; inset:0; transform: translateX(-100%); background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.7), rgba(255,255,255,0)); animation: shimmer 1.25s infinite; }
+  @keyframes shimmer{ 100% { transform: translateX(100%); }}
+
+  /* Mobile stacking */
+  @media (max-width: 900px){
+    .app{ flex-direction: column; }
+    .panel{ width:100%; max-width:none; border-left: none; border-top: 1px solid var(--tooltip-border); box-shadow: 0 -8px 24px rgba(0,0,0,0.05); }
+    .breadcrumbs{ left: 12px; right: 12px; overflow:auto; }
+  }
