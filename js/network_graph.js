@@ -185,6 +185,7 @@ export async function init({ mount }) {
       .enter()
       .append('line')
       .attr('class', 'link')
+      .attr('stroke', '#999')
       .attr('stroke-width', (d) => linkWidthScale(d._weight))
       .style('opacity', (d) => linkOpacityScale(d._w_frac))
       .style('display', (d) => (d._weight >= +edgeSlider.node().value ? null : 'none'));
