@@ -10,51 +10,57 @@
       <div class="network-small network-muted" id="network-filter-summary"></div>
     </div>
 
-    <div class="network-panel-controls">
-      <div class="network-control-group">
-        <label class="network-label">Institutional authors</label>
-        <select id="network-inst-select">
-          <option value="any">any authorship</option>
-          <option value="main">main authorship</option>
-        </select>
-        <div class="network-muted">applies to local authors (source)</div>
-      </div>
+    <div class="network-panel-filters">
+      <h2 class="network-filters-title">Filters</h2>
+      <div class="network-panel-controls">
+        <div class="network-control-group">
+          <label class="network-label" for="network-inst-select">Institutional authors</label>
+          <select id="network-inst-select">
+            <option value="any">any authorship</option>
+            <option value="main">main authorship</option>
+          </select>
+          <div class="network-hint">Applies to local authors (source)</div>
+        </div>
 
-      <div class="network-control-group">
-        <label class="network-label">Collaborating authors</label>
-        <select id="network-collab-select">
-          <option value="any">any authorship</option>
-          <option value="main">main authorship</option>
-        </select>
-        <div class="network-muted">applies to collaborators (target)</div>
-      </div>
+        <div class="network-control-group">
+          <label class="network-label" for="network-collab-select">Collaborating authors</label>
+          <select id="network-collab-select">
+            <option value="any">any authorship</option>
+            <option value="main">main authorship</option>
+          </select>
+          <div class="network-hint">Applies to collaborators (target)</div>
+        </div>
 
-      <div class="network-control-group">
-        <label class="network-label">From</label>
-        <div id="network-from-fixed" class="network-muted">—</div>
-        <div class="network-muted">fixed (from JSON config)</div>
-      </div>
+        <div class="network-control-group">
+          <label class="network-label" for="network-from-fixed">From year</label>
+          <div id="network-from-fixed" class="network-pill">—</div>
+          <div class="network-hint">Defined in data configuration</div>
+        </div>
 
-      <div class="network-control-group">
-        <label class="network-label">To (live preview)</label>
-        <div class="network-range-inline">
-          <input id="network-year-to-range" type="range" min="2000" max="2025" step="1" value="2025" />
-          <span id="network-year-to-value">2025</span>
+        <div class="network-control-group">
+          <label class="network-label" for="network-year-to-range">To year (live)</label>
+          <div class="network-range-inline">
+            <input id="network-year-to-range" type="range" min="2000" max="2025" step="1" value="2025" />
+            <span id="network-year-to-value" class="network-pill">2025</span>
+          </div>
+        </div>
+
+        <div class="network-control-group">
+          <label class="network-label" for="network-edge-slider">Edge threshold</label>
+          <div class="network-range-inline">
+            <input id="network-edge-slider" type="range" min="1" max="10" step="1" value="1" />
+            <span id="network-edge-value" class="network-pill">1</span>
+          </div>
+        </div>
+
+        <div class="network-control-group">
+          <label class="network-label" for="network-search">Search authors</label>
+          <input id="network-search" type="search" placeholder="Type a name and press Enter" />
         </div>
       </div>
 
-      <div class="network-control-group">
-        <label class="network-label">Edge threshold</label>
-        <input id="network-edge-slider" type="range" min="1" max="10" step="1" value="1" />
-        <span id="network-edge-value">1</span>
-      </div>
-
-      <div class="network-control-group">
-        <input id="network-search" placeholder="Search author..." />
-      </div>
-
-      <div class="network-control-group network-control-buttons">
-        <button id="network-apply" class="network-btn">Apply filters</button>
+      <div class="network-control-actions">
+        <button id="network-apply" class="network-btn network-btn-primary">Apply filters</button>
         <button id="network-reset" class="network-btn">Reset layout</button>
         <button id="network-dump" class="network-btn" title="Debug dump">Debug dump</button>
       </div>

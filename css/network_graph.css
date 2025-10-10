@@ -13,45 +13,113 @@
 }
 
 .network-panel {
-  padding: 8px;
-  height: 22vh;
-  display: flex;
-  gap: 12px;
-  align-items: center;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.45fr) 1fr;
+  gap: 20px;
+  align-items: start;
   box-sizing: border-box;
-  flex-wrap: wrap;
+  background: #fafafa;
+  border-top: 1px solid #ececec;
 }
 
 .network-panel-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
+  min-width: 200px;
+}
+
+.network-panel-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.network-filters-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
 }
 
 .network-panel-controls {
-  margin-left: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .network-control-group {
   display: flex;
+  flex-direction: column;
   gap: 6px;
-  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  background: #fff;
+  min-width: 0;
+}
+
+.network-control-group select,
+.network-control-group input[type='range'],
+.network-control-group input[type='search'] {
+  width: 100%;
 }
 
 .network-label {
   font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+
+.network-hint {
+  color: #666;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.network-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f1f3f5;
+  font-size: 12px;
+  color: #333;
+  min-height: 24px;
 }
 
 .network-btn {
-  padding: 6px 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #f7f7f7;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #cfd4d9;
+  background: #ffffff;
   cursor: pointer;
+  font-weight: 600;
+  color: #1f2a37;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.network-btn:hover {
+  background: #f1f5f9;
+}
+
+.network-btn-primary {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+.network-btn-primary:hover {
+  background: #1e40af;
+  border-color: #1e40af;
+}
+
+.network-control-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .network-tooltip {
@@ -75,6 +143,10 @@
   font-size: 12px;
 }
 
+.network-panel-info .network-muted {
+  max-width: 320px;
+}
+
 .network-range-inline {
   display: flex;
   gap: 6px;
@@ -87,12 +159,23 @@
 }
 
 #network-search {
-  width: 220px;
-  padding: 4px 6px;
+  width: 100%;
+  padding: 6px 8px;
+  box-sizing: border-box;
 }
 
-.network-control-buttons {
-  margin-left: 12px;
+.network-panel-info strong {
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .network-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .network-panel-info {
+    order: -1;
+  }
 }
 
 .network-graph-view svg {
