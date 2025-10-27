@@ -11,6 +11,9 @@
     --tooltip-bg: #ffffff;
     --tooltip-border: #cbd5e1;
     --focus: #2563eb33; /* soft focus ring */
+    --brand-blue: #2563eb;
+    --tag-bg: hsl(210 16% 96%);
+    --tag-fg: hsl(210 10% 30%);
   }
   html, body { height: 100%; }
   body { margin: 0; font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color: var(--ink); background: var(--bg); }
@@ -19,6 +22,18 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* fallback */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* header stays its natural size */
@@ -31,6 +46,7 @@ header.main-tabs {
 /* the view-wrapper should also fill and allow inner scrolling */
 .view-wrapper { display: flex; flex: 1 1 auto; min-height: 0; width: 100%; }
 
+ svg{ width:100%; height:100%; display:block; outline:none; background: var(--bg); }
 
 header.main-tabs {
   display: flex;
@@ -83,4 +99,283 @@ header.main-tabs {
 .nav-tabs button.active {
   color: var(--brand-blue);
   border-bottom-color: var(--brand-blue);
+}
+
+.library-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  background: var(--bg);
+}
+
+.library-controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--tooltip-border);
+  background: var(--panel-bg);
+}
+
+.library-search input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--tooltip-border);
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+}
+
+.library-search input:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.library-mode {
+  display: inline-flex;
+  background: var(--bg);
+  border: 1px solid var(--tooltip-border);
+  border-radius: 999px;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
+}
+
+.library-mode button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 6px 16px;
+  font: 600 13px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--muted);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.library-mode button.is-active {
+  background: var(--panel-bg);
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.library-results {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 0 16px 24px;
+}
+
+.library-empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.library-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.library-table thead {
+  background: var(--bg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.library-table th,
+.library-table td {
+  padding: 12px 16px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--tooltip-border);
+}
+
+.library-table tbody tr:hover .title-text {
+  text-decoration: underline;
+}
+
+.library-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.library-table .col-year,
+.library-table .col-pubs,
+.library-table .col-citations {
+  width: 80px;
+  text-align: right;
+  font-feature-settings: "tnum" 1;
+  color: var(--muted);
+}
+
+.library-table .col-title {
+  width: auto;
+}
+
+.library-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.library-title .title-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+
+.library-table {
+  width: 100%;
+  table-layout: fixed; /* <-- key */
+}
+
+.library-table th.col-year,
+.library-table td.col-year { width: 72px; }
+
+.library-table th.col-citations,
+.library-table td.col-citations { width: 96px; }
+
+/* Let the middle column take the rest */
+.library-table th.col-title,
+.library-table td.col-title { width: auto; }
+
+/* Ensure inner blocks can actually shrink inside the fixed cell */
+.col-title .library-title,
+.col-title .library-authors,
+.col-title .library-venue,
+.col-title .library-tags { min-width: 0; }
+
+.library-authors,
+.library-venue {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+/* wrapper must NOT clip; inner text does */
+.authors-wrap {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  min-width: 0; /* important in flex/table-fixed */
+}
+
+/* your existing rules + ensure shrink */
+.library-authors { min-width: 0; }
+.library-authors.collapsed{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.library-authors:not(.collapsed) {
+  white-space: normal;
+}
+
+.library-authors-toggle {
+  position: absolute;
+  right: -40px;
+  top: 5px;
+  bottom: auto;              /* keep on the first line */
+  margin-left: 6px;
+  padding-left: 10px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0), var(--panel-bg) 40%);
+  /* visual style */
+  color: var(--brand-blue);
+  font-size: 12px;
+  cursor: pointer;
+  border: 0;
+}
+
+.library-authors-toggle:hover {
+  text-decoration: underline;
+}
+
+.author-name--local {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.author-name {
+  color: inherit;
+}
+
+.library-venue {
+  font-size: 13px;
+}
+
+.library-tags {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--tag-fg);
+  font-size: 12px;
+  max-width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.link-icon:hover {
+  transform: translateY(-1px);
+}
+
+.library-author-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.library-author-affiliation {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 960px) {
+  .library-controls {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .library-mode {
+    justify-self: flex-start;
+  }
+
+  .library-table .col-year,
+  .library-table .col-pubs,
+  .library-table .col-citations {
+    width: 64px;
+  }
 }

@@ -1,7 +1,21 @@
 // js/topic_explorer.js
 // Uses global d3 (UMD). Ensure <script src="https://d3js.org/d3.v7.min.js"></script>
 // is loaded before your module loader.
-export async function init({ mount } = {}) {
+
+let root = null;
+let focus = null;
+let view = null;
+let lookupCache = null;
+let lookupPromise = null;
+let selectedEl = null;
+let abortController = null;
+let navigateFn = null;
+let pendingTopicId = null;
+let applyRouteTopic = null;
+let setSelectedNode = () => {};
+let zoomToNodeRef = () => {};
+
+export async function init({ mount, route = {}, navigate } = {}) {
   if (!mount) throw new Error('topic_explorer.init requires { mount } DOM element');
 
   // scoped selections (operate only inside this mount)
@@ -25,24 +39,43 @@ export async function init({ mount } = {}) {
     d3.hierarchy(data).sum(d => d.size || 0).sort((a,b) => b.value - a.value)
   );
 
-  let root, focus, view;
-  let authorsCache = null, topicSummary = null, cachePromise = null;
-  let selectedEl = null;
-  let abortController = new AbortController();
+  // reset state
+  root = null;
+  focus = null;
+  view = null;
+  lookupCache = null;
+  lookupPromise = null;
+  selectedEl = null;
+  applyRouteTopic = null;
+  setSelectedNode = () => {};
+  abortController = new AbortController();
+  navigateFn = typeof navigate === 'function' ? navigate : null;
+  pendingTopicId = typeof route.topic === 'string' && route.topic ? route.topic : null;
 
-  // Load side data (with abort support)
-  function loadSideDataOnce(){
-    if(cachePromise) return cachePromise;
+  // Load lookup data (with abort support)
+  function loadLookupOnce(){
+    if(lookupPromise) return lookupPromise;
     const signal = abortController.signal;
-    cachePromise = Promise.all([
-      fetch('data/topic_authors.json', { signal }).then(r => r.ok ? r.json() : {} ).catch(()=>({})),
-      fetch('data/topic_summary.json', { signal }).then(r => r.ok ? r.json() : {} ).catch(()=>({}))
-    ]).then(([authors, summary]) => { authorsCache = authors; topicSummary = summary; return {authors, summary}; });
-    return cachePromise;
-  }
-
-  function normalizeKey(nodeData){
-    return (nodeData.topic_id || nodeData.id || nodeData.key || nodeData.name || '').toString();
+    lookupPromise = fetch('data/topics_lookup.json', { signal })
+      .then(resp => {
+        if(!resp.ok) throw new Error(`Failed to load topics_lookup.json: ${resp.status}`);
+        return resp.json();
+      })
+      .then(payload => {
+        lookupCache = {
+          papers: payload.papers || {},
+          authors: payload.authors || {},
+          journals: payload.journals || {}
+        };
+        return lookupCache;
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') return { papers:{}, authors:{}, journals:{} };
+        console.warn(err);
+        lookupCache = { papers:{}, authors:{}, journals:{} };
+        return lookupCache;
+      });
+    return lookupPromise;
   }
 
   function escapeHTML(s){
@@ -61,95 +94,210 @@ export async function init({ mount } = {}) {
     crumbs.selectAll('a').on('click', (event) => {
       const idx = +event.currentTarget.getAttribute('data-crumb-index');
       const target = path[idx];
-      zoomToNode(target);
+      zoomToNodeRef(target);
+      if (target === root) {
+        setSelectedNode(null);
+      } else {
+        setSelectedNode(target);
+      }
       showDetails(target);
-      if (selectedEl) { d3.select(selectedEl).classed('is-selected', false); selectedEl = null; }
       event.preventDefault();
       event.stopPropagation();
     });
   }
 
-  function showDetails(node){
+  function formatAuthorList(authorRefs, authorsLookup, limit = 4){
+    if(!Array.isArray(authorRefs)) return '';
+    const names = [];
+    for(const ref of authorRefs){
+      const authorId = typeof ref === 'string' ? ref : ref && ref.id;
+      if(!authorId) continue;
+      const author = authorsLookup[authorId];
+      const name = author && author.display_name;
+      if(name) names.push(name);
+      if(names.length >= limit) break;
+    }
+    return names.join(', ');
+  }
+
+  function buildAuthorEntries(topAuthors, lookup){
+    const authorsLookup = lookup.authors || {};
+    return (topAuthors || []).map(author => {
+      const details = authorsLookup[author.id] || {};
+      return {
+        id: author.id,
+        name: author.display_name || details.display_name || 'Unknown author',
+        paper_count: author.paper_count ?? details.paper_count ?? 0,
+        orcid: author.orcid || details.orcid || null,
+        currently_local: details.currently_local ?? false,
+        current_affiliation: (() => {
+          const aff = details.current_affiliation;
+          if (!aff) return null;
+          if (typeof aff === 'string') return aff;
+          return aff.display_name || aff.id || null;
+        })()
+      };
+    });
+  }
+
+  function buildJournalEntries(topJournals, lookup){
+    const journalsLookup = lookup.journals || {};
+    return (topJournals || []).map(journal => {
+      const details = journalsLookup[journal.id] || {};
+      return {
+        id: journal.id,
+        name: journal.display_name || details.display_name || 'Unknown journal',
+        paper_count: journal.paper_count ?? details.paper_count ?? 0,
+        issn_l: details.issn_l || null
+      };
+    });
+  }
+
+  function buildPaperEntries(topPapers, lookup){
+    const papersLookup = lookup.papers || {};
+    const authorsLookup = lookup.authors || {};
+    const journalsLookup = lookup.journals || {};
+
+    return (topPapers || []).map(paper => {
+      const details = papersLookup[paper.id] || {};
+      const doi = paper.doi || details.doi || null;
+      const authorRefs = Array.isArray(details.author_ids) ? details.author_ids : [];
+      const journalId = details.journal_id;
+      const journal = journalId ? journalsLookup[journalId] : null;
+      return {
+        id: paper.id,
+        title: paper.title || details.title || 'Untitled',
+        year: paper.publication_year || details.publication_year || '',
+        cited_by_count: paper.cited_by_count ?? details.cited_by_count ?? null,
+        doi,
+        href: doi ? `https://doi.org/${doi}` : null,
+        authors: formatAuthorList(authorRefs, authorsLookup),
+        journal: journal ? journal.display_name : null
+      };
+    });
+  }
+
+  function showDetails(node, options = {}){
     const data = node.data || {};
-    const key = normalizeKey(data);
+    const docCount = data.doc_count ?? data.size ?? 0;
+    const docDirect = data.doc_count_direct ?? docCount;
+    const keywords = Array.isArray(data.top_keywords) ? data.top_keywords : [];
+
+    const isRoot = !node.parent;
+
+    if (isRoot) {
+      panel.html(`
+        <h2>${escapeHTML(data.name || 'Research Topics')}</h2>
+        <p class="meta">Our institution is carrying out research in the following topics:</p>
+        <ul class="list compact" id="root-topic-list"></ul>
+        <p class="meta">Click on the topic visualization to learn more about each topic.</p>
+      `);
+      panel.select('#root-topic-list')
+        .selectAll('li')
+        .data((data.children || []).map(child => ({
+          name: child.name,
+          count: child.doc_count ?? child.size ?? 0,
+        })))
+        .join('li')
+        .html(topic => `<div class="line1">${escapeHTML(topic.name)}${topic.count ? `<span class="badge">${topic.count}</span>` : ''}</div>`);
+      if (!options.suppressRoute) {
+        updateRoute(null);
+      }
+      return;
+    }
 
     panel.html(`
       <h2>${escapeHTML(data.name || 'Untitled')}</h2>
-      <div class="meta">${node.children ? 'Cluster' : 'Topic'} • ${data.size ? `${data.size} documents` : ''}</div>
+      <div class="meta">${node.children ? 'Cluster' : 'Topic'}${docCount ? ` • ${docCount} documents` : ''}${docDirect !== docCount ? ` • ${docDirect} direct` : ''}</div>
       ${data.description ? `<section><h3>Description</h3><div class="desc">${escapeHTML(data.description)}</div></section>`: ''}
+      ${keywords.length ? `
+        <section id="keywords-section">
+          <h3>Top Keywords</h3>
+          <div class="chips">
+            ${keywords.map(k => `<span class="chip">${escapeHTML(k.display_name || k.id || k)}</span>`).join('')}
+          </div>
+        </section>
+      ` : ''}
       <section id="authors-section"><h3>Top Authors</h3><div class="skeleton" style="height:48px"></div></section>
       <section id="journals-section"><h3>Top Journals</h3><div class="skeleton" style="height:56px"></div></section>
-      <section id="pubs-section"><h3>Relevant Publications</h3><div class="skeleton" style="height:96px"></div></section>
+      <section id="pubs-section"><h3>Top Publications</h3><div class="skeleton" style="height:96px"></div></section>
     `);
 
-    loadSideDataOnce().then(()=>{
-      // Authors
-      const authors = (authorsCache && (authorsCache[key] || authorsCache[data.name])) || [];
+    loadLookupOnce().then(lookup => {
+      const authorsData = buildAuthorEntries(data.top_authors, lookup).filter(author => author.currently_local);
+      const journalsData = buildJournalEntries(data.top_journals, lookup);
+      const papersData = buildPaperEntries(data.top_papers, lookup);
+
       const aWrap = panel.select('#authors-section');
-      if(authors.length){
+      if(authorsData.length){
         aWrap.html('<h3>Top Authors</h3>');
-        const chips = aWrap.append('div').attr('class','chips');
-        chips.selectAll('span').data(authors.slice(0,12)).join('span').attr('class','chip').text(d => d.name ? `${d.name}${d.count?` (${d.count})`:''}` : d);
+        const list = aWrap.append('ul').attr('class','list compact');
+        list.selectAll('li')
+          .data(authorsData.slice(0,12))
+          .join('li')
+          .html(author => {
+            const suffix = author.paper_count ? `<span class="badge">${author.paper_count}</span>` : '';
+            const affiliation = author.current_affiliation ? `<small>${escapeHTML(author.current_affiliation)}</small>` : '';
+            const orcid = author.orcid ? `<small>ORCID: <a href="${author.orcid}" target="_blank" rel="noopener">${escapeHTML(author.orcid.replace('https://orcid.org/', ''))}</a></small>` : '';
+            return [
+              `<div class="line1">${escapeHTML(author.name)}${suffix}</div>`,
+              affiliation,
+              orcid
+            ].filter(Boolean).join('');
+          });
       } else {
         aWrap.html('<h3>Top Authors</h3><p class="meta">No authors available for this topic.</p>');
       }
 
-      // Journals + Publications from topic_summary
-      const summary = (topicSummary && (topicSummary[key] || topicSummary[data.name])) || {};
-      const journals = Array.isArray(summary.top_journals) ? summary.top_journals : [];
-      const pubs = Array.isArray(summary.publications) ? summary.publications : [];
-
       const jWrap = panel.select('#journals-section');
-      if(journals.length){
+      if(journalsData.length){
         jWrap.html('<h3>Top Journals</h3>');
         const ulJ = jWrap.append('ul').attr('class','list compact');
-        ulJ.selectAll('li').data(journals).join('li').html(j=>renderJournal(j));
-      } else jWrap.html('<h3>Top Journals</h3><p class="meta">No journals</p>');
+        ulJ.selectAll('li')
+          .data(journalsData.slice(0,10))
+          .join('li')
+          .html(journal => {
+            const badge = journal.paper_count ? `<span class="badge">${journal.paper_count}</span>` : '';
+            const issn = journal.issn_l ? `<small>ISSN-L ${escapeHTML(journal.issn_l)}</small>` : '';
+            return `<div class="line1">${escapeHTML(journal.name)}${badge}</div>${issn}`;
+          });
+      } else {
+        jWrap.html('<h3>Top Journals</h3><p class="meta">No journals available for this topic.</p>');
+      }
 
       const pWrap = panel.select('#pubs-section');
-      if(pubs.length){
-        pWrap.html('<h3>Relevant Publications</h3>');
+      if(papersData.length){
+        pWrap.html('<h3>Top Publications</h3>');
         const ul = pWrap.append('ul').attr('class','list');
-        ul.selectAll('li').data(pubs.slice(0,20)).join('li').html(p => renderPub(p));
+        ul.selectAll('li')
+          .data(papersData.slice(0,20))
+          .join('li')
+          .html(paper => {
+            const title = escapeHTML(paper.title);
+            const metaParts = [];
+            if(paper.authors) metaParts.push(escapeHTML(paper.authors));
+            if(paper.journal) metaParts.push(escapeHTML(paper.journal));
+            if(paper.year) metaParts.push(escapeHTML(String(paper.year)));
+            const cites = Number.isFinite(paper.cited_by_count) ? `Citations: ${paper.cited_by_count}` : '';
+            if(cites) metaParts.push(escapeHTML(cites));
+            const meta = metaParts.join(' · ');
+            if(paper.href){
+              return `<a href="${paper.href}" target="_blank" rel="noopener">${title}</a><br/><small>${meta}</small>`;
+            }
+            return `${title}<br/><small>${meta}</small>`;
+          });
       } else {
-        pWrap.html('<h3>Relevant Publications</h3><p class="meta">No publications available for this topic.</p>');
+        pWrap.html('<h3>Top Publications</h3><p class="meta">No publications available for this topic.</p>');
       }
     }).catch(err=>{
       if (err.name === 'AbortError') return;
-      console.warn('loadSideDataOnce error', err);
+      console.warn('loadLookupOnce error', err);
     });
-  }
 
-  function renderJournal(j) {
-    return `
-      <div class="line1">
-        <span class="j-title">${escapeHTML(j.Journal)}</span>
-        <span class="badge">${j.count_in_topic}</span>
-      </div>
-      <small>IF ${escapeHTML(j.IF || '–')}</small>
-    `;
-  }
-
-  function parseIF(v){
-    if(v==null) return null;
-    if(typeof v === 'number') return v;
-    if(typeof v === 'string'){
-      const s = v.replace(/,/g,'.').replace(/[^0-9.]/g,'');
-      const num = parseFloat(s);
-      return Number.isFinite(num) ? num : null;
+    if (!options.suppressRoute) {
+      const topicId = node === root ? null : (data.topic_id || null);
+      updateRoute(topicId);
     }
-    return null;
-  }
-
-  function renderPub(p){
-    const title = escapeHTML(p.Title || p.title || p.name || 'Untitled');
-    const year = p.Year || p.year || (p.date && (p.date.year || new Date(p.date).getFullYear())) || '';
-    const authors = Array.isArray(p.Authors) ? p.Authors.join(', ') : (p.authors || p.Authors || '');
-    const venue = p.Journal || p.venue || p.source || '';
-    const href = p.url || p.URL || p.DOI ? (p.url || p.URL || `https://doi.org/${p.DOI}`) : null;
-    const meta = [authors, year, venue].filter(Boolean).join(' · ');
-    return href ? `<a href="${href}" target="_blank" rel="noopener">${title}</a><br/><small>${escapeHTML(meta)}</small>`
-                : `${title}<br/><small>${escapeHTML(meta)}</small>`;
   }
 
   function draw(data){
@@ -159,6 +307,16 @@ export async function init({ mount } = {}) {
     // remove previous nodes/labels if any
     gNodes.selectAll('*').interrupt().remove();
     gLabels.selectAll('*').remove();
+
+    setSelectedNode = function(node){
+      if (selectedEl) d3.select(selectedEl).classed('is-selected', false);
+      if (!node) {
+        selectedEl = null;
+        return;
+      }
+      selectedEl = svg.selectAll('circle').filter(d => d === node).node();
+      if (selectedEl) d3.select(selectedEl).classed('is-selected', true);
+    };
 
     const nodes = gNodes.selectAll('circle').data(root.descendants()).join('circle')
       .attr('class', d => d.children ? 'node node--internal' : 'node node--leaf')
@@ -173,26 +331,24 @@ export async function init({ mount } = {}) {
         tooltip.style('opacity', 1).html(`<strong>${escapeHTML(shortName)}</strong>${d.data.size?` • ${d.data.size}`:''}`);
       })
       .on('mousemove', function(event){
-        const {pageX:x, pageY:y} = event;
-        tooltip.style('left', x + 'px').style('top', y - 18 + 'px');
+        const { pageX: x, pageY: y } = event;
+        const offsetX = 16;
+        const offsetY = 12;
+        tooltip.style('left', `${x + offsetX}px`).style('top', `${y + offsetY}px`);
       })
       .on('mouseout', function(){
         d3.select(this).classed('is-hover', false);
         tooltip.style('opacity', 0);
       })
       .on('click', (event, d)=>{
-        if (selectedEl && selectedEl !== event.currentTarget) {
-          d3.select(selectedEl).classed('is-selected', false);
-        }
-        selectedEl = event.currentTarget;
-        d3.select(selectedEl).classed('is-selected', true);
+        setSelectedNode(d);
 
         if (d.children) {
-          if (focus !== d) { zoomToNode(d); }
+          if (focus !== d) { zoomToNodeRef(d); }
           showDetails(d);
         } else {
           const parent = d.parent || root;
-          if (focus !== parent) { zoomToNode(parent); }
+          if (focus !== parent) { zoomToNodeRef(parent); }
           showDetails(d);
         }
         event.stopPropagation();
@@ -230,21 +386,51 @@ export async function init({ mount } = {}) {
 
     // attach a background click listener directly to this svg selection
     svg.on('click.topicExplorer', (event)=>{
-      if(focus !== root){ zoomToNode(root); showDetails(root); }
-      d3.selectAll('circle.is-selected').classed('is-selected', false);
-      selectedEl = null;
+      if(focus !== root){ zoomToNodeRef(root); showDetails(root); }
+      setSelectedNode(null);
     });
 
-    function zoomToNode(d){ focus = d; setCrumbs(d); zoom(d); }
+    zoomToNodeRef = function(d){
+      focus = d;
+      setCrumbs(d);
+      zoom(d);
+    };
 
     // Initialize panel + crumbs
     setCrumbs(root);
-    showDetails(root);
+    showDetails(root, { suppressRoute: true });
+
+    applyRouteTopic = (topicId, options = {}) => {
+      pendingTopicId = topicId || null;
+      if (!root) return;
+      if (!topicId) {
+        zoomToNodeRef(root);
+        setSelectedNode(null);
+        showDetails(root, { suppressRoute: options.suppressRouteUpdate });
+        return;
+      }
+      const target = root.descendants().find(n => (n.data || {}).topic_id === topicId);
+      if (!target) return;
+      if (target.children) {
+        if (focus !== target) zoomToNodeRef(target);
+        setSelectedNode(target);
+        showDetails(target, { suppressRoute: options.suppressRouteUpdate });
+      } else {
+        const parent = target.parent || root;
+        if (focus !== parent) zoomToNodeRef(parent);
+        setSelectedNode(target);
+        showDetails(target, { suppressRoute: options.suppressRouteUpdate });
+      }
+    };
+
+    if (pendingTopicId) {
+      applyRouteTopic(pendingTopicId, { suppressRouteUpdate: true });
+    }
   }
 
   // start: fetch and draw (keep abort-aware)
   try {
-    const resp = await fetch('data/hierarchy_bubble.json', { signal: abortController.signal });
+    const resp = await fetch('data/topics_hierarchy.json', { signal: abortController.signal });
     if (!resp.ok) throw new Error(`Failed to load hierarchy: ${resp.status}`);
     const data = await resp.json();
     draw(data);
@@ -252,7 +438,7 @@ export async function init({ mount } = {}) {
     if (err.name === 'AbortError') {
       // aborted during cleanup — ignore
     } else {
-      panel.html('<p class="meta">Failed to load hierarchy_bubble.json</p>');
+      panel.html('<p class="meta">Failed to load topics_hierarchy.json</p>');
       console.error(err);
     }
   }
@@ -270,18 +456,41 @@ export async function init({ mount } = {}) {
     crumbs.html('');
 
     // clear caches
-    cachePromise = null;
-    authorsCache = null;
-    topicSummary = null;
+    lookupPromise = null;
+    lookupCache = null;
+    applyRouteTopic = null;
 
     // remove svg-level listener namespace
     try { svg.on('.topicExplorer', null); } catch(e){}
 
     selectedEl = null;
+    root = null;
+    focus = null;
+    view = null;
+    setSelectedNode = () => {};
+    zoomToNodeRef = () => {};
+    navigateFn = null;
+    pendingTopicId = null;
+    abortController = null;
   }
 
   // also support named export destroy()
   return cleanup;
+}
+
+function updateRoute(topicId){
+  if (typeof navigateFn !== 'function') return;
+  navigateFn({ topic: topicId || null });
+}
+
+export function onRouteChange({ params = {}, navigate } = {}) {
+  if (typeof navigate === 'function') {
+    navigateFn = navigate;
+  }
+  pendingTopicId = typeof params.topic === 'string' && params.topic ? params.topic : null;
+  if (typeof applyRouteTopic === 'function') {
+    applyRouteTopic(pendingTopicId, { suppressRouteUpdate: true });
+  }
 }
 
 export async function destroy() {

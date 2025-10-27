@@ -2,6 +2,7 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   color: #222;
+  width: 100%;
 }
 
 .network-chart {
@@ -176,10 +177,6 @@
   .network-panel-info {
     order: -1;
   }
-}
-
-.network-graph-view svg {
-  font: inherit;
 }
 
 .network-tooltip hr {

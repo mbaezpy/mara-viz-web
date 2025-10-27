@@ -1,0 +1,15 @@
+<div class="library-view">
+  <header class="library-controls">
+    <div class="library-search">
+      <label class="sr-only" for="library-search">Search</label>
+      <input id="library-search" type="search" data-role="search" placeholder="Search titles, authors, venues, topics…" autocomplete="off" spellcheck="false" />
+    </div>
+    <div class="library-mode" role="tablist" aria-label="Library mode">
+      <button type="button" class="is-active" data-role="mode-btn" data-mode="publications" aria-selected="true">Publications</button>
+      <button type="button" data-role="mode-btn" data-mode="authors" aria-selected="false">Authors</button>
+    </div>
+    <div class="library-actions"></div>
+  </header>
+
+  <section class="library-results" id="library-results" aria-live="polite"></section>
+</div>
