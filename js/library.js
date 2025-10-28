@@ -1,5 +1,4 @@
 const DEBOUNCE_MS = 250;
-const MAX_COLLAPSED_AUTHORS = 3;
 
 let state = null;
 let elements = null;
@@ -55,9 +54,30 @@ function applySearch(items, term) {
   });
 }
 
-function renderPublications(items) {
+function createPanels() {
+  const pubPanel = document.createElement("div");
+  pubPanel.className = "library-panel";
+  pubPanel.dataset.panel = "publications";
+
+  const authorPanel = document.createElement("div");
+  authorPanel.className = "library-panel";
+  authorPanel.dataset.panel = "authors";
+
+  elements.results.innerHTML = "";
+  elements.results.appendChild(pubPanel);
+  elements.results.appendChild(authorPanel);
+
+  authorPanel.style.display = "none";
+
+  elements.panels = {
+    publications: pubPanel,
+    authors: authorPanel,
+  };
+}
+
+function renderPublications(panel, items) {
   if (!items.length) {
-    elements.results.innerHTML = `<div class="library-empty">No results. Try a different search.</div>`;
+    panel.innerHTML = `<div class="library-empty">No results. Try a different search.</div>`;
     return;
   }
 
@@ -65,7 +85,7 @@ function renderPublications(items) {
     const segments = pub.authors.map((a, idx) => {
       const name = escapeHTML(a.name || "Unknown");
       const cls = a.local ? "author-name author-name--local" : "author-name";
-      const suffix = idx < pub.authors.length - 1 ? ', ' : '';
+      const suffix = idx < pub.authors.length - 1 ? ", " : "";
       return `<span class="${cls}">${name}</span>${suffix}`;
     });
     const expanded = state.expandedPublications.has(pub.id);
@@ -85,17 +105,11 @@ function renderPublications(items) {
             ${linkIcon}
           </div>
           <div class="authors-wrap" data-role="authors-wrap">
-            <div class="library-authors${expanded ? '' : ' collapsed'}"
-                data-role="authors"
-                data-id="${escapeHTML(pub.id)}">
-              ${segments.join('') || "—"}
+            <div class="library-authors${expanded ? "" : " collapsed"}" data-role="authors" data-id="${escapeHTML(pub.id)}">
+              ${segments.join("") || "—"}
             </div>
-            <button type="button"
-                    class="library-authors-toggle"
-                    data-role="authors-toggle"
-                    data-id="${escapeHTML(pub.id)}"
-                    hidden>
-              (${expanded ? 'less' : 'more'})
+            <button type="button" class="library-authors-toggle" data-role="authors-toggle" data-id="${escapeHTML(pub.id)}" hidden>
+              (${expanded ? "less" : "more"})
             </button>
           </div>
           <div class="library-venue">${escapeHTML(pub.venue || "—")}</div>
@@ -106,7 +120,7 @@ function renderPublications(items) {
     `;
   }).join("");
 
-  elements.results.innerHTML = `
+  panel.innerHTML = `
     <table class="library-table library-table--publications">
       <thead>
         <tr>
@@ -118,12 +132,13 @@ function renderPublications(items) {
       <tbody>${rows}</tbody>
     </table>
   `;
-  requestAnimationFrame(setupAuthorOverflow);
+
+  requestAnimationFrame(() => setupAuthorOverflow(panel));
 }
 
-function renderAuthors(items) {
+function renderAuthors(panel, items) {
   if (!items.length) {
-    elements.results.innerHTML = `<div class="library-empty">No results. Try a different search.</div>`;
+    panel.innerHTML = `<div class="library-empty">No results. Try a different search.</div>`;
     return;
   }
 
@@ -142,7 +157,7 @@ function renderAuthors(items) {
     `;
   }).join("");
 
-  elements.results.innerHTML = `
+  panel.innerHTML = `
     <table class="library-table library-table--authors">
       <thead>
         <tr>
@@ -154,30 +169,23 @@ function renderAuthors(items) {
       <tbody>${rows}</tbody>
     </table>
   `;
-  const toggles = elements.results.querySelectorAll('[data-role="authors-toggle"]');
-  toggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.id;
-      if (!id) return;
-      if (state.expandedPublications.has(id)) {
-        state.expandedPublications.delete(id);
-      } else {
-        state.expandedPublications.add(id);
-      }
-      render();
-    });
-  });
 }
 
-function render() {
-  if (!state || !elements || !dataCache) return;
-  const dataset = state.mode === "authors" ? dataCache.authors : dataCache.publications;
-  if (!dataset) return;
-  updateModeButtons(state.mode);
-  elements.searchInput.value = state.search;
+function ensurePanel(mode) {
+  const cache = state.panelCache[mode];
+  const panel = elements.panels[mode];
+  const dataset = mode === "authors" ? dataCache.authors : dataCache.publications;
+  if (!panel || !dataset) return;
+
+  if (cache.rendered && cache.search === state.search) {
+    if (mode === "publications") {
+      requestAnimationFrame(() => setupAuthorOverflow(panel));
+    }
+    return;
+  }
 
   let items = applySearch(dataset, state.search);
-  if (state.mode === "publications") {
+  if (mode === "publications") {
     items = [...items].sort((a, b) => {
       const yearA = a.year ?? -Infinity;
       const yearB = b.year ?? -Infinity;
@@ -187,7 +195,7 @@ function render() {
       if (citeA !== citeB) return citeB - citeA;
       return (a.title || "").localeCompare(b.title || "");
     });
-    renderPublications(items);
+    renderPublications(panel, items);
   } else {
     items = [...items].sort((a, b) => {
       const pubsA = a.publication_count ?? 0;
@@ -198,68 +206,68 @@ function render() {
       if (citeA !== citeB) return citeB - citeA;
       return (a.name || "").localeCompare(b.name || "");
     });
-    renderAuthors(items);
+    renderAuthors(panel, items);
   }
+
+  cache.rendered = true;
+  cache.search = state.search;
 }
 
-function setupAuthorOverflow() {
-  if (!elements || !state || state.mode !== "publications") return;
+function showPanel(mode) {
+  Object.entries(elements.panels).forEach(([key, node]) => {
+    node.style.display = key === mode ? "block" : "none";
+  });
+}
 
-  const wraps = Array.from(elements.results.querySelectorAll('[data-role="authors-wrap"]'));
-  wraps.forEach(wrap => {
-    const block = wrap.querySelector('[data-role="authors"]');
-    const toggle = wrap.querySelector('[data-role="authors-toggle"]');
-    if (!block || !toggle) return;
+function render() {
+  if (!state || !elements || !dataCache) return;
+  updateModeButtons(state.mode);
+  elements.searchInput.value = state.search;
+  ensurePanel(state.mode);
+  showPanel(state.mode);
+}
 
+function setupAuthorOverflow(panel) {
+  if (!panel || !state) return;
+  const blocks = Array.from(panel.querySelectorAll('[data-role="authors"]'));
+  blocks.forEach(block => {
     const id = block.dataset.id;
+    const toggle = block.nextElementSibling;
+    if (!toggle || toggle.dataset.role !== "authors-toggle") return;
+
     const expanded = state.expandedPublications.has(id);
-
-    block.classList.toggle('collapsed', !expanded);
-
-    // Measure overflow only when collapsed
-    let hasOverflow = false;
-    if (!expanded) {
-      // Force layout; handle sub-pixel differences
-      hasOverflow = (block.scrollWidth - block.clientWidth) > 1;
-      block.dataset.overflow = hasOverflow ? 'true' : 'false';
-    }
-
-    // Toggle visibility
-    if (!expanded && hasOverflow) {
-      toggle.hidden = false;
-      toggle.textContent = '(more)';
-    } else if (expanded) {
+    if (expanded) {
+      block.classList.remove('collapsed');
       toggle.hidden = false;
       toggle.textContent = '(less)';
     } else {
-      toggle.hidden = true;
+      const overflow = block.scrollWidth > block.clientWidth + 1;
+      if (overflow) {
+        block.classList.add('collapsed');
+        toggle.hidden = false;
+        toggle.textContent = '(more)';
+      } else {
+        block.classList.remove('collapsed');
+        toggle.hidden = true;
+        state.expandedPublications.delete(id);
+      }
     }
 
-    // Click
     toggle.onclick = () => {
-      if (expanded) {
+      if (state.expandedPublications.has(id)) {
         state.expandedPublications.delete(id);
-      } else if (block.dataset.overflow === 'true') {
+      } else {
         state.expandedPublications.add(id);
       }
-      // Re-run measurement after state change
-      requestAnimationFrame(setupAuthorOverflow);
+      requestAnimationFrame(() => setupAuthorOverflow(panel));
     };
   });
-
-  // Re-measure on container resizes (font/viewport/column width changes)
-  if (!setupAuthorOverflow._ro) {
-    const ro = new ResizeObserver(() => setupAuthorOverflow());
-    wraps.forEach(w => ro.observe(w));
-    setupAuthorOverflow._ro = ro;
-  }
 }
-
 
 function setMode(nextMode, { updateRoute: shouldUpdate = true } = {}) {
   if (state.mode === nextMode) return;
   state.mode = nextMode;
-  if (nextMode !== "publications" && state.expandedPublications) {
+  if (nextMode !== "publications") {
     state.expandedPublications.clear();
   }
   if (shouldUpdate) {
@@ -271,9 +279,11 @@ function setMode(nextMode, { updateRoute: shouldUpdate = true } = {}) {
 function setSearch(nextSearch, { updateRoute: shouldUpdate = true } = {}) {
   if (state.search === nextSearch) return;
   state.search = nextSearch;
-  if (state.expandedPublications) {
-    state.expandedPublications.clear();
-  }
+  state.expandedPublications.clear();
+  Object.values(state.panelCache).forEach(cache => {
+    cache.rendered = false;
+    cache.search = null;
+  });
   if (shouldUpdate) {
     updateRoute({ q: nextSearch || null });
   }
@@ -320,26 +330,33 @@ async function loadData() {
 
 export async function init({ mount, route = {}, navigate } = {}) {
   if (!mount) throw new Error("library.init requires { mount } DOM element");
-  const root = mount.querySelector(".library-view");
-  if (!root) throw new Error("library view markup missing .library-view container");
+  const view = mount.querySelector(".library-view");
+  if (!view) throw new Error("library view markup missing .library-view container");
 
   state = {
     mode: route.mode === "authors" ? "authors" : "publications",
     search: typeof route.q === "string" ? route.q : "",
     expandedPublications: new Set(),
+    panelCache: {
+      publications: { rendered: false, search: null },
+      authors: { rendered: false, search: null },
+    },
   };
+
   navigateFn = typeof navigate === "function" ? navigate : null;
 
   elements = {
-    root,
-    searchInput: root.querySelector('[data-role="search"]'),
-    modeButtons: Array.from(root.querySelectorAll('[data-role="mode-btn"]')),
-    results: root.querySelector("#library-results"),
+    root: view,
+    searchInput: view.querySelector('[data-role="search"]'),
+    modeButtons: Array.from(view.querySelectorAll('[data-role="mode-btn"]')),
+    results: view.querySelector('#library-results'),
   };
 
   if (!elements.searchInput || elements.modeButtons.length !== 2 || !elements.results) {
     throw new Error("library view markup incomplete");
   }
+
+  createPanels();
 
   elements.searchInput.value = state.search;
   updateModeButtons(state.mode);
@@ -356,12 +373,12 @@ export async function init({ mount, route = {}, navigate } = {}) {
   });
 
   try {
-    elements.results.innerHTML = '<div class="library-empty">Loading…</div>';
+    elements.panels.publications.innerHTML = '<div class="library-empty">Loading…</div>';
     await loadData();
     render();
   } catch (err) {
     console.error(err);
-    elements.results.innerHTML = `<div class="library-empty error">Failed to load library data.</div>`;
+    elements.panels.publications.innerHTML = `<div class="library-empty error">Failed to load library data.</div>`;
   }
 
   return function cleanup() {
@@ -372,9 +389,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
     if (elements) {
       elements.searchInput.removeEventListener("input", handleSearchInput);
       if (modeHandlers) {
-        modeHandlers.forEach(({ btn, handler }) => {
-          btn.removeEventListener("click", handler);
-        });
+        modeHandlers.forEach(({ btn, handler }) => btn.removeEventListener("click", handler));
       }
     }
     state = null;
@@ -399,8 +414,12 @@ export function onRouteChange({ params = {}, navigate } = {}) {
 
   state.mode = nextMode;
   state.search = nextSearch;
-  if (searchChanged && state.expandedPublications) {
+  if (searchChanged) {
     state.expandedPublications.clear();
+    Object.values(state.panelCache).forEach(cache => {
+      cache.rendered = false;
+      cache.search = null;
+    });
   }
 
   if (modeChanged) {
@@ -413,7 +432,6 @@ export function onRouteChange({ params = {}, navigate } = {}) {
 }
 
 export async function destroy() {
-  // Cleanup handled by init's returned function.
   return;
 }
 
