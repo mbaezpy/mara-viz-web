@@ -3,67 +3,70 @@
 <div class="network-graph-view">
   <div id="network-chart" class="network-chart"></div>
 
-  <div id="network-panel" class="network-panel">
-    <div class="network-panel-info">
-      <strong>Click a node</strong> to focus. Click background to reset.
-      <div class="network-small" id="network-status">Loading graph...</div>
-      <div class="network-small network-muted" id="network-filter-summary"></div>
+  <div id="network-filter-shell" class="network-filter-shell">
+    <div class="network-filter-summary-bar">
+      <div class="network-summary-left">
+        <div class="network-summary-chips" id="network-filter-summary"></div>
+        <div class="network-status-text" id="network-status">Loading graph...</div>
+      </div>
+      <div class="network-summary-actions">
+        <button type="button" class="network-summary-clear" id="network-filter-clear" hidden>Clear ✕</button>
+        <button type="button" class="network-filter-toggle" id="network-filter-toggle" aria-expanded="false" aria-controls="network-filter-drawer">Filters ▴</button>
+      </div>
     </div>
 
-    <div class="network-panel-filters">
-      <h2 class="network-filters-title">Filters</h2>
-      <div class="network-panel-controls">
-        <div class="network-control-group">
-          <label class="network-label" for="network-inst-select">Institutional authors</label>
-          <select id="network-inst-select">
-            <option value="any">any authorship</option>
-            <option value="main">main authorship</option>
-          </select>
-          <div class="network-hint">Applies to local authors (source)</div>
-        </div>
-
-        <div class="network-control-group">
-          <label class="network-label" for="network-collab-select">Collaborating authors</label>
-          <select id="network-collab-select">
-            <option value="any">any authorship</option>
-            <option value="main">main authorship</option>
-          </select>
-          <div class="network-hint">Applies to collaborators (target)</div>
-        </div>
-
-        <div class="network-control-group">
-          <label class="network-label" for="network-from-fixed">From year</label>
-          <div id="network-from-fixed" class="network-pill">—</div>
-          <div class="network-hint">Defined in data configuration</div>
-        </div>
-
-        <div class="network-control-group">
-          <label class="network-label" for="network-year-to-range">To year (live)</label>
-          <div class="network-range-inline">
-            <input id="network-year-to-range" type="range" min="2000" max="2025" step="1" value="2025" />
-            <span id="network-year-to-value" class="network-pill">2025</span>
+    <div id="network-filter-drawer" class="network-filter-drawer">
+      <form id="network-filter-form" class="network-filter-form" novalidate>
+        <div class="network-filter-row">
+          <label for="network-search" class="sr-only">Search authors</label>
+          <input id="network-search" type="search" placeholder="Search authors…" />
+          <div class="network-filter-row-actions">
+            <button type="button" id="network-apply" class="network-btn network-btn-primary">Apply</button>
+            <button type="button" id="network-reset" class="network-btn">Reset</button>
           </div>
         </div>
 
-        <div class="network-control-group">
-          <label class="network-label" for="network-edge-slider">Edge threshold</label>
-          <div class="network-range-inline">
-            <input id="network-edge-slider" type="range" min="1" max="10" step="1" value="1" />
-            <span id="network-edge-value" class="network-pill">1</span>
+        <div class="network-filter-grid">
+          <div class="network-control-group">
+            <label class="network-label" for="network-inst-select">Institutional authors</label>
+            <select id="network-inst-select">
+              <option value="main">main authorship</option>
+              <option value="any">any authorship</option>
+            </select>
+            <div class="network-hint">Applies to local (source) authors</div>
+          </div>
+
+          <div class="network-control-group">
+            <label class="network-label" for="network-collab-select">Collaborating authors</label>
+            <select id="network-collab-select">
+              <option value="main">main authorship</option>
+              <option value="any">any authorship</option>
+            </select>
+            <div class="network-hint">Applies to collaborators (target)</div>
+          </div>
+
+          <div class="network-control-group">
+            <label class="network-label" for="network-from-fixed">From year</label>
+            <div id="network-from-fixed" class="network-pill">—</div>
+          </div>
+
+          <div class="network-control-group">
+            <label class="network-label" for="network-year-to-range">To year (live)</label>
+            <div class="network-range-inline">
+              <input id="network-year-to-range" type="range" min="2000" max="2025" step="1" value="2025" />
+              <span id="network-year-to-value" class="network-pill">2025</span>
+            </div>
+          </div>
+
+          <div class="network-control-group">
+            <label class="network-label" for="network-edge-slider">Edge threshold</label>
+            <div class="network-range-inline">
+              <input id="network-edge-slider" type="range" min="1" max="10" step="1" value="1" />
+              <span id="network-edge-value" class="network-pill">1</span>
+            </div>
           </div>
         </div>
-
-        <div class="network-control-group">
-          <label class="network-label" for="network-search">Search authors</label>
-          <input id="network-search" type="search" placeholder="Type a name and press Enter" />
-        </div>
-      </div>
-
-      <div class="network-control-actions">
-        <button id="network-apply" class="network-btn network-btn-primary">Apply filters</button>
-        <button id="network-reset" class="network-btn">Reset layout</button>
-        <button id="network-dump" class="network-btn" title="Debug dump">Debug dump</button>
-      </div>
+      </form>
     </div>
   </div>
 

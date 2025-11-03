@@ -4,12 +4,57 @@ const TRANS_DUR = 450;
 const SIM_ALPHA = 0.9;
 const COOL_TIMEOUT = 900;
 
+function escapeHtml(str = '') {
+  return String(str).replace(/[&<>"']/g, (ch) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[ch] || ch));
+}
+
 export async function init({ mount }) {
   const root = d3.select(mount);
   const container = root.select('#network-chart');
   const statusEl = root.select('#network-status');
   const filterSummaryEl = root.select('#network-filter-summary');
   const tooltip = root.select('#network-tooltip');
+  const toggleBtn = root.select('#network-filter-toggle');
+  const drawer = root.select('#network-filter-drawer');
+  const shell = root.select('#network-filter-shell');
+  const clearBtn = root.select('#network-filter-clear');
+
+  const instSelect = root.select('#network-inst-select');
+  const collabSelect = root.select('#network-collab-select');
+  const yearToRange = root.select('#network-year-to-range');
+  const yearToValue = root.select('#network-year-to-value');
+  const edgeSlider = root.select('#network-edge-slider');
+  const edgeValue = root.select('#network-edge-value');
+  const searchBox = root.select('#network-search');
+  const applyBtn = root.select('#network-apply');
+  const resetBtn = root.select('#network-reset');
+  const filterForm = root.select('#network-filter-form');
+  const formatNumber = d3.format(',');
+
+  let defaultFromYear = null;
+  let defaultToYear = null;
+  let edgeMinValue = +edgeSlider.attr('min') || 0;
+  let filterOpen = false;
+
+  if (!filterForm.empty()) {
+    filterForm.on('submit', (event) => {
+      event.preventDefault();
+    });
+  }
+
+  function setFilterOpen(open) {
+    filterOpen = open;
+    drawer.classed('is-open', open);
+    shell.classed('is-open', open);
+    toggleBtn.attr('aria-expanded', open ? 'true' : 'false');
+    toggleBtn.text(open ? 'Filters ▾' : 'Filters ▴');
+  }
 
   const svg = container.append('svg')
     .attr('width', '100%')
@@ -42,12 +87,19 @@ export async function init({ mount }) {
     graph = data;
 
     const fromVal = (graph.config && Number.isInteger(graph.config.min_year)) ? graph.config.min_year : graph._computed_min_year;
-    root.select('#network-from-fixed').text(fromVal ?? '—');
-    const yearToRange = root.select('#network-year-to-range')
-      .attr('min', fromVal ?? 2000)
-      .attr('max', graph._computed_max_year)
-      .property('value', graph._computed_max_year);
-    root.select('#network-year-to-value').text(yearToRange.node().value);
+    defaultFromYear = fromVal ?? 2000;
+    defaultToYear = graph._computed_max_year || new Date().getFullYear();
+    root.select('#network-from-fixed').text(defaultFromYear);
+    yearToRange
+      .attr('min', defaultFromYear)
+      .attr('max', defaultToYear)
+      .property('value', defaultToYear);
+    yearToValue.text(defaultToYear);
+    edgeMinValue = +edgeSlider.attr('min') || 0;
+    edgeSlider.property('value', edgeMinValue);
+    edgeValue.text(edgeMinValue);
+    instSelect.property('value', 'main');
+    collabSelect.property('value', 'main');
 
     statusEl.text(`Loaded graph — ${graph.nodes.length} nodes, ${graph.linksAll.length} links.`);
 
@@ -55,9 +107,13 @@ export async function init({ mount }) {
 
     yearToRange.on('input', function () {
       const toVal = +this.value;
-      root.select('#network-year-to-value').text(toVal);
+      yearToValue.text(toVal);
       updateToLive(toVal);
+      updateFilterSummary();
     });
+
+    setFilterOpen(false);
+    statusEl.text('Click a node to focus. Click background to reset.');
   } catch (err) {
     console.error(err);
     statusEl.text(`Error loading graph: ${err.message}`);
@@ -177,9 +233,6 @@ export async function init({ mount }) {
       return Math.max(MIN_LINK_DIST, Math.min(MAX_LINK_DIST, Math.round(MAX_LINK_DIST / base)));
     };
 
-    const edgeSlider = root.select('#network-edge-slider');
-    const yearToRange = root.select('#network-year-to-range');
-
     linkG.selectAll('line')
       .data(linksCurrent, (d) => d.id ?? `${(d.source.id || d.source)}|${(d.target.id || d.target)}`)
       .enter()
@@ -214,36 +267,20 @@ export async function init({ mount }) {
 
     nodeSel.on('mouseover', (event, d) => {
       const toY = +yearToRange.node().value;
-      const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
-      const instFilter = root.select('#network-inst-select').node().value;
+      const fromY = defaultFromYear;
+      const instFilter = instSelect.node().value;
       const cumulative = computeNodeCumulative(d, instFilter, fromY, toY);
-      const baseline = instFilter === 'main' ? d._cum_full_main : d._cum_full_any;
+      const labelInst = instFilter === 'main' ? 'Main authorship' : 'Any authorship';
       tooltip
         .style('display', 'block')
         .html(
-          `<strong>${d.label || d.id}</strong><br/><small>id: ${d.id}</small><br/>pub_count: ${d.pub_count} — weighted_degree: ${d.weighted_degree ?? '?'}<br/>preview To: ${toY} (From: ${fromY})<hr/>` +
-          `<div style="font-weight:bold">Debug metrics</div>` +
-          `node cumulative (preview): ${cumulative} <br/>` +
-          `baseline full cumulative (${instFilter}): ${baseline} <br/>` +
-          `pub_years length: ${Array.isArray(d.pub_years) ? d.pub_years.length : 0}` +
-          `<hr/><div style="font-size:12px;color:#ddd">Open console for full dump (debug button)</div>`
+          `<strong>${escapeHtml(d.label || d.id)}</strong>` +
+          `<div>Publications: ${formatNumber(d.pub_count || 0)}</div>` +
+          `<div>Weighted degree: ${formatNumber(d.weighted_degree || 0)}</div>` +
+          `<div>${labelInst}: ${formatNumber(cumulative)} (to ${toY})</div>`
         )
-        .style('left', `${event.pageX + 10}px`)
-        .style('top', `${event.pageY + 10}px`);
-      console.log('NODE DEBUG:', {
-        id: d.id,
-        label: d.label,
-        pub_count: d.pub_count,
-        previewTo: toY,
-        previewFrom: fromY,
-        instFilter,
-        previewCum: cumulative,
-        baselineAny: d._cum_full_any,
-        baselineMain: d._cum_full_main,
-        pub_years: d.pub_years,
-        counts_by_year_cum: d.counts_by_year_cum,
-        main_pubs_by_year_cum: d.main_pubs_by_year_cum
-      });
+        .style('left', `${event.pageX + 12}px`)
+        .style('top', `${event.pageY + 12}px`);
     })
       .on('mousemove', (event) => {
         tooltip
@@ -289,23 +326,16 @@ export async function init({ mount }) {
       if (isStar) resetLayout();
     });
 
-    root.select('#network-reset').on('click', resetLayout);
-
     setTimeout(() => {
       simulation.alpha(0.9).restart();
       setTimeout(() => simulation.alphaTarget(0), 1200);
     }, 50);
 
-    const instSelect = root.select('#network-inst-select');
-    const collabSelect = root.select('#network-collab-select');
-    const edgeVal = root.select('#network-edge-value');
-    const searchBox = root.select('#network-search');
-    const applyBtn = root.select('#network-apply');
-    const dumpBtn = root.select('#network-dump');
+
 
     edgeSlider.on('input', () => {
       const thr = +edgeSlider.node().value;
-      edgeVal.text(thr);
+      edgeValue.text(thr);
       linkG.selectAll('line').style('display', (d) => ((d._weight_current ?? d._weight) >= thr ? null : 'none'));
       const visibleNodeIds = new Set(
         graph.linksAll
@@ -322,18 +352,12 @@ export async function init({ mount }) {
       updateFilterSummary();
     });
 
+    instSelect.on('change', () => updateFilterSummary());
+    collabSelect.on('change', () => updateFilterSummary());
+
     applyBtn.on('click', () => {
-      const defaultFrom = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
-      const defaultTo = graph.config && Number.isInteger(graph.config.max_year) ? graph.config.max_year : graph._computed_max_year || new Date().getFullYear();
-      yearToRange.property('value', defaultTo);
-      root.select('#network-year-to-value').text(defaultTo);
-
-      const edgeMin = +edgeSlider.attr('min') || 0;
-      edgeSlider.property('value', edgeMin);
-      edgeVal.text(edgeMin);
-
       applyFilters();
-      statusEl.text(`Filters applied (time reset to full range ${defaultFrom}–${defaultTo}, edge reset to ${edgeMin}).`);
+      setFilterOpen(false);
     });
 
     searchBox.on('keydown', function (event) {
@@ -350,7 +374,19 @@ export async function init({ mount }) {
       }
     });
 
-    dumpBtn.on('click', debugDumpTopNodes);
+    searchBox.on('input', () => updateFilterSummary());
+
+    resetBtn.on('click', () => {
+      resetFilters();
+      setFilterOpen(false);
+    });
+
+    clearBtn.on('click', () => {
+      resetFilters();
+      setFilterOpen(false);
+    });
+
+    toggleBtn.on('click', () => setFilterOpen(!filterOpen));
 
     applyFilters();
 
@@ -440,16 +476,15 @@ export async function init({ mount }) {
       nodes.forEach((n) => { n.fx = null; n.fy = null; });
       simulation.alpha(SIM_ALPHA).restart();
       setTimeout(() => simulation.alphaTarget(0), COOL_TIMEOUT);
-      statusEl.text(`Graph: ${nodes.length} nodes, ${graph.linksAll.length} links.`);
-      root.select('#network-panel').selectAll('.info').remove();
+      statusEl.text(`Graph reset — ${nodes.length} nodes, ${graph.linksAll.length} links.`);
     }
 
     function applyFilters() {
       if (!graph) return;
       const instFilter = instSelect.node().value;
       const collabFilter = collabSelect.node().value;
-      const defaultFrom = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
-      const defaultTo = graph.config && Number.isInteger(graph.config.max_year) ? graph.config.max_year : graph._computed_max_year || new Date().getFullYear();
+      const defaultFrom = defaultFromYear;
+      const defaultTo = +yearToRange.node().value || defaultToYear || new Date().getFullYear();
       const edgeThreshold = +edgeSlider.node().value;
 
       graph.linksAll.forEach((l) => {
@@ -560,25 +595,25 @@ export async function init({ mount }) {
 
       nodeEnter.on('mouseover', (event, d) => {
         const toY = +yearToRange.node().value;
-        const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
+        const fromY = defaultFromYear;
         const inst = instSelect.node().value;
         const cumulative = computeNodeCumulative(d, inst, fromY, toY);
-        const baseline = inst === 'main' ? d._cum_full_main : d._cum_full_any;
+        const labelInst = inst === 'main' ? 'Main authorship' : 'Any authorship';
         tooltip
           .style('display', 'block')
           .html(
-            `<strong>${d.label || d.id}</strong><br/><small>id: ${d.id}</small><br/>pub_count: ${d.pub_count} — weighted_degree: ${d.weighted_degree ?? '?'}<br/>preview To: ${toY} (From: ${fromY})<hr/>` +
-            `node cumulative (preview): ${cumulative} <br/>` +
-            `baseline full cumulative (${inst}): ${baseline}`
+            `<strong>${escapeHtml(d.label || d.id)}</strong>` +
+            `<div>Publications: ${formatNumber(d.pub_count || 0)}</div>` +
+            `<div>Weighted degree: ${formatNumber(d.weighted_degree || 0)}</div>` +
+            `<div>${labelInst}: ${formatNumber(cumulative)} (to ${toY})</div>`
           )
-          .style('left', `${event.pageX + 10}px`)
-          .style('top', `${event.pageY + 10}px`);
-        console.log('NODE DEBUG:', { id: d.id, previewCum: cumulative, baselineAny: d._cum_full_any, baselineMain: d._cum_full_main });
+          .style('left', `${event.pageX + 12}px`)
+          .style('top', `${event.pageY + 12}px`);
       })
         .on('mousemove', (event) => {
           tooltip
-            .style('left', `${event.pageX + 10}px`)
-            .style('top', `${event.pageY + 10}px`);
+            .style('left', `${event.pageX + 12}px`)
+            .style('top', `${event.pageY + 12}px`);
         })
         .on('mouseout', () => tooltip.style('display', 'none'));
 
@@ -641,6 +676,20 @@ export async function init({ mount }) {
       adjacency = buildAdjacency({ nodes: simNodes, links: activeLinksForPhysics });
       graph._adjacencyActive = adjacency;
     }
+  }
+
+  function resetFilters() {
+    if (!graph) return;
+    instSelect.property('value', 'main');
+    collabSelect.property('value', 'main');
+    const to = defaultToYear || graph._computed_max_year || new Date().getFullYear();
+    yearToRange.property('value', to);
+    yearToValue.text(to);
+    edgeSlider.property('value', edgeMinValue);
+    edgeValue.text(edgeMinValue);
+    searchBox.property('value', '');
+    applyFilters();
+    updateToLive(to);
   }
 
   function prefixSum(arr) {
@@ -835,10 +884,10 @@ export async function init({ mount }) {
 
   function updateToLive(toY) {
     if (!graph) return;
-    const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
-    const instFilter = root.select('#network-inst-select').node().value;
-    const collabFilter = root.select('#network-collab-select').node().value;
-    const edgeThreshold = +root.select('#network-edge-slider').node().value;
+    const fromY = defaultFromYear;
+    const instFilter = instSelect.node().value;
+    const collabFilter = collabSelect.node().value;
+    const edgeThreshold = +edgeSlider.node().value;
 
     graph.linksAll.forEach((l) => {
       l._weight_current = computeWeightForLinkCombined(l, instFilter, collabFilter, fromY, toY);
@@ -972,12 +1021,11 @@ export async function init({ mount }) {
   }
 
   function showInfo(centerNode, nNeigh) {
-    const panel = root.select('#network-panel');
-    panel.selectAll('.info').remove();
-    if (!centerNode) return;
-    panel.append('div')
-      .attr('class', 'info')
-      .html(`<strong>${centerNode.label || centerNode.id}</strong> — pubs: ${centerNode.pubs || '?'} — coauthors: ${nNeigh}`);
+    if (!centerNode) {
+      statusEl.text('Click a node to focus. Click background to reset.');
+      return;
+    }
+    statusEl.text(`${centerNode.label || centerNode.id} — publications: ${formatNumber(centerNode.pubs || 0)} — collaborators: ${formatNumber(nNeigh)}`);
   }
 
   function dragstarted(event, d) {
@@ -997,35 +1045,32 @@ export async function init({ mount }) {
 
   function updateFilterSummary() {
     if (!graph) return;
-    const inst = root.select('#network-inst-select').node().value;
-    const coll = root.select('#network-collab-select').node().value;
-    const from = graph && graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year;
-    const to = +root.select('#network-year-to-range').node().value;
-    const thr = +root.select('#network-edge-slider').node().value;
-    filterSummaryEl.text(`Inst:${inst} | Collab:${coll} | Years:${from}–${to} (live) | Edge≥${thr}`);
-  }
+    const inst = instSelect.node().value;
+    const coll = collabSelect.node().value;
+    const from = defaultFromYear;
+    const to = +yearToRange.node().value;
+    const thr = +edgeSlider.node().value;
+    const searchTerm = (searchBox.node().value || '').trim();
 
-  function debugDumpTopNodes() {
-    if (!graph) { console.log('no graph'); return; }
-    const instFilter = root.select('#network-inst-select').node().value;
-    const fromY = graph.config && Number.isInteger(graph.config.min_year) ? graph.config.min_year : graph._computed_min_year || 2000;
-    const toY = +root.select('#network-year-to-range').node().value;
-    const rows = graph.nodes.map((n) => {
-      const preview = computeNodeCumulative(n, instFilter, fromY, toY);
-      const baseline = instFilter === 'main' ? n._cum_full_main : n._cum_full_any;
-      return {
-        id: n.id,
-        label: n.label,
-        pub_count: n.pub_count,
-        preview,
-        baseline,
-        pub_years_len: Array.isArray(n.pub_years) ? n.pub_years.length : 0
-      };
-    }).sort((a, b) => (b.preview - a.preview) || (b.baseline - a.baseline));
-    console.group(`DEBUG DUMP — To=${toY} inst=${instFilter}`);
-    console.log('Baseline max (any):', graph._baselineNodeCumAnyMax, 'Baseline max (main):', graph._baselineNodeCumMainMax);
-    console.table(rows.slice(0, 80));
-    console.groupEnd();
+    const chips = [];
+    const instLabel = inst === 'main' ? 'Institutional: Main authorship' : 'Institutional: Any authorship';
+    const collLabel = coll === 'main' ? 'Collaborators: Main authorship' : 'Collaborators: Any authorship';
+    chips.push(`<span class="network-filter-chip">${escapeHtml(instLabel)}</span>`);
+    chips.push(`<span class="network-filter-chip">${escapeHtml(collLabel)}</span>`);
+    chips.push(`<span class="network-filter-chip">Years: ${escapeHtml(from)}–${escapeHtml(to)}</span>`);
+    chips.push(`<span class="network-filter-chip">Edge ≥ ${escapeHtml(thr)}</span>`);
+    if (searchTerm) {
+      chips.push(`<span class="network-filter-chip">Search: ${escapeHtml(searchTerm)}</span>`);
+    }
+
+    filterSummaryEl.html(`<span class="network-summary-label">Filters:</span> ${chips.join(' ')}`);
+
+    const isDefault = inst === 'main'
+      && coll === 'main'
+      && to === (defaultToYear || to)
+      && thr === edgeMinValue
+      && !searchTerm;
+    clearBtn.property('hidden', isDefault);
   }
 
   updateFilterSummary();

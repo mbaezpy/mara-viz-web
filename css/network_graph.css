@@ -1,52 +1,141 @@
 .network-graph-view {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  color: #222;
+  color: #1f2933;
   width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .network-chart {
   width: 100%;
-  height: 78vh;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
+  flex: 1 1 auto;
+  min-height: 60vh;
+  background: #ffffff;
   position: relative;
 }
 
-.network-panel {
-  padding: 16px;
-  display: grid;
-  grid-template-columns: minmax(220px, 0.45fr) 1fr;
-  gap: 20px;
-  align-items: start;
-  box-sizing: border-box;
-  background: #fafafa;
-  border-top: 1px solid #ececec;
+.network-filter-shell {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -6px 18px rgba(15, 23, 42, 0.08);
 }
 
-.network-panel-info {
+.network-filter-summary-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.network-summary-left {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  min-width: 200px;
 }
 
-.network-panel-filters {
+.network-summary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.network-summary-label {
+  font-weight: 600;
+  font-size: 12px;
+  color: #0f172a;
+}
+
+.network-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0c4a6e;
+  font-size: 12px;
+}
+
+.network-status-text {
+  font-size: 12px;
+  color: #475569;
+}
+
+.network-summary-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.network-summary-clear,
+.network-filter-toggle {
+  border: none;
+  background: none;
+  font: 600 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  cursor: pointer;
+  color: #1d4ed8;
+}
+
+.network-summary-clear:hover,
+.network-filter-toggle:hover {
+  text-decoration: underline;
+}
+
+.network-filter-toggle {
+  padding: 4px 6px;
+  color: #0f172a;
+}
+
+.network-filter-drawer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+  border-top: 1px solid transparent;
+  background: #f8fafc;
+}
+
+.network-filter-drawer.is-open {
+  max-height: 520px;
+  border-top-color: #e2e8f0;
+  overflow-y: auto;
+}
+
+.network-filter-form {
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
-.network-filters-title {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
+.network-filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.network-panel-controls {
+.network-filter-row input[type="search"] {
+  flex: 1 1 240px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font: inherit;
+}
+
+.network-filter-row-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.network-filter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
 }
 
@@ -54,51 +143,56 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 10px 12px;
-  border: 1px solid #e2e2e2;
-  border-radius: 8px;
-  background: #fff;
-  min-width: 0;
-}
-
-.network-control-group select,
-.network-control-group input[type='range'],
-.network-control-group input[type='search'] {
-  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
 }
 
 .network-label {
   font-size: 13px;
   font-weight: 600;
-  color: #222;
+  color: #0f172a;
 }
 
 .network-hint {
-  color: #666;
   font-size: 12px;
+  color: #64748b;
   line-height: 1.4;
+}
+
+.network-control-group select,
+.network-control-group input[type="range"] {
+  width: 100%;
+  font: inherit;
+}
+
+.network-range-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .network-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 8px;
+  padding: 2px 10px;
   border-radius: 999px;
-  background: #f1f3f5;
+  background: #e2e8f0;
   font-size: 12px;
-  color: #333;
-  min-height: 24px;
+  min-width: 40px;
+  color: #0f172a;
 }
 
 .network-btn {
   padding: 8px 14px;
   border-radius: 6px;
-  border: 1px solid #cfd4d9;
+  border: 1px solid #cbd5e1;
   background: #ffffff;
-  cursor: pointer;
   font-weight: 600;
-  color: #1f2a37;
+  cursor: pointer;
+  color: #1f2937;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
@@ -107,80 +201,52 @@
 }
 
 .network-btn-primary {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-  color: #fff;
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
 }
 
 .network-btn-primary:hover {
-  background: #1e40af;
-  border-color: #1e40af;
-}
-
-.network-control-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
 
 .network-tooltip {
   position: absolute;
   padding: 6px 8px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(15, 23, 42, 0.92);
   color: #fff;
-  border-radius: 4px;
+  border-radius: 6px;
   pointer-events: none;
   font-size: 12px;
-  max-width: 420px;
-}
-
-.network-small {
-  font-size: 13px;
-  color: #444;
-}
-
-.network-muted {
-  color: #666;
-  font-size: 12px;
-}
-
-.network-panel-info .network-muted {
   max-width: 320px;
+  line-height: 1.4;
 }
 
-.network-range-inline {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-#network-year-to-range,
-#network-edge-slider {
-  width: 120px;
-}
-
-#network-search {
-  width: 100%;
-  padding: 6px 8px;
-  box-sizing: border-box;
-}
-
-.network-panel-info strong {
-  font-size: 15px;
-}
-
-@media (max-width: 900px) {
-  .network-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .network-panel-info {
-    order: -1;
-  }
+.network-tooltip strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
 }
 
 .network-tooltip hr {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   margin: 6px 0;
+}
+
+@media (max-width: 720px) {
+  .network-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .network-filter-row-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .network-summary-bar {
+    flex-direction: column;
+  }
 }
