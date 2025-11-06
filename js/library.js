@@ -1,12 +1,24 @@
+import {
+  buildTopicColorMapFromTopicIds,
+  topLevelOf,
+  colorForTopicId as resolveTopicColor,
+} from "./topic_colors.js";
+
 const DEBOUNCE_MS = 250;
+const ROUTE_UPDATE_MS = 200;
+
+const FACETS = ["topics", "authors", "journals"];
 
 let state = null;
 let elements = null;
 let dataCache = null;
 let navigateFn = null;
 let searchTimer = null;
+let routeTimer = null;
 let fetchController = null;
 let modeHandlers = null;
+let toastTimer = null;
+let filterOverflowRaf = null;
 
 function escapeHTML(value) {
   return (value == null ? "" : String(value)).replace(/[&<>"]/g, ch => ({
@@ -17,6 +29,36 @@ function escapeHTML(value) {
   }[ch]));
 }
 
+function normalize(str = "") {
+  return str
+    .toString()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function cssEscape(value) {
+  try {
+    if (typeof CSS !== "undefined" && CSS.escape) {
+      return CSS.escape(value);
+    }
+  } catch (err) {
+    // ignore
+  }
+  return value.replace(/[^a-zA-Z0-9_-]/g, ch => `\\${ch}`);
+}
+
+function dedupeArrayById(arr) {
+  const seen = new Set();
+  return arr.filter(item => {
+    const key = item.id || normalize(item.label || "");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function formatYear(year) {
   if (year == null || Number.isNaN(year)) return "—";
   return String(year);
@@ -24,34 +66,49 @@ function formatYear(year) {
 
 function formatNumber(value) {
   if (value == null || Number.isNaN(value)) return "0";
-  return String(value);
+  return new Intl.NumberFormat().format(value);
 }
 
-function updateModeButtons(mode) {
+function tokenizeSearch(query) {
+  return dedupeArrayById(
+    (normalize(query) || "")
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(token => ({ id: token, label: token }))
+  ).map(t => t.id);
+}
+
+function applySearch(items = [], query = "") {
+  if (!Array.isArray(items) || !items.length) return items || [];
+  const tokens = tokenizeSearch(query);
+  if (!tokens.length) return items;
+  return items.filter(item => {
+    const parts = [
+      item.name,
+      item.affiliation,
+      ...(Array.isArray(item.topics) ? item.topics.map(tag => tag.name || tag) : []),
+    ];
+    const blob = normalize(parts.join(" "));
+    if (!blob) return false;
+    return tokens.every(token => blob.includes(token));
+  });
+}
+
+function buildSelectOptions() {
   elements.modeButtons.forEach(btn => {
-    const isActive = btn.dataset.mode === mode;
+    const isActive = btn.dataset.mode === state.mode;
     btn.classList.toggle("is-active", isActive);
     btn.setAttribute("aria-selected", String(isActive));
   });
-  elements.searchInput.placeholder = mode === "authors"
-    ? "Search names, affiliations, topics…"
-    : "Search titles, authors, venues, topics…";
+  elements.searchInput.placeholder =
+    state.mode === "authors"
+      ? "Search names, affiliations, topics…"
+      : "Search titles, authors, venues, topics…";
 }
 
-function updateRoute(partial) {
-  if (!navigateFn) return;
-  navigateFn(partial);
-}
-
-function applySearch(items, term) {
-  const trimmed = term.trim().toLowerCase();
-  if (!trimmed) return items;
-  const tokens = trimmed.split(/\s+/).filter(Boolean);
-  if (!tokens.length) return items;
-  return items.filter(item => {
-    const blob = item.search_blob || "";
-    return tokens.every(token => blob.includes(token));
-  });
+function updateSearchUI() {
+  elements.searchClear.hidden = !state.search;
+  elements.searchSpinner.hidden = true;
 }
 
 function createPanels() {
@@ -75,49 +132,166 @@ function createPanels() {
   };
 }
 
+function highlightText(text, tokens) {
+  if (!text) return "";
+  if (!tokens || !tokens.length) return escapeHTML(text);
+  const chars = Array.from(text);
+  if (!chars.length) return "";
+
+  const normalizedChars = [];
+  const indexMap = [];
+  chars.forEach((char, idx) => {
+    const normalized = char
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase() || char.toLowerCase();
+    for (let i = 0; i < normalized.length; i += 1) {
+      normalizedChars.push(normalized[i]);
+      indexMap.push(idx);
+    }
+  });
+
+  if (!normalizedChars.length) return escapeHTML(text);
+
+  const normalizedText = normalizedChars.join("");
+  const mask = new Array(chars.length).fill(false);
+
+  tokens.forEach(token => {
+    if (!token) return;
+    const target = token.toLowerCase();
+    if (!target) return;
+    let searchIndex = 0;
+    while (searchIndex <= normalizedText.length - target.length) {
+      const found = normalizedText.indexOf(target, searchIndex);
+      if (found === -1) break;
+      const startIdx = indexMap[found];
+      const endIdx = indexMap[Math.min(found + target.length - 1, indexMap.length - 1)];
+      for (let i = startIdx; i <= endIdx; i += 1) {
+        mask[i] = true;
+      }
+      searchIndex = found + target.length;
+    }
+  });
+
+  let result = "";
+  let open = false;
+  chars.forEach((char, idx) => {
+    const isMarked = mask[idx];
+    if (isMarked && !open) {
+      result += "<mark>";
+      open = true;
+    } else if (!isMarked && open) {
+      result += "</mark>";
+      open = false;
+    }
+    result += escapeHTML(char);
+  });
+  if (open) result += "</mark>";
+  return result;
+}
+
+function highlightMatches(container, facet, entryId) {
+  if (!container) return;
+  let selector = "";
+  const escaped = cssEscape(entryId);
+  if (facet === "topics") selector = `[data-topic-id="${escaped}"]`;
+  if (facet === "authors") selector = `[data-author-id="${escaped}"]`;
+  if (facet === "journals") selector = `[data-journal-id="${escaped}"]`;
+  if (!selector) return;
+  container.querySelectorAll(selector).forEach(el => {
+    el.classList.add("flash-highlight");
+    setTimeout(() => el.classList.remove("flash-highlight"), 1000);
+  });
+}
+
 function renderPublications(panel, items) {
   if (!items.length) {
-    panel.innerHTML = `<div class="library-empty">No results. Try a different search.</div>`;
+    panel.innerHTML = `
+      <div class="library-empty">
+        No results for current filters.
+        <button type="button" class="library-filter-clear" data-role="clear-all">Clear all</button>
+      </div>`;
     return;
   }
 
   const rows = items.map(pub => {
-    const segments = pub.authors.map((a, idx) => {
-      const name = escapeHTML(a.name || "Unknown");
-      const cls = a.local ? "author-name author-name--local" : "author-name";
-      const suffix = idx < pub.authors.length - 1 ? ", " : "";
-      return `<span class="${cls}">${name}</span>${suffix}`;
-    });
-    const expanded = state.expandedPublications.has(pub.id);
-    const topicTags = pub.topics.map(tag => `<span class="tag">${escapeHTML(tag.name)}</span>`).join("");
+    const titleHTML = highlightText(pub.title || "Untitled", state.searchTokens);
+    const authorsHTML = pub.authors
+      .map((a, idx) => {
+        const suffix = idx < pub.authors.length - 1 ? ", " : "";
+        if (a.local) {
+          const key = a._key;
+          const rawLabel = a.name || "Unknown";
+          const safeKey = escapeHTML(key);
+          const safeLabel = escapeHTML(rawLabel);
+          const ariaLabel = `Add filter: Author ${rawLabel}`;
+          return `<button type="button" class="library-author-link" data-author-id="${safeKey}" data-author-label="${safeLabel}" title="Add filter" aria-label="${escapeHTML(ariaLabel)}">${highlightText(rawLabel, state.searchTokens)}</button>${suffix}`;
+        }
+        return `${highlightText(a.name || "Unknown", state.searchTokens)}${suffix}`;
+      })
+      .join("");
+    const venueLabelRaw = pub.venue_name || pub.venue || "—";
+    const venueLabel = escapeHTML(venueLabelRaw);
+    const venueButton = pub.venue_key
+      ? `<button type="button"
+            class="tag tag--venue tag--clickable library-venue-link"
+            data-journal-id="${escapeHTML(pub.venue_key)}"
+            data-journal-label="${venueLabel}"
+            title="Add filter"
+            aria-label="${escapeHTML(`Add filter: Journal ${venueLabelRaw}`)}">
+            <span class="tag-icon">J</span>
+            <span class="tag-label">${venueLabel}</span>
+        </button>`
+      : venueLabel;
+    const topicTags = (pub.topics || [])
+      .map(tag => {
+        const color = dataCache.colorForTopicId
+          ? dataCache.colorForTopicId(tag.top_level_id || tag.id)
+          : "#94a3b8";
+        const label = tag.label;
+        return `
+          <button type="button"
+            class="tag tag--topic tag--clickable"
+            data-topic-id="${escapeHTML(tag.id)}"
+            data-topic-label="${escapeHTML(label)}"
+            style="--topic-color:${color}"
+            title="Add filter" aria-label="${escapeHTML(`Add filter: Topic ${label}`)}">
+            <span class="tag-label">${escapeHTML(label)}</span>
+          </button>`;
+      })
+      .join("");
+
+
     const doiLink = pub.doi ? `https://doi.org/${pub.doi}` : null;
     const fallbackLink = pub.openalex_url || null;
     const linkHref = doiLink || fallbackLink;
     const linkTitle = doiLink ? "Open DOI" : "Open in OpenAlex";
-    const linkIcon = linkHref ? `<a class="link-icon" href="${escapeHTML(linkHref)}" target="_blank" rel="noopener" aria-label="${escapeHTML(linkTitle)}">🔗</a>` : "";
+    const linkIcon = linkHref
+      ? `<a class="link-icon" href="${escapeHTML(linkHref)}" target="_blank" rel="noopener" aria-label="${escapeHTML(linkTitle)}">🔗</a>`
+      : "";
 
     return `
       <tr>
         <td class="col-year">${formatYear(pub.year)}</td>
         <td class="col-title">
           <div class="library-title">
-            <span class="title-text">${escapeHTML(pub.title || "Untitled")}</span>
-            ${linkIcon}
+            <a class="title-text" href="${escapeHTML(linkHref)}" target="_blank" rel="noopener" aria-label="${escapeHTML(linkTitle)}">
+              
+              ${titleHTML}
+              
+            </a>
+      
           </div>
-          <div class="authors-wrap" data-role="authors-wrap">
-            <div class="library-authors${expanded ? "" : " collapsed"}" data-role="authors" data-id="${escapeHTML(pub.id)}">
-              ${segments.join("") || "—"}
-            </div>
-            <button type="button" class="library-authors-toggle" data-role="authors-toggle" data-id="${escapeHTML(pub.id)}" hidden>
-              (${expanded ? "less" : "more"})
-            </button>
+          <div class="authors-wrap">
+            <div class="library-authors" data-role="authors">${authorsHTML || "—"}</div>
           </div>
-          <div class="library-venue">${escapeHTML(pub.venue || "—")}</div>
-          <div class="library-tags">${topicTags}</div>
+          <div class="library-venue" data-journal-id="${escapeHTML(pub.venue_key || "")}" data-journal-label="${venueLabel}">
+            ${venueButton}
+          </div>
+          <div class="library-tags" data-role="topic-tags">${topicTags}</div>
         </td>
-        <td class="col-citations">${formatNumber(pub.cited_by_count)}</td>
-      </tr>
-    `;
+        <td class="col-citations numeric">${formatNumber(pub.cited_by_count)}</td>
+      </tr>`;
   }).join("");
 
   panel.innerHTML = `
@@ -133,12 +307,44 @@ function renderPublications(panel, items) {
     </table>
   `;
 
-  requestAnimationFrame(() => setupAuthorOverflow(panel));
+  attachPublicationInteractions(panel);
+}
+
+function attachPublicationInteractions(panel) {
+  panel.querySelectorAll('[data-role="clear-all"]').forEach(btn => {
+    btn.addEventListener("click", clearAllFilters);
+  });
+  panel.querySelectorAll("[data-topic-id]").forEach(el => {
+    el.addEventListener("click", () => {
+      const id = el.dataset.topicId;
+      const label = el.dataset.topicLabel || id;
+      addFilter("topics", { id, label });
+    });
+  });
+
+  panel.querySelectorAll("[data-author-id]").forEach(el => {
+    el.addEventListener("click", () => {
+      const id = el.dataset.authorId;
+      const label = el.dataset.authorLabel || id;
+      addFilter("authors", { id, label });
+    });
+  });
+
+  panel.querySelectorAll("[data-journal-id]").forEach(el => {
+    el.querySelectorAll(".library-venue-link").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = el.dataset.journalId;
+        if (!id) return;
+        const label = el.dataset.journalLabel || id;
+        addFilter("journals", { id, label });
+      });
+    });
+  });
 }
 
 function renderAuthors(panel, items) {
   if (!items.length) {
-    panel.innerHTML = `<div class="library-empty">No results. Try a different search.</div>`;
+    panel.innerHTML = `<div class="library-empty">No authors for current search.</div>`;
     return;
   }
 
@@ -151,10 +357,9 @@ function renderAuthors(panel, items) {
           <div class="library-author-affiliation">${escapeHTML(author.affiliation || "—")}</div>
           <div class="library-tags">${topicTags}</div>
         </td>
-        <td class="col-pubs">${formatNumber(author.publication_count)}</td>
-        <td class="col-citations">${formatNumber(author.citation_count)}</td>
-      </tr>
-    `;
+        <td class="col-pubs numeric">${formatNumber(author.publication_count)}</td>
+        <td class="col-citations numeric">${formatNumber(author.citation_count)}</td>
+      </tr>`;
   }).join("");
 
   panel.innerHTML = `
@@ -173,129 +378,558 @@ function renderAuthors(panel, items) {
 
 function ensurePanel(mode) {
   const cache = state.panelCache[mode];
-  const panel = elements.panels[mode];
-  const dataset = mode === "authors" ? dataCache.authors : dataCache.publications;
-  if (!panel || !dataset) return;
+  const hash = getPanelHash(mode);
+  if (cache.rendered && cache.hash === hash) return;
 
-  if (cache.rendered && cache.search === state.search) {
-    if (mode === "publications") {
-      requestAnimationFrame(() => setupAuthorOverflow(panel));
+  const panel = elements.panels[mode];
+  if (mode === "publications") {
+    const items = getFilteredPublications();
+    renderPublications(panel, items);
+    cache.rendered = true;
+    cache.hash = hash;
+    cache.metrics = { total: items.length };
+  } else {
+    const items = applySearch(dataCache.authors, state.search);
+    renderAuthors(panel, items);
+    cache.rendered = true;
+    cache.hash = hash;
+  }
+}
+
+function getPanelHash(mode) {
+  if (mode === "authors") {
+    return JSON.stringify({ mode, search: state.search });
+  }
+  const filters = state.filters;
+  return JSON.stringify({
+    mode,
+    search: state.search,
+    topics: filters.topics.map(f => f.id).sort(),
+    authors: filters.authors.map(f => f.id).sort(),
+    journals: filters.journals.map(f => f.id).sort(),
+  });
+}
+
+function getFilteredPublications() {
+  if (!dataCache) return [];
+  const publications = dataCache.publications || [];
+  const filters = state.filters;
+  const tokens = state.searchTokens || [];
+  const topicIds = filters.topics.map(t => t.id);
+  const authorIds = filters.authors.map(a => a.id);
+  const journalIds = filters.journals.map(j => j.id);
+
+  return publications.filter(pub => {
+    if (tokens.length) {
+      const searchBlob = pub._search_norm || "";
+      if (!tokens.every(token => searchBlob.includes(token))) {
+        return false;
+      }
     }
+
+    if (topicIds.length) {
+      const pubTopics = pub.topic_ids || [];
+      if (!topicIds.some(id => pubTopics.includes(id))) {
+        return false;
+      }
+    }
+
+    if (authorIds.length) {
+      const locals = pub.local_author_keys || [];
+      if (!authorIds.some(id => locals.includes(id))) return false;
+    }
+
+    if (journalIds.length) {
+      const venueKey = pub.venue_key;
+      if (!venueKey || !journalIds.includes(venueKey)) return false;
+    }
+
+    return true;
+  });
+}
+
+function renderFilterBar() {
+  const container = elements.filterBar;
+  const filters = state.filters;
+  const hasFilters = FACETS.some(facet => filters[facet].length);
+  const parts = [];
+
+  if (!hasFilters && !state.search) {
+    container.innerHTML = "";
+    clearFilterClearButton();
     return;
   }
 
-  let items = applySearch(dataset, state.search);
-  if (mode === "publications") {
-    items = [...items].sort((a, b) => {
-      const yearA = a.year ?? -Infinity;
-      const yearB = b.year ?? -Infinity;
-      if (yearA !== yearB) return yearB - yearA;
-      const citeA = a.cited_by_count ?? 0;
-      const citeB = b.cited_by_count ?? 0;
-      if (citeA !== citeB) return citeB - citeA;
-      return (a.title || "").localeCompare(b.title || "");
+  FACETS.forEach(facet => {
+    const values = filters[facet];
+    if (!values.length) return;
+    const facetLabel = facet === "topics" ? "Topics" : facet === "authors" ? "Authors" : "Journal";
+    parts.push(`<span class="library-filter-label" data-facet="${facet}">${facetLabel}</span>`);
+    values.forEach(entry => {
+      const label = escapeHTML(entry.label || entry.id);
+      const id = escapeHTML(entry.id);
+      const chipKey = `${facet}|${entry.id}`;
+      const icon = facet === "topics" ? "#" : facet === "authors" ? "@" : "J";
+      let extraClass = "";
+      let extraStyle = "";
+      let glyph = "";
+      if (facet === "topics" && dataCache && typeof dataCache.colorForTopicId === "function") {
+        const colorValue = dataCache.colorForTopicId(entry.id) || "#94a3b8";
+        const safeColor = escapeHTML(colorValue);
+        extraClass = " is-topic";
+        extraStyle = ` style="--topic-color:${safeColor}"`;
+        glyph = '<span class="chip-swatch" aria-hidden="true"></span>';
+      }
+      parts.push(`
+        <span class="library-filter-chip${extraClass}" data-facet="${facet}" data-id="${id}" data-key="${escapeHTML(chipKey)}" tabindex="0" role="button"${extraStyle}>
+          ${glyph}
+          <span class="chip-icon" aria-hidden="true">${escapeHTML(icon)}</span>
+          <span class="chip-label">${label}</span>
+          <button type="button" class="remove" aria-label="Remove filter ${facetLabel}: ${label}" data-role="remove-filter" data-facet="${facet}" data-id="${id}">✕</button>
+        </span>
+      `);
     });
-    renderPublications(panel, items);
-  } else {
-    items = [...items].sort((a, b) => {
-      const pubsA = a.publication_count ?? 0;
-      const pubsB = b.publication_count ?? 0;
-      if (pubsA !== pubsB) return pubsB - pubsA;
-      const citeA = a.citation_count ?? 0;
-      const citeB = b.citation_count ?? 0;
-      if (citeA !== citeB) return citeB - citeA;
-      return (a.name || "").localeCompare(b.name || "");
+  });
+
+  container.innerHTML = parts.join("");
+
+  container.querySelectorAll('[data-role="remove-filter"]').forEach(btn => {
+    btn.addEventListener("click", event => {
+      const facet = btn.dataset.facet;
+      const id = btn.dataset.id;
+      event.stopPropagation();
+      removeFilter(facet, id);
     });
-    renderAuthors(panel, items);
+  });
+
+  container.querySelectorAll(".library-filter-chip").forEach(chip => {
+    chip.addEventListener("click", event => {
+      if (event.target.closest("[data-role=\"remove-filter\"]")) return;
+      const facet = chip.dataset.facet;
+      const id = chip.dataset.id;
+      highlightMatches(elements.panels.publications, facet, id);
+    });
+    chip.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        if (event.target.closest("[data-role=\"remove-filter\"]")) return;
+        const facet = chip.dataset.facet;
+        const id = chip.dataset.id;
+        highlightMatches(elements.panels.publications, facet, id);
+      }
+    });
+  });
+
+  if (hasFilters) {
+    const clearBtn = document.createElement("button");
+    clearBtn.type = "button";
+    clearBtn.className = "library-filter-clear";
+    clearBtn.textContent = "Clear all";
+    clearBtn.addEventListener("click", clearAllFilters);
+    container.appendChild(clearBtn);
   }
 
-  cache.rendered = true;
-  cache.search = state.search;
+  animateNewFilterChips();
+  scheduleFilterBarOverflowCheck();
 }
 
-function showPanel(mode) {
-  Object.entries(elements.panels).forEach(([key, node]) => {
-    node.style.display = key === mode ? "block" : "none";
+function animateNewFilterChips() {
+  if (!state || !elements) return;
+  const recent = state.recentlyAddedFilters || [];
+  if (!recent.length) return;
+  const keys = new Set(recent);
+  const chips = elements.filterBar.querySelectorAll(".library-filter-chip");
+  chips.forEach(chip => {
+    const key = chip.dataset.key;
+    if (!key || !keys.has(key)) return;
+    chip.classList.add("is-new");
+    chip.addEventListener(
+      "animationend",
+      () => {
+        chip.classList.remove("is-new");
+      },
+      { once: true }
+    );
+  });
+  state.recentlyAddedFilters = [];
+}
+
+function scheduleFilterBarOverflowCheck() {
+  if (!elements || !elements.filterBar) return;
+  if (filterOverflowRaf) {
+    cancelAnimationFrame(filterOverflowRaf);
+  }
+  filterOverflowRaf = requestAnimationFrame(() => {
+    filterOverflowRaf = null;
+    applyFilterBarOverflow();
+  });
+}
+
+function applyFilterBarOverflow() {
+  if (!state || !elements || !elements.filterBar) return;
+  const container = elements.filterBar;
+  const chips = Array.from(container.querySelectorAll(".library-filter-chip"));
+  const labels = Array.from(container.querySelectorAll(".library-filter-label"));
+
+  container.classList.remove("is-collapsed", "is-expanded");
+  container.querySelectorAll('[data-role="filter-expand"], [data-role="filter-collapse"]').forEach(btn => {
+    btn.remove();
+  });
+  chips.forEach(chip => chip.classList.remove("is-hidden"));
+  labels.forEach(label => label.classList.remove("is-hidden"));
+
+  if (!chips.length) {
+    state.filterBarExpanded = false;
+    return;
+  }
+
+  const rowPositions = [];
+  chips.forEach(chip => {
+    const top = chip.offsetTop;
+    if (!rowPositions.includes(top)) {
+      rowPositions.push(top);
+    }
+  });
+  rowPositions.sort((a, b) => a - b);
+
+  const totalRows = rowPositions.length;
+  if (totalRows <= 2) {
+    state.filterBarExpanded = false;
+    return;
+  }
+
+  if (!state.filterBarExpanded) {
+    container.classList.add("is-collapsed");
+    const cutoff = rowPositions[1];
+    let hiddenCount = 0;
+    chips.forEach(chip => {
+      if (chip.offsetTop > cutoff) {
+        chip.classList.add("is-hidden");
+        hiddenCount += 1;
+      }
+    });
+    labels.forEach(label => {
+      const facet = label.dataset.facet;
+      if (!facet) return;
+      const facetChips = Array.from(container.querySelectorAll(`.library-filter-chip[data-facet="${facet}"]`));
+      const hasVisible = facetChips.some(chip => !chip.classList.contains("is-hidden"));
+      if (!hasVisible) {
+        label.classList.add("is-hidden");
+      }
+    });
+    if (hiddenCount > 0) {
+      const expandBtn = document.createElement("button");
+      expandBtn.type = "button";
+      expandBtn.className = "library-filter-more";
+      expandBtn.dataset.role = "filter-expand";
+      expandBtn.textContent = `+ ${hiddenCount} more`;
+      expandBtn.addEventListener("click", () => {
+        state.filterBarExpanded = true;
+        render();
+      });
+      const clearBtn = container.querySelector(".library-filter-clear");
+      if (clearBtn) {
+        container.insertBefore(expandBtn, clearBtn);
+      } else {
+        container.appendChild(expandBtn);
+      }
+    }
+  } else {
+    container.classList.add("is-expanded");
+    const collapseBtn = document.createElement("button");
+    collapseBtn.type = "button";
+    collapseBtn.className = "library-filter-more";
+    collapseBtn.dataset.role = "filter-collapse";
+    collapseBtn.textContent = "Show less";
+    collapseBtn.addEventListener("click", () => {
+      state.filterBarExpanded = false;
+      render();
+    });
+    const clearBtn = container.querySelector(".library-filter-clear");
+    if (clearBtn) {
+      container.insertBefore(collapseBtn, clearBtn);
+    } else {
+      container.appendChild(collapseBtn);
+    }
+  }
+}
+
+function clearFilterClearButton() {
+  elements.filterBar.innerHTML = "";
+}
+
+function ensureFilterLabels() {
+  if (!dataCache) return;
+  const topicIndex = dataCache.topicIndex || new Map();
+  const authorIndex = dataCache.authorIndex || new Map();
+  const journalIndex = dataCache.journalIndex || new Map();
+
+  FACETS.forEach(facet => {
+    state.filters[facet] = state.filters[facet].map(entry => {
+      if (entry.label && entry.label !== entry.id) return entry;
+      if (facet === "topics") {
+        return { ...entry, label: topicIndex.get(entry.id) || entry.label || entry.id };
+      }
+      if (facet === "authors") {
+        return { ...entry, label: authorIndex.get(entry.id) || entry.label || entry.id };
+      }
+      if (facet === "journals") {
+        return { ...entry, label: journalIndex.get(entry.id) || entry.label || entry.id };
+      }
+      return entry;
+    });
   });
 }
 
 function render() {
   if (!state || !elements || !dataCache) return;
-  updateModeButtons(state.mode);
-  elements.searchInput.value = state.search;
+  buildSelectOptions();
+  ensureFilterLabels();
+  renderFilterBar();
   ensurePanel(state.mode);
-  showPanel(state.mode);
+  Object.entries(elements.panels).forEach(([key, node]) => {
+    node.style.display = key === state.mode ? "block" : "none";
+  });
+  updateSearchUI();
+  applyPendingHighlights();
 }
 
-function setupAuthorOverflow(panel) {
-  if (!panel || !state) return;
-  const blocks = Array.from(panel.querySelectorAll('[data-role="authors"]'));
-  blocks.forEach(block => {
-    const id = block.dataset.id;
-    const toggle = block.nextElementSibling;
-    if (!toggle || toggle.dataset.role !== "authors-toggle") return;
+function applyPendingHighlights() {
+  if (!state.pendingHighlights.length) return;
+  const panel = elements.panels.publications;
+  state.pendingHighlights.forEach(({ facet, id }) => {
+    highlightMatches(panel, facet, id);
+  });
+  state.pendingHighlights = [];
+}
 
-    const expanded = state.expandedPublications.has(id);
-    if (expanded) {
-      block.classList.remove('collapsed');
-      toggle.hidden = false;
-      toggle.textContent = '(less)';
-    } else {
-      const overflow = block.scrollWidth > block.clientWidth + 1;
-      if (overflow) {
-        block.classList.add('collapsed');
-        toggle.hidden = false;
-        toggle.textContent = '(more)';
-      } else {
-        block.classList.remove('collapsed');
-        toggle.hidden = true;
-        state.expandedPublications.delete(id);
-      }
+function addFilter(facet, entry, options = {}) {
+  if (!FACETS.includes(facet) || !entry) return false;
+  const { silent = false } = options;
+  const filters = state.filters[facet];
+  const id = entry.id || normalize(entry.label || "");
+  const label = entry.label || entry.id || id;
+  if (!id) return false;
+  if (filters.some(item => item.id === id)) return false;
+
+  state.filters[facet] = dedupeArrayById([...filters, { id, label }]);
+  if (!Array.isArray(state.recentlyAddedFilters)) {
+    state.recentlyAddedFilters = [];
+  }
+  state.filterSequence.push(`${facet}|${id}`);
+  state.pendingHighlights.push({ facet, id });
+  state.recentlyAddedFilters.push(`${facet}|${id}`);
+  invalidatePublicationsPanel();
+  scheduleRouteUpdate();
+  render();
+  if (!silent) {
+    const facetLabel = facet === "topics" ? "Topic" : facet === "authors" ? "Author" : "Journal";
+    showToast(`Added filter: ${facetLabel} = ${label}`);
+  }
+  return true;
+}
+
+function removeFilter(facet, id, options = {}) {
+  if (!FACETS.includes(facet)) return;
+  const { silent = false } = options;
+  const existing = state.filters[facet];
+  if (!existing || !existing.length) return;
+  const entry = existing.find(item => item.id === id);
+  if (!entry) return;
+  state.filters[facet] = existing.filter(item => item.id !== id);
+  state.filterSequence = state.filterSequence.filter(entry => entry !== `${facet}|${id}`);
+  state.lastRemovedFilter = { facet, entry };
+  invalidatePublicationsPanel();
+  scheduleRouteUpdate();
+  render();
+  if (!silent) {
+    const facetLabel = facet === "topics" ? "Topic" : facet === "authors" ? "Author" : "Journal";
+    showToast(`Removed filter: ${facetLabel} = ${entry.label || entry.id}`);
+  }
+  return entry;
+}
+
+function clearAllFilters() {
+  const hadSearch = Boolean(state.search);
+  const hadFilters = FACETS.some(facet => state.filters[facet]?.length);
+  if (!hadFilters && !hadSearch) return;
+
+  FACETS.forEach(facet => {
+    state.filters[facet] = [];
+  });
+  state.filterSequence = [];
+  state.pendingHighlights = [];
+  state.recentlyAddedFilters = [];
+  state.filterBarExpanded = false;
+  state.lastRemovedFilter = null;
+  if (state.expandedPublications && typeof state.expandedPublications.clear === "function") {
+    state.expandedPublications.clear();
+  }
+
+  if (hadSearch) {
+    state.search = "";
+    state.searchTokens = [];
+    if (elements && elements.searchInput) {
+      elements.searchInput.value = "";
     }
+    if (elements && elements.searchSpinner) {
+      elements.searchSpinner.hidden = true;
+    }
+    Object.values(state.panelCache).forEach(cache => {
+      cache.rendered = false;
+      cache.hash = null;
+    });
+  } else {
+    invalidatePublicationsPanel();
+  }
 
-    toggle.onclick = () => {
-      if (state.expandedPublications.has(id)) {
-        state.expandedPublications.delete(id);
-      } else {
-        state.expandedPublications.add(id);
-      }
-      requestAnimationFrame(() => setupAuthorOverflow(panel));
-    };
+  scheduleRouteUpdate();
+  render();
+  showToast("Cleared all filters");
+}
+
+function removeLastFilter() {
+  const lastKey = state.filterSequence[state.filterSequence.length - 1];
+  if (!lastKey) return;
+  const [facet, id] = lastKey.split("|");
+  const filters = state.filters[facet] || [];
+  const entry = filters.find(item => item.id === id);
+  if (!entry) {
+    state.filterSequence.pop();
+    return;
+  }
+  state.filterSequence.pop();
+  state.filters[facet] = filters.filter(item => item.id !== id);
+  state.lastRemovedFilter = { facet, entry };
+  invalidatePublicationsPanel();
+  scheduleRouteUpdate();
+  render();
+  const facetLabel = facet === "topics" ? "Topic" : facet === "authors" ? "Author" : "Journal";
+  showToast(`Removed filter: ${facetLabel} = ${entry.label || entry.id}`, {
+    duration: 2500,
+    action: {
+      label: "Undo",
+      onClick: () => {
+        addFilter(facet, entry, { silent: true });
+      },
+    },
   });
 }
 
-function setMode(nextMode, { updateRoute: shouldUpdate = true } = {}) {
+function invalidatePublicationsPanel() {
+  state.panelCache.publications.rendered = false;
+  state.panelCache.publications.hash = null;
+}
+
+function scheduleRouteUpdate() {
+  if (!navigateFn) return;
+  if (routeTimer) clearTimeout(routeTimer);
+  routeTimer = setTimeout(() => {
+    const params = {
+      mode: state.mode !== "publications" ? state.mode : null,
+      q: state.search ? state.search : null,
+      topics: state.filters.topics.length ? state.filters.topics.map(f => f.id).join(",") : null,
+      authors: state.filters.authors.length ? state.filters.authors.map(f => f.id).join(",") : null,
+      journals: state.filters.journals.length ? state.filters.journals.map(f => f.id).join(",") : null,
+    };
+    navigateFn(params, { replace: true });
+  }, ROUTE_UPDATE_MS);
+}
+
+function showToast(message, options = {}) {
+  const { action, duration = 1500 } = options;
+  if (!elements.toast) {
+    const toast = document.createElement("div");
+    toast.className = "library-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+    elements.toast = toast;
+  }
+  const toast = elements.toast;
+  toast.innerHTML = "";
+
+  const messageSpan = document.createElement("span");
+  messageSpan.className = "toast-message";
+  messageSpan.textContent = message;
+  toast.appendChild(messageSpan);
+
+  if (action && action.label && typeof action.onClick === "function") {
+    const actionBtn = document.createElement("button");
+    actionBtn.type = "button";
+    actionBtn.className = "toast-action";
+    actionBtn.textContent = action.label;
+    actionBtn.addEventListener(
+      "click",
+      () => {
+        hideToast();
+        action.onClick();
+      },
+      { once: true }
+    );
+    toast.appendChild(actionBtn);
+  }
+
+  toast.classList.add("is-visible");
+  if (toastTimer) clearTimeout(toastTimer);
+  const autoHide = typeof duration === "number" && Number.isFinite(duration) && duration > 0;
+  if (autoHide) {
+    toastTimer = setTimeout(() => {
+      hideToast();
+    }, duration);
+  } else {
+    toastTimer = null;
+  }
+
+  function hideToast() {
+    toast.classList.remove("is-visible");
+  }
+}
+
+function setMode(nextMode) {
   if (state.mode === nextMode) return;
   state.mode = nextMode;
-  if (nextMode !== "publications") {
-    state.expandedPublications.clear();
-  }
-  if (shouldUpdate) {
-    updateRoute({ mode: nextMode === "publications" ? null : nextMode });
-  }
+  state.panelCache[nextMode].rendered = false;
+  scheduleRouteUpdate();
   render();
 }
 
-function setSearch(nextSearch, { updateRoute: shouldUpdate = true } = {}) {
+function setSearch(nextSearch) {
   if (state.search === nextSearch) return;
   state.search = nextSearch;
+  state.searchTokens = tokenizeSearch(nextSearch);
   state.expandedPublications.clear();
   Object.values(state.panelCache).forEach(cache => {
     cache.rendered = false;
-    cache.search = null;
+    cache.hash = null;
   });
-  if (shouldUpdate) {
-    updateRoute({ q: nextSearch || null });
-  }
+  elements.searchSpinner.hidden = false;
+  scheduleRouteUpdate();
   render();
 }
 
 function handleSearchInput(event) {
   const value = event.target.value;
   if (searchTimer) clearTimeout(searchTimer);
+  elements.searchSpinner.hidden = false;
   searchTimer = setTimeout(() => {
-    setSearch(value, { updateRoute: true });
+    setSearch(value);
   }, DEBOUNCE_MS);
+}
+
+function parseFiltersFromRoute(route) {
+  const parseList = (value) =>
+    (value || "")
+      .split(",")
+      .map(entry => entry.trim())
+      .filter(Boolean)
+      .map(id => ({ id, label: id }));
+
+  return {
+    topics: parseList(route.topics),
+    authors: parseList(route.authors),
+    journals: parseList(route.journals),
+  };
 }
 
 async function loadData() {
@@ -312,18 +946,71 @@ async function loadData() {
 
   const pubsData = await pubsResp.json();
   const authorsData = await authorsResp.json();
+
+  const topicIndex = new Map();
+  const authorIndex = new Map();
+  const journalIndex = new Map();
+
+  const allTopicIds = new Set();
+  const publications = (pubsData.items || []).map(item => {
+    const topics = (item.topics || []).map(raw => {
+      const id = raw.id || normalize(raw.name || raw);
+      const label = raw.label || raw.name || raw.id || raw;
+      const top_level_id = raw.top_level_id || topLevelOf(id);
+      if (id) allTopicIds.add(id);
+      topicIndex.set(id, label);
+      return { id, label, top_level_id };
+    });
+    const authors = (item.authors || []).map(a => {
+      const key = a.id || normalize(a.name || "");
+      if (a.local) authorIndex.set(key, a.name || key);
+      return {
+        ...a,
+        _key: key,
+        local: Boolean(a.local),
+      };
+    });
+    const venueKey = item.venue_id || normalize(item.venue || item.venue_name || "");
+    if (venueKey) journalIndex.set(venueKey, item.venue || item.venue_name || venueKey);
+
+    const searchParts = [
+      item.title || "",
+      item.venue || item.venue_name || "",
+      authors.map(a => a.name || "").join(" "),
+      topics.map(t => t.label).join(" "),
+    ].join(" ");
+
+    const localAuthors = authors.filter(a => a.local).map(a => a._key);
+
+    return {
+      ...item,
+      topics,
+      authors,
+      venue_key: venueKey,
+      topic_ids: topics.map(t => t.id),
+      local_author_keys: localAuthors,
+      _search_norm: normalize(searchParts),
+      search_blob: (item.search_blob || "").toString().toLowerCase(),
+    };
+  });
+
+  const authors = (authorsData.items || []).map(item => ({
+    ...item,
+    topics: Array.isArray(item.topics) ? item.topics : [],
+    search_blob: (item.search_blob || "").toString().toLowerCase(),
+  }));
+
+    // Build & keep a single color map
+  const TOPIC_COLOR = buildTopicColorMapFromTopicIds([...allTopicIds]);
+
   dataCache = {
-    publications: (pubsData.items || []).map(item => ({
-      ...item,
-      topics: Array.isArray(item.topics) ? item.topics : [],
-      authors: Array.isArray(item.authors) ? item.authors : [],
-      search_blob: (item.search_blob || "").toString().toLowerCase(),
-    })),
-    authors: (authorsData.items || []).map(item => ({
-      ...item,
-      topics: Array.isArray(item.topics) ? item.topics : [],
-      search_blob: (item.search_blob || "").toString().toLowerCase(),
-    })),
+    publications,
+    authors,
+    topicIndex,
+    authorIndex,
+    journalIndex,
+    TOPIC_COLOR,
+    colorForTopicId: id => resolveTopicColor(id, TOPIC_COLOR),
   };
   return dataCache;
 }
@@ -333,35 +1020,72 @@ export async function init({ mount, route = {}, navigate } = {}) {
   const view = mount.querySelector(".library-view");
   if (!view) throw new Error("library view markup missing .library-view container");
 
-  state = {
-    mode: route.mode === "authors" ? "authors" : "publications",
-    search: typeof route.q === "string" ? route.q : "",
-    expandedPublications: new Set(),
-    panelCache: {
-      publications: { rendered: false, search: null },
-      authors: { rendered: false, search: null },
-    },
-  };
-
-  navigateFn = typeof navigate === "function" ? navigate : null;
-
   elements = {
     root: view,
     searchInput: view.querySelector('[data-role="search"]'),
+    searchClear: view.querySelector('[data-role="search-clear"]'),
+    searchSpinner: view.querySelector('[data-role="search-spinner"]'),
     modeButtons: Array.from(view.querySelectorAll('[data-role="mode-btn"]')),
-    results: view.querySelector('#library-results'),
+    results: view.querySelector("#library-results"),
+    filterBar: view.querySelector('[data-role="filter-bar"]'),
+    toast: null,
   };
 
-  if (!elements.searchInput || elements.modeButtons.length !== 2 || !elements.results) {
+  if (!elements.searchInput || elements.modeButtons.length !== 2 || !elements.results || !elements.filterBar) {
     throw new Error("library view markup incomplete");
   }
 
-  createPanels();
+  navigateFn = typeof navigate === "function" ? navigate : null;
+
+  const initialFilters = parseFiltersFromRoute(route);
+
+  state = {
+    mode: route.mode === "authors" ? "authors" : "publications",
+    search: typeof route.q === "string" ? route.q : "",
+    searchTokens: [],
+    filters: {
+      topics: initialFilters.topics,
+      authors: initialFilters.authors,
+      journals: initialFilters.journals,
+    },
+    filterSequence: [],
+    expandedPublications: new Set(),
+    panelCache: {
+      publications: { rendered: false, hash: null },
+      authors: { rendered: false, hash: null },
+    },
+    pendingHighlights: [],
+    recentlyAddedFilters: [],
+    filterBarExpanded: false,
+    lastRemovedFilter: null,
+  };
+
+  FACETS.forEach(facet => {
+    state.filters[facet] = dedupeArrayById(state.filters[facet]);
+  });
+
+  state.searchTokens = tokenizeSearch(state.search);
+  state.filterSequence = FACETS.flatMap(facet =>
+    state.filters[facet].map(entry => `${facet}|${entry.id}`)
+  );
 
   elements.searchInput.value = state.search;
-  updateModeButtons(state.mode);
+  const searchInputHandler = handleSearchInput;
+  const searchKeyHandler = event => {
+    if (event.key === "Backspace" && !event.target.value && state.filterSequence.length) {
+      removeLastFilter();
+      event.preventDefault();
+    }
+  };
+  elements.searchInput.addEventListener("input", searchInputHandler);
+  elements.searchInput.addEventListener("keydown", searchKeyHandler);
+  state._searchHandlers = { searchInputHandler, searchKeyHandler };
 
-  elements.searchInput.addEventListener("input", handleSearchInput);
+  elements.searchClear.addEventListener("click", () => {
+    elements.searchInput.value = "";
+    setSearch("");
+  });
+
   modeHandlers = [];
   elements.modeButtons.forEach(btn => {
     const handler = () => {
@@ -372,32 +1096,43 @@ export async function init({ mount, route = {}, navigate } = {}) {
     btn.addEventListener("click", handler);
   });
 
+  createPanels();
+
   try {
-    elements.panels.publications.innerHTML = '<div class="library-empty">Loading…</div>';
     await loadData();
+    ensureFilterLabels();
     render();
   } catch (err) {
     console.error(err);
-    elements.panels.publications.innerHTML = `<div class="library-empty error">Failed to load library data.</div>`;
+    elements.results.innerHTML = `<div class="library-empty error">Failed to load library data.</div>`;
+    elements.searchSpinner.hidden = true;
   }
 
   return function cleanup() {
     if (searchTimer) clearTimeout(searchTimer);
+    if (routeTimer) clearTimeout(routeTimer);
+    if (toastTimer) clearTimeout(toastTimer);
+    if (filterOverflowRaf) {
+      cancelAnimationFrame(filterOverflowRaf);
+      filterOverflowRaf = null;
+    }
     if (fetchController) {
       try { fetchController.abort(); } catch (e) {}
     }
     if (elements) {
-      elements.searchInput.removeEventListener("input", handleSearchInput);
+      if (state && state._searchHandlers) {
+        elements.searchInput.removeEventListener("input", state._searchHandlers.searchInputHandler);
+        elements.searchInput.removeEventListener("keydown", state._searchHandlers.searchKeyHandler);
+      }
       if (modeHandlers) {
         modeHandlers.forEach(({ btn, handler }) => btn.removeEventListener("click", handler));
       }
     }
+    if (state) state._searchHandlers = null;
     state = null;
     dataCache = null;
     elements = null;
     navigateFn = null;
-    fetchController = null;
-    modeHandlers = null;
   };
 }
 
@@ -406,39 +1141,32 @@ export function onRouteChange({ params = {}, navigate } = {}) {
     navigateFn = navigate;
   }
   if (!state || !elements) return;
-  const nextMode = params.mode === "authors" ? "authors" : "publications";
-  const nextSearch = typeof params.q === "string" ? params.q : "";
 
-  const modeChanged = nextMode !== state.mode;
-  const searchChanged = nextSearch !== state.search;
-
-  state.mode = nextMode;
-  state.search = nextSearch;
-  if (searchChanged) {
+  state.mode = params.mode === "authors" ? "authors" : "publications";
+  state.search = params.q || "";
+  state.searchTokens = tokenizeSearch(state.search);
+  state.filters = parseFiltersFromRoute(params);
+  FACETS.forEach(facet => {
+    state.filters[facet] = dedupeArrayById(state.filters[facet]);
+  });
+  state.filterSequence = FACETS.flatMap(facet =>
+    state.filters[facet].map(entry => `${facet}|${entry.id}`)
+  );
+  if (state.expandedPublications && typeof state.expandedPublications.clear === "function") {
     state.expandedPublications.clear();
-    Object.values(state.panelCache).forEach(cache => {
-      cache.rendered = false;
-      cache.search = null;
-    });
   }
-
-  if (modeChanged) {
-    updateModeButtons(state.mode);
-  }
-  if (searchChanged) {
-    elements.searchInput.value = state.search;
-  }
+  state.pendingHighlights = [];
+  state.recentlyAddedFilters = [];
+  state.filterBarExpanded = false;
+  state.lastRemovedFilter = null;
+  Object.values(state.panelCache).forEach(cache => {
+    cache.rendered = false;
+    cache.hash = null;
+  });
+  elements.searchInput.value = state.search;
   render();
 }
 
 export async function destroy() {
   return;
 }
-
-export const __test = {
-  setupAuthorOverflow,
-  setContext(newState, newElements) {
-    state = newState;
-    elements = newElements;
-  },
-};

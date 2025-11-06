@@ -219,7 +219,7 @@
         {
           "id": "https://openalex.org/keywords/hippocampal-sclerosis",
           "display_name": "Hippocampal sclerosis",
-          "score": 7.96350788,
+          "score": 7.963507880000001,
           "count": 12
         },
         {
@@ -249,7 +249,7 @@
         {
           "id": "https://openalex.org/keywords/temporal-cortex",
           "display_name": "Temporal cortex",
-          "score": 2.0325963099999997,
+          "score": 2.03259631,
           "count": 4
         },
         {
@@ -261,7 +261,7 @@
         {
           "id": "https://openalex.org/keywords/orbitofrontal-cortex",
           "display_name": "Orbitofrontal cortex",
-          "score": 1.6158849899999999,
+          "score": 1.61588499,
           "count": 3
         },
         {
@@ -415,7 +415,7 @@
             {
               "id": "https://openalex.org/keywords/histopathology",
               "display_name": "Histopathology",
-              "score": 1.5519259,
+              "score": 1.5519258999999999,
               "count": 3
             },
             {
@@ -552,13 +552,13 @@
             {
               "id": "https://openalex.org/keywords/fusiform-gyrus",
               "display_name": "Fusiform gyrus",
-              "score": 3.48513493,
+              "score": 3.4851349300000005,
               "count": 5
             },
             {
               "id": "https://openalex.org/keywords/stimulus",
               "display_name": "Stimulus (psychology)",
-              "score": 3.1640871199999996,
+              "score": 3.16408712,
               "count": 5
             },
             {
@@ -576,7 +576,7 @@
             {
               "id": "https://openalex.org/keywords/orbitofrontal-cortex",
               "display_name": "Orbitofrontal cortex",
-              "score": 1.6158849899999999,
+              "score": 1.61588499,
               "count": 3
             },
             {
@@ -745,7 +745,7 @@
         {
           "id": "https://openalex.org/keywords/perampanel",
           "display_name": "Perampanel",
-          "score": 5.679823270000001,
+          "score": 5.67982327,
           "count": 6
         },
         {
@@ -757,13 +757,13 @@
         {
           "id": "https://openalex.org/keywords/levetiracetam",
           "display_name": "Levetiracetam",
-          "score": 4.9284418400000005,
+          "score": 4.92844184,
           "count": 6
         },
         {
           "id": "https://openalex.org/keywords/everolimus",
           "display_name": "Everolimus",
-          "score": 4.731399280000001,
+          "score": 4.73139928,
           "count": 6
         },
         {
@@ -887,13 +887,13 @@
             {
               "id": "https://openalex.org/keywords/lacosamide",
               "display_name": "Lacosamide",
-              "score": 7.9776832,
+              "score": 7.9776831999999995,
               "count": 9
             },
             {
               "id": "https://openalex.org/keywords/tolerability",
               "display_name": "Tolerability",
-              "score": 6.551606079999999,
+              "score": 6.55160608,
               "count": 9
             },
             {
@@ -917,7 +917,7 @@
             {
               "id": "https://openalex.org/keywords/oxcarbazepine",
               "display_name": "Oxcarbazepine",
-              "score": 3.67669927,
+              "score": 3.6766992700000003,
               "count": 5
             },
             {
@@ -1054,7 +1054,7 @@
             {
               "id": "https://openalex.org/keywords/tolerability",
               "display_name": "Tolerability",
-              "score": 14.998793209999999,
+              "score": 14.998793210000002,
               "count": 19
             },
             {
@@ -1066,7 +1066,7 @@
             {
               "id": "https://openalex.org/keywords/perampanel",
               "display_name": "Perampanel",
-              "score": 5.679823270000001,
+              "score": 5.67982327,
               "count": 6
             },
             {
@@ -1084,7 +1084,7 @@
             {
               "id": "https://openalex.org/keywords/lacosamide",
               "display_name": "Lacosamide",
-              "score": 2.7288338,
+              "score": 2.7288338000000003,
               "count": 3
             },
             {
@@ -1096,7 +1096,7 @@
             {
               "id": "https://openalex.org/keywords/refractory",
               "display_name": "Refractory (planetary science)",
-              "score": 2.52301613,
+              "score": 2.5230161300000002,
               "count": 4
             },
             {
@@ -1396,19 +1396,19 @@
         {
           "id": "https://openalex.org/keywords/tolerability",
           "display_name": "Tolerability",
-          "score": 4.34859534,
+          "score": 4.348595339999999,
           "count": 6
         },
         {
           "id": "https://openalex.org/keywords/lennox–gastaut-syndrome",
           "display_name": "Lennox–Gastaut syndrome",
-          "score": 2.4922587400000005,
+          "score": 2.49225874,
           "count": 4
         },
         {
           "id": "https://openalex.org/keywords/global-developmental-delay",
           "display_name": "Global developmental delay",
-          "score": 1.67907948,
+          "score": 1.6790794800000002,
           "count": 3
         },
         {
@@ -1711,7 +1711,7 @@
             {
               "id": "https://openalex.org/keywords/dravet-syndrome",
               "display_name": "Dravet syndrome",
-              "score": 11.55180322,
+              "score": 11.551803220000002,
               "count": 14
             },
             {
@@ -1723,13 +1723,13 @@
             {
               "id": "https://openalex.org/keywords/global-developmental-delay",
               "display_name": "Global developmental delay",
-              "score": 1.67907948,
+              "score": 1.6790794800000002,
               "count": 3
             },
             {
               "id": "https://openalex.org/keywords/lennox–gastaut-syndrome",
               "display_name": "Lennox–Gastaut syndrome",
-              "score": 1.6107585000000002,
+              "score": 1.6107585,
               "count": 3
             },
             {
@@ -2047,7 +2047,7 @@
         {
           "id": "https://openalex.org/keywords/psychogenic-disease",
           "display_name": "Psychogenic disease",
-          "score": 5.2546413,
+          "score": 5.254641299999999,
           "count": 6
         },
         {
@@ -2214,7 +2214,7 @@
         {
           "id": "https://openalex.org/keywords/hippocampal-sclerosis",
           "display_name": "Hippocampal sclerosis",
-          "score": 6.28315518,
+          "score": 6.2831551800000005,
           "count": 9
         },
         {
@@ -3225,12 +3225,6 @@
               "paper_count": 5
             },
             {
-              "id": "https://openalex.org/A5038190122",
-              "display_name": "Petr Marusič",
-              "orcid": "https://orcid.org/0000-0002-1240-653X",
-              "paper_count": 2
-            },
-            {
               "id": "https://openalex.org/A5036952503",
               "display_name": "Alexander Grote",
               "orcid": "https://orcid.org/0000-0002-6545-0622",
@@ -3246,6 +3240,12 @@
               "id": "https://openalex.org/A5113550975",
               "display_name": "Heinz Pannek",
               "orcid": null,
+              "paper_count": 1
+            },
+            {
+              "id": "https://openalex.org/A5063225454",
+              "display_name": "Margarete Pfäfflin",
+              "orcid": "https://orcid.org/0000-0001-7983-6043",
               "paper_count": 1
             }
           ],
@@ -4117,16 +4117,16 @@
           "paper_count": 3
         },
         {
-          "id": "https://openalex.org/A5071995676",
-          "display_name": "Martin Holtkamp",
-          "orcid": "https://orcid.org/0000-0003-2258-1670",
-          "paper_count": 3
+          "id": "https://openalex.org/A5070424111",
+          "display_name": "Christian Brandt",
+          "orcid": "https://orcid.org/0000-0001-8666-1640",
+          "paper_count": 2
         },
         {
-          "id": "https://openalex.org/A5083326193",
-          "display_name": "Rainer Surges",
-          "orcid": "https://orcid.org/0000-0002-3177-8582",
-          "paper_count": 3
+          "id": "https://openalex.org/A5071543752",
+          "display_name": "Corinna Kramme",
+          "orcid": null,
+          "paper_count": 2
         }
       ],
       "children": [
@@ -4233,12 +4233,6 @@
               "display_name": "Christian G. Bien",
               "orcid": "https://orcid.org/0000-0003-2225-8654",
               "paper_count": 6
-            },
-            {
-              "id": "https://openalex.org/A5071995676",
-              "display_name": "Martin Holtkamp",
-              "orcid": "https://orcid.org/0000-0003-2258-1670",
-              "paper_count": 1
             },
             {
               "id": "https://openalex.org/A5069001018",
@@ -4396,12 +4390,6 @@
               "paper_count": 1
             },
             {
-              "id": "https://openalex.org/A5078521830",
-              "display_name": "Claude Steriade",
-              "orcid": "https://orcid.org/0000-0001-6799-9005",
-              "paper_count": 1
-            },
-            {
               "id": "https://openalex.org/A5007246359",
               "display_name": "Georg Classen",
               "orcid": null,
@@ -4411,6 +4399,12 @@
               "id": "https://openalex.org/A5055309680",
               "display_name": "Silvia Vieker",
               "orcid": null,
+              "paper_count": 1
+            },
+            {
+              "id": "https://openalex.org/A5047747453",
+              "display_name": "Thomas Cloppenborg",
+              "orcid": "https://orcid.org/0000-0002-6688-6575",
               "paper_count": 1
             }
           ],
@@ -4470,7 +4464,7 @@
             {
               "id": "https://openalex.org/keywords/autoimmune-encephalitis",
               "display_name": "Autoimmune encephalitis",
-              "score": 2.8548075100000005,
+              "score": 2.85480751,
               "count": 5
             },
             {
@@ -4575,10 +4569,10 @@
               "paper_count": 2
             },
             {
-              "id": "https://openalex.org/A5083326193",
-              "display_name": "Rainer Surges",
-              "orcid": "https://orcid.org/0000-0002-3177-8582",
-              "paper_count": 2
+              "id": "https://openalex.org/A5071543752",
+              "display_name": "Corinna Kramme",
+              "orcid": null,
+              "paper_count": 1
             }
           ],
           "children": []
@@ -4967,25 +4961,25 @@
         {
           "id": "https://openalex.org/keywords/perampanel",
           "display_name": "Perampanel",
-          "score": 6.616797620000001,
+          "score": 6.61679762,
           "count": 7
         },
         {
           "id": "https://openalex.org/keywords/tolerability",
           "display_name": "Tolerability",
-          "score": 6.11434593,
+          "score": 6.114345930000001,
           "count": 8
         },
         {
           "id": "https://openalex.org/keywords/adjunctive-treatment",
           "display_name": "Adjunctive treatment",
-          "score": 3.7285641200000006,
+          "score": 3.7285641199999997,
           "count": 7
         },
         {
           "id": "https://openalex.org/keywords/everolimus",
           "display_name": "Everolimus",
-          "score": 3.4726848200000004,
+          "score": 3.4726848199999996,
           "count": 4
         },
         {
@@ -6035,16 +6029,16 @@
               "paper_count": 5
             },
             {
-              "id": "https://openalex.org/A5071995676",
-              "display_name": "Martin Holtkamp",
-              "orcid": "https://orcid.org/0000-0003-2258-1670",
-              "paper_count": 3
-            },
-            {
               "id": "https://openalex.org/A5015980223",
               "display_name": "Rupprecht Thorbecke",
               "orcid": "https://orcid.org/0000-0003-1570-9912",
               "paper_count": 3
+            },
+            {
+              "id": "https://openalex.org/A5091240590",
+              "display_name": "Anne Hagemann",
+              "orcid": "https://orcid.org/0000-0002-8158-7442",
+              "paper_count": 2
             }
           ],
           "children": []
@@ -6270,12 +6264,6 @@
           "paper_count": 1
         },
         {
-          "id": "https://openalex.org/A5083326193",
-          "display_name": "Rainer Surges",
-          "orcid": "https://orcid.org/0000-0002-3177-8582",
-          "paper_count": 1
-        },
-        {
           "id": "https://openalex.org/A5091868571",
           "display_name": "Susanne Fauser",
           "orcid": "https://orcid.org/0000-0003-3063-1586",
@@ -6338,13 +6326,13 @@
         {
           "id": "https://openalex.org/keywords/autoimmune-encephalitis",
           "display_name": "Autoimmune encephalitis",
-          "score": 19.447745870000002,
+          "score": 19.447745870000006,
           "count": 31
         },
         {
           "id": "https://openalex.org/keywords/limbic-encephalitis",
           "display_name": "Limbic Encephalitis",
-          "score": 14.905241040000002,
+          "score": 14.905241040000003,
           "count": 21
         },
         {
@@ -6374,7 +6362,7 @@
         {
           "id": "https://openalex.org/keywords/anti-nmda-receptor-encephalitis",
           "display_name": "Anti-NMDA Receptor Encephalitis",
-          "score": 2.17059474,
+          "score": 2.1705947399999994,
           "count": 4
         },
         {
@@ -6386,7 +6374,7 @@
         {
           "id": "https://openalex.org/keywords/neuroradiology",
           "display_name": "Neuroradiology",
-          "score": 2.13641205,
+          "score": 2.1364120499999997,
           "count": 4
         },
         {
@@ -6449,9 +6437,9 @@
           "paper_count": 7
         },
         {
-          "id": "https://openalex.org/A5083326193",
-          "display_name": "Rainer Surges",
-          "orcid": "https://orcid.org/0000-0002-3177-8582",
+          "id": "https://openalex.org/A5028691724",
+          "display_name": "Reinhard Schulz",
+          "orcid": "https://orcid.org/0009-0003-0618-5990",
           "paper_count": 5
         }
       ],
@@ -6504,13 +6492,13 @@
             {
               "id": "https://openalex.org/keywords/fusiform-gyrus",
               "display_name": "Fusiform gyrus",
-              "score": 3.48513493,
+              "score": 3.4851349300000005,
               "count": 5
             },
             {
               "id": "https://openalex.org/keywords/stimulus",
               "display_name": "Stimulus (psychology)",
-              "score": 3.1640871199999996,
+              "score": 3.16408712,
               "count": 5
             },
             {
@@ -6677,7 +6665,7 @@
             {
               "id": "https://openalex.org/keywords/limbic-encephalitis",
               "display_name": "Limbic Encephalitis",
-              "score": 14.905241040000002,
+              "score": 14.905241040000003,
               "count": 21
             },
             {
@@ -6689,7 +6677,7 @@
             {
               "id": "https://openalex.org/keywords/anti-nmda-receptor-encephalitis",
               "display_name": "Anti-NMDA Receptor Encephalitis",
-              "score": 2.17059474,
+              "score": 2.1705947399999994,
               "count": 4
             },
             {
@@ -6770,22 +6758,22 @@
               "paper_count": 9
             },
             {
-              "id": "https://openalex.org/A5083326193",
-              "display_name": "Rainer Surges",
-              "orcid": "https://orcid.org/0000-0002-3177-8582",
-              "paper_count": 5
-            },
-            {
-              "id": "https://openalex.org/A5045704773",
-              "display_name": "Sarosh R. Irani",
-              "orcid": "https://orcid.org/0000-0002-7667-9748",
-              "paper_count": 4
-            },
-            {
               "id": "https://openalex.org/A5091868571",
               "display_name": "Susanne Fauser",
               "orcid": "https://orcid.org/0000-0003-3063-1586",
               "paper_count": 4
+            },
+            {
+              "id": "https://openalex.org/A5070424111",
+              "display_name": "Christian Brandt",
+              "orcid": "https://orcid.org/0000-0001-8666-1640",
+              "paper_count": 3
+            },
+            {
+              "id": "https://openalex.org/A5069001018",
+              "display_name": "Theodor W. May",
+              "orcid": "https://orcid.org/0000-0001-6517-9425",
+              "paper_count": 3
             }
           ],
           "children": []

@@ -1,8 +1,12 @@
 <div class="library-view">
-  <header class="library-controls">
+  <header class="library-controls" aria-label="Library controls">
     <div class="library-search">
       <label class="sr-only" for="library-search">Search</label>
-      <input id="library-search" type="search" data-role="search" placeholder="Search titles, authors, venues, topics…" autocomplete="off" spellcheck="false" />
+      <div class="library-search-input">
+        <input id="library-search" type="search" data-role="search" placeholder="Search titles, authors, venues, topics…" autocomplete="off" spellcheck="false" />
+        <button type="button" data-role="search-clear" class="library-search-clear" aria-label="Clear search" hidden>✕</button>
+        <span class="library-search-spinner" data-role="search-spinner" hidden></span>
+      </div>
     </div>
     <div class="library-mode" role="tablist" aria-label="Library mode">
       <button type="button" class="is-active" data-role="mode-btn" data-mode="publications" aria-selected="true">Publications</button>
@@ -10,6 +14,8 @@
     </div>
     <div class="library-actions"></div>
   </header>
+
+  <div class="library-filter-bar" data-role="filter-bar" aria-label="Active filters"></div>
 
   <section class="library-results" id="library-results" aria-live="polite"></section>
 </div>
