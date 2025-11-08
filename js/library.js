@@ -86,7 +86,7 @@ function applySearch(items = [], query = "") {
     const parts = [
       item.name,
       item.affiliation,
-      ...(Array.isArray(item.topics) ? item.topics.map(tag => tag.name || tag) : []),
+      ...(Array.isArray(item.topics) ? item.topics.map(tag => tag.label || tag.name || tag) : []),
     ];
     const blob = normalize(parts.join(" "));
     if (!blob) return false;
@@ -349,7 +349,20 @@ function renderAuthors(panel, items) {
   }
 
   const rows = items.map(author => {
-    const topicTags = author.topics.map(tag => `<span class="tag">${escapeHTML(tag.name)}</span>`).join("");
+    const topicTags = (author.topics || [])
+      .map(tag => {
+        const colorValue = dataCache.colorForTopicId
+          ? dataCache.colorForTopicId(tag.top_level_id || tag.id)
+          : "#94a3b8";
+        const safeColor = escapeHTML(colorValue || "#94a3b8");
+        const label = tag.label || tag.name || tag.id || "—";
+        return `
+          <span class="tag tag--topic" style="--topic-color:${safeColor}">
+            <span class="topic-glyph" aria-hidden="true"></span>
+            ${escapeHTML(label)}
+          </span>`;
+      })
+      .join("");
     return `
       <tr>
         <td class="col-author">
@@ -994,11 +1007,33 @@ async function loadData() {
     };
   });
 
-  const authors = (authorsData.items || []).map(item => ({
-    ...item,
-    topics: Array.isArray(item.topics) ? item.topics : [],
-    search_blob: (item.search_blob || "").toString().toLowerCase(),
-  }));
+  const authors = (authorsData.items || []).map(item => {
+    const authorTopics = Array.isArray(item.topics)
+      ? item.topics
+          .map(raw => {
+            if (!raw) return null;
+            const id = raw.id || normalize(raw.name || raw.label || raw);
+            if (!id) return null;
+            const label = raw.name || raw.label || raw.id || String(raw);
+            const top_level_id = raw.top_level_id || topLevelOf(id);
+            allTopicIds.add(id);
+            const normalizedLabel = label;
+            return {
+              ...raw,
+              id,
+              label: normalizedLabel,
+              name: raw.name || normalizedLabel,
+              top_level_id,
+            };
+          })
+          .filter(Boolean)
+      : [];
+    return {
+      ...item,
+      topics: authorTopics,
+      search_blob: (item.search_blob || "").toString().toLowerCase(),
+    };
+  });
 
     // Build & keep a single color map
   const TOPIC_COLOR = buildTopicColorMapFromTopicIds([...allTopicIds]);

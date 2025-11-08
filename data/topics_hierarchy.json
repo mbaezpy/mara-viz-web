@@ -237,7 +237,7 @@
         {
           "id": "https://openalex.org/keywords/stimulus",
           "display_name": "Stimulus (psychology)",
-          "score": 3.16408712,
+          "score": 3.1640871199999996,
           "count": 5
         },
         {
@@ -552,13 +552,13 @@
             {
               "id": "https://openalex.org/keywords/fusiform-gyrus",
               "display_name": "Fusiform gyrus",
-              "score": 3.4851349300000005,
+              "score": 3.48513493,
               "count": 5
             },
             {
               "id": "https://openalex.org/keywords/stimulus",
               "display_name": "Stimulus (psychology)",
-              "score": 3.16408712,
+              "score": 3.1640871199999996,
               "count": 5
             },
             {
@@ -576,7 +576,7 @@
             {
               "id": "https://openalex.org/keywords/orbitofrontal-cortex",
               "display_name": "Orbitofrontal cortex",
-              "score": 1.61588499,
+              "score": 1.6158849899999999,
               "count": 3
             },
             {
@@ -727,7 +727,7 @@
         {
           "id": "https://openalex.org/keywords/adjunctive-treatment",
           "display_name": "Adjunctive treatment",
-          "score": 9.53992217,
+          "score": 9.539922169999999,
           "count": 18
         },
         {
@@ -739,7 +739,7 @@
         {
           "id": "https://openalex.org/keywords/therapeutic-drug-monitoring",
           "display_name": "Therapeutic Drug Monitoring",
-          "score": 6.18544232,
+          "score": 6.185442319999999,
           "count": 11
         },
         {
@@ -887,7 +887,7 @@
             {
               "id": "https://openalex.org/keywords/lacosamide",
               "display_name": "Lacosamide",
-              "score": 7.9776831999999995,
+              "score": 7.9776832,
               "count": 9
             },
             {
@@ -899,7 +899,7 @@
             {
               "id": "https://openalex.org/keywords/therapeutic-drug-monitoring",
               "display_name": "Therapeutic Drug Monitoring",
-              "score": 6.18544232,
+              "score": 6.185442319999999,
               "count": 11
             },
             {
@@ -911,13 +911,13 @@
             {
               "id": "https://openalex.org/keywords/levetiracetam",
               "display_name": "Levetiracetam",
-              "score": 4.0249631,
+              "score": 4.024963100000001,
               "count": 5
             },
             {
               "id": "https://openalex.org/keywords/oxcarbazepine",
               "display_name": "Oxcarbazepine",
-              "score": 3.6766992700000003,
+              "score": 3.67669927,
               "count": 5
             },
             {
@@ -941,7 +941,7 @@
             {
               "id": "https://openalex.org/keywords/adjunctive-treatment",
               "display_name": "Adjunctive treatment",
-              "score": 2.15943584,
+              "score": 2.1594358399999996,
               "count": 4
             }
           ],
@@ -1054,7 +1054,7 @@
             {
               "id": "https://openalex.org/keywords/tolerability",
               "display_name": "Tolerability",
-              "score": 14.998793210000002,
+              "score": 14.99879321,
               "count": 19
             },
             {
@@ -1078,13 +1078,13 @@
             {
               "id": "https://openalex.org/keywords/discontinuation",
               "display_name": "Discontinuation",
-              "score": 3.13153299,
+              "score": 3.1315329899999997,
               "count": 4
             },
             {
               "id": "https://openalex.org/keywords/lacosamide",
               "display_name": "Lacosamide",
-              "score": 2.7288338000000003,
+              "score": 2.7288338,
               "count": 3
             },
             {
@@ -1390,13 +1390,13 @@
         {
           "id": "https://openalex.org/keywords/dravet-syndrome",
           "display_name": "Dravet syndrome",
-          "score": 11.55180322,
+          "score": 11.551803219999998,
           "count": 14
         },
         {
           "id": "https://openalex.org/keywords/tolerability",
           "display_name": "Tolerability",
-          "score": 4.348595339999999,
+          "score": 4.34859534,
           "count": 6
         },
         {
@@ -1711,7 +1711,7 @@
             {
               "id": "https://openalex.org/keywords/dravet-syndrome",
               "display_name": "Dravet syndrome",
-              "score": 11.551803220000002,
+              "score": 11.55180322,
               "count": 14
             },
             {
@@ -1723,13 +1723,13 @@
             {
               "id": "https://openalex.org/keywords/global-developmental-delay",
               "display_name": "Global developmental delay",
-              "score": 1.6790794800000002,
+              "score": 1.67907948,
               "count": 3
             },
             {
               "id": "https://openalex.org/keywords/lennox–gastaut-syndrome",
               "display_name": "Lennox–Gastaut syndrome",
-              "score": 1.6107585,
+              "score": 1.6107585000000002,
               "count": 3
             },
             {
@@ -2047,7 +2047,7 @@
         {
           "id": "https://openalex.org/keywords/psychogenic-disease",
           "display_name": "Psychogenic disease",
-          "score": 5.254641299999999,
+          "score": 5.2546413,
           "count": 6
         },
         {
@@ -2214,7 +2214,7 @@
         {
           "id": "https://openalex.org/keywords/hippocampal-sclerosis",
           "display_name": "Hippocampal sclerosis",
-          "score": 6.2831551800000005,
+          "score": 6.283155179999999,
           "count": 9
         },
         {
@@ -2250,7 +2250,7 @@
         {
           "id": "https://openalex.org/keywords/histopathology",
           "display_name": "Histopathology",
-          "score": 1.4984819,
+          "score": 1.4984818999999998,
           "count": 3
         },
         {
@@ -4012,7 +4012,7 @@
         {
           "id": "https://openalex.org/keywords/limbic-encephalitis",
           "display_name": "Limbic Encephalitis",
-          "score": 14.456063970000002,
+          "score": 14.45606397,
           "count": 21
         },
         {
@@ -4633,7 +4633,7 @@
         {
           "id": "https://openalex.org/keywords/global-developmental-delay",
           "display_name": "Global developmental delay",
-          "score": 2.28100148,
+          "score": 2.2810014800000005,
           "count": 4
         },
         {
@@ -4961,7 +4961,7 @@
         {
           "id": "https://openalex.org/keywords/perampanel",
           "display_name": "Perampanel",
-          "score": 6.61679762,
+          "score": 6.616797620000001,
           "count": 7
         },
         {
@@ -4973,19 +4973,19 @@
         {
           "id": "https://openalex.org/keywords/adjunctive-treatment",
           "display_name": "Adjunctive treatment",
-          "score": 3.7285641199999997,
+          "score": 3.7285641200000006,
           "count": 7
         },
         {
           "id": "https://openalex.org/keywords/everolimus",
           "display_name": "Everolimus",
-          "score": 3.4726848199999996,
+          "score": 3.47268482,
           "count": 4
         },
         {
           "id": "https://openalex.org/keywords/refractory",
           "display_name": "Refractory (planetary science)",
-          "score": 1.9769528299999999,
+          "score": 1.97695283,
           "count": 3
         },
         {
@@ -5066,15 +5066,15 @@
           "paper_count": 3
         },
         {
-          "id": "https://openalex.org/A5079238859",
-          "display_name": "Maurizio Voi",
-          "orcid": null,
-          "paper_count": 3
-        },
-        {
           "id": "https://openalex.org/A5025778703",
           "display_name": "Bernd Huber",
           "orcid": null,
+          "paper_count": 2
+        },
+        {
+          "id": "https://openalex.org/A5074695558",
+          "display_name": "Christian G. Bien",
+          "orcid": "https://orcid.org/0000-0003-2225-8654",
           "paper_count": 2
         }
       ],
@@ -6258,12 +6258,6 @@
       ],
       "top_authors": [
         {
-          "id": "https://openalex.org/A5043630876",
-          "display_name": "Albrecht Kunze",
-          "orcid": "https://orcid.org/0000-0002-3564-6237",
-          "paper_count": 1
-        },
-        {
           "id": "https://openalex.org/A5091868571",
           "display_name": "Susanne Fauser",
           "orcid": "https://orcid.org/0000-0003-3063-1586",
@@ -6326,13 +6320,13 @@
         {
           "id": "https://openalex.org/keywords/autoimmune-encephalitis",
           "display_name": "Autoimmune encephalitis",
-          "score": 19.447745870000006,
+          "score": 19.44774587,
           "count": 31
         },
         {
           "id": "https://openalex.org/keywords/limbic-encephalitis",
           "display_name": "Limbic Encephalitis",
-          "score": 14.905241040000003,
+          "score": 14.905241040000002,
           "count": 21
         },
         {
@@ -6350,7 +6344,7 @@
         {
           "id": "https://openalex.org/keywords/stimulus",
           "display_name": "Stimulus (psychology)",
-          "score": 3.16408712,
+          "score": 3.1640871199999996,
           "count": 5
         },
         {
@@ -6362,7 +6356,7 @@
         {
           "id": "https://openalex.org/keywords/anti-nmda-receptor-encephalitis",
           "display_name": "Anti-NMDA Receptor Encephalitis",
-          "score": 2.1705947399999994,
+          "score": 2.17059474,
           "count": 4
         },
         {
@@ -6492,13 +6486,13 @@
             {
               "id": "https://openalex.org/keywords/fusiform-gyrus",
               "display_name": "Fusiform gyrus",
-              "score": 3.4851349300000005,
+              "score": 3.48513493,
               "count": 5
             },
             {
               "id": "https://openalex.org/keywords/stimulus",
               "display_name": "Stimulus (psychology)",
-              "score": 3.16408712,
+              "score": 3.1640871199999996,
               "count": 5
             },
             {
@@ -6659,13 +6653,13 @@
             {
               "id": "https://openalex.org/keywords/autoimmune-encephalitis",
               "display_name": "Autoimmune encephalitis",
-              "score": 19.447745870000002,
+              "score": 19.44774587,
               "count": 31
             },
             {
               "id": "https://openalex.org/keywords/limbic-encephalitis",
               "display_name": "Limbic Encephalitis",
-              "score": 14.905241040000003,
+              "score": 14.905241040000002,
               "count": 21
             },
             {
@@ -6677,7 +6671,7 @@
             {
               "id": "https://openalex.org/keywords/anti-nmda-receptor-encephalitis",
               "display_name": "Anti-NMDA Receptor Encephalitis",
-              "score": 2.1705947399999994,
+              "score": 2.17059474,
               "count": 4
             },
             {
