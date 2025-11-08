@@ -8,6 +8,22 @@ const DEBOUNCE_MS = 250;
 const ROUTE_UPDATE_MS = 200;
 
 const FACETS = ["topics", "authors", "journals"];
+const SORT_DEFAULTS = {
+  publications: { field: "year", order: "desc" },
+  authors: { field: "name", order: "asc" },
+};
+const SORTABLE_FIELDS = {
+  publications: {
+    year: { label: "Year", type: "number", defaultOrder: "desc", className: "col-year" },
+    title: { label: "Publication", type: "string", defaultOrder: "asc", className: "col-title" },
+    citations: { label: "Citations", type: "number", defaultOrder: "desc", className: "col-citations" },
+  },
+  authors: {
+    name: { label: "Author", type: "string", defaultOrder: "asc", className: "col-author" },
+    publications: { label: "Publications", type: "number", defaultOrder: "desc", className: "col-pubs" },
+    citations: { label: "Citations", type: "number", defaultOrder: "desc", className: "col-citations" },
+  },
+};
 
 let state = null;
 let elements = null;
@@ -91,6 +107,91 @@ function applySearch(items = [], query = "") {
     const blob = normalize(parts.join(" "));
     if (!blob) return false;
     return tokens.every(token => blob.includes(token));
+  });
+}
+
+function getSortState(mode) {
+  const fallback = SORT_DEFAULTS[mode] || SORT_DEFAULTS.publications;
+  const stored = state?.sort?.[mode];
+  if (stored && SORTABLE_FIELDS[mode]?.[stored.field]) {
+    return stored;
+  }
+  return { ...fallback };
+}
+
+function parseSortParam(mode, value) {
+  const defaults = SORT_DEFAULTS[mode];
+  if (!value || typeof value !== "string") return { ...defaults };
+  const [fieldRaw = "", orderRaw = ""] = value.split(":");
+  const field = fieldRaw.trim();
+  const meta = SORTABLE_FIELDS[mode]?.[field];
+  if (!meta) return { ...defaults };
+  const order = orderRaw.trim().toLowerCase() === "asc" ? "asc" : orderRaw.trim().toLowerCase() === "desc" ? "desc" : meta.defaultOrder;
+  return { field, order };
+}
+
+function formatSortParam(mode) {
+  const sort = getSortState(mode);
+  return `${sort.field}:${sort.order}`;
+}
+
+function compareValues(a, b, type, order) {
+  let result = 0;
+  if (type === "number") {
+    const toNumber = value => {
+      const num = Number(value);
+      return Number.isFinite(num) ? num : Number.NEGATIVE_INFINITY;
+    };
+    const numA = toNumber(a);
+    const numB = toNumber(b);
+    result = numA - numB;
+  } else {
+    const strA = (a == null ? "" : String(a)).toLowerCase();
+    const strB = (b == null ? "" : String(b)).toLowerCase();
+    result = strA.localeCompare(strB);
+  }
+  return order === "asc" ? result : -result;
+}
+
+function sortPublications(items = []) {
+  const sort = getSortState("publications");
+  const meta = SORTABLE_FIELDS.publications[sort.field];
+  if (!meta) return items;
+  return [...items].sort((a, b) => {
+    let valueA;
+    let valueB;
+    if (sort.field === "year") {
+      valueA = a.year ?? Number.NEGATIVE_INFINITY;
+      valueB = b.year ?? Number.NEGATIVE_INFINITY;
+    } else if (sort.field === "title") {
+      valueA = a.title || "";
+      valueB = b.title || "";
+    } else if (sort.field === "citations") {
+      valueA = a.cited_by_count ?? 0;
+      valueB = b.cited_by_count ?? 0;
+    }
+    return compareValues(valueA, valueB, meta.type, sort.order);
+  });
+}
+
+function sortAuthors(items = []) {
+  const sort = getSortState("authors");
+  const meta = SORTABLE_FIELDS.authors[sort.field];
+  if (!meta) return items;
+  return [...items].sort((a, b) => {
+    let valueA;
+    let valueB;
+    if (sort.field === "name") {
+      valueA = a.name || "";
+      valueB = b.name || "";
+    } else if (sort.field === "publications") {
+      valueA = a.publication_count ?? 0;
+      valueB = b.publication_count ?? 0;
+    } else if (sort.field === "citations") {
+      valueA = a.citation_count ?? 0;
+      valueB = b.citation_count ?? 0;
+    }
+    return compareValues(valueA, valueB, meta.type, sort.order);
   });
 }
 
@@ -204,6 +305,45 @@ function highlightMatches(container, facet, entryId) {
   });
 }
 
+function getSortMeta(mode, field) {
+  return SORTABLE_FIELDS[mode]?.[field];
+}
+
+function renderSortableHeader(mode, field) {
+  const meta = getSortMeta(mode, field);
+  if (!meta) return "";
+  const sort = getSortState(mode);
+  const isActive = sort.field === field;
+  const symbol = sort.order === "asc" ? "▲" : "▼";
+  const ariaSort = isActive ? (sort.order === "asc" ? "ascending" : "descending") : "none";
+  const attrs = [
+    `scope="col"`,
+    `class="${meta.className} sortable"`,
+    `role="button"`,
+    `tabindex="0"`,
+    `data-field="${field}"`,
+    `data-mode="${mode}"`,
+    `data-sort-active="${isActive}"`,
+    `data-sort-symbol="${isActive ? symbol : ""}"`,
+    `aria-sort="${ariaSort}"`,
+  ];
+  return `<th ${attrs.join(" ")}>${meta.label}</th>`;
+}
+
+function attachSortInteractions(panel, mode) {
+  panel.querySelectorAll("th.sortable").forEach(th => {
+    const field = th.dataset.field;
+    const handler = () => setSort(mode, field);
+    th.addEventListener("click", handler);
+    th.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        handler();
+      }
+    });
+  });
+}
+
 function renderPublications(panel, items) {
   if (!items.length) {
     panel.innerHTML = `
@@ -298,9 +438,9 @@ function renderPublications(panel, items) {
     <table class="library-table library-table--publications">
       <thead>
         <tr>
-          <th scope="col" class="col-year">Year</th>
-          <th scope="col" class="col-title">Publication</th>
-          <th scope="col" class="col-citations">Citations</th>
+          ${renderSortableHeader("publications", "year")}
+          ${renderSortableHeader("publications", "title")}
+          ${renderSortableHeader("publications", "citations")}
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -308,6 +448,7 @@ function renderPublications(panel, items) {
   `;
 
   attachPublicationInteractions(panel);
+  attachSortInteractions(panel, "publications");
 }
 
 function attachPublicationInteractions(panel) {
@@ -379,14 +520,15 @@ function renderAuthors(panel, items) {
     <table class="library-table library-table--authors">
       <thead>
         <tr>
-          <th scope="col" class="col-author">Author</th>
-          <th scope="col" class="col-pubs">Publications</th>
-          <th scope="col" class="col-citations">Citations</th>
+          ${renderSortableHeader("authors", "name")}
+          ${renderSortableHeader("authors", "publications")}
+          ${renderSortableHeader("authors", "citations")}
         </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
   `;
+  attachSortInteractions(panel, "authors");
 }
 
 function ensurePanel(mode) {
@@ -403,7 +545,8 @@ function ensurePanel(mode) {
     cache.metrics = { total: items.length };
   } else {
     const items = applySearch(dataCache.authors, state.search);
-    renderAuthors(panel, items);
+    const sorted = sortAuthors(items);
+    renderAuthors(panel, sorted);
     cache.rendered = true;
     cache.hash = hash;
   }
@@ -411,7 +554,11 @@ function ensurePanel(mode) {
 
 function getPanelHash(mode) {
   if (mode === "authors") {
-    return JSON.stringify({ mode, search: state.search });
+    return JSON.stringify({
+      mode,
+      search: state.search,
+      sort: getSortState("authors"),
+    });
   }
   const filters = state.filters;
   return JSON.stringify({
@@ -420,6 +567,7 @@ function getPanelHash(mode) {
     topics: filters.topics.map(f => f.id).sort(),
     authors: filters.authors.map(f => f.id).sort(),
     journals: filters.journals.map(f => f.id).sort(),
+    sort: getSortState("publications"),
   });
 }
 
@@ -432,7 +580,7 @@ function getFilteredPublications() {
   const authorIds = filters.authors.map(a => a.id);
   const journalIds = filters.journals.map(j => j.id);
 
-  return publications.filter(pub => {
+  const filtered = publications.filter(pub => {
     if (tokens.length) {
       const searchBlob = pub._search_norm || "";
       if (!tokens.every(token => searchBlob.includes(token))) {
@@ -459,6 +607,7 @@ function getFilteredPublications() {
 
     return true;
   });
+  return sortPublications(filtered);
 }
 
 function renderFilterBar() {
@@ -742,6 +891,24 @@ function addFilter(facet, entry, options = {}) {
   return true;
 }
 
+function setSort(mode, field) {
+  if (!state || !SORTABLE_FIELDS[mode] || !SORTABLE_FIELDS[mode][field]) return;
+  if (!state.sort) state.sort = { publications: { ...SORT_DEFAULTS.publications }, authors: { ...SORT_DEFAULTS.authors } };
+  const current = getSortState(mode);
+  const meta = SORTABLE_FIELDS[mode][field];
+  let nextOrder = meta.defaultOrder;
+  if (current.field === field) {
+    nextOrder = current.order === "asc" ? "desc" : "asc";
+  }
+  state.sort[mode] = { field, order: nextOrder };
+  if (state.panelCache[mode]) {
+    state.panelCache[mode].rendered = false;
+    state.panelCache[mode].hash = null;
+  }
+  scheduleRouteUpdate();
+  render();
+}
+
 function removeFilter(facet, id, options = {}) {
   if (!FACETS.includes(facet)) return;
   const { silent = false } = options;
@@ -844,6 +1011,7 @@ function scheduleRouteUpdate() {
       topics: state.filters.topics.length ? state.filters.topics.map(f => f.id).join(",") : null,
       authors: state.filters.authors.length ? state.filters.authors.map(f => f.id).join(",") : null,
       journals: state.filters.journals.length ? state.filters.journals.map(f => f.id).join(",") : null,
+      sort: formatSortParam(state.mode),
     };
     navigateFn(params, { replace: true });
   }, ROUTE_UPDATE_MS);
@@ -1083,6 +1251,10 @@ export async function init({ mount, route = {}, navigate } = {}) {
       authors: initialFilters.authors,
       journals: initialFilters.journals,
     },
+    sort: {
+      publications: { ...SORT_DEFAULTS.publications },
+      authors: { ...SORT_DEFAULTS.authors },
+    },
     filterSequence: [],
     expandedPublications: new Set(),
     panelCache: {
@@ -1103,6 +1275,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
   state.filterSequence = FACETS.flatMap(facet =>
     state.filters[facet].map(entry => `${facet}|${entry.id}`)
   );
+  state.sort[state.mode] = parseSortParam(state.mode, route.sort);
 
   elements.searchInput.value = state.search;
   const searchInputHandler = handleSearchInput;
@@ -1187,6 +1360,7 @@ export function onRouteChange({ params = {}, navigate } = {}) {
   state.filterSequence = FACETS.flatMap(facet =>
     state.filters[facet].map(entry => `${facet}|${entry.id}`)
   );
+  state.sort[state.mode] = parseSortParam(state.mode, params.sort);
   if (state.expandedPublications && typeof state.expandedPublications.clear === "function") {
     state.expandedPublications.clear();
   }

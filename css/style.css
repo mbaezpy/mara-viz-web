@@ -404,6 +404,29 @@ header.main-tabs {
   color: var(--muted);
 }
 
+.library-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.library-table th.sortable:hover,
+.library-table th.sortable:focus-visible {
+  text-decoration: underline;
+}
+
+.library-table th.sortable:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.library-table th.sortable[data-sort-active="true"]::after {
+  content: attr(data-sort-symbol);
+  margin-left: 4px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
 .library-table th,
 .library-table td {
   padding: 12px 16px;
