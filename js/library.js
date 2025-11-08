@@ -498,10 +498,14 @@ function renderAuthors(panel, items) {
         const safeColor = escapeHTML(colorValue || "#94a3b8");
         const label = tag.label || tag.name || tag.id || "—";
         return `
-          <span class="tag tag--topic" style="--topic-color:${safeColor}">
-            <span class="topic-glyph" aria-hidden="true"></span>
-            ${escapeHTML(label)}
-          </span>`;
+          <button type="button"
+            class="tag tag--topic tag--clickable"
+            data-topic-id="${escapeHTML(tag.id)}"
+            data-topic-label="${escapeHTML(label)}"
+            style="--topic-color:${safeColor}"
+            title="Add filter" aria-label="${escapeHTML(`Add filter: Topic ${label}`)}">
+            <span class="tag-label">${escapeHTML(label)}</span>
+          </button>`;
       })
       .join("");
     return `
@@ -528,6 +532,7 @@ function renderAuthors(panel, items) {
       <tbody>${rows}</tbody>
     </table>
   `;
+  attachPublicationInteractions(panel);
   attachSortInteractions(panel, "authors");
 }
 
@@ -544,9 +549,8 @@ function ensurePanel(mode) {
     cache.hash = hash;
     cache.metrics = { total: items.length };
   } else {
-    const items = applySearch(dataCache.authors, state.search);
-    const sorted = sortAuthors(items);
-    renderAuthors(panel, sorted);
+    const items = getFilteredAuthors();
+    renderAuthors(panel, items);
     cache.rendered = true;
     cache.hash = hash;
   }
@@ -608,6 +612,23 @@ function getFilteredPublications() {
     return true;
   });
   return sortPublications(filtered);
+}
+
+function getFilteredAuthors() {
+  if (!dataCache) return [];
+  const authors = dataCache.authors || [];
+  const topicIds = state.filters.topics.map(t => t.id);
+
+  const searched = applySearch(authors, state.search);
+  if (!topicIds.length) {
+    return sortAuthors(searched);
+  }
+  const filtered = searched.filter(author => {
+    const authorTopicIds = (author.topics || []).map(t => t.id);
+    if (!authorTopicIds.length) return false;
+    return topicIds.some(id => authorTopicIds.includes(id));
+  });
+  return sortAuthors(filtered);
 }
 
 function renderFilterBar() {
@@ -858,7 +879,7 @@ function render() {
 
 function applyPendingHighlights() {
   if (!state.pendingHighlights.length) return;
-  const panel = elements.panels.publications;
+  const panel = elements.panels?.[state.mode] || elements.panels?.publications;
   state.pendingHighlights.forEach(({ facet, id }) => {
     highlightMatches(panel, facet, id);
   });
@@ -881,7 +902,7 @@ function addFilter(facet, entry, options = {}) {
   state.filterSequence.push(`${facet}|${id}`);
   state.pendingHighlights.push({ facet, id });
   state.recentlyAddedFilters.push(`${facet}|${id}`);
-  invalidatePublicationsPanel();
+  invalidatePanels(["publications", "authors"]);
   scheduleRouteUpdate();
   render();
   if (!silent) {
@@ -919,7 +940,7 @@ function removeFilter(facet, id, options = {}) {
   state.filters[facet] = existing.filter(item => item.id !== id);
   state.filterSequence = state.filterSequence.filter(entry => entry !== `${facet}|${id}`);
   state.lastRemovedFilter = { facet, entry };
-  invalidatePublicationsPanel();
+  invalidatePanels(["publications", "authors"]);
   scheduleRouteUpdate();
   render();
   if (!silent) {
@@ -929,10 +950,11 @@ function removeFilter(facet, id, options = {}) {
   return entry;
 }
 
-function clearAllFilters() {
-  const hadSearch = Boolean(state.search);
+function clearAllFilters(options = {}) {
+  const { resetSearch = true, silent = false, skipRouteUpdate = false, skipRender = false } = options;
+  const hadSearch = resetSearch && Boolean(state.search);
   const hadFilters = FACETS.some(facet => state.filters[facet]?.length);
-  if (!hadFilters && !hadSearch) return;
+  if (!hadFilters && !hadSearch) return false;
 
   FACETS.forEach(facet => {
     state.filters[facet] = [];
@@ -946,7 +968,7 @@ function clearAllFilters() {
     state.expandedPublications.clear();
   }
 
-  if (hadSearch) {
+  if (resetSearch && hadSearch) {
     state.search = "";
     state.searchTokens = [];
     if (elements && elements.searchInput) {
@@ -960,12 +982,13 @@ function clearAllFilters() {
       cache.hash = null;
     });
   } else {
-    invalidatePublicationsPanel();
+    invalidatePanels(["publications", "authors"]);
   }
 
-  scheduleRouteUpdate();
-  render();
-  showToast("Cleared all filters");
+  if (!skipRouteUpdate) scheduleRouteUpdate();
+  if (!skipRender) render();
+  if (!silent) showToast("Cleared all filters");
+  return true;
 }
 
 function removeLastFilter() {
@@ -981,7 +1004,7 @@ function removeLastFilter() {
   state.filterSequence.pop();
   state.filters[facet] = filters.filter(item => item.id !== id);
   state.lastRemovedFilter = { facet, entry };
-  invalidatePublicationsPanel();
+  invalidatePanels(["publications", "authors"]);
   scheduleRouteUpdate();
   render();
   const facetLabel = facet === "topics" ? "Topic" : facet === "authors" ? "Author" : "Journal";
@@ -996,9 +1019,14 @@ function removeLastFilter() {
   });
 }
 
-function invalidatePublicationsPanel() {
-  state.panelCache.publications.rendered = false;
-  state.panelCache.publications.hash = null;
+function invalidatePanels(modes = ["publications"]) {
+  if (!state || !state.panelCache) return;
+  modes.forEach(mode => {
+    if (state.panelCache[mode]) {
+      state.panelCache[mode].rendered = false;
+      state.panelCache[mode].hash = null;
+    }
+  });
 }
 
 function scheduleRouteUpdate() {
@@ -1069,8 +1097,12 @@ function showToast(message, options = {}) {
 
 function setMode(nextMode) {
   if (state.mode === nextMode) return;
+  clearAllFilters({ resetSearch: false, silent: true, skipRouteUpdate: true, skipRender: true });
   state.mode = nextMode;
-  state.panelCache[nextMode].rendered = false;
+  if (state.panelCache[nextMode]) {
+    state.panelCache[nextMode].rendered = false;
+    state.panelCache[nextMode].hash = null;
+  }
   scheduleRouteUpdate();
   render();
 }
