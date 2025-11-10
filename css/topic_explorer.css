@@ -4,14 +4,51 @@
   .stage{ flex:1 1 auto; min-width: 0; display:flex; align-items:stretch; justify-content:center; position:relative; }
   .stage-inner{ width:100%; height:100%; position:relative; }
 
-  circle{ cursor:pointer; stroke: #00000014; stroke-width: 0.75px; transition: stroke .15s ease; }
+  /* circle{ cursor:pointer; stroke: #00000014; stroke-width: 0.75px; transition: stroke .15s ease; } */
+ 
   .node--leaf{ fill:#ffffff; }
   .node--focus{ outline: 3px solid var(--focus); outline-offset: 4px; }
   /* Hover + selection cues */
   circle.is-hover{ stroke:#00000066; }
   circle.is-selected{ stroke:#334155; stroke-width:1.5px; }
 
-  .labels text{ font-size:12px; text-anchor:middle; pointer-events:none; fill: var(--ink); filter: drop-shadow(0 1px 0 #ffffff); }
+.labels text{
+  font-size: 14px;                   /* was 12px */
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+  fill: #1f2937;                     /* a dark navy */
+  paint-order: stroke fill;          /* draw stroke first */
+  stroke: #ffffff;                   /* white halo */
+  stroke-width: 2.5px;
+  stroke-opacity: 0.9;
+  text-shadow: none;                 /* halo replaces drop-shadow */
+}
+
+ /* --- semantic accents to bubbles */
+  circle {
+    stroke: #00000014;
+    stroke-width: 1;                 /* keep constant */
+    vector-effect: non-scaling-stroke;
+    cursor:pointer;
+    /* no CSS transform on circles */
+    transition: stroke .2s ease, stroke-opacity .2s ease, filter .2s ease, fill .2s ease;
+  }
+
+  /* hover — color only, no width, no transform */
+  circle.is-hover {
+    stroke: var(--topic-accent, #1d4ed8);   /* from your topic color or brand blue */
+    stroke-opacity: 1;
+    /* optional: slightly stronger shadow, but keep it subtle */
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.10));
+  }
+
+  /* selected */
+  circle.is-selected {
+    stroke: var(--topic-accent, #1d4ed8); 
+  }
+ /* --- end semantic accents */
+
 
   .breadcrumbs{ position:absolute; left:16px; top:12px; background: var(--panel-bg); border:1px solid var(--tooltip-border); border-radius: 10px; padding:6px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display:flex; flex-wrap:wrap; gap:6px; align-items:center; z-index:2; }
   .breadcrumbs span{ color: var(--muted); }

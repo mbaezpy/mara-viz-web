@@ -395,27 +395,58 @@ function loadLookupOnce(){
     };
 
     const nodes = gNodes.selectAll('circle').data(root.descendants()).join('circle')
-      .attr('class', d => d.children ? 'node node--internal' : 'node node--leaf')
       .attr('fill', d => {
-        if (!d.children) return '#ffffff';
-        return depthColors[d.depth] || depthColors[depthColors.length - 2];
+        const c = d.data.topic_id ? topicColor(d.data.topic_id) : '#e2e8f0';
+        const col = d3.color(c);
+        col.opacity = 0.15;              // was 0.25 → softer
+        return col + '';                 // to string
       })
-      .on('mouseover', function(event, d){
+      .on('mouseover', function (event, d) {
+        const c = d.data.topic_id ? topicColor(d.data.topic_id) : '#1d4ed8';
+        this.style.setProperty('--topic-accent', c);
         d3.select(this).classed('is-hover', true);
+        tooltip.style('border-color', c);
+
+        // SHOW tooltip (restored)
         const name = d.data.name || '';
-        const shortName = name.length > 40 ? name.slice(0, 40) + '…' : name;
-        tooltip.style('opacity', 1).html(`<strong>${escapeHTML(shortName)}</strong>${d.data.size?` • ${d.data.size}`:''}`);
+        const count = d.data.size ? ` • ${d.data.size}` : '';
+        tooltip
+          .style('opacity', 1)
+          .html(`<strong>${escapeHTML(name)}</strong>${count}`);
       })
-      .on('mousemove', function(event){
+      .on('mousemove', function (event) {
+        // MOVE tooltip (restored)
         const { pageX: x, pageY: y } = event;
-        const offsetX = 16;
-        const offsetY = 12;
-        tooltip.style('left', `${x + offsetX}px`).style('top', `${y + offsetY}px`);
+        tooltip.style('left', `${x + 16}px`).style('top', `${y + 12}px`);
       })
-      .on('mouseout', function(){
+      .on('mouseout', function () {
         d3.select(this).classed('is-hover', false);
+        tooltip.style('border-color', 'var(--tooltip-border)');
+
+        // HIDE tooltip (restored)
         tooltip.style('opacity', 0);
       })
+    // .attr('class', d => d.children ? 'node node--internal' : 'node node--leaf')
+      // .attr('fill', d => {
+      //   if (!d.children) return '#ffffff';
+      //   return depthColors[d.depth] || depthColors[depthColors.length - 2];
+      // })
+      // .on('mouseover', function(event, d){
+      //   d3.select(this).classed('is-hover', true);
+      //   const name = d.data.name || '';
+      //   const shortName = name.length > 40 ? name.slice(0, 40) + '…' : name;
+      //   tooltip.style('opacity', 1).html(`<strong>${escapeHTML(shortName)}</strong>${d.data.size?` • ${d.data.size}`:''}`);
+      // })
+      // .on('mousemove', function(event){
+      //   const { pageX: x, pageY: y } = event;
+      //   const offsetX = 16;
+      //   const offsetY = 12;
+      //   tooltip.style('left', `${x + offsetX}px`).style('top', `${y + offsetY}px`);
+      // })
+      // .on('mouseout', function(){
+      //   d3.select(this).classed('is-hover', false);
+      //   tooltip.style('opacity', 0);
+      // })
       .on('click', (event, d)=>{
         setSelectedNode(d);
 
