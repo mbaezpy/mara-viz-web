@@ -59,7 +59,7 @@
 }
 
 /* The first <span> in .line1 is the label+dot container */
-.line1 > span:first-child{
+.line1 > a{
   align-items:center;        /* NEW */
   flex:1 1 auto;             /* NEW: take remaining space */
   min-width:0;               /* NEW: allow shrinking so ellipsis can trigger */
@@ -67,6 +67,7 @@
   white-space:nowrap;        /* NEW */
   text-overflow:ellipsis;    /* NEW */
   padding-left: 2px;
+  cursor: pointer;
 }
 
 /* The badge should not shrink */

@@ -221,8 +221,8 @@ function loadLookupOnce(){
           const badge = topic.count ? `<span class="badge">${topic.count}</span>` : '';
           const color = escapeHTML(topicColor(topic.id));
           return `<div class="line1">
-            <span><span class="topic-color-dot" style="--topic-color:${color}" aria-hidden="true"></span>
-            ${escapeHTML(topic.name)}</span>${badge}
+            <a href="#/topic_explorer?topic=${encodeURIComponent(topic.id)}"><span class="topic-color-dot" style="--topic-color:${color}" aria-hidden="true"></span>
+            ${escapeHTML(topic.name)}</a>${badge}
           </div>`;
         });
       if (!options.suppressRoute) {
@@ -325,6 +325,57 @@ function loadLookupOnce(){
     }
   }
 
+  function wrapLabel(textSel, label, maxWidth, maxLines = 3, lineHeightEm = 1.1) {
+    const words = String(label || '—').split(/\s+/).filter(Boolean);
+
+    // --- Pass 1: build lines using a hidden measuring tspan
+    const meas = textSel.text(null).append('tspan')
+      .attr('x', 0)
+      .attr('visibility', 'hidden')
+      .text('');
+
+    const lines = [];
+    let cur = [];
+
+    for (const w of words) {
+      cur.push(w);
+      meas.text(cur.join(' '));
+      if (meas.node().getComputedTextLength() > maxWidth) {
+        // move last word to new line
+        cur.pop();
+        if (cur.length) lines.push(cur.join(' '));
+        cur = [w];
+
+        if (lines.length === maxLines - 1) {
+          // last line – ellipsize
+          let last = cur.join(' ') + '…';
+          meas.text(last);
+          while (last.length > 1 && meas.node().getComputedTextLength() > maxWidth) {
+            last = last.slice(0, -2) + '…';
+            meas.text(last);
+          }
+          lines.push(last);
+          cur = [];
+          break;
+        }
+      }
+    }
+    if (cur.length && lines.length < maxLines) lines.push(cur.join(' '));
+
+    meas.remove(); // cleanup
+
+    // --- Pass 2: render tspans with proper vertical centering
+    textSel.text(null);
+    const n = lines.length;
+    const firstDy = n > 1 ? -((n - 1) / 2) * lineHeightEm : 0;
+
+    lines.forEach((line, i) => {
+      const t = textSel.append('tspan').attr('x', 0).text(line);
+      if (i === 0) t.attr('dy', `${firstDy}em`);
+      else t.attr('dy', `${lineHeightEm}em`);
+    });
+  }
+
   function draw(data){
     root = pack(data);
     focus = root;
@@ -379,16 +430,46 @@ function loadLookupOnce(){
         event.stopPropagation();
       });
 
-    const labels = gLabels.selectAll('text').data(root.descendants()).join('text')
+    // const labels = gLabels.selectAll('text').data(root.descendants()).join('text')
+    //   .style('fill-opacity', d => d.parent === root ? 1 : 0)
+    //   .style('display', d => d.parent === root ? 'inline' : 'none')
+    //   .text(d => d.data.name || '—');
+    const labels = gLabels.selectAll('text')
+      .data(root.descendants())
+      .join('text')
+      .attr('class', 'label')
+      .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', 'middle')
+      .style('pointer-events', 'none')
       .style('fill-opacity', d => d.parent === root ? 1 : 0)
       .style('display', d => d.parent === root ? 'inline' : 'none')
-      .text(d => d.data.name || '—');
+      .each(function(d){
+        const sel = d3.select(this);
+        const name = d.data.name || '—';
+        //const fontPx = Math.max(10, Math.min(22, d.r / 3));
+        //sel.style('font-size', `${fontPx}px`);
+        // Allow ~80–90% of the circle diameter for text width
+        wrapLabel(sel, name, d.r * 1.8 /* width inside bubble */, 3);
+      });
+
+    function rewrapVisibleLabels(k, parentNode) {
+      labels.each(function(n){
+        if (n.parent !== parentNode) return; // only the labels that should be visible
+        const sel = d3.select(this);
+        const name = n.data.name || '—';
+        //const fontPx = Math.max(10, Math.min(22, (n.r * k) / 3));
+        //sel.style('font-size', `${fontPx}px`);
+        wrapLabel(sel, name, n.r * k * 1.8, 3, 1.1);
+      });
+    }
+
+
 
     function zoomTo(v){
       const k = width / v[2];
       view = v;
       labels.attr('transform', d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
-            .attr('font-size', d => Math.max(10, Math.min(22, (d.r * k) / 3)));
+           // .attr('font-size', d => Math.max(10, Math.min(22, (d.r * k) / 3)));
       nodes.attr('transform', d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
            .attr('r', d => d.r * k);
     }
@@ -399,15 +480,29 @@ function loadLookupOnce(){
         return t => zoomTo(i(t));
       });
 
+      // labels
+      //   .filter(function(n){ return n.parent === d || this.style.display === 'inline'; })
+      //   .transition(transition)
+      //   .style('fill-opacity', n => n.parent === d ? 1 : 0)
+      //   .on('start', function(n){ if(n.parent === d) this.style.display = 'inline'; })
+      //   .on('end', function(n){ if(n.parent !== d) this.style.display = 'none'; });
+
       labels
         .filter(function(n){ return n.parent === d || this.style.display === 'inline'; })
         .transition(transition)
         .style('fill-opacity', n => n.parent === d ? 1 : 0)
-        .on('start', function(n){ if(n.parent === d) this.style.display = 'inline'; })
-        .on('end', function(n){ if(n.parent !== d) this.style.display = 'none'; });
+        .on('start', function(n){ if (n.parent === d) this.style.display = 'inline'; })
+        .on('end', (n, i, nodesSel) => {
+          const el = nodesSel[i];
+          if (n.parent !== d) { el.style.display = 'none'; return; }
+          // Rewrap once at final scale k
+          const k = width / view[2];
+          rewrapVisibleLabels(k, d);                   
+        });      
     }
 
     zoomTo([root.x, root.y, root.r * 2]);
+    rewrapVisibleLabels(width / (root.r * 2), root);   
 
     // attach a background click listener directly to this svg selection
     svg.on('click.topicExplorer', (event)=>{
