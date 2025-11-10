@@ -199,6 +199,17 @@ function loadLookupOnce(){
     const docCount = data.doc_count ?? data.size ?? 0;
     const docDirect = data.doc_count_direct ?? docCount;
     const keywords = Array.isArray(data.top_keywords) ? data.top_keywords : [];
+    const childNodes = Array.isArray(node.children) ? node.children : [];
+    const subtopics = childNodes.map(child => {
+      const childData = child.data || {};
+      const id = childData.topic_id || childData.name || '';
+      return {
+        id,
+        name: childData.name || 'Untitled topic',
+        count: childData.doc_count ?? childData.size ?? child.value ?? 0,
+        color: topicColor(id),
+      };
+    });
 
     const isRoot = !node.parent;
 
@@ -231,18 +242,37 @@ function loadLookupOnce(){
       return;
     }
 
-    panel.html(`
-      <h2>${escapeHTML(data.name || 'Untitled')}</h2>
-      <div class="meta">${node.children ? 'Cluster' : 'Topic'}${docCount ? ` • ${docCount} documents` : ''}${docDirect !== docCount ? ` • ${docDirect} direct` : ''}</div>
-      ${data.description ? `<section><h3>Description</h3><div class="desc">${escapeHTML(data.description)}</div></section>`: ''}
-      ${keywords.length ? `
+    const keywordsSection = keywords.length ? `
         <section id="keywords-section">
           <h3>Top Keywords</h3>
           <div class="chips">
             ${keywords.map(k => `<span class="chip">${escapeHTML(k.display_name || k.id || k)}</span>`).join('')}
           </div>
         </section>
-      ` : ''}
+      ` : '';
+
+    const subtopicsSection = subtopics.length ? `
+      <section id="subtopics-section">
+        <h3>Subtopics</h3>
+        <ul class="list compact">
+          ${subtopics.map(topic => {
+            const badge = topic.count ? `<span class="badge">${topic.count}</span>` : '';
+            const color = escapeHTML(topic.color || TOPIC_COLOR_FALLBACK);
+            return `<li><div class="line1">
+              <a href="#/topic_explorer?topic=${encodeURIComponent(topic.id)}"><span class="topic-color-dot" style="--topic-color:${color}" aria-hidden="true"></span>
+              ${escapeHTML(topic.name)}</a>${badge}
+            </div></li>`;
+          }).join('')}
+        </ul>
+      </section>
+    ` : '';
+
+    panel.html(`
+      <h2>${escapeHTML(data.name || 'Untitled')}</h2>
+      <div class="meta">${node.children ? 'Cluster' : 'Topic'}${docCount ? ` • ${docCount} documents` : ''}${docDirect !== docCount ? ` • ${docDirect} direct` : ''}</div>
+      ${data.description ? `<section><h3>Description</h3><div class="desc">${escapeHTML(data.description)}</div></section>`: ''}
+      ${keywordsSection}
+      ${subtopicsSection}
       <section id="authors-section"><h3>Top Authors</h3><div class="skeleton" style="height:48px"></div></section>
       <section id="journals-section"><h3>Top Journals</h3><div class="skeleton" style="height:56px"></div></section>
       <section id="pubs-section"><h3>Top Publications</h3><div class="skeleton" style="height:96px"></div></section>
