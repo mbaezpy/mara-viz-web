@@ -1,6 +1,10 @@
 // js/topic_explorer.js
 // Uses global d3 (UMD). Ensure <script src="https://d3js.org/d3.v7.min.js"></script>
 // is loaded before your module loader.
+import {
+  buildTopicColorMapFromTopicIds,
+  colorForTopicId as resolveTopicColor,
+} from "./topic_colors.js";
 
 let root = null;
 let focus = null;
@@ -14,6 +18,15 @@ let pendingTopicId = null;
 let applyRouteTopic = null;
 let setSelectedNode = () => {};
 let zoomToNodeRef = () => {};
+let topicColorMap = Object.freeze({});
+const TOPIC_COLOR_FALLBACK = "#94a3b8";
+
+function collectTopLevelTopicIds(data) {
+  if (!data || !Array.isArray(data.children)) return [];
+  return data.children
+    .map(child => child && (child.topic_id || child.name || null))
+    .filter(Boolean);
+}
 
 export async function init({ mount, route = {}, navigate } = {}) {
   if (!mount) throw new Error('topic_explorer.init requires { mount } DOM element');
@@ -53,7 +66,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
   pendingTopicId = typeof route.topic === 'string' && route.topic ? route.topic : null;
 
   // Load lookup data (with abort support)
-  function loadLookupOnce(){
+function loadLookupOnce(){
     if(lookupPromise) return lookupPromise;
     const signal = abortController.signal;
     lookupPromise = fetch('data/topics_lookup.json', { signal })
@@ -80,6 +93,10 @@ export async function init({ mount, route = {}, navigate } = {}) {
 
   function escapeHTML(s){
     return (s==null?'' : String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  }
+
+  function topicColor(id) {
+    return resolveTopicColor(id, topicColorMap) || TOPIC_COLOR_FALLBACK;
   }
 
   function setCrumbs(node){
@@ -195,11 +212,19 @@ export async function init({ mount, route = {}, navigate } = {}) {
       panel.select('#root-topic-list')
         .selectAll('li')
         .data((data.children || []).map(child => ({
+          id: child.topic_id || child.name || "",
           name: child.name,
           count: child.doc_count ?? child.size ?? 0,
         })))
         .join('li')
-        .html(topic => `<div class="line1">${escapeHTML(topic.name)}${topic.count ? `<span class="badge">${topic.count}</span>` : ''}</div>`);
+        .html(topic => {
+          const badge = topic.count ? `<span class="badge">${topic.count}</span>` : '';
+          const color = escapeHTML(topicColor(topic.id));
+          return `<div class="line1">
+            <span><span class="topic-color-dot" style="--topic-color:${color}" aria-hidden="true"></span>
+            ${escapeHTML(topic.name)}</span>${badge}
+          </div>`;
+        });
       if (!options.suppressRoute) {
         updateRoute(null);
       }
@@ -433,6 +458,8 @@ export async function init({ mount, route = {}, navigate } = {}) {
     const resp = await fetch('data/topics_hierarchy.json', { signal: abortController.signal });
     if (!resp.ok) throw new Error(`Failed to load hierarchy: ${resp.status}`);
     const data = await resp.json();
+    const topIds = collectTopLevelTopicIds(data);
+    topicColorMap = buildTopicColorMapFromTopicIds(topIds);
     draw(data);
   } catch (err) {
     if (err.name === 'AbortError') {
@@ -459,6 +486,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
     lookupPromise = null;
     lookupCache = null;
     applyRouteTopic = null;
+    topicColorMap = Object.freeze({});
 
     // remove svg-level listener namespace
     try { svg.on('.topicExplorer', null); } catch(e){}

@@ -725,6 +725,16 @@ mark {
   .tag.tag--topic { border-color: var(--topic-color); background: #fff; }
 }
 
+.topic-color-dot {
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--topic-color, #94a3b8);
+  margin-right: 8px;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--topic-color, #94a3b8) 25%, transparent);
+}
+
 
 /* Venue */
 

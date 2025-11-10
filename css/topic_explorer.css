@@ -36,6 +36,15 @@
   justify-content: space-between;
   width: 100%;
 }
+/* One-line row with space for the badge */
+.line1{
+  display:flex;
+  align-items:center;        /* NEW */
+  justify-content:space-between;
+  gap:8px;                   /* NEW */
+  width:100%;
+  min-width:0;               /* NEW */
+}
 
 .list.compact li {
   display: flex;
@@ -46,6 +55,23 @@
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   background: #fff;
+  min-width: 0; 
+}
+
+/* The first <span> in .line1 is the label+dot container */
+.line1 > span:first-child{
+  align-items:center;        /* NEW */
+  flex:1 1 auto;             /* NEW: take remaining space */
+  min-width:0;               /* NEW: allow shrinking so ellipsis can trigger */
+  overflow:hidden;           /* NEW */
+  white-space:nowrap;        /* NEW */
+  text-overflow:ellipsis;    /* NEW */
+  padding-left: 2px;
+}
+
+/* The badge should not shrink */
+.line1 .badge{
+  flex:0 0 auto;             /* NEW */
 }
 
   .j-title{ flex:1; color: var(--muted); overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
