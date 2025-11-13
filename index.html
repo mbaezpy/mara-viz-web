@@ -5,6 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research Viz</title>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .main-view-shell {
+      position: relative;
+      min-height: calc(100vh - 96px);
+      flex: 1 1 auto;
+      display: flex;
+      width: 100%;
+    }
+    .app-loading {
+      position: absolute;
+      inset: 0;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 200ms ease, visibility 0s linear;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #0f172a;
+    }
+    .app-loading:not(.is-visible) {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .app-loading-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      padding: 18px 28px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+    }
+    .app-loading-spinner {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 4px solid #c7d2fe;
+      border-top-color: #1d4ed8;
+      animation: app-spin 1s linear infinite;
+    }
+    .app-loading-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    @keyframes app-spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
   <header class="main-tabs">
@@ -22,7 +74,15 @@
       <button data-view="network_graph">Collaboration Network</button>
     </nav>
   </header>
-  <main id="main-view"></main>
+  <main class="main-view-shell">
+    <div id="main-view"></div>
+    <div id="app-loading" class="app-loading is-visible" aria-live="polite">
+      <div class="app-loading-panel">
+        <div class="app-loading-spinner" role="presentation"></div>
+        <div class="app-loading-text">Loading view…</div>
+      </div>
+    </div>
+  </main>
 
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script type="module" src="js/main.js"></script>  

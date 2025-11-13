@@ -1,6 +1,21 @@
 // js/main.js
 const mountRoot = document.getElementById('main-view');
+const loadingOverlay = document.getElementById('app-loading');
+const loadingTextEl = loadingOverlay ? loadingOverlay.querySelector('.app-loading-text') : null;
 let current = { name: null, module: null, cleanup: null, params: {}, onRouteChange: null };
+
+function showLoading(message = 'Loading view…') {
+  if (!loadingOverlay) return;
+  if (loadingTextEl && typeof message === 'string') {
+    loadingTextEl.textContent = message;
+  }
+  loadingOverlay.classList.add('is-visible');
+}
+
+function hideLoading() {
+  if (!loadingOverlay) return;
+  loadingOverlay.classList.remove('is-visible');
+}
 
 function parseHash() {
   const defaultRoute = { view: 'topic_explorer', params: {} };
@@ -78,7 +93,15 @@ function setRoute(viewName, updates = {}, options = {}) {
   }
 }
 
+function prettyViewLabel(viewName) {
+  if (!viewName) return 'view';
+  return viewName
+    .replace(/[_-]+/g, ' ')
+    .replace(/\b\w/g, (ch) => ch.toUpperCase());
+}
+
 async function loadView(viewName, params = {}) {
+  showLoading(`Loading ${prettyViewLabel(viewName)}…`);
   try {
     // fetch view HTML and replace inside mountRoot
     const res = await fetch(`views/${viewName}.html`);
@@ -111,6 +134,8 @@ async function loadView(viewName, params = {}) {
   } catch (err) {
     console.error('Failed to load view', viewName, err);
     mountRoot.innerHTML = `<div class="view-error">Failed to load view: ${err.message}</div>`;
+  } finally {
+    hideLoading();
   }
 }
 
