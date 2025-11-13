@@ -6,6 +6,7 @@
   background: #fff;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .network-chart {
@@ -233,6 +234,40 @@
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   margin: 6px 0;
+}
+
+.network-zoom-controls {
+  position: absolute;
+  right: 24px;
+  bottom: 88px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 20;
+}
+
+.network-zoom-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.network-zoom-btn:hover {
+  background: #f1f5f9;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
+}
+
+.network-zoom-btn:active {
+  background: #e2e8f0;
 }
 
 @media (max-width: 720px) {

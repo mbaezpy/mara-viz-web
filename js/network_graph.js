@@ -34,13 +34,23 @@ export async function init({ mount }) {
   const searchBox = root.select('#network-search');
   const applyBtn = root.select('#network-apply');
   const resetBtn = root.select('#network-reset');
+  const zoomInBtn = root.select('#network-zoom-in');
+  const zoomOutBtn = root.select('#network-zoom-out');
+  const zoomFitBtn = root.select('#network-zoom-fit');
+  const zoomControls = root.select('.network-zoom-controls');
   const filterForm = root.select('#network-filter-form');
   const formatNumber = d3.format(',');
+  const ZOOM_MIN = 0.1;
+  const ZOOM_MAX = 4;
+  const ZOOM_IN_FACTOR = 1.2;
+  const ZOOM_OUT_FACTOR = 1 / ZOOM_IN_FACTOR;
+  const DRAWER_TRANSITION_MS = 320;
 
   let defaultFromYear = null;
   let defaultToYear = null;
   let edgeMinValue = +edgeSlider.attr('min') || 0;
   let filterOpen = false;
+  let zoomOffsetTimer = null;
 
   if (!filterForm.empty()) {
     filterForm.on('submit', (event) => {
@@ -54,13 +64,18 @@ export async function init({ mount }) {
     shell.classed('is-open', open);
     toggleBtn.attr('aria-expanded', open ? 'true' : 'false');
     toggleBtn.text(open ? 'Filters ▾' : 'Filters ▴');
+    queueZoomOffsetUpdate();
   }
 
   const svg = container.append('svg')
     .attr('width', '100%')
     .attr('height', container.node().clientHeight || 720);
 
-  const zoomBehavior = d3.zoom().scaleExtent([0.1, 4]).on('zoom', (e) => g.attr('transform', e.transform));
+  let currentTransform = d3.zoomIdentity;
+  const zoomBehavior = d3.zoom().scaleExtent([ZOOM_MIN, ZOOM_MAX]).on('zoom', (e) => {
+    currentTransform = e.transform;
+    g.attr('transform', e.transform);
+  });
   svg.call(zoomBehavior).on('dblclick.zoom', null);
 
   const g = svg.append('g');
@@ -202,6 +217,7 @@ export async function init({ mount }) {
     data._computed_max_year = maxY;
 
     computeBaselineNodeMaps(data);
+    updateZoomControlOffset();
   }
 
   function renderGraph() {
@@ -215,16 +231,36 @@ export async function init({ mount }) {
     const baseRScale = d3.scaleSqrt().domain([0, Math.max(1, baselineMaxAny)]).range([5, 28]);
     rScaleFn = (value) => baseRScale(value);
 
-    const linkWeightValues = graph.linksAll.map((d) => +d._weight);
-    let linkWeightExtent = d3.extent(linkWeightValues);
-    if (linkWeightExtent[0] === linkWeightExtent[1]) {
-      linkWeightExtent[0] = Math.max(0, linkWeightExtent[0] - 1);
-      linkWeightExtent[1] = linkWeightExtent[1] + 1;
-    }
-    const linkWidthScale = d3.scaleSqrt().domain(linkWeightExtent).range([0.6, 6]);
-    const linkOpacityScale = d3.scaleLinear().domain([0, 1]).range([0.12, 1]);
-    linkWidthFn = (w) => linkWidthScale(w);
-    linkOpacityFn = (f) => linkOpacityScale(f);
+    const rawWeightValues = graph.linksAll
+      .map((d) => +((d && d._weight_current) ?? d._weight ?? 0))
+      .filter((v) => Number.isFinite(v) && v >= 0);
+    const maxWeight = d3.max(rawWeightValues) || 1;
+    const sortedWeights = rawWeightValues.slice().sort((a, b) => a - b);
+    const q95 = d3.quantileSorted(sortedWeights, 0.95) ?? maxWeight;
+    const q99 = d3.quantileSorted(sortedWeights, 0.99) ?? maxWeight;
+    const MIN_LINK_WIDTH = 0.1;
+    const MAX_LINK_WIDTH = 6;
+    const MIN_OPACITY = 0.05;
+    const MAX_OPACITY = 1;
+
+    const widthScale = d3.scalePow().exponent(0.5).domain([0, maxWeight]).range([MIN_LINK_WIDTH, MAX_LINK_WIDTH]);
+    const opacityScale = (weight) => {
+      if (!Number.isFinite(weight) || weight <= 0) return MIN_OPACITY;
+      const norm = Math.log(1 + weight) / Math.log(1 + maxWeight);
+      return Math.min(MAX_OPACITY, Math.max(MIN_OPACITY, MIN_OPACITY + (MAX_OPACITY - MIN_OPACITY) * Math.pow(norm, 0.9)));
+    };
+    linkWidthFn = (weight) => {
+      const baseWidth = widthScale(Math.max(0, weight || 0));
+      if (weight >= q99) return Math.min(MAX_LINK_WIDTH, baseWidth * 1.25);
+      if (weight >= q95) return Math.min(MAX_LINK_WIDTH, baseWidth * 1.08);
+      return baseWidth;
+    };
+    linkOpacityFn = (weight) => {
+      let op = opacityScale(Math.max(0, weight || 0));
+      if (weight >= q99) op = Math.min(1, op * 1.2);
+      else if (weight >= q95) op = Math.min(1, op * 1.08);
+      return op;
+    };
 
     const MIN_LINK_DIST = 30;
     const MAX_LINK_DIST = 180;
@@ -239,8 +275,8 @@ export async function init({ mount }) {
       .append('line')
       .attr('class', 'link')
       .attr('stroke', '#999')
-      .attr('stroke-width', (d) => linkWidthScale(d._weight))
-      .style('opacity', (d) => linkOpacityScale(d._w_frac))
+      .attr('stroke-width', (d) => linkWidthFn(d._weight))
+      .style('opacity', (d) => linkOpacityFn(d._weight))
       .style('display', (d) => (d._weight >= +edgeSlider.node().value ? null : 'none'));
 
     const nodeSel = nodeG.selectAll('g')
@@ -315,6 +351,7 @@ export async function init({ mount }) {
 
     nodeG.selectAll('g.node').on('click', (event, d) => {
       event.stopPropagation();
+      logNodeDiagnostics(d);
       if (isStar && lastFocused && lastFocused.id === d.id) {
         resetLayout();
         return;
@@ -330,11 +367,12 @@ export async function init({ mount }) {
       simulation.alpha(0.9).restart();
       setTimeout(() => simulation.alphaTarget(0), 1200);
     }, 50);
+    updateZoomControlOffset();
 
 
 
-    edgeSlider.on('input', () => {
-      const thr = +edgeSlider.node().value;
+    function applyEdgeThreshold(thr, animate = true) {
+      if (!graph) return;
       edgeValue.text(thr);
       linkG.selectAll('line').style('display', (d) => ((d._weight_current ?? d._weight) >= thr ? null : 'none'));
       const visibleNodeIds = new Set(
@@ -345,11 +383,15 @@ export async function init({ mount }) {
             (typeof l.target === 'object' ? l.target.id : l.target)
           ])
       );
-      nodeG.selectAll('g.node')
-        .transition()
-        .duration(160)
-        .style('opacity', (d) => (visibleNodeIds.has(d.id) ? 1 : 0.12));
+      const nodeSelAll = nodeG.selectAll('g.node');
+      const target = animate ? nodeSelAll.transition().duration(160) : nodeSelAll;
+      target.style('opacity', (d) => (visibleNodeIds.has(d.id) ? 1 : 0.12));
       updateFilterSummary();
+    }
+
+    edgeSlider.on('input', () => {
+      const thr = +edgeSlider.node().value;
+      applyEdgeThreshold(thr, true);
     });
 
     instSelect.on('change', () => updateFilterSummary());
@@ -359,6 +401,23 @@ export async function init({ mount }) {
       applyFilters();
       setFilterOpen(false);
     });
+
+    if (!zoomInBtn.empty()) {
+      zoomInBtn.on('click', () => zoomByFactor(ZOOM_IN_FACTOR));
+    }
+    if (!zoomOutBtn.empty()) {
+      zoomOutBtn.on('click', () => zoomByFactor(ZOOM_OUT_FACTOR));
+    }
+    if (!zoomFitBtn.empty()) {
+      zoomFitBtn.on('click', () => fitGraphToView());
+    }
+    if (!zoomControls.empty()) {
+      window.addEventListener('resize', () => queueZoomOffsetUpdate(16));
+      const drawerNode = drawer.node();
+      if (drawerNode) {
+        drawerNode.addEventListener('transitionend', () => queueZoomOffsetUpdate(0));
+      }
+    }
 
     searchBox.on('keydown', function (event) {
       if (event.key === 'Enter') {
@@ -522,7 +581,14 @@ export async function init({ mount }) {
       );
       const visibleNodeIds = new Set(visibleNodeIdsFromLinks);
       for (const [id, val] of nodeCumulatives.entries()) {
-        if (val > 0) visibleNodeIds.add(id);
+        if (!(val > 0)) continue;
+        const node = graph.nodesById.get(id);
+        if (!node) continue;
+        if (node.is_local) {
+          visibleNodeIds.add(id);
+        } else if (visibleNodeIdsFromLinks.has(id)) {
+          visibleNodeIds.add(id);
+        }
       }
 
       if (instFilter === 'main' && collabFilter === 'main') {
@@ -555,19 +621,41 @@ export async function init({ mount }) {
         const tid = typeof l.target === 'object' ? l.target.id : l.target;
         return visibleNodeSet.has(sid) && visibleNodeSet.has(tid);
       });
+      graph._activeLinksCurrent = activeLinksForPhysics;
+      graph._filters = {
+        instFilter,
+        collabFilter,
+        edgeThreshold,
+        fromYear: defaultFrom,
+        toYear: defaultTo,
+      };
 
-      const linkKey = (d) => d.id ?? `${(typeof d.source === 'object' ? d.source.id : d.source)}|${(typeof d.target === 'object' ? d.target.id : d.target)}`;
-      let linkSel = linkG.selectAll('line').data(activeLinksForPhysics, linkKey);
-      linkSel.exit().transition().duration(250).style('opacity', 0).remove();
+      let linkSel = linkG.selectAll('line').data(activeLinksForPhysics, (d) => edgeKey(d));
+      linkSel.exit().each(function () {
+        this.__edgeHidden = true;
+      }).transition().duration(250).style('opacity', 0).remove();
       const linkEnter = linkSel.enter().append('line')
         .attr('class', 'link')
+        .attr('stroke', '#999')
+        .property('__edgeEdgeData', (d) => d)
         .style('opacity', 0)
         .attr('stroke-width', (d) => (linkWidthFn ? linkWidthFn(d._weight_current || d._weight || 1) : 1));
       linkSel = linkEnter.merge(linkSel);
+      linkSel.attr('stroke', '#999');
+      linkSel.sort((a, b) => {
+        const wa = a ? (a._weight_current ?? a._weight ?? 0) : 0;
+        const wb = b ? (b._weight_current ?? b._weight ?? 0) : 0;
+        return wa - wb;
+      });
+
       linkSel.transition().duration(350)
-        .attr('stroke-width', (d) => (linkWidthFn ? linkWidthFn(d._weight_current || d._weight || 1) : 1))
-        .style('opacity', (d) => (linkOpacityFn ? linkOpacityFn(d._w_frac_current ?? d._w_frac ?? 1) : 1))
+        .attr('stroke-width', (d) => linkWidthFn ? linkWidthFn(d._weight_current || d._weight || 0) : 1)
+        .style('opacity', (d) => linkOpacityFn ? linkOpacityFn(d._weight_current || d._weight || 0) : 1)
         .style('display', (d) => ((d._weight_current ?? d._weight) >= edgeThreshold ? null : 'none'));
+      linkSel.each(function (d) {
+        this.__edgeEdgeData = d;
+        this.__edgeHidden = ((d._weight_current ?? d._weight) < edgeThreshold);
+      });
 
       let nodeSelFiltered = nodeG.selectAll('g.node').data(visibleNodes, (d) => d.id);
       const nodeExit = nodeSelFiltered.exit();
@@ -621,6 +709,7 @@ export async function init({ mount }) {
 
       nodeSelFiltered.on('click', (event, d) => {
         event.stopPropagation();
+        logNodeDiagnostics(d);
         if (isStar && lastFocused && lastFocused.id === d.id) {
           resetLayout();
           return;
@@ -676,20 +765,22 @@ export async function init({ mount }) {
       adjacency = buildAdjacency({ nodes: simNodes, links: activeLinksForPhysics });
       graph._adjacencyActive = adjacency;
     }
-  }
 
-  function resetFilters() {
-    if (!graph) return;
-    instSelect.property('value', 'main');
-    collabSelect.property('value', 'main');
-    const to = defaultToYear || graph._computed_max_year || new Date().getFullYear();
-    yearToRange.property('value', to);
-    yearToValue.text(to);
-    edgeSlider.property('value', edgeMinValue);
-    edgeValue.text(edgeMinValue);
-    searchBox.property('value', '');
-    applyFilters();
-    updateToLive(to);
+    function resetFilters() {
+      if (!graph) return;
+      const prevInst = instSelect.property('value');
+      const prevCollab = collabSelect.property('value');
+      instSelect.property('value', 'main');
+      collabSelect.property('value', 'main');
+      const to = defaultToYear || graph._computed_max_year || new Date().getFullYear();
+      yearToRange.property('value', to);
+      yearToValue.text(to);
+      edgeSlider.property('value', edgeMinValue);
+      searchBox.property('value', '');
+      applyFilters();
+      applyEdgeThreshold(edgeMinValue, false);
+      queueZoomOffsetUpdate();
+    }
   }
 
   function prefixSum(arr) {
@@ -815,50 +906,75 @@ export async function init({ mount }) {
 
   function computeCombinedRoleKey(instFilter, collabFilter) {
     if (instFilter === 'any' && collabFilter === 'any') return 'counts_by_year';
-    if (instFilter === 'main' && collabFilter === 'any') return 'source_main';
-    if (instFilter === 'any' && collabFilter === 'main') return 'target_main';
     if (instFilter === 'main' && collabFilter === 'main') return 'both_main';
-    return 'counts_by_year';
+    return null;
   }
 
-  function computeWeightForLinkCombined(l, instFilter, collabFilter, fromY, toY) {
-    const key = computeCombinedRoleKey(instFilter, collabFilter);
+  function weightFromCounts(edge, fromY, toY) {
+    if (Array.isArray(edge.pub_years) && Array.isArray(edge.counts_by_year_cum) && edge.pub_years.length === edge.counts_by_year_cum.length) {
+      return cumRangeFromCumArrays(edge.pub_years, edge.counts_by_year_cum, fromY, toY);
+    }
+    if (edge.counts_by_year && typeof edge.counts_by_year === 'object') {
+      return sumCountsInWindowMap(edge.counts_by_year, fromY, toY);
+    }
+    return +(edge._weight || 0);
+  }
 
-    if (key === 'counts_by_year') {
-      if (Array.isArray(l.pub_years) && Array.isArray(l.counts_by_year_cum) && l.pub_years.length === l.counts_by_year_cum.length) {
-        return cumRangeFromCumArrays(l.pub_years, l.counts_by_year_cum, fromY, toY);
-      }
-      if (l.counts_by_year && typeof l.counts_by_year === 'object') return sumCountsInWindowMap(l.counts_by_year, fromY, toY);
-    } else {
-      if (l.role_pair_counts_by_year_cum && Array.isArray(l.role_pair_counts_by_year_cum[key]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_cum[key].length === l.pub_years.length) {
-        return cumRangeFromCumArrays(l.pub_years, l.role_pair_counts_by_year_cum[key], fromY, toY);
-      }
-      if (l.role_pair_counts_by_year_arrays && Array.isArray(l.role_pair_counts_by_year_arrays[key]) && Array.isArray(l.pub_years) && l.role_pair_counts_by_year_arrays[key].length === l.pub_years.length) {
-        const cum = prefixSum(l.role_pair_counts_by_year_arrays[key]);
-        return cumRangeFromCumArrays(l.pub_years, cum, fromY, toY);
-      }
-      if (l.role_pair_counts_by_year && l.role_pair_counts_by_year[key] && typeof l.role_pair_counts_by_year[key] === 'object') {
-        return sumCountsInWindowMap(l.role_pair_counts_by_year[key], fromY, toY);
-      }
-      if (l.role_pair_totals && typeof l.role_pair_totals[key] !== 'undefined') return +l.role_pair_totals[key];
+  function weightFromRole(edge, roleKey, fromY, toY) {
+    if (!roleKey) return 0;
+    const years = Array.isArray(edge.pub_years) ? edge.pub_years : [];
+    const cumArr = edge.role_pair_counts_by_year_cum && edge.role_pair_counts_by_year_cum[roleKey];
+    if (Array.isArray(cumArr) && years.length === cumArr.length) {
+      return cumRangeFromCumArrays(years, cumArr, fromY, toY);
+    }
+    const arr = edge.role_pair_counts_by_year_arrays && edge.role_pair_counts_by_year_arrays[roleKey];
+    if (Array.isArray(arr) && years.length === arr.length) {
+      const cum = prefixSum(arr);
+      edge.role_pair_counts_by_year_cum = edge.role_pair_counts_by_year_cum || {};
+      edge.role_pair_counts_by_year_cum[roleKey] = cum;
+      return cumRangeFromCumArrays(years, cum, fromY, toY);
+    }
+    const map = edge.role_pair_counts_by_year && edge.role_pair_counts_by_year[roleKey];
+    if (map && typeof map === 'object') {
+      return sumCountsInWindowMap(map, fromY, toY);
+    }
+    if (edge.role_pair_totals && typeof edge.role_pair_totals[roleKey] === 'number') {
+      return edge.role_pair_totals[roleKey];
+    }
+    return 0;
+  }
+
+  function computeWeightForLinkCombined(edge, instFilter, collabFilter, fromY, toY) {
+    const baseKey = computeCombinedRoleKey(instFilter, collabFilter);
+    if (baseKey === 'counts_by_year') {
+      return weightFromCounts(edge, fromY, toY);
+    }
+    if (baseKey === 'both_main') {
+      return weightFromRole(edge, 'both_main', fromY, toY);
     }
 
-    if (Array.isArray(l.papers) && l.papers.length) {
-      let s = 0;
-      for (const p of l.papers) {
-        const y = +(p.year ?? p.pub_year ?? p.year_published ?? 0);
-        if (Number.isNaN(y) || y < fromY || y > toY) continue;
-        const srcMain = (p.source_pos === 'first' || p.source_pos === 'last');
-        const tgtMain = (p.target_pos === 'first' || p.target_pos === 'last');
-        if (key === 'counts_by_year') s += 1;
-        else if (key === 'source_main' && srcMain) s += 1;
-        else if (key === 'target_main' && tgtMain) s += 1;
-        else if (key === 'both_main' && srcMain && tgtMain) s += 1;
-      }
-      return s;
+    const sourceId = (typeof edge.source === 'object') ? edge.source.id : edge.source;
+    const targetId = (typeof edge.target === 'object') ? edge.target.id : edge.target;
+    const sourceNode = graph.nodesById.get(sourceId);
+    const targetNode = graph.nodesById.get(targetId);
+    const sourceIsLocal = !!(sourceNode && sourceNode.is_local);
+    const targetIsLocal = !!(targetNode && targetNode.is_local);
+
+    if (instFilter === 'main' && collabFilter === 'any') {
+      if (sourceIsLocal && targetIsLocal) return weightFromRole(edge, 'either_main', fromY, toY);
+      if (sourceIsLocal) return weightFromRole(edge, 'source_main', fromY, toY);
+      if (targetIsLocal) return weightFromRole(edge, 'target_main', fromY, toY);
+      return 0;
     }
 
-    return +(l._weight || 0);
+    if (instFilter === 'any' && collabFilter === 'main') {
+      if (sourceIsLocal && targetIsLocal) return weightFromRole(edge, 'either_main', fromY, toY);
+      if (!sourceIsLocal && targetIsLocal) return weightFromRole(edge, 'source_main', fromY, toY);
+      if (sourceIsLocal && !targetIsLocal) return weightFromRole(edge, 'target_main', fromY, toY);
+      return weightFromRole(edge, 'either_main', fromY, toY);
+    }
+
+    return weightFromCounts(edge, fromY, toY);
   }
 
   function computeBaselineNodeMaps(g) {
@@ -882,6 +998,162 @@ export async function init({ mount }) {
     g._baselineNodeCumMainMax = d3.max(Array.from(mapMain.values())) || 1;
   }
 
+  function edgeInvolves(edge, nodeId) {
+    if (!edge) return false;
+    const sid = typeof edge.source === 'object' ? edge.source.id : edge.source;
+    const tid = typeof edge.target === 'object' ? edge.target.id : edge.target;
+    return sid === nodeId || tid === nodeId;
+  }
+
+  function gatherEdgesForNode(nodeId, edges) {
+    if (!nodeId || !Array.isArray(edges)) return [];
+    return edges.filter((edge) => edgeInvolves(edge, nodeId));
+  }
+
+  function shouldLogEdgeDiagnostics(node) {
+    if (!graph || !node) return false;
+    const allEdges = gatherEdgesForNode(node.id, graph.linksAll);
+    if (!allEdges.length) return false;
+    const visibleEdges = gatherEdgesForNode(node.id, graph._activeLinksCurrent || []);
+    return visibleEdges.length === 0;
+  }
+
+  function describeEdgeForNode(edge, nodeId, filters) {
+    const sid = typeof edge.source === 'object' ? edge.source.id : edge.source;
+    const tid = typeof edge.target === 'object' ? edge.target.id : edge.target;
+    const neighborId = sid === nodeId ? tid : sid;
+    const neighbor = graph.nodesById.get(neighborId);
+    const weightCurrent = edge._weight_current ?? edge._weight ?? 0;
+    const threshold = filters.edgeThreshold ?? (+edgeSlider.node().value || 0);
+    return {
+      neighborId,
+      neighborLabel: neighbor ? (neighbor.label || neighbor.id) : undefined,
+      neighborIsLocal: neighbor ? !!neighbor.is_local : undefined,
+      weightCurrent,
+      weightFull: edge.weight_full,
+      weightFractional: edge.weight_fractional,
+      passesThreshold: weightCurrent >= threshold,
+      hasPositiveWeight: weightCurrent > 0,
+      roleTotals: edge.role_pair_totals,
+      roleCountsByYear: edge.role_pair_counts_by_year,
+      linkObject: edge,
+      visual: getEdgeVisualInfo(edge),
+    };
+  }
+
+  function logNodeDiagnostics(node) {
+    if (!graph || !node) return;
+    const filters = graph._filters || {};
+    const allEdges = gatherEdgesForNode(node.id, graph.linksAll);
+    const visibleEdges = gatherEdgesForNode(node.id, graph._activeLinksCurrent || []);
+    console.groupCollapsed(
+      `[network-debug] Node ${node.label || node.id} — ${allEdges.length} total edges / ${visibleEdges.length} visible`,
+    );
+    console.log('Node info', {
+      id: node.id,
+      label: node.label,
+      isLocal: node.is_local,
+      filters,
+    });
+    console.log('All adjacent edges', allEdges.map((edge) => describeEdgeForNode(edge, node.id, filters)));
+    console.log('Visible edges (after filters)', visibleEdges.map((edge) => describeEdgeForNode(edge, node.id, filters)));
+    console.groupEnd();
+  }
+
+  function edgeKey(edge) {
+    if (!edge) return '';
+    if (edge.id) return edge.id;
+    const sid = typeof edge.source === 'object' ? edge.source.id : edge.source;
+    const tid = typeof edge.target === 'object' ? edge.target.id : edge.target;
+    return `${sid}|${tid}`;
+  }
+
+  function getEdgeVisualInfo(edge) {
+    const targetKey = edgeKey(edge);
+    let info = {
+      present: false,
+      stroke: null,
+      strokeWidth: null,
+      opacity: null,
+      display: null,
+      hiddenByThreshold: null,
+    };
+    linkG.selectAll('line').each(function (d) {
+      if (edgeKey(d) !== targetKey || info.present) return;
+      const el = d3.select(this);
+      info = {
+        present: true,
+        stroke: el.attr('stroke'),
+        strokeWidth: parseFloat(el.attr('stroke-width')),
+        opacity: parseFloat(el.style('opacity')),
+        display: el.style('display') || null,
+        hiddenByThreshold: !!this.__edgeHidden,
+      };
+    });
+    return info;
+  }
+
+  function updateZoomControlOffset() {
+    if (zoomControls.empty()) return;
+    const shellEl = shell.node();
+    const height = shellEl ? shellEl.offsetHeight : 0;
+    zoomControls.style('bottom', `${height + 16}px`);
+  }
+
+  function queueZoomOffsetUpdate(delay = DRAWER_TRANSITION_MS) {
+    if (zoomControls.empty()) return;
+    updateZoomControlOffset();
+    if (zoomOffsetTimer) {
+      clearTimeout(zoomOffsetTimer);
+    }
+    zoomOffsetTimer = window.setTimeout(() => {
+      zoomOffsetTimer = null;
+      updateZoomControlOffset();
+    }, delay);
+  }
+
+  function zoomByFactor(factor) {
+    if (!graph) return;
+    const svgNode = svg.node();
+    if (!svgNode) return;
+    const rect = svgNode.getBoundingClientRect();
+    const point = [rect.width / 2, rect.height / 2];
+    svg.transition().duration(250).call(zoomBehavior.scaleBy, factor, point);
+  }
+
+  function fitGraphToView() {
+    if (!graph || !Array.isArray(graph.nodes) || graph.nodes.length === 0) return;
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+    let hasPosition = false;
+    graph.nodes.forEach((node) => {
+      if (!Number.isFinite(node.x) || !Number.isFinite(node.y)) return;
+      hasPosition = true;
+      minX = Math.min(minX, node.x);
+      minY = Math.min(minY, node.y);
+      maxX = Math.max(maxX, node.x);
+      maxY = Math.max(maxY, node.y);
+    });
+    if (!hasPosition) return;
+    const padding = 80;
+    const width = Math.max(10, maxX - minX);
+    const height = Math.max(10, maxY - minY);
+    const svgNode = svg.node();
+    const rect = svgNode
+      ? svgNode.getBoundingClientRect()
+      : { width: container.node().clientWidth || 1, height: container.node().clientHeight || 1 };
+    const scaleFit = 0.9 * Math.min(rect.width / (width + padding), rect.height / (height + padding));
+    const scale = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, scaleFit || 1));
+    const centerX = (minX + maxX) / 2;
+    const centerY = (minY + maxY) / 2;
+    const transform = d3.zoomIdentity
+      .translate(rect.width / 2 - centerX * scale, rect.height / 2 - centerY * scale)
+      .scale(scale);
+    svg.transition().duration(600).call(zoomBehavior.transform, transform);
+  }
+
   function updateToLive(toY) {
     if (!graph) return;
     const fromY = defaultFromYear;
@@ -897,11 +1169,14 @@ export async function init({ mount }) {
     linkG.selectAll('line').each(function (d) {
       const el = d3.select(this);
       const w = d._weight_current ?? d._weight ?? 0;
-      if (w < edgeThreshold) el.style('display', 'none');
-      else {
+      if (w < edgeThreshold) {
+        el.style('display', 'none');
+        this.__edgeHidden = true;
+      } else {
         el.style('display', null);
         if (linkWidthFn) el.transition().duration(170).attr('stroke-width', linkWidthFn(w));
-        if (linkOpacityFn) el.transition().duration(170).style('opacity', linkOpacityFn(d._w_frac_current ?? d._w_frac ?? 1));
+      if (linkOpacityFn) el.transition().duration(170).style('opacity', linkOpacityFn(d._weight_current ?? d._weight ?? 0));
+        this.__edgeHidden = false;
       }
     });
 
