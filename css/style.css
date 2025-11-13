@@ -15,6 +15,14 @@
     --tag-bg: hsl(210 16% 96%);
     --tag-fg: hsl(210 10% 30%);
   }
+:root {
+  --bg: #fdfcfb;
+  --panel-bg: #ffffff;
+  --ink: #253247;
+  --muted: #7c8695;
+  --focus: #0077b6;
+}
+
   html, body { height: 100%; }
   body { margin: 0; font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color: var(--ink); background: var(--bg); }
 

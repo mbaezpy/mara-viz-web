@@ -1,91 +1,185 @@
 {
   "items": [
     {
-      "id": "https://openalex.org/A5047747446",
-      "name": "Friedrich G. Woermann",
+      "id": "https://openalex.org/A5042463561",
+      "name": "Tilman Polster",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 74,
-      "citation_count": 1855,
+      "publication_count": 64,
+      "citation_count": 4135,
       "topics": [
         {
-          "id": "B.2",
-          "name": "functional"
+          "id": "K",
+          "name": "Genetics"
+        },
+        {
+          "id": "E.2",
+          "name": "West syndrome"
         },
         {
           "id": "B.1",
           "name": "Structural"
         },
         {
-          "id": "Q.1",
-          "name": "Cognitive research"
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
         },
         {
-          "id": "I.3",
-          "name": "Memory"
+          "id": "C.2",
+          "name": "Trials"
         },
         {
           "id": "Q.2",
           "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "I",
-          "name": "Neuropsychology/cognitive development"
         }
       ],
-      "search_blob": "friedrich g. woermann evangelisches krankenhaus bielefeld functional structural cognitive research memory mechanisms of disease, neuropathology neuropsychology/cognitive development"
+      "search_blob": "tilman polster evangelisches krankenhaus bielefeld genetics west syndrome structural surgical techniques (including electrode placement) trials mechanisms of disease, neuropathology"
     },
     {
-      "id": "https://openalex.org/A5017826773",
-      "name": "Kirsten Labudda",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 27,
-      "citation_count": 579,
+      "id": "https://openalex.org/A5049165648",
+      "name": "Arne Herting",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 5,
+      "citation_count": 147,
       "topics": [
         {
-          "id": "B.2",
-          "name": "functional"
+          "id": "E.2",
+          "name": "West syndrome"
         },
         {
-          "id": "Q.1",
-          "name": "Cognitive research"
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "H.8",
+          "name": "Genetics"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        }
+      ],
+      "search_blob": "arne herting evangelisches krankenhaus bielefeld west syndrome pension, rehabilitation, sports genetics structural genetics therapeutic drug monitoring"
+    },
+    {
+      "id": "https://openalex.org/A5070424111",
+      "name": "Christian Brandt",
+      "affiliation": "Bielefeld University, Medical School and University Medical Center OWL, Mara Hospital, Department of Epileptology, Maraweg 21, 33617 Bielefeld, Germany",
+      "publication_count": 77,
+      "citation_count": 2853,
+      "topics": [
+        {
+          "id": "C.2",
+          "name": "Trials"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
         },
         {
           "id": "F",
           "name": "Psychiatric co-morbidity"
         },
         {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
           "id": "G",
           "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
         },
         {
-          "id": "H.6",
-          "name": "Neuropsychologie"
+          "id": "E",
+          "name": "Intellectual disability"
+        },
+        {
+          "id": "M",
+          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
         }
       ],
-      "search_blob": "kirsten labudda krankenhaus mara functional cognitive research psychiatric co-morbidity memory functional/dissociative seizures (psychogenic non-epileptic seizures) neuropsychologie"
+      "search_blob": "christian brandt bielefeld university, medical school and university medical center owl, mara hospital, department of epileptology, maraweg 21, 33617 bielefeld, germany trials therapeutic drug monitoring psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures) intellectual disability genetic generalized epilepsy (idiopathic generalized epilepsy)"
     },
     {
-      "id": "https://openalex.org/A5091868571",
-      "name": "Susanne Fauser",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 16,
-      "citation_count": 587,
+      "id": "https://openalex.org/A5074695558",
+      "name": "Christian G. Bien",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 189,
+      "citation_count": 12544,
       "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
         {
           "id": "Q.2",
           "name": "Mechanisms of disease, neuropathology"
         },
         {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "J.3",
+          "name": "Basic autoimmune research"
+        },
+        {
+          "id": "J",
+          "name": "Autoimmune seizures and epilepsy"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "christian g. bien evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology neural antibodies (neuronal antibodies, autoantibodies) basic autoimmune research autoimmune seizures and epilepsy structural functional"
+    },
+    {
+      "id": "https://openalex.org/A5054976363",
+      "name": "Thilo Kalbhenn",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 25,
+      "citation_count": 586,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        },
+        {
+          "id": "H.7",
+          "name": "Neuropathologie"
+        },
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        }
+      ],
+      "search_blob": "thilo kalbhenn evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) structural genetics neuropathologie hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) mechanisms of disease, neuropathology"
+    },
+    {
+      "id": "https://openalex.org/A5047747453",
+      "name": "Thomas Cloppenborg",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 18,
+      "citation_count": 559,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
         },
         {
           "id": "H.3",
@@ -96,51 +190,19 @@
           "name": "Genetics"
         },
         {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        }
-      ],
-      "search_blob": "susanne fauser krankenhaus mara structural mechanisms of disease, neuropathology eeg (electroencephalography) surgical techniques (including electrode placement) genetics functional/dissociative seizures (psychogenic non-epileptic seizures)"
-    },
-    {
-      "id": "https://openalex.org/A5005336726",
-      "name": "Renate Helmer",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 7,
-      "citation_count": 1435,
-      "topics": [
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
+          "id": "H.7",
+          "name": "Neuropathologie"
         },
         {
-          "id": "C.2",
-          "name": "Trials"
+          "id": "A",
+          "name": "EEG (electroencephalography)"
         },
         {
-          "id": "E",
-          "name": "Intellectual disability"
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
         }
       ],
-      "search_blob": "renate helmer evangelisches krankenhaus bielefeld therapeutic drug monitoring trials intellectual disability"
-    },
-    {
-      "id": "https://openalex.org/A5010958888",
-      "name": "Annika Sattler",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 2,
-      "citation_count": 37,
-      "topics": [
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "annika sattler krankenhaus mara therapeutic drug monitoring trials"
+      "search_blob": "thomas cloppenborg evangelisches krankenhaus bielefeld structural surgical techniques (including electrode placement) genetics neuropathologie eeg (electroencephalography) mechanisms of disease, neuropathology"
     },
     {
       "id": "https://openalex.org/A5069001018",
@@ -166,210 +228,30 @@
           "name": "Trials"
         },
         {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
           "id": "N",
           "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
         }
       ],
-      "search_blob": "theodor w. may evangelisches krankenhaus bielefeld therapeutic drug monitoring psychiatric co-morbidity pension, rehabilitation, sports trials driving epidemiology, incidence, prevalence"
+      "search_blob": "theodor w. may evangelisches krankenhaus bielefeld therapeutic drug monitoring psychiatric co-morbidity pension, rehabilitation, sports trials epidemiology, incidence, prevalence driving"
     },
     {
-      "id": "https://openalex.org/A5074695558",
-      "name": "Christian G. Bien",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 190,
-      "citation_count": 12549,
+      "id": "https://openalex.org/A5091868571",
+      "name": "Susanne Fauser",
+      "affiliation": "Department of Epileptology (Mara Hospital), Medical School, Bielefeld University, Bielefeld, Germany",
+      "publication_count": 16,
+      "citation_count": 587,
       "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        },
         {
           "id": "B.1",
           "name": "Structural"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        },
-        {
-          "id": "J.3",
-          "name": "Basic research"
-        }
-      ],
-      "search_blob": "christian g. bien evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy structural functional cognitive research basic research"
-    },
-    {
-      "id": "https://openalex.org/A5020900902",
-      "name": "Michael Endermann",
-      "affiliation": "v. Bodelschwing Foundation Bethel",
-      "publication_count": 6,
-      "citation_count": 45,
-      "topics": [
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        },
-        {
-          "id": "O.5",
-          "name": "Quality of life (QoL)"
-        }
-      ],
-      "search_blob": "michael endermann v. bodelschwing foundation bethel pension, rehabilitation, sports driving intellectual disability quality of life (qol)"
-    },
-    {
-      "id": "https://openalex.org/A5062520786",
-      "name": "Gregory L. Krauss",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 4,
-      "citation_count": 662,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        },
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        }
-      ],
-      "search_blob": "gregory l. krauss evangelisches krankenhaus bielefeld trials genetic generalized epilepsy (idiopathic generalized epilepsy) functional/dissociative seizures (psychogenic non-epileptic seizures) therapeutic drug monitoring"
-    },
-    {
-      "id": "https://openalex.org/A5030901765",
-      "name": "Pavel Klein",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 8,
-      "citation_count": 663,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "O.5",
-          "name": "Quality of life (QoL)"
-        }
-      ],
-      "search_blob": "pavel klein evangelisches krankenhaus bielefeld trials therapeutic drug monitoring genetic generalized epilepsy (idiopathic generalized epilepsy) quality of life (qol)"
-    },
-    {
-      "id": "https://openalex.org/A5070424111",
-      "name": "Christian Brandt",
-      "affiliation": "Bielefeld University, Medical School and University Medical Center OWL, Mara Hospital, Department of Epileptology, Maraweg 21, Bielefeld, Germany.",
-      "publication_count": 77,
-      "citation_count": 2853,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        }
-      ],
-      "search_blob": "christian brandt bielefeld university, medical school and university medical center owl, mara hospital, department of epileptology, maraweg 21, bielefeld, germany. trials therapeutic drug monitoring psychiatric co-morbidity genetic generalized epilepsy (idiopathic generalized epilepsy) functional/dissociative seizures (psychogenic non-epileptic seizures) intellectual disability"
-    },
-    {
-      "id": "https://openalex.org/A5052195171",
-      "name": "Bernhard J. Steinhoff",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 15,
-      "citation_count": 1737,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        },
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
         },
         {
           "id": "A",
           "name": "EEG (electroencephalography)"
-        }
-      ],
-      "search_blob": "bernhard j. steinhoff krankenhaus mara trials genetic generalized epilepsy (idiopathic generalized epilepsy) therapeutic drug monitoring epidemiology, incidence, prevalence semiology eeg (electroencephalography)"
-    },
-    {
-      "id": "https://openalex.org/A5042463561",
-      "name": "Tilman Polster",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 64,
-      "citation_count": 4135,
-      "topics": [
-        {
-          "id": "E.2",
-          "name": "West syndrome"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
         },
         {
           "id": "K",
@@ -380,603 +262,49 @@
           "name": "Surgical techniques (including electrode placement)"
         },
         {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        }
-      ],
-      "search_blob": "tilman polster evangelisches krankenhaus bielefeld west syndrome structural genetics surgical techniques (including electrode placement) pension, rehabilitation, sports genetic generalized epilepsy (idiopathic generalized epilepsy)"
-    },
-    {
-      "id": "https://openalex.org/A5054976363",
-      "name": "Thilo Kalbhenn",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 25,
-      "citation_count": 586,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "K",
-          "name": "Genetics"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        }
-      ],
-      "search_blob": "thilo kalbhenn evangelisches krankenhaus bielefeld structural surgical techniques (including electrode placement) genetics hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) mechanisms of disease, neuropathology eeg (electroencephalography)"
-    },
-    {
-      "id": "https://openalex.org/A5047747453",
-      "name": "Thomas Cloppenborg",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School Bielefeld University  Bielefeld Germany",
-      "publication_count": 18,
-      "citation_count": 559,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "K",
-          "name": "Genetics"
-        },
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "H.4",
-          "name": "MRI (magnetic resonance imaging)"
-        }
-      ],
-      "search_blob": "thomas cloppenborg department of epileptology (krankenhaus mara), medical school bielefeld university  bielefeld germany structural surgical techniques (including electrode placement) genetics eeg (electroencephalography) mechanisms of disease, neuropathology mri (magnetic resonance imaging)"
-    },
-    {
-      "id": "https://openalex.org/A5091240590",
-      "name": "Anne Hagemann",
-      "affiliation": "Klinik Mara (EvKB Bethel)",
-      "publication_count": 19,
-      "citation_count": 183,
-      "topics": [
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "O.3",
-          "name": "Patient education (educational programs)"
-        },
-        {
-          "id": "O.4",
-          "name": "Stigma"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        }
-      ],
-      "search_blob": "anne hagemann klinik mara (evkb bethel) therapeutic drug monitoring surgical techniques (including electrode placement) driving patient education (educational programs) stigma hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-    },
-    {
-      "id": "https://openalex.org/A5027219967",
-      "name": "Matthias Simon",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 8,
-      "citation_count": 81,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        },
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "matthias simon evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) structural hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) eeg (electroencephalography) status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5034647334",
-      "name": "Anna Rada",
-      "affiliation": "Klinik Mara (EvKB Bethel)",
-      "publication_count": 6,
-      "citation_count": 74,
-      "topics": [
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        },
-        {
-          "id": "J.3",
-          "name": "Basic research"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        }
-      ],
-      "search_blob": "anna rada klinik mara (evkb bethel) autoimmune seizures and epilepsy basic research mechanisms of disease, neuropathology surgical techniques (including electrode placement) hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) driving"
-    },
-    {
-      "id": "https://openalex.org/A5109535748",
-      "name": "Wolf‐Rüdiger Schäbitz",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 3,
-      "citation_count": 160,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "J.1",
-          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
-        },
-        {
-          "id": "J.3",
-          "name": "Basic research"
-        }
-      ],
-      "search_blob": "wolf‐rüdiger schäbitz evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology epidemiology, incidence, prevalence neural antibodies (neuronal antibodies, autoantibodies) basic research"
-    },
-    {
-      "id": "https://openalex.org/A5079900762",
-      "name": "Ulrich Specht",
-      "affiliation": "Department of Epileptology, Bethel Epilepsy Center, Medical School OWL, Bielefeld University, Bielefeld, Germany",
-      "publication_count": 10,
-      "citation_count": 123,
-      "topics": [
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "K",
-          "name": "Genetics"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "ulrich specht department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany pension, rehabilitation, sports driving therapeutic drug monitoring genetics structural"
-    },
-    {
-      "id": "https://openalex.org/A5023449812",
-      "name": "Christoph S. Dietze",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 7,
-      "topics": [
-        {
           "id": "G",
           "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
         },
         {
-          "id": "L",
-          "name": "Semiology"
+          "id": "P",
+          "name": "Medical devices, seizure detection"
         }
       ],
-      "search_blob": "christoph s. dietze evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) semiology"
-    },
-    {
-      "id": "https://openalex.org/A5075581709",
-      "name": "Lucy Ekosso‐Ejangue",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 7,
-      "topics": [
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
-        }
-      ],
-      "search_blob": "lucy ekosso‐ejangue evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) semiology"
-    },
-    {
-      "id": "https://openalex.org/A5073169510",
-      "name": "Carsten W. Israel",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 12,
-      "topics": [
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        }
-      ],
-      "search_blob": "carsten w. israel evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) semiology epidemiology, incidence, prevalence"
-    },
-    {
-      "id": "https://openalex.org/A5063225454",
-      "name": "Margarete Pfäfflin",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 19,
-      "citation_count": 1457,
-      "topics": [
-        {
-          "id": "O.3",
-          "name": "Patient education (educational programs)"
-        },
-        {
-          "id": "O.4",
-          "name": "Stigma"
-        },
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        }
-      ],
-      "search_blob": "margarete pfäfflin evangelisches krankenhaus bielefeld patient education (educational programs) stigma pension, rehabilitation, sports psychiatric co-morbidity driving intellectual disability"
+      "search_blob": "susanne fauser department of epileptology (mara hospital), medical school, bielefeld university, bielefeld, germany structural eeg (electroencephalography) genetics surgical techniques (including electrode placement) functional/dissociative seizures (psychogenic non-epileptic seizures) medical devices, seizure detection"
     },
     {
       "id": "https://openalex.org/A5077747574",
       "name": "Philip Grewe",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 18,
-      "citation_count": 485,
+      "publication_count": 17,
+      "citation_count": 480,
       "topics": [
         {
           "id": "Q.1",
           "name": "Cognitive research"
         },
         {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
           "id": "I.3",
           "name": "Memory"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
         },
         {
           "id": "H.6",
           "name": "Neuropsychologie"
         },
         {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
+          "id": "B.2",
+          "name": "functional"
         },
         {
           "id": "I.1",
           "name": "functional MRI"
         }
       ],
-      "search_blob": "philip grewe evangelisches krankenhaus bielefeld cognitive research functional memory neuropsychologie surgical techniques (including electrode placement) functional mri"
-    },
-    {
-      "id": "https://openalex.org/A5032278147",
-      "name": "Martin Schoendienst",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 5,
-      "citation_count": 240,
-      "topics": [
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        }
-      ],
-      "search_blob": "martin schoendienst evangelisches krankenhaus bielefeld epidemiology, incidence, prevalence semiology trials mechanisms of disease, neuropathology structural psychiatric co-morbidity"
-    },
-    {
-      "id": "https://openalex.org/A5012818940",
-      "name": "Christian Michael Stoppel",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 64,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "christian michael stoppel evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5006000088",
-      "name": "Wolfgang Brück",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 64,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "wolfgang brück evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5059909681",
-      "name": "Ivonne Gerth",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 64,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "ivonne gerth evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5028251660",
-      "name": "Stefan Vielhaber",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 64,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "stefan vielhaber evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5109238981",
-      "name": "Falk R. Wiedemann",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 64,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "falk r. wiedemann evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5110248713",
-      "name": "H.-J. Heinze",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 64,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "h.-j. heinze evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5022031607",
-      "name": "Claudius Bartels",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 64,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "claudius bartels evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5015724290",
-      "name": "Martin Schöndienst",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 2,
-      "citation_count": 43,
-      "topics": [
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        }
-      ],
-      "search_blob": "martin schöndienst krankenhaus mara functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
-    },
-    {
-      "id": "https://openalex.org/A5113126695",
-      "name": "Friedrich G. Wörmann",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School Bielefeld University  Bielefeld Germany",
-      "publication_count": 3,
-      "citation_count": 46,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "K",
-          "name": "Genetics"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        }
-      ],
-      "search_blob": "friedrich g. wörmann department of epileptology (krankenhaus mara), medical school bielefeld university  bielefeld germany surgical techniques (including electrode placement) genetics structural hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-    },
-    {
-      "id": "https://openalex.org/A5113585523",
-      "name": "J C Sánchez-Alvarez",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 2,
-      "citation_count": 84,
-      "topics": [
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "j c sánchez-alvarez krankenhaus mara therapeutic drug monitoring trials"
-    },
-    {
-      "id": "https://openalex.org/A5082800777",
-      "name": "Isabelle Ollech",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 1,
-      "citation_count": 34,
-      "topics": [
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "isabelle ollech krankenhaus mara memory functional"
+      "search_blob": "philip grewe evangelisches krankenhaus bielefeld cognitive research memory surgical techniques (including electrode placement) neuropsychologie functional functional mri"
     },
     {
       "id": "https://openalex.org/A5081525514",
@@ -998,87 +326,19 @@
           "name": "Structural"
         },
         {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
           "id": "E",
           "name": "Intellectual disability"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
         },
         {
           "id": "I.1",
           "name": "functional MRI"
         }
       ],
-      "search_blob": "johanna l. hopf evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) driving structural pension, rehabilitation, sports intellectual disability functional mri"
-    },
-    {
-      "id": "https://openalex.org/A5044176238",
-      "name": "Elisabeth Korn‐Merker",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 4,
-      "citation_count": 131,
-      "topics": [
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "O.3",
-          "name": "Patient education (educational programs)"
-        },
-        {
-          "id": "E.2",
-          "name": "West syndrome"
-        },
-        {
-          "id": "K",
-          "name": "Genetics"
-        },
-        {
-          "id": "E.1",
-          "name": "Lennox-Gastaut syndrome"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        }
-      ],
-      "search_blob": "elisabeth korn‐merker evangelisches krankenhaus bielefeld psychiatric co-morbidity patient education (educational programs) west syndrome genetics lennox-gastaut syndrome therapeutic drug monitoring"
-    },
-    {
-      "id": "https://openalex.org/A5101871126",
-      "name": "Matthias Hoppe",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 6,
-      "citation_count": 169,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        }
-      ],
-      "search_blob": "matthias hoppe krankenhaus mara surgical techniques (including electrode placement) psychiatric co-morbidity epidemiology, incidence, prevalence mechanisms of disease, neuropathology structural eeg (electroencephalography)"
+      "search_blob": "johanna l. hopf evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) driving structural intellectual disability pension, rehabilitation, sports functional mri"
     },
     {
       "id": "https://openalex.org/A5028691724",
@@ -1088,46 +348,12 @@
       "citation_count": 845,
       "topics": [
         {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
           "id": "H.3",
           "name": "Surgical techniques (including electrode placement)"
         },
         {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        }
-      ],
-      "search_blob": "reinhard schulz department of epileptology (krankenhaus mara), bielefeld university, medical school, bielefeld, germany structural surgical techniques (including electrode placement) eeg (electroencephalography) cognitive research semiology mechanisms of disease, neuropathology"
-    },
-    {
-      "id": "https://openalex.org/A5012320708",
-      "name": "Maria Tomka-Hoffmeister",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Medical School, Campus Bielefeld-Bethel, Maraweg 21, 33617 Bielefeld, Germany",
-      "publication_count": 5,
-      "citation_count": 39,
-      "topics": [
-        {
           "id": "B.1",
           "name": "Structural"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
         },
         {
           "id": "A",
@@ -1138,93 +364,193 @@
           "name": "Semiology"
         },
         {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        }
-      ],
-      "search_blob": "maria tomka-hoffmeister department of epileptology (krankenhaus mara), bielefeld university, medical school, campus bielefeld-bethel, maraweg 21, 33617 bielefeld, germany structural mechanisms of disease, neuropathology eeg (electroencephalography) semiology neuropsychologie hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-    },
-    {
-      "id": "https://openalex.org/A5058399405",
-      "name": "Volkmar Hans",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 4,
-      "citation_count": 138,
-      "topics": [
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
           "id": "Q.1",
           "name": "Cognitive research"
         },
         {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        },
-        {
-          "id": "H.7",
-          "name": "Neuropathologie"
+          "id": "D",
+          "name": "Status epilepticus"
         }
       ],
-      "search_blob": "volkmar hans evangelisches krankenhaus bielefeld pension, rehabilitation, sports surgical techniques (including electrode placement) cognitive research mechanisms of disease, neuropathology autoimmune seizures and epilepsy neuropathologie"
+      "search_blob": "reinhard schulz department of epileptology (krankenhaus mara), bielefeld university, medical school, bielefeld, germany surgical techniques (including electrode placement) structural eeg (electroencephalography) semiology cognitive research status epilepticus"
     },
     {
-      "id": "https://openalex.org/A5019879829",
-      "name": "Esther Nieder",
+      "id": "https://openalex.org/A5047747446",
+      "name": "Friedrich G. Woermann",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 40,
-      "topics": [
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "O.5",
-          "name": "Quality of life (QoL)"
-        }
-      ],
-      "search_blob": "esther nieder evangelisches krankenhaus bielefeld psychiatric co-morbidity epidemiology, incidence, prevalence quality of life (qol)"
-    },
-    {
-      "id": "https://openalex.org/A5081468597",
-      "name": "Stefan H. Kreisel",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 43,
+      "publication_count": 72,
+      "citation_count": 1784,
       "topics": [
         {
           "id": "B.2",
           "name": "functional"
         },
         {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        },
-        {
           "id": "B.1",
           "name": "Structural"
+        },
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
         }
       ],
-      "search_blob": "stefan h. kreisel evangelisches krankenhaus bielefeld functional neuropsychologie structural"
+      "search_blob": "friedrich g. woermann evangelisches krankenhaus bielefeld functional structural cognitive research memory surgical techniques (including electrode placement) mechanisms of disease, neuropathology"
+    },
+    {
+      "id": "https://openalex.org/A5048150468",
+      "name": "Kristina Albers",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Bielefeld, Germany",
+      "publication_count": 2,
+      "citation_count": 29,
+      "topics": [
+        {
+          "id": "H.4",
+          "name": "MRI (magnetic resonance imaging)"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        },
+        {
+          "id": "H.8",
+          "name": "Genetics"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        }
+      ],
+      "search_blob": "kristina albers department of epileptology (krankenhaus mara), medical school, bielefeld university, bielefeld, germany mri (magnetic resonance imaging) semiology genetics genetics"
+    },
+    {
+      "id": "https://openalex.org/A5098977499",
+      "name": "Ahmed Elshetihy",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 1,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "ahmed elshetihy evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5098977500",
+      "name": "Lema Nergiz",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 1,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "lema nergiz evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5024024796",
+      "name": "Birgitt Müffelmann",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 6,
+      "citation_count": 12,
+      "topics": [
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "C",
+          "name": "Pharmacology"
+        },
+        {
+          "id": "E",
+          "name": "Intellectual disability"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        }
+      ],
+      "search_blob": "birgitt müffelmann evangelisches krankenhaus bielefeld driving pension, rehabilitation, sports pharmacology intellectual disability therapeutic drug monitoring functional/dissociative seizures (psychogenic non-epileptic seizures)"
+    },
+    {
+      "id": "https://openalex.org/A5020900902",
+      "name": "Michael Endermann",
+      "affiliation": "v. Bodelschwing Foundation Bethel",
+      "publication_count": 6,
+      "citation_count": 45,
+      "topics": [
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "E",
+          "name": "Intellectual disability"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "O.5",
+          "name": "Quality of life (QoL)"
+        }
+      ],
+      "search_blob": "michael endermann v. bodelschwing foundation bethel pension, rehabilitation, sports intellectual disability driving quality of life (qol)"
+    },
+    {
+      "id": "https://openalex.org/A5029091671",
+      "name": "Silvia Carvalho Fernando",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 3,
+      "citation_count": 32,
+      "topics": [
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        }
+      ],
+      "search_blob": "silvia carvalho fernando evangelisches krankenhaus bielefeld functional psychiatric co-morbidity cognitive research"
     },
     {
       "id": "https://openalex.org/A5049442304",
@@ -1259,1006 +585,6 @@
         }
       ],
       "search_blob": "thomas beblo evangelisches krankenhaus bielefeld functional psychiatric co-morbidity neuropsychologie structural memory cognitive research"
-    },
-    {
-      "id": "https://openalex.org/A5011591666",
-      "name": "Oleg Kurlandchikov",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 43,
-      "topics": [
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "oleg kurlandchikov evangelisches krankenhaus bielefeld functional neuropsychologie structural"
-    },
-    {
-      "id": "https://openalex.org/A5032539941",
-      "name": "Martin Drießen",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 6,
-      "citation_count": 114,
-      "topics": [
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        }
-      ],
-      "search_blob": "martin drießen evangelisches krankenhaus bielefeld functional psychiatric co-morbidity neuropsychologie structural memory cognitive research"
-    },
-    {
-      "id": "https://openalex.org/A5089903032",
-      "name": "Marion Daehn",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 127,
-      "topics": [
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        }
-      ],
-      "search_blob": "marion daehn evangelisches krankenhaus bielefeld therapeutic drug monitoring driving"
-    },
-    {
-      "id": "https://openalex.org/A5084127724",
-      "name": "Sarina Djimjadi",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 127,
-      "topics": [
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        }
-      ],
-      "search_blob": "sarina djimjadi evangelisches krankenhaus bielefeld therapeutic drug monitoring driving"
-    },
-    {
-      "id": "https://openalex.org/A5055252200",
-      "name": "Hatice Tankişi",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 202,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "hatice tankişi evangelisches krankenhaus bielefeld eeg (electroencephalography) status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5053593595",
-      "name": "Lene Duez",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 202,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "lene duez evangelisches krankenhaus bielefeld eeg (electroencephalography) status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5009098850",
-      "name": "Vibeke Sejer Hansen",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 202,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "vibeke sejer hansen evangelisches krankenhaus bielefeld eeg (electroencephalography) status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5086506363",
-      "name": "Richard Wennberg",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 202,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "richard wennberg evangelisches krankenhaus bielefeld eeg (electroencephalography) status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5022659561",
-      "name": "Pål G. Larsson",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 202,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "pål g. larsson evangelisches krankenhaus bielefeld eeg (electroencephalography) status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5015396265",
-      "name": "Max Toepper",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 4,
-      "citation_count": 71,
-      "topics": [
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        }
-      ],
-      "search_blob": "max toepper evangelisches krankenhaus bielefeld functional psychiatric co-morbidity memory cognitive research"
-    },
-    {
-      "id": "https://openalex.org/A5064145500",
-      "name": "Eva Bauer",
-      "affiliation": "the Mara Hospital, Bethel Epilepsy Center, Bielefeld, Germany (Woermann)",
-      "publication_count": 2,
-      "citation_count": 61,
-      "topics": [
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "eva bauer the mara hospital, bethel epilepsy center, bielefeld, germany (woermann) memory psychiatric co-morbidity functional"
-    },
-    {
-      "id": "https://openalex.org/A5024024796",
-      "name": "Birgitt Müffelmann",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 6,
-      "citation_count": 12,
-      "topics": [
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        }
-      ],
-      "search_blob": "birgitt müffelmann evangelisches krankenhaus bielefeld driving pension, rehabilitation, sports functional/dissociative seizures (psychogenic non-epileptic seizures) intellectual disability therapeutic drug monitoring psychiatric co-morbidity"
-    },
-    {
-      "id": "https://openalex.org/A5034279761",
-      "name": "Helga Ottenottebrock",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 2,
-      "citation_count": 5,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        }
-      ],
-      "search_blob": "helga ottenottebrock krankenhaus mara mechanisms of disease, neuropathology therapeutic drug monitoring pension, rehabilitation, sports driving intellectual disability"
-    },
-    {
-      "id": "https://openalex.org/A5015980223",
-      "name": "Rupprecht Thorbecke",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 7,
-      "citation_count": 160,
-      "topics": [
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "O.4",
-          "name": "Stigma"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "O.5",
-          "name": "Quality of life (QoL)"
-        }
-      ],
-      "search_blob": "rupprecht thorbecke evangelisches krankenhaus bielefeld pension, rehabilitation, sports stigma intellectual disability driving quality of life (qol)"
-    },
-    {
-      "id": "https://openalex.org/A5080931718",
-      "name": "Monique van Schooneveld",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 15,
-      "topics": [
-        {
-          "id": "I.4",
-          "name": "Cognitive development"
-        }
-      ],
-      "search_blob": "monique van schooneveld evangelisches krankenhaus bielefeld cognitive development"
-    },
-    {
-      "id": "https://openalex.org/A5013830811",
-      "name": "Willem M. Otte",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 15,
-      "topics": [
-        {
-          "id": "I.4",
-          "name": "Cognitive development"
-        }
-      ],
-      "search_blob": "willem m. otte evangelisches krankenhaus bielefeld cognitive development"
-    },
-    {
-      "id": "https://openalex.org/A5004356254",
-      "name": "Steffi Koch‐Stoecker",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 4,
-      "citation_count": 196,
-      "topics": [
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        }
-      ],
-      "search_blob": "steffi koch‐stoecker evangelisches krankenhaus bielefeld psychiatric co-morbidity pension, rehabilitation, sports driving neuropsychologie"
-    },
-    {
-      "id": "https://openalex.org/A5022790133",
-      "name": "Dominik Illies",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 5,
-      "citation_count": 112,
-      "topics": [
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        }
-      ],
-      "search_blob": "dominik illies evangelisches krankenhaus bielefeld psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures)"
-    },
-    {
-      "id": "https://openalex.org/A5069704513",
-      "name": "Lea Marie Reisch",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Bielefeld, Germany",
-      "publication_count": 4,
-      "citation_count": 50,
-      "topics": [
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        }
-      ],
-      "search_blob": "lea marie reisch department of epileptology (krankenhaus mara), bielefeld university, bielefeld, germany functional cognitive research"
-    },
-    {
-      "id": "https://openalex.org/A5033190048",
-      "name": "Mario Schrecke",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 4,
-      "citation_count": 225,
-      "topics": [
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "mario schrecke krankenhaus mara psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures) trials"
-    },
-    {
-      "id": "https://openalex.org/A5053535458",
-      "name": "Lorenz B. Dehn",
-      "affiliation": "Society for Epilepsy Research, Bethel Epilepsy Center, Bielefeld, Germany",
-      "publication_count": 2,
-      "citation_count": 62,
-      "topics": [
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "O.3",
-          "name": "Patient education (educational programs)"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        }
-      ],
-      "search_blob": "lorenz b. dehn society for epilepsy research, bethel epilepsy center, bielefeld, germany psychiatric co-morbidity patient education (educational programs) driving"
-    },
-    {
-      "id": "https://openalex.org/A5071543752",
-      "name": "Corinna Kramme",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 2,
-      "citation_count": 131,
-      "topics": [
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J.3",
-          "name": "Basic research"
-        }
-      ],
-      "search_blob": "corinna kramme krankenhaus mara autoimmune seizures and epilepsy mechanisms of disease, neuropathology basic research"
-    },
-    {
-      "id": "https://openalex.org/A5061858972",
-      "name": "Michael Frauenheim",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 2,
-      "citation_count": 46,
-      "topics": [
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        }
-      ],
-      "search_blob": "michael frauenheim krankenhaus mara functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
-    },
-    {
-      "id": "https://openalex.org/A5047495602",
-      "name": "Inga Miller",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 46,
-      "topics": [
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        }
-      ],
-      "search_blob": "inga miller evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
-    },
-    {
-      "id": "https://openalex.org/A5113550975",
-      "name": "Heinz Pannek",
-      "affiliation": "Bethel Epilepsy Center Bethel, Mara, Bielefeld, Germany",
-      "publication_count": 10,
-      "citation_count": 249,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "heinz pannek bethel epilepsy center bethel, mara, bielefeld, germany structural surgical techniques (including electrode placement) cognitive research semiology driving status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5024718967",
-      "name": "Z. Mirzadjanova",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 1,
-      "citation_count": 122,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "z. mirzadjanova krankenhaus mara mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5103562439",
-      "name": "W. R. Schäbitz",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 251,
-      "topics": [
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        },
-        {
-          "id": "J.3",
-          "name": "Basic research"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        }
-      ],
-      "search_blob": "w. r. schäbitz evangelisches krankenhaus bielefeld autoimmune seizures and epilepsy basic research mechanisms of disease, neuropathology"
-    },
-    {
-      "id": "https://openalex.org/A5001027417",
-      "name": "Andreas Rogalewski",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 4,
-      "citation_count": 119,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "I",
-          "name": "Neuropsychology/cognitive development"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "andreas rogalewski evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology neuropsychology/cognitive development epidemiology, incidence, prevalence memory functional"
-    },
-    {
-      "id": "https://openalex.org/A5082292328",
-      "name": "Anne Beyer",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "I",
-          "name": "Neuropsychology/cognitive development"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "anne beyer evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory functional"
-    },
-    {
-      "id": "https://openalex.org/A5002511881",
-      "name": "Frédéric Zuhorn",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 3,
-      "citation_count": 28,
-      "topics": [
-        {
-          "id": "I",
-          "name": "Neuropsychology/cognitive development"
-        },
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "frédéric zuhorn evangelisches krankenhaus bielefeld neuropsychology/cognitive development mechanisms of disease, neuropathology memory functional"
-    },
-    {
-      "id": "https://openalex.org/A5068697803",
-      "name": "Randolf Klingebiel",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "I",
-          "name": "Neuropsychology/cognitive development"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "randolf klingebiel evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory functional"
-    },
-    {
-      "id": "https://openalex.org/A5101533823",
-      "name": "Wolf‐Rüdiger Schäbitz",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "I",
-          "name": "Neuropsychology/cognitive development"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "wolf‐rüdiger schäbitz evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory functional"
-    },
-    {
-      "id": "https://openalex.org/A5023575624",
-      "name": "Csilla Gyimesi",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 5,
-      "citation_count": 175,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        }
-      ],
-      "search_blob": "csilla gyimesi evangelisches krankenhaus bielefeld structural functional/dissociative seizures (psychogenic non-epileptic seizures) semiology psychiatric co-morbidity epidemiology, incidence, prevalence surgical techniques (including electrode placement)"
-    },
-    {
-      "id": "https://openalex.org/A5081230541",
-      "name": "József Janszky",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 6,
-      "citation_count": 192,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        }
-      ],
-      "search_blob": "józsef janszky evangelisches krankenhaus bielefeld structural cognitive research functional eeg (electroencephalography) neuropsychologie functional/dissociative seizures (psychogenic non-epileptic seizures)"
-    },
-    {
-      "id": "https://openalex.org/A5007246359",
-      "name": "Georg Classen",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 2,
-      "topics": [
-        {
-          "id": "J.3",
-          "name": "Basic research"
-        },
-        {
-          "id": "J.2",
-          "name": "Rasmussen encephalitis"
-        }
-      ],
-      "search_blob": "georg classen evangelisches krankenhaus bielefeld basic research rasmussen encephalitis"
-    },
-    {
-      "id": "https://openalex.org/A5012774297",
-      "name": "Christine Thomas",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 17,
-      "topics": [
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "christine thomas evangelisches krankenhaus bielefeld functional structural"
-    },
-    {
-      "id": "https://openalex.org/A5053349624",
-      "name": "Nina Rullkötter",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 17,
-      "topics": [
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "nina rullkötter evangelisches krankenhaus bielefeld functional structural"
-    },
-    {
-      "id": "https://openalex.org/A5072797106",
-      "name": "Alaa Eldin Elsharkawy",
-      "affiliation": "Department of Presurgical Evaluation, Bethel Epilepsy Center, Germany",
-      "publication_count": 5,
-      "citation_count": 181,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "O.5",
-          "name": "Quality of life (QoL)"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        }
-      ],
-      "search_blob": "alaa eldin elsharkawy department of presurgical evaluation, bethel epilepsy center, germany surgical techniques (including electrode placement) quality of life (qol) structural driving status epilepticus"
-    },
-    {
-      "id": "https://openalex.org/A5080099018",
-      "name": "Simone Hartmann",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 27,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        }
-      ],
-      "search_blob": "simone hartmann evangelisches krankenhaus bielefeld surgical techniques (including electrode placement)"
-    },
-    {
-      "id": "https://openalex.org/A5052548820",
-      "name": "Jörg Aengenendt",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 34,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "jörg aengenendt evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) structural"
-    },
-    {
-      "id": "https://openalex.org/A5059835056",
-      "name": "Tim Ogutu",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 27,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        }
-      ],
-      "search_blob": "tim ogutu evangelisches krankenhaus bielefeld surgical techniques (including electrode placement)"
-    },
-    {
-      "id": "https://openalex.org/A5014378652",
-      "name": "Terttu Pietilä",
-      "affiliation": "Neurosurgical Department, Bethel Epilepsy Center, Germany",
-      "publication_count": 2,
-      "citation_count": 45,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "O.1",
-          "name": "Driving"
-        }
-      ],
-      "search_blob": "terttu pietilä neurosurgical department, bethel epilepsy center, germany surgical techniques (including electrode placement) driving"
-    },
-    {
-      "id": "https://openalex.org/A5107241589",
-      "name": "D. Lahr",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 1,
-      "citation_count": 62,
-      "topics": [
-        {
-          "id": "I.3",
-          "name": "Memory"
-        }
-      ],
-      "search_blob": "d. lahr krankenhaus mara memory"
-    },
-    {
-      "id": "https://openalex.org/A5073165969",
-      "name": "Hassan Omaimen",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        }
-      ],
-      "search_blob": "hassan omaimen evangelisches krankenhaus bielefeld eeg (electroencephalography) surgical techniques (including electrode placement)"
-    },
-    {
-      "id": "https://openalex.org/A5113935752",
-      "name": "Hamzah Yasin",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        }
-      ],
-      "search_blob": "hamzah yasin evangelisches krankenhaus bielefeld eeg (electroencephalography) surgical techniques (including electrode placement)"
-    },
-    {
-      "id": "https://openalex.org/A5029091671",
-      "name": "Silvia Carvalho Fernando",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 3,
-      "citation_count": 32,
-      "topics": [
-        {
-          "id": "B.2",
-          "name": "functional"
-        },
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        }
-      ],
-      "search_blob": "silvia carvalho fernando evangelisches krankenhaus bielefeld functional psychiatric co-morbidity cognitive research"
     },
     {
       "id": "https://openalex.org/A5025075939",
@@ -2305,88 +631,82 @@
       "search_blob": "nicole schlosser evangelisches krankenhaus bielefeld functional psychiatric co-morbidity cognitive research"
     },
     {
-      "id": "https://openalex.org/A5049165648",
-      "name": "Arne Herting",
+      "id": "https://openalex.org/A5032539941",
+      "name": "Martin Drießen",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 5,
-      "citation_count": 147,
-      "topics": [
-        {
-          "id": "E.2",
-          "name": "West syndrome"
-        },
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
-        },
-        {
-          "id": "H.8",
-          "name": "Genetics"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        }
-      ],
-      "search_blob": "arne herting evangelisches krankenhaus bielefeld west syndrome pension, rehabilitation, sports genetics structural therapeutic drug monitoring"
-    },
-    {
-      "id": "https://openalex.org/A5063802901",
-      "name": "Christine Steinkroeger",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 1,
-      "citation_count": 34,
+      "publication_count": 6,
+      "citation_count": 114,
       "topics": [
         {
           "id": "B.2",
           "name": "functional"
         },
         {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
           "id": "Q.1",
           "name": "Cognitive research"
         }
       ],
-      "search_blob": "christine steinkroeger krankenhaus mara functional cognitive research"
+      "search_blob": "martin drießen evangelisches krankenhaus bielefeld functional psychiatric co-morbidity neuropsychologie structural memory cognitive research"
     },
     {
-      "id": "https://openalex.org/A5067733884",
-      "name": "M. Pfaefflin",
+      "id": "https://openalex.org/A5015396265",
+      "name": "Max Toepper",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 57,
+      "publication_count": 4,
+      "citation_count": 71,
       "topics": [
         {
-          "id": "H.6",
-          "name": "Neuropsychologie"
+          "id": "B.2",
+          "name": "functional"
         },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        }
+      ],
+      "search_blob": "max toepper evangelisches krankenhaus bielefeld functional psychiatric co-morbidity memory cognitive research"
+    },
+    {
+      "id": "https://openalex.org/A5114283889",
+      "name": "Emad Alkassm",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 1,
+      "topics": [
         {
           "id": "H.1",
           "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        }
-      ],
-      "search_blob": "m. pfaefflin evangelisches krankenhaus bielefeld neuropsychologie hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-    },
-    {
-      "id": "https://openalex.org/A5113702890",
-      "name": "H. W. Pannek",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 57,
-      "topics": [
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
         },
         {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
         }
       ],
-      "search_blob": "h. w. pannek evangelisches krankenhaus bielefeld neuropsychologie hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+      "search_blob": "emad alkassm evangelisches krankenhaus bielefeld hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) surgical techniques (including electrode placement)"
     },
     {
       "id": "https://openalex.org/A5036952503",
@@ -2396,123 +716,215 @@
       "citation_count": 16,
       "topics": [
         {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
           "id": "H.7",
           "name": "Neuropathologie"
+        },
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        }
+      ],
+      "search_blob": "alexander grote evangelisches krankenhaus bielefeld structural neuropathologie hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) surgical techniques (including electrode placement)"
+    },
+    {
+      "id": "https://openalex.org/A5078292238",
+      "name": "Tunc Faik Ersoy",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 1,
+      "topics": [
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        }
+      ],
+      "search_blob": "tunc faik ersoy evangelisches krankenhaus bielefeld hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) surgical techniques (including electrode placement)"
+    },
+    {
+      "id": "https://openalex.org/A5027219967",
+      "name": "Matthias Simon",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 8,
+      "citation_count": 81,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
         },
         {
           "id": "B.1",
           "name": "Structural"
         },
         {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
           "id": "H.1",
           "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        }
-      ],
-      "search_blob": "alexander grote evangelisches krankenhaus bielefeld neuropathologie structural surgical techniques (including electrode placement) hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-    },
-    {
-      "id": "https://openalex.org/A5018077938",
-      "name": "Denise Lahr",
-      "affiliation": "Department of Epileptology, Bethel Epilepsy Center, Medical School OWL, Bielefeld University, Bielefeld, Germany",
-      "publication_count": 3,
-      "citation_count": 32,
-      "topics": [
-        {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
         },
         {
-          "id": "O.1",
-          "name": "Driving"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        }
-      ],
-      "search_blob": "denise lahr department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany pension, rehabilitation, sports driving therapeutic drug monitoring intellectual disability"
-    },
-    {
-      "id": "https://openalex.org/A5041611958",
-      "name": "Vicente Villanueva",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 4,
-      "citation_count": 282,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        },
-        {
-          "id": "E",
-          "name": "Intellectual disability"
-        },
-        {
-          "id": "H.7",
-          "name": "Neuropathologie"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        }
-      ],
-      "search_blob": "vicente villanueva evangelisches krankenhaus bielefeld trials intellectual disability neuropathologie surgical techniques (including electrode placement) genetic generalized epilepsy (idiopathic generalized epilepsy)"
-    },
-    {
-      "id": "https://openalex.org/A5048150468",
-      "name": "Kristina Albers",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Bielefeld, Germany",
-      "publication_count": 2,
-      "citation_count": 29,
-      "topics": [
-        {
-          "id": "H.4",
-          "name": "MRI (magnetic resonance imaging)"
-        },
-        {
-          "id": "L",
-          "name": "Semiology"
+          "id": "A",
+          "name": "EEG (electroencephalography)"
         },
         {
           "id": "K",
           "name": "Genetics"
         },
         {
-          "id": "H.8",
-          "name": "Genetics"
+          "id": "H.7",
+          "name": "Neuropathologie"
         }
       ],
-      "search_blob": "kristina albers department of epileptology (krankenhaus mara), medical school, bielefeld university, bielefeld, germany mri (magnetic resonance imaging) semiology genetics genetics"
+      "search_blob": "matthias simon evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) structural hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) eeg (electroencephalography) genetics neuropathologie"
     },
     {
-      "id": "https://openalex.org/A5029673592",
-      "name": "Annika Hilgers",
+      "id": "https://openalex.org/A5063225454",
+      "name": "Margarete Pfäfflin",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 16,
+      "publication_count": 19,
+      "citation_count": 1457,
       "topics": [
         {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
+          "id": "O.3",
+          "name": "Patient education (educational programs)"
         },
         {
-          "id": "C.2",
-          "name": "Trials"
+          "id": "O.4",
+          "name": "Stigma"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "E",
+          "name": "Intellectual disability"
         }
       ],
-      "search_blob": "annika hilgers evangelisches krankenhaus bielefeld therapeutic drug monitoring trials"
+      "search_blob": "margarete pfäfflin evangelisches krankenhaus bielefeld patient education (educational programs) stigma pension, rehabilitation, sports psychiatric co-morbidity driving intellectual disability"
+    },
+    {
+      "id": "https://openalex.org/A5081468597",
+      "name": "Stefan H. Kreisel",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 43,
+      "topics": [
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        }
+      ],
+      "search_blob": "stefan h. kreisel evangelisches krankenhaus bielefeld neuropsychologie functional structural"
+    },
+    {
+      "id": "https://openalex.org/A5017826773",
+      "name": "Kirsten Labudda",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 27,
+      "citation_count": 579,
+      "topics": [
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        }
+      ],
+      "search_blob": "kirsten labudda krankenhaus mara functional memory cognitive research neuropsychologie psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures)"
+    },
+    {
+      "id": "https://openalex.org/A5011591666",
+      "name": "Oleg Kurlandchikov",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 43,
+      "topics": [
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        }
+      ],
+      "search_blob": "oleg kurlandchikov evangelisches krankenhaus bielefeld neuropsychologie functional structural"
+    },
+    {
+      "id": "https://openalex.org/A5012774297",
+      "name": "Christine Thomas",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 17,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        }
+      ],
+      "search_blob": "christine thomas evangelisches krankenhaus bielefeld structural"
+    },
+    {
+      "id": "https://openalex.org/A5053349624",
+      "name": "Nina Rullkötter",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 17,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        }
+      ],
+      "search_blob": "nina rullkötter evangelisches krankenhaus bielefeld structural"
     },
     {
       "id": "https://openalex.org/A5056543019",
@@ -2533,22 +945,122 @@
       "search_blob": "susanne axer-schaefer evangelisches krankenhaus bielefeld west syndrome genetics"
     },
     {
-      "id": "https://openalex.org/A5103285185",
-      "name": "Susanne Fauser",
+      "id": "https://openalex.org/A5024718967",
+      "name": "Z. Mirzadjanova",
       "affiliation": "Krankenhaus Mara",
       "publication_count": 1,
-      "citation_count": 8,
+      "citation_count": 122,
       "topics": [
         {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
+          "id": "J",
+          "name": "Autoimmune seizures and epilepsy"
         },
         {
           "id": "Q.2",
           "name": "Mechanisms of disease, neuropathology"
         }
       ],
-      "search_blob": "susanne fauser krankenhaus mara eeg (electroencephalography) mechanisms of disease, neuropathology"
+      "search_blob": "z. mirzadjanova krankenhaus mara autoimmune seizures and epilepsy mechanisms of disease, neuropathology"
+    },
+    {
+      "id": "https://openalex.org/A5103562439",
+      "name": "W. R. Schäbitz",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 251,
+      "topics": [
+        {
+          "id": "J",
+          "name": "Autoimmune seizures and epilepsy"
+        },
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        }
+      ],
+      "search_blob": "w. r. schäbitz evangelisches krankenhaus bielefeld autoimmune seizures and epilepsy neural antibodies (neuronal antibodies, autoantibodies) mechanisms of disease, neuropathology"
+    },
+    {
+      "id": "https://openalex.org/A5067733884",
+      "name": "M. Pfaefflin",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 57,
+      "topics": [
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        }
+      ],
+      "search_blob": "m. pfaefflin evangelisches krankenhaus bielefeld hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) neuropsychologie epidemiology, incidence, prevalence"
+    },
+    {
+      "id": "https://openalex.org/A5113702890",
+      "name": "H. W. Pannek",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 57,
+      "topics": [
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        }
+      ],
+      "search_blob": "h. w. pannek evangelisches krankenhaus bielefeld hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) neuropsychologie epidemiology, incidence, prevalence"
+    },
+    {
+      "id": "https://openalex.org/A5091240590",
+      "name": "Anne Hagemann",
+      "affiliation": "Klinik Mara (EvKB Bethel)",
+      "publication_count": 19,
+      "citation_count": 183,
+      "topics": [
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "O.3",
+          "name": "Patient education (educational programs)"
+        },
+        {
+          "id": "O.4",
+          "name": "Stigma"
+        },
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        }
+      ],
+      "search_blob": "anne hagemann klinik mara (evkb bethel) therapeutic drug monitoring surgical techniques (including electrode placement) driving patient education (educational programs) stigma hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
     },
     {
       "id": "https://openalex.org/A5062924908",
@@ -2558,15 +1070,243 @@
       "citation_count": 57,
       "topics": [
         {
-          "id": "B.1",
-          "name": "Structural"
+          "id": "I",
+          "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "C",
+          "name": "Pharmacology"
+        },
+        {
+          "id": "C.2",
+          "name": "Trials"
         },
         {
           "id": "A",
           "name": "EEG (electroencephalography)"
         }
       ],
-      "search_blob": "hedwig freitag evangelisches krankenhaus bielefeld structural eeg (electroencephalography)"
+      "search_blob": "hedwig freitag evangelisches krankenhaus bielefeld neuropsychology/cognitive development pharmacology trials eeg (electroencephalography)"
+    },
+    {
+      "id": "https://openalex.org/A5113550975",
+      "name": "Heinz Pannek",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 10,
+      "citation_count": 249,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "H.7",
+          "name": "Neuropathologie"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        }
+      ],
+      "search_blob": "heinz pannek evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) mechanisms of disease, neuropathology hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) neuropathologie structural cognitive research"
+    },
+    {
+      "id": "https://openalex.org/A5058399405",
+      "name": "Volkmar Hans",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 4,
+      "citation_count": 138,
+      "topics": [
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "J.3",
+          "name": "Basic autoimmune research"
+        },
+        {
+          "id": "H.7",
+          "name": "Neuropathologie"
+        }
+      ],
+      "search_blob": "volkmar hans evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology surgical techniques (including electrode placement) pension, rehabilitation, sports neural antibodies (neuronal antibodies, autoantibodies) basic autoimmune research neuropathologie"
+    },
+    {
+      "id": "https://openalex.org/A5034647334",
+      "name": "Anna Rada",
+      "affiliation": "Klinik Mara (EvKB Bethel)",
+      "publication_count": 6,
+      "citation_count": 74,
+      "topics": [
+        {
+          "id": "J",
+          "name": "Autoimmune seizures and epilepsy"
+        },
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "J.3",
+          "name": "Basic autoimmune research"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        }
+      ],
+      "search_blob": "anna rada klinik mara (evkb bethel) autoimmune seizures and epilepsy neural antibodies (neuronal antibodies, autoantibodies) basic autoimmune research mechanisms of disease, neuropathology hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) surgical techniques (including electrode placement)"
+    },
+    {
+      "id": "https://openalex.org/A5072797106",
+      "name": "Alaa Eldin Elsharkawy",
+      "affiliation": "Department of Presurgical Evaluation, Bethel Epilepsy Center, Germany",
+      "publication_count": 5,
+      "citation_count": 181,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "O.5",
+          "name": "Quality of life (QoL)"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "D",
+          "name": "Status epilepticus"
+        }
+      ],
+      "search_blob": "alaa eldin elsharkawy department of presurgical evaluation, bethel epilepsy center, germany surgical techniques (including electrode placement) quality of life (qol) structural driving status epilepticus"
+    },
+    {
+      "id": "https://openalex.org/A5014378652",
+      "name": "Terttu Pietilä",
+      "affiliation": "Neurosurgical Department, Bethel Epilepsy Center, Germany",
+      "publication_count": 2,
+      "citation_count": 45,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        }
+      ],
+      "search_blob": "terttu pietilä neurosurgical department, bethel epilepsy center, germany surgical techniques (including electrode placement) driving"
+    },
+    {
+      "id": "https://openalex.org/A5022790133",
+      "name": "Dominik Illies",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 5,
+      "citation_count": 112,
+      "topics": [
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        }
+      ],
+      "search_blob": "dominik illies evangelisches krankenhaus bielefeld psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures)"
+    },
+    {
+      "id": "https://openalex.org/A5064145500",
+      "name": "Eva Bauer",
+      "affiliation": "the Mara Hospital, Bethel Epilepsy Center, Bielefeld, Germany (Woermann)",
+      "publication_count": 2,
+      "citation_count": 61,
+      "topics": [
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "eva bauer the mara hospital, bethel epilepsy center, bielefeld, germany (woermann) memory functional psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5015980223",
+      "name": "Rupprecht Thorbecke",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 7,
+      "citation_count": 160,
+      "topics": [
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "O.4",
+          "name": "Stigma"
+        },
+        {
+          "id": "E",
+          "name": "Intellectual disability"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "O.5",
+          "name": "Quality of life (QoL)"
+        }
+      ],
+      "search_blob": "rupprecht thorbecke evangelisches krankenhaus bielefeld pension, rehabilitation, sports stigma intellectual disability driving quality of life (qol)"
     },
     {
       "id": "https://openalex.org/A5029740345",
@@ -2584,23 +1324,23 @@
           "name": "functional"
         },
         {
-          "id": "I.3",
-          "name": "Memory"
+          "id": "Q.1",
+          "name": "Cognitive research"
         },
         {
           "id": "I",
           "name": "Neuropsychology/cognitive development"
         },
         {
-          "id": "Q.1",
-          "name": "Cognitive research"
+          "id": "I.3",
+          "name": "Memory"
         },
         {
           "id": "H.1",
           "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
         }
       ],
-      "search_blob": "anna doll krankenhaus mara neuropsychologie functional memory neuropsychology/cognitive development cognitive research hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+      "search_blob": "anna doll krankenhaus mara neuropsychologie functional cognitive research neuropsychology/cognitive development memory hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
     },
     {
       "id": "https://openalex.org/A5024330832",
@@ -2610,77 +1350,941 @@
       "citation_count": 11,
       "topics": [
         {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
           "id": "H.6",
           "name": "Neuropsychologie"
         },
         {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
         }
       ],
-      "search_blob": "m. hoppe evangelisches krankenhaus bielefeld neuropsychologie hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+      "search_blob": "m. hoppe evangelisches krankenhaus bielefeld hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) neuropsychologie surgical techniques (including electrode placement)"
     },
     {
-      "id": "https://openalex.org/A5034079046",
-      "name": "Florian J. Bremm",
+      "id": "https://openalex.org/A5012320708",
+      "name": "Maria Tomka-Hoffmeister",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Medical School, Campus Bielefeld-Bethel, Maraweg 21, 33617 Bielefeld, Germany",
+      "publication_count": 5,
+      "citation_count": 39,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        },
+        {
+          "id": "A",
+          "name": "EEG (electroencephalography)"
+        },
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        }
+      ],
+      "search_blob": "maria tomka-hoffmeister department of epileptology (krankenhaus mara), bielefeld university, medical school, campus bielefeld-bethel, maraweg 21, 33617 bielefeld, germany structural semiology eeg (electroencephalography) hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis) neuropsychologie surgical techniques (including electrode placement)"
+    },
+    {
+      "id": "https://openalex.org/A5109535748",
+      "name": "Wolf‐Rüdiger Schäbitz",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 3,
+      "citation_count": 160,
+      "topics": [
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "J.3",
+          "name": "Basic autoimmune research"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        }
+      ],
+      "search_blob": "wolf‐rüdiger schäbitz evangelisches krankenhaus bielefeld neural antibodies (neuronal antibodies, autoantibodies) epidemiology, incidence, prevalence basic autoimmune research mechanisms of disease, neuropathology"
+    },
+    {
+      "id": "https://openalex.org/A5101871126",
+      "name": "Matthias Hoppe",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 6,
+      "citation_count": 169,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "A",
+          "name": "EEG (electroencephalography)"
+        }
+      ],
+      "search_blob": "matthias hoppe krankenhaus mara surgical techniques (including electrode placement) semiology psychiatric co-morbidity epidemiology, incidence, prevalence structural eeg (electroencephalography)"
+    },
+    {
+      "id": "https://openalex.org/A5083204958",
+      "name": "Theordor W. May",
+      "affiliation": "Society for Epilepsy Research, Epilepsy Center Bethel, Bielefeld, Germany",
+      "publication_count": 1,
+      "citation_count": 4,
+      "topics": [
+        {
+          "id": "O.5",
+          "name": "Quality of life (QoL)"
+        },
+        {
+          "id": "O.3",
+          "name": "Patient education (educational programs)"
+        }
+      ],
+      "search_blob": "theordor w. may society for epilepsy research, epilepsy center bethel, bielefeld, germany quality of life (qol) patient education (educational programs)"
+    },
+    {
+      "id": "https://openalex.org/A5014783232",
+      "name": "Tobias M. Redecker",
+      "affiliation": "Bielefeld University, Medical School and University Medical Center OWL, Mara Hospital, Department of Epileptology, Maraweg 21, 33617 Bielefeld, Germany",
+      "publication_count": 1,
+      "citation_count": 2,
+      "topics": [
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "tobias m. redecker bielefeld university, medical school and university medical center owl, mara hospital, department of epileptology, maraweg 21, 33617 bielefeld, germany epidemiology, incidence, prevalence psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5004900613",
+      "name": "Christoph Siedersleben",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 6,
+      "topics": [
+        {
+          "id": "O.4",
+          "name": "Stigma"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        }
+      ],
+      "search_blob": "christoph siedersleben evangelisches krankenhaus bielefeld stigma pension, rehabilitation, sports"
+    },
+    {
+      "id": "https://openalex.org/A5032278147",
+      "name": "Martin Schoendienst",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 5,
+      "citation_count": 240,
+      "topics": [
+        {
+          "id": "L",
+          "name": "Semiology"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "C.2",
+          "name": "Trials"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        }
+      ],
+      "search_blob": "martin schoendienst evangelisches krankenhaus bielefeld semiology epidemiology, incidence, prevalence trials structural psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures)"
+    },
+    {
+      "id": "https://openalex.org/A5079900762",
+      "name": "Ulrich Specht",
+      "affiliation": "Department of Epileptology, Bethel Epilepsy Center, Medical School OWL, Bielefeld University, Bielefeld, Germany",
+      "publication_count": 10,
+      "citation_count": 123,
+      "topics": [
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        },
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        }
+      ],
+      "search_blob": "ulrich specht department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany driving pension, rehabilitation, sports therapeutic drug monitoring structural genetics neural antibodies (neuronal antibodies, autoantibodies)"
+    },
+    {
+      "id": "https://openalex.org/A5033190048",
+      "name": "Mario Schrecke",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 4,
+      "citation_count": 225,
+      "topics": [
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "C.2",
+          "name": "Trials"
+        }
+      ],
+      "search_blob": "mario schrecke krankenhaus mara psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures) trials"
+    },
+    {
+      "id": "https://openalex.org/A5082800777",
+      "name": "Isabelle Ollech",
       "affiliation": "Krankenhaus Mara",
       "publication_count": 1,
-      "citation_count": 17,
+      "citation_count": 34,
       "topics": [
         {
           "id": "I.3",
           "name": "Memory"
         },
         {
-          "id": "H.6",
-          "name": "Neuropsychologie"
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "isabelle ollech krankenhaus mara memory functional"
+    },
+    {
+      "id": "https://openalex.org/A5100706958",
+      "name": "Markus Müller",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Bielefeld, 33617, Germany",
+      "publication_count": 1,
+      "citation_count": 12,
+      "topics": [
+        {
+          "id": "K",
+          "name": "Genetics"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "H.7",
+          "name": "Neuropathologie"
+        }
+      ],
+      "search_blob": "markus müller department of epileptology (krankenhaus mara), medical school, bielefeld university, bielefeld, 33617, germany genetics mechanisms of disease, neuropathology neuropathologie"
+    },
+    {
+      "id": "https://openalex.org/A5081230541",
+      "name": "József Janszky",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 6,
+      "citation_count": 192,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
         },
         {
           "id": "B.2",
           "name": "functional"
         },
         {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "A",
+          "name": "EEG (electroencephalography)"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        }
+      ],
+      "search_blob": "józsef janszky evangelisches krankenhaus bielefeld structural functional neuropsychologie eeg (electroencephalography) functional/dissociative seizures (psychogenic non-epileptic seizures) semiology"
+    },
+    {
+      "id": "https://openalex.org/A5077637177",
+      "name": "Joerg Aengenendt",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 2,
+      "citation_count": 24,
+      "topics": [
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "H.2",
+          "name": "Language"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "I.1",
+          "name": "functional MRI"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
           "id": "Q.1",
           "name": "Cognitive research"
         }
       ],
-      "search_blob": "florian j. bremm krankenhaus mara memory neuropsychologie functional cognitive research"
+      "search_blob": "joerg aengenendt krankenhaus mara memory language functional functional mri neuropsychologie cognitive research"
     },
     {
-      "id": "https://openalex.org/A5084927273",
-      "name": "I. Coban",
+      "id": "https://openalex.org/A5061858972",
+      "name": "Michael Frauenheim",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 2,
+      "citation_count": 46,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "michael frauenheim krankenhaus mara functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5047495602",
+      "name": "Inga Miller",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 46,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "inga miller evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5044176238",
+      "name": "Elisabeth Korn‐Merker",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 4,
+      "citation_count": 131,
+      "topics": [
+        {
+          "id": "O.3",
+          "name": "Patient education (educational programs)"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "E.2",
+          "name": "West syndrome"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        },
+        {
+          "id": "E.1",
+          "name": "Lennox-Gastaut syndrome"
+        },
+        {
+          "id": "C.2",
+          "name": "Trials"
+        }
+      ],
+      "search_blob": "elisabeth korn‐merker evangelisches krankenhaus bielefeld patient education (educational programs) psychiatric co-morbidity west syndrome genetics lennox-gastaut syndrome trials"
+    },
+    {
+      "id": "https://openalex.org/A5045349379",
+      "name": "A Hofmann-Peters",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 6,
+      "topics": [
+        {
+          "id": "E.2",
+          "name": "West syndrome"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        }
+      ],
+      "search_blob": "a hofmann-peters evangelisches krankenhaus bielefeld west syndrome genetics"
+    },
+    {
+      "id": "https://openalex.org/A5055309680",
+      "name": "Silvia Vieker",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 158,
+      "topics": [
+        {
+          "id": "J.2",
+          "name": "Rasmussen encephalitis"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        }
+      ],
+      "search_blob": "silvia vieker evangelisches krankenhaus bielefeld rasmussen encephalitis epidemiology, incidence, prevalence"
+    },
+    {
+      "id": "https://openalex.org/A5015724290",
+      "name": "Martin Schöndienst",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 2,
+      "citation_count": 43,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "martin schöndienst krankenhaus mara functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5069704513",
+      "name": "Lea Marie Reisch",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Campus Bielefeld-Bethel, Bielefeld, Germany",
+      "publication_count": 4,
+      "citation_count": 50,
+      "topics": [
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "lea marie reisch department of epileptology (krankenhaus mara), bielefeld university, campus bielefeld-bethel, bielefeld, germany cognitive research functional"
+    },
+    {
+      "id": "https://openalex.org/A5113126695",
+      "name": "Friedrich G. Wörmann",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School Bielefeld University  Bielefeld Germany",
+      "publication_count": 3,
+      "citation_count": 46,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "H.1",
+          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+        }
+      ],
+      "search_blob": "friedrich g. wörmann department of epileptology (krankenhaus mara), medical school bielefeld university  bielefeld germany surgical techniques (including electrode placement) genetics structural hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
+    },
+    {
+      "id": "https://openalex.org/A5073169510",
+      "name": "Carsten W. Israel",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 12,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        }
+      ],
+      "search_blob": "carsten w. israel evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) semiology epidemiology, incidence, prevalence"
+    },
+    {
+      "id": "https://openalex.org/A5042720066",
+      "name": "Dominik Neu",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 12,
+      "topics": [
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        }
+      ],
+      "search_blob": "dominik neu evangelisches krankenhaus bielefeld cognitive research functional memory"
+    },
+    {
+      "id": "https://openalex.org/A5103285185",
+      "name": "Susanne Fauser",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 1,
+      "citation_count": 8,
+      "topics": [
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "A",
+          "name": "EEG (electroencephalography)"
+        }
+      ],
+      "search_blob": "susanne fauser krankenhaus mara mechanisms of disease, neuropathology eeg (electroencephalography)"
+    },
+    {
+      "id": "https://openalex.org/A5034279761",
+      "name": "Helga Ottenottebrock",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 2,
+      "citation_count": 5,
+      "topics": [
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "E",
+          "name": "Intellectual disability"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        }
+      ],
+      "search_blob": "helga ottenottebrock krankenhaus mara therapeutic drug monitoring intellectual disability driving pension, rehabilitation, sports"
+    },
+    {
+      "id": "https://openalex.org/A5109084820",
+      "name": "Rainer Valentin",
+      "affiliation": "Klinik Mara (EvKB Bethel)",
+      "publication_count": 2,
+      "citation_count": 93,
+      "topics": [
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "C.2",
+          "name": "Trials"
+        },
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        }
+      ],
+      "search_blob": "rainer valentin klinik mara (evkb bethel) therapeutic drug monitoring trials neural antibodies (neuronal antibodies, autoantibodies)"
+    },
+    {
+      "id": "https://openalex.org/A5005552124",
+      "name": "Mariam Abu-Tair",
+      "affiliation": "Klinik Mara (EvKB Bethel)",
+      "publication_count": 1,
+      "citation_count": 93,
+      "topics": [
+        {
+          "id": "C.2",
+          "name": "Trials"
+        },
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        }
+      ],
+      "search_blob": "mariam abu-tair klinik mara (evkb bethel) trials neural antibodies (neuronal antibodies, autoantibodies)"
+    },
+    {
+      "id": "https://openalex.org/A5025778703",
+      "name": "Bernd Huber",
+      "affiliation": "v. Bodelschwing Foundation Bethel",
+      "publication_count": 3,
+      "citation_count": 68,
+      "topics": [
+        {
+          "id": "C.2",
+          "name": "Trials"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "M",
+          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
+        }
+      ],
+      "search_blob": "bernd huber v. bodelschwing foundation bethel trials therapeutic drug monitoring psychiatric co-morbidity genetic generalized epilepsy (idiopathic generalized epilepsy)"
+    },
+    {
+      "id": "https://openalex.org/A5060706778",
+      "name": "Lena J Hopf",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 128,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        }
+      ],
+      "search_blob": "lena j hopf evangelisches krankenhaus bielefeld structural surgical techniques (including electrode placement) epidemiology, incidence, prevalence"
+    },
+    {
+      "id": "https://openalex.org/A5023575624",
+      "name": "Csilla Gyimesi",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 5,
+      "citation_count": 175,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        }
+      ],
+      "search_blob": "csilla gyimesi evangelisches krankenhaus bielefeld structural functional/dissociative seizures (psychogenic non-epileptic seizures) semiology psychiatric co-morbidity epidemiology, incidence, prevalence surgical techniques (including electrode placement)"
+    },
+    {
+      "id": "https://openalex.org/A5004356254",
+      "name": "Steffi Koch‐Stoecker",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 4,
+      "citation_count": 196,
+      "topics": [
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        }
+      ],
+      "search_blob": "steffi koch‐stoecker evangelisches krankenhaus bielefeld psychiatric co-morbidity driving pension, rehabilitation, sports neuropsychologie"
+    },
+    {
+      "id": "https://openalex.org/A5005336726",
+      "name": "Renate Helmer",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 7,
+      "citation_count": 1435,
+      "topics": [
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "C",
+          "name": "Pharmacology"
+        },
+        {
+          "id": "E",
+          "name": "Intellectual disability"
+        }
+      ],
+      "search_blob": "renate helmer evangelisches krankenhaus bielefeld therapeutic drug monitoring mechanisms of disease, neuropathology pharmacology intellectual disability"
+    },
+    {
+      "id": "https://openalex.org/A5071543752",
+      "name": "Corinna Kramme",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 2,
+      "citation_count": 131,
+      "topics": [
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "J",
+          "name": "Autoimmune seizures and epilepsy"
+        }
+      ],
+      "search_blob": "corinna kramme krankenhaus mara neural antibodies (neuronal antibodies, autoantibodies) autoimmune seizures and epilepsy"
+    },
+    {
+      "id": "https://openalex.org/A5023449812",
+      "name": "Christoph S. Dietze",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 7,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        }
+      ],
+      "search_blob": "christoph s. dietze evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) semiology"
+    },
+    {
+      "id": "https://openalex.org/A5075581709",
+      "name": "Lucy Ekosso‐Ejangue",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 7,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "L",
+          "name": "Semiology"
+        }
+      ],
+      "search_blob": "lucy ekosso‐ejangue evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) semiology"
+    },
+    {
+      "id": "https://openalex.org/A5011051372",
+      "name": "Gaby Schmid",
+      "affiliation": "v. Bodelschwing Foundation Bethel",
+      "publication_count": 1,
+      "citation_count": 40,
+      "topics": [
+        {
+          "id": "C.2",
+          "name": "Trials"
+        },
+        {
+          "id": "M",
+          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
+        }
+      ],
+      "search_blob": "gaby schmid v. bodelschwing foundation bethel trials genetic generalized epilepsy (idiopathic generalized epilepsy)"
+    },
+    {
+      "id": "https://openalex.org/A5018077938",
+      "name": "Denise Lahr",
       "affiliation": "Department of Epileptology, Bethel Epilepsy Center, Medical School OWL, Bielefeld University, Bielefeld, Germany",
       "publication_count": 3,
-      "citation_count": 21,
+      "citation_count": 32,
       "topics": [
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
         {
           "id": "O.2",
           "name": "Pension, Rehabilitation, Sports"
         },
         {
-          "id": "O.1",
-          "name": "Driving"
+          "id": "E",
+          "name": "Intellectual disability"
+        },
+        {
+          "id": "C",
+          "name": "Pharmacology"
         }
       ],
-      "search_blob": "i. coban department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany pension, rehabilitation, sports driving"
+      "search_blob": "denise lahr department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany driving pension, rehabilitation, sports intellectual disability pharmacology"
     },
     {
-      "id": "https://openalex.org/A5030983383",
-      "name": "Pascal Speicher",
-      "affiliation": "Department of Epileptology, Bethel Epilepsy Center, Medical School OWL, Bielefeld University, Bielefeld, Germany",
-      "publication_count": 2,
-      "citation_count": 2,
+      "id": "https://openalex.org/A5001027417",
+      "name": "Andreas Rogalewski",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 4,
+      "citation_count": 119,
       "topics": [
         {
-          "id": "O.2",
-          "name": "Pension, Rehabilitation, Sports"
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
         },
         {
-          "id": "O.1",
-          "name": "Driving"
+          "id": "I",
+          "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
         }
       ],
-      "search_blob": "pascal speicher department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany pension, rehabilitation, sports driving"
+      "search_blob": "andreas rogalewski evangelisches krankenhaus bielefeld neural antibodies (neuronal antibodies, autoantibodies) neuropsychology/cognitive development epidemiology, incidence, prevalence memory functional"
+    },
+    {
+      "id": "https://openalex.org/A5087613557",
+      "name": "Christoph Hagemeister",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 1,
+      "citation_count": 91,
+      "topics": [
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        }
+      ],
+      "search_blob": "christoph hagemeister krankenhaus mara neural antibodies (neuronal antibodies, autoantibodies) epidemiology, incidence, prevalence"
     },
     {
       "id": "https://openalex.org/A5046726322",
@@ -2705,336 +2309,40 @@
       "search_blob": "heiko hausfeld department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany pension, rehabilitation, sports driving therapeutic drug monitoring"
     },
     {
-      "id": "https://openalex.org/A5083204958",
-      "name": "Theordor W. May",
-      "affiliation": "Society for Epilepsy Research, Epilepsy Center Bethel, Bielefeld, Germany",
-      "publication_count": 1,
-      "citation_count": 4,
-      "topics": [
-        {
-          "id": "O.3",
-          "name": "Patient education (educational programs)"
-        },
-        {
-          "id": "O.5",
-          "name": "Quality of life (QoL)"
-        }
-      ],
-      "search_blob": "theordor w. may society for epilepsy research, epilepsy center bethel, bielefeld, germany patient education (educational programs) quality of life (qol)"
-    },
-    {
-      "id": "https://openalex.org/A5100706958",
-      "name": "Markus Müller",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Bielefeld, 33617, Germany",
-      "publication_count": 1,
-      "citation_count": 12,
-      "topics": [
-        {
-          "id": "H.7",
-          "name": "Neuropathologie"
-        },
-        {
-          "id": "K",
-          "name": "Genetics"
-        }
-      ],
-      "search_blob": "markus müller department of epileptology (krankenhaus mara), medical school, bielefeld university, bielefeld, 33617, germany neuropathologie genetics"
-    },
-    {
-      "id": "https://openalex.org/A5055309680",
-      "name": "Silvia Vieker",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 158,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        },
-        {
-          "id": "J.2",
-          "name": "Rasmussen encephalitis"
-        }
-      ],
-      "search_blob": "silvia vieker evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology epidemiology, incidence, prevalence rasmussen encephalitis"
-    },
-    {
-      "id": "https://openalex.org/A5109017814",
-      "name": "Galal Banat",
-      "affiliation": "Bielefeld University, Medical School and University Medical Center OWL, Mara Hospital, Department of Epileptology, Maraweg 21, Bielefeld, Germany.",
-      "publication_count": 1,
-      "citation_count": 0,
-      "topics": [
-        {
-          "id": "K",
-          "name": "Genetics"
-        },
-        {
-          "id": "H.8",
-          "name": "Genetics"
-        }
-      ],
-      "search_blob": "galal banat bielefeld university, medical school and university medical center owl, mara hospital, department of epileptology, maraweg 21, bielefeld, germany. genetics genetics"
-    },
-    {
-      "id": "https://openalex.org/A5014833297",
-      "name": "Almut Hübenthal",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 19,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        }
-      ],
-      "search_blob": "almut hübenthal evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology"
-    },
-    {
-      "id": "https://openalex.org/A5000184140",
-      "name": "Oliver Koch",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 37,
-      "topics": [
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        }
-      ],
-      "search_blob": "oliver koch evangelisches krankenhaus bielefeld neuropsychologie"
-    },
-    {
-      "id": "https://openalex.org/A5021267352",
-      "name": "Nadine Vietmeier",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 32,
-      "topics": [
-        {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        }
-      ],
-      "search_blob": "nadine vietmeier evangelisches krankenhaus bielefeld psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures)"
-    },
-    {
-      "id": "https://openalex.org/A5109084820",
-      "name": "Rainer Valentin",
-      "affiliation": "Klinik Mara (EvKB Bethel)",
+      "id": "https://openalex.org/A5030983383",
+      "name": "Pascal Speicher",
+      "affiliation": "Department of Epileptology, Bethel Epilepsy Center, Medical School OWL, Bielefeld University, Bielefeld, Germany",
       "publication_count": 2,
-      "citation_count": 93,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "rainer valentin klinik mara (evkb bethel) mechanisms of disease, neuropathology therapeutic drug monitoring autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5014783232",
-      "name": "Tobias M. Redecker",
-      "affiliation": "Bielefeld University, Medical School and University Medical Center OWL, Mara Hospital, Department of Epileptology, Maraweg 21, 33617 Bielefeld, Germany",
-      "publication_count": 1,
       "citation_count": 2,
       "topics": [
         {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
+          "id": "O.1",
+          "name": "Driving"
         },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        }
-      ],
-      "search_blob": "tobias m. redecker bielefeld university, medical school and university medical center owl, mara hospital, department of epileptology, maraweg 21, 33617 bielefeld, germany psychiatric co-morbidity epidemiology, incidence, prevalence"
-    },
-    {
-      "id": "https://openalex.org/A5025778703",
-      "name": "Bernd Huber",
-      "affiliation": "v. Bodelschwing Foundation Bethel",
-      "publication_count": 3,
-      "citation_count": 68,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        },
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        }
-      ],
-      "search_blob": "bernd huber v. bodelschwing foundation bethel trials genetic generalized epilepsy (idiopathic generalized epilepsy) therapeutic drug monitoring"
-    },
-    {
-      "id": "https://openalex.org/A5077629203",
-      "name": "Michelina Bocchicchio",
-      "affiliation": "v. Bodelschwing Foundation Bethel",
-      "publication_count": 1,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "C.1",
-          "name": "Therapeutic drug monitoring"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "michelina bocchicchio v. bodelschwing foundation bethel therapeutic drug monitoring trials"
-    },
-    {
-      "id": "https://openalex.org/A5042720066",
-      "name": "Dominik Neu",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 2,
-      "citation_count": 12,
-      "topics": [
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "dominik neu evangelisches krankenhaus bielefeld cognitive research functional"
-    },
-    {
-      "id": "https://openalex.org/A5077637177",
-      "name": "Joerg Aengenendt",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 2,
-      "citation_count": 24,
-      "topics": [
-        {
-          "id": "Q.1",
-          "name": "Cognitive research"
-        },
-        {
-          "id": "H.2",
-          "name": "Language"
-        },
-        {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        },
-        {
-          "id": "I.1",
-          "name": "functional MRI"
-        },
-        {
-          "id": "I",
-          "name": "Neuropsychology/cognitive development"
-        }
-      ],
-      "search_blob": "joerg aengenendt krankenhaus mara cognitive research language memory neuropsychologie functional mri neuropsychology/cognitive development"
-    },
-    {
-      "id": "https://openalex.org/A5045493973",
-      "name": "Bo Martin Bibby",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 157,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        }
-      ],
-      "search_blob": "bo martin bibby evangelisches krankenhaus bielefeld eeg (electroencephalography)"
-    },
-    {
-      "id": "https://openalex.org/A5004900613",
-      "name": "Christoph Siedersleben",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 6,
-      "topics": [
         {
           "id": "O.2",
           "name": "Pension, Rehabilitation, Sports"
+        }
+      ],
+      "search_blob": "pascal speicher department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany driving pension, rehabilitation, sports"
+    },
+    {
+      "id": "https://openalex.org/A5084927273",
+      "name": "I. Coban",
+      "affiliation": "Department of Epileptology, Bethel Epilepsy Center, Medical School OWL, Bielefeld University, Bielefeld, Germany",
+      "publication_count": 3,
+      "citation_count": 21,
+      "topics": [
+        {
+          "id": "O.1",
+          "name": "Driving"
         },
         {
-          "id": "O.4",
-          "name": "Stigma"
+          "id": "O.2",
+          "name": "Pension, Rehabilitation, Sports"
         }
       ],
-      "search_blob": "christoph siedersleben evangelisches krankenhaus bielefeld pension, rehabilitation, sports stigma"
-    },
-    {
-      "id": "https://openalex.org/A5005552124",
-      "name": "Mariam Abu-Tair",
-      "affiliation": "Klinik Mara (EvKB Bethel)",
-      "publication_count": 1,
-      "citation_count": 93,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "J",
-          "name": "Autoimmune seizures and epilepsy"
-        }
-      ],
-      "search_blob": "mariam abu-tair klinik mara (evkb bethel) mechanisms of disease, neuropathology autoimmune seizures and epilepsy"
-    },
-    {
-      "id": "https://openalex.org/A5026228268",
-      "name": "Mehdi Ahmadi",
-      "affiliation": "Dept. of Epileptology (Krankenhaus Mara), Bielefeld University, Medical School, Campus Bielefeld-Bethel, Maraweg 21, 33617 Bielefeld, Germany",
-      "publication_count": 1,
-      "citation_count": 3,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "mehdi ahmadi dept. of epileptology (krankenhaus mara), bielefeld university, medical school, campus bielefeld-bethel, maraweg 21, 33617 bielefeld, germany structural"
-    },
-    {
-      "id": "https://openalex.org/A5069507951",
-      "name": "Birgitt Mueffelmann",
-      "affiliation": "Dept. of Epileptology (Krankenhaus Mara), Bielefeld University, Medical School, Campus Bielefeld-Bethel, Maraweg 21, 33617 Bielefeld, Germany",
-      "publication_count": 1,
-      "citation_count": 3,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "birgitt mueffelmann dept. of epileptology (krankenhaus mara), bielefeld university, medical school, campus bielefeld-bethel, maraweg 21, 33617 bielefeld, germany structural"
+      "search_blob": "i. coban department of epileptology, bethel epilepsy center, medical school owl, bielefeld university, bielefeld, germany driving pension, rehabilitation, sports"
     },
     {
       "id": "https://openalex.org/A5029897407",
@@ -3044,19 +2352,107 @@
       "citation_count": 45,
       "topics": [
         {
+          "id": "H.8",
+          "name": "Genetics"
+        },
+        {
           "id": "B.1",
           "name": "Structural"
         },
         {
-          "id": "H.8",
+          "id": "K",
           "name": "Genetics"
         },
         {
           "id": "Q.2",
           "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "H.7",
+          "name": "Neuropathologie"
         }
       ],
-      "search_blob": "ahmed gaballa department of epileptology (krankenhaus mara), medical school, bielefeld university, bielefeld, germany structural genetics mechanisms of disease, neuropathology"
+      "search_blob": "ahmed gaballa department of epileptology (krankenhaus mara), medical school, bielefeld university, bielefeld, germany genetics structural genetics mechanisms of disease, neuropathology neuropathologie"
+    },
+    {
+      "id": "https://openalex.org/A5003210283",
+      "name": "Marion Stomberg",
+      "affiliation": "Department of Epileptology, Mara Hospital, Bethel Epilepsy Center, Bielefeld University, Bielefeld, Germany.",
+      "publication_count": 1,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        }
+      ],
+      "search_blob": "marion stomberg department of epileptology, mara hospital, bethel epilepsy center, bielefeld university, bielefeld, germany. structural surgical techniques (including electrode placement) genetics"
+    },
+    {
+      "id": "https://openalex.org/A5011104428",
+      "name": "Florian J. Mücke",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Bielefeld, Germany",
+      "publication_count": 1,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        }
+      ],
+      "search_blob": "florian j. mücke department of epileptology (krankenhaus mara), bielefeld university, bielefeld, germany functional memory neuropsychologie"
+    },
+    {
+      "id": "https://openalex.org/A5053535458",
+      "name": "Lorenz B. Dehn",
+      "affiliation": "Society for Epilepsy Research, Bethel Epilepsy Center, Bielefeld, Germany",
+      "publication_count": 2,
+      "citation_count": 62,
+      "topics": [
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "O.3",
+          "name": "Patient education (educational programs)"
+        },
+        {
+          "id": "O.1",
+          "name": "Driving"
+        }
+      ],
+      "search_blob": "lorenz b. dehn society for epilepsy research, bethel epilepsy center, bielefeld, germany psychiatric co-morbidity patient education (educational programs) driving"
+    },
+    {
+      "id": "https://openalex.org/A5082174997",
+      "name": "Sally Elakkary",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Bielefeld, Germany",
+      "publication_count": 1,
+      "citation_count": 23,
+      "topics": [
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        }
+      ],
+      "search_blob": "sally elakkary department of epileptology (krankenhaus mara), bielefeld university, bielefeld, germany therapeutic drug monitoring"
     },
     {
       "id": "https://openalex.org/A5020765511",
@@ -3071,6 +2467,24 @@
         }
       ],
       "search_blob": "simone hortsmann bethel epilepsy center, klinik mara, maraweg 21, 33617 bielefeld, germany. structural"
+    },
+    {
+      "id": "https://openalex.org/A5052548820",
+      "name": "Jörg Aengenendt",
+      "affiliation": "Bethel Epilepsy Center, Klinik Mara, Maraweg 21, 33617 Bielefeld, Germany.",
+      "publication_count": 2,
+      "citation_count": 34,
+      "topics": [
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        },
+        {
+          "id": "B.1",
+          "name": "Structural"
+        }
+      ],
+      "search_blob": "jörg aengenendt bethel epilepsy center, klinik mara, maraweg 21, 33617 bielefeld, germany. surgical techniques (including electrode placement) structural"
     },
     {
       "id": "https://openalex.org/A5101535008",
@@ -3109,442 +2523,50 @@
       "search_blob": "matthias wilhelm hoppe bethel epilepsy center, klinik mara, maraweg 21, 33617 bielefeld, germany. structural"
     },
     {
-      "id": "https://openalex.org/A5003210283",
-      "name": "Marion Stomberg",
-      "affiliation": "Department of Epileptology, Mara Hospital, Bethel Epilepsy Center, Bielefeld University, Bielefeld, Germany.",
-      "publication_count": 1,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "K",
-          "name": "Genetics"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "marion stomberg department of epileptology, mara hospital, bethel epilepsy center, bielefeld university, bielefeld, germany. genetics structural"
-    },
-    {
-      "id": "https://openalex.org/A5098977499",
-      "name": "Ahmed Elshetihy",
+      "id": "https://openalex.org/A5080099018",
+      "name": "Simone Hartmann",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
       "publication_count": 1,
-      "citation_count": 1,
+      "citation_count": 27,
       "topics": [
         {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
         }
       ],
-      "search_blob": "ahmed elshetihy evangelisches krankenhaus bielefeld psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures)"
+      "search_blob": "simone hartmann evangelisches krankenhaus bielefeld surgical techniques (including electrode placement)"
     },
     {
-      "id": "https://openalex.org/A5098977500",
-      "name": "Lema Nergiz",
+      "id": "https://openalex.org/A5059835056",
+      "name": "Tim Ogutu",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
       "publication_count": 1,
-      "citation_count": 1,
+      "citation_count": 27,
       "topics": [
         {
-          "id": "F",
-          "name": "Psychiatric co-morbidity"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
         }
       ],
-      "search_blob": "lema nergiz evangelisches krankenhaus bielefeld psychiatric co-morbidity functional/dissociative seizures (psychogenic non-epileptic seizures)"
+      "search_blob": "tim ogutu evangelisches krankenhaus bielefeld surgical techniques (including electrode placement)"
     },
     {
-      "id": "https://openalex.org/A5100451961",
-      "name": "Xuefeng Wang",
+      "id": "https://openalex.org/A5029673592",
+      "name": "Annika Hilgers",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
       "publication_count": 1,
-      "citation_count": 304,
-      "topics": [
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "xuefeng wang evangelisches krankenhaus bielefeld genetic generalized epilepsy (idiopathic generalized epilepsy) functional/dissociative seizures (psychogenic non-epileptic seizures) trials"
-    },
-    {
-      "id": "https://openalex.org/A5001899379",
-      "name": "Bree DiVentura",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 304,
-      "topics": [
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "bree diventura evangelisches krankenhaus bielefeld genetic generalized epilepsy (idiopathic generalized epilepsy) functional/dissociative seizures (psychogenic non-epileptic seizures) trials"
-    },
-    {
-      "id": "https://openalex.org/A5045681106",
-      "name": "Antonio Laurenza",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 304,
-      "topics": [
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "antonio laurenza evangelisches krankenhaus bielefeld genetic generalized epilepsy (idiopathic generalized epilepsy) functional/dissociative seizures (psychogenic non-epileptic seizures) trials"
-    },
-    {
-      "id": "https://openalex.org/A5034088114",
-      "name": "Francesco Bibbiani",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 304,
-      "topics": [
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "francesco bibbiani evangelisches krankenhaus bielefeld genetic generalized epilepsy (idiopathic generalized epilepsy) functional/dissociative seizures (psychogenic non-epileptic seizures) trials"
-    },
-    {
-      "id": "https://openalex.org/A5011051372",
-      "name": "Gaby Schmid",
-      "affiliation": "v. Bodelschwing Foundation Bethel",
-      "publication_count": 1,
-      "citation_count": 40,
-      "topics": [
-        {
-          "id": "M",
-          "name": "Genetic generalized epilepsy (idiopathic generalized epilepsy)"
-        },
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "gaby schmid v. bodelschwing foundation bethel genetic generalized epilepsy (idiopathic generalized epilepsy) trials"
-    },
-    {
-      "id": "https://openalex.org/A5087613557",
-      "name": "Christoph Hagemeister",
-      "affiliation": "Krankenhaus Mara",
-      "publication_count": 1,
-      "citation_count": 91,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        }
-      ],
-      "search_blob": "christoph hagemeister krankenhaus mara mechanisms of disease, neuropathology epidemiology, incidence, prevalence"
-    },
-    {
-      "id": "https://openalex.org/A5016663277",
-      "name": "Sami Aboumatar",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 69,
+      "citation_count": 16,
       "topics": [
         {
           "id": "C.2",
           "name": "Trials"
-        }
-      ],
-      "search_blob": "sami aboumatar evangelisches krankenhaus bielefeld trials"
-    },
-    {
-      "id": "https://openalex.org/A5108490672",
-      "name": "Fang Dong",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 69,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "fang dong evangelisches krankenhaus bielefeld trials"
-    },
-    {
-      "id": "https://openalex.org/A5086532171",
-      "name": "Sarah Mizne",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 69,
-      "topics": [
-        {
-          "id": "C.2",
-          "name": "Trials"
-        }
-      ],
-      "search_blob": "sarah mizne evangelisches krankenhaus bielefeld trials"
-    },
-    {
-      "id": "https://openalex.org/A5011104428",
-      "name": "Florian J. Mücke",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Bielefeld, Germany",
-      "publication_count": 1,
-      "citation_count": 9,
-      "topics": [
-        {
-          "id": "I.3",
-          "name": "Memory"
         },
-        {
-          "id": "H.6",
-          "name": "Neuropsychologie"
-        },
-        {
-          "id": "B.2",
-          "name": "functional"
-        }
-      ],
-      "search_blob": "florian j. mücke department of epileptology (krankenhaus mara), bielefeld university, bielefeld, germany memory neuropsychologie functional"
-    },
-    {
-      "id": "https://openalex.org/A5082174997",
-      "name": "Sally Elakkary",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Bielefeld University, Bielefeld, Germany",
-      "publication_count": 1,
-      "citation_count": 23,
-      "topics": [
         {
           "id": "C.1",
           "name": "Therapeutic drug monitoring"
         }
       ],
-      "search_blob": "sally elakkary department of epileptology (krankenhaus mara), bielefeld university, bielefeld, germany therapeutic drug monitoring"
-    },
-    {
-      "id": "https://openalex.org/A5045349379",
-      "name": "A Hofmann-Peters",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 6,
-      "topics": [
-        {
-          "id": "E.2",
-          "name": "West syndrome"
-        },
-        {
-          "id": "K",
-          "name": "Genetics"
-        }
-      ],
-      "search_blob": "a hofmann-peters evangelisches krankenhaus bielefeld west syndrome genetics"
-    },
-    {
-      "id": "https://openalex.org/A5025638495",
-      "name": "Thomas Büttner",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 1,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        }
-      ],
-      "search_blob": "thomas büttner evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology"
-    },
-    {
-      "id": "https://openalex.org/A5059602119",
-      "name": "Annette Thomas",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 1,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        }
-      ],
-      "search_blob": "annette thomas evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology"
-    },
-    {
-      "id": "https://openalex.org/A5017805958",
-      "name": "Benjamin Vlad",
-      "affiliation": "Klinikum Bielefeld",
-      "publication_count": 1,
-      "citation_count": 1,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        }
-      ],
-      "search_blob": "benjamin vlad klinikum bielefeld mechanisms of disease, neuropathology"
-    },
-    {
-      "id": "https://openalex.org/A5089825190",
-      "name": "Ilijas Jelčić",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 1,
-      "topics": [
-        {
-          "id": "Q.2",
-          "name": "Mechanisms of disease, neuropathology"
-        }
-      ],
-      "search_blob": "ilijas jelčić evangelisches krankenhaus bielefeld mechanisms of disease, neuropathology"
-    },
-    {
-      "id": "https://openalex.org/A5114283889",
-      "name": "Emad Alkassm",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 1,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        }
-      ],
-      "search_blob": "emad alkassm evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-    },
-    {
-      "id": "https://openalex.org/A5078292238",
-      "name": "Tunc Faik Ersoy",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 1,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "H.1",
-          "name": "Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-        }
-      ],
-      "search_blob": "tunc faik ersoy evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis)"
-    },
-    {
-      "id": "https://openalex.org/A5069682175",
-      "name": "Kazem Ghaemi",
-      "affiliation": "Department of Neurosurgery, Bethel Epilepsy Center, Germany",
-      "publication_count": 1,
-      "citation_count": 83,
-      "topics": [
-        {
-          "id": "D",
-          "name": "Status epilepticus"
-        },
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        }
-      ],
-      "search_blob": "kazem ghaemi department of neurosurgery, bethel epilepsy center, germany status epilepticus surgical techniques (including electrode placement)"
-    },
-    {
-      "id": "https://openalex.org/A5060706778",
-      "name": "Lena J Hopf",
-      "affiliation": "Evangelisches Krankenhaus Bielefeld",
-      "publication_count": 1,
-      "citation_count": 128,
-      "topics": [
-        {
-          "id": "H.3",
-          "name": "Surgical techniques (including electrode placement)"
-        },
-        {
-          "id": "B.1",
-          "name": "Structural"
-        }
-      ],
-      "search_blob": "lena j hopf evangelisches krankenhaus bielefeld surgical techniques (including electrode placement) structural"
-    },
-    {
-      "id": "https://openalex.org/A5099042580",
-      "name": "Lea‐Marie Reisch",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School Bielefeld University  Bielefeld Germany",
-      "publication_count": 1,
-      "citation_count": 6,
-      "topics": [
-        {
-          "id": "A",
-          "name": "EEG (electroencephalography)"
-        },
-        {
-          "id": "N",
-          "name": "Epidemiology, incidence, prevalence"
-        }
-      ],
-      "search_blob": "lea‐marie reisch department of epileptology (krankenhaus mara), medical school bielefeld university  bielefeld germany eeg (electroencephalography) epidemiology, incidence, prevalence"
-    },
-    {
-      "id": "https://openalex.org/A5103992994",
-      "name": "Ahmed Gaballa",
-      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Campus Bielefeld- Bethel, Bielefeld, Germany",
-      "publication_count": 2,
-      "citation_count": 23,
-      "topics": [
-        {
-          "id": "B.1",
-          "name": "Structural"
-        },
-        {
-          "id": "G",
-          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
-        }
-      ],
-      "search_blob": "ahmed gaballa department of epileptology (krankenhaus mara), medical school, bielefeld university, campus bielefeld- bethel, bielefeld, germany structural functional/dissociative seizures (psychogenic non-epileptic seizures)"
+      "search_blob": "annika hilgers evangelisches krankenhaus bielefeld trials therapeutic drug monitoring"
     },
     {
       "id": "https://openalex.org/A5067928168",
@@ -3565,6 +2587,390 @@
       "search_blob": "angeliki kantzeli department of epileptology (krankenhaus mara), bielefeld university, medical school, campus bielefeld-bethel, maraweg 21, 33617 bielefeld, germany status epilepticus epidemiology, incidence, prevalence"
     },
     {
+      "id": "https://openalex.org/A5103992994",
+      "name": "Ahmed Gaballa",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Campus Bielefeld- Bethel, Bielefeld, Germany",
+      "publication_count": 2,
+      "citation_count": 23,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        }
+      ],
+      "search_blob": "ahmed gaballa department of epileptology (krankenhaus mara), medical school, bielefeld university, campus bielefeld- bethel, bielefeld, germany structural functional/dissociative seizures (psychogenic non-epileptic seizures)"
+    },
+    {
+      "id": "https://openalex.org/A5034079046",
+      "name": "Florian J. Bremm",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 1,
+      "citation_count": 17,
+      "topics": [
+        {
+          "id": "B.2",
+          "name": "functional"
+        },
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        }
+      ],
+      "search_blob": "florian j. bremm krankenhaus mara functional cognitive research memory neuropsychologie"
+    },
+    {
+      "id": "https://openalex.org/A5019879829",
+      "name": "Esther Nieder",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 40,
+      "topics": [
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        },
+        {
+          "id": "N",
+          "name": "Epidemiology, incidence, prevalence"
+        },
+        {
+          "id": "O.5",
+          "name": "Quality of life (QoL)"
+        }
+      ],
+      "search_blob": "esther nieder evangelisches krankenhaus bielefeld psychiatric co-morbidity epidemiology, incidence, prevalence quality of life (qol)"
+    },
+    {
+      "id": "https://openalex.org/A5107241589",
+      "name": "D. Lahr",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 1,
+      "citation_count": 62,
+      "topics": [
+        {
+          "id": "I.3",
+          "name": "Memory"
+        }
+      ],
+      "search_blob": "d. lahr krankenhaus mara memory"
+    },
+    {
+      "id": "https://openalex.org/A5021267352",
+      "name": "Nadine Vietmeier",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 32,
+      "topics": [
+        {
+          "id": "G",
+          "name": "Functional/dissociative seizures (psychogenic non-epileptic seizures)"
+        },
+        {
+          "id": "F",
+          "name": "Psychiatric co-morbidity"
+        }
+      ],
+      "search_blob": "nadine vietmeier evangelisches krankenhaus bielefeld functional/dissociative seizures (psychogenic non-epileptic seizures) psychiatric co-morbidity"
+    },
+    {
+      "id": "https://openalex.org/A5073165969",
+      "name": "Hassan Omaimen",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "A",
+          "name": "EEG (electroencephalography)"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        }
+      ],
+      "search_blob": "hassan omaimen evangelisches krankenhaus bielefeld eeg (electroencephalography) surgical techniques (including electrode placement)"
+    },
+    {
+      "id": "https://openalex.org/A5113935752",
+      "name": "Hamzah Yasin",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "A",
+          "name": "EEG (electroencephalography)"
+        },
+        {
+          "id": "H.3",
+          "name": "Surgical techniques (including electrode placement)"
+        }
+      ],
+      "search_blob": "hamzah yasin evangelisches krankenhaus bielefeld eeg (electroencephalography) surgical techniques (including electrode placement)"
+    },
+    {
+      "id": "https://openalex.org/A5089903032",
+      "name": "Marion Daehn",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 127,
+      "topics": [
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        }
+      ],
+      "search_blob": "marion daehn evangelisches krankenhaus bielefeld driving therapeutic drug monitoring"
+    },
+    {
+      "id": "https://openalex.org/A5084127724",
+      "name": "Sarina Djimjadi",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 127,
+      "topics": [
+        {
+          "id": "O.1",
+          "name": "Driving"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        }
+      ],
+      "search_blob": "sarina djimjadi evangelisches krankenhaus bielefeld driving therapeutic drug monitoring"
+    },
+    {
+      "id": "https://openalex.org/A5026228268",
+      "name": "Mehdi Ahmadi",
+      "affiliation": "Dept. of Epileptology (Krankenhaus Mara), Bielefeld University, Medical School, Campus Bielefeld-Bethel, Maraweg 21, 33617 Bielefeld, Germany",
+      "publication_count": 1,
+      "citation_count": 3,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        }
+      ],
+      "search_blob": "mehdi ahmadi dept. of epileptology (krankenhaus mara), bielefeld university, medical school, campus bielefeld-bethel, maraweg 21, 33617 bielefeld, germany structural genetics"
+    },
+    {
+      "id": "https://openalex.org/A5069507951",
+      "name": "Birgitt Mueffelmann",
+      "affiliation": "Dept. of Epileptology (Krankenhaus Mara), Bielefeld University, Medical School, Campus Bielefeld-Bethel, Maraweg 21, 33617 Bielefeld, Germany",
+      "publication_count": 1,
+      "citation_count": 3,
+      "topics": [
+        {
+          "id": "B.1",
+          "name": "Structural"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        }
+      ],
+      "search_blob": "birgitt mueffelmann dept. of epileptology (krankenhaus mara), bielefeld university, medical school, campus bielefeld-bethel, maraweg 21, 33617 bielefeld, germany structural genetics"
+    },
+    {
+      "id": "https://openalex.org/A5082292328",
+      "name": "Anne Beyer",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "I",
+          "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "anne beyer evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory functional"
+    },
+    {
+      "id": "https://openalex.org/A5002511881",
+      "name": "Frédéric Zuhorn",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 3,
+      "citation_count": 28,
+      "topics": [
+        {
+          "id": "I",
+          "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "frédéric zuhorn evangelisches krankenhaus bielefeld neuropsychology/cognitive development neural antibodies (neuronal antibodies, autoantibodies) memory functional"
+    },
+    {
+      "id": "https://openalex.org/A5068697803",
+      "name": "Randolf Klingebiel",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "I",
+          "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "randolf klingebiel evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory functional"
+    },
+    {
+      "id": "https://openalex.org/A5101533823",
+      "name": "Wolf‐Rüdiger Schäbitz",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 2,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "I",
+          "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "wolf‐rüdiger schäbitz evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory functional"
+    },
+    {
+      "id": "https://openalex.org/A5010958888",
+      "name": "Annika Sattler",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 2,
+      "citation_count": 37,
+      "topics": [
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        },
+        {
+          "id": "C.2",
+          "name": "Trials"
+        }
+      ],
+      "search_blob": "annika sattler krankenhaus mara therapeutic drug monitoring trials"
+    },
+    {
+      "id": "https://openalex.org/A5063802901",
+      "name": "Christine Steinkroeger",
+      "affiliation": "Krankenhaus Mara",
+      "publication_count": 1,
+      "citation_count": 34,
+      "topics": [
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        },
+        {
+          "id": "Q.1",
+          "name": "Cognitive research"
+        },
+        {
+          "id": "B.2",
+          "name": "functional"
+        }
+      ],
+      "search_blob": "christine steinkroeger krankenhaus mara neuropsychologie cognitive research functional"
+    },
+    {
+      "id": "https://openalex.org/A5007246359",
+      "name": "Georg Classen",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 2,
+      "topics": [
+        {
+          "id": "J.3",
+          "name": "Basic autoimmune research"
+        },
+        {
+          "id": "A",
+          "name": "EEG (electroencephalography)"
+        }
+      ],
+      "search_blob": "georg classen evangelisches krankenhaus bielefeld basic autoimmune research eeg (electroencephalography)"
+    },
+    {
+      "id": "https://openalex.org/A5000184140",
+      "name": "Oliver Koch",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 37,
+      "topics": [
+        {
+          "id": "H.6",
+          "name": "Neuropsychologie"
+        }
+      ],
+      "search_blob": "oliver koch evangelisches krankenhaus bielefeld neuropsychologie"
+    },
+    {
+      "id": "https://openalex.org/A5014833297",
+      "name": "Almut Hübenthal",
+      "affiliation": "Evangelisches Krankenhaus Bielefeld",
+      "publication_count": 1,
+      "citation_count": 19,
+      "topics": [
+        {
+          "id": "J.1",
+          "name": "Neural antibodies (neuronal antibodies, autoantibodies)"
+        }
+      ],
+      "search_blob": "almut hübenthal evangelisches krankenhaus bielefeld neural antibodies (neuronal antibodies, autoantibodies)"
+    },
+    {
       "id": "https://openalex.org/A5075388474",
       "name": "Jorge Plümer",
       "affiliation": "Evangelisches Krankenhaus Bielefeld",
@@ -3572,15 +2978,15 @@
       "citation_count": 6,
       "topics": [
         {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
           "id": "I",
           "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
         }
       ],
-      "search_blob": "jorge plümer evangelisches krankenhaus bielefeld memory neuropsychology/cognitive development"
+      "search_blob": "jorge plümer evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory"
     },
     {
       "id": "https://openalex.org/A5004895046",
@@ -3590,15 +2996,69 @@
       "citation_count": 6,
       "topics": [
         {
-          "id": "I.3",
-          "name": "Memory"
-        },
-        {
           "id": "I",
           "name": "Neuropsychology/cognitive development"
+        },
+        {
+          "id": "I.3",
+          "name": "Memory"
         }
       ],
-      "search_blob": "isabell greeve evangelisches krankenhaus bielefeld memory neuropsychology/cognitive development"
+      "search_blob": "isabell greeve evangelisches krankenhaus bielefeld neuropsychology/cognitive development memory"
+    },
+    {
+      "id": "https://openalex.org/A5099042580",
+      "name": "Lea‐Marie Reisch",
+      "affiliation": "Department of Epileptology (Krankenhaus Mara), Medical School Bielefeld University  Bielefeld Germany",
+      "publication_count": 1,
+      "citation_count": 6,
+      "topics": [
+        {
+          "id": "Q.2",
+          "name": "Mechanisms of disease, neuropathology"
+        },
+        {
+          "id": "H.7",
+          "name": "Neuropathologie"
+        }
+      ],
+      "search_blob": "lea‐marie reisch department of epileptology (krankenhaus mara), medical school bielefeld university  bielefeld germany mechanisms of disease, neuropathology neuropathologie"
+    },
+    {
+      "id": "https://openalex.org/A5109017814",
+      "name": "Galal Banat",
+      "affiliation": "Bielefeld University, Medical School and University Medical Center OWL, Mara Hospital, Department of Epileptology, Maraweg 21, Bielefeld, Germany.",
+      "publication_count": 1,
+      "citation_count": 0,
+      "topics": [
+        {
+          "id": "H.8",
+          "name": "Genetics"
+        },
+        {
+          "id": "K",
+          "name": "Genetics"
+        }
+      ],
+      "search_blob": "galal banat bielefeld university, medical school and university medical center owl, mara hospital, department of epileptology, maraweg 21, bielefeld, germany. genetics genetics"
+    },
+    {
+      "id": "https://openalex.org/A5077629203",
+      "name": "Michelina Bocchicchio",
+      "affiliation": "v. Bodelschwing Foundation Bethel",
+      "publication_count": 1,
+      "citation_count": 9,
+      "topics": [
+        {
+          "id": "C.2",
+          "name": "Trials"
+        },
+        {
+          "id": "C.1",
+          "name": "Therapeutic drug monitoring"
+        }
+      ],
+      "search_blob": "michelina bocchicchio v. bodelschwing foundation bethel trials therapeutic drug monitoring"
     }
   ]
 }
