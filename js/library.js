@@ -608,9 +608,12 @@ function renderOverlayTopics(items = []) {
           return `
             <li>
               <div class="line1">
+              <a>
                 <span class="topic-color-dot" style="--topic-color:${escapeHTML(color || "#94a3b8")}" aria-hidden="true"></span>
                 ${escapeHTML(item.name || item.label || item.id || "Topic")}
+              </a>
                 ${badge}
+
               </div>
             </li>`;
         })
@@ -651,8 +654,8 @@ function renderOverlayCoauthors(items = []) {
         .map(item => {
           const badge = `<span class="badge">${formatNumber(item.count || 0)}</span>`;
           const metaParts = [];
-          if (item.affiliation) metaParts.push(`<small>${escapeHTML(item.affiliation)}</small>`);
-          if (item.is_local) metaParts.push('<small class="author-name--local">Local</small>');
+          if (item.affiliation) metaParts.push(`<small ${item.is_local? "class='author-local'" : ""}>${escapeHTML(item.affiliation)}</small>`);
+          //if (item.is_local) metaParts.push('<small class="author-name--local">Local</small>');
           const meta = metaParts.join("");
           return `
             <li>
