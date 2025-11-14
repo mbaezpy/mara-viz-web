@@ -464,6 +464,7 @@ function attachPublicationInteractions(panel) {
   });
 
   panel.querySelectorAll("[data-author-id]").forEach(el => {
+    if (el.dataset.role === "author-trigger") return;
     el.addEventListener("click", () => {
       const id = el.dataset.authorId;
       const label = el.dataset.authorLabel || id;
@@ -479,6 +480,17 @@ function attachPublicationInteractions(panel) {
         const label = el.dataset.journalLabel || id;
         addFilter("journals", { id, label });
       });
+    });
+  });
+}
+
+function attachAuthorOverlayInteractions(panel) {
+  if (!panel) return;
+  panel.querySelectorAll('[data-role="author-trigger"]').forEach(btn => {
+    btn.addEventListener("click", event => {
+      event.stopPropagation();
+      const authorId = btn.dataset.authorId;
+      openAuthorOverlay(authorId);
     });
   });
 }
@@ -508,11 +520,20 @@ function renderAuthors(panel, items) {
           </button>`;
       })
       .join("");
+    const safeName = escapeHTML(author.name || "Unknown author");
+    const authorId = escapeHTML(author.id || "");
+    const triggerLabel = escapeHTML(`View details for ${author.name || "author"}`);
     return `
       <tr>
         <td class="col-author">
-          <div class="library-author-name">${escapeHTML(author.name || "Unknown author")}</div>
-          <div class="library-author-affiliation">${escapeHTML(author.affiliation || "—")}</div>
+          <button type="button"
+            class="library-author-trigger"
+            data-role="author-trigger"
+            data-author-id="${authorId}"
+            aria-label="${triggerLabel}">
+            <div class="library-author-name">${safeName}</div>
+            <div class="library-author-affiliation">${escapeHTML(author.affiliation || "—")}</div>
+          </button>
           <div class="library-tags">${topicTags}</div>
         </td>
         <td class="col-pubs numeric">${formatNumber(author.publication_count)}</td>
@@ -534,6 +555,249 @@ function renderAuthors(panel, items) {
   `;
   attachPublicationInteractions(panel);
   attachSortInteractions(panel, "authors");
+  attachAuthorOverlayInteractions(panel);
+  refreshActiveAuthorOverlay();
+}
+
+function renderAuthorChart(series = []) {
+  if (!Array.isArray(series) || !series.length) {
+    return `<div class="library-overlay-empty">No publication data.</div>`;
+  }
+  const totals = series.map(entry => Math.max(0, (entry.main || 0) + (entry.secondary || 0)));
+  const maxTotal = Math.max(...totals, 0);
+  if (maxTotal <= 0) {
+    return `<div class="library-overlay-empty">No publication data.</div>`;
+  }
+  return `
+    <div class="library-author-chart">
+      ${series
+        .map(entry => {
+          const yearLabel = entry.year == null ? "—" : entry.year;
+          const total = Math.max(0, (entry.main || 0) + (entry.secondary || 0));
+          const relative = maxTotal ? Math.min(1, total / maxTotal) : 0;
+          const mainPortion = total ? Math.max(0, Math.min(1, (entry.main || 0) / total)) : 0;
+          const secondaryPortion = 1 - mainPortion;
+          return `
+            <div class="library-author-chart-row">
+              <span>${escapeHTML(String(yearLabel))}</span>
+              <div class="library-author-chart-bar" aria-label="${escapeHTML(`Year ${yearLabel}: ${total} publications`)}">
+                <div class="library-author-chart-progress" style="width:${(relative * 100).toFixed(2)}%">
+                  <span class="chart-segment chart-segment--main" style="width:${(mainPortion * 100).toFixed(2)}%"></span>
+                  <span class="chart-segment chart-segment--secondary" style="width:${(secondaryPortion * 100).toFixed(2)}%"></span>
+                </div>
+              </div>
+              <span>${formatNumber(total)}</span>
+            </div>`;
+        })
+        .join("")}
+    </div>`;
+}
+
+function renderOverlayTopics(items = []) {
+  if (!Array.isArray(items) || !items.length) {
+    return `<p class="library-overlay-empty">No topic data available.</p>`;
+  }
+  return `
+    <ul class="list compact">
+      ${items
+        .map(item => {
+          const color = dataCache?.colorForTopicId
+            ? dataCache.colorForTopicId(item.top_level_id || item.id)
+            : "#94a3b8";
+          const badge = `<span class="badge">${formatNumber(item.count || 0)}</span>`;
+          return `
+            <li>
+              <div class="line1">
+                <span class="topic-color-dot" style="--topic-color:${escapeHTML(color || "#94a3b8")}" aria-hidden="true"></span>
+                ${escapeHTML(item.name || item.label || item.id || "Topic")}
+                ${badge}
+              </div>
+            </li>`;
+        })
+        .join("")}
+    </ul>`;
+}
+
+function renderOverlayJournals(items = []) {
+  if (!Array.isArray(items) || !items.length) {
+    return `<p class="library-overlay-empty">No journal data available.</p>`;
+  }
+  return `
+    <ul class="list compact">
+      ${items
+        .map(item => {
+          const badge = `<span class="badge">${formatNumber(item.count || 0)}</span>`;
+          const issn = item.issn_l ? `<small>ISSN-L ${escapeHTML(item.issn_l)}</small>` : "";
+          return `
+            <li>
+              <div class="line1">
+                ${escapeHTML(item.name || "Unknown journal")}
+                ${badge}
+              </div>
+              ${issn}
+            </li>`;
+        })
+        .join("")}
+    </ul>`;
+}
+
+function renderOverlayCoauthors(items = []) {
+  if (!Array.isArray(items) || !items.length) {
+    return `<p class="library-overlay-empty">No coauthors recorded.</p>`;
+  }
+  return `
+    <ul class="list compact">
+      ${items
+        .map(item => {
+          const badge = `<span class="badge">${formatNumber(item.count || 0)}</span>`;
+          const metaParts = [];
+          if (item.affiliation) metaParts.push(`<small>${escapeHTML(item.affiliation)}</small>`);
+          if (item.is_local) metaParts.push('<small class="author-name--local">Local</small>');
+          const meta = metaParts.join("");
+          return `
+            <li>
+              <div class="line1">
+                ${escapeHTML(item.name || "Unknown author")}
+                ${badge}
+              </div>
+              ${meta}
+            </li>`;
+        })
+        .join("")}
+    </ul>`;
+}
+
+function renderTopPublications(items = []) {
+  if (!Array.isArray(items) || !items.length) {
+    return `<p class="library-overlay-empty">No publications available.</p>`;
+  }
+  return `
+    <ul class="list">
+      ${items
+        .map(pub => {
+          const link = pub.doi ? `https://doi.org/${pub.doi}` : pub.openalex_url;
+          const title = escapeHTML(pub.title || "Untitled publication");
+          const metaParts = [];
+          if (pub.authors && pub.authors.length) metaParts.push(escapeHTML(pub.authors.slice(0, 4).join(", ")));
+          if (pub.venue) metaParts.push(escapeHTML(pub.venue));
+          if (pub.year) metaParts.push(escapeHTML(String(pub.year)));
+          if (Number.isFinite(pub.cited_by_count)) metaParts.push(`${formatNumber(pub.cited_by_count)} citations`);
+          metaParts.push(pub.is_main ? "Main author" : "Co-author");
+          const meta = metaParts.join(" · ");
+          const linkMarkup = link
+            ? `<a href="${escapeHTML(link)}" target="_blank" rel="noopener noreferrer">${title}</a>`
+            : `<span class="item-label">${title}</span>`;
+          return `
+            <li>
+              ${linkMarkup}
+              <br/>
+              <small>${meta}</small>
+            </li>`;
+        })
+        .join("")}
+    </ul>`;
+}
+
+function openAuthorOverlay(authorId) {
+  if (!authorId || !elements.overlay || !elements.overlayContent) return;
+  const author = dataCache?.authorsById?.get(authorId);
+  if (!author) return;
+  renderAuthorOverlay(author);
+  elements.overlay.classList.add("is-open");
+  elements.overlay.setAttribute("aria-hidden", "false");
+  state.activeOverlayAuthor = authorId;
+  document.removeEventListener("keydown", handleOverlayKeydown);
+  document.addEventListener("keydown", handleOverlayKeydown);
+  const closeBtn = elements.overlay.querySelector(".library-overlay-close");
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeAuthorOverlay() {
+  if (!elements.overlay) return;
+  if (!elements.overlay.classList.contains("is-open")) return;
+  elements.overlay.classList.remove("is-open");
+  elements.overlay.setAttribute("aria-hidden", "true");
+  state.activeOverlayAuthor = null;
+  document.removeEventListener("keydown", handleOverlayKeydown);
+}
+
+function handleOverlayKeydown(event) {
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeAuthorOverlay();
+  }
+}
+
+function refreshActiveAuthorOverlay() {
+  if (!state.activeOverlayAuthor || !elements.overlay || !elements.overlay.classList.contains("is-open")) {
+    return;
+  }
+  const author = dataCache?.authorsById?.get(state.activeOverlayAuthor);
+  if (!author) {
+    closeAuthorOverlay();
+    return;
+  }
+  renderAuthorOverlay(author);
+}
+function renderAuthorOverlay(author) {
+  if (!elements.overlayContent) return;
+  const detail = author.detail || {};
+  const stats = detail.stats || {};
+  const statCards = [
+    { label: "Main publications", value: stats.main_publications ?? 0 },
+    { label: "Total citations", value: stats.total_citations ?? author.citation_count ?? 0 },
+    { label: "Total coauthors", value: stats.coauthor_total ?? 0 },
+  ];
+  const statsMarkup = `
+    <div class="library-author-stats">
+      ${statCards
+        .map(
+          card => `
+            <div class="library-author-stat">
+              <div class="library-author-stat-value">${formatNumber(card.value)}</div>
+              <div class="library-author-stat-label">${escapeHTML(card.label)}</div>
+            </div>`
+        )
+        .join("")}
+    </div>`;
+
+  const chartMarkup = renderAuthorChart(detail.year_series);
+
+  const journalsMarkup = renderOverlayJournals(detail.top_journals);
+  const coauthorsMarkup = renderOverlayCoauthors(detail.top_coauthors);
+  const topicsMarkup = renderOverlayTopics(detail.top_topics);
+  const publicationsMarkup = renderTopPublications(detail.top_publications);
+
+  elements.overlayContent.innerHTML = `
+    <header>
+      <h2 id="library-overlay-title">${escapeHTML(author.name || "Author details")}</h2>
+      <div class="library-overlay-affiliation">${escapeHTML(author.affiliation || "—")}</div>
+    </header>
+    <section class="library-overlay-section">
+      <h3>Stats</h3>
+      ${statsMarkup}
+    </section>
+    <section class="library-overlay-section">
+      <h3>Publications over time</h3>
+      ${chartMarkup}
+    </section>
+    <section class="library-overlay-section">
+      <h3>Top journals</h3>
+      ${journalsMarkup}
+    </section>
+    <section class="library-overlay-section">
+      <h3>Top coauthors</h3>
+      ${coauthorsMarkup}
+    </section>
+    <section class="library-overlay-section">
+      <h3>Top topics</h3>
+      ${topicsMarkup}
+    </section>
+    <section class="library-overlay-section">
+      <h3>Top publications</h3>
+      ${publicationsMarkup}
+    </section>
+  `;
 }
 
 function ensurePanel(mode) {
@@ -1099,6 +1363,7 @@ function setMode(nextMode) {
   if (state.mode === nextMode) return;
   clearAllFilters({ resetSearch: false, silent: true, skipRouteUpdate: true, skipRender: true });
   state.mode = nextMode;
+  closeAuthorOverlay();
   if (state.panelCache[nextMode]) {
     state.panelCache[nextMode].rendered = false;
     state.panelCache[nextMode].hash = null;
@@ -1238,9 +1503,15 @@ async function loadData() {
     // Build & keep a single color map
   const TOPIC_COLOR = buildTopicColorMapFromTopicIds([...allTopicIds]);
 
+  const authorsById = new Map();
+  authors.forEach(author => {
+    if (author && author.id) authorsById.set(author.id, author);
+  });
+
   dataCache = {
     publications,
     authors,
+    authorsById,
     topicIndex,
     authorIndex,
     journalIndex,
@@ -1264,11 +1535,21 @@ export async function init({ mount, route = {}, navigate } = {}) {
     results: view.querySelector("#library-results"),
     filterBar: view.querySelector('[data-role="filter-bar"]'),
     toast: null,
+    overlay: view.querySelector('[data-role="author-overlay"]'),
+    overlayContent: view.querySelector('[data-role="overlay-content"]'),
+    overlayDismiss: Array.from(view.querySelectorAll('[data-role="overlay-dismiss"]')),
   };
 
   if (!elements.searchInput || elements.modeButtons.length !== 2 || !elements.results || !elements.filterBar) {
     throw new Error("library view markup incomplete");
   }
+  if (!elements.overlay || !elements.overlayContent) {
+    throw new Error("library author overlay markup missing");
+  }
+
+  elements.overlayDismiss.forEach(btn => {
+    btn.addEventListener("click", () => closeAuthorOverlay());
+  });
 
   navigateFn = typeof navigate === "function" ? navigate : null;
 
@@ -1297,6 +1578,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
     recentlyAddedFilters: [],
     filterBarExpanded: false,
     lastRemovedFilter: null,
+    activeOverlayAuthor: null,
   };
 
   FACETS.forEach(facet => {
@@ -1349,6 +1631,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
   }
 
   return function cleanup() {
+    closeAuthorOverlay();
     if (searchTimer) clearTimeout(searchTimer);
     if (routeTimer) clearTimeout(routeTimer);
     if (toastTimer) clearTimeout(toastTimer);
