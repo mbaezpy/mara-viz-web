@@ -6,6 +6,7 @@ import {
 
 const DEBOUNCE_MS = 250;
 const ROUTE_UPDATE_MS = 200;
+const SEARCH_INPUT_GUARD_MS = 500;
 
 const FACETS = ["topics", "authors", "journals"];
 const SORT_DEFAULTS = {
@@ -35,6 +36,7 @@ let fetchController = null;
 let modeHandlers = null;
 let toastTimer = null;
 let filterOverflowRaf = null;
+let lastSearchInputAt = 0;
 
 function escapeHTML(value) {
   return (value == null ? "" : String(value)).replace(/[&<>"]/g, ch => ({
@@ -1391,6 +1393,7 @@ function setSearch(nextSearch) {
 
 function handleSearchInput(event) {
   const value = event.target.value;
+  lastSearchInputAt = Date.now();
   if (searchTimer) clearTimeout(searchTimer);
   elements.searchSpinner.hidden = false;
   searchTimer = setTimeout(() => {
@@ -1690,7 +1693,16 @@ export function onRouteChange({ params = {}, navigate } = {}) {
     cache.rendered = false;
     cache.hash = null;
   });
-  elements.searchInput.value = state.search;
+  const searchInput = elements.searchInput;
+  if (searchInput) {
+    const now = Date.now();
+    const isFocused = typeof document !== "undefined" && document.activeElement === searchInput;
+    const typedRecently = lastSearchInputAt && now - lastSearchInputAt < SEARCH_INPUT_GUARD_MS;
+    const inputDiffers = searchInput.value !== state.search;
+    if (!isFocused || !typedRecently || !inputDiffers) {
+      searchInput.value = state.search;
+    }
+  }
   render();
 }
 

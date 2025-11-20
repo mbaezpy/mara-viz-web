@@ -145,7 +145,13 @@
           "paper_count": 6
         },
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5091868571",
+          "display_name": "Susanne Fauser",
+          "orcid": "https://orcid.org/0000-0003-3063-1586",
+          "paper_count": 5
+        },
+        {
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 4
@@ -154,12 +160,6 @@
           "id": "https://openalex.org/A5028691724",
           "display_name": "Reinhard Schulz",
           "orcid": "https://orcid.org/0009-0003-0618-5990",
-          "paper_count": 4
-        },
-        {
-          "id": "https://openalex.org/A5091868571",
-          "display_name": "Susanne Fauser",
-          "orcid": "https://orcid.org/0000-0003-3063-1586",
           "paper_count": 4
         },
         {
@@ -219,7 +219,7 @@
         {
           "id": "https://openalex.org/keywords/hippocampal-sclerosis",
           "display_name": "Hippocampal sclerosis",
-          "score": 7.094298379999999,
+          "score": 7.094298380000001,
           "count": 11
         },
         {
@@ -231,7 +231,7 @@
         {
           "id": "https://openalex.org/keywords/stimulus",
           "display_name": "Stimulus (psychology)",
-          "score": 3.1640871199999996,
+          "score": 3.16408712,
           "count": 5
         },
         {
@@ -273,7 +273,7 @@
         {
           "id": "https://openalex.org/keywords/histopathology",
           "display_name": "Histopathology",
-          "score": 1.5519258999999999,
+          "score": 1.5519259,
           "count": 3
         }
       ],
@@ -306,15 +306,15 @@
       ],
       "top_authors": [
         {
+          "id": "https://openalex.org/A5113126695",
+          "display_name": "Friedrich G. Woermann",
+          "orcid": "https://orcid.org/0009-0007-9502-0491",
+          "paper_count": 40
+        },
+        {
           "id": "https://openalex.org/A5074695558",
           "display_name": "Christian G. Bien",
           "orcid": "https://orcid.org/0000-0003-2225-8654",
-          "paper_count": 39
-        },
-        {
-          "id": "https://openalex.org/A5047747446",
-          "display_name": "Friedrich G. Woermann",
-          "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 39
         },
         {
@@ -385,7 +385,7 @@
             {
               "id": "https://openalex.org/keywords/hippocampal-sclerosis",
               "display_name": "Hippocampal sclerosis",
-              "score": 6.397746079999999,
+              "score": 6.397746080000001,
               "count": 10
             },
             {
@@ -409,7 +409,7 @@
             {
               "id": "https://openalex.org/keywords/histopathology",
               "display_name": "Histopathology",
-              "score": 1.5519258999999999,
+              "score": 1.5519259,
               "count": 3
             },
             {
@@ -478,10 +478,10 @@
               "paper_count": 22
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
-              "paper_count": 18
+              "paper_count": 19
             },
             {
               "id": "https://openalex.org/A5042463561",
@@ -552,7 +552,7 @@
             {
               "id": "https://openalex.org/keywords/stimulus",
               "display_name": "Stimulus (psychology)",
-              "score": 3.1640871199999996,
+              "score": 3.16408712,
               "count": 5
             },
             {
@@ -570,7 +570,7 @@
             {
               "id": "https://openalex.org/keywords/orbitofrontal-cortex",
               "display_name": "Orbitofrontal cortex",
-              "score": 1.6158849899999999,
+              "score": 1.61588499,
               "count": 3
             },
             {
@@ -639,7 +639,7 @@
           ],
           "top_authors": [
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 22
@@ -657,15 +657,15 @@
               "paper_count": 14
             },
             {
+              "id": "https://openalex.org/A5068828767",
+              "display_name": "Markus Mertens",
+              "orcid": null,
+              "paper_count": 9
+            },
+            {
               "id": "https://openalex.org/A5069704513",
               "display_name": "Lea Marie Reisch",
               "orcid": "https://orcid.org/0000-0001-9994-0016",
-              "paper_count": 4
-            },
-            {
-              "id": "https://openalex.org/A5032539941",
-              "display_name": "Martin Drießen",
-              "orcid": "https://orcid.org/0000-0003-3496-816X",
               "paper_count": 4
             }
           ],
@@ -721,7 +721,7 @@
         {
           "id": "https://openalex.org/keywords/tolerability",
           "display_name": "Tolerability",
-          "score": 17.865048109999996,
+          "score": 17.86504811,
           "count": 23
         },
         {
@@ -733,19 +733,19 @@
         {
           "id": "https://openalex.org/keywords/lacosamide",
           "display_name": "Lacosamide",
-          "score": 8.969889799999999,
+          "score": 8.9698898,
           "count": 10
         },
         {
           "id": "https://openalex.org/keywords/levetiracetam",
           "display_name": "Levetiracetam",
-          "score": 6.36661714,
+          "score": 6.366617140000001,
           "count": 8
         },
         {
           "id": "https://openalex.org/keywords/therapeutic-drug-monitoring",
           "display_name": "Therapeutic Drug Monitoring",
-          "score": 6.18544232,
+          "score": 6.185442320000001,
           "count": 11
         },
         {
@@ -757,7 +757,7 @@
         {
           "id": "https://openalex.org/keywords/perampanel",
           "display_name": "Perampanel",
-          "score": 5.679823270000001,
+          "score": 5.67982327,
           "count": 6
         },
         {
@@ -775,7 +775,7 @@
         {
           "id": "https://openalex.org/keywords/somnolence",
           "display_name": "Somnolence",
-          "score": 4.34621626,
+          "score": 4.346216259999999,
           "count": 7
         }
       ],
@@ -911,19 +911,19 @@
             {
               "id": "https://openalex.org/keywords/levetiracetam",
               "display_name": "Levetiracetam",
-              "score": 4.024963100000001,
+              "score": 4.0249631,
               "count": 5
             },
             {
               "id": "https://openalex.org/keywords/oxcarbazepine",
               "display_name": "Oxcarbazepine",
-              "score": 3.6766992700000003,
+              "score": 3.67669927,
               "count": 5
             },
             {
               "id": "https://openalex.org/keywords/adjunctive-treatment",
               "display_name": "Adjunctive treatment",
-              "score": 2.8300934399999997,
+              "score": 2.83009344,
               "count": 5
             },
             {
@@ -1054,25 +1054,25 @@
             {
               "id": "https://openalex.org/keywords/tolerability",
               "display_name": "Tolerability",
-              "score": 14.164838409999998,
+              "score": 14.16483841,
               "count": 18
             },
             {
               "id": "https://openalex.org/keywords/adjunctive-treatment",
               "display_name": "Adjunctive treatment",
-              "score": 8.462044630000001,
+              "score": 8.46204463,
               "count": 16
             },
             {
               "id": "https://openalex.org/keywords/perampanel",
               "display_name": "Perampanel",
-              "score": 5.679823270000001,
+              "score": 5.67982327,
               "count": 6
             },
             {
               "id": "https://openalex.org/keywords/everolimus",
               "display_name": "Everolimus",
-              "score": 4.274838519999999,
+              "score": 4.27483852,
               "count": 5
             },
             {
@@ -1084,7 +1084,7 @@
             {
               "id": "https://openalex.org/keywords/levetiracetam",
               "display_name": "Levetiracetam",
-              "score": 3.6159734399999994,
+              "score": 3.61597344,
               "count": 4
             },
             {
@@ -1102,13 +1102,13 @@
             {
               "id": "https://openalex.org/keywords/oxcarbazepine",
               "display_name": "Oxcarbazepine",
-              "score": 2.66238387,
+              "score": 2.6623838699999998,
               "count": 3
             },
             {
               "id": "https://openalex.org/keywords/refractory",
               "display_name": "Refractory (planetary science)",
-              "score": 2.5230161300000002,
+              "score": 2.52301613,
               "count": 4
             }
           ],
@@ -1165,10 +1165,10 @@
               "paper_count": 5
             },
             {
-              "id": "https://openalex.org/A5025778703",
-              "display_name": "Bernd Huber",
+              "id": "https://openalex.org/A5010958888",
+              "display_name": "Annika Hilgers",
               "orcid": null,
-              "paper_count": 3
+              "paper_count": 2
             }
           ],
           "children": []
@@ -1310,7 +1310,7 @@
       ],
       "top_authors": [
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 2
@@ -1390,7 +1390,7 @@
         {
           "id": "https://openalex.org/keywords/dravet-syndrome",
           "display_name": "Dravet syndrome",
-          "score": 11.551803219999998,
+          "score": 11.551803219999996,
           "count": 14
         },
         {
@@ -1402,7 +1402,7 @@
         {
           "id": "https://openalex.org/keywords/lennox–gastaut-syndrome",
           "display_name": "Lennox–Gastaut syndrome",
-          "score": 2.49225874,
+          "score": 2.4922587400000005,
           "count": 4
         },
         {
@@ -1501,10 +1501,10 @@
           "paper_count": 3
         },
         {
-          "id": "https://openalex.org/A5063225454",
-          "display_name": "Margarete Pfäfflin",
-          "orcid": "https://orcid.org/0000-0001-7983-6043",
-          "paper_count": 3
+          "id": "https://openalex.org/A5044176238",
+          "display_name": "Elisabeth Korn‐Merker",
+          "orcid": null,
+          "paper_count": 2
         }
       ],
       "children": [
@@ -1647,6 +1647,12 @@
               "display_name": "Theodor W. May",
               "orcid": "https://orcid.org/0000-0001-6517-9425",
               "paper_count": 3
+            },
+            {
+              "id": "https://openalex.org/A5113521331",
+              "display_name": "B. Rambeck",
+              "orcid": null,
+              "paper_count": 1
             },
             {
               "id": "https://openalex.org/A5044176238",
@@ -1822,9 +1828,9 @@
               "paper_count": 1
             },
             {
-              "id": "https://openalex.org/A5070424111",
-              "display_name": "Christian Brandt",
-              "orcid": "https://orcid.org/0000-0001-8666-1640",
+              "id": "https://openalex.org/A5114259537",
+              "display_name": "Alois Ebner",
+              "orcid": null,
               "paper_count": 1
             }
           ],
@@ -2214,7 +2220,7 @@
         {
           "id": "https://openalex.org/keywords/hippocampal-sclerosis",
           "display_name": "Hippocampal sclerosis",
-          "score": 9.391595729999999,
+          "score": 9.39159573,
           "count": 13
         },
         {
@@ -2307,10 +2313,10 @@
           "paper_count": 42
         },
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
-          "paper_count": 24
+          "paper_count": 26
         },
         {
           "id": "https://openalex.org/A5054976363",
@@ -2479,9 +2485,15 @@
               "paper_count": 5
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
+              "paper_count": 4
+            },
+            {
+              "id": "https://openalex.org/A5114259537",
+              "display_name": "Alois Ebner",
+              "orcid": null,
               "paper_count": 3
             },
             {
@@ -2489,12 +2501,6 @@
               "display_name": "Matthias Simon",
               "orcid": "https://orcid.org/0000-0001-7508-3072",
               "paper_count": 3
-            },
-            {
-              "id": "https://openalex.org/A5091240590",
-              "display_name": "Anne Hagemann",
-              "orcid": "https://orcid.org/0000-0002-8158-7442",
-              "paper_count": 2
             }
           ],
           "children": []
@@ -2592,7 +2598,7 @@
           ],
           "top_authors": [
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 3
@@ -2604,21 +2610,21 @@
               "paper_count": 3
             },
             {
-              "id": "https://openalex.org/A5074695558",
-              "display_name": "Christian G. Bien",
-              "orcid": "https://orcid.org/0000-0003-2225-8654",
-              "paper_count": 1
+              "id": "https://openalex.org/A5068828767",
+              "display_name": "Markus Mertens",
+              "orcid": null,
+              "paper_count": 3
             },
             {
-              "id": "https://openalex.org/A5077637177",
-              "display_name": "Joerg Aengenendt",
+              "id": "https://openalex.org/A5114259537",
+              "display_name": "Alois Ebner",
               "orcid": null,
               "paper_count": 1
             },
             {
-              "id": "https://openalex.org/A5081230541",
-              "display_name": "József Janszky",
-              "orcid": "https://orcid.org/0000-0001-6100-832X",
+              "id": "https://openalex.org/A5074695558",
+              "display_name": "Christian G. Bien",
+              "orcid": "https://orcid.org/0000-0003-2225-8654",
               "paper_count": 1
             }
           ],
@@ -2765,16 +2771,16 @@
               "paper_count": 14
             },
             {
+              "id": "https://openalex.org/A5113126695",
+              "display_name": "Friedrich G. Woermann",
+              "orcid": "https://orcid.org/0009-0007-9502-0491",
+              "paper_count": 13
+            },
+            {
               "id": "https://openalex.org/A5054976363",
               "display_name": "Thilo Kalbhenn",
               "orcid": "https://orcid.org/0000-0001-6249-629X",
               "paper_count": 12
-            },
-            {
-              "id": "https://openalex.org/A5047747446",
-              "display_name": "Friedrich G. Woermann",
-              "orcid": "https://orcid.org/0009-0007-9502-0491",
-              "paper_count": 11
             },
             {
               "id": "https://openalex.org/A5042463561",
@@ -2836,7 +2842,7 @@
               "paper_count": 1
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 1
@@ -3050,7 +3056,7 @@
               "paper_count": 8
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 7
@@ -3062,16 +3068,16 @@
               "paper_count": 6
             },
             {
+              "id": "https://openalex.org/A5068828767",
+              "display_name": "Markus Mertens",
+              "orcid": null,
+              "paper_count": 4
+            },
+            {
               "id": "https://openalex.org/A5077747574",
               "display_name": "Philip Grewe",
               "orcid": "https://orcid.org/0000-0002-7801-8812",
               "paper_count": 4
-            },
-            {
-              "id": "https://openalex.org/A5029740345",
-              "display_name": "Anna Doll",
-              "orcid": "https://orcid.org/0000-0002-0799-0831",
-              "paper_count": 3
             }
           ],
           "children": []
@@ -3229,7 +3235,7 @@
               "paper_count": 4
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 3
@@ -3384,7 +3390,7 @@
               "paper_count": 3
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 2
@@ -3541,7 +3547,7 @@
       ],
       "top_authors": [
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 13
@@ -3565,10 +3571,10 @@
           "paper_count": 6
         },
         {
-          "id": "https://openalex.org/A5042463561",
-          "display_name": "Tilman Polster",
-          "orcid": "https://orcid.org/0000-0002-9531-7312",
-          "paper_count": 4
+          "id": "https://openalex.org/A5068828767",
+          "display_name": "Markus Mertens",
+          "orcid": null,
+          "paper_count": 5
         }
       ],
       "children": [
@@ -3683,9 +3689,15 @@
               "paper_count": 4
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
+              "paper_count": 3
+            },
+            {
+              "id": "https://openalex.org/A5068828767",
+              "display_name": "Markus Mertens",
+              "orcid": null,
               "paper_count": 3
             },
             {
@@ -3699,12 +3711,6 @@
               "display_name": "Philip Grewe",
               "orcid": "https://orcid.org/0000-0002-7801-8812",
               "paper_count": 2
-            },
-            {
-              "id": "https://openalex.org/A5029740345",
-              "display_name": "Anna Doll",
-              "orcid": "https://orcid.org/0000-0002-0799-0831",
-              "paper_count": 1
             }
           ],
           "children": []
@@ -3857,7 +3863,7 @@
           ],
           "top_authors": [
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 11
@@ -3881,10 +3887,10 @@
               "paper_count": 5
             },
             {
-              "id": "https://openalex.org/A5029740345",
-              "display_name": "Anna Doll",
-              "orcid": "https://orcid.org/0000-0002-0799-0831",
-              "paper_count": 2
+              "id": "https://openalex.org/A5068828767",
+              "display_name": "Markus Mertens",
+              "orcid": null,
+              "paper_count": 4
             }
           ],
           "children": []
@@ -4016,13 +4022,13 @@
         {
           "id": "https://openalex.org/keywords/autoimmune-encephalitis",
           "display_name": "Autoimmune encephalitis",
-          "score": 20.042403399999998,
+          "score": 20.0424034,
           "count": 32
         },
         {
           "id": "https://openalex.org/keywords/limbic-encephalitis",
           "display_name": "Limbic Encephalitis",
-          "score": 18.19874237,
+          "score": 18.198742369999998,
           "count": 26
         },
         {
@@ -4040,7 +4046,7 @@
         {
           "id": "https://openalex.org/keywords/anti-nmda-receptor-encephalitis",
           "display_name": "Anti-NMDA Receptor Encephalitis",
-          "score": 1.5952089399999998,
+          "score": 1.59520894,
           "count": 3
         },
         {
@@ -4109,7 +4115,7 @@
           "paper_count": 79
         },
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 8
@@ -4121,15 +4127,15 @@
           "paper_count": 5
         },
         {
-          "id": "https://openalex.org/A5109535748",
-          "display_name": "Wolf‐Rüdiger Schäbitz",
-          "orcid": null,
-          "paper_count": 3
+          "id": "https://openalex.org/A5091240590",
+          "display_name": "Anne Hagemann",
+          "orcid": "https://orcid.org/0000-0002-8158-7442",
+          "paper_count": 2
         },
         {
-          "id": "https://openalex.org/A5001027417",
-          "display_name": "Andreas Rogalewski",
-          "orcid": "https://orcid.org/0000-0002-6525-4832",
+          "id": "https://openalex.org/A5071543752",
+          "display_name": "Corinna Kramme",
+          "orcid": null,
           "paper_count": 2
         }
       ],
@@ -4182,13 +4188,13 @@
             {
               "id": "https://openalex.org/keywords/autoimmune-encephalitis",
               "display_name": "Autoimmune encephalitis",
-              "score": 12.187783719999997,
+              "score": 12.18778372,
               "count": 19
             },
             {
               "id": "https://openalex.org/keywords/limbic-encephalitis",
               "display_name": "Limbic Encephalitis",
-              "score": 9.969156790000001,
+              "score": 9.96915679,
               "count": 14
             },
             {
@@ -4275,7 +4281,7 @@
               "paper_count": 42
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 5
@@ -4287,15 +4293,15 @@
               "paper_count": 3
             },
             {
-              "id": "https://openalex.org/A5109535748",
-              "display_name": "Wolf‐Rüdiger Schäbitz",
-              "orcid": null,
-              "paper_count": 3
+              "id": "https://openalex.org/A5091240590",
+              "display_name": "Anne Hagemann",
+              "orcid": "https://orcid.org/0000-0002-8158-7442",
+              "paper_count": 2
             },
             {
-              "id": "https://openalex.org/A5001027417",
-              "display_name": "Andreas Rogalewski",
-              "orcid": "https://orcid.org/0000-0002-6525-4832",
+              "id": "https://openalex.org/A5071543752",
+              "display_name": "Corinna Kramme",
+              "orcid": null,
               "paper_count": 2
             }
           ],
@@ -4418,15 +4424,9 @@
               "paper_count": 8
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
-              "paper_count": 1
-            },
-            {
-              "id": "https://openalex.org/A5055309680",
-              "display_name": "Silvia Vieker",
-              "orcid": null,
               "paper_count": 1
             },
             {
@@ -4585,7 +4585,7 @@
               "paper_count": 2
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 2
@@ -4597,9 +4597,9 @@
               "paper_count": 1
             },
             {
-              "id": "https://openalex.org/A5007246359",
-              "display_name": "Georg Classen",
-              "orcid": null,
+              "id": "https://openalex.org/A5069001018",
+              "display_name": "Theodor W. May",
+              "orcid": "https://orcid.org/0000-0001-6517-9425",
               "paper_count": 1
             }
           ],
@@ -4754,16 +4754,16 @@
           "paper_count": 14
         },
         {
+          "id": "https://openalex.org/A5113126695",
+          "display_name": "Friedrich G. Woermann",
+          "orcid": "https://orcid.org/0009-0007-9502-0491",
+          "paper_count": 8
+        },
+        {
           "id": "https://openalex.org/A5054976363",
           "display_name": "Thilo Kalbhenn",
           "orcid": "https://orcid.org/0000-0001-6249-629X",
           "paper_count": 8
-        },
-        {
-          "id": "https://openalex.org/A5047747446",
-          "display_name": "Friedrich G. Woermann",
-          "orcid": "https://orcid.org/0009-0007-9502-0491",
-          "paper_count": 7
         },
         {
           "id": "https://openalex.org/A5070424111",
@@ -4915,10 +4915,16 @@
           "paper_count": 7
         },
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 5
+        },
+        {
+          "id": "https://openalex.org/A5114259537",
+          "display_name": "Alois Ebner",
+          "orcid": null,
+          "paper_count": 4
         },
         {
           "id": "https://openalex.org/A5070424111",
@@ -4931,12 +4937,6 @@
           "display_name": "Reinhard Schulz",
           "orcid": "https://orcid.org/0009-0003-0618-5990",
           "paper_count": 3
-        },
-        {
-          "id": "https://openalex.org/A5017826773",
-          "display_name": "Kirsten Labudda",
-          "orcid": "https://orcid.org/0000-0002-3866-8925",
-          "paper_count": 2
         }
       ],
       "children": []
@@ -5088,19 +5088,13 @@
           "paper_count": 2
         },
         {
-          "id": "https://openalex.org/A5025778703",
-          "display_name": "Bernd Huber",
-          "orcid": null,
-          "paper_count": 1
-        },
-        {
           "id": "https://openalex.org/A5074695558",
           "display_name": "Christian G. Bien",
           "orcid": "https://orcid.org/0000-0003-2225-8654",
           "paper_count": 1
         },
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 1
@@ -5162,7 +5156,7 @@
         {
           "id": "https://openalex.org/keywords/autoimmune-encephalitis",
           "display_name": "Autoimmune encephalitis",
-          "score": 1.7447020000000002,
+          "score": 1.7447019999999998,
           "count": 3
         },
         {
@@ -5261,16 +5255,16 @@
           "paper_count": 6
         },
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5114259537",
+          "display_name": "Alois Ebner",
+          "orcid": null,
+          "paper_count": 4
+        },
+        {
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 3
-        },
-        {
-          "id": "https://openalex.org/A5063225454",
-          "display_name": "Margarete Pfäfflin",
-          "orcid": "https://orcid.org/0000-0001-7983-6043",
-          "paper_count": 2
         }
       ],
       "children": []
@@ -5413,19 +5407,13 @@
           "id": "https://openalex.org/A5069001018",
           "display_name": "Theodor W. May",
           "orcid": "https://orcid.org/0000-0001-6517-9425",
-          "paper_count": 21
+          "paper_count": 22
         },
         {
           "id": "https://openalex.org/A5074695558",
           "display_name": "Christian G. Bien",
           "orcid": "https://orcid.org/0000-0003-2225-8654",
           "paper_count": 19
-        },
-        {
-          "id": "https://openalex.org/A5063225454",
-          "display_name": "Margarete Pfäfflin",
-          "orcid": "https://orcid.org/0000-0001-7983-6043",
-          "paper_count": 16
         },
         {
           "id": "https://openalex.org/A5070424111",
@@ -5438,6 +5426,12 @@
           "display_name": "Ulrich Specht",
           "orcid": "https://orcid.org/0000-0003-2099-7154",
           "paper_count": 9
+        },
+        {
+          "id": "https://openalex.org/A5091240590",
+          "display_name": "Anne Hagemann",
+          "orcid": "https://orcid.org/0000-0002-8158-7442",
+          "paper_count": 8
         }
       ],
       "children": [
@@ -5767,9 +5761,9 @@
               "paper_count": 5
             },
             {
-              "id": "https://openalex.org/A5063225454",
-              "display_name": "Margarete Pfäfflin",
-              "orcid": "https://orcid.org/0000-0001-7983-6043",
+              "id": "https://openalex.org/A5020900902",
+              "display_name": "Michael Endermann",
+              "orcid": null,
               "paper_count": 4
             }
           ],
@@ -5872,16 +5866,10 @@
           ],
           "top_authors": [
             {
-              "id": "https://openalex.org/A5063225454",
-              "display_name": "Margarete Pfäfflin",
-              "orcid": "https://orcid.org/0000-0001-7983-6043",
-              "paper_count": 6
-            },
-            {
               "id": "https://openalex.org/A5069001018",
               "display_name": "Theodor W. May",
               "orcid": "https://orcid.org/0000-0001-6517-9425",
-              "paper_count": 4
+              "paper_count": 5
             },
             {
               "id": "https://openalex.org/A5091240590",
@@ -6045,12 +6033,6 @@
               "paper_count": 6
             },
             {
-              "id": "https://openalex.org/A5063225454",
-              "display_name": "Margarete Pfäfflin",
-              "orcid": "https://orcid.org/0000-0001-7983-6043",
-              "paper_count": 5
-            },
-            {
               "id": "https://openalex.org/A5069001018",
               "display_name": "Theodor W. May",
               "orcid": "https://orcid.org/0000-0001-6517-9425",
@@ -6066,6 +6048,12 @@
               "id": "https://openalex.org/A5091240590",
               "display_name": "Anne Hagemann",
               "orcid": "https://orcid.org/0000-0002-8158-7442",
+              "paper_count": 2
+            },
+            {
+              "id": "https://openalex.org/A5077747574",
+              "display_name": "Philip Grewe",
+              "orcid": "https://orcid.org/0000-0002-7801-8812",
               "paper_count": 2
             }
           ],
@@ -6215,18 +6203,18 @@
               "id": "https://openalex.org/A5069001018",
               "display_name": "Theodor W. May",
               "orcid": "https://orcid.org/0000-0001-6517-9425",
-              "paper_count": 4
-            },
-            {
-              "id": "https://openalex.org/A5063225454",
-              "display_name": "Margarete Pfäfflin",
-              "orcid": "https://orcid.org/0000-0001-7983-6043",
-              "paper_count": 2
+              "paper_count": 5
             },
             {
               "id": "https://openalex.org/A5072797106",
               "display_name": "Alaa Eldin Elsharkawy",
               "orcid": "https://orcid.org/0000-0003-2162-8297",
+              "paper_count": 1
+            },
+            {
+              "id": "https://openalex.org/A5114259537",
+              "display_name": "Alois Ebner",
+              "orcid": null,
               "paper_count": 1
             },
             {
@@ -6377,7 +6365,7 @@
         {
           "id": "https://openalex.org/keywords/autoimmune-encephalitis",
           "display_name": "Autoimmune encephalitis",
-          "score": 13.63052833,
+          "score": 13.630528329999999,
           "count": 21
         },
         {
@@ -6470,7 +6458,7 @@
           "paper_count": 63
         },
         {
-          "id": "https://openalex.org/A5047747446",
+          "id": "https://openalex.org/A5113126695",
           "display_name": "Friedrich G. Woermann",
           "orcid": "https://orcid.org/0009-0007-9502-0491",
           "paper_count": 21
@@ -6488,9 +6476,9 @@
           "paper_count": 6
         },
         {
-          "id": "https://openalex.org/A5042463561",
-          "display_name": "Tilman Polster",
-          "orcid": "https://orcid.org/0000-0002-9531-7312",
+          "id": "https://openalex.org/A5069704513",
+          "display_name": "Lea Marie Reisch",
+          "orcid": "https://orcid.org/0000-0001-9994-0016",
           "paper_count": 5
         }
       ],
@@ -6543,7 +6531,7 @@
             {
               "id": "https://openalex.org/keywords/stimulus",
               "display_name": "Stimulus (psychology)",
-              "score": 3.1640871199999996,
+              "score": 3.16408712,
               "count": 5
             },
             {
@@ -6636,7 +6624,7 @@
               "paper_count": 16
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 13
@@ -6803,7 +6791,7 @@
               "paper_count": 47
             },
             {
-              "id": "https://openalex.org/A5047747446",
+              "id": "https://openalex.org/A5113126695",
               "display_name": "Friedrich G. Woermann",
               "orcid": "https://orcid.org/0009-0007-9502-0491",
               "paper_count": 8
