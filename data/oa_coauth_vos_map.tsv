@@ -1,2499 +1,2485 @@
 id	label	cluster	weight<Documents>	weight<Links>
-1	Adam Strzelczyk	2	20	2.4239
-2	Malin Kalski	2	3	0.2612
-3	Thomas Bast	2	15	1.2333
-4	Adelheid Wiemer‐Kruel	2	5	0.3616
-5	U Bettendorf	2	7	0.5538
-6	Lara Kay	2	5	0.3521
-7	Matthias Kieslich	2	7	0.459
-8	Gerhard Kluger	2	11	0.7804
-9	Gerhard Kurlemann	2	12	1.038
-10	Patrick May	1	18	2.4824
-11	Bernd A. Neubauer	2	10	0.6744
-12	Tilman Polster	2	65	63.9915
-13	Arne Herting	2	5	5.0
-14	Sarah von Spiczak	2	8	0.6824
-15	Regina Trollmann	2	11	0.5816
-16	Markus Wolff	2	9	0.4978
-17	John Irwin	2	3	0.2612
-18	Joe Carroll	2	4	0.32
-19	Daniel Macdonald	2	2	0.1779
-20	Clive Pritchard	2	4	0.32
-21	Karl Martin Klein	2	4	0.2906
-22	Felix Rosenow	1	23	2.0936
-23	Susanne Schubert‐Bast	2	10	0.8445
-24	Gregory L. Krauss	1	4	0.5345
-25	Pavel Klein	1	8	1.3607
-26	Christian Brandt	1	77	75.0
-27	Sang Kun Lee	1	1	0.1429
-28	Ivan Milanov	1	2	0.3929
-29	Maja Milovanović	1	1	0.1429
-30	Bernhard J. Steinhoff	1	15	2.3399
-31	Marc Kamin	1	1	0.1429
-32	Javier A. López-Rivera	3	3	0.374
-33	Costin Leu	3	4	0.5451
-34	Marie Macnee	3	1	0.0769
-35	Jean Khoury	3	1	0.0769
-36	Lucas Hoffmann	3	5	0.699
-37	Roland Coras	3	12	3.2975
-38	Katja Kobow	3	8	1.1808
-39	Nisha Bhattarai	3	1	0.0769
-40	Eduardo Pérez‐Palma	3	1	0.0769
-41	Hajo M. Hamer	1	20	2.9349
-42	Sebastian Brandner	3	5	0.7192
-43	Karl Rössler	3	12	1.5998
-44	Christian G. Bien	5	192	182.7409
-45	Thilo Kalbhenn	3	25	25.0
-46	Tom Pieper	3	10	1.3639
-47	Till Hartlieb	3	7	0.9237
-48	Elizabeth Butler	3	1	0.0769
-49	Giulio Genovese	3	1	0.0769
-50	Kerstin Becker	3	2	0.1678
-51	Janine Altmüller	3	1	0.0769
-52	Lisa-Marie Niestroj	3	1	0.0769
-53	Lisa Ferguson	3	1	0.0769
-54	Robyn M. Busch	3	2	0.1678
-55	Peter Nürnberg	3	4	0.5451
-56	Imad Najm	3	5	0.5468
-57	Ingmar Blümcke	3	22	7.3146
-58	Dennis Lal	3	5	0.6922
-59	Svetlana Dimova	1	3	0.4917
-60	Sami Elmoufti	1	4	0.7095
-61	Cédric Laloyaux	1	1	0.2
-62	Xavier Nondonfaz	1	2	0.3667
-63	Thomas Cloppenborg	3	18	18.0
-64	Theodor W. May	1	61	61.0
-65	Susanne Fauser	3	16	16.0
-66	Philip Grewe	5	17	17.0
-67	Johanna L. Hopf	3	5	5.0
-68	Reinhard Schulz	8	19	19.0
-69	Friedrich G. Woermann	10	72	72.0
-70	Kristina Albers	3	2	2.0
-71	Jan Bauer	5	15	5.4421
-72	Ahmed Elshetihy	5	1	1.0
-73	Lema Nergiz	5	1	1.0
-74	Birgitt Müffelmann	5	6	6.0
-75	Michael Endermann	1	6	1.0
-76	Luigi Zuliani	5	2	0.3929
-77	Francesc Graus	5	4	0.3787
-78	Bruno Giometto	5	1	0.25
-79	Angela Vincent	5	10	2.1205
-80	Maxi Kersten	5	2	0.2429
-81	Theresa Rabbe	5	1	0.1429
-82	Roman Blome	5	2	0.2857
-83	Katrin Porath	5	4	0.5857
-84	Tina Sellmann	5	4	0.5857
-85	Rüdiger Köhling	5	6	0.9857
-86	Timo Kirschstein	5	6	0.9857
-87	Eva Martinez‐Lizana	3	1	0.0909
-88	Armin Brandt	3	2	0.2086
-89	Elisabeth Schuler	3	1	0.0909
-90	Gert Wiegand	1	5	0.7009
-91	Soroush Doostkam	3	1	0.0909
-92	Victoria San Antonio‐Arce	3	3	0.3628
-93	Julia Jacobs	3	1	0.0909
-94	Mukesch Shah	3	1	0.0909
-95	Josef Zentner	3	3	0.2861
-96	Andreas Schulze‐Bonhage	1	11	2.152
-97	Silvia Carvalho Fernando	10	3	3.0
-98	Thomas Beblo	10	6	6.0
-99	Agnes Lamers	10	3	3.0
-100	Nicole Schlosser	10	3	3.0
-101	Martin Drießen	10	6	6.0
-102	Max Toepper	10	4	4.0
-103	Emad Alkassm	3	1	1.0
-104	Alexander Grote	3	2	2.0
-105	Björn Berger	3	1	0.8571
-106	Tunc Faik Ersoy	3	1	1.0
-107	Roland Coras	3	6	2.1555
-108	Matthias Simon	3	8	8.0
-109	Peter Camfield	1	1	0.05
-110	Danielle M. Andrade	1	1	0.05
-111	Carole S. Camfield	1	1	0.05
-112	Jaime Carrizosa	1	1	0.05
-113	Richard Appleton	1	1	0.05
-114	Michel Baulac	1	2	0.1929
-115	Lawrence W. Brown	1	1	0.05
-116	Eleonor Ben Menachem	1	1	0.05
-117	J. Helen Cross	2	12	0.9434
-118	Isabelle Desguerre	1	2	0.1214
-119	Christina Grant	1	1	0.05
-120	Hassan Hosny	1	1	0.05
-121	Laura Jurasek	1	1	0.05
-122	Marco Mula	1	4	1.7167
-123	Margarete Pfäfflin	1	19	19.0
-124	Sylvain Rheims	1	2	0.0911
-125	Howard Ring	1	1	0.05
-126	Renée A. Shellhaas	1	1	0.05
-127	Kollencheri Puthenveettil Vinayan	1	1	0.05
-128	Elaine Wirrell	2	3	0.2278
-129	Rima Nabbout	2	9	0.6242
-130	Corinna I. Bien	5	12	5.5634
-131	Ferdinand Nehls	10	1	0.2857
-132	Rainer Kollmar	10	1	0.2857
-133	Maria Weis	10	1	0.2857
-134	Wolfgang Steinke	10	1	0.2857
-135	Josep Dalmau	5	6	0.4489
-136	Margarethe Cenusa	8	1	0.1
-137	Sebastian Bauer	8	5	0.2899
-138	Ian Mothersill	8	1	0.1
-139	Thomas Grünwald	5	5	0.7411
-140	Barbara Hillenbrand	8	2	0.1625
-141	Alois Ebner	8	22	20.9571
-142	Günter Krämer	8	2	0.2
-143	Mar Carreño	1	2	0.1845
-144	Ali A. Asadi‐Pooya	5	1	0.0417
-145	Michael R. Sperling	1	2	0.1845
-146	Petr Marusič	5	4	0.3706
-147	Martin Elišák	5	4	0.3695
-148	José Pimentel	5	3	0.1113
-149	Tim Wehner	5	4	0.2518
-150	Rajiv Mohanraj	5	1	0.0417
-151	Juan Rodríguez Uranga	5	2	0.0588
-152	Asier Gómez‐Ibáñez	5	1	0.0417
-153	Vicente Villanueva	1	4	0.2949
-154	Francisco Gil	5	1	0.0417
-155	Antonio Donaire	1	2	0.1845
-156	Núria Bargalló	5	1	0.0417
-157	Jordi Rumià	5	3	0.1091
-158	Pedro Roldán	5	1	0.0417
-159	Xavier Setoaín	5	1	0.0417
-160	Luís Pintor	5	1	0.0417
-161	Teresa Boget	5	1	0.0417
-162	Eva Baillés	5	1	0.0417
-163	Mercé Falip	5	1	0.0417
-164	Javier Aparicio	3	2	0.2724
-165	Maarten J. Titulaer	5	4	0.2427
-166	Ramani Balu	5	1	0.037
-167	Susanne M. Benseler	5	1	0.037
-168	Tania Cellucci	5	1	0.037
-169	Irene Cortese	5	1	0.037
-170	Russell C. Dale	5	2	0.1481
-171	Jeffrey M. Gelfand	5	2	0.0693
-172	Michael D. Geschwind	5	2	0.0693
-173	Carol Glaser	5	1	0.037
-174	Jérôme Honnorat	5	4	0.2427
-175	Romana Höftberger	5	4	0.3537
-176	Takahiro Iizuka	5	1	0.037
-177	Sarosh R. Irani	5	5	0.3361
-178	Eric Lancaster	5	1	0.037
-179	Frank Leypoldt	5	10	0.5037
-180	Harald Prüß	5	8	0.2473
-181	Alexander Rae‐Grant	5	2	0.0693
-182	Markus Reindl	5	1	0.037
-183	Myrna R. Rosenfeld	5	2	0.087
-184	Kevin Rostásy	5	6	0.1627
-185	Albert Saiz	3	2	0.237
-186	Arun Venkatesan	5	1	0.037
-187	Klaus-Peter Wandinger	5	2	0.0715
-188	Patrick Waters	5	3	0.2122
-189	Stefan H. Kreisel	10	2	2.0
-190	Kirsten Labudda	10	27	27.0
-191	Oleg Kurlandchikov	10	2	2.0
-192	Markus Mertens	10	13	12.6667
-193	Christine Thomas	10	1	1.0
-194	Nina Rullkötter	10	1	1.0
-195	Katja Wingenfeld	10	1	0.9
-196	Christoph Mensebach	10	1	0.9
-197	Ali Bozorg	1	1	0.125
-198	Björn Steiniger‐Brach	1	1	0.125
-199	Ying Zhang	1	1	0.125
-200	B Ferro	1	1	0.125
-201	Gregory L. Holmes	1	1	0.125
-202	Reetta Kälviäinen	1	3	0.2911
-203	Agnes Kohsik	5	2	0.6786
-204	David Flentge	5	1	0.25
-205	Eugen Dyck	5	1	0.25
-206	Mario Botsch	5	2	0.6786
-207	York Winter	5	1	0.25
-208	Hans J. Markowitsch	10	6	3.3976
-209	Martina Piefke	5	2	0.6786
-210	Charlotte Herbst	2	1	0.069
-211	Viktoria Bothe	2	1	0.069
-212	Meret Wegler	2	1	0.069
-213	Susanne Axer-Schaefer	2	2	2.0
-214	Séverine Audebert‐Bellanger	2	1	0.069
-215	Jozef Gécz	2	1	0.069
-216	Benjamin Cogné	2	1	0.069
-217	Hagit Baris Feldman	2	1	0.069
-218	Anselm H. C. Horn	2	1	0.069
-219	Anna Hurst	2	1	0.069
-220	Melissa Kelly	2	1	0.069
-221	Michael C. Kruer	2	2	0.0902
-222	Alina Kurolap	2	1	0.069
-223	Annie Laquerrière	2	1	0.069
-224	Megan Li	2	1	0.069
-225	Paul R. Mark	2	1	0.069
-226	Markus Morawski	2	1	0.069
-227	Mathilde Nizon	2	1	0.069
-228	Tomi Pastinen	2	1	0.069
-229	Pascale Saugier‐Veber	2	1	0.069
-230	Jang SeSong	2	1	0.069
-231	Heinrich Sticht	2	1	0.069
-232	Jens Stieler	2	1	0.069
-233	Isabelle Thifffault	2	1	0.069
-234	Clare L. van Eyk	2	1	0.069
-235	Pascale Marcorelles	2	1	0.069
-236	Myriam Vezain-Mouchard	2	1	0.069
-237	Rami Abou Jamra	2	6	2.1572
-238	Henry Oppermann	2	1	0.069
-239	Carolina Courage	1	1	0.0263
-240	Karen Oliver	1	1	0.0263
-241	Eon Joo Park	1	1	0.0263
-242	Jillian M. Cameron	1	1	0.0263
-243	Kariona A. Grabińska	1	1	0.0263
-244	Mikko Muona	1	1	0.0263
-245	Laura Canafoglia	1	1	0.0263
-246	Antonio Gambardella	1	3	0.0835
-247	Edith Said	1	1	0.0263
-248	Zaid Afawi	2	2	0.0557
-249	Betül Baykan	1	2	0.049
-250	Carlo Di Bonaventura	1	1	0.0263
-251	Hui Bein Chew	1	1	0.0263
-252	Chiara Criscuolo	1	1	0.0263
-253	Leanne M. Dibbens	1	1	0.0263
-254	Barbara Castellotti	2	2	0.0819
-255	P. Riguzzi	1	1	0.0263
-256	Angelo Labate	1	1	0.0263
-257	Alessandro Filla	1	1	0.0263
-258	Anna Teresa Giallonardo	1	2	0.0434
-259	Géza Berecki	2	2	0.3596
-260	Christopher B. Jackson	1	1	0.0263
-261	Tarja Joensuu	1	1	0.0263
-262	John A. Damiano	1	1	0.0263
-263	Sara Kivity	1	1	0.0263
-264	Amos D. Korczyn	1	1	0.0263
-265	Aarno Palotie	1	1	0.0263
-266	Pasquale Striano	1	3	0.0835
-267	Davide Uccellini	1	1	0.0263
-268	Loretta Giuliano	1	1	0.0263
-269	Eva Andermann	1	1	0.0263
-270	Ingrid E. Scheffer	5	4	1.1685
-271	Roberto Michelucci	1	1	0.0263
-272	Melanie Bahlo	1	1	0.0263
-273	Silvana Franceschetti	1	1	0.0263
-274	William C. Sessa	1	1	0.0263
-275	Samuel F. Berkovic	1	1	0.0263
-276	Anna‐Elina Lehesjoki	1	1	0.0263
-277	Z. Mirzadjanova	5	1	1.0
-278	Christoph Baumgartner	5	3	0.5583
-279	Müjgan Dogan Onugoren	5	6	5.1667
-280	Martin Holtkamp	5	11	4.3227
-281	Stefan Isenmann	5	3	0.9167
-282	Pawel Kermer	5	1	0.3333
-283	Nico Melzer	5	11	1.3449
-284	M. Naumann	5	1	0.3333
-285	Matthias W. Riepe	5	2	0.4872
-286	W. R. Schäbitz	5	2	2.0
-287	Tim J. von Oertzen	5	6	0.9068
-288	Felix von Podewils	5	7	0.7559
-289	Helmut Rauschka	5	3	1.5
-290	Christoph Helmstaedter	1	8	1.2545
-291	Marec von Lehe	1	4	0.769
-292	M. Pfaefflin	1	1	1.0
-293	H. W. Pannek	1	1	1.0
-294	Christian E. Elger	5	18	3.7897
-295	Hermann Stefan	1	6	1.167
-296	J. Schramm	1	1	0.5
-297	Christine Strippel	5	4	0.1618
-298	Marisol Herrera-Rivero	5	1	0.0132
-299	Mareike Wendorff	5	1	0.0132
-300	Anja Tietz	5	2	0.0274
-301	Frauke Degenhardt	5	1	0.0132
-302	Anika Witten	5	1	0.0132
-303	Christina B. Schroeter	5	1	0.0132
-304	Christopher Nelke	5	2	0.0264
-305	Kristin S. Golombeck	5	3	0.4378
-306	Marie Madlener	5	3	0.0512
-307	Theodor Rüber	10	4	0.0994
-308	Leon Ernst	5	1	0.0132
-309	Áttila Rácz	3	3	0.2765
-310	Tobias Baumgartner	5	2	0.1344
-311	Guido Widman	5	4	0.1455
-312	Kathrin Doppler	5	4	0.0644
-313	Franziska S. Thaler	5	5	0.1044
-314	Kai Siebenbrodt	5	3	0.0406
-315	Andre Dik	5	3	0.0406
-316	Constanze Kerin	5	3	0.0406
-317	Saskia Räuber	5	3	0.0406
-318	Marco Gallus	5	3	0.0406
-319	Stjepana Kovac	5	4	0.1618
-320	Oliver Grauer	5	3	0.0406
-321	Alexander Grimm	5	1	0.0132
-322	Jonathan Wickel	5	3	0.0406
-323	Christian Geis	5	6	0.1989
-324	Jan Lewerenz	3	9	0.6603
-325	Norbert Goebels	5	1	0.0132
-326	Marius Ringelstein	5	5	0.1044
-327	Til Menge	5	4	0.0644
-328	Björn Tackenberg	5	1	0.0132
-329	Christoph Kellinghaus	1	8	0.3418
-330	Andrea Kraft	5	5	0.1044
-331	Uwe K. Zettl	5	3	0.077
-332	Fatme Seval Ismail	5	6	0.693
-333	Ilya Ayzenberg	5	4	0.1358
-334	Christian Urbanek	5	4	0.0644
-335	Kurt‐Wolfram Sühs	5	5	0.1044
-336	Simone C. Tauber	5	5	0.0785
-337	Sigrid Mues	5	4	0.0644
-338	Peter Körtvélyessy	5	2	0.0264
-339	Robert Markewitz	5	1	0.0132
-340	Asterios Paliantonis	5	2	0.037
-341	Rainer Surges	5	14	1.256
-342	Claudia Sommer	5	3	0.0406
-343	Tania Kümpfel	5	2	0.0532
-344	Catharina C. Groß	5	3	0.0406
-345	Holger Lerche	1	8	0.6949
-346	Jörg Wellmer	5	8	1.0076
-347	Carlos Martínez Quesada	5	3	0.2274
-348	Florian Then Bergh	5	5	0.1044
-349	Klaus‐Peter Wandinger	5	7	0.3417
-350	Albert J. Becker	5	10	1.0161
-351	Wolfram S. Kunz	3	3	0.3868
-352	Gerd Meyer zu Hörste	5	3	0.0406
-353	Michael P. Malter	5	11	0.7074
-354	Heinz Wiendl	5	5	0.7325
-355	Gregor Kuhlenbäumer	5	3	0.0674
-356	Wolfgang Lieb	5	2	0.0532
-357	André Franke	5	1	0.0132
-358	Sven G. Meuth	5	3	0.0406
-359	Monika Stoll	5	1	0.0132
-360	Michael Adelmann	5	2	0.0274
-361	Luise Appeltshauser	5	2	0.0274
-362	Carolin Baade‐Büttner	5	2	0.0274
-363	Andreas van Baalen	5	4	0.2107
-364	Sebastian Baatz	5	2	0.0274
-365	Bettina Balint	5	3	0.0618
-366	Annette Baumgärtner	5	3	0.0988
-367	Sonka Benesch	5	2	0.0274
-368	R. Berger	5	1	0.0132
-369	Sascha Berning	5	2	0.0274
-370	Sarah Bernsen	5	2	0.0274
-371	Andreas Binder	5	2	0.0274
-372	Stefan Bittner	5	2	0.0274
-373	Daniel Bittner	5	2	0.0274
-374	Franz Blaes	5	2	0.0274
-375	Astrid Blaschek	5	2	0.0274
-376	Justina Dargvainiene	10	3	0.4274
-377	Julia Maren Decker	5	2	0.0274
-378	Mona Dreesmann	5	2	0.0274
-379	Friedrich Ebinger	5	2	0.0274
-380	Lena Edelhoff	5	2	0.0274
-381	Sven Ehrlich	5	3	0.0674
-382	Katharina Eisenhut	5	2	0.0274
-383	Dominique Endres	5	2	0.0274
-384	Marina Entscheva	5	2	0.0274
-385	Jürgen Faiss	5	3	0.0674
-386	Kim Kristin Falk	5	2	0.0274
-387	Walid Fazeli	5	3	0.0486
-388	Alexander Finke	5	3	0.0512
-389	Carsten Finke	5	2	0.0274
-390	Dirk Fitzner	5	2	0.0274
-391	Marina Flotats‐Bastardas	5	2	0.0274
-392	Mathias Fousse	5	2	0.0274
-393	Friedemann Paul	5	2	0.0274
-394	Manuel A. Friese	5	2	0.0274
-395	M. M. Gebhard	5	2	0.0274
-396	Clemens Goedel	5	1	0.0132
-397	Anna Gorsler	5	2	0.0274
-398	Armin Grau	5	2	0.0274
-399	Halime Gül	5	1	0.0132
-400	Chung Ha-Yeun	5	2	0.0274
-401	Aiden Haghikia	5	2	0.0274
-402	Robert Handreka	5	4	0.0912
-403	Niels Hansen	5	2	0.0274
-404	Martin Häusler	5	5	0.2421
-405	Joachim Havla	5	2	0.0274
-406	Wolfgang Heide	5	2	0.0274
-407	Valentin Held	5	2	0.0274
-408	Kerstin Hellwig	5	3	0.0512
-409	Philip Hillebrand	5	2	0.0274
-410	Frank Hoffmann	5	2	0.0274
-411	Anna Hoffmann	5	1	0.0132
-412	Ulrich Hofstadt‐van Oy	5	3	0.0618
-413	Peter Huppke	5	3	0.1385
-414	Martina Jansen	5	2	0.0274
-415	Aleksandra Juranek	5	2	0.0274
-416	Michael Karenfort	2	4	0.345
-417	Max Kaufmann	5	4	0.0912
-418	Susanne Knake	5	4	0.1829
-419	Markus Krämer	5	2	0.0274
-420	Christos Krogias	5	4	0.1571
-421	Tanja Kümpfel	5	2	0.0274
-422	Christoph Lehrich	5	2	0.0274
-423	Andeas Linsa	5	2	0.0274
-424	Jan D. Lünemann	5	2	0.0274
-425	Monika Meister	5	2	0.0274
-426	Kristin Stefanie Melzer	5	2	0.0274
-427	Marie‐Luise Mono	5	2	0.0274
-428	Michael Nagel	5	1	0.0132
-429	Tobias Neumann‐Haefelin	5	1	0.0132
-430	Jost Obrocki	5	2	0.0274
-431	Loana Penner	5	2	0.0274
-432	Lena Kristina Pfeffer	5	2	0.0274
-433	Thomas Pfefferkorn	5	2	0.0274
-434	Alexandra Philipsen	5	2	0.0274
-435	Johannes Piepgras	5	2	0.0274
-436	Felix von Poderwils	5	2	0.0274
-437	Josef Priller	5	2	0.0274
-438	Anne‐Katrin Pröbstel	5	2	0.0274
-439	Johanna Maria Helena Rau	5	3	0.0415
-440	Gernot Reimann	5	3	0.0512
-441	Raphael Reinecke	5	2	0.0274
-442	Hendrik Rohner	5	1	0.0132
-443	Stephan Rüegg	1	4	0.2092
-444	Jens Schaumberg	5	2	0.0274
-445	Ruth Schilling	5	2	0.0274
-446	Mareike Schimmel	5	4	0.6812
-447	Jens Schmidt	5	2	0.0274
-448	Ina-Isabelle Schmütz	5	2	0.0274
-449	Stephan J. Schreiber	5	2	0.0274
-450	Gesa Schreyer	5	2	0.0274
-451	Ina Schröder	5	2	0.0274
-452	Christina Schröter	5	1	0.0132
-453	S. Schuster	5	2	0.0274
-454	G Seidel	5	2	0.0274
-455	Makbule Şenel	5	2	0.0274
-456	Oliver Stammel	5	2	0.0274
-457	Martin Stangel	5	1	0.0132
-458	Henning Stolze	5	2	0.0274
-459	Muriel Stoppe	5	2	0.0274
-460	Karin Storm van’s Gravesande	5	1	0.0132
-461	Dietrich Sturm	5	2	0.0274
-462	Steffen Syrbe	2	8	0.5128
-463	Malte Teußer	5	1	0.0132
-464	Corinna Trebst	5	2	0.0274
-465	George Trendelenburg	5	2	0.0274
-466	Hayrettin Tumani	5	3	0.694
-467	Methab Türedi	5	1	0.0132
-468	Niklas Vogel	5	2	0.0274
-469	Matthias von Mering	5	2	0.0274
-470	Judith Wagner	5	2	0.0274
-471	Robert Weissert	5	2	0.0274
-472	Brigitte Wildemann	5	3	0.0512
-473	Karsten Witt	4	3	0.194
-474	Benjamin Wunderlich	5	1	0.0132
-475	Lara Zieger	5	2	0.0274
-476	Anne Hagemann	1	19	19.0
-477	Sanjana Gajadin	1	1	0.5
-478	Francesco Signorelli	1	1	0.5
-479	Arnaud J.P.E. Vincent	1	1	0.5
-480	Moritz Tacke	2	2	0.0524
-481	Ingo Borggraefe	1	5	0.304
-482	Lucia Gerstl	2	2	0.0524
-483	Florian Heinen	1	3	0.1635
-484	Katharina Vill	2	2	0.1042
-485	Michaela Bonfert	1	3	0.1635
-486	Friedrich Baumeister	2	1	0.0328
-487	Martina Baethmann	2	2	0.0524
-488	K. H. P. Bentele	2	2	0.0524
-489	Christian U. Blank	2	2	0.0524
-490	Harald M. Blank	2	1	0.0328
-491	Harald Bode	2	2	0.0524
-492	Friedrich Bosch	2	1	0.0328
-493	Ulrich Brandl	2	2	0.0524
-494	Knut Brockmann	5	3	0.3024
-495	Peter Dahlem	2	2	0.0524
-496	Jan‐Peter Ernst	2	1	0.0328
-497	Evemarie Feldmann	2	2	0.0524
-498	Andreas Fiedler	2	2	0.0524
-499	Michael Gerigk	2	1	0.0328
-500	Soeren Heß	2	1	0.0328
-501	Christiane Hikel	2	2	0.0524
-502	Hans-Georg Hoffmann	2	2	0.0524
-503	Joerg Klepper	2	2	0.0524
-504	Hartmut Koch	2	2	0.0524
-505	Walter Koch	2	2	0.0524
-506	Rudolf Korinthenberg	2	2	0.0524
-507	Ilona Krois	2	2	0.0524
-508	H. Kühne	2	2	0.0524
-509	Michaela Mandl	2	1	0.0328
-510	Ulrike Mause	2	2	0.0524
-511	Peter Navratil	2	1	0.0328
-512	Joachim Opp	2	2	0.0524
-513	Johann Penzien	2	2	0.0524
-514	Viola Prietsch	2	2	0.0524
-515	A. Quattländer	2	2	0.0524
-516	D. Rating	1	4	0.9413
-517	Ulrike Schara	2	2	0.0524
-518	Mohammed G. Shamdeen	2	2	0.0524
-519	A Sprinz	2	2	0.0524
-520	Hildegard Wendker-Magrabi	2	2	0.0524
-521	Ulrich Stephani	1	8	0.8918
-522	Hiltrud Muhle	2	4	0.1727
-523	Hans-Michael Straßburg	2	1	0.0328
-524	B Töpke	2	2	0.0524
-525	Elisabeth Tuschen-Hofstätter	2	2	0.0524
-526	Stephan Waltz	2	2	0.0524
-527	Gabriele Weber	2	1	0.0328
-528	Frank U. Wien	2	2	0.0524
-529	Hedwig Freitag	2	2	2.0
-530	Ötzcam Sönmez	2	1	0.0328
-531	Klaus Reinhardt	2	1	0.0328
-532	M. Traus	2	2	0.0524
-533	Z. Hoovey	2	1	0.0328
-534	Christina Herold	8	1	0.3333
-535	Hans‐Jürgen Bidmon	8	1	0.3333
-536	Heinz Pannek	8	10	10.0
-537	Volkmar Hans	8	4	4.0
-538	Ali Gorji	8	2	0.5556
-539	Erwin‐Josef Speckmann	8	2	0.5556
-540	Karl Zilles	8	2	0.5556
-541	Anna Rada	5	6	6.0
-542	Robert Birnbacher	5	1	0.1538
-543	Claudio Gobbi	5	1	0.1538
-544	Martin Kurthen	5	2	0.3205
-545	Albert C. Ludolph	3	5	1.2372
-546	Markus Naumann	5	1	0.1538
-547	U Neirich	5	1	0.1538
-548	Gerhard Ransmayr	5	1	0.1538
-549	Oliver Schwartz	5	1	0.1538
-550	Gerda Zschebek	1	1	0.1
-551	Martin Grond	1	1	0.1
-552	Anke Hermsen	1	2	0.1286
-553	Barbara Plecko	5	2	0.1833
-554	Philippe Ryvlin	1	2	0.1385
-555	Eugen Trinka	1	10	1.2071
-556	Carola Seifart	1	1	0.1
-557	David Krýsl	5	1	0.1667
-558	Jitka Hanzalová	5	1	0.1667
-559	Kamila Volna	5	1	0.1667
-560	Alaa Eldin Elsharkawy	8	5	5.0
-561	Terttu Pietilä	8	2	2.0
-562	Abdel Hamid Alabbasi	8	1	1.0
-563	Bettina Schmitz	1	5	2.0227
-564	Dominik Illies	10	5	5.0
-565	Cornelia Herzig	10	1	0.6
-566	K. Schröder	10	1	0.6
-567	Frank Neuner	10	3	2.6
-568	Sara Matricardi	2	1	0.0556
-569	Paola De Liso	2	1	0.0556
-570	Elena Freri	2	1	0.0556
-571	Paola Costa	2	1	0.0556
-572	Stefania Magri	2	1	0.0556
-573	Cinzia Gellera	2	1	0.0556
-574	Tiziana Granata	2	1	0.0556
-575	Luciana Musante	2	1	0.0556
-576	Gaëtan Lesca	2	2	0.09
-577	Julie Oertel	2	1	0.0556
-578	Dana Craiu	2	1	0.0556
-579	Trine Bjørg Hammer	2	1	0.0556
-580	Rikke S. Møller	2	5	0.164
-581	Nina Barišić	2	1	0.0556
-582	Federico Vigevano	2	1	0.0556
-583	Carla Marini	2	2	0.0926
-584	Maria Thom	5	2	0.0762
-585	Eleonora Aronica	5	4	0.2349
-586	Dawna D. Armstrong	5	1	0.0476
-587	Fabrice Bartoloméi	2	3	0.1206
-588	Andrea Bernasconi	2	2	0.0861
-589	Neda Bernasconi	5	1	0.0476
-590	Fernando Cendes	3	4	0.2689
-591	Thomas S. Jacques	2	4	0.184
-592	Philippe Kahane	2	5	0.3063
-593	Gary W. Mathern	5	2	0.1726
-594	Hajime Miyata	5	1	0.0476
-595	Solomon L. Moshé	5	2	0.0789
-596	Büğe Öz	2	3	0.1429
-597	Çiğdem Özkara	2	4	0.184
-598	Emilio Perucca	1	2	0.1726
-599	Sanjay M. Sisodiya	5	4	0.1334
-600	Samuel Wiebe	5	1	0.0476
-601	Roberto Spreafico	5	3	0.1147
-602	Mike Kerr	1	1	0.1111
-603	Christine Linehan	1	2	0.3111
-604	Kousuke Kanemoto	1	1	0.1111
-605	Jun Kawasaki	1	1	0.1111
-606	Kenji Sugai	1	1	0.1111
-607	Yukari Tadokoro	1	1	0.1111
-608	Jo M. Wilmshurst	1	1	0.1111
-609	Sarah J. Wilson	1	1	0.1111
-610	Seung Bong Hong	1	2	0.3429
-611	Linda Mancione	1	1	0.2
-612	Jackie Han	1	1	0.2
-613	Christine Strohmaier	1	1	0.2
-614	Eva Bauer	10	2	2.0
-615	Andrea O. Rossetti	1	4	0.5485
-616	Nicolas Lang	1	2	0.1818
-617	Iris Unterberger	1	2	0.1818
-618	Raoul Sutter	1	2	0.1818
-619	Christian Tilz	1	2	0.1818
-620	Željko Uzelac	1	2	0.1818
-621	Alessandro Esposito	2	1	0.037
-622	Antonio Falace	2	1	0.037
-623	Matias Wagner	2	2	0.237
-624	Moran Gal	2	1	0.037
-625	Davide Mei	2	1	0.037
-626	Valerio Conti	2	2	0.0715
-627	Tiziana Pisano	2	2	0.0603
-628	Davide Aprile	2	1	0.037
-629	Maria Sabina Cerullo	2	1	0.037
-630	Antonio De Fusco	2	1	0.037
-631	Silvia Giovedı̀	2	1	0.037
-632	Annette Seibt	2	1	0.037
-633	Daniella Magen	2	1	0.037
-634	Ayelet Eran	2	1	0.037
-635	Sarah L. Stenton	2	2	0.0484
-636	Chiara Fiorillo	2	1	0.037
-637	Sarit Ravid	2	1	0.037
-638	Ertan Mayatepek	2	2	0.237
-639	Hava Hafner	2	1	0.037
-640	Saskia B. Wortmann	2	3	0.287
-641	Erez Y. Levanon	2	1	0.037
-642	Hanna Mandel	2	1	0.037
-643	Fabio Benfenati	2	1	0.037
-644	Felix Distelmaier	2	2	0.1085
-645	Anna Fassio	2	1	0.037
-646	Renzo Guerrini	2	11	0.619
-647	Rupprecht Thorbecke	1	7	7.0
-648	Anna Doll	10	4	4.0
-649	M. Hoppe	8	1	1.0
-650	Maria Tomka-Hoffmeister	8	5	5.0
-651	A. Jones	2	1	0.037
-652	Matilde Aquilino	2	1	0.037
-653	Rory J. Tinker	2	1	0.037
-654	Laura Duncan	2	1	0.037
-655	Zandra A. Jenkins	2	1	0.037
-656	Gemma L. Carvill	2	1	0.037
-657	Stephanie J. DeWard	2	1	0.037
-658	Dorothy K. Grange	2	1	0.037
-659	M.J. Hajianpour	2	1	0.037
-660	Benjamin J. Halliday	2	1	0.037
-661	Muriel Holder‐Espinasse	2	1	0.037
-662	Judit Horváth	2	1	0.037
-663	Silvia Maitz	2	1	0.037
-664	Vincenzo Nigro	2	1	0.037
-665	Manuela Morleo	2	1	0.037
-666	Victoria Paul	2	1	0.037
-667	Careni Spencer	2	1	0.037
-668	Alina Esterhuizen	2	1	0.037
-669	Alice Spano	2	1	0.037
-670	Inés Gómez‐Lozano	2	1	0.037
-671	Abhishek Kumar	2	1	0.037
-672	Gemma Poke	2	1	0.037
-673	John A. Phillips	2	1	0.037
-674	Hunter R. Underhill	2	1	0.037
-675	Grégory Gimenez	2	1	0.037
-676	Takashi Namba	2	1	0.037
-677	Stephen P. Robertson	2	1	0.037
-678	Maurits Sanders	3	1	0.0411
-679	Iskander Van der Wolf	3	1	0.0411
-680	Floor E. Jansen	2	3	0.1932
-681	Hélène Catenoix	3	3	0.1867
-682	John S. Duncan	10	3	0.1009
-683	Jane de Tisi	10	2	0.0723
-684	Tuomas Rauramaa	3	1	0.0411
-685	Francine Chassoux	2	3	0.1081
-686	Bertrand Devaux	2	2	0.0796
-687	Giancarlo Di Gennaro	3	1	0.0411
-688	Vincenzo Esposito	3	1	0.0411
-689	István Bódi	3	1	0.0411
-690	Mrinalini Honavar	5	2	0.0697
-691	Adam Kalina	3	1	0.0411
-692	Manfred Kudernatsch	3	6	0.8149
-693	Martin Aichholzer	3	1	0.0411
-694	Georg Dorfmüller	3	3	0.1019
-695	Mathilde Chipaux	3	4	0.3135
-696	Soheyl Noachtar	8	5	0.4596
-697	Elisabeth Kaufmann	3	1	0.0411
-698	Christian Scheiwe	3	2	0.0674
-699	Kristina Koenig	3	1	0.0411
-700	Carmen Barba	2	6	1.2998
-701	Anna Maria Buccoliero	3	1	0.0411
-702	Flavio Giordano	2	4	0.1725
-703	Katja Menzler	3	1	0.0411
-704	Rita Garbelli	3	1	0.0411
-705	Francesco Deleo	3	1	0.0411
-706	Pavel Kršek	2	5	0.2603
-707	Barbora Straka	2	2	0.1882
-708	Alexis Arzimanoglou	2	4	0.3613
-709	Joseph Toulouse	3	1	0.0411
-710	Wim Van Paesschen	1	3	0.1666
-711	Tom Theys	3	2	0.0674
-712	Isabel Amorim	3	1	0.0411
-713	Nicola Specchio	2	2	0.132
-714	Luca De Palma	3	1	0.0411
-715	Martha Feucht	2	8	0.9591
-716	Theresa O. Scholl	3	1	0.0411
-717	Karl Roessler	3	1	0.0411
-718	Rafael Toledano	3	4	0.4982
-719	António Gil‐Nagel	2	6	0.6558
-720	Savo Raičević	3	1	0.0411
-721	Aleksandar J. Ristić	3	1	0.0411
-722	Olaf Schijns	3	6	0.3506
-723	Jan Beckervordersandforth	3	1	0.0411
-724	Kees P. J. Braun	2	7	1.2635
-725	Désirée De Simoni	4	1	0.1667
-726	Verena Eigler	4	1	0.1667
-727	Carl‐Albrecht Haensch	5	2	0.4167
-728	K Mayer	4	1	0.1667
-729	Wolf‐Rüdiger Schäbitz	4	3	3.0
-730	Olga Simova	4	2	0.1808
-731	Matthias Hoppe	8	6	6.0
-732	Michael P. Schittkowski	8	1	1.0
-733	Klaus Juergen Schotten	1	1	0.1111
-734	Kai Lars Maßmann	1	1	0.1111
-735	Ingrid Tuxhorn	1	1	0.1111
-736	Rainer Schimpf	8	1	0.2
-737	Christian Veltmann	8	1	0.2
-738	Theano Papavassiliu	8	1	0.2
-739	Boris Rudic	8	1	0.2
-740	Turgay Göksu	8	1	0.2
-741	Jürgen Kuschyk	8	1	0.2
-742	Christian Wolpert	8	1	0.2
-743	Charles Antzelevitch	8	1	0.2
-744	Martin Borggrefe	8	1	0.2
-745	Henriette J. Tschampa	5	1	0.125
-746	Horst Urbach	5	10	1.5824
-747	Hans Clusmann	5	4	0.3059
-748	Anna R. Tröscher	5	6	0.844
-749	Isabella Wimmer	5	2	0.254
-750	Lucía Quemada-Garrido	5	2	0.254
-751	Ulrike Köck	5	3	0.4333
-752	Denise Gessl	5	1	0.1111
-753	Sanne G. S. Verberk	5	1	0.1111
-754	Bethany Martin	5	1	0.1111
-755	Hans Lassmann	5	3	0.379
-756	Mustafa Aykut Kural	8	3	0.5861
-757	Hatice Tankişi	8	2	0.2111
-758	Lene Duez	8	2	0.2111
-759	Vibeke Sejer Hansen	8	2	0.2111
-760	Aparna Udupi	8	1	0.1111
-761	Richard Wennberg	8	2	0.2111
-762	Stefan Rampp	8	4	0.5922
-763	Pål G. Larsson	8	2	0.2111
-764	Sándor Beniczky	8	5	1.0861
-765	Stéphanie Garcia-Tarodo	5	1	0.2
-766	Alexandre Datta	5	1	0.2
-767	Gian Paolo Ramelli	5	1	0.2
-768	Fabienne Maréchal-Rouiller	5	1	0.2
-769	Christian Korff	5	1	0.2
-770	Isabel Manzanares	1	1	0.1429
-771	Sonia Sevilla Guerra	1	1	0.1429
-772	María Lombraña	1	1	0.1429
-773	Francisco Gil-López	1	1	0.1429
-774	Estefanía Conde‐Blanco	1	1	0.1429
-775	Adelaida Zabalegui	1	1	0.1429
-776	Theordor W. May	1	1	1.0
-777	Belchin Kostov	1	1	0.1429
-778	Antonio R. Moreno‐Poyato	1	1	0.1429
-779	Laura Guio	1	1	0.1429
-780	Olga Beltran	1	1	0.1429
-781	Cecilia Cuzco	1	1	0.1429
-782	Eirini Sakaraki	3	1	0.2222
-783	Katharina M Mair	5	2	0.3222
-784	Valeri Borger	3	3	0.3768
-785	Jacqueline A. French	1	9	0.8721
-786	John A. Lawson	2	6	0.3547
-787	Zühal Yapıcı	2	6	0.3547
-788	Hiroko Ikeda	2	4	0.2543
-789	Paolo Curatolo	2	4	0.2543
-790	Petrus J. de Vries	2	4	0.2543
-791	Dennis Dlugos	2	4	0.2543
-792	Noah Berkowitz	2	1	0.0769
-793	Maurizio Voi	2	4	0.2543
-794	Séverine Peyrard	2	2	0.1603
-795	Diana Pelov	2	4	0.2543
-796	David Neal Franz	2	7	0.5547
-797	Dennis Klimpel	1	5	4.4667
-798	Monique van Schooneveld	3	1	0.75
-799	Willem M. Otte	3	1	0.75
-800	Tobias M. Redecker	1	1	1.0
-801	Haang Jeung-Maarse	1	1	1.0
-802	Robert Wechsler	1	3	0.4095
-803	Terence J. O’Brien	1	3	0.4095
-804	Anna Patten	1	4	0.5762
-805	Manoj Malhotra	1	2	0.3095
-806	Leock Y. Ngo	1	2	0.3333
-807	Christoph Siedersleben	5	1	1.0
-808	Tilman Schneider‐Hohendorf	5	1	0.0714
-809	Hema Mohan	5	1	0.0714
-810	Judith Breuer	5	1	0.0714
-811	Dennis Görlich	5	1	0.0714
-812	Tanja Kuhlmann	5	1	0.0714
-813	Sebastian Herich	5	1	0.0714
-814	Christiane Elpers	5	1	0.0714
-815	Klaus Dornmair	5	1	0.0714
-816	Nicholas Schwab	5	1	0.0714
-817	Florian Brunner	5	1	0.1429
-818	Stephen Rubino	5	1	0.1429
-819	Howard L. Weiner	5	1	0.1429
-820	P Ostertag	1	1	0.2
-821	Rainer Boor	1	4	1.4286
-822	N. Füratsch	1	3	1.5
-823	Britta Wandschneider	10	5	0.8873
-824	Rebekka Kretz	1	2	0.5
-825	Uwe Runge	1	5	0.7195
-826	J. Geithner	1	3	0.5909
-827	Hristos Karakizlis	1	1	0.25
-828	Frank Kerling	1	2	0.5
-829	Robert Hoepner	1	6	5.3333
-830	Martin Schoendienst	1	5	5.0
-831	Ulrich Specht	6	10	10.0
-832	Louisa Hohmann	5	2	1.3333
-833	Maraike Küpper	5	1	0.2
-834	Jimmy Schiemann	1	1	0.1429
-835	John Whitesides	1	2	0.3929
-836	Wei Liang	1	1	0.1429
-837	Tracy Stalvey	1	1	0.1429
-838	Patrick Kwan	1	1	0.1429
-839	Peter Körtvélyessy	5	4	0.2394
-840	Christian Michael Stoppel	5	1	0.1111
-841	Wolfgang Brück	5	1	0.1111
-842	Ivonne Gerth	5	1	0.1111
-843	Stefan Vielhaber	5	1	0.1111
-844	Falk R. Wiedemann	5	1	0.1111
-845	H.-J. Heinze	5	1	0.1111
-846	Claudius Bartels	5	1	0.1111
-847	Julia M. Nakagawa	3	1	0.1667
-848	Catharina Donkels	3	1	0.1667
-849	Marco Prinz	3	1	0.1667
-850	Carola A. Haas	3	1	0.1667
-851	Elene Tsoures	3	1	0.25
-852	Elmar H. Pinkhardt	3	3	0.5833
-853	Michael Kohrman	1	2	0.1004
-854	Michael Wong	1	2	0.1004
-855	Mathieu Milh	1	2	0.1004
-856	Neva Coello	1	1	0.0833
-857	Wing K. Cheung	1	1	0.0833
-858	Kai Grosch	1	1	0.0833
-859	Monika Trentowska	1	2	1.2381
-860	Bernd Pohlmann‐Eden	1	4	1.7048
-861	Brunna Tuschen‐Caffier	1	1	0.6667
-862	Mario Schrecke	1	4	4.0
-863	Nora Fueratsch	1	2	1.5714
-864	Karin Witte-Boelt	1	2	1.2381
-865	William E. Rosenfeld	1	2	0.3333
-866	José M. Serratosa	1	3	0.5833
-867	Manuel Toledo	1	3	0.4
-868	Jenna Fan	2	2	0.094
-869	A. Thareau Vaury	2	1	0.0171
-870	Ángeles Schteinschnaider	2	1	0.0171
-871	Ignacio Sfaello	2	1	0.0171
-872	Lakshmi Nagarajan	2	1	0.0171
-873	Simon Harvey	2	1	0.0171
-874	Hélène Verhelst	2	1	0.0171
-875	Liesbeth De Waele	2	1	0.0171
-876	Patrick Van Bogaert	2	1	0.0171
-877	Riëm El Tahry	2	1	0.0171
-878	Anna Jansen	2	2	0.0516
-879	Mary Connolly	2	1	0.0171
-880	Philippe Major	2	1	0.0171
-881	Alberto Velez	2	1	0.0171
-882	Orlando Carreno	2	1	0.0171
-883	Juan Carlos Gómez	2	1	0.0171
-884	Jakob Christensen	2	1	0.0171
-885	Louis Vallée	2	1	0.0171
-886	Sylvie Nguyen The Tich	2	1	0.0171
-887	Anne de Saint Martin	2	3	0.1766
-888	Patrick Berquin	2	1	0.0171
-889	Dorothée Ville	2	1	0.0171
-890	Christoph Hertzberg	2	1	0.0171
-891	Antigone Papavasiliou	2	1	0.0171
-892	Meropi Tzoufi	2	1	0.0171
-893	András Fogarasi	8	4	2.3504
-894	Zsuzsanna Gyorsok	2	1	0.0171
-895	Péter Diószeghy	2	1	0.0171
-896	David William Webb	2	1	0.0171
-897	G. Bartalini	2	1	0.0171
-898	Giuseppe Gobbi	2	1	0.0171
-899	Maria Paola Canevini	2	1	0.0171
-900	Pierangelo Veggiotti	2	1	0.0171
-901	M. G. Baglietto	2	1	0.0171
-902	Nicola Laforgia	2	1	0.0171
-903	Raffaele Falsaperla	2	1	0.0171
-904	Hiroko Ikeda	2	1	0.0171
-905	Shin Nabatame	2	1	0.0171
-906	Hisashi Kawawaki	2	1	0.0171
-907	Harumi Yoshinaga	2	1	0.0171
-908	Masaya Kubota	2	1	0.0171
-909	Yasuhiro Suzuki	2	1	0.0171
-910	Hugo Ceja Moreno	2	1	0.0171
-911	Bernard A. Zonnenberg	2	1	0.0171
-912	Marie‐Claire Y. de Wit	2	1	0.0171
-913	Marian Majoie	1	2	0.0838
-914	Marit Bjoernvold	2	1	0.0171
-915	Sergiusz Jóźwiak	2	1	0.0171
-916	Kijoong Kim	2	1	0.0171
-917	Heung Dong Kim	2	1	0.0171
-918	Munhyang Lee	2	1	0.0171
-919	Taesung Ko	2	1	0.0171
-920	Elena Belousova	2	1	0.0171
-921	Nataliya A. Ermolenko	2	1	0.0171
-922	И. Е. Повереннова	2	1	0.0171
-923	Liudmila Kuzenkova	2	1	0.0171
-924	Maria Luz Ruiz Falco Rojas	2	1	0.0171
-925	Adolfo López de Munaín	2	1	0.0171
-926	Pi‐Chuan Fan	2	1	0.0171
-927	Chao Huang	2	1	0.0171
-928	Ying‐Chao Chang	2	1	0.0171
-929	Charcrin Nabangchang	2	1	0.0171
-930	Krisnachai Chomtho	2	1	0.0171
-931	Surachai Likasitwattanakul	2	1	0.0171
-932	Lunliya Thampratankul	2	1	0.0171
-933	Ayşe Serdaroğlu	2	1	0.0171
-934	Banu Ahlar	2	1	0.0171
-935	Sarah Aylett	2	1	0.0171
-936	Archana Desurkar	2	1	0.0171
-937	Clare Johnston	2	1	0.0171
-938	Matthias J. Koepp	10	5	0.9044
-939	Hannah R. Cock	2	1	0.0171
-940	Alasdair Parker	2	1	0.0171
-941	Dougall McCorry	2	1	0.0171
-942	Richard Appleton	2	1	0.0171
-943	Steven Sparagana	2	1	0.0171
-944	Katherine S. Taub	2	1	0.0171
-945	Michael Frost	2	1	0.0171
-946	Colin Roberts	2	1	0.0171
-947	Mustafa Şahin	2	1	0.0171
-948	Susan Koh	2	1	0.0171
-949	Mary Kay Koenig	2	1	0.0171
-950	Martina Bebin	2	1	0.0171
-951	Daniel K. Miles	2	1	0.0171
-952	James W. Wheless	2	1	0.0171
-953	Angus A. Wilfong	2	1	0.0171
-954	Tanjala Gipson	2	1	0.0171
-955	Joyce Y. Wu	2	1	0.0171
-956	Rachel Kuperman	2	1	0.0171
-957	Mary L. Zupanc	2	1	0.0171
-958	Francis J. DiMario	2	1	0.0171
-959	Doris A. Trauner	2	1	0.0171
-960	Rajeshwari Mahalingam	2	1	0.0171
-961	Vinodh Narayanan	2	1	0.0171
-962	Lance Watkins	1	1	0.2
-963	Francesca M. Snoeijen‐Schouwenaars	1	1	0.2
-964	Paula McGowan	1	1	0.2
-965	Rohit Shankar	1	1	0.2
-966	Matthias Brand	10	2	1.6
-967	Isabelle Ollech	10	1	1.0
-968	Florian Rennebaum	3	1	0.1667
-969	Jan Kassubek	3	3	0.4048
-970	Annemarie Hübers	3	2	0.3333
-971	Michael Schocke	3	2	0.3333
-972	Jochen Herms	3	1	0.15
-973	Patrick N. Harter	3	1	0.15
-974	Markus Müller	3	1	1.0
-975	Samir Jabari	3	3	0.5071
-976	Vanda Tóth	8	2	0.9333
-977	Kázmér Karádi	8	1	0.6
-978	Norbert Kovács	8	4	1.8619
-979	József Janszky	8	6	6.0
-980	Michael C. Frühwald	5	1	0.5
-981	Joerg Aengenendt	10	2	2.0
-982	Stefan Dürschmid	8	2	0.4167
-983	Fanny Quandt	8	1	0.25
-984	Ulrike M. Krämer	8	1	0.25
-985	Hermann Hinrichs	8	1	0.25
-986	Hans‐Jochen Heinze	8	3	0.8452
-987	Edward F. Chang	8	1	0.25
-988	Robert T. Knight	8	2	0.4167
-989	Michael Frauenheim	10	2	2.0
-990	Inga Miller	10	2	2.0
-991	Felicitas Becker	1	1	0.1429
-992	Julian Schubert	1	1	0.1429
-993	Sarah Weckhuysen	1	4	0.2219
-994	Arvid Suls	1	1	0.1429
-995	Steffen Grüninger	1	1	0.1429
-996	Elisabeth Korn‐Merker	1	4	4.0
-997	A Hofmann-Peters	1	1	1.0
-998	Jürgen Sperner	1	1	0.1429
-999	Kerstin Hallmann	1	1	0.1429
-1000	René Madeleyen	1	1	0.1429
-1001	Yvonne G. Weber	3	6	0.7345
-1002	Simone Schmidt	6	1	0.0435
-1003	Melanie Boltzmann	6	1	0.0435
-1004	M. Brunotte	6	1	0.0435
-1005	Martin Sailer	6	1	0.0435
-1006	J. Kiesel	6	2	0.0935
-1007	H. Karbe	6	2	0.0935
-1008	J. Harms	6	2	0.0935
-1009	Cornelius Busch	6	2	0.0935
-1010	R. Eckhardt	6	2	0.0935
-1011	Matthias Spranger	6	2	0.0935
-1012	D. Rixecker	6	2	0.0935
-1013	Martin Siepmann	6	1	0.0435
-1014	Richard W. Weber	6	2	0.0935
-1015	H.-J. Hesselschwerdt	6	2	0.0935
-1016	K H Scheidtmann	6	2	0.0935
-1017	Michael Köhler	6	2	0.0935
-1018	Christoph Müller	6	1	0.0435
-1019	Thomas Platz	6	2	0.0935
-1020	Thomas Schmelter	6	2	0.0935
-1021	H Hoff-Emden	6	2	0.0935
-1022	Dietmar Urbach	6	2	0.0935
-1023	J. Lecheler	6	2	0.0935
-1024	Jens D. Rollnik	6	1	0.0435
-1025	Hans‐Beatus Straub	1	4	1.5032
-1026	Katharina Thoma	3	1	0.1667
-1027	Margarita Maltseva	2	2	0.0909
-1028	Johann Philipp Zöllner	2	2	0.101
-1029	Susanne Ruf	2	3	0.1142
-1030	Frauke Hornemann	2	3	0.1142
-1031	Kerstin Alexandra Klotz	2	3	0.1818
-1032	Julia Jacobs	2	2	0.0909
-1033	Astrid Bertsche	2	2	0.0909
-1034	Silke Flege	2	2	0.0909
-1035	Hartmut Baier	1	4	0.4323
-1036	Christian Baumgärtner	3	1	0.0625
-1037	K. Bohlmann	3	1	0.0625
-1038	W. Graf	3	1	0.0625
-1039	Martin Hirsch	3	1	0.0625
-1040	Cynthia G. Last	3	1	0.0625
-1041	Andreas Hartlep	3	1	0.0625
-1042	Willi Bach	5	1	0.1429
-1043	Xiati Guli	5	2	0.2429
-1044	Henning Tiemeier	5	1	0.1176
-1045	Robert Sassen	2	2	0.2426
-1046	Stefan Kuczaty	2	2	0.2426
-1047	Peter Herkenrath	5	1	0.1176
-1048	Bernd Kruse	5	1	0.1176
-1049	Sabine Rona	5	1	0.1176
-1050	Silvia Vieker	5	1	1.0
-1051	S Vlaho	5	2	0.201
-1052	Bernd Wilken	5	1	0.1176
-1053	Charlotte Aaberg Poulsen	5	1	0.1212
-1054	Tímea Berki	5	1	0.1212
-1055	Morten Blaabjerg	5	2	0.1535
-1056	Juliëtte Brenner	5	1	0.1212
-1057	Jeffrey W. Britton	5	2	0.2323
-1058	Andrew Christiana	5	1	0.1212
-1059	Nicolás Lundahl Ciano-Petersen	5	1	0.1212
-1060	Yvette S. Crijnen	5	1	0.1212
-1061	Antonio Farina	5	1	0.1212
-1062	A. Friedman	5	1	0.1212
-1063	Zsófia Hayden	5	1	0.1212
-1064	Julien Hébert	5	1	0.1212
-1065	Zhen Hong	5	1	0.1212
-1066	M Feldmann	5	1	0.1212
-1067	Sergio Muñiz‐Castrillo	5	2	0.1712
-1068	Sudarshini Ramanathan	5	1	0.1212
-1069	Kelsey M. Smith	5	1	0.1212
-1070	Claude Steriade	5	3	0.3434
-1071	Christopher Uy	5	1	0.1212
-1072	Juna M. de Vries	5	1	0.1212
-1073	Till J. Würdemann	5	1	0.1
-1074	Tursonjan Tokay	5	1	0.1
-1075	Maria Kober	5	1	0.1
-1076	Marco Rohde	5	3	0.5
-1077	Eva Lenz	10	1	1.0
-1078	Martin Schöndienst	1	2	2.0
-1079	Ümit Karaca	8	1	0.1
-1080	Pablo Andrade	8	1	0.1
-1081	Laurence de Nijs	8	1	0.1
-1082	Benno Küsters	8	1	0.1
-1083	Andrea Peeters	8	1	0.1
-1084	J. Dings	8	1	0.1
-1085	Kim Rijkers	8	3	0.2546
-1086	Govert Hoogland	8	1	0.1
-1087	Laurent M. Willems	5	1	0.0556
-1088	Frank Bösebeck	1	3	0.3948
-1089	Matthias Dümpelmann	5	2	0.1732
-1090	Melanie Schreiber	5	1	0.0556
-1091	Anke M. Staack	5	1	0.0556
-1092	Frithjof Tergau	1	2	0.4556
-1093	Yaroslav Winter	1	2	0.1667
-1094	Lea Marie Reisch	10	4	4.0
-1095	Martin Wegrzyn	10	10	6.0836
-1096	Johanna Kißler	10	11	6.6071
-1097	Marianna Spatola	5	2	0.3357
-1098	Mar Petit‐Pedrol	5	1	0.05
-1099	Estibaliz Maudes	5	1	0.05
-1100	Mateus Mistieri Simabukuro	5	1	0.05
-1101	Anne‐Laurie Pinto	5	1	0.05
-1102	Juliane Spiegler	5	2	0.0642
-1103	Peter Schramm	5	1	0.05
-1104	Lívia Almeida Dutra	5	1	0.05
-1105	Raffaele Iorio	5	2	0.0823
-1106	Cornelia Kornblum	5	1	0.05
-1107	Peter Sillevis Smitt	5	1	0.05
-1108	Joseph Sullivan	2	5	0.3726
-1109	Lieven Lagae	2	3	0.1948
-1110	Milka Pringsheim	2	3	0.2652
-1111	Dinesh Talwar	2	3	0.1948
-1112	Bradley S. Galer	2	5	0.3726
-1113	Michael Lock	2	4	0.2615
-1114	Anupam Agarwal	2	4	0.2615
-1115	Arnold R. Gammaitoni	2	5	0.3968
-1116	Glenn Morrison	2	2	0.136
-1117	Gail Farfel	2	5	0.3726
-1118	Daniel Delev	3	4	0.2718
-1119	Dirk Van Roost	3	1	0.0263
-1120	Christian Auer	3	1	0.0263
-1121	Thomas Blauwblomme	3	1	0.0263
-1122	Marcelo Budke	3	1	0.0263
-1123	Alexandre Rainha Campos	3	1	0.0263
-1124	Santiago Candela Canto	3	1	0.0263
-1125	Christian Dorfer	3	1	0.0263
-1126	Arild Egge	3	1	0.0263
-1127	Lóránd Erőss	3	1	0.0263
-1128	Sarah Ferrand‐Sorbets	3	2	0.0608
-1129	Jürgen Honegger	3	1	0.0263
-1130	Cihan İşler	3	1	0.0263
-1131	Jugoslav Ivanović	3	1	0.0263
-1132	Atte Karppinen	3	1	0.0263
-1133	Niklaus Krayenbühl	3	3	0.1809
-1134	Rick H.G.J. van Lanen	3	1	0.0263
-1135	Carlo Efisio Marras	3	1	0.0263
-1136	Ioannis N. Mavridis	3	1	0.0263
-1137	Daniel Nilsson	3	1	0.0263
-1138	Julia Onken	3	4	0.3348
-1139	Christian Raftopoulos	3	2	0.0698
-1140	Jonathan Roth	3	1	0.0263
-1141	Thomas Sauvigny	3	4	0.3348
-1142	Didier Scavarda	3	1	0.0263
-1143	Karl Schaller	3	1	0.0263
-1144	Sophie Schuind	3	1	0.0263
-1145	Alexandra Seromenho-Santos	3	1	0.0263
-1146	Konstantinos Fountas	3	1	0.0263
-1147	Richard Drexler	3	2	0.1546
-1148	Sharona Ben‐Haim	3	2	0.1546
-1149	Francesco Cardinale	3	1	0.0435
-1150	Alexandre Carpentier	3	2	0.1546
-1151	Sarat P. Chandra	3	1	0.0435
-1152	Albert Colon	3	2	0.1546
-1153	Marco de Curtis	3	2	0.1546
-1154	Giuseppe Didato	3	2	0.1546
-1155	Lasse Dührsen	3	2	0.1546
-1156	Jibril Osman Farah	3	1	0.0435
-1157	Marc Guénot	3	2	0.1546
-1158	Saadi Ghatan	3	1	0.0435
-1159	Claire Haegelen	3	2	0.1546
-1160	Jason S. Hauptmann	3	1	0.0435
-1161	Rosalind L. Jeffree	3	2	0.1546
-1162	Josua Kegele	3	2	0.1546
-1163	Johannes Lang	3	2	0.1546
-1164	Bertrand Mathon	3	2	0.1546
-1165	Georgios Naros	3	2	0.1546
-1166	Fedor Panov	3	1	0.0435
-1167	Franz Ricklefs	3	2	0.1546
-1168	Michele Rizzi	3	2	0.1546
-1169	Ulf C. Schneider	3	2	0.1546
-1170	Andrea Spyrantis	3	2	0.1546
-1171	Stefan Stodieck	3	3	0.3689
-1172	Manjari Tripathi	3	2	0.1546
-1173	Sumeet Vadera	3	1	0.0435
-1174	Mario Alonso‐Vanegas	3	2	0.1546
-1175	José Géraldo Ribero Vaz	3	1	0.0435
-1176	Manfred Westphal	3	1	0.0435
-1177	Anne Schänzer	10	1	0.4
-1178	Muejgan Dogan-Onugoren	10	1	0.4
-1179	Alexander Strickler	10	1	0.4
-1180	Anna Schossig	3	1	0.0714
-1181	Tobias B. Haack	2	2	0.1214
-1182	Réka Kovács-Nagy	2	2	0.1214
-1183	Matthias C. Braunisch	3	1	0.0714
-1184	Christine Makowski	3	1	0.0714
-1185	Jan Senderek	3	1	0.0714
-1186	Wolfgang Müller‐Felber	3	1	0.0714
-1187	Tim M. Strom	2	2	0.1214
-1188	Birgit Krabichler	3	1	0.0714
-1189	Peter Freisinger	3	1	0.0714
-1190	Charu Deshpande	3	1	0.0714
-1191	Nicole I. Wolf	3	1	0.0714
-1192	Friedrich G. Wörmann	3	3	3.0
-1193	Agnès Rötig	3	1	0.0714
-1194	Uwe Ahting	3	1	0.0714
-1195	Robert Kopajtich	3	1	0.0714
-1196	Holger Prokisch	2	2	0.1214
-1197	Thomas Meitinger	2	3	0.3214
-1198	René G. Feichtinger	3	1	0.0714
-1199	Johannes A. Mayr	2	2	0.1214
-1200	Heinz Jungbluth	3	1	0.0714
-1201	Michael Hubmann	3	1	0.0714
-1202	Johannes Zschocke	3	1	0.0714
-1203	Johannes Koch	2	2	0.1214
-1204	Bader Alhaddad	2	2	0.1214
-1205	Pengcheng Lv	5	1	0.1429
-1206	Dong Chen	5	2	0.2605
-1207	Hui Zhang	5	2	0.2605
-1208	Wenjing Zhou	5	2	0.2605
-1209	Mengyang Wang	5	1	0.1429
-1210	Nikolai Axmacher	5	2	0.2605
-1211	Liang Wang	5	2	0.2605
-1212	Elisa Musto	2	1	0.0213
-1213	Vivian W. Y. Liao	2	1	0.0213
-1214	Katrine M. Johannesen	2	1	0.0213
-1215	Christina Fenger	2	1	0.0213
-1216	Damien Lederer	2	1	0.0213
-1217	Kavitha Kothur	2	1	0.0213
-1218	Katrina Fisk	2	1	0.0213
-1219	Bruce Bennetts	2	1	0.0213
-1220	Pascal Vrielynck	2	1	0.0213
-1221	Delphine Delaby	2	1	0.0213
-1222	Berten Ceulemans	2	4	0.1994
-1223	Peter Sparber	2	1	0.0213
-1224	Arjan Bouman	2	1	0.0213
-1225	Simone Ardern‐Holmes	2	1	0.0213
-1226	Christopher Troedson	2	1	0.0213
-1227	Domenica Battaglia	2	2	0.0445
-1228	Himanshu Goel	2	1	0.0213
-1229	Timothy Feyma	2	1	0.0213
-1230	Somayeh Bakhtiari	2	1	0.0213
-1231	Linda Tjoa	2	1	0.0213
-1232	Martin Faber Boxill	2	1	0.0213
-1233	Nina Demina	2	1	0.0213
-1234	Olga Shchagina	2	1	0.0213
-1235	Е. Л. Дадали	2	1	0.0213
-1236	Gaetano Cantalupo	2	1	0.0213
-1237	Ilaria Contaldo	2	1	0.0213
-1238	Bertrand Isidor	2	2	0.0558
-1239	Stefania Maria Bova	2	1	0.0213
-1240	Leen Wouters	2	1	0.0213
-1241	María J. Miranda	2	1	0.0213
-1242	Francesca Darra	2	2	0.1122
-1243	Elisa Pede	2	1	0.0213
-1244	Diana Le Duc	2	1	0.0213
-1245	Sébastien Küry	2	1	0.0213
-1246	Jacopo Proietti	2	1	0.0213
-1247	Niamh McSweeney	2	1	0.0213
-1248	Elly Brokamp	2	1	0.0213
-1249	P. Ian Andrews	2	1	0.0213
-1250	Marie Gouray Garcia	2	1	0.0213
-1251	Mary Chebib	2	1	0.0213
-1252	Philip K. Ahring	2	1	0.0213
-1253	Elena Gardella	2	1	0.0213
-1254	Dorothee Kasteleijn‐Nolst Trenité	1	1	0.1
-1255	Bernd Schmidt	1	1	0.1
-1256	Anne Gardin	1	1	0.1
-1257	Georges Imbert	1	1	0.1
-1258	Donald R. Johns	1	1	0.1
-1259	Alexandros Sagkriotis	1	1	0.1
-1260	Klaus Kucher	1	1	0.1
-1261	Barbara Fiedler	2	2	0.2083
-1262	Malin Schöpper	3	1	0.5
-1263	Carsten W. Israel	1	2	2.0
-1264	Christian M. Boßelmann	3	2	0.3217
-1265	Tobias Brünger	3	1	0.0909
-1266	Sara Baldassari	3	4	0.4997
-1267	Lisa Ferguson	3	1	0.0909
-1268	Stéphanie Baulac	3	4	0.4997
-1269	Joana Aust	10	1	0.1765
-1270	Larissa Barnstorf	10	1	0.1765
-1271	Magdalena Gippert	10	1	0.1765
-1272	Mareike Harms	10	1	0.1765
-1273	Antonia Hautum	10	1	0.1765
-1274	Shanna Heidel	10	1	0.1765
-1275	Friederike Herold	10	1	0.1765
-1276	Sarah M. Hommel	10	1	0.1765
-1277	Anna-Katharina Knigge	10	1	0.1765
-1278	Dominik Neu	10	2	2.0
-1279	Diana Peters	10	1	0.1765
-1280	Marius Schaefer	10	1	0.1765
-1281	Julia Schneider	10	1	0.1765
-1282	Ria Vormbrock	10	1	0.1765
-1283	Sabrina M. Zimmer	10	1	0.1765
-1284	Friedhelm C. Schmitt	8	1	0.4286
-1285	J. Voges	8	1	0.4286
-1286	Lars Buentjen	8	1	0.4286
-1287	Martin Skalej	8	1	0.4286
-1288	C. Karakizlis	1	1	0.25
-1289	Niklas Knaak	5	1	1.0
-1290	J. Rollnik	6	1	0.05
-1291	M. Sailer	6	1	0.05
-1292	Rudolf J. Knickenberg	6	1	0.05
-1293	C. Müller	6	1	0.05
-1294	Dorothée Kasteleijn- Nolst Trenité	1	1	0.3333
-1295	Pierre Genton	1	2	0.3561
-1296	Ronald C. Reed	1	2	0.3561
-1297	Malena Mielke	10	3	1.4
-1298	Alexandra Mehlmann	10	3	1.4
-1299	Ingo Uttner	3	1	0.2
-1300	Helena Ariño	3	3	0.2345
-1301	Werner A. Scherbaum	3	1	0.2
-1302	Susanne Fauser	5	1	1.0
-1303	C. Soellner	5	1	0.6667
-1304	Anissa Benzait	10	2	1.5714
-1305	Pia Zacher	3	2	0.2653
-1306	Stefan Wolking	3	1	0.2308
-1307	B. Rambeck	1	5	3.8857
-1308	Helga Ottenottebrock	1	2	2.0
-1309	Rainer Valentin	1	2	2.0
-1310	Jean Isnard	2	1	0.0667
-1311	Frans S.S. Leijten	2	2	0.0952
-1312	Laura Tassi	2	3	0.1337
-1313	Maura Castagna	2	1	0.0667
-1314	Alison E. John	2	1	0.0667
-1315	Caroline Salon	2	1	0.0667
-1316	Nathalie Streichenberger	2	1	0.0667
-1317	Antonia Ridolfi	2	1	0.0769
-1318	Mariam Abu-Tair	5	1	1.0
-1319	Marcus Brand	5	1	0.3846
-1320	Michael Bulla-Hellwig	5	1	0.3846
-1321	Hubertus Lohmann	5	1	0.3846
-1322	Dieter Münstermann	5	2	0.5275
-1323	Hermann Pavenstädt	5	1	0.3846
-1324	Gerold Thölking	5	1	0.3846
-1325	Bernd Huber	7	3	2.0
-1326	Lukas Kunz	5	1	0.1176
-1327	Daniel Lachner‐Piza	5	1	0.1176
-1328	Peter C. Reinacher	5	1	0.1176
-1329	Volker A. Coenen	5	1	0.1176
-1330	Wen-Xu Wang	5	1	0.1176
-1331	Shuli Liang	5	1	0.1176
-1332	Anne Bierbrauer	5	1	0.1176
-1333	Tobias Navarro Schröder	5	1	0.1176
-1334	Alison M. Muir	2	1	0.0364
-1335	Jennifer F. Gardner	2	1	0.0364
-1336	Richard H. van Jaarsveld	2	1	0.0364
-1337	Iris Lange	2	1	0.0364
-1338	Jasper J. van der Smagt	2	1	0.0364
-1339	Golder N. Wilson	2	1	0.0364
-1340	Holly Dubbs	2	2	0.0658
-1341	Ethan M. Goldberg	2	2	0.0658
-1342	Lia Zitano	2	1	0.0364
-1343	Caleb Bupp	2	1	0.0364
-1344	José E. Martínez	2	1	0.0364
-1345	Myriam Srour	2	1	0.0364
-1346	Andrea Accogli	2	1	0.0364
-1347	Afnan AlHakeem	2	1	0.0364
-1348	Meira R. Meltzer	2	1	0.0364
-1349	Andrea Gropman	2	1	0.0364
-1350	Carole Brewer	2	1	0.0364
-1351	Richard Caswell	2	1	0.0364
-1352	Tara Montgomery	2	1	0.0364
-1353	Caoimhe McKenna	2	1	0.0364
-1354	Shane McKee	2	1	0.0364
-1355	Corinna Powell	2	1	0.0364
-1356	Pradeep Vasudevan	2	1	0.0364
-1357	Angela F. Brady	2	1	0.0364
-1358	Shelagh Joss	2	1	0.0364
-1359	Carolyn Tysoe	2	1	0.0364
-1360	Grace Noh	2	1	0.0364
-1361	Mark A. Tarnopolsky	2	1	0.0364
-1362	Lauren Brady	2	1	0.0364
-1363	Muhammad Zafar	2	1	0.0364
-1364	Samantha A. Schrier Vergano	2	1	0.0364
-1365	Brianna Murray	2	1	0.0364
-1366	L. Sawyer	2	1	0.0364
-1367	Bryan E. Hainline	2	1	0.0364
-1368	Katherine Sapp	2	1	0.0364
-1369	Danielle DeMarzo	2	1	0.0364
-1370	Darcy J. Huismann	2	1	0.0364
-1371	Ingrid M. Wentzensen	2	1	0.0364
-1372	Rhonda E. Schnur	2	1	0.0364
-1373	Kristin G. Monaghan	2	1	0.0364
-1374	Jane Juusola	2	1	0.0364
-1375	Lindsay Rhodes	2	1	0.0364
-1376	William B. Dobyns	2	3	0.0941
-1377	François Lecoquierre	2	1	0.0364
-1378	Alice Goldenberg	2	1	0.0364
-1379	Konrad Platzer	2	1	0.0364
-1380	Chiara Klöckner	2	1	0.0364
-1381	Trevor L. Hoffman	2	1	0.0364
-1382	Daniel G. MacArthur	2	2	0.0477
-1383	Melanie O’Leary	2	2	0.0477
-1384	Grace E. VanNoy	2	2	0.0477
-1385	Eleina England	2	2	0.0477
-1386	Vinod Varghese	2	1	0.0364
-1387	Heather C. Mefford	2	1	0.0364
-1388	Sebastian Rauer	5	3	0.1094
-1389	Irina Mader	5	2	0.2185
-1390	Sebastian Paus	5	1	0.0714
-1391	Jan Wagner	5	3	0.1444
-1392	Harald Hegen	5	1	0.0714
-1393	Matthias K. Auer	5	1	0.0714
-1394	Florian Deisenhammer	5	1	0.0714
-1395	Friederike Ufer	5	1	0.0714
-1396	C. Frisch	5	2	0.2429
-1397	H. Zeitler	5	1	0.1429
-1398	Lena J Hopf	3	1	1.0
-1399	Fridtjof W. Nußbeck	1	3	2.5
-1400	Toby Toward	2	1	0.0588
-1401	Jens Gruenert	2	1	0.0588
-1402	Edward Gibson	2	1	0.0588
-1403	Isabel Heukaeufer	2	1	0.0196
-1404	Sonia Cornell	2	1	0.0196
-1405	F.A.M. Baumeister	2	1	0.0196
-1406	B. Schreiber-Gollwitzer	2	1	0.0196
-1407	Jeremia P. O. Held	2	1	0.0196
-1408	Helen Blank	2	1	0.0196
-1409	K. Liebrich	2	1	0.0196
-1410	Joe Braun	2	1	0.0196
-1411	Fèlix Bosch	2	1	0.0196
-1412	Ryan G. Wagner	2	1	0.0196
-1413	Kristiane Wetzel	2	1	0.0196
-1414	C. Schlockwerder	2	1	0.0196
-1415	I. Baudler	2	1	0.0196
-1416	JP Ernst	2	1	0.0196
-1417	H. Mayer	2	2	0.1446
-1418	A. Pattber-Wolff	2	1	0.0196
-1419	S. T. Sonnleitner	2	1	0.0196
-1420	M. Gerigk	2	1	0.0196
-1421	Simon Heß	2	1	0.0196
-1422	T. Feiereis	2	1	0.0196
-1423	A. Rickeshenrich	2	1	0.0196
-1424	R Dewitz	2	1	0.0196
-1425	M. Bartels	2	1	0.0196
-1426	S. Kleuker	2	1	0.0196
-1427	Andreas Kirsch	2	1	0.0196
-1428	U. Meerpohl	2	1	0.0196
-1429	B. Stehle-Renner	2	1	0.0196
-1430	A. Wegener	2	1	0.0196
-1431	Christian Weiß	2	1	0.0196
-1432	G Kurlemann	2	1	0.0196
-1433	U. Elkemann	2	1	0.0196
-1434	M. Mandl	2	1	0.0196
-1435	A. Friedl	2	1	0.0196
-1436	Marcus Müller	2	1	0.0196
-1437	P Navrátil	2	1	0.0196
-1438	U. Iken	2	1	0.0196
-1439	Jonas Walter	2	1	0.0196
-1440	Beverly Siegrist	2	1	0.0196
-1441	Gitta Reuner	2	2	0.1446
-1442	H. Struchholz	2	1	0.0196
-1443	Göran Carlsson	2	1	0.0196
-1444	Hans Michael Straßburg	2	1	0.0196
-1445	H. Ottensmeier	2	1	0.0196
-1446	K. Tatsek	2	1	0.0196
-1447	E. Poida-Herzing	2	1	0.0196
-1448	M. Menschig	2	1	0.0196
-1449	A Pickartz	2	1	0.0196
-1450	G. Weber	2	1	0.0196
-1451	T. Gehnen	2	1	0.0196
-1452	J. Antemann	2	1	0.0196
-1453	É. Serra	2	1	0.0196
-1454	Osman Fikret Sönmez	2	1	0.0196
-1455	K. Rheinhardt	2	1	0.0196
-1456	A. Schröder	2	1	0.0196
-1457	Secam Hoovey	2	1	0.0196
-1458	C. Navratil	2	1	0.0196
-1459	Annika Garlichs	10	1	0.5
-1460	Richard W. K. Heß	10	1	0.5
-1461	Gilbert Vézina	10	1	1.0
-1462	Beáta Bóné	8	1	0.7143
-1463	Csilla Gyimesi	8	5	5.0
-1464	Zsuzsanna Kalmár	8	1	0.7143
-1465	Valentina Krenz	10	1	0.5714
-1466	Helmut Neumann	2	1	0.1429
-1467	F. Helmke	2	1	0.1429
-1468	Ch. Thiels	2	1	0.1429
-1469	L. Selzer	2	1	0.1429
-1470	Monika Daseking	2	1	0.1429
-1471	Franz Petermann	2	1	0.1429
-1472	Thomas Lücke	2	2	0.2338
-1473	Hartmut Vatter	3	2	0.1699
-1474	Nicolò Castelli	3	1	0.1111
-1475	Clarissa Lin Yasuda	3	1	0.1111
-1476	P. Sarat Chandra	3	1	0.1111
-1477	Katrin Walther	3	2	0.265
-1478	Jason S. Hauptmann	3	1	0.1111
-1479	Eliane Weinbrenner	3	1	0.1111
-1480	Julia Velz	3	1	0.1111
-1481	Jens Gempt	3	1	0.1111
-1482	Tillman Kaaden	5	1	0.0238
-1483	Klemens Angstwurm	5	1	0.0238
-1484	Yuri Bogarin	5	1	0.0238
-1485	Stefan T. Gerner	5	1	0.0238
-1486	Pèter Köertvelyessy	5	1	0.0238
-1487	Ingo Schirotzek	5	1	0.0238
-1488	Julia Schwabe	5	1	0.0238
-1489	Piotr Sokolowski	5	1	0.0238
-1490	Marie Suesse	5	2	0.1147
-1491	Klaus-P. Wandinger	5	1	0.0238
-1492	Albrecht Kunze	3	2	0.0952
-1493	Georg M. Stettner	2	1	0.1111
-1494	Julien F. Bally	2	1	0.1111
-1495	Ruxandra Iancu Ferfoglia	2	1	0.1111
-1496	Jan Marco Kern	2	1	0.1111
-1497	Elisabeth Probst-Müller	2	1	0.1111
-1498	Silvia Schmid	2	1	0.1111
-1499	Robert Steinfeld	2	1	0.1111
-1500	Susi Strozzi	2	1	0.1111
-1501	Annette Weichselbaum	2	1	0.1111
-1502	Marcus Weitz	2	1	0.1111
-1503	Andreas Ziegler	2	1	0.1111
-1504	Steffi Koch‐Stoecker	1	4	4.0
-1505	Andrés M. Kanner	1	2	0.5667
-1506	Georgios Schoretsanitis	9	3	0.0797
-1507	Michael Paulzen	9	3	0.0797
-1508	Stefan Unterecker	9	3	0.0797
-1509	Markus Schwarz	9	3	0.0797
-1510	Andreas Conca	9	3	0.0797
-1511	Gerald Zernig	9	3	0.0797
-1512	Gerhard Gründer	9	2	0.0533
-1513	Ekkerhard Haen	9	1	0.027
-1514	Pierre Baumann	9	3	0.0797
-1515	Niels Bergemann	9	2	0.0533
-1516	Hans Willi Clement	9	1	0.027
-1517	Katharina Domschke	9	3	0.0797
-1518	Gabriel Eckermann	9	3	0.0797
-1519	Karin Egberts	9	3	0.0797
-1520	Manfred Gerlach	9	2	0.0533
-1521	Christine Greiner	9	2	0.0533
-1522	Ursula Havemann‐Reinecke	9	3	0.0797
-1523	Gudrun Hefner	9	3	0.0797
-1524	Renate Helmer	9	7	7.0
-1525	G. Janßen	9	3	0.0797
-1526	Eveline Jaquenoud-Sirot	9	1	0.027
-1527	Gerd Laux	9	3	0.0797
-1528	Thomas Messer	9	3	0.0797
-1529	Rainald Mößner	9	3	0.0797
-1530	Matthias J. Müller	9	1	0.027
-1531	Bruno Pfuhlmann	9	3	0.0797
-1532	Peter Riederer	9	3	0.0797
-1533	Alois Saria	9	3	0.0797
-1534	Bernd Schoppek	9	3	0.0797
-1535	Margarete Silva Gracia	9	1	0.027
-1536	Benedikt Stegmann	9	3	0.0797
-1537	Werner Steimer	9	3	0.0797
-1538	Julia Stingl	9	3	0.0797
-1539	Manfred Uhr	9	3	0.0797
-1540	S. Ulrich	9	3	0.0797
-1541	R. Waschgler	9	3	0.0797
-1542	Gabriela Zurek	9	2	0.0533
-1543	Christoph Hiemke	9	3	0.0797
-1544	Troels W. Kjær	2	1	0.3333
-1545	Helle Hjalgrim	2	1	0.3333
-1546	Stoyan Popkirov	5	3	0.581
-1547	Stefanie Hahn	8	1	0.0952
-1548	Yvonne Denno	8	1	0.0952
-1549	Nicole Rieckhoff	8	1	0.0952
-1550	Christiane Radzimski	8	1	0.0952
-1551	Sebastian Berg	8	1	0.0952
-1552	Florian Roghmann	8	1	0.0952
-1553	Joachim Noldus	8	1	0.0952
-1554	Sabine Skodda	8	1	0.0952
-1555	W. Stöcker	8	1	0.0952
-1556	Ralf Gold	1	2	0.4286
-1557	Uwe Schlegel	5	2	0.381
-1558	Christian Probst	5	2	0.1786
-1559	Lars Komorowski	8	1	0.0952
-1560	Ramona Miske	8	1	0.0952
-1561	Ingo Kleiter	8	1	0.0952
-1562	Enya M. Weidner	5	2	0.8
-1563	Sebastian Schindler	5	3	1.2
-1564	Stephan Moratti	5	2	0.8
-1565	Frank Boesebeck	8	1	0.8571
-1566	Ettore Beghi	1	1	0.125
-1567	Kristina Malmgren	1	1	0.125
-1568	Juri‐Alexander Witt	1	1	0.125
-1569	Uwe Jürgens	1	2	1.0286
-1570	Nils Holert	1	1	0.4286
-1571	Corinna Kramme	5	2	2.0
-1572	Christoph S. Dietze	3	1	1.0
-1573	Lucy Ekosso‐Ejangue	3	1	1.0
-1574	Kim Boshuisen	2	2	0.2917
-1575	Cuno S.P.M. Uiterwaal	2	2	0.2917
-1576	Onno van Nieuwenhuizen	2	1	0.1667
-1577	Gaby Schmid	7	1	1.0
-1578	Denise Lahr	6	3	3.0
-1579	Andreas Rogalewski	4	4	4.0
-1580	Christoph Hagemeister	4	1	1.0
-1581	Ralf Berkenfeld	6	1	0.5
-1582	Dieter Dennig	6	1	0.5
-1583	Brigitte Scheid	6	1	0.5
-1584	Heiko Hausfeld	6	3	3.0
-1585	Sonja Walther	6	1	0.5
-1586	Orrin Devinsky	2	3	0.1781
-1587	Kelly G. Knupp	2	3	0.1781
-1588	Μ. Scott Perry	2	1	0.0667
-1589	Ronald L. Davis	2	1	0.0667
-1590	Robert M. Cortes	2	1	0.0667
-1591	Arnold R. Gammaiton	2	1	0.0667
-1592	Philipp S. Reif	2	1	0.087
-1593	Iryna Leunikava	1	1	0.1111
-1594	Marcus Brunnert	1	1	0.1111
-1595	Lars Joeres	1	1	0.1111
-1596	Jessie Sutphin	1	1	0.1111
-1597	Marco Boeri	1	1	0.1111
-1598	Jasmine Smith	1	1	0.1111
-1599	Flavio Villani	1	1	0.1111
-1600	M Guasp	0	1	0.0
-1601	Niels Alexander Foit	8	1	0.5
-1602	Vera Van Velthoven	8	1	0.5
-1603	Pascal Speicher	6	2	2.0
-1604	I. Coban	6	3	3.0
-1605	Jonas Honke	3	1	0.2273
-1606	Ahmed Gaballa	3	2	2.0
-1607	Arnd Dörfler	3	1	0.2273
-1608	Johannes R. Lemke	2	5	0.4394
-1609	Marion Stomberg	3	1	1.0
-1610	Linda Laux	2	2	0.1115
-1611	Marina Nikanorova	1	3	0.4448
-1612	Laia Verdú de Juan	10	1	0.1
-1613	Anja Steinmaurer	10	1	0.1
-1614	Martin Finzel	10	1	0.1
-1615	Christian Mawrin	10	1	0.1
-1616	Julika Pitsch	10	1	0.1
-1617	Berthold Voges	10	1	0.1
-1618	Serge Weis	10	1	0.1
-1619	Michael Winklehner	10	1	0.1
-1620	Beate Diehl	10	1	0.5
-1621	László Hejjel	8	1	0.3333
-1622	Gergely Orsi	8	1	0.3333
-1623	Anna Szũcs	8	1	0.3333
-1624	Sámuel Komoly	8	2	0.5476
-1625	Florian J. Mücke	5	1	1.0
-1626	Marc Petrus Hendriks	5	1	1.0
-1627	Pierandrea Muglia	1	1	0.0667
-1628	Jonas Hannestad	1	1	0.0667
-1629	Steven DeBruyn	1	1	0.0667
-1630	Massimiliano Germani	1	1	0.0667
-1631	Brigitte Lacroix	1	1	0.0667
-1632	Christian Otoul	1	1	0.0667
-1633	David Sciberras	1	1	0.0667
-1634	Koen Van Laere	1	1	0.0667
-1635	Elizabeth Webster	1	1	0.0667
-1636	Rafal M. Kaminski	1	1	0.0667
-1637	Konrad J. Werhahn	1	1	0.0667
-1638	Ute Deutz	2	1	0.0909
-1639	N Heussen	2	1	0.0909
-1640	K Weigt-Usinger	2	1	0.0909
-1641	Steffen Leiz	2	2	0.1409
-1642	Christa Raabe	2	1	0.0909
-1643	Steinbüchel Daniela	2	1	0.0909
-1644	Christine Moll	2	1	0.0909
-1645	Ingeborg Krägeloh‐Mann	2	1	0.0909
-1646	Helmut Hollmann	2	1	0.0909
-1647	Marian Galovic	10	1	0.0312
-1648	Irene Baudracco	10	1	0.0312
-1649	Evan Wright-Goff	10	1	0.0312
-1650	Galo E. Pillajo Sulca	10	1	0.0312
-1651	Parashkev Nachev	10	1	0.0312
-1652	Pamela J. Thompson	10	1	0.0312
-1653	Sallie Baxendale	10	1	0.0312
-1654	Andrew W. McEvoy	10	2	0.0598
-1655	Mark Nowell	10	1	0.0312
-1656	Matteo Mancini	10	1	0.0312
-1657	Sjoerd B. Vos	10	1	0.0312
-1658	Gavin P. Winston	10	1	0.0312
-1659	Rachel Sparks	10	1	0.0312
-1660	Ferrán Prados	10	1	0.0312
-1661	Anna Miserocchi	10	1	0.0312
-1662	Louis A. van Graan	10	1	0.0312
-1663	Roman Rodionov	10	1	0.0312
-1664	Chengyuan Wu	10	1	0.0312
-1665	Mahdi Alizadeh	10	1	0.0312
-1666	Lauren Kozlowski	10	1	0.0312
-1667	Ashwini Sharan	10	1	0.0312
-1668	Lohith G. Kini	10	1	0.0312
-1669	Kathryn A. Davis	10	1	0.0312
-1670	Brian Litt	10	1	0.0312
-1671	Sébastien Ourselin	10	1	0.0312
-1672	Josemir W. Sander	10	1	0.0312
-1673	Wolfgang Löscher	9	2	0.5312
-1674	Lorenz B. Dehn	1	2	2.0
-1675	Ulrike Ravens‐Sieberer	1	1	1.0
-1676	Henner Koch	5	1	0.1
-1677	Cristina Elena Niturad	5	1	0.1
-1678	Stephan Theiss	5	1	0.1
-1679	Marcel Dihné	5	1	0.1
-1680	J C Sánchez-Alvarez	1	2	0.375
-1681	Izumi Kuramochi	1	2	1.3333
-1682	Takayuki Iwayama	1	2	1.1333
-1683	Haruo Yoshimasu	1	2	1.1333
-1684	M. Charokopou	1	1	0.25
-1685	Rebecca Harvey	1	1	0.25
-1686	Kunal Srivastava	1	1	0.25
-1687	Simon Borghs	1	2	0.45
-1688	Elinor Ben‐Menachem	1	2	0.3095
-1689	Irene Morales	1	1	0.1667
-1690	Estevo Santamarina	1	1	0.1667
-1691	Kazem Ghaemi	8	1	1.0
-1692	Fabienne Picard	3	1	0.0345
-1693	Nienke E. Verbeek	2	3	0.0872
-1694	Marjan van Kempen	3	1	0.0345
-1695	Eva H. Brilstra	2	2	0.0639
-1696	Francesca Bisulli	3	1	0.0345
-1697	Laura Licchetta	3	1	0.0345
-1698	Tommaso Pippucci	3	1	0.0345
-1699	Paolo Tinuper	3	1	0.0345
-1700	Édouard Hirsch	10	2	0.0572
-1701	Jamel Chelly	3	1	0.0345
-1702	Gabrielle Rudolf	3	1	0.0345
-1703	Simona Balestrini	3	1	0.0345
-1704	Natasha E. Schoeler	3	1	0.0345
-1705	Laura Hernández-Hernández	3	1	0.0345
-1706	S. Krithika	3	1	0.0345
-1707	Renske Oegema	3	1	0.0345
-1708	Eveline Hagebeuk	3	1	0.0345
-1709	Boudewijn Gunning	3	1	0.0345
-1710	C. L. P. Deckers	3	1	0.0345
-1711	Bianca Berghuis	3	1	0.0345
-1712	Ilse Wegner	3	1	0.0345
-1713	Erik H. Niks	3	1	0.0345
-1714	Daniëlle de Jong	3	1	0.0345
-1715	Guido Rubboli	10	2	0.0572
-1716	Inga Talvik	3	1	0.0345
-1717	Valentin Sander	3	1	0.0345
-1718	Peter Uldall	3	1	0.0345
-1719	M. Jacquemont	3	1	0.0345
-1720	Caroline Nava	3	1	0.0345
-1721	Eric LeGuern	3	1	0.0345
-1722	Sophie Julia	3	1	0.0345
-1723	G. D’Orsi	3	1	0.0345
-1724	Giovanni Crichiutti	3	1	0.0345
-1725	Laurence Faivre	3	1	0.0345
-1726	Véronique Darmency	3	1	0.0345
-1727	Barbora Beňová	3	1	0.0345
-1728	Arnaud Biraben	3	1	0.0345
-1729	Anne-Sophie Lebre	3	1	0.0345
-1730	Mélanie Jennesson	3	1	0.0345
-1731	Shifteh Sattar	3	1	0.0345
-1732	Cécile Marchal	3	1	0.0345
-1733	Douglas R. Nordli	3	1	0.0345
-1734	Kristin Lindstrom	3	1	0.0345
-1735	Lysa Boissé Lomax	3	1	0.0345
-1736	Courtney Kiss	3	1	0.0345
-1737	Anne Lépine	3	1	0.0345
-1738	An-Sofie Schoonjans	3	1	0.0345
-1739	Katrien Stouffs	3	1	0.0345
-1740	Eleni Panagiotakaki	3	1	0.0345
-1741	Brigitte Ricard‐Mousnier	3	1	0.0345
-1742	Julien Thévenon	3	1	0.0345
-1743	Julitta de Bellescize	3	1	0.0345
-1744	Thomas Dorn	3	1	0.0345
-1745	Martin Zenker	3	1	0.0345
-1746	Karen Müller‐Schlüter	3	1	0.0345
-1747	Ilona Krey	2	2	0.1595
-1748	Meral Balci	3	1	0.0345
-1749	Guillaume Achaz	3	1	0.0345
-1750	Thomas Becher	3	1	0.0345
-1751	Christopher J. Yuskaitis	3	1	0.0345
-1752	Annapurna Poduri	2	2	0.1815
-1753	Coral M. Stredny	5	1	0.1111
-1754	Maria Papadopoulou	5	1	0.1111
-1755	Suresh Pujar	5	1	0.1111
-1756	Marios Kaliakatsos	5	1	0.1111
-1757	Stuart R. Tomko	5	1	0.1111
-1758	Ronny Wickström	5	1	0.1111
-1759	Christopher Cortina	5	1	0.1111
-1760	Bo Zhang	5	1	0.1111
-1761	Aileen McGonigal	1	1	0.6
-1762	Jean‐Arthur Micoulaud‐Franchi	1	1	0.6
-1763	Sally Elakkary	1	1	1.0
-1764	Simone Hortsmann	8	1	1.0
-1765	Jörg Aengenendt	8	2	2.0
-1766	Réka Horváth	8	2	2.0
-1767	Matthias Wilhelm Hoppe	8	1	1.0
-1768	Jana K. Hackert	5	1	0.2
-1769	Lorenz Müller	5	1	0.2
-1770	Patrícia Braga	1	1	0.1667
-1771	Janet Mifsud	1	1	0.1667
-1772	Carol D’Souza	1	1	0.1667
-1773	Marina Clarke	1	1	0.1667
-1774	Arlette Honein	1	1	0.1667
-1775	Tovuudorj Avirmed	1	1	0.1667
-1776	Simone Hartmann	8	1	1.0
-1777	Tim Ogutu	8	1	1.0
-1778	Wesley T. Kerr	1	1	0.1667
-1779	Jocelyn Y. Cheng	1	1	0.1667
-1780	Lynn D. Kramer	1	1	0.1667
-1781	Annika Hilgers	1	1	1.0
-1782	Marion Schaefer	1	3	3.0
-1783	Klaus Korn	3	1	0.25
-1784	Johannes Giedl	3	1	0.25
-1785	Bernhard Fleckenstein	3	1	0.25
-1786	Ángel Aledo‐Serrano	2	2	0.2814
-1787	Sameer M. Zuberi	2	1	0.0909
-1788	Amélie Lothe	2	1	0.0909
-1789	Irina Lehmann	1	1	0.25
-1790	Navah Ester Kadish	1	1	0.25
-1791	Richard S. McLachlan	1	1	0.1667
-1792	Kathy Foris	1	1	0.1667
-1793	Angeliki Kantzeli	8	1	1.0
-1794	Patrik Greguletz	5	1	0.0142
-1795	Maria Plötz	5	1	0.0142
-1796	Jaqueline Klausewitz	5	1	0.0142
-1797	Michael Nagel	5	1	0.0142
-1798	Rosa Rößling	5	1	0.0142
-1799	Thomas Seifert	5	1	0.0142
-1800	Heike L. Rittner	5	1	0.0142
-1801	Carmen Villmann	2	2	0.1808
-1802	Oliver Bähr	5	1	0.0142
-1803	Stefanie Becker	5	1	0.0142
-1804	Robert L. Berger	5	1	0.0142
-1805	Birgit Berger	5	1	0.0142
-1806	Martin Berghoff	5	1	0.0142
-1807	Achim Berthele	5	1	0.0142
-1808	Amelie Bohn	5	1	0.0142
-1809	Sergio Castro‐Gomez	5	1	0.0142
-1810	Timo Deba	5	1	0.0142
-1811	Juliane Dominik	5	1	0.0142
-1812	Laura Ehrhardt	5	1	0.0142
-1813	Alexander Emmer	5	1	0.0142
-1814	Daniela Esser	5	1	0.0142
-1815	Thorleif Etgen	5	1	0.0142
-1816	Tobias Freilinger	5	1	0.0142
-1817	Britta Greshake	5	1	0.0142
-1818	Thomas Grüter	5	1	0.0142
-1819	Jens Harmel	5	1	0.0142
-1820	Antonia Harms	5	1	0.0142
-1821	Yetzenia Dubraska Haro Alizo	5	1	0.0142
-1822	Christian Hofmann	5	1	0.0142
-1823	Hagen B. Huttner	5	1	0.0142
-1824	Mareike Jansen	5	1	0.0142
-1825	Ellen Knierim	5	1	0.0142
-1826	Verena Kraus	5	1	0.0142
-1827	Niels Margraf	5	1	0.0142
-1828	Fabian Möller	5	1	0.0142
-1829	Steffen Pfeuffer	5	1	0.0142
-1830	Mosche Pompsch	5	1	0.0142
-1831	Daniel Rapp	5	1	0.0142
-1832	Dominica Ratuszny	5	1	0.0142
-1833	Robert Rehmann	5	1	0.0142
-1834	Ina Reichen	10	2	0.2999
-1835	Nele Retzlaff	5	1	0.0142
-1836	Henrik Rohner	5	1	0.0142
-1837	Yannic Saathoff	5	1	0.0142
-1838	Hauke Schneider	5	1	0.0142
-1839	Patrick Schramm	5	1	0.0142
-1840	F. Seifert	5	1	0.0142
-1841	Andeas Steinbrecher	5	1	0.0142
-1842	Karin van`s Gravesande Storm	5	1	0.0142
-1843	Klarissa Hanja Stürner	5	1	0.0142
-1844	Paweł Tacik	5	1	0.0142
-1845	Thanos Tsaktanis	5	1	0.0142
-1846	Methap Türedi	5	1	0.0142
-1847	Max Vogtmann	5	1	0.0142
-1848	Kartharina Wurdack	5	1	0.0142
-1849	Michael Scherg	8	2	0.475
-1850	Patrick Berg	8	1	0.375
-1851	Jae‐Hyun Cho	8	1	0.375
-1852	Harald Bornfleth	8	1	0.375
-1853	Angelika Mühlebner	2	5	0.7415
-1854	José Eduardo Peixoto-Santos	3	1	0.1905
-1855	Yanghao Hou	3	2	0.3571
-1856	Andreas von Deimling	3	2	0.3571
-1857	Melanie Franz	1	1	0.2143
-1858	Mirjam Metzner	1	1	0.2143
-1859	M Häusler	5	1	0.0833
-1860	Jurgis Strautmanis	5	1	0.0833
-1861	Boris Gebhardt	5	1	0.0833
-1862	Axel Rohr	5	1	0.0833
-1863	Angela Abicht	5	1	0.0833
-1864	Bastian David	10	1	0.0588
-1865	Judith Kröll‐Seger	10	1	0.0588
-1866	Fabiane Schuch	10	1	0.0588
-1867	Bernhard Oehl	10	1	0.0588
-1868	Tobias Breyer	10	2	0.281
-1869	Elke Hattingen	10	1	0.0588
-1870	Bernd Weber	10	1	0.0588
-1871	Hans‐Jürgen Huppertz	2	3	0.4508
-1872	Martin Soehle	5	2	0.3333
-1873	Christina Wolf	5	2	0.3333
-1874	Melanie J. Priston	5	2	0.3333
-1875	Georg Neuloh	5	2	0.3333
-1876	Andreas Hoeft	5	2	0.3333
-1877	Richard K. Ellerkmann	5	2	0.3333
-1878	Alexander Bryson	2	1	0.3333
-1879	Steven Petrou	2	1	0.3333
-1880	J. Krois-Neudenberger	2	1	0.125
-1881	Julia Hentschel	2	2	0.1364
-1882	Steffen Syrbe	2	2	0.1364
-1883	Britta Hanker	2	1	0.125
-1884	G. Kurlemann	2	1	0.125
-1885	Daniel Friedman	1	1	0.125
-1886	Victor Biton	1	1	0.125
-1887	Lloyd Knapp	1	1	0.125
-1888	Verne Pitman	1	1	0.125
-1889	Marci L. Chew	1	1	0.125
-1890	Sarah Dubrava	1	1	0.125
-1891	Holly Posner	1	1	0.125
-1892	Ahmed Gaballa	3	2	2.0
-1893	Corinna Doege	1	1	0.2
-1894	Michael Siniatchkin	1	1	0.2
-1895	Knut Mueller	1	1	0.2
-1896	Rebecca Townsend	1	1	0.2
-1897	Christine de la Loge	1	1	0.2
-1898	Florian J. Bremm	5	1	1.0
-1899	Marc Hendriks	5	1	1.0
-1900	Esther Nieder	1	2	2.0
-1901	Karin Witte-Bölt	1	1	0.4
-1902	Stephan Arnold	1	2	0.5
-1903	Johannes Schurr	8	1	0.2381
-1904	Hans Holthausen	8	2	0.2667
-1905	Peter Winkler	8	2	0.2667
-1906	Thomas Czech	2	2	0.3919
-1907	Laura M. McDonell	2	1	0.0345
-1908	Ghayda Mirzaa	2	1	0.0345
-1909	Diana Alcantara	2	1	0.0345
-1910	Jeremy Schwartzentruber	2	1	0.0345
-1911	Melissa T. Carter	2	1	0.0345
-1912	Leo J. Lee	2	1	0.0345
-1913	Carol L. Clericuzio	2	1	0.0345
-1914	John M. Graham	2	1	0.0345
-1915	Deborah J. Morris‐Rosendahl	2	1	0.0345
-1916	Gyula Acsádi	2	1	0.0345
-1917	Sharron Townshend	2	1	0.0345
-1918	Simon Williams	2	1	0.0345
-1919	Anne Halbert	2	1	0.0345
-1920	Albert David	2	1	0.0345
-1921	Christopher D. Smyser	2	1	0.0345
-1922	Alex R. Paciorkowski	2	1	0.0345
-1923	Marcia Willing	2	1	0.0345
-1924	John Woulfe	2	1	0.0345
-1925	Soma Das	2	1	0.0345
-1926	Chandree L. Beaulieu	2	1	0.0345
-1927	Janet Marcadier	2	1	0.0345
-1928	Michael T. Geraghty	2	1	0.0345
-1929	Brendan J. Frey	2	1	0.0345
-1930	Jacek Majewski	2	1	0.0345
-1931	Dennis E. Bulman	2	1	0.0345
-1932	Mark O’Driscoll	2	1	0.0345
-1933	Kym M. Boycott	2	1	0.0345
-1934	Wenke Grönheit	5	1	0.2
-1935	Monika Kapauer	5	1	0.2
-1936	Monica H. Wojcik	2	1	0.0114
-1937	Gabrielle Lemire	2	1	0.0114
-1938	Eva Berger	2	1	0.0114
-1939	Maha S. Zaki	2	1	0.0114
-1940	Mariel Wissmann	2	1	0.0114
-1941	Wathone Win	2	1	0.0114
-1942	Susan M. White	2	1	0.0114
-1943	Ben Weisburd	2	1	0.0114
-1944	Dagmar Wieczorek	2	1	0.0114
-1945	Leigh B. Waddell	2	1	0.0114
-1946	Jeffrey M. Verboon	2	1	0.0114
-1947	Ana Töpf	2	1	0.0114
-1948	Tiong Yang Tan	2	1	0.0114
-1949	Vincent Strehlow	2	1	0.0114
-1950	Volker Straub	2	1	0.0114
-1951	Hana Snow	2	1	0.0114
-1952	Moriel Singer‐Berk	2	1	0.0114
-1953	Josh Silver	2	1	0.0114
-1954	Shirlee Shril	2	1	0.0114
-1955	Eleanor G. Seaby	2	1	0.0114
-1956	Ronen Schneider	2	1	0.0114
-1957	Vijay G. Sankaran	2	1	0.0114
-1958	Alba Sanchis-Juan	2	1	0.0114
-1959	Kathryn A. Russell	2	1	0.0114
-1960	Karit Reinson	2	1	0.0114
-1961	Gianina Ravenscroft	2	1	0.0114
-1962	Maximilian Radtke	2	1	0.0114
-1963	Denny Popp	2	1	0.0114
-1964	Konrad Platzer	2	1	0.0114
-1965	Eric A. Pierce	2	1	0.0114
-1966	Emily Place	2	1	0.0114
-1967	Sander Pajusalu	2	1	0.0114
-1968	Lynn Pais	2	1	0.0114
-1969	Katrin Õunap	2	1	0.0114
-1970	Ikeoluwa Osei‐Owusu	2	1	0.0114
-1971	Henry Opperman	2	1	0.0114
-1972	Volkan Okur	2	1	0.0114
-1973	Kaisa Teele Oja	2	1	0.0114
-1974	Emily O’Heir	2	1	0.0114
-1975	Chantal F. Morel	2	1	0.0114
-1976	Andreas Merkenschlager	2	2	0.0346
-1977	Rhett G. Marchant	2	1	0.0114
-1978	Brian Mangilog	2	1	0.0114
-1979	Jill A. Madden	2	1	0.0114
-1980	Alysia Kern Lovgren	2	1	0.0114
-1981	Jordan Lerner‐Ellis	2	1	0.0114
-1982	Jasmine Lin	2	1	0.0114
-1983	Nigel G. Laing	2	1	0.0114
-1984	Friedhelm Hildebrandt	2	1	0.0114
-1985	Emily Groopman	2	1	0.0114
-1986	Julia K. Goodrich	2	1	0.0114
-1987	Joseph G. Gleeson	2	1	0.0114
-1988	Roula Ghaoui	2	1	0.0114
-1989	Casie A. Genetti	2	1	0.0114
-1990	Janina Gburek‐Augustat	2	1	0.0114
-1991	Hanna T. Gazda	2	1	0.0114
-1992	Vijay Ganesh	2	1	0.0114
-1993	Mythily Ganapathi	2	1	0.0114
-1994	Lyndon Gallacher	2	1	0.0114
-1995	Jack Fu	2	1	0.0114
-1996	Emily Evangelista	2	1	0.0114
-1997	Sandra Donkervoort	2	1	0.0114
-1998	Stephanie DiTroia	2	1	0.0114
-1999	Sandra T. Cooper	2	1	0.0114
-2000	Wendy K. Chung	2	1	0.0114
-2001	John Christodoulou	2	1	0.0114
-2002	Katherine R. Chao	2	1	0.0114
-2003	Liam D. Cato	2	1	0.0114
-2004	Kinga M. Bujakowska	2	1	0.0114
-2005	Samantha J. Bryen	2	1	0.0114
-2006	Harrison Brand	2	1	0.0114
-2007	Carsten G. Bönnemann	2	1	0.0114
-2008	Alan H. Beggs	2	1	0.0114
-2009	Samantha Baxter	2	1	0.0114
-2010	Tobias Bartolomaeus	2	1	0.0114
-2011	Pankaj B. Agrawal	2	1	0.0114
-2012	Michael E. Talkowski	2	1	0.0114
-2013	Christina Austin‐Tse	2	1	0.0114
-2014	Heidi L. Rehm	2	1	0.0114
-2015	Anne O’Donnell‐Luria	2	1	0.0114
-2016	D. Lahr	5	1	1.0
-2017	Erika Dyck	5	1	0.4286
-2018	H. J. Markowitsch	5	1	0.4286
-2019	Willi Cawello	9	1	1.0
-2020	Nadine Vietmeier	10	1	1.0
-2021	Jerzy Daniluk	1	1	0.2
-2022	Narinder Lotay	1	1	0.2
-2023	Sarah E. DeRossett	1	1	0.2
-2024	Suzanne Edwards	1	1	0.2
-2025	Alejandro Salah	1	1	0.1429
-2026	Xuefeng Wang	1	1	0.1
-2027	Bree DiVentura	1	1	0.1
-2028	Antonio Laurenza	1	1	0.1
-2029	Francesco Bibbiani	1	1	0.1
-2030	Hassan Omaimen	3	1	1.0
-2031	Hamzah Yasin	3	1	1.0
-2032	Isabel Wanke	8	1	0.2222
-2033	Stefan Maderwald	8	1	0.2222
-2034	Oliver Kraff	8	1	0.2222
-2035	Jens Theysohn	8	1	0.2222
-2036	Michael Forsting	8	1	0.2222
-2037	Mark E. Ladd	8	1	0.2222
-2038	Marc Schlamann	8	1	0.2222
-2039	Fabian Herbst	2	1	0.0833
-2040	Bertin Dufaux	1	2	1.4667
-2041	Frank Oltmanns	8	1	0.1538
-2042	Margitta Seeck	8	1	0.1538
-2043	Kathrin Wagner	8	1	0.1538
-2044	A. Schwarcz	8	1	0.2143
-2045	M. Aradi	8	1	0.2143
-2046	Tibor Auer	8	1	0.2143
-2047	Nóra Fehér	8	1	0.2143
-2048	Tamás Tényi	8	1	0.2143
-2049	Csaba Szalay	8	1	0.2143
-2050	Gábor Perlaki	8	1	0.2143
-2051	G. Orsi	8	1	0.2143
-2052	Tamás Dóczi	8	1	0.2143
-2053	Cs. Gyimesi	8	1	0.2143
-2054	Michael Alber	2	1	0.0909
-2055	Hartwig Spors	2	1	0.0909
-2056	Kerstin Römermann	9	1	0.5
-2057	Jakob Stockinger	1	1	0.125
-2058	Andrea Nemecek	1	1	0.125
-2059	Michal Cicanic	1	1	0.125
-2060	Tassanai Intravooth	1	1	0.125
-2061	Lynanne McGuire	1	1	0.5
-2062	Jack Uetrecht	1	1	0.5
-2063	Pier Paolo Quarato	1	1	0.1667
-2064	Anne‐Liv Schulz	1	2	0.3095
-2065	Jody M. Cleveland	1	2	0.3095
-2066	Gilbert Wagener	1	2	0.3095
-2067	Elena Jost	5	1	0.1667
-2068	Waltraut M. Merz	5	1	0.1667
-2069	Patrick Kupczyk	5	1	0.1667
-2070	Laura Tascón Padrón	5	1	0.1667
-2071	Eva Weber	5	1	0.1667
-2072	Philipp Kosian	5	1	0.1667
-2073	Sonja Braig	5	1	0.5
-2074	Monique M.J. van Schooneveld	2	1	0.125
-2075	Sue Harrison	2	1	0.125
-2076	Marion Daehn	2	1	1.0
-2077	Sarina Djimjadi	2	1	1.0
-2078	Dilek Yalnızoğlu	2	1	0.125
-2079	Güzide Turanlı	2	1	0.125
-2080	Christian Hoppe	2	1	0.125
-2081	Karl Strobl	2	1	0.125
-2082	Caroline Seegmüller	2	1	0.125
-2083	Agathe Laurent	2	1	0.125
-2084	Stefanie H. Mueller	5	1	0.04
-2085	Anna Färber	5	1	0.04
-2086	Andre Franke	5	1	0.04
-2087	Peter Borusiak	5	1	0.1429
-2088	Heike Philippi	5	1	0.1429
-2089	Joana Machado‐Santos	5	1	0.125
-2090	Etsuji Saji	5	1	0.125
-2091	Manuela Paunovic	5	1	0.125
-2092	Roland Liblau	5	1	0.125
-2093	Galina Gabriely	5	1	0.125
-2094	Alexandra Kitzenmaier	2	1	0.1667
-2095	Natascha Schaefer	2	1	0.1667
-2096	Vikram Babu Kasaragod	2	1	0.1667
-2097	Ralph Hantschmann	2	1	0.1667
-2098	Hermann Schindelin	2	1	0.1667
-2099	Yannic Titgemeyer	3	1	0.0714
-2100	Dirk‐Matthias Altenmüller	3	1	0.0714
-2101	Michael C. Lanz	3	1	0.0714
-2102	Robert D. Nass	3	1	0.0714
-2103	Jan Rémi	3	1	0.0714
-2104	Roann Ramos	3	1	0.0714
-2105	Ekaterina Kutafina	3	1	0.0714
-2106	Stephan Jonas	3	1	0.0714
-2107	Anjan Nibber	5	1	0.1429
-2108	Linda Clover	5	1	0.1429
-2109	Philippa Pettingill	5	1	0.1429
-2110	Bethan Lang	5	3	0.2751
-2111	Mehdi Ahmadi	2	1	1.0
-2112	Birgitt Mueffelmann	2	1	1.0
-2113	Anne Beyer	4	2	2.0
-2114	Anja Friedrich	4	2	1.8571
-2115	Frédéric Zuhorn	4	3	3.0
-2116	Randolf Klingebiel	4	2	2.0
-2117	Sabine Oertelt‐Prigione	4	1	0.8571
-2118	Wolf‐Rüdiger Schäbitz	4	2	2.0
-2119	N. Bergemann	9	1	0.0263
-2120	H.‐W. Clement	9	1	0.0263
-2121	Jürgen Deckert	9	2	0.0526
-2122	M. Gerlach	9	1	0.0263
-2123	C. Greiner	9	1	0.0263
-2124	Ekkehard Haen	9	2	0.0526
-2125	Eveline Jaquenoud	9	2	0.0526
-2126	Michael Müller	9	1	0.0263
-2127	Margarethe Silva Gracia	9	2	0.0526
-2128	Jan S. Bauer	5	1	1.0
-2129	J. M. T. Thompson	5	1	0.0323
-2130	Mian Bi	5	1	0.0323
-2131	Andrew G. Murchison	5	1	0.0323
-2132	Mateusz Makuch	5	1	0.0323
-2133	Kon Chu	5	1	0.0323
-2134	Pue Farooque	5	1	0.0323
-2135	Lawrence J. Hirsch	5	1	0.0323
-2136	Ernest Somerville	5	1	0.0323
-2137	Maria Isabel Leite	5	1	0.0323
-2138	Müjgan Dogan-Onugoren	5	1	0.0323
-2139	Zsolt Illés	5	1	0.0323
-2140	Mónika Szőts	5	1	0.0323
-2141	Neil Archibald	5	1	0.0323
-2142	John Reid	5	1	0.0323
-2143	Callum Duncan	5	1	0.0323
-2144	Anna Richardson	5	1	0.0323
-2145	James B Lilleker	5	1	0.0323
-2146	Karin Abeler	5	1	0.0323
-2147	Young-Hee Shin	5	1	0.0323
-2148	Wim G.M. Spliet	2	2	0.2843
-2149	Damian Stichel	3	1	0.1667
-2150	Andrey Korshunov	3	1	0.1667
-2151	Felix Sahm	3	1	0.1667
-2152	Annika Sattler	1	2	2.0
-2153	Frederike L. Harms	2	1	0.0233
-2154	Elena Parrini	2	1	0.0233
-2155	Martino Montomoli	2	1	0.0233
-2156	Ulrike Mütze	2	1	0.0233
-2157	Katherine L. Helbig	2	1	0.0233
-2158	Beate Albrecht	2	1	0.0233
-2159	Ulrich Bernbeck	2	1	0.0233
-2160	Ellen van Binsbergen	2	1	0.0233
-2161	Saskia Biskup	2	1	0.0233
-2162	Lydie Bürglen	2	1	0.0233
-2163	Jonas Denecke	2	1	0.0233
-2164	Bénédicte Héron	2	1	0.0233
-2165	Henrike Heyne	2	1	0.0233
-2166	Georg F. Hoffmann	2	1	0.0233
-2167	Takeshi Matsushige	2	1	0.0233
-2168	Ryuki Matsuura	2	1	0.0233
-2169	Mitsuhiro Kato	2	1	0.0233
-2170	Georg Christoph Korenke	2	1	0.0233
-2171	Alma Kuechler	2	1	0.0233
-2172	Constanze Lämmer	2	1	0.0233
-2173	Cyril Mignot	2	1	0.0233
-2174	Mitsuko Nakashima	2	1	0.0233
-2175	Hirotomo Saitsu	2	1	0.0233
-2176	Hannah Stamberger	2	1	0.0233
-2177	Jun Tohyama	2	1	0.0233
-2178	Wendy Werckx	2	1	0.0233
-2179	Julia Wickert	2	1	0.0233
-2180	Francesco Mari	2	1	0.0233
-2181	Bobby P.C. Koeleman	2	3	0.0754
-2182	Naomichi Matsumoto	2	1	0.0233
-2183	Kerstin Kutsche	2	1	0.0233
-2184	Angelica Staniloiu	10	2	0.8333
-2185	Sabine Borsutzky	10	1	0.3333
-2186	Christine Steinkroeger	10	1	1.0
-2187	Elisabeth Schmitter	1	1	0.6667
-2188	Heike Elsner	1	1	0.8571
-2189	Margherita Nosadini	5	1	0.1429
-2190	Irene Toldo	5	1	0.1429
-2191	Benedetta Tascini	5	1	0.1429
-2192	Lucio Parmeggiani	5	1	0.1429
-2193	Piera De Gaspari	5	1	0.1429
-2194	Stefano Sartori	5	1	0.1429
-2195	Georg Classen	1	1	1.0
-2196	Catherine Classen	1	1	0.3333
-2197	Corrado Bernasconi	1	1	0.3333
-2198	Andrew Chan	1	1	0.3333
-2199	Andrea Klang	5	2	0.2429
-2200	Peter Schmidt	5	1	0.1
-2201	Sibylle Kneissl	5	2	0.2429
-2202	Zoltán Bagó	5	1	0.1
-2203	Teresa C. Moloney	5	1	0.1
-2204	Péter Halász	5	1	0.1
-2205	Ákos Pákozdy	5	2	0.2429
-2206	P. Muhr	5	1	0.5
-2207	U. Goldammer	5	1	0.5
-2208	E. Sindern	5	1	0.5
-2209	David Eckert	5	1	0.1667
-2210	Christoph Reichert	5	1	0.1667
-2211	Leon Y. Deouell	5	1	0.1667
-2212	Amelie Nikstat	5	1	1.0
-2213	Oliver Koch	5	1	1.0
-2214	Lars Rothe	5	1	0.2
-2215	Almut Hübenthal	4	1	1.0
-2216	Markus Glatzel	4	1	1.0
-2217	A. Aldenkamp	1	1	0.0667
-2218	G.A. Baker	1	1	0.0667
-2219	Candice E. Crocker	1	1	0.0667
-2220	Marilyn Jones‐Gotman	1	1	0.0667
-2221	Andrey M. Mazarati	1	1	0.0667
-2222	Mary-Lou Smith	1	1	0.0667
-2223	Antonina Omisade	1	1	0.0667
-2224	José Francisco Téllez‐Zenteno	1	1	0.0667
-2225	Bruce P. Hermann	1	2	0.0894
-2226	Kim I. Bishop	2	1	0.1111
-2227	Peter Κ. Isquith	2	1	0.1111
-2228	Gérard A. Gioia	2	1	0.1111
-2229	Cathrin Rohleder	5	1	0.2
-2230	Juliane K. Mueller	5	1	0.2
-2231	Dagmar Koethe	5	1	0.2
-2232	F. Markus Leweke	5	1	0.2
-2233	Stéphane Auvin	1	1	0.3333
-2234	Rob McMurray	1	1	0.3333
-2235	Anand M. Iyer	2	1	0.1176
-2236	Jackelien van Scheppingen	2	1	0.1176
-2237	Jasper J. Anink	2	1	0.1176
-2238	Tim J. Veersema	2	1	0.1176
-2239	Wim Van Hecke	2	1	0.1176
-2240	Figen Söylemezoğlu	2	1	0.1176
-2241	Josef Zámečnı́k	2	1	0.1176
-2242	Sabine Brückner	1	1	0.5
-2243	Martin T. Lutz	1	1	0.5
-2244	Christoph Reichel	1	1	0.1429
-2245	Kay Nolte	5	1	0.1
-2246	Sonja Trepels‐Kottek	5	1	0.1
-2247	D Honnef	5	1	0.1
-2248	Joachim Weis	5	1	0.1
-2249	Klaus Ritter	5	1	0.1
-2250	Birgit Czermin	5	1	0.1
-2251	Sabine Rudnik–Schöneborn	5	1	0.1
-2252	Norbert Wagner	5	1	0.1
-2253	Jorge Plümer	4	1	1.0
-2254	Isabell Greeve	4	1	1.0
-2255	Martin Krenn	2	1	0.2
-2256	Alexej Knaus	2	1	0.2
-2257	Dominik S. Westphal	2	1	0.2
-2258	Felix Distelmaier	2	2	0.25
-2259	Ervin Durovic	5	1	0.3333
-2260	Ramy Abdelnaby	3	1	0.0833
-2261	Anas Elgenidy	3	1	0.0833
-2262	Jan Heckelmann	3	1	0.0833
-2263	Mahmoud Mostafa Bedewy	3	1	0.0833
-2264	Ahmed Samy Shabib	3	1	0.0833
-2265	Mohamed A. Ebrahim	3	1	0.0833
-2266	Khaled A Elmenawi	3	1	0.0833
-2267	Imene Maallem	3	1	0.0833
-2268	Merna Wagih Youssef	3	1	0.0833
-2269	Abdelrahman M. Attia	3	1	0.0833
-2270	Mostafa Hossam El Din Moawad	3	1	0.0833
-2271	Khaled Ashraf Mohamed	3	1	0.0833
-2272	J.‐C. Schoene‐Bake	5	1	0.1
-2273	K.-P. Wandinger	5	1	0.1
-2274	Winfried Stoecker	5	1	0.1
-2275	A V Vincent	5	1	0.1
-2276	Michael Rademacher	1	1	0.1429
-2277	Peter Dedeken	1	2	0.2429
-2278	Klaus Eckhardt	1	1	0.1429
-2279	Frank Tennigkeit	1	1	0.1429
-2280	Marc De Backer	1	1	0.1429
-2281	Annika Lehner	3	1	0.1538
-2282	Friedrich Paulsen	3	1	0.1538
-2283	Renato Frischknecht	3	1	0.1538
-2284	W Höfer	3	1	0.1538
-2285	Lea‐Marie Reisch	3	1	1.0
-2286	Jan Nový	5	1	0.2
-2287	Gilles Allenbach	5	1	0.2
-2288	Éric Guedj	5	1	0.2
-2289	John O. Prior	5	1	0.2
-2290	Bo Martin Bibby	8	1	0.1
-2291	Pietro Mattioli	3	1	0.1667
-2292	Evy Cleeren	3	1	0.1667
-2293	Levente Hadady	3	1	0.1667
-2294	Alberto Cossu	3	1	0.1667
-2295	Dario Arnaldi	3	1	0.1667
-2296	Janis R. Bedarf	5	1	0.25
-2297	Milena Marek	5	1	0.25
-2298	S. Paus	5	1	0.25
-2299	Christian Rauscher	2	1	0.05
-2300	Jörgen Bierau	2	1	0.05
-2301	Karlien L. M. Coene	2	1	0.05
-2302	Ingrid Bader	2	1	0.05
-2303	Monika Holzhacker	2	1	0.05
-2304	Hanka Venselaar	2	1	0.05
-2305	Ron A. Wevers	2	1	0.05
-2306	Cornelia Betzler	2	1	0.05
-2307	Wolfgang Sperl	2	1	0.05
-2308	Ivanka Savić	10	1	0.3333
-2309	Avi Gadoth	5	1	0.1111
-2310	Jenny Linnoila	5	1	0.1111
-2311	Andrew McKeon	5	1	0.1111
-2312	Xiaoqiu Shao	5	1	0.1111
-2313	Viviana Venegas	5	1	0.1111
-2314	Fritjof Reinhardt	1	1	0.1
-2315	Frank Kühn	1	1	0.1
-2316	Kathleen Isensee	1	1	0.1
-2317	Francisco C. Ramirez	1	1	0.1
-2318	Thomas Lauterbach	1	1	0.1
-2319	Matthias Noack‐Rink	1	1	0.1
-2320	Ian Miller	2	2	0.0911
-2321	Arun Mistry	2	1	0.0526
-2322	Wyman W. Lai	2	1	0.0526
-2323	Franz X. Mittermaier	3	1	0.1538
-2324	Ran Xu	3	1	0.1538
-2325	Katharina Faust	3	1	0.1538
-2326	Ulrich W. Thomale	3	1	0.1538
-2327	Angela M. Kaindl	3	1	0.1538
-2328	Sabine Grosser	3	1	0.1538
-2329	Pawel Fidzinski	3	1	0.1538
-2330	Henrik Alle	3	1	0.1538
-2331	Jörg R. P. Geiger	3	1	0.1538
-2332	Takafumi Shiganami	1	1	0.3333
-2333	Sayaka Kobayashi	1	1	0.3333
-2334	Axel Mayer	1	1	0.3333
-2335	Denny Kerkhoff	1	1	0.3333
-2336	Dorothée G.A. Kasteleijn- Nolst Trenité	10	1	0.0227
-2337	Diéter Janz	10	1	0.0227
-2338	Antonio V. Delgado‐Escueta	10	1	0.0227
-2339	Pierre Thomas	10	1	0.0227
-2340	Carol Camfield	10	1	0.0227
-2341	Iris E. Martínez‐Juárez	10	1	0.0227
-2342	Reyna M. Durón	10	1	0.0227
-2343	Marco T. Medina	10	1	0.0227
-2344	Judith Jerney	10	1	0.0227
-2345	Elza Márcia Targas Yacubian	10	1	0.0227
-2346	Michael Koutroumanidis	10	1	0.0227
-2347	Javier Salas‐Puig	10	1	0.0227
-2348	Michelle Bureau	10	1	0.0227
-2349	Philippe Gélisse	10	1	0.0227
-2350	C. Gurses	10	1	0.0227
-2351	Arielle Crespel	10	1	0.0227
-2352	Vi Huong Nguyen-Michel	10	1	0.0227
-2353	Edoardo Ferlazzo	10	1	0.0227
-2354	Thierry Grisar	10	1	0.0227
-2355	Ingo Helbig	2	2	0.0521
-2356	Michael Trimble	10	1	0.0227
-2357	Russel Buono	10	1	0.0227
-2358	Patrick Cossette	10	1	0.0227
-2359	Alfonso Represa	10	1	0.0227
-2360	Charlotte Dravet	10	1	0.0227
-2361	Anna Serafini	10	1	0.0227
-2362	Ivanka Savic- Berglund	10	1	0.0227
-2363	Kazuhiro Yamakawa	10	1	0.0227
-2364	Melodie R. Winawer	2	1	0.1471
-2365	Hoon‐Chul Kang	2	1	0.1471
-2366	Laura Grisotto	2	1	0.1471
-2367	Barbora Heřmanovská	2	1	0.1471
-2368	Brenda E. Porter	2	1	0.1471
-2369	Hart G.W. Lidov	2	1	0.1471
-2370	Valentina Cetica	2	1	0.1471
-2371	Peter Canoll	2	1	0.1471
-2372	Ludovico D’Incerti	2	1	0.1471
-2373	Edward Yang	2	1	0.1471
-2374	Hannes Vogel	2	1	0.1471
-2375	Letizia Macconi	2	1	0.1471
-2376	Gerald A. Grant	2	1	0.1471
-2377	Lenka Krsková	2	1	0.1471
-2378	Hui Jin Shin	2	1	0.1471
-2379	Ara Ko	2	1	0.1471
-2380	Peter B. Crino	2	1	0.1471
-2381	Pavel Kršek	2	1	0.1471
-2382	Jeong Ho Lee	2	1	0.1471
-2383	Bernadette Gaida	5	1	0.0909
-2384	Irène Wang	5	1	0.0909
-2385	Julia Lange	5	1	0.0909
-2386	Alexander Dressel	5	1	0.0909
-2387	Matthias Grothe	5	1	0.0909
-2388	Christof Kessler	5	1	0.0909
-2389	Sönke Langner	5	1	0.0909
-2390	D Deuretzbacher	5	1	0.25
-2391	H.-J. Hagedorn	5	1	0.25
-2392	S Halve	5	1	0.25
-2393	Hanns Lohner	5	1	0.25
-2394	Rita Monotti	5	1	0.25
-2395	Stefan Presslauer	5	1	0.25
-2396	Sara Steffanoni	5	1	0.25
-2397	Katharina Stoeck	5	1	0.25
-2398	M. Strittmatter	5	1	0.25
-2399	Florian Stögbauer	5	1	0.25
-2400	Maria French	5	1	0.1429
-2401	Carolien G. F. de Kovel	2	1	0.0294
-2402	Bronwyn Kerr	2	1	0.0294
-2403	Allan Bayat	2	1	0.0294
-2404	Sonal Desai	2	1	0.0294
-2405	Sakkubai Naidu	2	1	0.0294
-2406	Siddharth Srivastava	2	1	0.0294
-2407	Hande Cagaylan	2	1	0.0294
-2408	Uluç Yiş	2	1	0.0294
-2409	Carol Saunders	2	1	0.0294
-2410	Martin B. Rook	2	1	0.0294
-2411	Susanna Plugge	2	1	0.0294
-2412	Vijayakumar Jayaraman	2	1	0.0294
-2413	Ramakrishnan Rajagopalan	2	1	0.0294
-2414	Eric D. Marsh	2	1	0.0294
-2415	Sudha Kilaru Kessler	2	1	0.0294
-2416	Christina Bergqvist	2	1	0.0294
-2417	Laura K. Conlin	2	1	0.0294
-2418	Bryan L. Krok	2	1	0.0294
-2419	Isabelle Thiffault	2	1	0.0294
-2420	Manuela Pendziwiat	2	1	0.0294
-2421	Marie-José van den Boogaardt	2	1	0.0294
-2422	Thomas Büttner	10	1	0.2857
-2423	Annette Thomas	10	1	0.2857
-2424	Benjamin Vlad	10	1	0.2857
-2425	Ilijas Jelčić	10	1	0.2857
-2426	Eva Wuerfel	5	1	0.25
-2427	Mark Woodhall	5	1	0.25
-2428	Johannes Jungilligens	10	1	0.2857
-2429	G. Gründer	9	1	0.0263
-2430	Hans‐Willi Clement	9	1	0.0263
-2431	Matthias J. Müller	9	1	0.0263
-2432	G Zurek	9	1	0.0263
-2433	Marcel Riehle	10	1	0.4286
-2434	Florian Baumgartner	10	1	0.4286
-2435	Stefan Pollmann	10	1	0.4286
-2436	Sophia Varadkar	5	1	0.125
-2437	Carol A. Kruse	5	1	0.125
-2438	Frances E. Jensen	5	1	0.125
-2439	Carlos A. Pardo	5	1	0.125
-2440	Felix Gövert	5	1	0.0345
-2441	Ligia Abrante	5	1	0.0345
-2442	Jos Becktepe	5	1	0.0345
-2443	Christos Ganos	5	1	0.0345
-2444	James Varley	5	1	0.0345
-2445	Sofija Paneva	5	1	0.0345
-2446	Juna M. de Vries	5	1	0.0345
-2447	Agnita J.W. Boon	5	1	0.0345
-2448	Marco W.J. Schreurs	5	1	0.0345
-2449	Bastien Joubert	5	1	0.0345
-2450	Alberto Vogrig	5	1	0.0345
-2451	Lídia Sabater	5	1	0.0345
-2452	Sangeeta Scotton	5	1	0.0345
-2453	Saiju Jacob	5	1	0.0345
-2454	Günther Deuschl	5	1	0.0345
-2455	Galal Banat	1	1	1.0
-2456	F. Petermann	1	1	0.6667
-2457	Jörn Rau	1	1	0.6667
-2458	Bernd Frerker	5	1	0.2
-2459	Steffen Müller	5	1	0.2
-2460	Sami Aboumatar	1	1	0.125
-2461	Fang Dong	1	1	0.125
-2462	Sarah Mizne	1	1	0.125
-2463	Stéphanie Graebenitz	8	1	0.2222
-2464	Manuela Cerina	8	1	0.2222
-2465	Jörg Lesting	8	1	0.2222
-2466	Olga Kedo	8	1	0.2222
-2467	Hans‐Christian Pape	8	1	0.2222
-2468	Michelina Bocchicchio	7	1	1.0
-2469	Annamaria Vezzani	5	1	0.5
-2470	Gerrit Haaker	1	1	0.0286
-2471	Johannes Schramm	1	1	0.0286
-2472	Johannes C. Baayen	1	1	0.0286
-2473	Matthew C. Walker	1	1	0.0286
-2474	H. J. Meencke	1	1	0.0286
-2475	Dieter Henrik Heiland	1	1	0.0286
-2476	Giorgio Lo Russo	1	1	0.0286
-2477	Silke Vogelgesang	1	1	0.0286
-2478	Adriana Ulate-Campos	1	1	0.0286
-2479	Elisabeth Härtl	1	1	0.0286
-2480	Martin Lutz	1	1	0.0286
-2481	Basilios Zountsas	1	1	0.0286
-2482	Kyriakos Garganis	1	1	0.0286
-2483	Felix Rosenow	1	1	0.0286
-2484	Thomas L. Diepgen	1	1	0.0286
-2485	G. Avanzini	1	1	0.0286
-2486	Helge Gebhardt	10	1	0.7143
-2487	Gebhard Sammer	10	1	0.7143
-2488	Vincent Badalamenti	1	1	0.25
-2489	Teresa Gasalla	1	1	0.25
-2490	Michael Duchowny	2	1	0.0385
-2491	Prasanna Jayakar	2	1	0.0385
-2492	Federico Melani	2	1	0.0385
-2493	Véronique André	2	1	0.0385
-2494	Carlos Cepeda	2	1	0.0385
-2495	Darcy A. Krueger	2	1	0.0385
-2496	Mirco Cosottini	2	1	0.0385
-2497	Jean Gotman	2	1	0.0385
-2498	Kristl Vonck	2	1	0.0385
+1	Olaf Schijns	0	6	0.4369
+2	Daniel Delev	8	4	0.2718
+3	Marec von Lehe	9	4	0.7101
+4	Dirk Van Roost	8	1	0.0263
+5	Karl Rössler	8	12	1.5998
+6	Tom Theys	8	2	0.0537
+7	Christian Auer	8	1	0.0263
+8	Thomas Blauwblomme	8	1	0.0263
+9	Marcelo Budke	8	1	0.0263
+10	Alexandre Rainha Campos	8	1	0.0263
+11	Santiago Candela Canto	8	1	0.0263
+12	Hans Clusmann	3	4	0.3059
+13	Christian Dorfer	8	1	0.0263
+14	Georg Dorfmüller	8	3	0.0882
+15	Arild Egge	8	1	0.0263
+16	Lóránd Erőss	8	1	0.0263
+17	Sarah Ferrand‐Sorbets	8	2	0.0608
+18	Flavio Giordano	6	4	0.1588
+19	Jürgen Honegger	8	1	0.0263
+20	Cihan İşler	8	1	0.0263
+21	Jugoslav Ivanović	8	1	0.0263
+22	Thilo Kalbhenn	8	25	25.0
+23	Atte Karppinen	8	1	0.0263
+24	Niklaus Krayenbühl	8	3	0.1809
+25	Rick H.G.J. van Lanen	8	1	0.0263
+26	Carlo Efisio Marras	8	1	0.0263
+27	Ioannis N. Mavridis	8	1	0.0263
+28	Daniel Nilsson	8	1	0.0263
+29	Julia Onken	8	4	0.3348
+30	Christian Raftopoulos	8	2	0.0698
+31	Jonathan Roth	8	1	0.0263
+32	Jordi Rumià	8	3	0.0954
+33	Thomas Sauvigny	8	4	0.3348
+34	Didier Scavarda	8	1	0.0263
+35	Karl Schaller	8	1	0.0263
+36	Christian Scheiwe	8	2	0.0537
+37	Sophie Schuind	8	1	0.0263
+38	Alexandra Seromenho-Santos	8	1	0.0263
+39	Konstantinos Fountas	8	1	0.0263
+40	Anna Doll	5	4	4.0
+41	Martin Wegrzyn	5	10	6.0836
+42	Friedrich G. Woermann	5	75	75.0
+43	Kirsten Labudda	5	27	27.0
+44	Christian G. Bien	3	191	181.7409
+45	Johanna Kißler	5	11	6.6071
+46	Bastian David	5	1	0.0588
+47	Judith Kröll‐Seger	5	1	0.0588
+48	Fabiane Schuch	5	1	0.0588
+49	Jan Wagner	3	3	0.1444
+50	Jörg Wellmer	3	8	1.0076
+51	Bernhard Oehl	5	1	0.0588
+52	Wim Van Paesschen	7	3	0.1529
+53	Tobias Breyer	5	2	0.281
+54	Albert J. Becker	3	10	0.9436
+55	Hartmut Vatter	5	2	0.1699
+56	Elke Hattingen	5	1	0.0588
+57	Horst Urbach	3	10	1.5236
+58	Bernd Weber	5	1	0.0588
+59	Rainer Surges	3	14	1.2423
+60	Christian E. Elger	3	18	3.7309
+61	Hans‐Jürgen Huppertz	6	3	0.4508
+62	Theodor Rüber	5	4	0.0994
+63	Alaa Eldin Elsharkawy	0	5	5.0
+64	Rupprecht Thorbecke	9	7	7.0
+65	Alois Ebner	0	22	22.0
+66	Theodor W. May	9	62	62.0
+67	Robert Hoepner	9	6	5.1667
+68	Matthias Hoppe	0	6	6.0
+69	Martin Schoendienst	7	7	7.0
+70	Reinhard Schulz	0	19	19.0
+71	Maria Tomka-Hoffmeister	0	5	5.0
+72	Christian Brandt	7	77	75.0
+73	Mustafa Aykut Kural	0	3	0.5861
+74	Hatice Tankişi	0	2	0.2111
+75	Lene Duez	0	2	0.2111
+76	Vibeke Sejer Hansen	0	2	0.2111
+77	Aparna Udupi	0	1	0.1111
+78	Richard Wennberg	0	2	0.2111
+79	Stefan Rampp	0	4	0.5922
+80	Pål G. Larsson	0	2	0.2111
+81	Sándor Beniczky	0	5	1.0861
+82	Johannes Schurr	8	1	0.2381
+83	Roland Coras	8	12	3.0838
+84	Tom Pieper	8	10	1.3502
+85	Manfred Kudernatsch	8	6	0.8012
+86	Hans Holthausen	8	2	0.2667
+87	Peter Winkler	8	2	0.2667
+88	Tilman Polster	6	65	63.9915
+89	Thomas Grünwald	3	5	0.6607
+90	António Gil‐Nagel	6	6	0.6421
+91	Rafael Toledano	8	4	0.4845
+92	Martha Feucht	6	8	0.9454
+93	Angelika Mühlebner	6	5	0.7415
+94	Thomas Czech	6	2	0.3919
+95	Ingmar Blümcke	8	22	7.3009
+96	Marco Mula	7	4	1.7167
+97	Christine Strippel	3	4	0.1618
+98	Marisol Herrera-Rivero	3	1	0.0132
+99	Mareike Wendorff	3	1	0.0132
+100	Anja Tietz	3	2	0.0274
+101	Frauke Degenhardt	3	1	0.0132
+102	Anika Witten	3	1	0.0132
+103	Christina B. Schroeter	3	1	0.0132
+104	Christopher Nelke	3	2	0.0264
+105	Kristin S. Golombeck	3	3	0.3609
+106	Marie Madlener	3	3	0.0512
+107	Leon Ernst	3	1	0.0132
+108	Áttila Rácz	8	3	0.2628
+109	Tobias Baumgartner	3	2	0.1344
+110	Guido Widman	3	4	0.1455
+111	Kathrin Doppler	3	4	0.0644
+112	Franziska S. Thaler	3	5	0.1044
+113	Kai Siebenbrodt	3	3	0.0406
+114	Andre Dik	3	3	0.0406
+115	Constanze Kerin	3	3	0.0406
+116	Saskia Räuber	3	3	0.0406
+117	Marco Gallus	3	3	0.0406
+118	Stjepana Kovac	3	4	0.1618
+119	Oliver Grauer	3	3	0.0406
+120	Alexander Grimm	3	1	0.0132
+121	Harald Prüß	3	8	0.2473
+122	Jonathan Wickel	3	3	0.0406
+123	Christian Geis	3	6	0.1989
+124	Jan Lewerenz	8	9	0.6603
+125	Norbert Goebels	3	1	0.0132
+126	Marius Ringelstein	3	5	0.1044
+127	Til Menge	3	4	0.0644
+128	Björn Tackenberg	3	1	0.0132
+129	Christoph Kellinghaus	9	8	0.3418
+130	Andrea Kraft	3	5	0.1044
+131	Uwe K. Zettl	3	3	0.077
+132	Fatme Seval Ismail	3	6	0.6374
+133	Ilya Ayzenberg	3	4	0.1358
+134	Christian Urbanek	3	4	0.0644
+135	Kurt‐Wolfram Sühs	3	5	0.1044
+136	Simone C. Tauber	3	5	0.0785
+137	Sigrid Mues	3	4	0.0644
+138	Peter Körtvélyessy	3	2	0.0264
+139	Robert Markewitz	3	1	0.0132
+140	Asterios Paliantonis	3	2	0.037
+141	Claudia Sommer	3	3	0.0406
+142	Tania Kümpfel	3	2	0.0532
+143	Catharina C. Groß	3	3	0.0406
+144	Holger Lerche	7	8	0.6949
+145	Carlos Martínez Quesada	3	3	0.2274
+146	Florian Then Bergh	3	5	0.1044
+147	Klaus‐Peter Wandinger	3	7	0.3417
+148	Wolfram S. Kunz	8	3	0.3868
+149	Gerd Meyer zu Hörste	3	3	0.0406
+150	Michael P. Malter	3	11	0.7074
+151	Felix Rosenow	9	23	2.0799
+152	Heinz Wiendl	3	5	0.6056
+153	Gregor Kuhlenbäumer	3	3	0.0674
+154	Frank Leypoldt	3	10	0.5037
+155	Wolfgang Lieb	3	2	0.0532
+156	André Franke	3	1	0.0132
+157	Sven G. Meuth	3	3	0.0406
+158	Monika Stoll	3	1	0.0132
+159	Nico Melzer	3	11	1.0958
+160	Michael Adelmann	3	2	0.0274
+161	Luise Appeltshauser	3	2	0.0274
+162	Carolin Baade‐Büttner	3	2	0.0274
+163	Andreas van Baalen	3	4	0.2107
+164	Sebastian Baatz	3	2	0.0274
+165	Bettina Balint	3	3	0.0618
+166	Sebastian Bauer	0	5	0.2899
+167	Annette Baumgärtner	3	3	0.0988
+168	Sonka Benesch	3	2	0.0274
+169	R. Berger	3	1	0.0132
+170	Sascha Berning	3	2	0.0274
+171	Sarah Bernsen	3	2	0.0274
+172	Corinna I. Bien	3	12	5.6745
+173	Andreas Binder	3	2	0.0274
+174	Stefan Bittner	3	2	0.0274
+175	Daniel Bittner	3	2	0.0274
+176	Franz Blaes	3	2	0.0274
+177	Astrid Blaschek	3	2	0.0274
+178	Justina Dargvainiene	5	3	0.4274
+179	Julia Maren Decker	3	2	0.0274
+180	Mona Dreesmann	3	2	0.0274
+181	Friedrich Ebinger	3	2	0.0274
+182	Lena Edelhoff	3	2	0.0274
+183	Sven Ehrlich	3	3	0.0674
+184	Katharina Eisenhut	3	2	0.0274
+185	Dominique Endres	3	2	0.0274
+186	Marina Entscheva	3	2	0.0274
+187	Jürgen Faiss	3	3	0.0674
+188	Kim Kristin Falk	3	2	0.0274
+189	Walid Fazeli	6	3	0.0486
+190	Alexander Finke	3	3	0.0512
+191	Carsten Finke	3	2	0.0274
+192	Dirk Fitzner	3	2	0.0274
+193	Marina Flotats‐Bastardas	3	2	0.0274
+194	Mathias Fousse	3	2	0.0274
+195	Friedemann Paul	3	2	0.0274
+196	Manuel A. Friese	3	2	0.0274
+197	M. M. Gebhard	3	2	0.0274
+198	Clemens Goedel	3	1	0.0132
+199	Anna Gorsler	3	2	0.0274
+200	Armin Grau	3	2	0.0274
+201	Halime Gül	3	1	0.0132
+202	Chung Ha-Yeun	3	2	0.0274
+203	Aiden Haghikia	3	2	0.0274
+204	Robert Handreka	3	4	0.0912
+205	Niels Hansen	3	2	0.0274
+206	Martin Häusler	3	5	0.2421
+207	Joachim Havla	3	2	0.0274
+208	Wolfgang Heide	3	2	0.0274
+209	Valentin Held	3	2	0.0274
+210	Kerstin Hellwig	3	3	0.0512
+211	Philip Hillebrand	3	2	0.0274
+212	Frank Hoffmann	3	2	0.0274
+213	Anna Hoffmann	3	1	0.0132
+214	Ulrich Hofstadt‐van Oy	3	3	0.0618
+215	Peter Huppke	3	3	0.1385
+216	Martina Jansen	3	2	0.0274
+217	Aleksandra Juranek	3	2	0.0274
+218	Michael Karenfort	6	4	0.2862
+219	Max Kaufmann	3	4	0.0912
+220	Susanne Knake	9	4	0.1829
+221	Markus Krämer	3	2	0.0274
+222	Christos Krogias	3	4	0.1571
+223	Tanja Kümpfel	3	2	0.0274
+224	Christoph Lehrich	3	2	0.0274
+225	Andeas Linsa	3	2	0.0274
+226	Jan D. Lünemann	3	2	0.0274
+227	Monika Meister	3	2	0.0274
+228	Kristin Stefanie Melzer	3	2	0.0274
+229	Marie‐Luise Mono	3	2	0.0274
+230	Michael Nagel	3	1	0.0132
+231	Tobias Neumann‐Haefelin	3	1	0.0132
+232	Jost Obrocki	3	2	0.0274
+233	Loana Penner	3	2	0.0274
+234	Lena Kristina Pfeffer	3	2	0.0274
+235	Thomas Pfefferkorn	3	2	0.0274
+236	Alexandra Philipsen	3	2	0.0274
+237	Johannes Piepgras	3	2	0.0274
+238	Felix von Poderwils	3	2	0.0274
+239	Josef Priller	3	2	0.0274
+240	Anne‐Katrin Pröbstel	3	2	0.0274
+241	Johanna Maria Helena Rau	3	3	0.0415
+242	Gernot Reimann	3	3	0.0512
+243	Raphael Reinecke	3	2	0.0274
+244	Hendrik Rohner	3	1	0.0132
+245	Kevin Rostásy	3	6	0.1627
+246	Stephan Rüegg	9	4	0.2092
+247	Jens Schaumberg	3	2	0.0274
+248	Ruth Schilling	3	2	0.0274
+249	Mareike Schimmel	3	4	0.6812
+250	Jens Schmidt	3	2	0.0274
+251	Ina-Isabelle Schmütz	3	2	0.0274
+252	Stephan J. Schreiber	3	2	0.0274
+253	Gesa Schreyer	3	2	0.0274
+254	Ina Schröder	3	2	0.0274
+255	Christina Schröter	3	1	0.0132
+256	S. Schuster	3	2	0.0274
+257	G Seidel	3	2	0.0274
+258	Makbule Şenel	3	2	0.0274
+259	Oliver Stammel	3	2	0.0274
+260	Martin Stangel	3	1	0.0132
+261	Henning Stolze	3	2	0.0274
+262	Muriel Stoppe	3	2	0.0274
+263	Karin Storm van’s Gravesande	3	1	0.0132
+264	Dietrich Sturm	3	2	0.0274
+265	Steffen Syrbe	6	8	0.5128
+266	Malte Teußer	3	1	0.0132
+267	Corinna Trebst	3	2	0.0274
+268	George Trendelenburg	3	2	0.0274
+269	Regina Trollmann	6	11	0.5816
+270	Hayrettin Tumani	8	3	0.694
+271	Methab Türedi	3	1	0.0132
+272	Niklas Vogel	3	2	0.0274
+273	Matthias von Mering	3	2	0.0274
+274	Judith Wagner	3	2	0.0274
+275	Robert Weissert	3	2	0.0274
+276	Brigitte Wildemann	3	3	0.0512
+277	Karsten Witt	3	3	0.1385
+278	Benjamin Wunderlich	3	1	0.0132
+279	Lara Zieger	3	2	0.0274
+280	Steffi Koch‐Stoecker	9	4	4.0
+281	Ulrich Specht	9	10	10.0
+282	Markus Mertens	5	13	13.0
+283	József Janszky	0	6	6.0
+284	Philip Grewe	3	16	16.0
+285	Christoph Siedersleben	3	1	1.0
+286	Vanda Tóth	0	2	0.9333
+287	András Fogarasi	0	4	2.3504
+288	Kázmér Karádi	0	1	0.6
+289	Norbert Kovács	0	4	1.8619
+290	B. Rambeck	9	5	5.0
+291	Helga Ottenottebrock	9	2	2.0
+292	Rainer Valentin	9	2	1.3077
+293	Lars Rothe	3	1	0.2
+294	Lorenz B. Dehn	9	2	2.0
+295	Margarete Pfäfflin	9	20	17.0317
+296	Sabine Brückner	9	1	0.5
+297	Martin T. Lutz	9	1	0.5
+298	Bernhard J. Steinhoff	7	15	2.2685
+299	Patrick May	9	18	2.6967
+300	Fridtjof W. Nußbeck	9	3	2.5
+301	Martin Holtkamp	3	11	3.9068
+302	Anna R. Tröscher	3	6	0.844
+303	Isabella Wimmer	3	2	0.254
+304	Lucía Quemada-Garrido	3	2	0.254
+305	Ulrike Köck	3	3	0.4333
+306	Denise Gessl	3	1	0.1111
+307	Sanne G. S. Verberk	3	1	0.1111
+308	Bethany Martin	3	1	0.1111
+309	Hans Lassmann	3	3	0.379
+310	Jan Bauer	3	15	5.6087
+311	Bo Martin Bibby	0	1	0.1
+312	Michael Scherg	0	2	0.475
+313	Michael Rademacher	7	1	0.1429
+314	Sami Elmoufti	7	4	0.7095
+315	Peter Dedeken	7	2	0.2429
+316	Klaus Eckhardt	7	1	0.1429
+317	Frank Tennigkeit	7	1	0.1429
+318	Marc De Backer	7	1	0.1429
+319	C. Frisch	3	2	0.2429
+320	J.‐C. Schoene‐Bake	3	1	0.1
+321	Christoph Helmstaedter	9	8	1.2408
+322	K.-P. Wandinger	3	1	0.1
+323	Winfried Stoecker	3	1	0.1
+324	A V Vincent	3	1	0.1
+325	Stoyan Popkirov	3	3	0.581
+326	Wenke Grönheit	3	1	0.2
+327	Monika Kapauer	3	1	0.2
+328	Elisa Musto	6	1	0.0213
+329	Vivian W. Y. Liao	6	1	0.0213
+330	Katrine M. Johannesen	6	1	0.0213
+331	Christina Fenger	6	1	0.0213
+332	Damien Lederer	6	1	0.0213
+333	Kavitha Kothur	6	1	0.0213
+334	Katrina Fisk	6	1	0.0213
+335	Bruce Bennetts	6	1	0.0213
+336	Pascal Vrielynck	6	1	0.0213
+337	Delphine Delaby	6	1	0.0213
+338	Berten Ceulemans	6	4	0.1994
+339	Sarah Weckhuysen	9	4	0.2219
+340	Peter Sparber	6	1	0.0213
+341	Arjan Bouman	6	1	0.0213
+342	Simone Ardern‐Holmes	6	1	0.0213
+343	Christopher Troedson	6	1	0.0213
+344	Domenica Battaglia	6	2	0.0445
+345	Himanshu Goel	6	1	0.0213
+346	Timothy Feyma	6	1	0.0213
+347	Somayeh Bakhtiari	6	1	0.0213
+348	Linda Tjoa	6	1	0.0213
+349	Martin Faber Boxill	6	1	0.0213
+350	Nina Demina	6	1	0.0213
+351	Olga Shchagina	6	1	0.0213
+352	Е. Л. Дадали	6	1	0.0213
+353	Michael C. Kruer	6	2	0.0902
+354	Gaetano Cantalupo	6	1	0.0213
+355	Ilaria Contaldo	6	1	0.0213
+356	Bertrand Isidor	6	2	0.0558
+357	Stefania Maria Bova	6	1	0.0213
+358	Leen Wouters	6	1	0.0213
+359	María J. Miranda	6	1	0.0213
+360	Francesca Darra	6	2	0.1122
+361	Elisa Pede	6	1	0.0213
+362	Diana Le Duc	6	1	0.0213
+363	Rami Abou Jamra	7	6	2.1572
+364	Sébastien Küry	6	1	0.0213
+365	Jacopo Proietti	6	1	0.0213
+366	Niamh McSweeney	6	1	0.0213
+367	Elly Brokamp	6	1	0.0213
+368	P. Ian Andrews	6	1	0.0213
+369	Marie Gouray Garcia	6	1	0.0213
+370	Mary Chebib	6	1	0.0213
+371	Rikke S. Møller	6	5	0.164
+372	Philip K. Ahring	6	1	0.0213
+373	Elena Gardella	6	1	0.0213
+374	Jonas Honke	8	1	0.2273
+375	Lucas Hoffmann	8	5	0.699
+376	Katja Kobow	8	8	1.1808
+377	Costin Leu	8	4	0.5451
+378	Till Hartlieb	8	7	0.91
+379	Thomas Cloppenborg	8	18	18.0
+380	Ahmed Gaballa	8	4	4.0
+381	Hajo M. Hamer	8	20	2.6276
+382	Sebastian Brandner	8	5	0.7192
+383	Arnd Dörfler	8	1	0.2273
+384	Johannes R. Lemke	6	5	0.4394
+385	Sara Baldassari	8	4	0.4997
+386	Stéphanie Baulac	8	4	0.4997
+387	Dennis Lal	8	5	0.6922
+388	Peter Nürnberg	8	4	0.5451
+389	Kim Boshuisen	6	2	0.2917
+390	Alexis Arzimanoglou	6	4	0.3476
+391	J. Helen Cross	6	12	0.9297
+392	Cuno S.P.M. Uiterwaal	6	2	0.2917
+393	Onno van Nieuwenhuizen	6	1	0.1667
+394	Kees P. J. Braun	6	7	1.2498
+395	Louisa Hohmann	3	2	1.3333
+396	Klaus Korn	8	1	0.25
+397	Johannes Giedl	8	1	0.25
+398	Bernhard Fleckenstein	8	1	0.25
+399	László Hejjel	0	1	0.3333
+400	Csilla Gyimesi	0	5	5.0
+401	Gergely Orsi	0	1	0.3333
+402	Anna Szũcs	0	1	0.3333
+403	Sámuel Komoly	0	2	0.5476
+404	Izumi Kuramochi	9	2	1.2222
+405	Takayuki Iwayama	9	2	1.0222
+406	Haruo Yoshimasu	9	2	1.0222
+407	Anne Hagemann	9	19	19.0
+408	Adam Strzelczyk	6	20	2.2017
+409	Milka Pringsheim	6	3	0.2652
+410	Kerstin Alexandra Klotz	6	3	0.1818
+411	Hiltrud Muhle	6	4	0.1727
+412	Michael Alber	6	1	0.0909
+413	Hartwig Spors	6	1	0.0909
+414	Gerhard Kluger	6	11	0.7804
+415	Gerhard Kurlemann	6	12	0.9077
+416	Susanne Schubert‐Bast	6	10	0.7857
+417	Angela Vincent	3	10	2.1205
+418	Simon Borghs	7	2	0.45
+419	Knut Mueller	7	1	0.2
+420	Rebecca Townsend	7	1	0.2
+421	Christine de la Loge	7	1	0.2
+422	Christina Herold	0	1	0.3333
+423	Hans‐Jürgen Bidmon	0	1	0.3333
+424	Heinz Pannek	0	10	10.0
+425	Volkmar Hans	0	4	4.0
+426	Ali Gorji	0	2	0.5556
+427	Erwin‐Josef Speckmann	0	2	0.5556
+428	Karl Zilles	0	2	0.5556
+429	Bernd Huber	1	3	0.0
+430	Gaby Schmid	2	1	0.0
+431	Sonja Braig	3	1	0.5
+432	Ingo Borggraefe	6	5	0.304
+433	Michaela Bonfert	9	3	0.1635
+434	Thomas Bast	6	15	1.1744
+435	Bernd A. Neubauer	6	10	0.6744
+436	Klaus Juergen Schotten	9	1	0.1111
+437	Kai Lars Maßmann	9	1	0.1111
+438	Soheyl Noachtar	0	5	0.4459
+439	Ingrid Tuxhorn	9	1	0.1111
+440	Florian Heinen	9	3	0.1635
+441	Carmen Barba	6	6	1.2861
+442	Melodie R. Winawer	6	1	0.1471
+443	Hoon‐Chul Kang	6	1	0.1471
+444	Laura Grisotto	6	1	0.1471
+445	Mathilde Chipaux	8	4	0.2998
+446	Barbora Heřmanovská	6	1	0.1471
+447	Brenda E. Porter	6	1	0.1471
+448	Hart G.W. Lidov	6	1	0.1471
+449	Valentina Cetica	6	1	0.1471
+450	Javier A. López-Rivera	8	3	0.374
+451	Peter Canoll	6	1	0.1471
+452	Irina Mader	3	2	0.2185
+453	Ludovico D’Incerti	6	1	0.1471
+454	Edward Yang	6	1	0.1471
+455	Hannes Vogel	6	1	0.1471
+456	Barbora Straka	6	2	0.1745
+457	Letizia Macconi	6	1	0.1471
+458	Gerald A. Grant	6	1	0.1471
+459	Lenka Krsková	6	1	0.1471
+460	Hui Jin Shin	6	1	0.1471
+461	Ara Ko	6	1	0.1471
+462	Peter B. Crino	6	1	0.1471
+463	Pavel Kršek	6	1	0.1471
+464	Jeong Ho Lee	6	1	0.1471
+465	Annapurna Poduri	6	2	0.1815
+466	Renzo Guerrini	6	11	0.6053
+467	Annemarie Hübers	8	2	0.3333
+468	Katharina Thoma	8	1	0.1667
+469	Michael Schocke	8	2	0.3333
+470	Susanne Fauser	8	17	17.0
+471	Albert C. Ludolph	8	5	1.2372
+472	Jan Kassubek	8	3	0.4048
+473	Elmar H. Pinkhardt	8	3	0.5833
+474	Isabel Wanke	0	1	0.2222
+475	Stefan Maderwald	0	1	0.2222
+476	Oliver Kraff	0	1	0.2222
+477	Jens Theysohn	0	1	0.2222
+478	Michael Forsting	0	1	0.2222
+479	Mark E. Ladd	0	1	0.2222
+480	Marc Schlamann	0	1	0.2222
+481	Laura M. McDonell	6	1	0.0345
+482	Ghayda Mirzaa	6	1	0.0345
+483	Diana Alcantara	6	1	0.0345
+484	Jeremy Schwartzentruber	6	1	0.0345
+485	Melissa T. Carter	6	1	0.0345
+486	Leo J. Lee	6	1	0.0345
+487	Carol L. Clericuzio	6	1	0.0345
+488	John M. Graham	6	1	0.0345
+489	Deborah J. Morris‐Rosendahl	6	1	0.0345
+490	Gyula Acsádi	6	1	0.0345
+491	Sharron Townshend	6	1	0.0345
+492	Simon Williams	6	1	0.0345
+493	Anne Halbert	6	1	0.0345
+494	Albert David	6	1	0.0345
+495	Christopher D. Smyser	6	1	0.0345
+496	Alex R. Paciorkowski	6	1	0.0345
+497	Marcia Willing	6	1	0.0345
+498	John Woulfe	6	1	0.0345
+499	Soma Das	6	1	0.0345
+500	Chandree L. Beaulieu	6	1	0.0345
+501	Janet Marcadier	6	1	0.0345
+502	Michael T. Geraghty	6	1	0.0345
+503	Brendan J. Frey	6	1	0.0345
+504	Jacek Majewski	6	1	0.0345
+505	Dennis E. Bulman	6	1	0.0345
+506	William B. Dobyns	6	3	0.0941
+507	Mark O’Driscoll	6	1	0.0345
+508	Kym M. Boycott	6	1	0.0345
+509	Henriette J. Tschampa	3	1	0.125
+510	Esther Nieder	9	2	2.0
+511	Karin Witte-Bölt	9	1	0.4
+512	Bernd Pohlmann‐Eden	7	4	1.9587
+513	Frithjof Tergau	9	2	0.4556
+514	Andreas Schulze‐Bonhage	9	11	1.9161
+515	Hans‐Beatus Straub	9	4	1.2095
+516	Stephan Arnold	7	2	0.5
+517	Pavel Klein	7	8	1.3607
+518	Vincent Badalamenti	7	1	0.25
+519	Teresa Gasalla	7	1	0.25
+520	John Whitesides	7	2	0.3929
+521	Lieven Lagae	6	3	0.1948
+522	Joseph Sullivan	6	5	0.3726
+523	Kelly G. Knupp	6	3	0.1781
+524	Linda Laux	6	2	0.1115
+525	Marina Nikanorova	7	3	0.4448
+526	Orrin Devinsky	6	3	0.1781
+527	Dinesh Talwar	6	3	0.1948
+528	Ian Miller	6	2	0.0911
+529	Gail Farfel	6	5	0.3726
+530	Bradley S. Galer	6	5	0.3726
+531	Arnold R. Gammaitoni	6	5	0.3968
+532	Arun Mistry	6	1	0.0526
+533	Glenn Morrison	6	2	0.136
+534	Michael Lock	6	4	0.2615
+535	Anupam Agarwal	6	4	0.2615
+536	Wyman W. Lai	6	1	0.0526
+537	Hartmut Baier	8	4	0.3609
+538	Frank Bösebeck	7	3	0.3234
+539	Melanie Franz	7	1	0.1429
+540	Mirjam Metzner	7	1	0.1429
+541	Stefan Stodieck	8	3	0.2974
+542	Yvonne G. Weber	8	6	0.6631
+543	Tilman Schneider‐Hohendorf	3	1	0.0714
+544	Hema Mohan	3	1	0.0714
+545	Judith Breuer	3	1	0.0714
+546	Dennis Görlich	3	1	0.0714
+547	Tanja Kuhlmann	3	1	0.0714
+548	Sebastian Herich	3	1	0.0714
+549	Christiane Elpers	3	1	0.0714
+550	Klaus Dornmair	3	1	0.0714
+551	Nicholas Schwab	3	1	0.0714
+552	Ingrid E. Scheffer	3	4	1.1685
+553	Gerda Zschebek	9	1	0.1
+554	Christoph Baumgartner	3	3	0.4917
+555	Martin Grond	9	1	0.1
+556	Anke Hermsen	9	2	0.1286
+557	Matthias Kieslich	6	7	0.459
+558	Günter Krämer	0	2	0.2
+559	Barbara Plecko	9	2	0.1833
+560	Philippe Ryvlin	9	2	0.1385
+561	Hermann Stefan	9	6	1.167
+562	Eugen Trinka	9	10	1.1571
+563	Carola Seifart	9	1	0.1
+564	I. Coban	9	3	3.0
+565	Annika Sattler	9	3	3.0
+566	Marion Schaefer	9	3	3.0
+567	Julia M. Nakagawa	8	1	0.1667
+568	Catharina Donkels	8	1	0.1667
+569	Marco Prinz	8	1	0.1667
+570	Josef Zentner	8	3	0.2861
+571	Carola A. Haas	8	1	0.1667
+572	Corinna Kramme	3	2	2.0
+573	Tillman Kaaden	3	1	0.0238
+574	Klemens Angstwurm	3	1	0.0238
+575	Yuri Bogarin	3	1	0.0238
+576	Stefan T. Gerner	3	1	0.0238
+577	Pèter Köertvelyessy	3	1	0.0238
+578	Felix von Podewils	3	7	0.6336
+579	Sebastian Rauer	3	3	0.1094
+580	Ingo Schirotzek	3	1	0.0238
+581	Julia Schwabe	3	1	0.0238
+582	Piotr Sokolowski	3	1	0.0238
+583	Marie Suesse	3	2	0.1147
+584	Klaus-P. Wandinger	3	1	0.0238
+585	Albrecht Kunze	8	2	0.0952
+586	M Häusler	3	1	0.0833
+587	Jurgis Strautmanis	3	1	0.0833
+588	S Vlaho	3	2	0.1422
+589	Boris Gebhardt	3	1	0.0833
+590	Axel Rohr	3	1	0.0833
+591	Angela Abicht	3	1	0.0833
+592	Ulrich Stephani	9	8	0.8918
+593	Christian Probst	3	2	0.1786
+594	Marcel Riehle	5	1	0.4286
+595	Florian Baumgartner	5	1	0.4286
+596	Stefan Pollmann	5	1	0.4286
+597	Christoph S. Dietze	8	1	1.0
+598	Lucy Ekosso‐Ejangue	8	1	0.75
+599	Carsten W. Israel	9	2	1.75
+600	Carolien G. F. de Kovel	6	1	0.0294
+601	Eva H. Brilstra	6	2	0.0639
+602	Nienke E. Verbeek	6	3	0.0872
+603	Bronwyn Kerr	6	1	0.0294
+604	Holly Dubbs	6	2	0.0658
+605	Allan Bayat	6	1	0.0294
+606	Sonal Desai	6	1	0.0294
+607	Sakkubai Naidu	6	1	0.0294
+608	Siddharth Srivastava	6	1	0.0294
+609	Hande Cagaylan	6	1	0.0294
+610	Uluç Yiş	6	1	0.0294
+611	Carol Saunders	6	1	0.0294
+612	Martin B. Rook	6	1	0.0294
+613	Susanna Plugge	6	1	0.0294
+614	Zaid Afawi	6	2	0.0557
+615	Karl Martin Klein	6	4	0.2906
+616	Vijayakumar Jayaraman	6	1	0.0294
+617	Ramakrishnan Rajagopalan	6	1	0.0294
+618	Ethan M. Goldberg	6	2	0.0658
+619	Eric D. Marsh	6	1	0.0294
+620	Sudha Kilaru Kessler	6	1	0.0294
+621	Christina Bergqvist	6	1	0.0294
+622	Laura K. Conlin	6	1	0.0294
+623	Bryan L. Krok	6	1	0.0294
+624	Isabelle Thiffault	6	1	0.0294
+625	Manuela Pendziwiat	6	1	0.0294
+626	Ingo Helbig	6	2	0.0521
+627	Marie-José van den Boogaardt	6	1	0.0294
+628	Bobby P.C. Koeleman	6	3	0.0754
+629	Bettina Schmitz	9	5	2.0227
+630	Andrés M. Kanner	9	2	0.5667
+631	Janis R. Bedarf	3	1	0.25
+632	Milena Marek	3	1	0.25
+633	S. Paus	3	1	0.25
+634	Jacqueline A. French	7	9	0.8721
+635	Gregory L. Krauss	7	4	0.5345
+636	Robert Wechsler	7	3	0.4095
+637	Xuefeng Wang	7	1	0.1
+638	Bree DiVentura	7	1	0.1
+639	Terence J. O’Brien	7	3	0.4095
+640	Antonio Laurenza	7	1	0.1
+641	Anna Patten	7	4	0.5762
+642	Francesco Bibbiani	7	1	0.1
+643	Stéphanie Graebenitz	0	1	0.2222
+644	Manuela Cerina	0	1	0.2222
+645	Jörg Lesting	0	1	0.2222
+646	Olga Kedo	0	1	0.2222
+647	Hans‐Christian Pape	0	1	0.2222
+648	Amelie Nikstat	3	1	1.0
+649	Oliver Koch	3	1	1.0
+650	Alexandra Kitzenmaier	6	1	0.1667
+651	Natascha Schaefer	6	1	0.1667
+652	Vikram Babu Kasaragod	6	1	0.1667
+653	Ralph Hantschmann	6	1	0.1667
+654	Hermann Schindelin	6	1	0.1667
+655	Carmen Villmann	6	2	0.1808
+656	Claude Steriade	3	3	0.3434
+657	Jeffrey W. Britton	3	2	0.2323
+658	Russell C. Dale	3	2	0.1481
+659	Avi Gadoth	3	1	0.1111
+660	Sarosh R. Irani	3	5	0.3361
+661	Jenny Linnoila	3	1	0.1111
+662	Andrew McKeon	3	1	0.1111
+663	Xiaoqiu Shao	3	1	0.1111
+664	Viviana Venegas	3	1	0.1111
+665	Ferdinand Nehls	5	1	0.2857
+666	Rainer Kollmar	5	1	0.2857
+667	Maria Weis	5	1	0.2857
+668	Wolfgang Steinke	5	1	0.2857
+669	Josep Dalmau	3	6	0.4489
+670	Mar Carreño	9	2	0.1845
+671	Ali A. Asadi‐Pooya	3	1	0.0417
+672	Michael R. Sperling	7	2	0.1845
+673	Petr Marusič	3	4	0.3569
+674	Martin Elišák	3	4	0.3695
+675	José Pimentel	3	3	0.0976
+676	Tim Wehner	3	4	0.2518
+677	Rajiv Mohanraj	3	1	0.0417
+678	Juan Rodríguez Uranga	3	2	0.0588
+679	Asier Gómez‐Ibáñez	3	1	0.0417
+680	Vicente Villanueva	7	4	0.2949
+681	Francisco Gil	3	1	0.0417
+682	Antonio Donaire	9	2	0.1845
+683	Núria Bargalló	3	1	0.0417
+684	Pedro Roldán	3	1	0.0417
+685	Xavier Setoaín	3	1	0.0417
+686	Luís Pintor	3	1	0.0417
+687	Teresa Boget	3	1	0.0417
+688	Eva Baillés	3	1	0.0417
+689	Mercé Falip	3	1	0.0417
+690	Javier Aparicio	8	2	0.2724
+691	Francesc Graus	3	4	0.3787
+692	Richard Drexler	8	2	0.1546
+693	Franz Ricklefs	8	2	0.1546
+694	Sharona Ben‐Haim	8	2	0.1546
+695	Anna Rada	3	6	6.0
+696	Matthias Simon	8	8	8.0
+697	Albert Colon	8	2	0.1546
+698	Kim Rijkers	0	3	0.3546
+699	Valeri Borger	8	3	0.3768
+700	Michele Rizzi	8	2	0.1546
+701	Marco de Curtis	8	2	0.1546
+702	Giuseppe Didato	8	2	0.1546
+703	Nicolò Castelli	8	1	0.1111
+704	Alexandre Carpentier	8	2	0.1546
+705	Bertrand Mathon	8	2	0.1546
+706	Clarissa Lin Yasuda	8	1	0.1111
+707	Fernando Cendes	8	4	0.2689
+708	P. Sarat Chandra	8	1	0.1111
+709	Manjari Tripathi	8	2	0.1546
+710	Marc Guénot	8	2	0.1546
+711	Claire Haegelen	8	2	0.1546
+712	Hélène Catenoix	8	3	0.173
+713	Johannes Lang	8	2	0.1546
+714	Katrin Walther	5	2	0.265
+715	Jason S. Hauptmann	8	1	0.1111
+716	Rosalind L. Jeffree	8	2	0.1546
+717	Josua Kegele	8	2	0.1546
+718	Eliane Weinbrenner	8	1	0.1111
+719	Georgios Naros	8	2	0.1546
+720	Julia Velz	8	1	0.1111
+721	Ulf C. Schneider	8	2	0.1546
+722	Andrea Spyrantis	8	2	0.1546
+723	Mario Alonso‐Vanegas	8	2	0.1546
+724	Lasse Dührsen	8	2	0.1546
+725	Jens Gempt	8	1	0.1111
+726	Ute Deutz	6	1	0.0909
+727	N Heussen	6	1	0.0909
+728	K Weigt-Usinger	6	1	0.0909
+729	Steffen Leiz	6	2	0.1409
+730	Christa Raabe	6	1	0.0909
+731	Steinbüchel Daniela	6	1	0.0909
+732	Christine Moll	6	1	0.0909
+733	Thomas Lücke	6	2	0.2338
+734	Ingeborg Krägeloh‐Mann	6	1	0.0909
+735	Helmut Hollmann	6	1	0.0909
+736	Lance Watkins	7	1	0.2
+737	Christine Linehan	7	2	0.3111
+738	Francesca M. Snoeijen‐Schouwenaars	7	1	0.2
+739	Paula McGowan	7	1	0.2
+740	Rohit Shankar	7	1	0.2
+741	D. Lahr	9	4	4.0
+742	Agnes Kohsik	3	1	0.4286
+743	Erika Dyck	3	1	0.4286
+744	H. J. Markowitsch	3	1	0.4286
+745	Mario Botsch	3	1	0.4286
+746	Martina Piefke	3	1	0.4286
+747	Dennis Klimpel	9	5	4.4667
+748	Bertin Dufaux	9	2	1.4667
+749	Isabel Manzanares	9	1	0.1429
+750	Sonia Sevilla Guerra	9	1	0.1429
+751	María Lombraña	9	1	0.1429
+752	Francisco Gil-López	9	1	0.1429
+753	Estefanía Conde‐Blanco	9	1	0.1429
+754	Adelaida Zabalegui	9	1	0.1429
+755	Belchin Kostov	9	1	0.1429
+756	Antonio R. Moreno‐Poyato	9	1	0.1429
+757	Laura Guio	9	1	0.1429
+758	Olga Beltran	9	1	0.1429
+759	Cecilia Cuzco	9	1	0.1429
+760	Johanna L. Hopf	8	5	5.0
+761	M Guasp	4	1	0.0
+762	Helena Ariño	8	3	0.2345
+763	H. Zeitler	3	1	0.1429
+764	Eva Martinez‐Lizana	8	1	0.0909
+765	Armin Brandt	8	2	0.2086
+766	Elisabeth Schuler	8	1	0.0909
+767	Gert Wiegand	9	5	0.7009
+768	Soroush Doostkam	8	1	0.0909
+769	Victoria San Antonio‐Arce	8	3	0.3491
+770	Julia Jacobs	8	1	0.0909
+771	Mukesch Shah	8	1	0.0909
+772	Takafumi Shiganami	9	1	0.2222
+773	Sayaka Kobayashi	9	1	0.2222
+774	Axel Mayer	9	1	0.2222
+775	Denny Kerkhoff	9	1	0.2222
+776	David Neal Franz	6	7	0.5547
+777	John A. Lawson	6	6	0.3547
+778	Zühal Yapıcı	6	6	0.3547
+779	Michael Kohrman	7	2	0.1004
+780	Michael Wong	7	2	0.1004
+781	Mathieu Milh	7	2	0.1004
+782	Adelheid Wiemer‐Kruel	6	5	0.3616
+783	Maurizio Voi	6	4	0.2543
+784	Neva Coello	7	1	0.0833
+785	Wing K. Cheung	7	1	0.0833
+786	Kai Grosch	7	1	0.0833
+787	Pascal Speicher	9	2	2.0
+788	Heiko Hausfeld	9	3	3.0
+789	Birgitt Müffelmann	9	7	7.0
+790	Martin Soehle	3	2	0.3333
+791	Christina Wolf	3	2	0.3333
+792	Melanie J. Priston	3	2	0.3333
+793	Georg Neuloh	3	2	0.3333
+794	Andreas Hoeft	3	2	0.3333
+795	Richard K. Ellerkmann	3	2	0.3333
+796	Monique van Schooneveld	8	1	0.75
+797	Willem M. Otte	8	1	0.75
+798	Georgios Schoretsanitis	9	3	0.0797
+799	Michael Paulzen	9	3	0.0797
+800	Stefan Unterecker	9	3	0.0797
+801	Markus Schwarz	9	3	0.0797
+802	Andreas Conca	9	3	0.0797
+803	Gerald Zernig	9	3	0.0797
+804	Gerhard Gründer	9	2	0.0533
+805	Ekkerhard Haen	9	1	0.027
+806	Pierre Baumann	9	3	0.0797
+807	Niels Bergemann	9	2	0.0533
+808	Hans Willi Clement	9	1	0.027
+809	Katharina Domschke	9	3	0.0797
+810	Gabriel Eckermann	9	3	0.0797
+811	Karin Egberts	9	3	0.0797
+812	Manfred Gerlach	9	2	0.0533
+813	Christine Greiner	9	2	0.0533
+814	Ursula Havemann‐Reinecke	9	3	0.0797
+815	Gudrun Hefner	9	3	0.0797
+816	Renate Helmer	9	7	7.0
+817	G. Janßen	9	3	0.0797
+818	Eveline Jaquenoud-Sirot	9	1	0.027
+819	Gerd Laux	9	3	0.0797
+820	Thomas Messer	9	3	0.0797
+821	Rainald Mößner	9	3	0.0797
+822	Matthias J. Müller	9	1	0.027
+823	Bruno Pfuhlmann	9	3	0.0797
+824	Peter Riederer	9	3	0.0797
+825	Alois Saria	9	3	0.0797
+826	Bernd Schoppek	9	3	0.0797
+827	Margarete Silva Gracia	9	1	0.027
+828	Benedikt Stegmann	9	3	0.0797
+829	Werner Steimer	9	3	0.0797
+830	Julia Stingl	9	3	0.0797
+831	Manfred Uhr	9	3	0.0797
+832	S. Ulrich	9	3	0.0797
+833	R. Waschgler	9	3	0.0797
+834	Gabriela Zurek	9	2	0.0533
+835	Christoph Hiemke	9	3	0.0797
+836	Paolo Curatolo	6	4	0.2543
+837	Hiroko Ikeda	6	4	0.2543
+838	Rima Nabbout	6	9	0.6242
+839	Petrus J. de Vries	6	4	0.2543
+840	Dennis Dlugos	6	4	0.2543
+841	Jenna Fan	6	2	0.094
+842	Antonia Ridolfi	6	1	0.0769
+843	Diana Pelov	6	4	0.2543
+844	Enya M. Weidner	3	2	0.8
+845	Sebastian Schindler	3	3	1.2
+846	Stephan Moratti	3	2	0.8
+847	Roman Blome	3	2	0.2857
+848	Willi Bach	3	1	0.1429
+849	Xiati Guli	3	2	0.2429
+850	Katrin Porath	3	4	0.5857
+851	Tina Sellmann	3	4	0.5857
+852	Rüdiger Köhling	3	6	0.9857
+853	Timo Kirschstein	3	6	0.9857
+854	David Krýsl	3	1	0.1667
+855	Jitka Hanzalová	3	1	0.1667
+856	Kamila Volna	3	1	0.1667
+857	Stefan H. Kreisel	5	2	0.8714
+858	Thomas Beblo	5	6	1.4667
+859	Oleg Kurlandchikov	5	2	0.8714
+860	Martin Drießen	5	6	1.4667
+861	Alessandro Esposito	6	1	0.037
+862	Antonio Falace	6	1	0.037
+863	Matias Wagner	6	2	0.237
+864	Moran Gal	6	1	0.037
+865	Davide Mei	6	1	0.037
+866	Valerio Conti	6	2	0.0715
+867	Tiziana Pisano	6	2	0.0603
+868	Davide Aprile	6	1	0.037
+869	Maria Sabina Cerullo	6	1	0.037
+870	Antonio De Fusco	6	1	0.037
+871	Silvia Giovedı̀	6	1	0.037
+872	Annette Seibt	6	1	0.037
+873	Daniella Magen	6	1	0.037
+874	Ayelet Eran	6	1	0.037
+875	Sarah L. Stenton	6	2	0.0484
+876	Chiara Fiorillo	6	1	0.037
+877	Sarit Ravid	6	1	0.037
+878	Ertan Mayatepek	6	2	0.237
+879	Hava Hafner	6	1	0.037
+880	Saskia B. Wortmann	6	3	0.287
+881	Erez Y. Levanon	6	1	0.037
+882	Carla Marini	6	2	0.0926
+883	Hanna Mandel	6	1	0.037
+884	Fabio Benfenati	6	1	0.037
+885	Felix Distelmaier	6	2	0.1085
+886	Anna Fassio	6	1	0.037
+887	M. Charokopou	7	1	0.25
+888	Rebecca Harvey	7	1	0.25
+889	Kunal Srivastava	7	1	0.25
+890	Jana K. Hackert	3	1	0.2
+891	Lorenz Müller	3	1	0.2
+892	Marco Rohde	3	3	0.5
+893	Christian M. Boßelmann	8	2	0.3217
+894	Pia Zacher	8	2	0.2653
+895	Kristina Albers	8	2	2.0
+896	Stefan Wolking	8	1	0.2308
+897	Sara Matricardi	6	1	0.0556
+898	Paola De Liso	6	1	0.0556
+899	Elena Freri	6	1	0.0556
+900	Paola Costa	6	1	0.0556
+901	Barbara Castellotti	6	2	0.0819
+902	Stefania Magri	6	1	0.0556
+903	Cinzia Gellera	6	1	0.0556
+904	Tiziana Granata	6	1	0.0556
+905	Luciana Musante	6	1	0.0556
+906	Gaëtan Lesca	6	2	0.09
+907	Julie Oertel	6	1	0.0556
+908	Dana Craiu	6	1	0.0556
+909	Trine Bjørg Hammer	6	1	0.0556
+910	Nina Barišić	6	1	0.0556
+911	Federico Vigevano	6	1	0.0556
+912	Dorothee Kasteleijn‐Nolst Trenité	7	1	0.1
+913	Bernd Schmidt	7	1	0.1
+914	Anne Gardin	7	1	0.1
+915	Georges Imbert	7	1	0.1
+916	Donald R. Johns	7	1	0.1
+917	Alexandros Sagkriotis	7	1	0.1
+918	Klaus Kucher	7	1	0.1
+919	Kerstin Römermann	9	1	0.5
+920	Wolfgang Löscher	9	2	0.5312
+921	Margarita Maltseva	6	2	0.0909
+922	Silke Flege	6	2	0.0909
+923	Markus Wolff	6	9	0.4978
+924	Sarah von Spiczak	6	8	0.6824
+925	Susanne Ruf	6	3	0.1142
+926	Julia Jacobs	6	2	0.0909
+927	Lara Kay	6	5	0.3521
+928	Frauke Hornemann	6	3	0.1142
+929	U Bettendorf	6	7	0.5538
+930	Astrid Bertsche	6	2	0.0909
+931	Réka Horváth	0	2	2.0
+932	A. Schwarcz	0	1	0.2143
+933	M. Aradi	0	1	0.2143
+934	Tibor Auer	0	1	0.2143
+935	Nóra Fehér	0	1	0.2143
+936	Tamás Tényi	0	1	0.2143
+937	Csaba Szalay	0	1	0.2143
+938	Gábor Perlaki	0	1	0.2143
+939	G. Orsi	0	1	0.2143
+940	Tamás Dóczi	0	1	0.2143
+941	Cs. Gyimesi	0	1	0.2143
+942	Peter Camfield	9	1	0.05
+943	Danielle M. Andrade	9	1	0.05
+944	Carole S. Camfield	9	1	0.05
+945	Jaime Carrizosa	9	1	0.05
+946	Richard Appleton	9	1	0.05
+947	Michel Baulac	7	2	0.1929
+948	Lawrence W. Brown	9	1	0.05
+949	Eleonor Ben Menachem	9	1	0.05
+950	Isabelle Desguerre	9	2	0.1214
+951	Christina Grant	9	1	0.05
+952	Hassan Hosny	9	1	0.05
+953	Laura Jurasek	9	1	0.05
+954	Sylvain Rheims	9	2	0.0774
+955	Howard Ring	9	1	0.05
+956	Renée A. Shellhaas	9	1	0.05
+957	Kollencheri Puthenveettil Vinayan	9	1	0.05
+958	Elaine Wirrell	6	3	0.2278
+959	Seung Bong Hong	7	2	0.3429
+960	Linda Mancione	7	1	0.2
+961	Jackie Han	7	1	0.2
+962	Christine Strohmaier	7	1	0.2
+963	Lynanne McGuire	7	1	0.5
+964	Jack Uetrecht	7	1	0.5
+965	D. Rating	9	4	0.7191
+966	Helmut Neumann	6	1	0.1429
+967	F. Helmke	6	1	0.1429
+968	Ch. Thiels	6	1	0.1429
+969	L. Selzer	6	1	0.1429
+970	Monika Daseking	6	1	0.1429
+971	Franz Petermann	6	1	0.1429
+972	J. M. T. Thompson	3	1	0.0323
+973	Mian Bi	3	1	0.0323
+974	Andrew G. Murchison	3	1	0.0323
+975	Mateusz Makuch	3	1	0.0323
+976	Kon Chu	3	1	0.0323
+977	Pue Farooque	3	1	0.0323
+978	Jeffrey M. Gelfand	3	2	0.0693
+979	Michael D. Geschwind	3	2	0.0693
+980	Lawrence J. Hirsch	3	1	0.0323
+981	Ernest Somerville	3	1	0.0323
+982	Bethan Lang	3	3	0.2751
+983	Maria Isabel Leite	3	1	0.0323
+984	Patrick Waters	3	3	0.2122
+985	Müjgan Dogan-Onugoren	3	1	0.0323
+986	Alexander Rae‐Grant	3	2	0.0693
+987	Zsolt Illés	3	1	0.0323
+988	Mónika Szőts	3	1	0.0323
+989	Neil Archibald	3	1	0.0323
+990	John Reid	3	1	0.0323
+991	Callum Duncan	3	1	0.0323
+992	Anna Richardson	3	1	0.0323
+993	James B Lilleker	3	1	0.0323
+994	Raffaele Iorio	3	2	0.0823
+995	Morten Blaabjerg	3	2	0.1535
+996	Karin Abeler	3	1	0.0323
+997	Young-Hee Shin	3	1	0.0323
+998	Maarten J. Titulaer	3	4	0.2427
+999	Ramani Balu	3	1	0.037
+1000	Susanne M. Benseler	3	1	0.037
+1001	Tania Cellucci	3	1	0.037
+1002	Irene Cortese	3	1	0.037
+1003	Carol Glaser	3	1	0.037
+1004	Jérôme Honnorat	3	4	0.2427
+1005	Romana Höftberger	3	4	0.2981
+1006	Takahiro Iizuka	3	1	0.037
+1007	Eric Lancaster	3	1	0.037
+1008	Markus Reindl	3	1	0.037
+1009	Myrna R. Rosenfeld	3	2	0.087
+1010	Albert Saiz	8	2	0.237
+1011	Arun Venkatesan	3	1	0.037
+1012	Klaus-Peter Wandinger	3	2	0.0715
+1013	Cathrin Rohleder	3	1	0.2
+1014	Juliane K. Mueller	3	1	0.2
+1015	Dagmar Koethe	3	1	0.2
+1016	F. Markus Leweke	3	1	0.2
+1017	Joana Aust	5	1	0.1765
+1018	Larissa Barnstorf	5	1	0.1765
+1019	Magdalena Gippert	5	1	0.1765
+1020	Mareike Harms	5	1	0.1765
+1021	Antonia Hautum	5	1	0.1765
+1022	Shanna Heidel	5	1	0.1765
+1023	Friederike Herold	5	1	0.1765
+1024	Sarah M. Hommel	5	1	0.1765
+1025	Anna-Katharina Knigge	5	1	0.1765
+1026	Dominik Neu	5	2	2.0
+1027	Diana Peters	5	1	0.1765
+1028	Marius Schaefer	5	1	0.1765
+1029	Julia Schneider	5	1	0.1765
+1030	Ria Vormbrock	5	1	0.1765
+1031	Sabrina M. Zimmer	5	1	0.1765
+1032	N. Füratsch	9	3	1.5
+1033	Britta Wandschneider	5	5	0.8873
+1034	Rebekka Kretz	9	2	0.5
+1035	Uwe Runge	9	5	0.7195
+1036	J. Geithner	9	3	0.5909
+1037	Hristos Karakizlis	9	1	0.25
+1038	Frank Kerling	9	2	0.5
+1039	Müjgan Dogan Onugoren	3	6	5.1111
+1040	Mariam Abu-Tair	3	1	0.3077
+1041	Marcus Brand	3	1	0.3077
+1042	Michael Bulla-Hellwig	3	1	1.0
+1043	Hubertus Lohmann	3	1	0.3077
+1044	Dieter Münstermann	3	2	0.4505
+1045	Hermann Pavenstädt	3	1	0.3077
+1046	Gerold Thölking	3	1	0.3077
+1047	Helmut Rauschka	3	3	1.3778
+1048	Elinor Ben‐Menachem	7	2	0.3095
+1049	Irene Morales	7	1	0.1667
+1050	William E. Rosenfeld	7	2	0.3333
+1051	Estevo Santamarina	7	1	0.1667
+1052	José M. Serratosa	7	3	0.5833
+1053	Dorothée G.A. Kasteleijn- Nolst Trenité	5	1	0.0227
+1054	Diéter Janz	5	1	0.0227
+1055	Antonio V. Delgado‐Escueta	5	1	0.0227
+1056	Pierre Thomas	5	1	0.0227
+1057	Édouard Hirsch	5	2	0.0572
+1058	Carol Camfield	5	1	0.0227
+1059	Betül Baykan	7	2	0.049
+1060	Iris E. Martínez‐Juárez	5	1	0.0227
+1061	Reyna M. Durón	5	1	0.0227
+1062	Marco T. Medina	5	1	0.0227
+1063	Guido Rubboli	5	2	0.0572
+1064	Judith Jerney	5	1	0.0227
+1065	Bruce P. Hermann	7	2	0.0894
+1066	Elza Márcia Targas Yacubian	5	1	0.0227
+1067	Michael Koutroumanidis	5	1	0.0227
+1068	Javier Salas‐Puig	5	1	0.0227
+1069	Ronald C. Reed	7	2	0.3561
+1070	Michelle Bureau	5	1	0.0227
+1071	Antonio Gambardella	7	3	0.0835
+1072	Matthias J. Koepp	5	5	0.9044
+1073	Philippe Gélisse	5	1	0.0227
+1074	C. Gurses	5	1	0.0227
+1075	Arielle Crespel	5	1	0.0227
+1076	Vi Huong Nguyen-Michel	5	1	0.0227
+1077	Edoardo Ferlazzo	5	1	0.0227
+1078	Thierry Grisar	5	1	0.0227
+1079	Pasquale Striano	7	3	0.0835
+1080	Michael Trimble	5	1	0.0227
+1081	Russel Buono	5	1	0.0227
+1082	Patrick Cossette	5	1	0.0227
+1083	Alfonso Represa	5	1	0.0227
+1084	Charlotte Dravet	5	1	0.0227
+1085	Anna Serafini	5	1	0.0227
+1086	Ivanka Savic- Berglund	5	1	0.0227
+1087	Sanjay M. Sisodiya	3	4	0.1334
+1088	Kazuhiro Yamakawa	5	1	0.0227
+1089	Pierre Genton	7	2	0.3561
+1090	Lea Marie Reisch	5	5	5.0
+1091	Malena Mielke	5	3	1.4
+1092	Alexandra Mehlmann	5	3	1.4
+1093	Angelica Staniloiu	5	2	0.8333
+1094	Hans J. Markowitsch	5	5	2.5762
+1095	Arne Herting	6	5	5.0
+1096	Henner Koch	3	1	0.1
+1097	Cristina Elena Niturad	3	1	0.1
+1098	Stephan Theiss	3	1	0.1
+1099	Peter Körtvélyessy	3	4	0.2394
+1100	Marcel Dihné	3	1	0.1
+1101	Tobias M. Redecker	7	1	1.0
+1102	Haang Jeung-Maarse	7	1	1.0
+1103	Niklas Knaak	9	1	1.0
+1104	Elisabeth Korn‐Merker	9	4	4.0
+1105	Ulrike Ravens‐Sieberer	9	1	1.0
+1106	Noah Berkowitz	6	1	0.0769
+1107	Séverine Peyrard	6	2	0.1603
+1108	Patrícia Braga	9	1	0.1667
+1109	Janet Mifsud	9	1	0.1667
+1110	Carol D’Souza	9	1	0.1667
+1111	Marina Clarke	9	1	0.1667
+1112	Arlette Honein	9	1	0.1667
+1113	Tovuudorj Avirmed	9	1	0.1667
+1114	Fabienne Picard	8	1	0.0345
+1115	Marjan van Kempen	8	1	0.0345
+1116	Francesca Bisulli	8	1	0.0345
+1117	Laura Licchetta	8	1	0.0345
+1118	Tommaso Pippucci	8	1	0.0345
+1119	Paolo Tinuper	8	1	0.0345
+1120	Anne de Saint Martin	6	3	0.1766
+1121	Jamel Chelly	8	1	0.0345
+1122	Gabrielle Rudolf	8	1	0.0345
+1123	Simona Balestrini	8	1	0.0345
+1124	Natasha E. Schoeler	8	1	0.0345
+1125	Laura Hernández-Hernández	8	1	0.0345
+1126	S. Krithika	8	1	0.0345
+1127	Renske Oegema	8	1	0.0345
+1128	Eveline Hagebeuk	8	1	0.0345
+1129	Boudewijn Gunning	8	1	0.0345
+1130	C. L. P. Deckers	8	1	0.0345
+1131	Bianca Berghuis	8	1	0.0345
+1132	Ilse Wegner	8	1	0.0345
+1133	Erik H. Niks	8	1	0.0345
+1134	Floor E. Jansen	6	3	0.1795
+1135	Daniëlle de Jong	8	1	0.0345
+1136	Inga Talvik	8	1	0.0345
+1137	Valentin Sander	8	1	0.0345
+1138	Peter Uldall	8	1	0.0345
+1139	M. Jacquemont	8	1	0.0345
+1140	Caroline Nava	8	1	0.0345
+1141	Eric LeGuern	8	1	0.0345
+1142	Sophie Julia	8	1	0.0345
+1143	G. D’Orsi	8	1	0.0345
+1144	Giovanni Crichiutti	8	1	0.0345
+1145	Laurence Faivre	8	1	0.0345
+1146	Véronique Darmency	8	1	0.0345
+1147	Barbora Beňová	8	1	0.0345
+1148	Pavel Kršek	6	5	0.2466
+1149	Arnaud Biraben	8	1	0.0345
+1150	Anne-Sophie Lebre	8	1	0.0345
+1151	Mélanie Jennesson	8	1	0.0345
+1152	Shifteh Sattar	8	1	0.0345
+1153	Cécile Marchal	8	1	0.0345
+1154	Douglas R. Nordli	8	1	0.0345
+1155	Kristin Lindstrom	8	1	0.0345
+1156	Lysa Boissé Lomax	8	1	0.0345
+1157	Courtney Kiss	8	1	0.0345
+1158	Fabrice Bartoloméi	6	3	0.1206
+1159	Anne Lépine	8	1	0.0345
+1160	An-Sofie Schoonjans	8	1	0.0345
+1161	Katrien Stouffs	8	1	0.0345
+1162	Anna Jansen	6	2	0.0516
+1163	Eleni Panagiotakaki	8	1	0.0345
+1164	Brigitte Ricard‐Mousnier	8	1	0.0345
+1165	Julien Thévenon	8	1	0.0345
+1166	Julitta de Bellescize	8	1	0.0345
+1167	Thomas Dorn	8	1	0.0345
+1168	Martin Zenker	8	1	0.0345
+1169	Karen Müller‐Schlüter	8	1	0.0345
+1170	Ilona Krey	6	2	0.1595
+1171	Meral Balci	8	1	0.0345
+1172	Guillaume Achaz	8	1	0.0345
+1173	Thomas Becher	8	1	0.0345
+1174	Christopher J. Yuskaitis	8	1	0.0345
+1175	Anne Schänzer	5	1	0.4
+1176	Muejgan Dogan-Onugoren	5	1	0.4
+1177	Alexander Strickler	5	1	0.4
+1178	Patrick Berg	0	1	0.375
+1179	Jae‐Hyun Cho	0	1	0.375
+1180	Harald Bornfleth	0	1	0.375
+1181	Friedhelm C. Schmitt	0	1	0.4286
+1182	J. Voges	0	1	0.4286
+1183	Lars Buentjen	0	1	0.4286
+1184	Martin Skalej	0	1	0.4286
+1185	Hans‐Jochen Heinze	0	3	0.8452
+1186	Fabian Herbst	6	1	0.0833
+1187	David Eckert	3	1	0.1667
+1188	Christoph Reichert	3	1	0.1667
+1189	Robert T. Knight	0	2	0.4167
+1190	Leon Y. Deouell	3	1	0.1667
+1191	Stefan Dürschmid	0	2	0.4167
+1192	Charlotte Herbst	6	1	0.069
+1193	Viktoria Bothe	6	1	0.069
+1194	Meret Wegler	6	1	0.069
+1195	Susanne Axer-Schaefer	6	2	2.0
+1196	Séverine Audebert‐Bellanger	6	1	0.069
+1197	Jozef Gécz	6	1	0.069
+1198	Benjamin Cogné	6	1	0.069
+1199	Hagit Baris Feldman	6	1	0.069
+1200	Anselm H. C. Horn	6	1	0.069
+1201	Anna Hurst	6	1	0.069
+1202	Melissa Kelly	6	1	0.069
+1203	Alina Kurolap	6	1	0.069
+1204	Annie Laquerrière	6	1	0.069
+1205	Megan Li	6	1	0.069
+1206	Paul R. Mark	6	1	0.069
+1207	Markus Morawski	6	1	0.069
+1208	Mathilde Nizon	6	1	0.069
+1209	Tomi Pastinen	6	1	0.069
+1210	Pascale Saugier‐Veber	6	1	0.069
+1211	Jang SeSong	6	1	0.069
+1212	Heinrich Sticht	6	1	0.069
+1213	Jens Stieler	6	1	0.069
+1214	Isabelle Thifffault	6	1	0.069
+1215	Clare L. van Eyk	6	1	0.069
+1216	Pascale Marcorelles	6	1	0.069
+1217	Myriam Vezain-Mouchard	6	1	0.069
+1218	Henry Oppermann	6	1	0.069
+1219	Johann Philipp Zöllner	6	2	0.101
+1220	Roberto Spreafico	3	3	0.1147
+1221	Gerrit Haaker	9	1	0.0286
+1222	Roland Coras	8	6	1.7269
+1223	Johannes Schramm	9	1	0.0286
+1224	Frans S.S. Leijten	6	2	0.0952
+1225	Johannes C. Baayen	9	1	0.0286
+1226	Eleonora Aronica	3	4	0.2212
+1227	Francine Chassoux	6	3	0.0944
+1228	Maria Thom	3	2	0.0762
+1229	Matthew C. Walker	9	1	0.0286
+1230	John S. Duncan	5	3	0.0872
+1231	Andrew W. McEvoy	5	2	0.0598
+1232	H. J. Meencke	9	1	0.0286
+1233	Philippe Kahane	6	5	0.3063
+1234	Dieter Henrik Heiland	9	1	0.0286
+1235	Laura Tassi	6	3	0.1337
+1236	Giorgio Lo Russo	9	1	0.0286
+1237	Çiğdem Özkara	6	4	0.1703
+1238	Büğe Öz	6	3	0.1429
+1239	Silke Vogelgesang	9	1	0.0286
+1240	Mrinalini Honavar	3	2	0.056
+1241	Adriana Ulate-Campos	9	1	0.0286
+1242	Elisabeth Härtl	9	1	0.0286
+1243	Thomas S. Jacques	6	4	0.1703
+1244	Martin Lutz	9	1	0.0286
+1245	Basilios Zountsas	9	1	0.0286
+1246	Kyriakos Garganis	9	1	0.0286
+1247	Felix Rosenow	9	1	0.0286
+1248	Tim J. von Oertzen	3	6	0.7765
+1249	Thomas L. Diepgen	9	1	0.0286
+1250	G. Avanzini	9	1	0.0286
+1251	Dominik Illies	5	5	5.0
+1252	Frank Neuner	5	3	2.6
+1253	Sanjana Gajadin	9	1	0.5
+1254	Francesco Signorelli	9	1	0.5
+1255	Arnaud J.P.E. Vincent	9	1	0.5
+1256	Annamaria Vezzani	3	1	0.5
+1257	Fanny Quandt	0	1	0.25
+1258	Ulrike M. Krämer	0	1	0.25
+1259	Hermann Hinrichs	0	1	0.25
+1260	Edward F. Chang	0	1	0.25
+1261	Mike Kerr	7	1	0.1111
+1262	Kousuke Kanemoto	7	1	0.1111
+1263	Jun Kawasaki	7	1	0.1111
+1264	Kenji Sugai	7	1	0.1111
+1265	Yukari Tadokoro	7	1	0.1111
+1266	Jo M. Wilmshurst	7	1	0.1111
+1267	Sarah J. Wilson	7	1	0.1111
+1268	Michael Endermann	9	6	1.0
+1269	Martin Krenn	6	1	0.2
+1270	Alexej Knaus	6	1	0.2
+1271	Dominik S. Westphal	6	1	0.2
+1272	Thomas Meitinger	6	3	0.3214
+1273	Felix Distelmaier	6	2	0.25
+1274	Andreas Rogalewski	3	4	1.0317
+1275	Anne Beyer	5	2	0.3651
+1276	Anja Friedrich	5	2	0.3651
+1277	Frédéric Zuhorn	3	3	0.6984
+1278	Randolf Klingebiel	5	2	0.3651
+1279	Sabine Oertelt‐Prigione	5	1	0.1429
+1280	Wolf‐Rüdiger Schäbitz	5	2	0.3651
+1281	Ettore Beghi	9	1	0.125
+1282	Reetta Kälviäinen	7	3	0.2774
+1283	Kristina Malmgren	9	1	0.125
+1284	Emilio Perucca	9	2	0.1726
+1285	Juri‐Alexander Witt	9	1	0.125
+1286	Niels Alexander Foit	0	1	0.5
+1287	Vera Van Velthoven	0	1	0.5
+1288	Jimmy Schiemann	7	1	0.1429
+1289	Wei Liang	7	1	0.1429
+1290	Tracy Stalvey	7	1	0.1429
+1291	Patrick Kwan	7	1	0.1429
+1292	Ahmed Elshetihy	8	1	1.0
+1293	Lema Nergiz	8	1	1.0
+1294	Anna Schossig	6	1	0.0714
+1295	Tobias B. Haack	6	2	0.1214
+1296	Réka Kovács-Nagy	6	2	0.1214
+1297	Matthias C. Braunisch	6	1	0.0714
+1298	Christine Makowski	6	1	0.0714
+1299	Jan Senderek	6	1	0.0714
+1300	Katharina Vill	6	2	0.1042
+1301	Wolfgang Müller‐Felber	6	1	0.0714
+1302	Tim M. Strom	6	2	0.1214
+1303	Birgit Krabichler	6	1	0.0714
+1304	Peter Freisinger	6	1	0.0714
+1305	Charu Deshpande	6	1	0.0714
+1306	Nicole I. Wolf	6	1	0.0714
+1307	Agnès Rötig	6	1	0.0714
+1308	Uwe Ahting	6	1	0.0714
+1309	Robert Kopajtich	6	1	0.0714
+1310	Holger Prokisch	6	2	0.1214
+1311	René G. Feichtinger	6	1	0.0714
+1312	Johannes A. Mayr	6	2	0.1214
+1313	Heinz Jungbluth	6	1	0.0714
+1314	Michael Hubmann	6	1	0.0714
+1315	Johannes Zschocke	6	1	0.0714
+1316	Johannes Koch	6	2	0.1214
+1317	Bader Alhaddad	6	2	0.1214
+1318	Anissa Benzait	5	2	1.5714
+1319	Margarethe Cenusa	0	1	0.1
+1320	Ian Mothersill	0	1	0.1
+1321	Barbara Hillenbrand	0	2	0.1625
+1322	Joerg Aengenendt	5	2	2.0
+1323	Sang Kun Lee	7	1	0.1429
+1324	Ivan Milanov	7	2	0.3929
+1325	Maja Milovanović	7	1	0.1429
+1326	Marc Kamin	7	1	0.1429
+1327	Elisabeth Schmitter	9	1	0.6667
+1328	Moritz Tacke	6	2	0.0524
+1329	Lucia Gerstl	6	2	0.0524
+1330	Friedrich Baumeister	6	1	0.0328
+1331	Martina Baethmann	6	2	0.0524
+1332	K. H. P. Bentele	6	2	0.0524
+1333	Christian U. Blank	6	2	0.0524
+1334	Harald M. Blank	6	1	0.0328
+1335	Harald Bode	6	2	0.0524
+1336	Friedrich Bosch	6	1	0.0328
+1337	Ulrich Brandl	6	2	0.0524
+1338	Knut Brockmann	3	3	0.3024
+1339	Peter Dahlem	6	2	0.0524
+1340	Jan‐Peter Ernst	6	1	0.0328
+1341	Evemarie Feldmann	6	2	0.0524
+1342	Andreas Fiedler	6	2	0.0524
+1343	Michael Gerigk	6	1	0.0328
+1344	Soeren Heß	6	1	0.0328
+1345	Christiane Hikel	6	2	0.0524
+1346	Hans-Georg Hoffmann	6	2	0.0524
+1347	Joerg Klepper	6	2	0.0524
+1348	Hartmut Koch	6	2	0.0524
+1349	Walter Koch	6	2	0.0524
+1350	Rudolf Korinthenberg	6	2	0.0524
+1351	Ilona Krois	6	2	0.0524
+1352	H. Kühne	6	2	0.0524
+1353	Michaela Mandl	6	1	0.0328
+1354	Ulrike Mause	6	2	0.0524
+1355	Peter Navratil	6	1	0.0328
+1356	Joachim Opp	6	2	0.0524
+1357	Johann Penzien	6	2	0.0524
+1358	Viola Prietsch	6	2	0.0524
+1359	A. Quattländer	6	2	0.0524
+1360	Ulrike Schara	6	2	0.0524
+1361	Mohammed G. Shamdeen	6	2	0.0524
+1362	A Sprinz	6	2	0.0524
+1363	Hildegard Wendker-Magrabi	6	2	0.0524
+1364	Hans-Michael Straßburg	6	1	0.0328
+1365	B Töpke	6	2	0.0524
+1366	Elisabeth Tuschen-Hofstätter	6	2	0.0524
+1367	Stephan Waltz	6	2	0.0524
+1368	Gabriele Weber	6	1	0.0328
+1369	Frank U. Wien	6	2	0.0524
+1370	Hedwig Freitag	6	2	2.0
+1371	Ötzcam Sönmez	6	1	0.0328
+1372	Klaus Reinhardt	6	1	0.0328
+1373	M. Traus	6	2	0.0524
+1374	Z. Hoovey	6	1	0.0328
+1375	Ivanka Savić	5	1	0.3333
+1376	Anand M. Iyer	6	1	0.1176
+1377	Jackelien van Scheppingen	6	1	0.1176
+1378	Jasper J. Anink	6	1	0.1176
+1379	Tim J. Veersema	6	1	0.1176
+1380	Wim G.M. Spliet	6	2	0.2843
+1381	Wim Van Hecke	6	1	0.1176
+1382	Figen Söylemezoğlu	6	1	0.1176
+1383	Josef Zámečnı́k	6	1	0.1176
+1384	Agnes Lamers	5	3	0.4524
+1385	Max Toepper	5	4	0.5952
+1386	Silvia Carvalho Fernando	5	3	0.4524
+1387	Nicole Schlosser	5	3	0.4524
+1388	Eva Lenz	5	1	0.1429
+1389	Ralf Berkenfeld	9	1	0.5
+1390	Dieter Dennig	9	1	0.5
+1391	Brigitte Scheid	9	1	0.5
+1392	Sonja Walther	9	1	0.5
+1393	Peter Borusiak	3	1	0.1429
+1394	Heike Philippi	3	1	0.1429
+1395	Corinna Doege	9	1	0.2
+1396	Michael Siniatchkin	9	1	0.2
+1397	Rainer Boor	9	4	2.1143
+1398	Alejandro Salah	7	1	0.1429
+1399	Manoj Malhotra	7	2	0.3095
+1400	Sami Aboumatar	7	1	0.125
+1401	Fang Dong	7	1	0.125
+1402	Sarah Mizne	7	1	0.125
+1403	J C Sánchez-Alvarez	7	2	0.375
+1404	Florian J. Mücke	3	1	1.0
+1405	Marc Petrus Hendriks	3	1	1.0
+1406	Michelina Bocchicchio	10	1	0.0
+1407	Georg M. Stettner	6	1	0.1111
+1408	Julien F. Bally	6	1	0.1111
+1409	Ruxandra Iancu Ferfoglia	6	1	0.1111
+1410	Jan Marco Kern	6	1	0.1111
+1411	Elisabeth Probst-Müller	6	1	0.1111
+1412	Silvia Schmid	6	1	0.1111
+1413	Robert Steinfeld	6	1	0.1111
+1414	Susi Strozzi	6	1	0.1111
+1415	Annette Weichselbaum	6	1	0.1111
+1416	Marcus Weitz	6	1	0.1111
+1417	Andreas Ziegler	6	1	0.1111
+1418	Sabine Borsutzky	5	1	0.3333
+1419	Andrea Klang	3	2	0.2429
+1420	Peter Schmidt	3	1	0.1
+1421	Sibylle Kneissl	3	2	0.2429
+1422	Zoltán Bagó	3	1	0.1
+1423	Teresa C. Moloney	3	1	0.1
+1424	Péter Halász	3	1	0.1
+1425	Ákos Pákozdy	3	2	0.2429
+1426	Andrea O. Rossetti	9	4	0.4929
+1427	Nicolas Lang	9	2	0.1818
+1428	Iris Unterberger	9	2	0.1818
+1429	Raoul Sutter	9	2	0.1818
+1430	Christian Tilz	9	2	0.1818
+1431	Željko Uzelac	9	2	0.1818
+1432	Terttu Pietilä	0	2	1.8
+1433	Abdel Hamid Alabbasi	0	1	1.0
+1434	Patrik Greguletz	3	1	0.0142
+1435	Maria Plötz	3	1	0.0142
+1436	Jaqueline Klausewitz	3	1	0.0142
+1437	Michael Nagel	3	1	0.0142
+1438	Rosa Rößling	3	1	0.0142
+1439	Thomas Seifert	3	1	0.0142
+1440	Heike L. Rittner	3	1	0.0142
+1441	Oliver Bähr	3	1	0.0142
+1442	Stefanie Becker	3	1	0.0142
+1443	Robert L. Berger	3	1	0.0142
+1444	Birgit Berger	3	1	0.0142
+1445	Martin Berghoff	3	1	0.0142
+1446	Achim Berthele	3	1	0.0142
+1447	Amelie Bohn	3	1	0.0142
+1448	Sergio Castro‐Gomez	3	1	0.0142
+1449	Timo Deba	3	1	0.0142
+1450	Juliane Dominik	3	1	0.0142
+1451	Laura Ehrhardt	3	1	0.0142
+1452	Alexander Emmer	3	1	0.0142
+1453	Daniela Esser	3	1	0.0142
+1454	Thorleif Etgen	3	1	0.0142
+1455	Tobias Freilinger	3	1	0.0142
+1456	Britta Greshake	3	1	0.0142
+1457	Thomas Grüter	3	1	0.0142
+1458	Jens Harmel	3	1	0.0142
+1459	Antonia Harms	3	1	0.0142
+1460	Yetzenia Dubraska Haro Alizo	3	1	0.0142
+1461	Christian Hofmann	3	1	0.0142
+1462	Hagen B. Huttner	3	1	0.0142
+1463	Mareike Jansen	3	1	0.0142
+1464	Ellen Knierim	3	1	0.0142
+1465	Verena Kraus	3	1	0.0142
+1466	Niels Margraf	3	1	0.0142
+1467	Fabian Möller	3	1	0.0142
+1468	Steffen Pfeuffer	3	1	0.0142
+1469	Mosche Pompsch	3	1	0.0142
+1470	Daniel Rapp	3	1	0.0142
+1471	Dominica Ratuszny	3	1	0.0142
+1472	Robert Rehmann	3	1	0.0142
+1473	Ina Reichen	5	2	0.2999
+1474	Nele Retzlaff	3	1	0.0142
+1475	Henrik Rohner	3	1	0.0142
+1476	Yannic Saathoff	3	1	0.0142
+1477	Hauke Schneider	3	1	0.0142
+1478	Patrick Schramm	3	1	0.0142
+1479	F. Seifert	3	1	0.0142
+1480	Olga Simova	9	2	0.1253
+1481	Juliane Spiegler	3	2	0.0642
+1482	Andeas Steinbrecher	3	1	0.0142
+1483	Karin van`s Gravesande Storm	3	1	0.0142
+1484	Klarissa Hanja Stürner	3	1	0.0142
+1485	Paweł Tacik	3	1	0.0142
+1486	Thanos Tsaktanis	3	1	0.0142
+1487	Methap Türedi	3	1	0.0142
+1488	Max Vogtmann	3	1	0.0142
+1489	Kartharina Wurdack	3	1	0.0142
+1490	Marianna Spatola	3	2	0.3357
+1491	Mar Petit‐Pedrol	3	1	0.05
+1492	Estibaliz Maudes	3	1	0.05
+1493	Mateus Mistieri Simabukuro	3	1	0.05
+1494	Sergio Muñiz‐Castrillo	3	2	0.1712
+1495	Anne‐Laurie Pinto	3	1	0.05
+1496	Peter Schramm	3	1	0.05
+1497	Lívia Almeida Dutra	3	1	0.05
+1498	Cornelia Kornblum	3	1	0.05
+1499	Peter Sillevis Smitt	3	1	0.05
+1500	Alison M. Muir	6	1	0.0364
+1501	Jennifer F. Gardner	6	1	0.0364
+1502	Richard H. van Jaarsveld	6	1	0.0364
+1503	Iris Lange	6	1	0.0364
+1504	Jasper J. van der Smagt	6	1	0.0364
+1505	Golder N. Wilson	6	1	0.0364
+1506	Lia Zitano	6	1	0.0364
+1507	Caleb Bupp	6	1	0.0364
+1508	José E. Martínez	6	1	0.0364
+1509	Myriam Srour	6	1	0.0364
+1510	Andrea Accogli	6	1	0.0364
+1511	Afnan AlHakeem	6	1	0.0364
+1512	Meira R. Meltzer	6	1	0.0364
+1513	Andrea Gropman	6	1	0.0364
+1514	Carole Brewer	6	1	0.0364
+1515	Richard Caswell	6	1	0.0364
+1516	Tara Montgomery	6	1	0.0364
+1517	Caoimhe McKenna	6	1	0.0364
+1518	Shane McKee	6	1	0.0364
+1519	Corinna Powell	6	1	0.0364
+1520	Pradeep Vasudevan	6	1	0.0364
+1521	Angela F. Brady	6	1	0.0364
+1522	Shelagh Joss	6	1	0.0364
+1523	Carolyn Tysoe	6	1	0.0364
+1524	Grace Noh	6	1	0.0364
+1525	Mark A. Tarnopolsky	6	1	0.0364
+1526	Lauren Brady	6	1	0.0364
+1527	Muhammad Zafar	6	1	0.0364
+1528	Samantha A. Schrier Vergano	6	1	0.0364
+1529	Brianna Murray	6	1	0.0364
+1530	L. Sawyer	6	1	0.0364
+1531	Bryan E. Hainline	6	1	0.0364
+1532	Katherine Sapp	6	1	0.0364
+1533	Danielle DeMarzo	6	1	0.0364
+1534	Darcy J. Huismann	6	1	0.0364
+1535	Ingrid M. Wentzensen	6	1	0.0364
+1536	Rhonda E. Schnur	6	1	0.0364
+1537	Kristin G. Monaghan	6	1	0.0364
+1538	Jane Juusola	6	1	0.0364
+1539	Lindsay Rhodes	6	1	0.0364
+1540	François Lecoquierre	6	1	0.0364
+1541	Alice Goldenberg	6	1	0.0364
+1542	Konrad Platzer	6	1	0.0364
+1543	Chiara Klöckner	6	1	0.0364
+1544	Trevor L. Hoffman	6	1	0.0364
+1545	Daniel G. MacArthur	6	2	0.0477
+1546	Melanie O’Leary	6	2	0.0477
+1547	Grace E. VanNoy	6	2	0.0477
+1548	Eleina England	6	2	0.0477
+1549	Vinod Varghese	6	1	0.0364
+1550	Heather C. Mefford	6	1	0.0364
+1551	Isabel Heukaeufer	6	1	0.0196
+1552	Sonia Cornell	6	1	0.0196
+1553	F.A.M. Baumeister	6	1	0.0196
+1554	B. Schreiber-Gollwitzer	6	1	0.0196
+1555	Jeremia P. O. Held	6	1	0.0196
+1556	Helen Blank	6	1	0.0196
+1557	K. Liebrich	6	1	0.0196
+1558	Joe Braun	6	1	0.0196
+1559	Fèlix Bosch	6	1	0.0196
+1560	Ryan G. Wagner	6	1	0.0196
+1561	Kristiane Wetzel	6	1	0.0196
+1562	C. Schlockwerder	6	1	0.0196
+1563	I. Baudler	6	1	0.0196
+1564	JP Ernst	6	1	0.0196
+1565	H. Mayer	6	2	0.1446
+1566	A. Pattber-Wolff	6	1	0.0196
+1567	S. T. Sonnleitner	6	1	0.0196
+1568	M. Gerigk	6	1	0.0196
+1569	Simon Heß	6	1	0.0196
+1570	T. Feiereis	6	1	0.0196
+1571	A. Rickeshenrich	6	1	0.0196
+1572	R Dewitz	6	1	0.0196
+1573	M. Bartels	6	1	0.0196
+1574	S. Kleuker	6	1	0.0196
+1575	Andreas Kirsch	6	1	0.0196
+1576	U. Meerpohl	6	1	0.0196
+1577	B. Stehle-Renner	6	1	0.0196
+1578	A. Wegener	6	1	0.0196
+1579	Christian Weiß	6	1	0.0196
+1580	G Kurlemann	6	1	0.0196
+1581	U. Elkemann	6	1	0.0196
+1582	M. Mandl	6	1	0.0196
+1583	A. Friedl	6	1	0.0196
+1584	Marcus Müller	6	1	0.0196
+1585	P Navrátil	6	1	0.0196
+1586	U. Iken	6	1	0.0196
+1587	Jonas Walter	6	1	0.0196
+1588	Beverly Siegrist	6	1	0.0196
+1589	Gitta Reuner	6	2	0.1446
+1590	H. Struchholz	6	1	0.0196
+1591	Göran Carlsson	6	1	0.0196
+1592	Hans Michael Straßburg	6	1	0.0196
+1593	H. Ottensmeier	6	1	0.0196
+1594	K. Tatsek	6	1	0.0196
+1595	E. Poida-Herzing	6	1	0.0196
+1596	M. Menschig	6	1	0.0196
+1597	A Pickartz	6	1	0.0196
+1598	G. Weber	6	1	0.0196
+1599	T. Gehnen	6	1	0.0196
+1600	J. Antemann	6	1	0.0196
+1601	É. Serra	6	1	0.0196
+1602	Osman Fikret Sönmez	6	1	0.0196
+1603	K. Rheinhardt	6	1	0.0196
+1604	A. Schröder	6	1	0.0196
+1605	Secam Hoovey	6	1	0.0196
+1606	C. Navratil	6	1	0.0196
+1607	Dorothée Kasteleijn- Nolst Trenité	7	1	0.3333
+1608	Thomas Büttner	5	1	0.2857
+1609	Annette Thomas	5	1	0.2857
+1610	Benjamin Vlad	5	1	0.2857
+1611	Ilijas Jelčić	5	1	0.2857
+1612	Michael Duchowny	6	1	0.0385
+1613	Prasanna Jayakar	6	1	0.0385
+1614	Federico Melani	6	1	0.0385
+1615	Véronique André	6	1	0.0385
+1616	Carlos Cepeda	6	1	0.0385
+1617	Darcy A. Krueger	6	1	0.0385
+1618	Mirco Cosottini	6	1	0.0385
+1619	Jean Gotman	6	1	0.0385
+1620	Andrea Bernasconi	6	2	0.0861
+1621	Bertrand Devaux	6	2	0.0659
+1622	Imad Najm	8	5	0.5468
+1623	Kristl Vonck	6	1	0.0385
+1624	Lukas Kunz	3	1	0.1176
+1625	Liang Wang	3	2	0.2605
+1626	Daniel Lachner‐Piza	3	1	0.1176
+1627	Hui Zhang	3	2	0.2605
+1628	Matthias Dümpelmann	3	2	0.1732
+1629	Peter C. Reinacher	3	1	0.1176
+1630	Volker A. Coenen	3	1	0.1176
+1631	Dong Chen	3	2	0.2605
+1632	Wen-Xu Wang	3	1	0.1176
+1633	Wenjing Zhou	3	2	0.2605
+1634	Shuli Liang	3	1	0.1176
+1635	Anne Bierbrauer	3	1	0.1176
+1636	Tobias Navarro Schröder	3	1	0.1176
+1637	Nikolai Axmacher	3	2	0.2605
+1638	Annika Lehner	5	1	0.1538
+1639	Friedrich Paulsen	5	1	0.1538
+1640	Renato Frischknecht	5	1	0.1538
+1641	W Höfer	5	1	0.1538
+1642	Till J. Würdemann	3	1	0.1
+1643	Maxi Kersten	3	2	0.2429
+1644	Tursonjan Tokay	3	1	0.1
+1645	Maria Kober	3	1	0.1
+1646	A. Jones	6	1	0.037
+1647	Matilde Aquilino	6	1	0.037
+1648	Rory J. Tinker	6	1	0.037
+1649	Laura Duncan	6	1	0.037
+1650	Zandra A. Jenkins	6	1	0.037
+1651	Gemma L. Carvill	6	1	0.037
+1652	Stephanie J. DeWard	6	1	0.037
+1653	Dorothy K. Grange	6	1	0.037
+1654	M.J. Hajianpour	6	1	0.037
+1655	Benjamin J. Halliday	6	1	0.037
+1656	Muriel Holder‐Espinasse	6	1	0.037
+1657	Judit Horváth	6	1	0.037
+1658	Silvia Maitz	6	1	0.037
+1659	Vincenzo Nigro	6	1	0.037
+1660	Manuela Morleo	6	1	0.037
+1661	Victoria Paul	6	1	0.037
+1662	Careni Spencer	6	1	0.037
+1663	Alina Esterhuizen	6	1	0.037
+1664	Alice Spano	6	1	0.037
+1665	Inés Gómez‐Lozano	6	1	0.037
+1666	Abhishek Kumar	6	1	0.037
+1667	Gemma Poke	6	1	0.037
+1668	John A. Phillips	6	1	0.037
+1669	Hunter R. Underhill	6	1	0.037
+1670	Grégory Gimenez	6	1	0.037
+1671	Takashi Namba	6	1	0.037
+1672	Stephen P. Robertson	6	1	0.037
+1673	Monika Trentowska	7	2	1.4921
+1674	Mario Schrecke	7	4	4.0
+1675	Nora Fueratsch	7	2	1.7143
+1676	Karin Witte-Boelt	7	2	2.0
+1677	Fritjof Reinhardt	7	1	0.1
+1678	Frank Kühn	7	1	0.1
+1679	Kathleen Isensee	7	1	0.1
+1680	Francisco C. Ramirez	7	1	0.1
+1681	Thomas Lauterbach	7	1	0.1
+1682	Matthias Noack‐Rink	7	1	0.1
+1683	Beáta Bóné	0	1	0.7143
+1684	Zsuzsanna Kalmár	0	1	0.7143
+1685	Maraike Küpper	3	1	0.2
+1686	F. Petermann	9	1	0.6667
+1687	Jörn Rau	9	1	0.6667
+1688	Sophia Varadkar	3	1	0.125
+1689	Carol A. Kruse	3	1	0.125
+1690	Frances E. Jensen	3	1	0.125
+1691	Carlos A. Pardo	3	1	0.125
+1692	Gary W. Mathern	3	2	0.1726
+1693	Emad Alkassm	8	1	0.4286
+1694	Alexander Grote	8	2	0.456
+1695	Björn Berger	8	1	0.4286
+1696	Tunc Faik Ersoy	8	1	0.4286
+1697	Matthias Brand	5	2	1.6
+1698	Galal Banat	7	1	1.0
+1699	Christine Steinkroeger	5	1	1.0
+1700	Svetlana Dimova	7	3	0.4917
+1701	Cédric Laloyaux	7	1	0.2
+1702	Xavier Nondonfaz	7	2	0.3667
+1703	Elena Jost	3	1	0.1667
+1704	Waltraut M. Merz	3	1	0.1667
+1705	Patrick Kupczyk	3	1	0.1667
+1706	Laura Tascón Padrón	3	1	0.1667
+1707	Eva Weber	3	1	0.1667
+1708	Philipp Kosian	3	1	0.1667
+1709	J. Rollnik	9	1	0.05
+1710	M. Sailer	9	1	0.05
+1711	J. Kiesel	9	2	0.0935
+1712	H. Karbe	9	2	0.0935
+1713	J. Harms	9	2	0.0935
+1714	Cornelius Busch	9	2	0.0935
+1715	R. Eckhardt	9	2	0.0935
+1716	Matthias Spranger	9	2	0.0935
+1717	D. Rixecker	9	2	0.0935
+1718	Rudolf J. Knickenberg	9	1	0.05
+1719	Richard W. Weber	9	2	0.0935
+1720	H.-J. Hesselschwerdt	9	2	0.0935
+1721	K H Scheidtmann	9	2	0.0935
+1722	Michael Köhler	9	2	0.0935
+1723	C. Müller	9	1	0.05
+1724	Thomas Platz	9	2	0.0935
+1725	Thomas Schmelter	9	2	0.0935
+1726	H Hoff-Emden	9	2	0.0935
+1727	Dietmar Urbach	9	2	0.0935
+1728	J. Lecheler	9	2	0.0935
+1729	N. Bergemann	9	1	0.0263
+1730	H.‐W. Clement	9	1	0.0263
+1731	Jürgen Deckert	9	2	0.0526
+1732	M. Gerlach	9	1	0.0263
+1733	C. Greiner	9	1	0.0263
+1734	Ekkehard Haen	9	2	0.0526
+1735	Eveline Jaquenoud	9	2	0.0526
+1736	Michael Müller	9	1	0.0263
+1737	Margarethe Silva Gracia	9	2	0.0526
+1738	Richard S. McLachlan	7	1	0.1667
+1739	Kathy Foris	7	1	0.1667
+1740	Tobias Brünger	8	1	0.0909
+1741	Kerstin Becker	8	2	0.1678
+1742	Lisa Ferguson	8	1	0.0909
+1743	Robyn M. Busch	8	2	0.1678
+1744	Katharina M Mair	8	2	0.3222
+1745	Laia Verdú de Juan	5	1	0.1
+1746	Anja Steinmaurer	5	1	0.1
+1747	Martin Finzel	5	1	0.1
+1748	Christian Mawrin	5	1	0.1
+1749	Julika Pitsch	5	1	0.1
+1750	Berthold Voges	5	1	0.1
+1751	Serge Weis	5	1	0.1
+1752	Michael Winklehner	5	1	0.1
+1753	P. Muhr	3	1	0.5
+1754	U. Goldammer	3	1	0.5
+1755	E. Sindern	3	1	0.5
+1756	Μ. Scott Perry	6	1	0.0667
+1757	Ronald L. Davis	6	1	0.0667
+1758	Robert M. Cortes	6	1	0.0667
+1759	Arnold R. Gammaiton	6	1	0.0667
+1760	Maria French	3	1	0.1429
+1761	Lena J Hopf	8	1	1.0
+1762	Bernd Frerker	3	1	0.2
+1763	Steffen Müller	3	1	0.2
+1764	Toby Toward	6	1	0.0588
+1765	Jens Gruenert	6	1	0.0588
+1766	Edward Gibson	6	1	0.0588
+1767	Clive Pritchard	6	4	0.32
+1768	Joe Carroll	6	4	0.32
+1769	Rainer Schimpf	7	1	0.2
+1770	Christian Veltmann	0	1	0.2
+1771	Theano Papavassiliu	0	1	0.2
+1772	Boris Rudic	7	1	0.2
+1773	Turgay Göksu	0	1	0.2
+1774	Jürgen Kuschyk	0	1	0.2
+1775	Christian Wolpert	7	1	0.2
+1776	Charles Antzelevitch	7	1	0.2
+1777	Martin Borggrefe	7	1	0.2
+1778	Barbara Fiedler	6	2	0.2083
+1779	Malin Kalski	6	3	0.2612
+1780	John Irwin	6	3	0.2612
+1781	Stéphane Auvin	7	1	0.3333
+1782	Rob McMurray	7	1	0.3333
+1783	Eva Wuerfel	3	1	0.25
+1784	Mark Woodhall	3	1	0.25
+1785	Laurent M. Willems	3	1	0.0556
+1786	Melanie Schreiber	3	1	0.0556
+1787	Anke M. Staack	3	1	0.0556
+1788	Yaroslav Winter	7	2	0.1667
+1789	Philipp S. Reif	6	1	0.087
+1790	Daniel Macdonald	6	2	0.1779
+1791	Helge Gebhardt	5	1	0.1429
+1792	Eva Bauer	5	2	0.2857
+1793	Gebhard Sammer	5	1	0.1429
+1794	C. Karakizlis	9	1	0.25
+1795	Christian Rauscher	6	1	0.05
+1796	Jörgen Bierau	6	1	0.05
+1797	Karlien L. M. Coene	6	1	0.05
+1798	Ingrid Bader	6	1	0.05
+1799	Monika Holzhacker	6	1	0.05
+1800	Hanka Venselaar	6	1	0.05
+1801	Ron A. Wevers	6	1	0.05
+1802	Cornelia Betzler	6	1	0.05
+1803	Wolfgang Sperl	6	1	0.05
+1804	P Ostertag	9	1	0.2
+1805	Isabelle Ollech	5	1	1.0
+1806	Florian J. Bremm	3	1	1.0
+1807	Marc Hendriks	3	1	1.0
+1808	Ali Bozorg	7	1	0.125
+1809	Björn Steiniger‐Brach	7	1	0.125
+1810	Ying Zhang	7	1	0.125
+1811	B Ferro	7	1	0.125
+1812	Gregory L. Holmes	7	1	0.125
+1813	Samir Jabari	8	3	0.5071
+1814	José Eduardo Peixoto-Santos	8	1	0.1905
+1815	Ángel Aledo‐Serrano	6	2	0.2814
+1816	Yanghao Hou	8	2	0.3571
+1817	Andreas von Deimling	8	2	0.3571
+1818	Johannes Jungilligens	5	1	0.2857
+1819	Uwe Schlegel	3	2	0.381
+1820	Sally Elakkary	9	1	1.0
+1821	Franz X. Mittermaier	8	1	0.1538
+1822	Ran Xu	8	1	0.1538
+1823	Katharina Faust	8	1	0.1538
+1824	Ulrich W. Thomale	8	1	0.1538
+1825	Angela M. Kaindl	8	1	0.1538
+1826	Sabine Grosser	8	1	0.1538
+1827	Pawel Fidzinski	8	1	0.1538
+1828	Henrik Alle	8	1	0.1538
+1829	Jörg R. P. Geiger	8	1	0.1538
+1830	Pierandrea Muglia	7	1	0.0667
+1831	Jonas Hannestad	7	1	0.0667
+1832	Steven DeBruyn	7	1	0.0667
+1833	Massimiliano Germani	7	1	0.0667
+1834	Brigitte Lacroix	7	1	0.0667
+1835	Marian Majoie	7	2	0.0838
+1836	Christian Otoul	7	1	0.0667
+1837	David Sciberras	7	1	0.0667
+1838	Koen Van Laere	7	1	0.0667
+1839	Elizabeth Webster	7	1	0.0667
+1840	Rafal M. Kaminski	7	1	0.0667
+1841	Konrad J. Werhahn	7	1	0.0667
+1842	Manuel Toledo	7	3	0.4
+1843	Uwe Jürgens	9	2	2.0
+1844	Nils Holert	9	1	0.7143
+1845	Damian Stichel	8	1	0.1667
+1846	Andrey Korshunov	8	1	0.1667
+1847	Felix Sahm	8	1	0.1667
+1848	Jakob Stockinger	7	1	0.125
+1849	Andrea Nemecek	7	1	0.125
+1850	Michal Cicanic	7	1	0.125
+1851	Tassanai Intravooth	7	1	0.125
+1852	Bernadette Gaida	3	1	0.0909
+1853	Irène Wang	3	1	0.0909
+1854	Julia Lange	3	1	0.0909
+1855	Alexander Dressel	3	1	0.0909
+1856	Matthias Grothe	3	1	0.0909
+1857	Christof Kessler	3	1	0.0909
+1858	Sönke Langner	3	1	0.0909
+1859	Ümit Karaca	0	1	0.2
+1860	Pablo Andrade	0	1	0.2
+1861	Laurence de Nijs	0	1	0.2
+1862	Benno Küsters	0	1	0.2
+1863	Andrea Peeters	0	1	0.2
+1864	J. Dings	0	1	0.2
+1865	Govert Hoogland	0	1	0.2
+1866	Felix Gövert	3	1	0.0345
+1867	Ligia Abrante	3	1	0.0345
+1868	Jos Becktepe	3	1	0.0345
+1869	Christos Ganos	3	1	0.0345
+1870	James Varley	3	1	0.0345
+1871	Sofija Paneva	3	1	0.0345
+1872	Juna M. de Vries	3	1	0.0345
+1873	Agnita J.W. Boon	3	1	0.0345
+1874	Marco W.J. Schreurs	3	1	0.0345
+1875	Bastien Joubert	3	1	0.0345
+1876	Alberto Vogrig	3	1	0.0345
+1877	Lídia Sabater	3	1	0.0345
+1878	Sangeeta Scotton	3	1	0.0345
+1879	Saiju Jacob	3	1	0.0345
+1880	Günther Deuschl	3	1	0.0345
+1881	Willi Cawello	9	1	1.0
+1882	A. Aldenkamp	7	1	0.0667
+1883	G.A. Baker	7	1	0.0667
+1884	Candice E. Crocker	7	1	0.0667
+1885	Marilyn Jones‐Gotman	7	1	0.0667
+1886	Andrey M. Mazarati	7	1	0.0667
+1887	Mary-Lou Smith	7	1	0.0667
+1888	Antonina Omisade	7	1	0.0667
+1889	José Francisco Téllez‐Zenteno	7	1	0.0667
+1890	Christian Michael Stoppel	3	1	0.1111
+1891	Wolfgang Brück	3	1	0.1111
+1892	Ivonne Gerth	3	1	0.1111
+1893	Stefan Vielhaber	3	1	0.1111
+1894	Falk R. Wiedemann	3	1	0.1111
+1895	H.-J. Heinze	3	1	0.1111
+1896	Claudius Bartels	3	1	0.1111
+1897	Kay Nolte	3	1	0.1
+1898	Sonja Trepels‐Kottek	3	1	0.1
+1899	D Honnef	3	1	0.1
+1900	Joachim Weis	3	1	0.1
+1901	Klaus Ritter	3	1	0.1
+1902	Birgit Czermin	3	1	0.1
+1903	Sabine Rudnik–Schöneborn	3	1	0.1
+1904	Norbert Wagner	3	1	0.1
+1905	Pier Paolo Quarato	7	1	0.1667
+1906	Anne‐Liv Schulz	7	2	0.3095
+1907	Jody M. Cleveland	7	2	0.3095
+1908	Gilbert Wagener	7	2	0.3095
+1909	Almut Hübenthal	3	1	0.3333
+1910	Markus Glatzel	3	1	0.3333
+1911	Wolf‐Rüdiger Schäbitz	3	3	0.7778
+1912	Michael Frauenheim	7	2	2.0
+1913	Inga Miller	7	2	2.0
+1914	Eirini Sakaraki	8	1	0.2222
+1915	Charlotte Aaberg Poulsen	3	1	0.1212
+1916	Tímea Berki	3	1	0.1212
+1917	Juliëtte Brenner	3	1	0.1212
+1918	Andrew Christiana	3	1	0.1212
+1919	Nicolás Lundahl Ciano-Petersen	3	1	0.1212
+1920	Yvette S. Crijnen	3	1	0.1212
+1921	Antonio Farina	3	1	0.1212
+1922	A. Friedman	3	1	0.1212
+1923	Zsófia Hayden	3	1	0.1212
+1924	Julien Hébert	3	1	0.1212
+1925	Zhen Hong	3	1	0.1212
+1926	M Feldmann	3	1	0.1212
+1927	Sudarshini Ramanathan	3	1	0.1212
+1928	Kelsey M. Smith	3	1	0.1212
+1929	Christopher Uy	3	1	0.1212
+1930	Juna M. de Vries	3	1	0.1212
+1931	Anjan Nibber	3	1	0.1429
+1932	Linda Clover	3	1	0.1429
+1933	Philippa Pettingill	3	1	0.1429
+1934	Marian Galovic	5	1	0.0312
+1935	Irene Baudracco	5	1	0.0312
+1936	Evan Wright-Goff	5	1	0.0312
+1937	Galo E. Pillajo Sulca	5	1	0.0312
+1938	Parashkev Nachev	5	1	0.0312
+1939	Pamela J. Thompson	5	1	0.0312
+1940	Sallie Baxendale	5	1	0.0312
+1941	Mark Nowell	5	1	0.0312
+1942	Matteo Mancini	5	1	0.0312
+1943	Sjoerd B. Vos	5	1	0.0312
+1944	Gavin P. Winston	5	1	0.0312
+1945	Rachel Sparks	5	1	0.0312
+1946	Ferrán Prados	5	1	0.0312
+1947	Anna Miserocchi	5	1	0.0312
+1948	Jane de Tisi	5	2	0.0586
+1949	Louis A. van Graan	5	1	0.0312
+1950	Roman Rodionov	5	1	0.0312
+1951	Chengyuan Wu	5	1	0.0312
+1952	Mahdi Alizadeh	5	1	0.0312
+1953	Lauren Kozlowski	5	1	0.0312
+1954	Ashwini Sharan	5	1	0.0312
+1955	Lohith G. Kini	5	1	0.0312
+1956	Kathryn A. Davis	5	1	0.0312
+1957	Brian Litt	5	1	0.0312
+1958	Sébastien Ourselin	5	1	0.0312
+1959	Solomon L. Moshé	3	2	0.0789
+1960	Josemir W. Sander	5	1	0.0312
+1961	Georg Classen	7	1	0.1667
+1962	Catherine Classen	7	1	0.1667
+1963	Corrado Bernasconi	7	1	0.1667
+1964	Ralf Gold	7	2	0.2619
+1965	Andrew Chan	7	1	0.1667
+1966	Brunna Tuschen‐Caffier	7	1	0.7778
+1967	J. Krois-Neudenberger	6	1	0.125
+1968	Julia Hentschel	6	2	0.1364
+1969	Steffen Syrbe	6	2	0.1364
+1970	Britta Hanker	6	1	0.125
+1971	G. Kurlemann	6	1	0.125
+1972	D Deuretzbacher	3	1	0.2
+1973	Carl‐Albrecht Haensch	3	2	0.3111
+1974	H.-J. Hagedorn	3	1	0.2
+1975	S Halve	3	1	0.2
+1976	Stefan Isenmann	3	3	0.8
+1977	Hanns Lohner	3	1	0.2
+1978	Rita Monotti	3	1	0.2
+1979	Stefan Presslauer	3	1	0.2
+1980	W. R. Schäbitz	3	2	0.4667
+1981	Sara Steffanoni	3	1	0.2
+1982	Katharina Stoeck	3	1	0.2
+1983	M. Strittmatter	3	1	0.2
+1984	Florian Stögbauer	3	1	0.2
+1985	Daniel Friedman	7	1	0.125
+1986	Victor Biton	7	1	0.125
+1987	Lloyd Knapp	7	1	0.125
+1988	Verne Pitman	7	1	0.125
+1989	Marci L. Chew	7	1	0.125
+1990	Sarah Dubrava	7	1	0.125
+1991	Holly Posner	7	1	0.125
+1992	Michael C. Frühwald	3	1	0.5
+1993	Elene Tsoures	8	1	0.25
+1994	Theresa Rabbe	3	1	0.1429
+1995	Christoph Reichel	7	1	0.1429
+1996	Henning Tiemeier	3	1	0.0588
+1997	Robert Sassen	6	2	0.1838
+1998	Stefan Kuczaty	6	2	0.1838
+1999	Peter Herkenrath	3	1	0.0588
+2000	Bernd Kruse	3	1	0.0588
+2001	Sabine Rona	3	1	0.0588
+2002	Silvia Vieker	3	1	0.0588
+2003	Bernd Wilken	3	1	0.0588
+2004	Christoph Hagemeister	3	1	0.3333
+2005	Monique M.J. van Schooneveld	6	1	0.125
+2006	Sue Harrison	6	1	0.125
+2007	Marion Daehn	6	2	2.0
+2008	Sarina Djimjadi	6	1	1.0
+2009	Dilek Yalnızoğlu	6	1	0.125
+2010	Güzide Turanlı	6	1	0.125
+2011	Christian Hoppe	6	1	0.125
+2012	Karl Strobl	6	1	0.125
+2013	Caroline Seegmüller	6	1	0.125
+2014	Agathe Laurent	6	1	0.125
+2015	Mehdi Ahmadi	7	1	1.0
+2016	Pietro Mattioli	8	1	0.1667
+2017	Evy Cleeren	8	1	0.1667
+2018	Levente Hadady	8	1	0.1667
+2019	Alberto Cossu	8	1	0.1667
+2020	Dario Arnaldi	8	1	0.1667
+2021	Monica H. Wojcik	6	1	0.0114
+2022	Gabrielle Lemire	6	1	0.0114
+2023	Eva Berger	6	1	0.0114
+2024	Maha S. Zaki	6	1	0.0114
+2025	Mariel Wissmann	6	1	0.0114
+2026	Wathone Win	6	1	0.0114
+2027	Susan M. White	6	1	0.0114
+2028	Ben Weisburd	6	1	0.0114
+2029	Dagmar Wieczorek	6	1	0.0114
+2030	Leigh B. Waddell	6	1	0.0114
+2031	Jeffrey M. Verboon	6	1	0.0114
+2032	Ana Töpf	6	1	0.0114
+2033	Tiong Yang Tan	6	1	0.0114
+2034	Vincent Strehlow	6	1	0.0114
+2035	Volker Straub	6	1	0.0114
+2036	Hana Snow	6	1	0.0114
+2037	Moriel Singer‐Berk	6	1	0.0114
+2038	Josh Silver	6	1	0.0114
+2039	Shirlee Shril	6	1	0.0114
+2040	Eleanor G. Seaby	6	1	0.0114
+2041	Ronen Schneider	6	1	0.0114
+2042	Vijay G. Sankaran	6	1	0.0114
+2043	Alba Sanchis-Juan	6	1	0.0114
+2044	Kathryn A. Russell	6	1	0.0114
+2045	Karit Reinson	6	1	0.0114
+2046	Gianina Ravenscroft	6	1	0.0114
+2047	Maximilian Radtke	6	1	0.0114
+2048	Denny Popp	6	1	0.0114
+2049	Konrad Platzer	6	1	0.0114
+2050	Eric A. Pierce	6	1	0.0114
+2051	Emily Place	6	1	0.0114
+2052	Sander Pajusalu	6	1	0.0114
+2053	Lynn Pais	6	1	0.0114
+2054	Katrin Õunap	6	1	0.0114
+2055	Ikeoluwa Osei‐Owusu	6	1	0.0114
+2056	Henry Opperman	6	1	0.0114
+2057	Volkan Okur	6	1	0.0114
+2058	Kaisa Teele Oja	6	1	0.0114
+2059	Emily O’Heir	6	1	0.0114
+2060	Chantal F. Morel	6	1	0.0114
+2061	Andreas Merkenschlager	6	2	0.0346
+2062	Rhett G. Marchant	6	1	0.0114
+2063	Brian Mangilog	6	1	0.0114
+2064	Jill A. Madden	6	1	0.0114
+2065	Alysia Kern Lovgren	6	1	0.0114
+2066	Jordan Lerner‐Ellis	6	1	0.0114
+2067	Jasmine Lin	6	1	0.0114
+2068	Nigel G. Laing	6	1	0.0114
+2069	Friedhelm Hildebrandt	6	1	0.0114
+2070	Emily Groopman	6	1	0.0114
+2071	Julia K. Goodrich	6	1	0.0114
+2072	Joseph G. Gleeson	6	1	0.0114
+2073	Roula Ghaoui	6	1	0.0114
+2074	Casie A. Genetti	6	1	0.0114
+2075	Janina Gburek‐Augustat	6	1	0.0114
+2076	Hanna T. Gazda	6	1	0.0114
+2077	Vijay Ganesh	6	1	0.0114
+2078	Mythily Ganapathi	6	1	0.0114
+2079	Lyndon Gallacher	6	1	0.0114
+2080	Jack Fu	6	1	0.0114
+2081	Emily Evangelista	6	1	0.0114
+2082	Sandra Donkervoort	6	1	0.0114
+2083	Stephanie DiTroia	6	1	0.0114
+2084	Sandra T. Cooper	6	1	0.0114
+2085	Wendy K. Chung	6	1	0.0114
+2086	John Christodoulou	6	1	0.0114
+2087	Katherine R. Chao	6	1	0.0114
+2088	Liam D. Cato	6	1	0.0114
+2089	Kinga M. Bujakowska	6	1	0.0114
+2090	Samantha J. Bryen	6	1	0.0114
+2091	Harrison Brand	6	1	0.0114
+2092	Carsten G. Bönnemann	6	1	0.0114
+2093	Alan H. Beggs	6	1	0.0114
+2094	Samantha Baxter	6	1	0.0114
+2095	Tobias Bartolomaeus	6	1	0.0114
+2096	Pankaj B. Agrawal	6	1	0.0114
+2097	Michael E. Talkowski	6	1	0.0114
+2098	Christina Austin‐Tse	6	1	0.0114
+2099	Heidi L. Rehm	6	1	0.0114
+2100	Anne O’Donnell‐Luria	6	1	0.0114
+2101	Gilbert Vézina	5	1	1.0
+2102	Coral M. Stredny	3	1	0.1111
+2103	Maria Papadopoulou	3	1	0.1111
+2104	Suresh Pujar	3	1	0.1111
+2105	Marios Kaliakatsos	3	1	0.1111
+2106	Stuart R. Tomko	3	1	0.1111
+2107	Ronny Wickström	3	1	0.1111
+2108	Christopher Cortina	3	1	0.1111
+2109	Bo Zhang	3	1	0.1111
+2110	Sebastian Paus	3	1	0.0714
+2111	Harald Hegen	3	1	0.0714
+2112	Matthias K. Auer	3	1	0.0714
+2113	Florian Deisenhammer	3	1	0.0714
+2114	Friederike Ufer	3	1	0.0714
+2115	Robert Birnbacher	3	1	0.1538
+2116	Claudio Gobbi	3	1	0.1538
+2117	Martin Kurthen	3	2	0.265
+2118	Markus Naumann	3	1	0.1538
+2119	U Neirich	3	1	0.1538
+2120	Gerhard Ransmayr	3	1	0.1538
+2121	Matthias W. Riepe	3	2	0.4205
+2122	Oliver Schwartz	3	1	0.1538
+2123	Marie Macnee	8	1	0.0769
+2124	Jean Khoury	8	1	0.0769
+2125	Nisha Bhattarai	8	1	0.0769
+2126	Eduardo Pérez‐Palma	8	1	0.0769
+2127	Elizabeth Butler	8	1	0.0769
+2128	Giulio Genovese	8	1	0.0769
+2129	Janine Altmüller	8	1	0.0769
+2130	Lisa-Marie Niestroj	8	1	0.0769
+2131	Lisa Ferguson	8	1	0.0769
+2132	Troels W. Kjær	6	1	0.3333
+2133	Helle Hjalgrim	6	1	0.3333
+2134	Florian Rennebaum	8	1	0.1667
+2135	Désirée De Simoni	9	1	0.1111
+2136	Verena Eigler	9	1	0.1111
+2137	K Mayer	9	1	0.1111
+2138	Felicitas Becker	9	1	0.1429
+2139	Julian Schubert	9	1	0.1429
+2140	Arvid Suls	9	1	0.1429
+2141	Steffen Grüninger	9	1	0.1429
+2142	A Hofmann-Peters	9	1	1.0
+2143	Jürgen Sperner	9	1	0.1429
+2144	Kerstin Hallmann	9	1	0.1429
+2145	René Madeleyen	9	1	0.1429
+2146	Jan Nový	3	1	0.2
+2147	Gilles Allenbach	3	1	0.2
+2148	Éric Guedj	3	1	0.2
+2149	John O. Prior	3	1	0.2
+2150	A. Thareau Vaury	6	1	0.0171
+2151	Ángeles Schteinschnaider	6	1	0.0171
+2152	Ignacio Sfaello	6	1	0.0171
+2153	Lakshmi Nagarajan	6	1	0.0171
+2154	Simon Harvey	6	1	0.0171
+2155	Hélène Verhelst	6	1	0.0171
+2156	Liesbeth De Waele	6	1	0.0171
+2157	Patrick Van Bogaert	6	1	0.0171
+2158	Riëm El Tahry	6	1	0.0171
+2159	Mary Connolly	6	1	0.0171
+2160	Philippe Major	6	1	0.0171
+2161	Alberto Velez	6	1	0.0171
+2162	Orlando Carreno	6	1	0.0171
+2163	Juan Carlos Gómez	6	1	0.0171
+2164	Jakob Christensen	6	1	0.0171
+2165	Louis Vallée	6	1	0.0171
+2166	Sylvie Nguyen The Tich	6	1	0.0171
+2167	Patrick Berquin	6	1	0.0171
+2168	Dorothée Ville	6	1	0.0171
+2169	Christoph Hertzberg	6	1	0.0171
+2170	Antigone Papavasiliou	6	1	0.0171
+2171	Meropi Tzoufi	6	1	0.0171
+2172	Zsuzsanna Gyorsok	6	1	0.0171
+2173	Péter Diószeghy	6	1	0.0171
+2174	David William Webb	6	1	0.0171
+2175	G. Bartalini	6	1	0.0171
+2176	Giuseppe Gobbi	6	1	0.0171
+2177	Maria Paola Canevini	6	1	0.0171
+2178	Pierangelo Veggiotti	6	1	0.0171
+2179	M. G. Baglietto	6	1	0.0171
+2180	Anna Teresa Giallonardo	7	2	0.0434
+2181	Nicola Laforgia	6	1	0.0171
+2182	Raffaele Falsaperla	6	1	0.0171
+2183	Hiroko Ikeda	6	1	0.0171
+2184	Shin Nabatame	6	1	0.0171
+2185	Hisashi Kawawaki	6	1	0.0171
+2186	Harumi Yoshinaga	6	1	0.0171
+2187	Masaya Kubota	6	1	0.0171
+2188	Yasuhiro Suzuki	6	1	0.0171
+2189	Hugo Ceja Moreno	6	1	0.0171
+2190	Bernard A. Zonnenberg	6	1	0.0171
+2191	Marie‐Claire Y. de Wit	6	1	0.0171
+2192	Marit Bjoernvold	6	1	0.0171
+2193	Sergiusz Jóźwiak	6	1	0.0171
+2194	Kijoong Kim	6	1	0.0171
+2195	Heung Dong Kim	6	1	0.0171
+2196	Munhyang Lee	6	1	0.0171
+2197	Taesung Ko	6	1	0.0171
+2198	Elena Belousova	6	1	0.0171
+2199	Nataliya A. Ermolenko	6	1	0.0171
+2200	И. Е. Повереннова	6	1	0.0171
+2201	Liudmila Kuzenkova	6	1	0.0171
+2202	Maria Luz Ruiz Falco Rojas	6	1	0.0171
+2203	Adolfo López de Munaín	6	1	0.0171
+2204	Pi‐Chuan Fan	6	1	0.0171
+2205	Chao Huang	6	1	0.0171
+2206	Ying‐Chao Chang	6	1	0.0171
+2207	Charcrin Nabangchang	6	1	0.0171
+2208	Krisnachai Chomtho	6	1	0.0171
+2209	Surachai Likasitwattanakul	6	1	0.0171
+2210	Lunliya Thampratankul	6	1	0.0171
+2211	Ayşe Serdaroğlu	6	1	0.0171
+2212	Banu Ahlar	6	1	0.0171
+2213	Sarah Aylett	6	1	0.0171
+2214	Archana Desurkar	6	1	0.0171
+2215	Clare Johnston	6	1	0.0171
+2216	Hannah R. Cock	6	1	0.0171
+2217	Alasdair Parker	6	1	0.0171
+2218	Dougall McCorry	6	1	0.0171
+2219	Richard Appleton	6	1	0.0171
+2220	Steven Sparagana	6	1	0.0171
+2221	Katherine S. Taub	6	1	0.0171
+2222	Michael Frost	6	1	0.0171
+2223	Colin Roberts	6	1	0.0171
+2224	Mustafa Şahin	6	1	0.0171
+2225	Susan Koh	6	1	0.0171
+2226	Mary Kay Koenig	6	1	0.0171
+2227	Martina Bebin	6	1	0.0171
+2228	Daniel K. Miles	6	1	0.0171
+2229	James W. Wheless	6	1	0.0171
+2230	Angus A. Wilfong	6	1	0.0171
+2231	Tanjala Gipson	6	1	0.0171
+2232	Joyce Y. Wu	6	1	0.0171
+2233	Rachel Kuperman	6	1	0.0171
+2234	Mary L. Zupanc	6	1	0.0171
+2235	Francis J. DiMario	6	1	0.0171
+2236	Doris A. Trauner	6	1	0.0171
+2237	Rajeshwari Mahalingam	6	1	0.0171
+2238	Vinodh Narayanan	6	1	0.0171
+2239	Jochen Herms	8	1	0.15
+2240	Patrick N. Harter	8	1	0.15
+2241	Markus Müller	8	1	1.0
+2242	Jerzy Daniluk	7	1	0.2
+2243	Narinder Lotay	7	1	0.2
+2244	Sarah E. DeRossett	7	1	0.2
+2245	Suzanne Edwards	7	1	0.2
+2246	Florian Brunner	3	1	0.1429
+2247	Stephen Rubino	3	1	0.1429
+2248	Howard L. Weiner	3	1	0.1429
+2249	Frederike L. Harms	6	1	0.0233
+2250	Elena Parrini	6	1	0.0233
+2251	Martino Montomoli	6	1	0.0233
+2252	Ulrike Mütze	6	1	0.0233
+2253	Katherine L. Helbig	6	1	0.0233
+2254	Beate Albrecht	6	1	0.0233
+2255	Ulrich Bernbeck	6	1	0.0233
+2256	Ellen van Binsbergen	6	1	0.0233
+2257	Saskia Biskup	6	1	0.0233
+2258	Lydie Bürglen	6	1	0.0233
+2259	Jonas Denecke	6	1	0.0233
+2260	Bénédicte Héron	6	1	0.0233
+2261	Henrike Heyne	6	1	0.0233
+2262	Georg F. Hoffmann	6	1	0.0233
+2263	Takeshi Matsushige	6	1	0.0233
+2264	Ryuki Matsuura	6	1	0.0233
+2265	Mitsuhiro Kato	6	1	0.0233
+2266	Georg Christoph Korenke	6	1	0.0233
+2267	Alma Kuechler	6	1	0.0233
+2268	Constanze Lämmer	6	1	0.0233
+2269	Cyril Mignot	6	1	0.0233
+2270	Mitsuko Nakashima	6	1	0.0233
+2271	Hirotomo Saitsu	6	1	0.0233
+2272	Hannah Stamberger	6	1	0.0233
+2273	Jun Tohyama	6	1	0.0233
+2274	Wendy Werckx	6	1	0.0233
+2275	Julia Wickert	6	1	0.0233
+2276	Francesco Mari	6	1	0.0233
+2277	Naomichi Matsumoto	6	1	0.0233
+2278	Kerstin Kutsche	6	1	0.0233
+2279	Stefanie H. Mueller	3	1	0.04
+2280	Anna Färber	3	1	0.04
+2281	Andre Franke	3	1	0.04
+2282	Simone Schmidt	9	1	0.0435
+2283	Melanie Boltzmann	9	1	0.0435
+2284	M. Brunotte	9	1	0.0435
+2285	Martin Sailer	9	1	0.0435
+2286	Martin Siepmann	9	1	0.0435
+2287	Christoph Müller	9	1	0.0435
+2288	Jens D. Rollnik	9	1	0.0435
+2289	Jean Isnard	6	1	0.0667
+2290	Maura Castagna	6	1	0.0667
+2291	Alison E. John	6	1	0.0667
+2292	Caroline Salon	6	1	0.0667
+2293	Nathalie Streichenberger	6	1	0.0667
+2294	Frank Boesebeck	0	1	1.0
+2295	Francesco Cardinale	8	1	0.0435
+2296	Sarat P. Chandra	8	1	0.0435
+2297	Jibril Osman Farah	8	1	0.0435
+2298	Saadi Ghatan	8	1	0.0435
+2299	Jason S. Hauptmann	8	1	0.0435
+2300	Fedor Panov	8	1	0.0435
+2301	Sumeet Vadera	8	1	0.0435
+2302	José Géraldo Ribero Vaz	8	1	0.0435
+2303	Manfred Westphal	8	1	0.0435
+2304	Kazem Ghaemi	0	1	1.0
+2305	Aileen McGonigal	7	1	0.6
+2306	Jean‐Arthur Micoulaud‐Franchi	7	1	0.6
+2307	Géza Berecki	6	2	0.3596
+2308	Alexander Bryson	6	1	0.3333
+2309	Steven Petrou	6	1	0.3333
+2310	Joana Machado‐Santos	3	1	0.125
+2311	Etsuji Saji	3	1	0.125
+2312	Manuela Paunovic	3	1	0.125
+2313	Roland Liblau	3	1	0.125
+2314	Galina Gabriely	3	1	0.125
+2315	Christian Baumgärtner	8	1	0.0625
+2316	K. Bohlmann	8	1	0.0625
+2317	W. Graf	8	1	0.0625
+2318	Martin Hirsch	8	1	0.0625
+2319	Cynthia G. Last	8	1	0.0625
+2320	Andreas Hartlep	8	1	0.0625
+2321	Ingo Uttner	8	1	0.2
+2322	Werner A. Scherbaum	8	1	0.2
+2323	G. Gründer	9	1	0.0263
+2324	Hans‐Willi Clement	9	1	0.0263
+2325	Matthias J. Müller	9	1	0.0263
+2326	G Zurek	9	1	0.0263
+2327	Leock Y. Ngo	7	2	0.3333
+2328	Beate Diehl	5	1	0.5
+2329	Z. Mirzadjanova	3	1	1.0
+2330	Pawel Kermer	3	1	0.2667
+2331	M. Naumann	3	1	0.2667
+2332	Michael P. Schittkowski	0	1	1.0
+2333	Ervin Durovic	3	1	0.3333
+2334	Jan S. Bauer	3	1	1.0
+2335	Nicola Specchio	6	2	0.1183
+2336	Sameer M. Zuberi	6	1	0.0909
+2337	Amélie Lothe	6	1	0.0909
+2338	Christine Thomas	5	1	0.3
+2339	Nina Rullkötter	5	1	0.3
+2340	Katja Wingenfeld	5	1	0.3
+2341	Christoph Mensebach	5	1	0.3
+2342	Heike Elsner	9	1	1.0
+2343	Hassan Omaimen	8	1	0.8
+2344	Hamzah Yasin	8	1	0.8
+2345	H. W. Pannek	9	1	1.0
+2346	J. Schramm	9	1	0.5
+2347	Yannic Titgemeyer	8	1	0.0714
+2348	Dirk‐Matthias Altenmüller	8	1	0.0714
+2349	Michael C. Lanz	8	1	0.0714
+2350	Robert D. Nass	8	1	0.0714
+2351	Jan Rémi	8	1	0.0714
+2352	Roann Ramos	8	1	0.0714
+2353	Ekaterina Kutafina	8	1	0.0714
+2354	Stephan Jonas	8	1	0.0714
+2355	Angeliki Kantzeli	0	1	1.0
+2356	Pengcheng Lv	3	1	0.1429
+2357	Mengyang Wang	3	1	0.1429
+2358	Irina Lehmann	9	1	0.25
+2359	Navah Ester Kadish	9	1	0.25
+2360	Stefanie Hahn	0	1	0.0952
+2361	Yvonne Denno	0	1	0.0952
+2362	Nicole Rieckhoff	0	1	0.0952
+2363	Christiane Radzimski	0	1	0.0952
+2364	Sebastian Berg	0	1	0.0952
+2365	Florian Roghmann	0	1	0.0952
+2366	Joachim Noldus	0	1	0.0952
+2367	Sabine Skodda	0	1	0.0952
+2368	W. Stöcker	0	1	0.0952
+2369	Lars Komorowski	0	1	0.0952
+2370	Ramona Miske	0	1	0.0952
+2371	Ingo Kleiter	0	1	0.0952
+2372	Carolina Courage	7	1	0.0263
+2373	Karen Oliver	7	1	0.0263
+2374	Eon Joo Park	7	1	0.0263
+2375	Jillian M. Cameron	7	1	0.0263
+2376	Kariona A. Grabińska	7	1	0.0263
+2377	Mikko Muona	7	1	0.0263
+2378	Laura Canafoglia	7	1	0.0263
+2379	Edith Said	7	1	0.0263
+2380	Carlo Di Bonaventura	7	1	0.0263
+2381	Hui Bein Chew	7	1	0.0263
+2382	Chiara Criscuolo	7	1	0.0263
+2383	Leanne M. Dibbens	7	1	0.0263
+2384	P. Riguzzi	7	1	0.0263
+2385	Angelo Labate	7	1	0.0263
+2386	Alessandro Filla	7	1	0.0263
+2387	Christopher B. Jackson	7	1	0.0263
+2388	Tarja Joensuu	7	1	0.0263
+2389	John A. Damiano	7	1	0.0263
+2390	Sara Kivity	7	1	0.0263
+2391	Amos D. Korczyn	7	1	0.0263
+2392	Aarno Palotie	7	1	0.0263
+2393	Davide Uccellini	7	1	0.0263
+2394	Loretta Giuliano	7	1	0.0263
+2395	Eva Andermann	7	1	0.0263
+2396	Roberto Michelucci	7	1	0.0263
+2397	Melanie Bahlo	7	1	0.0263
+2398	Silvana Franceschetti	7	1	0.0263
+2399	William C. Sessa	7	1	0.0263
+2400	Samuel F. Berkovic	7	1	0.0263
+2401	Anna‐Elina Lehesjoki	7	1	0.0263
+2402	Ramy Abdelnaby	8	1	0.0833
+2403	Anas Elgenidy	8	1	0.0833
+2404	Jan Heckelmann	8	1	0.0833
+2405	Mahmoud Mostafa Bedewy	8	1	0.0833
+2406	Ahmed Samy Shabib	8	1	0.0833
+2407	Mohamed A. Ebrahim	8	1	0.0833
+2408	Khaled A Elmenawi	8	1	0.0833
+2409	Imene Maallem	8	1	0.0833
+2410	Merna Wagih Youssef	8	1	0.0833
+2411	Abdelrahman M. Attia	8	1	0.0833
+2412	Mostafa Hossam El Din Moawad	8	1	0.0833
+2413	Khaled Ashraf Mohamed	8	1	0.0833
+2414	Margherita Nosadini	3	1	0.1429
+2415	Irene Toldo	3	1	0.1429
+2416	Benedetta Tascini	3	1	0.1429
+2417	Lucio Parmeggiani	3	1	0.1429
+2418	Piera De Gaspari	3	1	0.1429
+2419	Luigi Zuliani	3	2	0.3929
+2420	Stefano Sartori	3	1	0.1429
+2421	C. Soellner	8	1	0.6667
+2422	Frank Oltmanns	0	1	0.1538
+2423	Margitta Seeck	0	1	0.1538
+2424	Kathrin Wagner	0	1	0.1538
+2425	Kim I. Bishop	6	1	0.1111
+2426	Peter Κ. Isquith	6	1	0.1111
+2427	Gérard A. Gioia	6	1	0.1111
+2428	Simone Hortsmann	0	1	1.0
+2429	Jörg Aengenendt	0	2	2.0
+2430	Matthias Wilhelm Hoppe	0	1	1.0
+2431	Iryna Leunikava	7	1	0.1111
+2432	Marcus Brunnert	7	1	0.1111
+2433	Lars Joeres	7	1	0.1111
+2434	Jessie Sutphin	7	1	0.1111
+2435	Marco Boeri	7	1	0.1111
+2436	Jasmine Smith	7	1	0.1111
+2437	Flavio Villani	7	1	0.1111
+2438	Cornelia Herzig	5	1	0.6
+2439	K. Schröder	5	1	0.6
+2440	Valentina Krenz	5	1	0.5714
+2441	Stéphanie Garcia-Tarodo	3	1	0.2
+2442	Alexandre Datta	3	1	0.2
+2443	Gian Paolo Ramelli	3	1	0.2
+2444	Fabienne Maréchal-Rouiller	3	1	0.2
+2445	Christian Korff	3	1	0.2
+2446	Nadine Vietmeier	7	1	1.0
+2447	Annika Garlichs	5	1	0.5
+2448	Richard W. K. Heß	5	1	0.5
+2449	Malin Schöpper	8	1	0.5
+2450	Dawna D. Armstrong	3	1	0.0476
+2451	Neda Bernasconi	3	1	0.0476
+2452	Hajime Miyata	3	1	0.0476
+2453	Samuel Wiebe	3	1	0.0476
+2454	Maurits Sanders	8	1	0.0274
+2455	Iskander Van der Wolf	8	1	0.0274
+2456	Tuomas Rauramaa	8	1	0.0274
+2457	Giancarlo Di Gennaro	8	1	0.0274
+2458	Vincenzo Esposito	8	1	0.0274
+2459	István Bódi	8	1	0.0274
+2460	Adam Kalina	8	1	0.0274
+2461	Martin Aichholzer	8	1	0.0274
+2462	Elisabeth Kaufmann	8	1	0.0274
+2463	Kristina Koenig	8	1	0.0274
+2464	Anna Maria Buccoliero	8	1	0.0274
+2465	Katja Menzler	8	1	0.0274
+2466	Rita Garbelli	8	1	0.0274
+2467	Francesco Deleo	8	1	0.0274
+2468	Joseph Toulouse	8	1	0.0274
+2469	Isabel Amorim	8	1	0.0274
+2470	Luca De Palma	8	1	0.0274
+2471	Theresa O. Scholl	8	1	0.0274
+2472	Karl Roessler	8	1	0.0274
+2473	Savo Raičević	8	1	0.0274
+2474	Aleksandar J. Ristić	8	1	0.0274
+2475	Jan Beckervordersandforth	8	1	0.0274
+2476	Wesley T. Kerr	7	1	0.1667
+2477	Jocelyn Y. Cheng	7	1	0.1667
+2478	Lynn D. Kramer	7	1	0.1667
+2479	M. Hoppe	0	1	1.0
+2480	Jorge Plümer	5	1	0.2222
+2481	Isabell Greeve	5	1	0.2222
+2482	Simone Hartmann	0	1	0.8
+2483	Tim Ogutu	0	1	0.8
+2484	Bruno Giometto	3	1	0.25

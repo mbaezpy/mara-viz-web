@@ -190,31 +190,38 @@ header.main-tabs {
 
 .library-mode {
   display: inline-flex;
-  background: var(--bg);
+  background: var(--chip);
   border: 1px solid var(--tooltip-border);
-  border-radius: 999px;
-  padding: 2px;
-  align-items: center;
-  justify-content: center;
+  border-radius: 12px;
+  padding: 3px;
+  gap: 4px;
 }
 
 .library-mode button {
   appearance: none;
   border: none;
-  background: transparent;
-  padding: 6px 16px;
-  font: 600 13px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: none;
+  padding: 8px 18px;
+  font: 600 13px system-ui, sans-serif;
   color: var(--muted);
-  border-radius: 999px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.library-mode button:hover {
+  color: var(--ink);
 }
 
 .library-mode button.is-active {
-  background: var(--panel-bg);
-  color: var(--ink);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  background: white;
+  color: black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
+
 
 .library-results {
   flex: 1 1 auto;
@@ -351,6 +358,147 @@ header.main-tabs {
 
 .library-filter-clear:hover {
   text-decoration: underline;
+}
+
+.library-body{
+  display:flex;
+  min-height:0;
+  flex:1 1 auto;
+  height:100%;
+}
+
+.library-main{
+  flex:1 1 auto;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+.library-sidebar{
+  flex:0 0 340px;
+  max-width: 42vw;
+  background: var(--panel-bg);
+  border-left:1px solid var(--tooltip-border);
+  box-shadow:-8px 0 24px rgba(0,0,0,0.05);
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  overflow-y:auto;
+}
+
+.library-sidebar h3{
+  margin:0;
+  font-size:14px;
+  letter-spacing:.2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.library-sidebar .sidebar-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.library-sidebar .sidebar-search{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid var(--tooltip-border);
+  border-radius:8px;
+  padding:6px 8px;
+  background:#fff;
+}
+
+.library-sidebar .sidebar-search input{
+  flex:1;
+  border:none;
+  background:transparent;
+  font: inherit;
+  outline:none;
+}
+
+.library-sidebar .sidebar-breadcrumb{
+  font-size:12px;
+  color: var(--muted);
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.library-sidebar .sidebar-back{
+  border:none;
+  background:none;
+  color: var(--brand-blue);
+  cursor:pointer;
+  padding:0;
+  font-size:12px;
+}
+
+.library-topic-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  /* gap:8px; */
+  overflow:auto;
+}
+
+.library-topic-list li{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* or stretch */
+  padding: 4px 4px 4px 0;
+  font-size: 12px;
+  background: #fff;
+  min-width: 0;   
+}
+
+.library-topic-list li button{
+  width:100%;
+  border:1px solid var(--tooltip-border);
+  background:#fff;
+  border-radius:10px;
+  padding:4px 8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  cursor:pointer;
+  text-align:left;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  font-size: 12px;
+}
+
+.library-topic-list li button:hover{
+  border-color: var(--brand-blue);
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+
+.library-topic-name{
+  align-items:center;        /* NEW */
+  flex:1 1 auto;             /* NEW: take remaining space */
+  min-width:0;               /* NEW: allow shrinking so ellipsis can trigger */
+  overflow:hidden;           /* NEW */
+  white-space:nowrap;        /* NEW */
+  text-overflow:ellipsis;    /* NEW */
+  padding-left: 2px;
+  cursor: pointer;
+}
+
+.library-topic-dot{
+  width:12px;
+  height:12px;
+  border-radius:999px;
+  background: var(--topic-color, #94a3b8);
+}
+
+.library-topic-count{
+  font-size:12px;
+  color: var(--muted);
 }
 
 .library-toast {
@@ -556,10 +704,10 @@ mark {
 }
 
 .library-table th.col-year,
-.library-table td.col-year { width: 72px; }
+.library-table td.col-year { width: 42px; }
 
 .library-table th.col-citations,
-.library-table td.col-citations { width: 96px; }
+.library-table td.col-citations { width: 76px; }
 
 /* Let the middle column take the rest */
 .library-table th.col-title,

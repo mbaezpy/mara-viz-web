@@ -37,6 +37,7 @@ let modeHandlers = null;
 let toastTimer = null;
 let filterOverflowRaf = null;
 let lastSearchInputAt = 0;
+const EMPTY_TOPIC_SIDEBAR = { view: "top", activeTopId: null, searchQuery: "" };
 
 function escapeHTML(value) {
   return (value == null ? "" : String(value)).replace(/[&<>"]/g, ch => ({
@@ -850,6 +851,7 @@ function getFilteredPublications() {
   const filters = state.filters;
   const tokens = state.searchTokens || [];
   const topicIds = filters.topics.map(t => t.id);
+  const effectiveTopicIds = expandTopicFilters(topicIds);
   const authorIds = filters.authors.map(a => a.id);
   const journalIds = filters.journals.map(j => j.id);
 
@@ -861,9 +863,9 @@ function getFilteredPublications() {
       }
     }
 
-    if (topicIds.length) {
+    if (effectiveTopicIds.size) {
       const pubTopics = pub.topic_ids || [];
-      if (!topicIds.some(id => pubTopics.includes(id))) {
+      if (!pubTopics.some(id => effectiveTopicIds.has(id))) {
         return false;
       }
     }
@@ -887,15 +889,16 @@ function getFilteredAuthors() {
   if (!dataCache) return [];
   const authors = dataCache.authors || [];
   const topicIds = state.filters.topics.map(t => t.id);
+  const effectiveTopicIds = expandTopicFilters(topicIds);
 
   const searched = applySearch(authors, state.search);
-  if (!topicIds.length) {
+  if (!effectiveTopicIds.size) {
     return sortAuthors(searched);
   }
   const filtered = searched.filter(author => {
     const authorTopicIds = (author.topics || []).map(t => t.id);
     if (!authorTopicIds.length) return false;
-    return topicIds.some(id => authorTopicIds.includes(id));
+    return authorTopicIds.some(id => effectiveTopicIds.has(id));
   });
   return sortAuthors(filtered);
 }
@@ -1138,6 +1141,7 @@ function render() {
   buildSelectOptions();
   ensureFilterLabels();
   renderFilterBar();
+  renderTopicSidebar();
   ensurePanel(state.mode);
   Object.entries(elements.panels).forEach(([key, node]) => {
     node.style.display = key === state.mode ? "block" : "none";
@@ -1153,6 +1157,148 @@ function applyPendingHighlights() {
     highlightMatches(panel, facet, id);
   });
   state.pendingHighlights = [];
+}
+
+function expandTopicFilters(selectedIds = []) {
+  if (!dataCache || !Array.isArray(selectedIds) || !selectedIds.length) return new Set();
+  const topicParent = dataCache.topicParent || new Map();
+  const topicDescendants = dataCache.topicDescendants || new Map();
+  const selected = new Set(selectedIds);
+  const toIgnore = new Set();
+
+  selected.forEach(id => {
+    let parent = topicParent.get(id) || null;
+    while (parent) {
+      if (selected.has(parent)) {
+        toIgnore.add(parent);
+      }
+      parent = topicParent.get(parent) || null;
+    }
+  });
+
+  const effectiveRoots = [];
+  selected.forEach(id => {
+    if (!toIgnore.has(id)) effectiveRoots.push(id);
+  });
+
+  const expanded = new Set();
+  effectiveRoots.forEach(id => {
+    const desc = topicDescendants.get(id);
+    if (desc && desc.size) {
+      desc.forEach(d => expanded.add(d));
+    } else {
+      expanded.add(id);
+    }
+  });
+  return expanded;
+}
+
+function renderTopicSidebar() {
+  const sidebar = elements?.topicSidebar;
+  if (!sidebar) return;
+  const prevSearch = sidebar.querySelector('[data-role="topic-search"]');
+  const searchWasFocused = prevSearch && document.activeElement === prevSearch;
+  const prevCaret =
+    searchWasFocused && typeof prevSearch.selectionStart === "number"
+      ? prevSearch.selectionStart
+      : null;
+  const topicsByParent = dataCache?.topicsByParent;
+  const topicsFlat = dataCache?.topicsFlat || [];
+  const topicCounts = dataCache?.topicCounts || new Map();
+  const colorForTopicId = dataCache?.colorForTopicId;
+  if (!topicsByParent) {
+    sidebar.innerHTML = `<div class="library-empty">Topics unavailable.</div>`;
+    return;
+  }
+
+  const sidebarState = state.topicSidebar || { ...EMPTY_TOPIC_SIDEBAR };
+  const search = sidebarState.searchQuery || "";
+  const hasSearch = Boolean(search.trim());
+  let viewMode = hasSearch ? "search" : sidebarState.view;
+  let activeTopId = sidebarState.activeTopId;
+  let items = [];
+  let breadcrumb = "";
+
+  if (hasSearch) {
+    const q = normalize(search);
+    items = topicsFlat.filter(t => normalize(t.label).includes(q)).slice(0, 200);
+  } else if (viewMode === "children" && activeTopId) {
+    items = topicsByParent.get(activeTopId) || [];
+    const label = dataCache.topicIndex.get(activeTopId) || activeTopId;
+    breadcrumb = `Topics › ${label}`;
+  } else {
+    viewMode = "top";
+    activeTopId = null;
+    items = dataCache.topicsTopLevel || [];
+  }
+
+  const renderItem = item => {
+    const color = colorForTopicId ? colorForTopicId(item.top_level_id || item.id) : "#94a3b8";
+    const count = topicCounts.get(item.id);
+    const badge = Number.isFinite(count) && count > 0 ? `<span class="badge">${formatNumber(count)}</span>` : "";
+    return `
+      <li>
+        <button type="button" data-topic-id="${escapeHTML(item.id)}" data-topic-label="${escapeHTML(item.label || item.id)}" style="--topic-color:${color}">
+          <span class="library-topic-name"><span class="topic-color-dot"></span><span>${escapeHTML(item.label || item.id)}</span></span>
+          <!--${badge}-->
+        </button>
+      </li>`;
+  };
+
+  sidebar.innerHTML = `
+    <div class="sidebar-header">
+      <h3>Topics</h3>
+      ${viewMode === "children" ? `<button type="button" class="sidebar-back" data-role="topic-back">Back</button>` : ""}
+    </div>
+    <div class="sidebar-search">
+      <input type="search" data-role="topic-search" placeholder="Search topics…" value="${escapeHTML(search)}" />
+    </div>
+    ${breadcrumb ? `<div class="sidebar-breadcrumb">${escapeHTML(breadcrumb)}</div>` : ""}
+    <ul class="library-topic-list" data-role="topic-list">
+      ${items.map(renderItem).join("") || '<li><div class="library-empty">No topics found.</div></li>'}
+    </ul>
+  `;
+
+  const searchInput = sidebar.querySelector('[data-role="topic-search"]');
+  if (searchInput) {
+    if (searchWasFocused || sidebarState.searchQuery) {
+      searchInput.focus();
+      if (prevCaret !== null) {
+        searchInput.setSelectionRange(prevCaret, prevCaret);
+      }
+    }
+    searchInput.addEventListener("input", event => {
+      const val = event.target.value || "";
+      state.topicSidebar.searchQuery = val;
+      state.topicSidebar.view = val.trim() ? "search" : "top";
+      state.topicSidebar.activeTopId = null;
+      renderTopicSidebar();
+    });
+  }
+
+  const backBtn = sidebar.querySelector('[data-role="topic-back"]');
+  if (backBtn) {
+    backBtn.addEventListener("click", () => {
+      state.topicSidebar = { ...EMPTY_TOPIC_SIDEBAR };
+      renderTopicSidebar();
+    });
+  }
+
+  sidebar.querySelectorAll("[data-topic-id]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-topic-id") || "";
+      const label = btn.getAttribute("data-topic-label") || id;
+      // Set sidebar state before addFilter so render reflects drilldown without flicker.
+      if (!hasSearch && viewMode === "top") {
+        state.topicSidebar.view = "children";
+        state.topicSidebar.activeTopId = id;
+        state.topicSidebar.searchQuery = "";
+      }
+      addFilter("topics", { id, label });
+      // Always re-render so drilldown works even if topic is already in filters.
+      renderTopicSidebar();
+    });
+  });
 }
 
 function addFilter(facet, entry, options = {}) {
@@ -1420,9 +1566,10 @@ async function loadData() {
   if (dataCache) return dataCache;
   fetchController = new AbortController();
   const signal = fetchController.signal;
-  const [pubsResp, authorsResp] = await Promise.all([
+  const [pubsResp, authorsResp, topicsResp] = await Promise.all([
     fetch("data/library_publications.json", { signal }),
     fetch("data/library_authors.json", { signal }),
+    fetch("data/topics_hierarchy.json", { signal }).catch(() => null),
   ]);
 
   if (!pubsResp.ok) throw new Error(`Failed to load library_publications.json (${pubsResp.status})`);
@@ -1430,10 +1577,22 @@ async function loadData() {
 
   const pubsData = await pubsResp.json();
   const authorsData = await authorsResp.json();
+  let topicsHierarchy = null;
+  if (topicsResp && topicsResp.ok) {
+    try {
+      topicsHierarchy = await topicsResp.json();
+    } catch (err) {
+      topicsHierarchy = null;
+    }
+  }
 
   const topicIndex = new Map();
+  const topicCounts = new Map();
+  const topicParent = new Map();
   const authorIndex = new Map();
   const journalIndex = new Map();
+  const topicsByParent = new Map();
+  let topicsFlat = [];
 
   const allTopicIds = new Set();
   const publications = (pubsData.items || []).map(item => {
@@ -1465,6 +1624,11 @@ async function loadData() {
     ].join(" ");
 
     const localAuthors = authors.filter(a => a.local).map(a => a._key);
+
+    topics.forEach(t => {
+      const prev = topicCounts.get(t.id) || 0;
+      topicCounts.set(t.id, prev + 1);
+    });
 
     return {
       ...item,
@@ -1506,7 +1670,64 @@ async function loadData() {
     };
   });
 
-    // Build & keep a single color map
+  const addTopicEntry = (entry) => {
+    const key = entry.parent || null;
+    if (!topicsByParent.has(key)) topicsByParent.set(key, []);
+    topicsByParent.get(key).push(entry);
+    if (entry.id) {
+      topicParent.set(entry.id, entry.parent || null);
+    }
+    topicsFlat.push(entry);
+  };
+
+  if (topicsHierarchy) {
+    const rootNode = topicsHierarchy.root || topicsHierarchy;
+    const children = Array.isArray(rootNode.children) ? rootNode.children : [];
+    const walk = (node, parentId, topId) => {
+      const id = node.topic_id || node.name;
+      if (!id) {
+        (node.children || []).forEach(child => walk(child, parentId, topId));
+        return;
+      }
+      const label = node.name || id;
+      const topLevelId = topId || id;
+      allTopicIds.add(id);
+      if (!topicIndex.has(id)) topicIndex.set(id, label);
+      addTopicEntry({ id, label, parent: parentId, top_level_id: topLevelId });
+      (node.children || []).forEach(child => walk(child, id, topLevelId));
+    };
+    children.forEach(child => walk(child, null, child.topic_id || child.name));
+  }
+
+  if (!topicsFlat.length) {
+    // Fallback: derive flat hierarchy from known topics using topLevelOf
+    Array.from(topicIndex.entries()).forEach(([id, label]) => {
+      const topId = topLevelOf(id) || id;
+      const parent = topId === id ? null : topId;
+      addTopicEntry({ id, label, parent, top_level_id: topId });
+    });
+  }
+
+  topicsFlat = topicsFlat.sort((a, b) => (a.label || "").localeCompare(b.label || ""));
+  Array.from(topicsByParent.values()).forEach(list => list.sort((a, b) => (a.label || "").localeCompare(b.label || "")));
+
+  const topicDescendants = new Map();
+  const collectDescendants = (id) => {
+    if (topicDescendants.has(id)) return topicDescendants.get(id);
+    const result = new Set([id]);
+    const children = topicsByParent.get(id) || [];
+    children.forEach(child => {
+      const sub = collectDescendants(child.id);
+      sub.forEach(d => result.add(d));
+    });
+    topicDescendants.set(id, result);
+    return result;
+  };
+  topicsFlat.forEach(t => {
+    if (t.id) collectDescendants(t.id);
+  });
+
+  // Build & keep a single color map
   const TOPIC_COLOR = buildTopicColorMapFromTopicIds([...allTopicIds]);
 
   const authorsById = new Map();
@@ -1519,10 +1740,16 @@ async function loadData() {
     authors,
     authorsById,
     topicIndex,
+    topicCounts,
     authorIndex,
     journalIndex,
     TOPIC_COLOR,
     colorForTopicId: id => resolveTopicColor(id, TOPIC_COLOR),
+    topicsFlat,
+    topicsByParent,
+    topicsTopLevel: topicsByParent.get(null) || [],
+    topicParent,
+    topicDescendants,
   };
   return dataCache;
 }
@@ -1540,6 +1767,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
     modeButtons: Array.from(view.querySelectorAll('[data-role="mode-btn"]')),
     results: view.querySelector("#library-results"),
     filterBar: view.querySelector('[data-role="filter-bar"]'),
+    topicSidebar: view.querySelector('[data-role="topic-sidebar"]'),
     toast: null,
     overlay: view.querySelector('[data-role="author-overlay"]'),
     overlayContent: view.querySelector('[data-role="overlay-content"]'),
@@ -1585,6 +1813,7 @@ export async function init({ mount, route = {}, navigate } = {}) {
     filterBarExpanded: false,
     lastRemovedFilter: null,
     activeOverlayAuthor: null,
+    topicSidebar: { ...EMPTY_TOPIC_SIDEBAR },
   };
 
   FACETS.forEach(facet => {

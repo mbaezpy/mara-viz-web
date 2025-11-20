@@ -30,9 +30,9 @@
     stroke: #00000014;
     stroke-width: 1;                 /* keep constant */
     vector-effect: non-scaling-stroke;
-    cursor:pointer;
-    /* no CSS transform on circles */
-    transition: stroke .2s ease, stroke-opacity .2s ease, filter .2s ease, fill .2s ease;
+  cursor:pointer;
+  /* no CSS transform on circles */
+  transition: stroke .2s ease, stroke-opacity .2s ease, filter .2s ease, fill .2s ease;
   }
 
   /* hover — color only, no width, no transform */
@@ -125,7 +125,48 @@
   .list a{ color: inherit; text-decoration:none; }
   .list small{ color: var(--muted); } */
 
-  .tooltip{ position:absolute; pointer-events:none; background: var(--tooltip-bg); border:1px solid var(--tooltip-border); padding:8px 10px; border-radius:10px; font-size:12px; max-width:280px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); opacity:0; transform: translate(-50%,-120%); white-space:nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tooltip{
+    position:absolute;
+    pointer-events:none;
+    background: var(--tooltip-bg);
+    border:1px solid var(--tooltip-border);
+    padding:8px 10px;
+    border-radius:10px;
+    font-size:12px;
+    max-width:280px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    opacity:0;
+    transform: translate(-50%,-120%);
+    white-space:nowrap;
+    display:flex;
+    align-items:baseline;
+  }
+
+  .tooltip-label{
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .tooltip-count{
+    flex-shrink:0;
+    margin-left:4px;
+  }
+
+  .since-slider{ position:absolute; left:12px; bottom:12px; min-width: 260px; max-width: 320px; padding:10px 12px; background: var(--panel-bg); border:1px solid var(--tooltip-border); border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); z-index:2; }
+  .since-slider .slider-head{ display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px; }
+  .since-slider .since-label{ font-weight: 700; color: var(--ink); font-size: 13px; letter-spacing: .2px; }
+  .layout-toggle{ display:inline-flex; align-items:center; gap:6px; border:1px solid var(--tooltip-border); background: #f8fafc; color: var(--ink); border-radius: 999px; padding:6px 10px; font-size:12px; cursor:pointer; transition: background .15s ease, border-color .15s ease; }
+  .layout-toggle:hover{ background:#e2e8f0; }
+  .layout-toggle .icon{ font-size:14px; height: 16px;}
+  .since-slider .slider-row{ display:flex; align-items:center; gap:10px; }
+  .since-slider .year-mark{ font-size: 12px; color: var(--muted); min-width: 44px; text-align:center; }
+  .since-slider input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:8px; border-radius:999px; margin:0; background: linear-gradient(to right, #e2e8f0 0%, #e2e8f0 var(--fill-start, 0%), #0ea5e9 var(--fill-start, 0%), #0ea5e9 100%); outline:none; cursor:pointer; }
+  .since-slider input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:18px; height:18px; border-radius:50%; background:#0ea5e9; border:2px solid #f8fafc; box-shadow:0 2px 6px rgba(0,0,0,0.15); }
+  .since-slider input[type=range]::-moz-range-thumb{ width:18px; height:18px; border-radius:50%; background:#0ea5e9; border:2px solid #f8fafc; box-shadow:0 2px 6px rgba(0,0,0,0.15); }
+  .since-slider input[type=range]::-moz-range-track{ background:transparent; }
+  .since-slider.is-hidden{ display:none; }
 
   .skeleton{ position:relative; overflow:hidden; background: #f1f5f9; border-radius:12px; min-height: 64px; }
   .skeleton::after{ content:""; position:absolute; inset:0; transform: translateX(-100%); background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.7), rgba(255,255,255,0)); animation: shimmer 1.25s infinite; }
@@ -137,3 +178,16 @@
     .panel{ width:100%; max-width:none; border-left: none; border-top: 1px solid var(--tooltip-border); box-shadow: 0 -8px 24px rgba(0,0,0,0.05); }
     .breadcrumbs{ left: 12px; right: 12px; overflow:auto; }
   }
+
+
+  .meta.note {
+  background: #f5f7fa;
+  border-left: 4px solid #6a8caf;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  color: #334;
+}
+.meta.note strong {
+  color: #2a4f77;
+}

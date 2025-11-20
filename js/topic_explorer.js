@@ -19,7 +19,19 @@ let applyRouteTopic = null;
 let setSelectedNode = () => {};
 let zoomToNodeRef = () => {};
 let topicColorMap = Object.freeze({});
+let rewrapVisibleLabels = () => {};
+let hierarchyData = null;
+let years = [];
+let sinceIndex = 0;
+let sinceYear = null;
+let refreshSinceFilter = () => {};
+let layoutMode = "stable"; // 'stable' | 'repack'
 const TOPIC_COLOR_FALLBACK = "#94a3b8";
+
+function L(label, data) {
+  console.log(`%c[TE] ${label}`, "color:#38f", data);
+}
+
 
 function collectTopLevelTopicIds(data) {
   if (!data || !Array.isArray(data.children)) return [];
@@ -37,6 +49,12 @@ export async function init({ mount, route = {}, navigate } = {}) {
   const tooltip = $mount.select('#tooltip');
   const panel = $mount.select('#panel-content') || $mount.select('#panel');
   const crumbs = $mount.select('#breadcrumbs');
+  const sliderWrap = $mount.select('#since-slider');
+  const sliderInput = sliderWrap.select('#since-year-range');
+  const sliderLabel = sliderWrap.select('#since-year-label');
+  const sliderStart = sliderWrap.select('#since-year-start');
+  const sliderEnd = sliderWrap.select('#since-year-end');
+  const layoutToggle = sliderWrap.select('#layout-mode-toggle');
 
   // ensure a clean svg container
   svg.selectAll('*').remove();
@@ -44,22 +62,127 @@ export async function init({ mount, route = {}, navigate } = {}) {
   // groups we will append (so cleanup can remove them)
   const gNodes = svg.append('g');
   const gLabels = svg.append('g').attr('class','labels');
+  let nodesSel = null;
+  let labelsSel = null;
 
   const width = 932, height = 932;
-  const depthColors = ['#d0ece7','#80cbc4','#4db6ac','#ffffff'];
 
-  const pack = data => d3.pack().size([width, height]).padding(3)(
-    d3.hierarchy(data).sum(d => d.size || 0).sort((a,b) => b.value - a.value)
-  );
+  function baselineSize(data){
+    if (!data) return 0;
+    const dc = Number(data.doc_count);
+    if (Number.isFinite(dc) && dc > 0) return dc;
+    const sizeVal = Number(data.size);
+    if (Number.isFinite(sizeVal) && sizeVal > 0) return sizeVal;
+    return 0;
+  }
+
+  function nodeBaseRadius(node){
+    const r = Number(node && node.baseR);
+    if (Number.isFinite(r) && r > 0) return r;
+    const r2 = Number(node && node.r);
+    return Number.isFinite(r2) && r2 > 0 ? r2 : 1;
+  }
+
+  function applyLayout(force = false){
+    console.log("[TE] applyLayout root check:", {
+      hasData: !!root.data,
+      child0_hasData: root.children?.[0]?.data,
+      firstCallNode: root.descendants()[1]
+    });
+
+    if (!root || !nodesSel || !labelsSel) return;
+    if (layoutMode !== 'repack' && !force) return;
+    root.sum(n => {
+      const val = Number(effectiveSize(n.data));
+      // Avoid root collapse: minimal positive fallback
+      return Number.isFinite(val) && val > 0 ? val : 1e-6;
+    });
+
+    root.sort((a,b) => b.value - a.value);
+    //d3.pack().size([width, height]).padding(3)(root);
+
+    const clone = d3.hierarchy(root.data);
+    clone.sum(n => Number.isFinite(effectiveSize(n)) ? effectiveSize(n) : 1e-6);
+    clone.sort((a, b) => b.value - a.value);
+    d3.pack().size([width, height]).padding(3)(clone);
+
+    // Build a lookup table to match clone nodes by unique topic_id/name
+    const cloneMap = new Map();
+    clone.descendants().forEach(n => {
+      const key = n.data.topic_id || n.data.name;
+      cloneMap.set(key, n);
+    });
+
+    // Reassign correct positions to original hierarchy
+    root.each(n => {
+      const key = n.data.topic_id || n.data.name;
+      const cn = cloneMap.get(key);
+      if (!cn) return;       // should never happen
+
+      n.x = cn.x;
+      n.y = cn.y;
+      n.r = cn.r;
+    });
+
+
+
+    root.each(n => {
+      const px = Number.isFinite(n.x) ? n.x : 0;
+      const py = Number.isFinite(n.y) ? n.y : 0;
+      n.x = px;
+      n.y = py;
+      if (!Number.isFinite(n.r)) n.r = 0;
+    });
+    // In Auto-fit mode, always zoom relative to the root layout.
+    // Using "focus" freezes the view and prevents visible movement.
+    const target = root;
+    let viewSpan = Number.isFinite(root.r) && root.r > 0
+      ? root.r * 2
+      : Math.max(nodeBaseRadius(root) * 2, 1);
+    const currentView = [root.x, root.y, viewSpan];
+    
+    view = currentView;
+    const k = currentView[2] > 0 ? width / currentView[2] : 1;
+    const targetNode = focus || root;
+
+    L("applyLayout.pack-root", {
+      root_r: root.r,
+      root_x: root.x,
+      root_y: root.y,
+      view_before: view
+    });
+
+    L("applyLayout.target", {
+      target: (focus?.data?.name || "root"),
+      target_x: (focus?.x || root.x),
+      target_y: (focus?.y || root.y),
+      target_r: (focus?.r || root.r)
+    });
+
+    L("applyLayout.view_after", view);
+
+
+    nodesSel
+      .attr('transform', d => `translate(${(d.x - currentView[0]) * k}, ${(d.y - currentView[1]) * k})`)
+      .attr('r', d => d.r * k);
+    labelsSel.attr('transform', d => `translate(${(d.x - currentView[0]) * k}, ${(d.y - currentView[1]) * k})`);
+    rewrapVisibleLabels(k, targetNode);
+  }
 
   // reset state
   root = null;
   focus = null;
   view = null;
+  hierarchyData = null;
+  years = [];
+  sinceIndex = 0;
+  sinceYear = null;
   lookupCache = null;
   lookupPromise = null;
   selectedEl = null;
   applyRouteTopic = null;
+  refreshSinceFilter = () => {};
+  layoutMode = "stable";
   setSelectedNode = () => {};
   abortController = new AbortController();
   navigateFn = typeof navigate === 'function' ? navigate : null;
@@ -97,6 +220,118 @@ function loadLookupOnce(){
 
   function topicColor(id) {
     return resolveTopicColor(id, topicColorMap) || TOPIC_COLOR_FALLBACK;
+  }
+
+  function effectiveSize(data){
+    L("effectiveSize", {
+      sinceIndex,
+      name: data?.name,
+      cumulative: data?.cumulative_since?.doc_count,
+      result: (function(){
+        const cumulative = data?.cumulative_since?.doc_count;
+        if (cumulative) return cumulative[sinceIndex];
+        return data?.doc_count || data?.size || 0;
+      })()
+    });
+
+    if (!data) return 0;
+    const cumulative = data.cumulative_since || {};
+    const rawSeries = Array.isArray(cumulative.doc_count)
+      ? cumulative.doc_count
+      : (Array.isArray(cumulative.size) ? cumulative.size : null);
+    if (rawSeries && rawSeries.length) {
+      const idx = Math.max(0, Math.min(sinceIndex, rawSeries.length - 1));
+      let sizeVal = Number(rawSeries[idx]);
+      // rawSeries can be shorter than expected; if idx is out of bounds we get undefined → NaN.
+      // NaN in effectiveSize → root.sum() produces NaN → d3.pack() collapses coords/radii.
+      if (Number.isFinite(sizeVal) && sizeVal >= 0) return sizeVal;
+    }
+    const dc = Number(data.doc_count);
+    if (Number.isFinite(dc) && dc >= 0) return dc;
+    const sizeVal = Number(data.size);
+    if (Number.isFinite(sizeVal) && sizeVal >= 0) return sizeVal;
+    return 0;
+  }
+
+  function currentNodeSize(node){
+    return effectiveSize(node ? node.data : null);
+  }
+
+  function updateLayoutToggleUI(){
+    const mode = layoutMode === 'repack' ? 'repack' : 'stable';
+    layoutMode = mode;
+    const icon = mode === 'repack' ? '⟳' : '📌';
+    const text = mode === 'repack' ? 'Auto-fit' : 'Stable';
+    const title = mode === 'repack'
+      ? 'Auto-fit: Scale topics to fill the view'
+      : 'Stable layout: Observe how topics evolve over time';
+    layoutToggle.select('.icon').text(icon);
+    layoutToggle.select('.text').text(text);
+    layoutToggle.attr('title', title);
+    layoutToggle.attr('aria-pressed', mode === 'repack' ? 'true' : 'false');
+  }
+
+  function updateSliderFill(index){
+    if (sliderInput.empty()) return;
+    const total = Math.max(1, (years || []).length);
+    const maxIndex = total - 1;
+    const clamped = Math.max(0, Math.min(index, maxIndex));
+    const percent = maxIndex === 0 ? 0 : (clamped / maxIndex) * 100;
+    sliderInput.node().style.setProperty('--fill-start', `${percent}%`);
+  }
+
+  function setSinceIndex(nextIndex, options = {}){
+    const total = (years || []).length;
+    const clamped = total ? Math.max(0, Math.min(nextIndex, total - 1)) : 0;
+    sinceIndex = clamped;
+    sinceYear = total ? years[clamped] : null;
+    if (!sliderLabel.empty()) {
+      sliderLabel.text(total ? `Since ${sinceYear}` : 'Since —');
+    }
+    updateSliderFill(clamped);
+    if (!options.suppressLayout && typeof refreshSinceFilter === 'function') {
+      refreshSinceFilter();
+    }
+  }
+
+  function configureSinceSlider(yearList){
+    const hasYears = Array.isArray(yearList) && yearList.length > 0;
+    sliderWrap.classed('is-hidden', !hasYears);
+    sliderInput.on('.topicExplorer', null);
+    layoutToggle.on('.topicExplorer', null);
+    updateLayoutToggleUI();
+    layoutToggle.on('click.topicExplorer', () => {
+      layoutMode = layoutMode === 'stable' ? 'repack' : 'stable';
+      updateLayoutToggleUI();
+      if (layoutMode === 'repack') {
+        applyLayout(true);
+      } else {
+          // FULL RESET TO STABLE MODE
+          draw(hierarchyData);   // <== resets everything (nodes, labels, baselines)
+          setSinceIndex(sinceIndex);  // <== reapplies current filter
+      }
+
+
+    });
+    if (!hasYears) {
+      sliderStart.text('—');
+      sliderEnd.text('—');
+      setSinceIndex(0, { suppressLayout: true });
+      return;
+    }
+    years = yearList.slice().sort((a,b)=>a-b);
+    sliderStart.text(years[0]);
+    sliderEnd.text(years[years.length - 1]);
+    sliderInput
+      .attr('min', 0)
+      .attr('max', years.length - 1)
+      .attr('step', 1)
+      .property('value', 0);
+    setSinceIndex(0, { suppressLayout: true });
+    sliderInput.on('input.topicExplorer', (event) => {
+      const idx = Number(event.target.value) || 0;
+      setSinceIndex(idx);
+    });
   }
 
   function setCrumbs(node){
@@ -216,9 +451,10 @@ function loadLookupOnce(){
     if (isRoot) {
       panel.html(`
         <h2>${escapeHTML(data.name || 'Research Topics')}</h2>
-        <p class="meta">Our institution is carrying out research in the following topics:</p>
+        <p class="meta">Mara is carrying out research in the following topics:</p>
         <ul class="list compact" id="root-topic-list"></ul>
-        <p class="meta">Click on the topic visualization to learn more about each topic.</p>
+        <p class="meta">Click on the 'circles' to learn more about each topic.</p>
+        <div class="meta note"><strong>NOTE</strong>: Because research articles often address multiple themes, each publication may appear under several topics. </div>
       `);
       panel.select('#root-topic-list')
         .selectAll('li')
@@ -407,7 +643,26 @@ function loadLookupOnce(){
   }
 
   function draw(data){
-    root = pack(data);
+    hierarchyData = data;
+    root = d3.hierarchy(data);
+    root.sum(d => baselineSize(d));
+    root.sort((a,b) => b.value - a.value);
+    d3.pack().size([width, height]).padding(3)(root);
+    root.each(n => {
+      // cache baselines
+      const candidateSize = baselineSize(n.data);
+      const fallbackSize = Number.isFinite(n.value) ? n.value : 0;
+      n.baseSize = Number.isFinite(candidateSize) && candidateSize > 0 ? candidateSize : fallbackSize;
+      const packedR = Number(n.r);
+      n.baseR = Number.isFinite(packedR) && packedR > 0 ? packedR : 1;
+      const px = Number(n.x);
+      const py = Number(n.y);
+      n.baseX = Number.isFinite(px) ? px : 0;
+      n.baseY = Number.isFinite(py) ? py : 0;
+      n.x = n.baseX;
+      n.y = n.baseY;
+      n.r = n.baseR; // start with baseline radius
+    });
     focus = root;
 
     // remove previous nodes/labels if any
@@ -424,7 +679,7 @@ function loadLookupOnce(){
       if (selectedEl) d3.select(selectedEl).classed('is-selected', true);
     };
 
-    const nodes = gNodes.selectAll('circle').data(root.descendants()).join('circle')
+    nodesSel = gNodes.selectAll('circle').data(root.descendants()).join('circle')
       .attr('fill', d => {
         const c = d.data.topic_id ? topicColor(d.data.topic_id) : '#e2e8f0';
         const col = d3.color(c);
@@ -436,13 +691,15 @@ function loadLookupOnce(){
         this.style.setProperty('--topic-accent', c);
         d3.select(this).classed('is-hover', true);
         tooltip.style('border-color', c);
-
-        // SHOW tooltip (restored)
         const name = d.data.name || '';
-        const count = d.data.size ? ` • ${d.data.size}` : '';
+        const sz = currentNodeSize(d);
+        const count = sz ? sz : '';
         tooltip
           .style('opacity', 1)
-          .html(`<strong>${escapeHTML(name)}</strong>${count}`);
+          .html(`
+            <span class="tooltip-label"><strong>${escapeHTML(name)}</strong></span>
+            ${count ? `<span class="tooltip-count">• ${count}</span>` : ''}
+          `);
       })
       .on('mousemove', function (event) {
         // MOVE tooltip (restored)
@@ -495,7 +752,7 @@ function loadLookupOnce(){
     //   .style('fill-opacity', d => d.parent === root ? 1 : 0)
     //   .style('display', d => d.parent === root ? 'inline' : 'none')
     //   .text(d => d.data.name || '—');
-    const labels = gLabels.selectAll('text')
+    labelsSel = gLabels.selectAll('text')
       .data(root.descendants())
       .join('text')
       .attr('class', 'label')
@@ -513,8 +770,8 @@ function loadLookupOnce(){
         wrapLabel(sel, name, d.r * 1.8 /* width inside bubble */, 3);
       });
 
-    function rewrapVisibleLabels(k, parentNode) {
-      labels.each(function(n){
+    rewrapVisibleLabels = function(k, parentNode) {
+      labelsSel.each(function(n){
         if (n.parent !== parentNode) return; // only the labels that should be visible
         const sel = d3.select(this);
         const name = n.data.name || '—';
@@ -522,22 +779,94 @@ function loadLookupOnce(){
         //sel.style('font-size', `${fontPx}px`);
         wrapLabel(sel, name, n.r * k * 1.8, 3, 1.1);
       });
+    };
+
+    function recenterChildren(parent){
+      if (!parent || !parent.children) return;
+      const parentScale = parent.baseR > 0 ? (parent.r / parent.baseR) : 1;
+      parent.children.forEach(child => {
+        const dx0 = (child.baseX ?? child.x) - (parent.baseX ?? parent.x);
+        const dy0 = (child.baseY ?? child.y) - (parent.baseY ?? parent.y);
+        child.x = parent.x + dx0 * parentScale;
+        child.y = parent.y + dy0 * parentScale;
+        recenterChildren(child);
+      });
     }
 
+    refreshSinceFilter = function(){
+      // Auto-fit: recalc layout AND recenter/zoom to updated root
+      if (layoutMode === 'repack') {
+        applyLayout();
+        // Always zoom to *new* root layout in auto-fit mode to reflect updated packing
+        const span = Math.max(root.r * 2, 1);
+        view = [root.x, root.y, span];
+        zoomTo(view);
+
+        L("refreshSinceFilter.repack-root", {
+          root_x: root.x,
+          root_y: root.y,
+          root_r: root.r,
+          view: view
+        });
+
+
+        return;
+      }
+      const k = width / (view ? view[2] : (nodeBaseRadius(root) * 2));
+      nodesSel.each(function(d){
+        const baseR = nodeBaseRadius(d);
+        // keep root size stable
+        if (!d.parent) {
+          d.r = baseR;
+          return;
+        }
+        const filtered = effectiveSize(d.data);
+        const denom = Number(d.baseSize);
+        const fraction = denom > 0 ? Math.max(0, filtered / denom) : 0;
+        const scaled = baseR * Math.sqrt(fraction);
+        d.r = Number.isFinite(scaled) ? scaled : 0;
+      });
+      if (root) {
+        root.x = root.baseX;
+        root.y = root.baseY;
+        recenterChildren(root);
+      }
+      const currentView = view || [root?.x || 0, root?.y || 0, nodeBaseRadius(root) * 2];
+      view = currentView;
+
+      L("refreshSinceFilter.stable", {
+        k,
+        root_x: root.x,
+        root_y: root.y,
+        root_r: root.r,
+        focus: focus ? focus.data.name : "root",
+        view: view
+      });
+
+
+      nodesSel
+        .attr('transform', d => `translate(${(d.x - currentView[0]) * k}, ${(d.y - currentView[1]) * k})`)
+        .attr('r', d => d.r * k);
+      labelsSel.attr('transform', d => `translate(${(d.x - currentView[0]) * k}, ${(d.y - currentView[1]) * k})`);
+      const target = focus || root;
+      rewrapVisibleLabels(k, target);
+    };
 
 
     function zoomTo(v){
+      L("zoomTo", { v });
+
       const k = width / v[2];
       view = v;
-      labels.attr('transform', d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
+      labelsSel.attr('transform', d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
            // .attr('font-size', d => Math.max(10, Math.min(22, (d.r * k) / 3)));
-      nodes.attr('transform', d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
+      nodesSel.attr('transform', d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
            .attr('r', d => d.r * k);
     }
 
     function zoom(d){
       const transition = svg.transition().duration(750).tween('zoom', () => {
-        const i = d3.interpolateZoom(view, [d.x, d.y, d.r * 2]);
+        const i = d3.interpolateZoom(view, [d.x, d.y, nodeBaseRadius(d) * 2]);
         return t => zoomTo(i(t));
       });
 
@@ -548,13 +877,13 @@ function loadLookupOnce(){
       //   .on('start', function(n){ if(n.parent === d) this.style.display = 'inline'; })
       //   .on('end', function(n){ if(n.parent !== d) this.style.display = 'none'; });
 
-      labels
+      labelsSel
         .filter(function(n){ return n.parent === d || this.style.display === 'inline'; })
         .transition(transition)
         .style('fill-opacity', n => n.parent === d ? 1 : 0)
         .on('start', function(n){ if (n.parent === d) this.style.display = 'inline'; })
-        .on('end', (n, i, nodesSel) => {
-          const el = nodesSel[i];
+        .on('end', (n, i, nodesArr) => {
+          const el = nodesArr[i];
           if (n.parent !== d) { el.style.display = 'none'; return; }
           // Rewrap once at final scale k
           const k = width / view[2];
@@ -562,8 +891,10 @@ function loadLookupOnce(){
         });      
     }
 
-    zoomTo([root.x, root.y, root.r * 2]);
-    rewrapVisibleLabels(width / (root.r * 2), root);   
+    const initialView = [root.x, root.y, nodeBaseRadius(root) * 2];
+    zoomTo(initialView);
+    rewrapVisibleLabels(width / initialView[2], root);
+    refreshSinceFilter();
 
     // attach a background click listener directly to this svg selection
     svg.on('click.topicExplorer', (event)=>{
@@ -613,10 +944,13 @@ function loadLookupOnce(){
   try {
     const resp = await fetch('data/topics_hierarchy.json', { signal: abortController.signal });
     if (!resp.ok) throw new Error(`Failed to load hierarchy: ${resp.status}`);
-    const data = await resp.json();
-    const topIds = collectTopLevelTopicIds(data);
+    const payload = await resp.json();
+    const rootData = payload.root || payload;
+    const yearsFromPayload = Array.isArray(payload.years) ? payload.years : [];
+    configureSinceSlider(yearsFromPayload);
+    const topIds = collectTopLevelTopicIds(rootData);
     topicColorMap = buildTopicColorMapFromTopicIds(topIds);
-    draw(data);
+    draw(rootData);
   } catch (err) {
     if (err.name === 'AbortError') {
       // aborted during cleanup — ignore
@@ -633,10 +967,21 @@ function loadLookupOnce(){
 
     // remove svg content & interrupt transitions
     svg.selectAll('*').interrupt().remove();
+    nodesSel = null;
+    labelsSel = null;
 
     // clear panel and breadcrumbs
     panel.html('');
     crumbs.html('');
+    sliderInput.on('.topicExplorer', null);
+    sliderWrap.classed('is-hidden', false);
+    sliderLabel.text('Since —');
+    sliderStart.text('—');
+    sliderEnd.text('—');
+    years = [];
+    sinceIndex = 0;
+    sinceYear = null;
+    refreshSinceFilter = () => {};
 
     // clear caches
     lookupPromise = null;
@@ -656,6 +1001,7 @@ function loadLookupOnce(){
     navigateFn = null;
     pendingTopicId = null;
     abortController = null;
+    hierarchyData = null;
   }
 
   // also support named export destroy()

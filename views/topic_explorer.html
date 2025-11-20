@@ -13,6 +13,21 @@
 
         <!-- tooltip -->
         <div class="tooltip" id="tooltip"></div>
+
+        <div class="since-slider" id="since-slider" aria-label="Filter topics by publication year">
+          <div class="slider-head">
+            <span class="since-label" id="since-year-label">Since —</span>
+            <button class="layout-toggle" id="layout-mode-toggle" type="button" title="Stable layout: shrink bubbles in place">
+              <span class="icon" aria-hidden="true">📌</span>
+              <span class="text">Stable</span>
+            </button>
+          </div>
+          <div class="slider-row">
+            <span class="year-mark" id="since-year-start">—</span>
+            <input type="range" id="since-year-range" min="0" max="0" step="1" value="0" aria-label="Set minimum publication year">
+            <span class="year-mark" id="since-year-end">—</span>
+          </div>
+        </div>
       </div>
     </div>
 
