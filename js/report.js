@@ -6,8 +6,8 @@ const REPORT_CATALOG = [
     label: "Publications",
     reports: [
       { id: "pubs_per_year", label: "Publications per year" },
-      { id: "cites_per_year", label: "Citations per year" },
-      { id: "cum_cites_per_year", label: "Cumulative citations per year" },
+      { id: "cites_per_year", label: "Citations by publication year" },
+      { id: "cum_cites_per_year", label: "Cumulative citations by publication year" },
       { id: "top_venues", label: "Top venues" },
     ],
   },
@@ -41,6 +41,13 @@ function escapeHTML(value) {
 function formatNumber(value) {
   if (value == null || Number.isNaN(value)) return "0";
   return new Intl.NumberFormat().format(value);
+}
+
+function citationStatsNote() {
+  const stats = reportsData.citation_stats;
+  if (!stats?.oldest_refresh) return "Citation refresh date unavailable.";
+  const date = new Date(stats.oldest_refresh).toLocaleDateString();
+  return `Refreshed ${formatNumber(stats.refreshed_papers)} of ${formatNumber(stats.papers)} papers; oldest refresh: ${date}.`;
 }
 
 function buildSelectOptions() {
@@ -434,9 +441,6 @@ function renderLineSeries(container, options) {
     });
   }
 
-  if (metaText) {
-    elements.meta.innerHTML = metaText;
-  }
 }
 
 function ensureTooltip() {
@@ -474,14 +478,15 @@ function renderPublicationsPerYear() {
 
 function renderCitationsPerYear() {
   const rows = reportsData.publications.years || [];
-  elements.title.textContent = "Citations per year";
+  elements.title.textContent = "Citations by publication year";
   clearContainers();
+  elements.meta.textContent = `Lifetime citations to papers published in each year. ${citationStatsNote()}`;
   renderVerticalBarChart(elements.chart, rows, {
     xAccessor: d => d.year,
     yAccessor: d => d.citations,
-    xLabel: "Year",
+    xLabel: "Publication year",
     yLabel: "Citations",
-    tooltip: d => `${d.year} — Σ citations: ${formatNumber(d.citations)}`,
+    tooltip: d => `Published in ${d.year} — lifetime citations: ${formatNumber(d.citations)}`,
   });
   renderTable(
     [
@@ -497,7 +502,7 @@ function renderCitationsPerYear() {
 
 function renderCumulativeCitationsPerYear() {
   const rows = reportsData.publications.years || [];
-  elements.title.textContent = "Cumulative citations per year";
+  elements.title.textContent = "Cumulative citations by publication year";
   clearContainers();
   const series = [
     {
@@ -515,7 +520,7 @@ function renderCumulativeCitationsPerYear() {
     legendEl: elements.legend,
     visibility: new Set(["total_citations"]),
   });
-  elements.meta.textContent = `Total citations: ${formatNumber(reportsData.publications.total_citations || 0)}`;
+  elements.meta.textContent = `Total citations: ${formatNumber(reportsData.publications.total_citations || 0)}. Lifetime citations to papers published up to each year. ${citationStatsNote()}`;
   renderTable(
     [
       { label: "Year", key: "year" },
@@ -611,6 +616,7 @@ function renderTopicCitations() {
       window._rv.setRoute("library", { q: topic.topic });
     }
   });
+  elements.meta.textContent = `Lifetime citations; papers count fully in each assigned top-level topic. Topic totals can overlap. ${citationStatsNote()}`;
 }
 
 function buildTopicSeries(valueKey) {
@@ -741,6 +747,7 @@ function renderTopicCumulativeCitationsOverTime() {
     allowNormalize: true,
     normalize: true,
   });
+  elements.meta.textContent = `Lifetime citations to each topic's papers published up to each year. Topic totals can overlap. ${citationStatsNote()}`;
 }
 
 const REPORT_HANDLERS = {
