@@ -1,0 +1,46 @@
+topic_id;topic_name;parent_topic
+A;EEG (electroencephalography);
+B;MRI;
+B.1;Structural;B
+B.2;functional;B
+C;Pharmacology;
+C.1;Therapeutic drug monitoring;C
+C.2;Trials;C
+D;Status epilepticus;
+E;Intellectual disability;
+E.1;Lennox-Gastaut syndrome;E
+E.2;West syndrome;E
+F;Psychiatric co-morbidity;
+G;Functional/dissociative seizures (psychogenic non-epileptic seizures);
+H;Presurgical diagnostics and epilepsy surgery;
+H.1;Hippocampal sclerosis (medial temporal lobe epilepsy, mesial temporal lobe epilepsy, mesial temporal sclerosis, medial temporal sclerosis);H
+H.2;Language;H
+H.3;Surgical techniques (including electrode placement);H
+H.4;MRI (magnetic resonance imaging);H
+H.5;PET (positron emission tomography);H
+H.6;Neuropsychologie;H
+H.7;Neuropathologie;H
+H.8;Genetics;H
+I;Neuropsychology/cognitive development;
+I.1;functional MRI;I
+I.2;Wada test (intracarotidal amobarbital test);I
+I.3;Memory;I
+I.4;Cognitive development;I
+J;Autoimmune seizures and epilepsy;
+J.1;Neural antibodies (neuronal antibodies, autoantibodies);J
+J.2;Rasmussen encephalitis;J
+J.3;Basic autoimmune research;J
+K;Genetics;
+L;Semiology;
+M;Genetic generalized epilepsy (idiopathic generalized epilepsy);
+N;Epidemiology, incidence, prevalence;
+O;Social issues;
+O.1;Driving;O
+O.2;Pension, Rehabilitation, Sports;O
+O.3;Patient education (educational programs);O
+O.4;Stigma;O
+O.5;Quality of life (QoL);O
+P;Medical devices, seizure detection;
+Q;Basic research;
+Q.1;Cognitive research;Q
+Q.2;Mechanisms of disease, neuropathology;Q

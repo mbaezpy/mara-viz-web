@@ -1,0 +1,2 @@
+# Preserve spreadsheet-friendly line endings while storing normalized CSV text.
+processing/inputs/*.csv text eol=crlf

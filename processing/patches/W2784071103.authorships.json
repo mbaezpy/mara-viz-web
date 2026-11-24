@@ -1,0 +1,251 @@
+{
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5050550362",
+        "display_name": "P. Muhr",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210106969",
+          "display_name": "Diakovere",
+          "ror": "https://ror.org/01brm2x11",
+          "country_code": "DE",
+          "type": "nonprofit",
+          "lineage": [
+            "https://openalex.org/I4210106969"
+          ]
+        }
+      ],
+      "countries": [
+        "DE"
+      ],
+      "is_corresponding": true,
+      "raw_author_name": "P. Muhr",
+      "raw_affiliation_strings": [
+        "Neurologische Klinik, Diakovere Friederikenstift, Humboldtstraße 5, 30169, Hannover, Deutschland"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Neurologische Klinik, Diakovere Friederikenstift, Humboldtstraße 5, 30169, Hannover, Deutschland",
+          "institution_ids": [
+            "https://openalex.org/I4210106969"
+          ]
+        }
+      ],
+      "main_author": true,
+      "is_byline_author": true,
+      "byline_position": 1,
+      "authorship_roles": [
+        "byline_author"
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5077316707",
+        "display_name": "U. Goldammer",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210106969",
+          "display_name": "Diakovere",
+          "ror": "https://ror.org/01brm2x11",
+          "country_code": "DE",
+          "type": "nonprofit",
+          "lineage": [
+            "https://openalex.org/I4210106969"
+          ]
+        }
+      ],
+      "countries": [
+        "DE"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "U. Goldammer",
+      "raw_affiliation_strings": [
+        "Neurologische Klinik, Diakovere Friederikenstift, Humboldtstraße 5, 30169, Hannover, Deutschland"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Neurologische Klinik, Diakovere Friederikenstift, Humboldtstraße 5, 30169, Hannover, Deutschland",
+          "institution_ids": [
+            "https://openalex.org/I4210106969"
+          ]
+        }
+      ],
+      "main_author": false,
+      "is_byline_author": true,
+      "byline_position": 2,
+      "authorship_roles": [
+        "byline_author"
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5074695558",
+        "display_name": "Christian G. Bien",
+        "orcid": "https://orcid.org/0000-0003-2225-8654"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4387154539",
+          "display_name": "Krankenhaus Mara",
+          "ror": "https://ror.org/00r2eaj81",
+          "country_code": "DE",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I4387154539"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I4210134799",
+          "display_name": "Laboratory Krone",
+          "ror": "https://ror.org/042zsvj11",
+          "country_code": "DE",
+          "type": "facility",
+          "lineage": [
+            "https://openalex.org/I4210134799"
+          ]
+        }
+      ],
+      "countries": [
+        "DE"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "C. G. Bien",
+      "raw_affiliation_strings": [
+        "Epilepsie-Zentrum Bielefeld-Bethel, Krankenhaus Mara, Bielefeld, Deutschland",
+        "Labor Krone, Bad Salzuflen, Deutschland"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Epilepsie-Zentrum Bielefeld-Bethel, Krankenhaus Mara, Bielefeld, Deutschland",
+          "institution_ids": [
+            "https://openalex.org/I4387154539"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Labor Krone, Bad Salzuflen, Deutschland",
+          "institution_ids": [
+            "https://openalex.org/I4210134799"
+          ]
+        }
+      ],
+      "main_author": false,
+      "is_byline_author": true,
+      "byline_position": 3,
+      "authorship_roles": [
+        "byline_author"
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5104067696",
+        "display_name": "Corinna Bien",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210134799",
+          "display_name": "Laboratory Krone",
+          "ror": "https://ror.org/042zsvj11",
+          "country_code": "DE",
+          "type": "facility",
+          "lineage": [
+            "https://openalex.org/I4210134799"
+          ]
+        }
+      ],
+      "countries": [
+        "DE"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "C. Bien",
+      "raw_affiliation_strings": [
+        "Labor Krone, Bad Salzuflen, Deutschland"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Labor Krone, Bad Salzuflen, Deutschland",
+          "institution_ids": [
+            "https://openalex.org/I4210134799"
+          ]
+        }
+      ],
+      "raw_orcid": null,
+      "main_author": false,
+      "is_byline_author": true,
+      "byline_position": 4,
+      "authorship_roles": [
+        "byline_author"
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5065486915",
+        "display_name": "E. Sindern",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210106969",
+          "display_name": "Diakovere",
+          "ror": "https://ror.org/01brm2x11",
+          "country_code": "DE",
+          "type": "nonprofit",
+          "lineage": [
+            "https://openalex.org/I4210106969"
+          ]
+        }
+      ],
+      "countries": [
+        "DE"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "E. Sindern",
+      "raw_affiliation_strings": [
+        "Neurologische Klinik, Diakovere Friederikenstift, Humboldtstraße 5, 30169, Hannover, Deutschland"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Neurologische Klinik, Diakovere Friederikenstift, Humboldtstraße 5, 30169, Hannover, Deutschland",
+          "institution_ids": [
+            "https://openalex.org/I4210106969"
+          ]
+        }
+      ],
+      "main_author": true,
+      "is_byline_author": true,
+      "byline_position": 5,
+      "authorship_roles": [
+        "byline_author"
+      ]
+    }
+  ],
+  "byline_author_ids": [
+    "https://openalex.org/A5050550362",
+    "https://openalex.org/A5077316707",
+    "https://openalex.org/A5074695558",
+    "https://openalex.org/A5104067696",
+    "https://openalex.org/A5065486915"
+  ],
+  "collaboration_groups": [],
+  "authorship_review": {
+    "publisher_url": "https://link.springer.com/article/10.1007/s00115-017-0471-3",
+    "identity_sources": [
+      "https://neuro.laborkrone.de/neurale-antikoerper/ansprechpartner/",
+      "https://api.openalex.org/authors/A5104067696"
+    ],
+    "byline_author_count": 5,
+    "original_authorship_count": 5,
+    "corrected_person_count": 5,
+    "correction": "Keep five separate published authors. C. G. Bien is Professor Christian G. Bien (Mara and Labor Krone); C. Bien is linked to Corinna Bien's distinct Labor Krone profile. Remove Professor Bien's misassigned ID, ORCID and Mara affiliation from the fourth entry. No authorship is deleted and no global author-ID map is changed."
+  }
+}

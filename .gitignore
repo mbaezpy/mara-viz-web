@@ -1,1 +1,12 @@
 *:[Zz]one.Identifier
+.venv/
+__pycache__/
+.pytest_cache/
+
+node_modules/
+test-results/
+playwright-report/
+.env
+.env.*
+/processing/archive/
+/processing/inputs/*.pdf
