@@ -1,0 +1,4 @@
+requests>=2.31,<3
+networkx>=3.2,<4
+# Optional community detection used by the network exporter.
+python-louvain>=0.16,<0.17

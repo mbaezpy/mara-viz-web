@@ -1,0 +1,2145 @@
+{
+  "stats_file": "openalex_stats.json",
+  "works": {
+    "https://openalex.org/W4392047307": {
+      "mode": "merge",
+      "work_overrides_file": "W4392047307.authorships.json"
+    },
+    "https://openalex.org/W2784071103": {
+      "mode": "merge",
+      "work_overrides_file": "W2784071103.authorships.json"
+    },
+    "https://openalex.org/W7140298212": {
+      "mode": "merge",
+      "work_overrides_file": "W7140298212.authorships.json"
+    },
+    "https://openalex.org/W7128793906": {
+      "mode": "merge",
+      "work_overrides_file": "W7128793906.authorships.json"
+    },
+    "https://openalex.org/W4401817134": {
+      "mode": "merge",
+      "authorships": [
+        {
+          "match": {
+            "display_name": "Markus Mueller"
+          },
+          "action": "merge",
+          "set": {
+            "author": {
+              "id": "https://openalex.org/A5100706958",
+              "display_name": "Markus Müller",
+              "orcid": "https://orcid.org/0000-0003-0907-3583"
+            }
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W4410514082": {
+      "mode": "merge",
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5079900762"
+          },
+          "action": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I20121455",
+                "display_name": "Bielefeld University",
+                "ror": "https://ror.org/02hpadn98",
+                "country_code": "DE",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I20121455"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara",
+                "ror": "https://ror.org/00r2eaj81",
+                "country_code": "DE",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "countries": [
+              "DE"
+            ],
+            "raw_affiliation_strings": [
+              "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Epilepsy Center Bethel, Bielefeld, Germany"
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Epileptology (Krankenhaus Mara), Medical School, Bielefeld University, Epilepsy Center Bethel, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I20121455",
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W4237722204": {
+      "mode": "merge",
+      "work_overrides": {
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5112781074",
+              "display_name": "M Guasp",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210115097",
+                "display_name": "Hospital Clínic de Barcelona",
+                "ror": "https://ror.org/02a2kzf50",
+                "country_code": "ES",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4210115097"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I71999127",
+                "display_name": "Universitat de Barcelona",
+                "ror": "https://ror.org/021018s57",
+                "country_code": "ES",
+                "type": "funder",
+                "lineage": [
+                  "https://openalex.org/I71999127"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210160192",
+                "display_name": "Consorci Institut D'Investigacions Biomediques August Pi I Sunyer",
+                "ror": "https://ror.org/054vayn55",
+                "country_code": "ES",
+                "type": "facility",
+                "lineage": [
+                  "https://openalex.org/I4210160192",
+                  "https://openalex.org/I4387153040"
+                ]
+              }
+            ],
+            "countries": [
+              "ES"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "M Guasp",
+            "raw_affiliation_strings": [
+              "Hospital Clinic-IDIBAPS, Universidad de Barcelona, Barcelona, Espana."
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Hospital Clinic-IDIBAPS, Universidad de Barcelona, Barcelona, Espana.",
+                "institution_ids": [
+                  "https://openalex.org/I4210115097",
+                  "https://openalex.org/I71999127",
+                  "https://openalex.org/I4210160192"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5028301912",
+              "display_name": "Helena Ariño",
+              "orcid": "https://orcid.org/0000-0003-4036-1671"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210115097",
+                "display_name": "Hospital Clínic de Barcelona",
+                "ror": "https://ror.org/02a2kzf50",
+                "country_code": "ES",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4210115097"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I71999127",
+                "display_name": "Universitat de Barcelona",
+                "ror": "https://ror.org/021018s57",
+                "country_code": "ES",
+                "type": "funder",
+                "lineage": [
+                  "https://openalex.org/I71999127"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210160192",
+                "display_name": "Consorci Institut D'Investigacions Biomediques August Pi I Sunyer",
+                "ror": "https://ror.org/054vayn55",
+                "country_code": "ES",
+                "type": "facility",
+                "lineage": [
+                  "https://openalex.org/I4210160192",
+                  "https://openalex.org/I4387153040"
+                ]
+              }
+            ],
+            "countries": [
+              "ES"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "H Arino",
+            "raw_affiliation_strings": [
+              "Hospital Clinic-IDIBAPS, Universidad de Barcelona, Barcelona, Espana."
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Hospital Clinic-IDIBAPS, Universidad de Barcelona, Barcelona, Espana.",
+                "institution_ids": [
+                  "https://openalex.org/I4210115097",
+                  "https://openalex.org/I71999127",
+                  "https://openalex.org/I4210160192"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5074695558",
+              "display_name": "Christian G. Bien",
+              "orcid": "https://orcid.org/0000-0003-2225-8654"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara",
+                "ror": "https://ror.org/00r2eaj81",
+                "country_code": "DE",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "countries": [
+              "DE"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Christian G Bien",
+            "raw_affiliation_strings": [
+              "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5060587778",
+              "display_name": "Josep Dalmau",
+              "orcid": "https://orcid.org/0000-0001-5856-2813"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I79576946",
+                "display_name": "University of Pennsylvania",
+                "ror": "https://ror.org/00b30xv10",
+                "country_code": "US",
+                "type": "funder",
+                "lineage": [
+                  "https://openalex.org/I79576946"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210115097",
+                "display_name": "Hospital Clínic de Barcelona",
+                "ror": "https://ror.org/02a2kzf50",
+                "country_code": "ES",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4210115097"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I71999127",
+                "display_name": "Universitat de Barcelona",
+                "ror": "https://ror.org/021018s57",
+                "country_code": "ES",
+                "type": "funder",
+                "lineage": [
+                  "https://openalex.org/I71999127"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210160192",
+                "display_name": "Consorci Institut D'Investigacions Biomediques August Pi I Sunyer",
+                "ror": "https://ror.org/054vayn55",
+                "country_code": "ES",
+                "type": "facility",
+                "lineage": [
+                  "https://openalex.org/I4210160192",
+                  "https://openalex.org/I4387153040"
+                ]
+              }
+            ],
+            "countries": [
+              "ES",
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "J Dalmau",
+            "raw_affiliation_strings": [
+              "Hospital Clinic-IDIBAPS, Universidad de Barcelona, Barcelona, Espana.",
+              "University of Pennsylvania School of Medicine, Philadelphia (Pennsylvania), EE.UU."
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "University of Pennsylvania School of Medicine, Philadelphia (Pennsylvania), EE.UU.",
+                "institution_ids": [
+                  "https://openalex.org/I79576946"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Hospital Clinic-IDIBAPS, Universidad de Barcelona, Barcelona, Espana.",
+                "institution_ids": [
+                  "https://openalex.org/I4210115097",
+                  "https://openalex.org/I71999127",
+                  "https://openalex.org/I4210160192"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "https://openalex.org/W4399401402": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5091240590"
+          },
+          "action": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Klinik Mara (EvKB Bethel)",
+                "ror": "https://ror.org/0162saw54",
+                "country_code": "DE",
+                "type": "healthcare"
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Epileptology, Klinik Mara (EvKB Bethel), Bielefeld, Germany"
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Epileptology, Klinik Mara (EvKB Bethel), Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              }
+            ]
+          },
+          "unset": [
+            "countries"
+          ]
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5034647334"
+          },
+          "action": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Klinik Mara (EvKB Bethel)",
+                "ror": "https://ror.org/0162saw54",
+                "country_code": "DE",
+                "type": "healthcare"
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Epileptology, Klinik Mara (EvKB Bethel), Bielefeld, Germany"
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Epileptology, Klinik Mara (EvKB Bethel), Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2894432237": {
+      "mode": "merge",
+      "work_overrides_file": "W2894432237.authorships.json"
+    },
+    "https://openalex.org/W4306950402": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5074695558"
+          },
+          "action": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Klinik Mara (EvKB Bethel)",
+                "ror": "https://ror.org/0162saw54",
+                "country_code": "DE",
+                "type": "healthcare"
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Epileptology, Klinik Mara (EvKB Bethel), Bielefeld, Germany"
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Epileptology, Klinik Mara (EvKB Bethel), Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              }
+            ]
+          },
+          "unset": [
+            "countries"
+          ]
+        }
+      ]
+    },
+    "https://openalex.org/W2290012694": {
+      "disable_raw_affiliations": true,
+      "set_affiliation_for_authors": [
+        {
+          "authors": [
+            {
+              "author_id": "https://openalex.org/A5104067696"
+            },
+            {
+              "author_id": "https://openalex.org/A5059622258"
+            },
+            {
+              "author_id": "https://openalex.org/A5074695558"
+            }
+          ],
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "authors": [
+            {
+              "author_id": "https://openalex.org/A5003835610"
+            },
+            {
+              "author_id": "https://openalex.org/A5069690542"
+            },
+            {
+              "author_id": "https://openalex.org/A5038373894"
+            },
+            {
+              "author_id": "https://openalex.org/A5068927429"
+            }
+          ],
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I22465464",
+                "display_name": "University of Münster"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Neurology, University of Münster, Münster, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I22465464"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Neurology, University of Münster, Münster, Germany"
+            ]
+          }
+        },
+        {
+          "authors": [
+            {
+              "author_id": "https://openalex.org/A5005552124"
+            },
+            {
+              "author_id": "https://openalex.org/A5109084820"
+            }
+          ],
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Klinikum Bethel"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Nephrology, Bethel-EvKB, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Nephrology, Bethel-EvKB, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "authors": [
+            {
+              "author_id": "https://openalex.org/A5109363642"
+            },
+            {
+              "author_id": "https://openalex.org/A5049644996"
+            },
+            {
+              "author_id": "https://openalex.org/A5017563384"
+            }
+          ],
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I22465464",
+                "display_name": "University of Münster"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Medicine D, Division of General Internal Medicine, Nephrology and Rheumatology, University Hospital of Münster, Münster, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I22465464"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Medicine D, Division of General Internal Medicine, Nephrology and Rheumatology, University Hospital of Münster, Münster, Germany"
+            ]
+          }
+        },
+        {
+          "authors": [
+            {
+              "author_id": "https://openalex.org/A5030678123"
+            }
+          ],
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210134799",
+                "display_name": "Laboratory Krone"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Laboratory Krone, Bad Salzuflen, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210134799"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Laboratory Krone, Bad Salzuflen, Germany"
+            ]
+          }
+        }
+      ],
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5015862105"
+          },
+          "action": "replace",
+          "unset": [
+            "countries",
+            "institutions",
+            "affiliations",
+            "raw_affiliation_strings"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              },
+              {
+                "id": "https://openalex.org/I4210088053",
+                "display_name": "Universitätsklinikum Erlangen"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Neurology, University Hospital Erlangen, Erlangen, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210088053"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+              "Department of Neurology, University Hospital Erlangen, Erlangen, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W1862220344": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "remove_institutions_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5070424111"
+          },
+          {
+            "author_id": "https://openalex.org/A5038885649"
+          },
+          {
+            "author_id": "https://openalex.org/A5062520786"
+          },
+          {
+            "author_id": "https://openalex.org/A5012220015"
+          },
+          {
+            "author_id": "https://openalex.org/A5100451961"
+          },
+          {
+            "author_id": "https://openalex.org/A5001899379"
+          },
+          {
+            "author_id": "https://openalex.org/A5076045134"
+          },
+          {
+            "author_id": "https://openalex.org/A5015013868"
+          },
+          {
+            "author_id": "https://openalex.org/A5045681106"
+          },
+          {
+            "author_id": "https://openalex.org/A5018971404"
+          },
+          {
+            "author_id": "https://openalex.org/A5034088114"
+          }
+        ],
+        "by": [
+          {
+            "id": "https://openalex.org/I4210104779"
+          }
+        ]
+      },
+      "set_affiliation_for_authors": {
+        "authors": {
+          "author_id": "https://openalex.org/A5070424111"
+        },
+        "mode": "replace",
+        "unset": [
+          "countries"
+        ],
+        "set": {
+          "institutions": [
+            {
+              "id": "https://openalex.org/I4387154539",
+              "display_name": "Krankenhaus Mara"
+            }
+          ]
+        }
+      }
+    },
+    "https://openalex.org/W4282963721": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "remove_institutions_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5030901765"
+          },
+          {
+            "author_id": "https://openalex.org/A5016663277"
+          },
+          {
+            "author_id": "https://openalex.org/A5108490672"
+          },
+          {
+            "author_id": "https://openalex.org/A5062520786"
+          },
+          {
+            "author_id": "https://openalex.org/A5086532171"
+          },
+          {
+            "author_id": "https://openalex.org/A5113585523"
+          },
+          {
+            "author_id": "https://openalex.org/A5052195171"
+          },
+          {
+            "author_id": "https://openalex.org/A5041611958"
+          }
+        ],
+        "by": [
+          {
+            "id": "https://openalex.org/I4210104779"
+          },
+          {
+            "id": "https://openalex.org/I4387154539"
+          },
+          {
+            "ror": "https://ror.org/0162saw54"
+          }
+        ]
+      },
+      "remove_affiliations_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5030901765"
+          },
+          {
+            "author_id": "https://openalex.org/A5016663277"
+          },
+          {
+            "author_id": "https://openalex.org/A5108490672"
+          },
+          {
+            "author_id": "https://openalex.org/A5062520786"
+          },
+          {
+            "author_id": "https://openalex.org/A5086532171"
+          },
+          {
+            "author_id": "https://openalex.org/A5113585523"
+          },
+          {
+            "author_id": "https://openalex.org/A5052195171"
+          },
+          {
+            "author_id": "https://openalex.org/A5041611958"
+          }
+        ],
+        "by": [
+          {
+            "institution_id": "https://openalex.org/I4210104779"
+          },
+          {
+            "institution_id": "https://openalex.org/I4387154539"
+          }
+        ]
+      }
+    },
+    "https://openalex.org/W3020080361": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "remove_institutions_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5005587930"
+          },
+          {
+            "author_id": "https://openalex.org/A5053593595"
+          },
+          {
+            "author_id": "https://openalex.org/A5009098850"
+          },
+          {
+            "author_id": "https://openalex.org/A5022659561"
+          },
+          {
+            "author_id": "https://openalex.org/A5006178441"
+          },
+          {
+            "author_id": "https://openalex.org/A5055252200"
+          },
+          {
+            "author_id": "https://openalex.org/A5086506363"
+          },
+          {
+            "author_id": "https://openalex.org/A5045493973"
+          },
+          {
+            "author_id": "https://openalex.org/A5005588191"
+          },
+          {
+            "author_id": "https://openalex.org/A5039224679"
+          }
+        ],
+        "by": [
+          {
+            "id": "https://openalex.org/I4210104779"
+          },
+          {
+            "id": "https://openalex.org/I4387154539"
+          },
+          {
+            "ror": "https://ror.org/0162saw54"
+          }
+        ]
+      },
+      "remove_affiliations_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5005587930"
+          },
+          {
+            "author_id": "https://openalex.org/A5053593595"
+          },
+          {
+            "author_id": "https://openalex.org/A5009098850"
+          },
+          {
+            "author_id": "https://openalex.org/A5022659561"
+          },
+          {
+            "author_id": "https://openalex.org/A5006178441"
+          },
+          {
+            "author_id": "https://openalex.org/A5055252200"
+          },
+          {
+            "author_id": "https://openalex.org/A5086506363"
+          },
+          {
+            "author_id": "https://openalex.org/A5045493973"
+          },
+          {
+            "author_id": "https://openalex.org/A5005588191"
+          },
+          {
+            "author_id": "https://openalex.org/A5039224679"
+          }
+        ],
+        "by": [
+          {
+            "institution_id": "https://openalex.org/I4210104779"
+          },
+          {
+            "institution_id": "https://openalex.org/I4387154539"
+          }
+        ]
+      },
+      "set_affiliation_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5028691724"
+          }
+        ],
+        "mode": "replace",
+        "unset": [
+          "countries"
+        ],
+        "set": {
+          "institutions": [
+            {
+              "id": "https://openalex.org/I4210104779",
+              "display_name": "Evangelisches Krankenhaus Bielefeld",
+              "ror": "https://ror.org/0162saw54",
+              "country_code": "DE",
+              "type": "healthcare"
+            },
+            {
+              "id": "https://openalex.org/I4387154539",
+              "display_name": "Krankenhaus Mara",
+              "ror": "https://ror.org/00r2eaj81",
+              "country_code": "DE",
+              "type": "healthcare"
+            }
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Epilepsy Center Bethel (R.S.), Mara Hospital, Bielefeld, Germany",
+              "institution_ids": [
+                "https://openalex.org/I4210104779",
+                "https://openalex.org/I4387154539"
+              ]
+            }
+          ],
+          "raw_affiliation_strings": [
+            "Epilepsy Center Bethel (R.S.), Mara Hospital, Bielefeld, Germany"
+          ]
+        }
+      }
+    },
+    "https://openalex.org/W4388563373": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "remove_institutions_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5025638495"
+          },
+          {
+            "author_id": "https://openalex.org/A5059602119"
+          },
+          {
+            "author_id": "https://openalex.org/A5076684067"
+          },
+          {
+            "author_id": "https://openalex.org/A5017805958"
+          },
+          {
+            "author_id": "https://openalex.org/A5104067696"
+          },
+          {
+            "author_id": "https://openalex.org/A5089825190"
+          }
+        ],
+        "by": [
+          {
+            "id": "https://openalex.org/I4210104779"
+          },
+          {
+            "id": "https://openalex.org/I4387154539"
+          },
+          {
+            "id": "https://openalex.org/I4210131029"
+          },
+          {
+            "ror": "https://ror.org/0162saw54"
+          }
+        ]
+      },
+      "remove_affiliations_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5074695558"
+          },
+          {
+            "author_id": "https://openalex.org/A5025638495"
+          },
+          {
+            "author_id": "https://openalex.org/A5059602119"
+          },
+          {
+            "author_id": "https://openalex.org/A5076684067"
+          },
+          {
+            "author_id": "https://openalex.org/A5017805958"
+          },
+          {
+            "author_id": "https://openalex.org/A5104067696"
+          },
+          {
+            "author_id": "https://openalex.org/A5089825190"
+          }
+        ],
+        "by": [
+          {
+            "institution_id": "https://openalex.org/I4210104779"
+          },
+          {
+            "institution_id": "https://openalex.org/I4387154539"
+          },
+          {
+            "institution_id": "https://openalex.org/I4210131029"
+          }
+        ]
+      }
+    },
+    "https://openalex.org/W4226248536": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "set_affiliation_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5080931718"
+          },
+          {
+            "author_id": "https://openalex.org/A5013830811"
+          },
+          {
+            "author_id": "https://openalex.org/A5064705806"
+          }
+        ],
+        "mode": "replace",
+        "unset": [
+          "countries"
+        ],
+        "set": {
+          "institutions": [
+            {
+              "id": "https://openalex.org/I3018483916",
+              "display_name": "University Medical Center Utrecht",
+              "ror": "https://ror.org/0575yy874",
+              "country_code": "NL",
+              "type": "healthcare"
+            }
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Pediatric Neurology, University Medical Center Utrecht, Member of the ERN EpiCARE, the Netherlands",
+              "institution_ids": [
+                "https://openalex.org/I3018483916"
+              ]
+            }
+          ],
+          "raw_affiliation_strings": [
+            "Department of Pediatric Neurology, University Medical Center Utrecht, Member of the ERN EpiCARE, the Netherlands"
+          ]
+        }
+      }
+    },
+    "https://openalex.org/W2145077413": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "set_affiliation_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5071465493"
+          },
+          {
+            "author_id": "https://openalex.org/A5059909681"
+          },
+          {
+            "author_id": "https://openalex.org/A5028251660"
+          },
+          {
+            "author_id": "https://openalex.org/A5110248713"
+          },
+          {
+            "author_id": "https://openalex.org/A5022031607"
+          },
+          {
+            "author_id": "https://openalex.org/A5109238981"
+          }
+        ],
+        "mode": "replace",
+        "unset": [
+          "countries"
+        ],
+        "set": {
+          "institutions": [
+            {
+              "id": "https://openalex.org/I4210138551",
+              "display_name": "University Hospital Magdeburg"
+            }
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Neurology, University Hospital Magdeburg, Germany",
+              "institution_ids": [
+                "https://openalex.org/I4210138551"
+              ]
+            }
+          ],
+          "raw_affiliation_strings": [
+            "Department of Neurology, University Hospital Magdeburg, Germany"
+          ]
+        }
+      },
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5003170013"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I76134821",
+                "display_name": "Medical University of Vienna"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Neuroimmunology, Center for Brain Research, Medical University of Vienna, Austria",
+                "institution_ids": [
+                  "https://openalex.org/I76134821"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Neuroimmunology, Center for Brain Research, Medical University of Vienna, Austria"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5012818940"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I7877124",
+                "display_name": "Charité - Universitätsmedizin Berlin"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Psychiatry and Psychotherapy, Charité University Hospital, Berlin, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I7877124"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Psychiatry and Psychotherapy, Charité University Hospital, Berlin, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5006000088"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210116730",
+                "display_name": "Universitätsmedizin Göttingen"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Neuropathology, Universitätsmedizin Göttingen, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210116730"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Neuropathology, Universitätsmedizin Göttingen, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5074695558"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2099747794": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "set_affiliation_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5072797106"
+          },
+          {
+            "author_id": "https://openalex.org/A5028691724"
+          },
+          {
+            "author_id": "https://openalex.org/A5101871126"
+          },
+          {
+            "author_id": "https://openalex.org/A5042463561"
+          },
+          {
+            "author_id": "https://openalex.org/A5113550975"
+          },
+          {
+            "author_id": "https://openalex.org/A5114259537"
+          }
+        ],
+        "mode": "replace",
+        "unset": [
+          "countries"
+        ],
+        "set": {
+          "institutions": [
+            {
+              "id": "https://openalex.org/I4387154539",
+              "display_name": "Krankenhaus Mara"
+            }
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+              "institution_ids": [
+                "https://openalex.org/I4387154539"
+              ]
+            }
+          ],
+          "raw_affiliation_strings": [
+            "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany"
+          ]
+        }
+      }
+    },
+    "https://openalex.org/W2024124013": {
+      "mode": "merge",
+      "disable_raw_affiliations": true,
+      "set_affiliation_for_authors": [
+        {
+          "authors": [
+            {
+              "author_id": "https://openalex.org/A5023575624"
+            }
+          ],
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I79741316",
+                "display_name": "University of Pecs",
+                "ror": "https://ror.org/037b5pv06",
+                "country_code": "HU",
+                "type": "education"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Neurology, Medical Center, University of Pécs, Pécs, Hungary",
+                "institution_ids": [
+                  "https://openalex.org/I79741316"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Neurology, Medical Center, University of Pécs, Pécs, Hungary"
+            ]
+          }
+        },
+        {
+          "authors": [
+            {
+              "author_id": "https://openalex.org/A5072797106"
+            },
+            {
+              "author_id": "https://openalex.org/A5114259537"
+            }
+          ],
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2037247123": {
+      "mode": "merge",
+      "set_affiliation_for_authors": {
+        "authors": [
+          {
+            "author_id": "https://openalex.org/A5109535748"
+          },
+          {
+            "author_id": "https://openalex.org/A5001027417"
+          },
+          {
+            "author_id": "https://openalex.org/A5087613557"
+          }
+        ],
+        "mode": "replace",
+        "unset": [
+          "countries"
+        ],
+        "set": {
+          "countries": [
+            "DE"
+          ],
+          "institutions": [
+            {
+              "id": "https://openalex.org/I4210104779",
+              "display_name": "Evangelisches Krankenhaus Bielefeld"
+            }
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Bethel-EvKB, Bielefeld, Germany",
+              "institution_ids": [
+                "https://openalex.org/I4210104779"
+              ]
+            }
+          ],
+          "raw_affiliation_strings": [
+            "Bethel-EvKB, Bielefeld, Germany"
+          ]
+        }
+      },
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5074695558"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsy Centre Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsy Centre Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2970519210": {
+      "mode": "merge",
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5025075939"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              },
+              {
+                "id": "https://openalex.org/I20121455",
+                "display_name": "Bielefeld University"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Bielefeld University, Department of Psychology, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I20121455"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+              "Bielefeld University, Department of Psychology, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5015396265"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5029091671"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5072558009"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5032539941"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              },
+              {
+                "id": "https://openalex.org/I20121455",
+                "display_name": "Bielefeld University"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Bielefeld University, Department of Psychology, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I20121455"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+              "Bielefeld University, Department of Psychology, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5049442304"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              },
+              {
+                "id": "https://openalex.org/I20121455",
+                "display_name": "Bielefeld University"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Bielefeld University, Department of Psychology, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I20121455"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Evangelisches Klinikum Bethel, Department of Psychiatry and Psychotherapy Bethel, Research Division, Bielefeld, Germany",
+              "Bielefeld University, Department of Psychology, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5047747446"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Mara Hospital, Bethel Epilepsy Center, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Mara Hospital, Bethel Epilepsy Center, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5064145500"
+          },
+          "action": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I200763008",
+                "display_name": "University of Giessen"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "University of Giessen, Cognitive Neuroscience at the Centre for Psychiatry, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I200763008"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "University of Giessen, Cognitive Neuroscience at the Centre for Psychiatry, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W4362458291": {
+      "disable_raw_affiliations": true,
+      "set_affiliation_for_authors": [
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5074695558"
+          },
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I20121455",
+                "display_name": "Bielefeld University"
+              },
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Epileptology, Bielefeld University, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I20121455"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Epileptology, Bielefeld University, Bielefeld, Germany",
+              "Epilepsy Center Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        },
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5109182967"
+          },
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "countries": [
+              "AT"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I76134821",
+                "display_name": "Medical University of Vienna"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Neuroimmunology, Centre for Brain Research, Medical University of Vienna, Austria",
+                "institution_ids": [
+                  "https://openalex.org/I76134821"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Department of Neuroimmunology, Centre for Brain Research, Medical University of Vienna, Austria"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2394852456": {
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5029673592"
+          },
+          "action": "replace",
+          "set": {
+            "countries": [
+              "DE"
+            ],
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              },
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Ev. Krankenhaus Bielefeld gGmbH, Bethesdaweg 10, 33617, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4210104779"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Epilepsiezentrum Bethel, Krankenhaus Mara gGmbH, 33617, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Ev. Krankenhaus Bielefeld gGmbH, Bethesdaweg 10, 33617, Bielefeld, Germany",
+              "Epilepsiezentrum Bethel, Krankenhaus Mara gGmbH, 33617, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W3111830069": {
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5070424111"
+          },
+          "action": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              },
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2012855285": {
+      "authorships": [
+        {
+          "match": {
+            "author_id": "https://openalex.org/A5020900902"
+          },
+          "action": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210104779",
+                "display_name": "Evangelisches Krankenhaus Bielefeld"
+              },
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2111063836": {
+      "mode": "merge",
+      "set_affiliation_for_authors": {
+        "authors": {
+          "author_id": "https://openalex.org/A5091868571"
+        },
+        "mode": "merge",
+        "set": {
+          "institutions": [
+            {
+              "id": "https://openalex.org/I4387154539",
+              "display_name": "Krankenhaus Mara",
+              "type": "healthcare"
+            }
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Krankenhaus Mara, Bielefeld, Germany",
+              "institution_ids": [
+                "https://openalex.org/I4387154539"
+              ]
+            }
+          ],
+          "raw_affiliation_strings": [
+            "Krankenhaus Mara, Bielefeld, Germany"
+          ]
+        }
+      }
+    },
+    "https://openalex.org/W4399352796": {
+      "mode": "merge",
+      "set_affiliation_for_authors": [
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5042463561"
+          },
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara",
+                "type": "healthcare"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsiezentrum Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsiezentrum Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2990544668": {
+      "mode": "merge",
+      "set_affiliation_for_authors": [
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5063225454"
+          },
+          "mode": "merge",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara",
+                "type": "healthcare"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsiezentrum Bethel, Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsiezentrum Bethel, Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2155550360": {
+      "mode": "merge",
+      "set_affiliation_for_authors": [
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5047747446"
+          },
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara",
+                "type": "healthcare"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2908826903": {
+      "mode": "merge",
+      "set_affiliation_for_authors": [
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5063225454"
+          },
+          "mode": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara",
+                "type": "healthcare"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Krankenhaus Mara, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Krankenhaus Mara, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W2479876802": {
+      "mode": "merge",
+      "set_affiliation_for_authors": [
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5042463561"
+          },
+          "mode": "merge",
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "https://openalex.org/W4401400676": {
+      "mode": "merge",
+      "set_affiliation_for_authors": [
+        {
+          "authors": {
+            "author_id": "https://openalex.org/A5077747574"
+          },
+          "mode": "replace",
+          "unset": [
+            "countries"
+          ],
+          "set": {
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4387154539",
+                "display_name": "Krankenhaus Mara",
+                "type": "healthcare"
+              }
+            ],
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Epilepsiezentrum Bethel, Krankenhaus Mara gGmbH, Bielefeld, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I4387154539"
+                ]
+              }
+            ],
+            "raw_affiliation_strings": [
+              "Epilepsiezentrum Bethel, Krankenhaus Mara gGmbH, Bielefeld, Germany"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "authors": {
+    "https://openalex.org/A5103992994": "https://openalex.org/A5029897407",
+    "https://openalex.org/A5069507951": "https://openalex.org/A5024024796",
+    "https://openalex.org/A5029673592": "https://openalex.org/A5010958888",
+    "https://openalex.org/A5107241589": "https://openalex.org/A5018077938",
+    "https://openalex.org/A5047747446": "https://openalex.org/A5113126695",
+    "https://openalex.org/A5067733884": "https://openalex.org/A5063225454",
+    "https://openalex.org/A5032278147": "https://openalex.org/A5015724290",
+    "https://openalex.org/A5103285185": "https://openalex.org/A5091868571",
+    "https://openalex.org/A5083204958": "https://openalex.org/A5069001018",
+    "https://openalex.org/A5099042580": "https://openalex.org/A5069704513",
+    "https://openalex.org/A5003210283": "https://openalex.org/A5089903032",
+    "https://openalex.org/A5077637177": "https://openalex.org/A5052548820"
+  },
+  "overwrite": {
+    "https://openalex.org/A5069001018": {
+      "force_currently_local": true,
+      "force_local_authorships": {
+        "local": true,
+        "since_year": 0,
+        "until_year": null
+      }
+    },
+    "https://openalex.org/A5014378652": {
+      "force_currently_local": false
+    },
+    "https://openalex.org/A5074695558": {
+      "force_local_authorships": {
+        "local": true,
+        "since_year": 0,
+        "until_year": null
+      }
+    },
+    "https://openalex.org/A5020900902": {
+      "force_currently_local": true,
+      "force_local_authorships": {
+        "local": true,
+        "since_year": 0,
+        "until_year": null
+      }
+    },
+    "https://openalex.org/A5054976363": {
+      "force_currently_local": true,
+      "force_local_authorships": {
+        "local": true,
+        "since_year": 0,
+        "until_year": null
+      }
+    }
+  },
+  "include": [
+    "W187283018.json"
+  ]
+}

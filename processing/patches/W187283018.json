@@ -1,0 +1,1601 @@
+{
+  "id": "https://openalex.org/W187283018",
+  "doi": null,
+  "title": "Sturge-Weber syndrome: clinical and radiological correlates in 86 patients.",
+  "display_name": "Sturge-Weber syndrome: clinical and radiological correlates in 86 patients.",
+  "publication_year": 2013,
+  "publication_date": "2013-01-30",
+  "ids": {
+    "openalex": "https://openalex.org/W187283018",
+    "mag": "187283018"
+  },
+  "language": "en",
+  "primary_location": {
+    "id": "mag:187283018",
+    "is_oa": false,
+    "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/23607230",
+    "pdf_url": null,
+    "source": {
+      "id": "https://openalex.org/S4306525036",
+      "display_name": "PubMed",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "host_organization": "https://openalex.org/I1299303238",
+      "host_organization_name": "National Institutes of Health",
+      "host_organization_lineage": [
+        "https://openalex.org/I1299303238"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+    },
+    "license": null,
+    "license_id": null,
+    "version": null,
+    "is_accepted": false,
+    "is_published": false,
+    "raw_source_name": "PubMed",
+    "raw_type": null
+  },
+  "type": "article",
+  "indexed_in": [
+    "pubmed"
+  ],
+  "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5085747154",
+        "display_name": "András Fogarasi",
+        "orcid": "https://orcid.org/0000-0001-8397-8706"
+      },
+      "institutions": [],
+      "countries": [],
+      "is_corresponding": false,
+      "raw_author_name": "András Fogarasi",
+      "raw_affiliation_strings": [
+        "Epilepsy Center, Bethesda Children's Hospital, Budapest, Hungary. fogarasi@bethesda.hu"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Epilepsy Center, Bethesda Children's Hospital, Budapest, Hungary. fogarasi@bethesda.hu",
+          "institution_ids": [
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5046645524",
+        "display_name": "Tobias Loddenkemper",
+        "orcid": "https://orcid.org/0000-0003-2074-0674"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I1316902750",
+          "display_name": "Cleveland Clinic",
+          "ror": "https://ror.org/03xjacd83",
+          "country_code": "US",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I1316902750"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I2801851002",
+          "display_name": "Harvard University Press",
+          "ror": "https://ror.org/006v7bf86",
+          "country_code": "US",
+          "type": "other",
+          "lineage": [
+            "https://openalex.org/I136199984",
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Tobias Loddenkemper",
+      "raw_affiliation_strings": [
+        "Cleveland Clinic Foundation",
+        "Harvard University"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Cleveland Clinic Foundation",
+          "institution_ids": [
+            "https://openalex.org/I1316902750"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Harvard University",
+          "institution_ids": [
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5025873324",
+        "display_name": "Cecília Mellado",
+        "orcid": "https://orcid.org/0000-0002-6032-4651"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I162148367",
+          "display_name": "Pontificia Universidad Católica de Chile",
+          "ror": "https://ror.org/04teye511",
+          "country_code": "CL",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I162148367"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I2801851002",
+          "display_name": "Harvard University Press",
+          "ror": "https://ror.org/006v7bf86",
+          "country_code": "US",
+          "type": "other",
+          "lineage": [
+            "https://openalex.org/I136199984",
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ],
+      "countries": [
+        "CL",
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Cecilia Mellado",
+      "raw_affiliation_strings": [
+        "Harvard University",
+        "Pontificia Universidad Católica de Chile"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Harvard University",
+          "institution_ids": [
+            "https://openalex.org/I2801851002"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Pontificia Universidad Católica de Chile",
+          "institution_ids": [
+            "https://openalex.org/I162148367"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5019526964",
+        "display_name": "Ingrid Tuxhorn",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I895819238",
+          "display_name": "Bethel University",
+          "ror": "https://ror.org/02faxbd19",
+          "country_code": "US",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I895819238"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I1316902750",
+          "display_name": "Cleveland Clinic",
+          "ror": "https://ror.org/03xjacd83",
+          "country_code": "US",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I1316902750"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Ingrid Tuxhorn",
+      "raw_affiliation_strings": [
+        "Cleveland Clinic Foundation",
+        "Epilepsy Center Bethel"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Cleveland Clinic Foundation",
+          "institution_ids": [
+            "https://openalex.org/I1316902750"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Epilepsy Center Bethel",
+          "institution_ids": [
+            "https://openalex.org/I895819238"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5072140591",
+        "display_name": "Georg Evers",
+        "orcid": "https://orcid.org/0000-0003-3773-1416"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I2801851002",
+          "display_name": "Harvard University Press",
+          "ror": "https://ror.org/006v7bf86",
+          "country_code": "US",
+          "type": "other",
+          "lineage": [
+            "https://openalex.org/I136199984",
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Georg Evers",
+      "raw_affiliation_strings": [
+        "Harvard University"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Harvard University",
+          "institution_ids": [
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5041766692",
+        "display_name": "Dean Sarco",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I2801851002",
+          "display_name": "Harvard University Press",
+          "ror": "https://ror.org/006v7bf86",
+          "country_code": "US",
+          "type": "other",
+          "lineage": [
+            "https://openalex.org/I136199984",
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Dean Sarco",
+      "raw_affiliation_strings": [
+        "Harvard University"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Harvard University",
+          "institution_ids": [
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5065264098",
+        "display_name": "Richard C. Burgess",
+        "orcid": "https://orcid.org/0000-0003-2297-2022"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I1316902750",
+          "display_name": "Cleveland Clinic",
+          "ror": "https://ror.org/03xjacd83",
+          "country_code": "US",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I1316902750"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Richard C Burgess",
+      "raw_affiliation_strings": [
+        "Cleveland Clinic Foundation"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Cleveland Clinic Foundation",
+          "institution_ids": [
+            "https://openalex.org/I1316902750"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5001231385",
+        "display_name": "Péter Halász",
+        "orcid": "https://orcid.org/0000-0001-6151-728X"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210100950",
+          "display_name": "Országos Idegsebészeti Tudományos Intézet",
+          "ror": "https://ror.org/01b4q9c55",
+          "country_code": "HU",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I4210100950"
+          ]
+        }
+      ],
+      "countries": [
+        "HU"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Péter Halász",
+      "raw_affiliation_strings": [
+        "National Institute of Clinical Neurosciences"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "National Institute of Clinical Neurosciences",
+          "institution_ids": [
+            "https://openalex.org/I4210100950"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5058310580",
+        "display_name": "Péter Barsi",
+        "orcid": "https://orcid.org/0000-0002-3574-9973"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I101202996",
+          "display_name": "Semmelweis University",
+          "ror": "https://ror.org/01g9ty582",
+          "country_code": "HU",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I101202996"
+          ]
+        }
+      ],
+      "countries": [
+        "HU"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Péter Barsis",
+      "raw_affiliation_strings": [
+        "Semmelweis University"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Semmelweis University",
+          "institution_ids": [
+            "https://openalex.org/I101202996"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5059723928",
+        "display_name": "Zsuzsanna Gyorsok",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210131313",
+          "display_name": "National Neuroscience Institute",
+          "ror": "https://ror.org/03d58dr58",
+          "country_code": "SG",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I4210131313"
+          ]
+        }
+      ],
+      "countries": [
+        "SG"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Zsuzsanna Gyorsok",
+      "raw_affiliation_strings": [
+        "National Institute of Neuroscience"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "National Institute of Neuroscience",
+          "institution_ids": [
+            "https://openalex.org/I4210131313"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5023575624",
+        "display_name": "Csilla Gyimesi",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I79741316",
+          "display_name": "University of Pecs",
+          "ror": "https://ror.org/037b5pv06",
+          "country_code": "HU",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I79741316"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I895819238",
+          "display_name": "Bethel University",
+          "ror": "https://ror.org/02faxbd19",
+          "country_code": "US",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I895819238"
+          ]
+        }
+      ],
+      "countries": [
+        "HU",
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Csilla Gyimesi",
+      "raw_affiliation_strings": [
+        "Epilepsy Center Bethel",
+        "University of Pecs"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Epilepsy Center Bethel",
+          "institution_ids": [
+            "https://openalex.org/I895819238"
+          ]
+        },
+        {
+          "raw_affiliation_string": "University of Pecs",
+          "institution_ids": [
+            "https://openalex.org/I79741316"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5010211089",
+        "display_name": "J. KOBOR",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I227486990",
+          "display_name": "University of Szeged",
+          "ror": "https://ror.org/01pnej532",
+          "country_code": "HU",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I227486990"
+          ]
+        }
+      ],
+      "countries": [
+        "HU"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Jeno Kóbor",
+      "raw_affiliation_strings": [
+        "University of Szeged"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "University of Szeged",
+          "institution_ids": [
+            "https://openalex.org/I227486990"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5065941536",
+        "display_name": "Zsuzsanna Siegler",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I2801285029",
+          "display_name": "Bethesda Hospital",
+          "ror": "https://ror.org/01kpm8k86",
+          "country_code": "IN",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I2801285029"
+          ]
+        }
+      ],
+      "countries": [
+        "IN"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Zsuzsanna Siegler",
+      "raw_affiliation_strings": [
+        "Bethesda Hospital"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Bethesda Hospital",
+          "institution_ids": [
+            "https://openalex.org/I2801285029"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5081230541",
+        "display_name": "József Janszky",
+        "orcid": "https://orcid.org/0000-0001-6100-832X"
+      },
+      "institutions": [],
+      "countries": [],
+      "is_corresponding": false,
+      "raw_author_name": "József Janszky",
+      "raw_affiliation_strings": [
+        "PECSI TUDOMANYEGYETEM"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "PECSI TUDOMANYEGYETEM",
+          "institution_ids": [
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5053097075",
+        "display_name": "Rita Jakus",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210162629",
+          "display_name": "Children's Hospital",
+          "ror": "https://ror.org/0511k4970",
+          "country_code": "TN",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I4210162629"
+          ]
+        }
+      ],
+      "countries": [
+        "TN"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Rita Jakus",
+      "raw_affiliation_strings": [
+        "Bethesda Children's Hospital"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Bethesda Children's Hospital",
+          "institution_ids": [
+            "https://openalex.org/I4210162629"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5055683958",
+        "display_name": "György Rásonyi",
+        "orcid": "https://orcid.org/0000-0001-6427-7920"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I4210100950",
+          "display_name": "Országos Idegsebészeti Tudományos Intézet",
+          "ror": "https://ror.org/01b4q9c55",
+          "country_code": "HU",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I4210100950"
+          ]
+        }
+      ],
+      "countries": [
+        "HU"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "György Rásonyi",
+      "raw_affiliation_strings": [
+        "National Institute of Clinical Neurosciences"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "National Institute of Clinical Neurosciences",
+          "institution_ids": [
+            "https://openalex.org/I4210100950"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5114259537",
+        "display_name": "Alois Ebner",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I895819238",
+          "display_name": "Bethel University",
+          "ror": "https://ror.org/02faxbd19",
+          "country_code": "US",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I895819238"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Alois Ebner",
+      "raw_affiliation_strings": [
+        "Epilepsy Center Bethel"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Epilepsy Center Bethel",
+          "institution_ids": [
+            "https://openalex.org/I895819238"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5047747446",
+        "display_name": "Friedrich G. Woermann",
+        "orcid": "https://orcid.org/0009-0007-9502-0491"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I895819238",
+          "display_name": "Bethel University",
+          "ror": "https://ror.org/02faxbd19",
+          "country_code": "US",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I895819238"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Friedrich G Woermann",
+      "raw_affiliation_strings": [
+        "Epilepsy Center Bethel"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Epilepsy Center Bethel",
+          "institution_ids": [
+            "https://openalex.org/I895819238"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5079691093",
+        "display_name": "Mustafa Şahin",
+        "orcid": "https://orcid.org/0000-0001-7044-2953"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I2801851002",
+          "display_name": "Harvard University Press",
+          "ror": "https://ror.org/006v7bf86",
+          "country_code": "US",
+          "type": "other",
+          "lineage": [
+            "https://openalex.org/I136199984",
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Mustafa Sahin",
+      "raw_affiliation_strings": [
+        "Harvard University"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Harvard University",
+          "institution_ids": [
+            "https://openalex.org/I2801851002"
+          ]
+        }
+      ]
+    }
+  ],
+  "institutions": [],
+  "countries_distinct_count": 6,
+  "institutions_distinct_count": 19,
+  "corresponding_author_ids": [],
+  "corresponding_institution_ids": [],
+  "apc_list": null,
+  "apc_paid": null,
+  "fwci": 1.58205957,
+  "cited_by_count": 11,
+  "citation_normalized_percentile": {
+    "value": 0.80823701,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+  },
+  "cited_by_percentile_year": {
+    "min": 89,
+    "max": 96
+  },
+  "biblio": {
+    "volume": "66",
+    "issue": "1-2",
+    "first_page": "53",
+    "last_page": "7"
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "is_xpac": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T10980",
+    "display_name": "Vascular Malformations and Hemangiomas",
+    "score": 0.9998000264167786,
+    "subfield": {
+      "id": "https://openalex.org/subfields/2746",
+      "display_name": "Surgery"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T10980",
+      "display_name": "Vascular Malformations and Hemangiomas",
+      "score": 0.9998000264167786,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2746",
+        "display_name": "Surgery"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/27",
+        "display_name": "Medicine"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/4",
+        "display_name": "Health Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T11638",
+      "display_name": "Cardiac tumors and thrombi",
+      "score": 0.9855999946594238,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2705",
+        "display_name": "Cardiology and Cardiovascular Medicine"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/27",
+        "display_name": "Medicine"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/4",
+        "display_name": "Health Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T11909",
+      "display_name": "Histiocytic Disorders and Treatments",
+      "score": 0.9843999743461609,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2737",
+        "display_name": "Physiology"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/27",
+        "display_name": "Medicine"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/4",
+        "display_name": "Health Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/angiomatosis",
+      "display_name": "Angiomatosis",
+      "score": 0.8702804446220398
+    },
+    {
+      "id": "https://openalex.org/keywords/sturge–weber-syndrome",
+      "display_name": "Sturge–Weber syndrome",
+      "score": 0.7504257559776306
+    },
+    {
+      "id": "https://openalex.org/keywords/epilepsy",
+      "display_name": "Epilepsy",
+      "score": 0.6882355809211731
+    },
+    {
+      "id": "https://openalex.org/keywords/medicine",
+      "display_name": "Medicine",
+      "score": 0.572729766368866
+    },
+    {
+      "id": "https://openalex.org/keywords/atrophy",
+      "display_name": "Atrophy",
+      "score": 0.5643594264984131
+    },
+    {
+      "id": "https://openalex.org/keywords/age-of-onset",
+      "display_name": "Age of onset",
+      "score": 0.4598478078842163
+    },
+    {
+      "id": "https://openalex.org/keywords/pediatrics",
+      "display_name": "Pediatrics",
+      "score": 0.35359886288642883
+    },
+    {
+      "id": "https://openalex.org/keywords/pathology",
+      "display_name": "Pathology",
+      "score": 0.27802109718322754
+    },
+    {
+      "id": "https://openalex.org/keywords/surgery",
+      "display_name": "Surgery",
+      "score": 0.22834870219230652
+    },
+    {
+      "id": "https://openalex.org/keywords/disease",
+      "display_name": "Disease",
+      "score": 0.1874208152294159
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C2776333679",
+      "wikidata": "https://www.wikidata.org/wiki/Q367756",
+      "display_name": "Angiomatosis",
+      "level": 2,
+      "score": 0.8702804446220398
+    },
+    {
+      "id": "https://openalex.org/C2779301331",
+      "wikidata": "https://www.wikidata.org/wiki/Q1886238",
+      "display_name": "Sturge–Weber syndrome",
+      "level": 2,
+      "score": 0.7504257559776306
+    },
+    {
+      "id": "https://openalex.org/C2778186239",
+      "wikidata": "https://www.wikidata.org/wiki/Q41571",
+      "display_name": "Epilepsy",
+      "level": 2,
+      "score": 0.6882355809211731
+    },
+    {
+      "id": "https://openalex.org/C71924100",
+      "wikidata": "https://www.wikidata.org/wiki/Q11190",
+      "display_name": "Medicine",
+      "level": 0,
+      "score": 0.572729766368866
+    },
+    {
+      "id": "https://openalex.org/C2781172350",
+      "wikidata": "https://www.wikidata.org/wiki/Q194520",
+      "display_name": "Atrophy",
+      "level": 2,
+      "score": 0.5643594264984131
+    },
+    {
+      "id": "https://openalex.org/C2777767895",
+      "wikidata": "https://www.wikidata.org/wiki/Q4691924",
+      "display_name": "Age of onset",
+      "level": 3,
+      "score": 0.4598478078842163
+    },
+    {
+      "id": "https://openalex.org/C187212893",
+      "wikidata": "https://www.wikidata.org/wiki/Q123028",
+      "display_name": "Pediatrics",
+      "level": 1,
+      "score": 0.35359886288642883
+    },
+    {
+      "id": "https://openalex.org/C142724271",
+      "wikidata": "https://www.wikidata.org/wiki/Q7208",
+      "display_name": "Pathology",
+      "level": 1,
+      "score": 0.27802109718322754
+    },
+    {
+      "id": "https://openalex.org/C141071460",
+      "wikidata": "https://www.wikidata.org/wiki/Q40821",
+      "display_name": "Surgery",
+      "level": 1,
+      "score": 0.22834870219230652
+    },
+    {
+      "id": "https://openalex.org/C2779134260",
+      "wikidata": "https://www.wikidata.org/wiki/Q12136",
+      "display_name": "Disease",
+      "level": 2,
+      "score": 0.1874208152294159
+    },
+    {
+      "id": "https://openalex.org/C118552586",
+      "wikidata": "https://www.wikidata.org/wiki/Q7867",
+      "display_name": "Psychiatry",
+      "level": 1,
+      "score": 0.0
+    }
+  ],
+  "mesh": [],
+  "locations_count": 1,
+  "locations": [
+    {
+      "id": "mag:187283018",
+      "is_oa": false,
+      "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/23607230",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4306525036",
+        "display_name": "PubMed",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I1299303238",
+        "host_organization_name": "National Institutes of Health",
+        "host_organization_lineage": [
+          "https://openalex.org/I1299303238"
+        ],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": null,
+      "is_accepted": false,
+      "is_published": null,
+      "raw_source_name": "PubMed"
+    }
+  ],
+  "best_oa_location": null,
+  "sustainable_development_goals": [
+    {
+      "display_name": "Good health and well-being",
+      "id": "https://metadata.un.org/sdg/3",
+      "score": 0.5799999833106995
+    }
+  ],
+  "grants": [],
+  "awards": [],
+  "funders": [],
+  "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+  },
+  "referenced_works_count": 0,
+  "referenced_works": [],
+  "related_works": [
+    "https://openalex.org/W2063868699",
+    "https://openalex.org/W2428405833",
+    "https://openalex.org/W2043045967",
+    "https://openalex.org/W2081391125",
+    "https://openalex.org/W2945163262",
+    "https://openalex.org/W187283018",
+    "https://openalex.org/W3205618924",
+    "https://openalex.org/W2516639160",
+    "https://openalex.org/W2025691668",
+    "https://openalex.org/W1932292249"
+  ],
+  "abstract_inverted_index": {
+    "To": [
+      0
+    ],
+    "correlate": [
+      1
+    ],
+    "the": [
+      2,
+      5,
+      43,
+      69,
+      110,
+      168,
+      219
+    ],
+    "extent": [
+      3,
+      44,
+      169,
+      220
+    ],
+    "of": [
+      4,
+      18,
+      45,
+      68,
+      78,
+      112,
+      130,
+      133,
+      162,
+      170,
+      177,
+      183,
+      221
+    ],
+    "leptomeningeal": [
+      6,
+      46,
+      90,
+      171
+    ],
+    "angiomatosis": [
+      7,
+      58,
+      91
+    ],
+    "with": [
+      8,
+      32,
+      88,
+      104,
+      153,
+      174,
+      180,
+      200,
+      218
+    ],
+    "clinical": [
+      9
+    ],
+    "features": [
+      10
+    ],
+    "in": [
+      11,
+      84,
+      151
+    ],
+    "Sturge-Weber": [
+      12
+    ],
+    "syndrome": [
+      13
+    ],
+    "(SWS).The": [
+      14
+    ],
+    "study": [
+      15
+    ],
+    "group": [
+      16
+    ],
+    "consisted": [
+      17
+    ],
+    "86": [
+      19
+    ],
+    "consecutive": [
+      20
+    ],
+    "patients": [
+      21,
+      48,
+      55,
+      72
+    ],
+    "aged": [
+      22
+    ],
+    "two": [
+      23,
+      52
+    ],
+    "months": [
+      24
+    ],
+    "to": [
+      25,
+      167,
+      192
+    ],
+    "56": [
+      26
+    ],
+    "(mean": [
+      27
+    ],
+    "7.9": [
+      28
+    ],
+    "+/-": [
+      29
+    ],
+    "10.3)": [
+      30
+    ],
+    "years": [
+      31
+    ],
+    "SWS": [
+      33,
+      106,
+      178
+    ],
+    "and": [
+      34,
+      37,
+      59,
+      92,
+      97,
+      118,
+      149,
+      210
+    ],
+    "epilepsy.": [
+      35
+    ],
+    "Clinical": [
+      36
+    ],
+    "MRI": [
+      38,
+      121
+    ],
+    "data": [
+      39
+    ],
+    "were": [
+      40,
+      49,
+      100,
+      107
+    ],
+    "analyzed.Based": [
+      41
+    ],
+    "on": [
+      42,
+      157
+    ],
+    "angiomatosis,": [
+      47
+    ],
+    "divided": [
+      50
+    ],
+    "into": [
+      51
+    ],
+    "subgroups:": [
+      53
+    ],
+    "43": [
+      54,
+      63,
+      70
+    ],
+    "had": [
+      56,
+      64
+    ],
+    "hemispheric": [
+      57,
+      89,
+      105,
+      175,
+      203
+    ],
+    "atrophy,": [
+      60
+    ],
+    "whereas,": [
+      61
+    ],
+    "another": [
+      62
+    ],
+    "focal": [
+      65,
+      94,
+      98
+    ],
+    "involvement.": [
+      66
+    ],
+    "Nine": [
+      67
+    ],
+    "hemispherial": [
+      71
+    ],
+    "(10%)": [
+      73
+    ],
+    "showed": [
+      74
+    ],
+    "bilateral": [
+      75,
+      80
+    ],
+    "involvement:": [
+      76
+    ],
+    "all": [
+      77
+    ],
+    "these": [
+      79
+    ],
+    "cases": [
+      81,
+      152
+    ],
+    "demonstrated": [
+      82
+    ],
+    "dominance": [
+      83
+    ],
+    "a": [
+      85,
+      141,
+      154
+    ],
+    "single": [
+      86
+    ],
+    "side": [
+      87
+    ],
+    "contralateral": [
+      93
+    ],
+    "extension.": [
+      95
+    ],
+    "Hemispheric": [
+      96
+    ],
+    "subgroups": [
+      99
+    ],
+    "clinically": [
+      101
+    ],
+    "different.": [
+      102
+    ],
+    "Patients": [
+      103,
+      173
+    ],
+    "younger": [
+      108
+    ],
+    "at": [
+      109,
+      120
+    ],
+    "age": [
+      111,
+      119,
+      161,
+      182
+    ],
+    "epilepsy": [
+      113,
+      163
+    ],
+    "onset": [
+      114,
+      164
+    ],
+    "(p": [
+      115,
+      123
+    ],
+    "<": [
+      116,
+      124
+    ],
+    "0.001)": [
+      117
+    ],
+    "examination": [
+      122
+    ],
+    "0.05).": [
+      125
+    ],
+    "Neither": [
+      126
+    ],
+    "gender,": [
+      127
+    ],
+    "lateralization,": [
+      128
+    ],
+    "duration": [
+      129,
+      196
+    ],
+    "epilepsy,": [
+      131
+    ],
+    "appearance": [
+      132
+    ],
+    "secondarily": [
+      134
+    ],
+    "generalized": [
+      135,
+      212
+    ],
+    "seizures,": [
+      136
+    ],
+    "nor": [
+      137
+    ],
+    "seizure": [
+      138,
+      184,
+      208
+    ],
+    "frequency": [
+      139,
+      209
+    ],
+    "revealed": [
+      140
+    ],
+    "significant": [
+      142
+    ],
+    "difference": [
+      143
+    ],
+    "between": [
+      144
+    ],
+    "subgroups.Bilateral": [
+      145
+    ],
+    "involvement": [
+      146,
+      156
+    ],
+    "is": [
+      147,
+      165,
+      197
+    ],
+    "frequent": [
+      148,
+      202
+    ],
+    "occurs": [
+      150
+    ],
+    "hemisperic": [
+      155
+    ],
+    "one": [
+      158
+    ],
+    "side.": [
+      159
+    ],
+    "The": [
+      160
+    ],
+    "related": [
+      166
+    ],
+    "angiomatosis.": [
+      172,
+      222
+    ],
+    "form": [
+      176
+    ],
+    "presented": [
+      179
+    ],
+    "earlier": [
+      181
+    ],
+    "onset.": [
+      185
+    ],
+    "Focal": [
+      186
+    ],
+    "pial": [
+      187
+    ],
+    "angiomatoses": [
+      188
+    ],
+    "do": [
+      189
+    ],
+    "not": [
+      190,
+      198,
+      216
+    ],
+    "tend": [
+      191
+    ],
+    "progress": [
+      193
+    ],
+    "(a": [
+      194
+    ],
+    "longer": [
+      195
+    ],
+    "associated": [
+      199,
+      217
+    ],
+    "more": [
+      201
+    ],
+    "involvement).": [
+      204
+    ],
+    "Other": [
+      205
+    ],
+    "variables": [
+      206
+    ],
+    "including": [
+      207
+    ],
+    "secondary": [
+      211
+    ],
+    "tonic-clonic": [
+      213
+    ],
+    "seizures": [
+      214
+    ],
+    "are": [
+      215
+    ]
+  },
+  "counts_by_year": [
+    {
+      "year": 2025,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2023,
+      "cited_by_count": 2
+    },
+    {
+      "year": 2021,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2017,
+      "cited_by_count": 2
+    },
+    {
+      "year": 2016,
+      "cited_by_count": 2
+    },
+    {
+      "year": 2015,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2014,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2013,
+      "cited_by_count": 1
+    }
+  ],
+  "updated_date": "2025-10-10T17:16:08.811792",
+  "created_date": "2016-06-24T00:00:00"
+}
