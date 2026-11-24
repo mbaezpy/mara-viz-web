@@ -1,123 +1,154 @@
 {
+  "citation_stats": {
+    "year_basis": "publication_year",
+    "metric": "lifetime_cited_by_count",
+    "topic_counting": "full_count_per_distinct_top_level_topic",
+    "papers": 445,
+    "refreshed_papers": 445,
+    "oldest_refresh": "2026-11-24T12:17:55+00:00",
+    "newest_refresh": "2026-11-24T12:18:00+00:00"
+  },
   "publications": {
     "years": [
       {
         "year": 2009,
         "pubs": 4,
-        "citations": 96,
-        "cum_citations": 96
+        "citations": 109,
+        "cum_citations": 109
       },
       {
         "year": 2010,
         "pubs": 12,
-        "citations": 444,
-        "cum_citations": 540
+        "citations": 523,
+        "cum_citations": 632
       },
       {
         "year": 2011,
         "pubs": 9,
-        "citations": 376,
-        "cum_citations": 916
+        "citations": 417,
+        "cum_citations": 1049
       },
       {
         "year": 2012,
         "pubs": 18,
-        "citations": 1142,
-        "cum_citations": 2058
+        "citations": 1334,
+        "cum_citations": 2383
       },
       {
         "year": 2013,
         "pubs": 29,
-        "citations": 2309,
-        "cum_citations": 4367
+        "citations": 2842,
+        "cum_citations": 5225
       },
       {
         "year": 2014,
-        "pubs": 24,
-        "citations": 1497,
-        "cum_citations": 5864
+        "pubs": 25,
+        "citations": 1782,
+        "cum_citations": 7007
       },
       {
         "year": 2015,
         "pubs": 27,
-        "citations": 1597,
-        "cum_citations": 7461
+        "citations": 1884,
+        "cum_citations": 8891
       },
       {
         "year": 2016,
         "pubs": 36,
-        "citations": 6427,
-        "cum_citations": 13888
+        "citations": 8150,
+        "cum_citations": 17041
       },
       {
         "year": 2017,
         "pubs": 27,
-        "citations": 2904,
-        "cum_citations": 16792
+        "citations": 3930,
+        "cum_citations": 20971
       },
       {
         "year": 2018,
         "pubs": 34,
-        "citations": 1785,
-        "cum_citations": 18577
+        "citations": 2308,
+        "cum_citations": 23279
       },
       {
         "year": 2019,
         "pubs": 33,
-        "citations": 1534,
-        "cum_citations": 20111
+        "citations": 2042,
+        "cum_citations": 25321
       },
       {
         "year": 2020,
         "pubs": 26,
-        "citations": 1015,
-        "cum_citations": 21126
+        "citations": 1385,
+        "cum_citations": 26706
       },
       {
         "year": 2021,
         "pubs": 38,
-        "citations": 694,
-        "cum_citations": 21820
+        "citations": 1005,
+        "cum_citations": 27711
       },
       {
         "year": 2022,
         "pubs": 30,
-        "citations": 549,
-        "cum_citations": 22369
+        "citations": 897,
+        "cum_citations": 28608
       },
       {
         "year": 2023,
         "pubs": 18,
-        "citations": 165,
-        "cum_citations": 22534
+        "citations": 372,
+        "cum_citations": 28980
       },
       {
         "year": 2024,
-        "pubs": 24,
-        "citations": 160,
-        "cum_citations": 22694
+        "pubs": 25,
+        "citations": 542,
+        "cum_citations": 29522
+      },
+      {
+        "year": 2025,
+        "pubs": 27,
+        "citations": 215,
+        "cum_citations": 29737
+      },
+      {
+        "year": 2026,
+        "pubs": 27,
+        "citations": 47,
+        "cum_citations": 29784
       }
     ],
     "venues": [
       {
         "venue_id": "https://openalex.org/S109517664",
         "venue_name": "Epilepsy & Behavior",
-        "pubs": 58
+        "pubs": 70
       },
       {
         "venue_id": "https://openalex.org/S203153751",
         "venue_name": "Epilepsia",
-        "pubs": 54
+        "pubs": 63
       },
       {
         "venue_id": "https://openalex.org/S45493217",
         "venue_name": "Seizure",
-        "pubs": 19
+        "pubs": 20
       },
       {
         "venue_id": "https://openalex.org/S144140688",
         "venue_name": "Epilepsy Research",
         "pubs": 18
+      },
+      {
+        "venue_id": "https://openalex.org/S118357697",
+        "venue_name": "Brain",
+        "pubs": 11
+      },
+      {
+        "venue_id": "https://openalex.org/S4210183624",
+        "venue_name": "Epilepsia Open",
+        "pubs": 10
       },
       {
         "venue_id": "https://openalex.org/S30097070",
@@ -130,18 +161,13 @@
         "pubs": 10
       },
       {
-        "venue_id": "https://openalex.org/S118357697",
-        "venue_name": "Brain",
-        "pubs": 9
+        "venue_id": "https://openalex.org/S2764892302",
+        "venue_name": "Neurology Neuroimmunology & Neuroinflammation",
+        "pubs": 10
       },
       {
         "venue_id": "https://openalex.org/S62507270",
         "venue_name": "Der Nervenarzt",
-        "pubs": 8
-      },
-      {
-        "venue_id": "https://openalex.org/S4210183624",
-        "venue_name": "Epilepsia Open",
         "pubs": 8
       },
       {
@@ -157,6 +183,11 @@
       {
         "venue_id": "https://openalex.org/S179268941",
         "venue_name": "Therapeutic Drug Monitoring",
+        "pubs": 7
+      },
+      {
+        "venue_id": "https://openalex.org/S114530997",
+        "venue_name": "Annals of Neurology",
         "pubs": 6
       },
       {
@@ -165,8 +196,8 @@
         "pubs": 5
       },
       {
-        "venue_id": "https://openalex.org/S114530997",
-        "venue_name": "Annals of Neurology",
+        "venue_id": "https://openalex.org/S198620474",
+        "venue_name": "Acta Neuropathologica",
         "pubs": 5
       },
       {
@@ -185,14 +216,14 @@
         "pubs": 5
       },
       {
-        "venue_id": "https://openalex.org/S2764892302",
-        "venue_name": "Neurology Neuroimmunology & Neuroinflammation",
+        "venue_id": "https://openalex.org/S44923075",
+        "venue_name": "Neuropediatrics",
         "pubs": 5
       },
       {
-        "venue_id": "https://openalex.org/S198620474",
-        "venue_name": "Acta Neuropathologica",
-        "pubs": 4
+        "venue_id": "https://openalex.org/S70053155",
+        "venue_name": "The Lancet Neurology",
+        "pubs": 5
       },
       {
         "venue_id": "https://openalex.org/S120289491",
@@ -220,18 +251,18 @@
         "pubs": 4
       },
       {
-        "venue_id": "https://openalex.org/S44923075",
-        "venue_name": "Neuropediatrics",
-        "pubs": 4
-      },
-      {
-        "venue_id": "https://openalex.org/S70053155",
-        "venue_name": "The Lancet Neurology",
-        "pubs": 4
+        "venue_id": "https://openalex.org/S4210215356",
+        "venue_name": "Brain and Spine",
+        "pubs": 3
       },
       {
         "venue_id": "https://openalex.org/S38337076",
         "venue_name": "Clinical Neurophysiology",
+        "pubs": 3
+      },
+      {
+        "venue_id": "https://openalex.org/S82373125",
+        "venue_name": "Epileptic Disorders",
         "pubs": 3
       },
       {
@@ -242,6 +273,11 @@
       {
         "venue_id": "https://openalex.org/S64187185",
         "venue_name": "Nature Communications",
+        "pubs": 3
+      },
+      {
+        "venue_id": "https://openalex.org/S179120876",
+        "venue_name": "Neurocase",
         "pubs": 3
       },
       {
@@ -260,8 +296,23 @@
         "pubs": 3
       },
       {
+        "venue_id": "https://openalex.org/S125754415",
+        "venue_name": "Proceedings of the National Academy of Sciences",
+        "pubs": 3
+      },
+      {
+        "venue_id": "https://openalex.org/S134425043",
+        "venue_name": "The American Journal of Human Genetics",
+        "pubs": 3
+      },
+      {
         "venue_id": "https://openalex.org/S2764650462",
         "venue_name": "Acta Neuropathologica Communications",
+        "pubs": 2
+      },
+      {
+        "venue_id": "https://openalex.org/S4210235363",
+        "venue_name": "Brain Communications",
         "pubs": 2
       },
       {
@@ -270,8 +321,8 @@
         "pubs": 2
       },
       {
-        "venue_id": "https://openalex.org/S4210215356",
-        "venue_name": "Brain and Spine",
+        "venue_id": "https://openalex.org/S4210225776",
+        "venue_name": "Communications Biology",
         "pubs": 2
       },
       {
@@ -295,8 +346,8 @@
         "pubs": 2
       },
       {
-        "venue_id": "https://openalex.org/S179120876",
-        "venue_name": "Neurocase",
+        "venue_id": "https://openalex.org/S2898194095",
+        "venue_name": "NeuroImage Clinical",
         "pubs": 2
       },
       {
@@ -310,13 +361,13 @@
         "pubs": 2
       },
       {
-        "venue_id": "https://openalex.org/S196734849",
-        "venue_name": "Scientific Reports",
+        "venue_id": "https://openalex.org/S4122505",
+        "venue_name": "Pharmacopsychiatry",
         "pubs": 2
       },
       {
-        "venue_id": "https://openalex.org/S134425043",
-        "venue_name": "The American Journal of Human Genetics",
+        "venue_id": "https://openalex.org/S196734849",
+        "venue_name": "Scientific Reports",
         "pubs": 2
       },
       {
@@ -350,8 +401,8 @@
         "pubs": 1
       },
       {
-        "venue_id": "https://openalex.org/S4210235363",
-        "venue_name": "Brain Communications",
+        "venue_id": "https://openalex.org/S102243518",
+        "venue_name": "Brain Behavior and Immunity",
         "pubs": 1
       },
       {
@@ -380,8 +431,13 @@
         "pubs": 1
       },
       {
-        "venue_id": "https://openalex.org/S4210225776",
-        "venue_name": "Communications Biology",
+        "venue_id": "https://openalex.org/S4210167893",
+        "venue_name": "Communications Medicine",
+        "pubs": 1
+      },
+      {
+        "venue_id": "https://openalex.org/S4387291379",
+        "venue_name": "Communications Psychology",
         "pubs": 1
       },
       {
@@ -420,11 +476,6 @@
         "pubs": 1
       },
       {
-        "venue_id": "https://openalex.org/S82373125",
-        "venue_name": "Epileptic Disorders",
-        "pubs": 1
-      },
-      {
         "venue_id": "https://openalex.org/S76379409",
         "venue_name": "Epiliepsy currents/Epilepsy currents",
         "pubs": 1
@@ -432,6 +483,11 @@
       {
         "venue_id": "https://openalex.org/S108768312",
         "venue_name": "European Journal of Anaesthesiology",
+        "pubs": 1
+      },
+      {
+        "venue_id": "https://openalex.org/S160362754",
+        "venue_name": "European Journal of Medical Genetics",
         "pubs": 1
       },
       {
@@ -525,6 +581,16 @@
         "pubs": 1
       },
       {
+        "venue_id": "https://openalex.org/S143223179",
+        "venue_name": "Journal of Neuroimaging",
+        "pubs": 1
+      },
+      {
+        "venue_id": "https://openalex.org/S199572710",
+        "venue_name": "Journal of Neuroinflammation",
+        "pubs": 1
+      },
+      {
         "venue_id": "https://openalex.org/S38023437",
         "venue_name": "Journal of Neuropathology & Experimental Neurology",
         "pubs": 1
@@ -537,6 +603,11 @@
       {
         "venue_id": "https://openalex.org/S141047287",
         "venue_name": "Journal of Psychiatry and Neuroscience",
+        "pubs": 1
+      },
+      {
+        "venue_id": "https://openalex.org/S1995308",
+        "venue_name": "Journal of neurosurgery",
         "pubs": 1
       },
       {
@@ -565,13 +636,13 @@
         "pubs": 1
       },
       {
-        "venue_id": "https://openalex.org/S103225281",
-        "venue_name": "NeuroImage",
+        "venue_id": "https://openalex.org/S22232893",
+        "venue_name": "Nature Reviews Neurology",
         "pubs": 1
       },
       {
-        "venue_id": "https://openalex.org/S2898194095",
-        "venue_name": "NeuroImage Clinical",
+        "venue_id": "https://openalex.org/S103225281",
+        "venue_name": "NeuroImage",
         "pubs": 1
       },
       {
@@ -625,11 +696,6 @@
         "pubs": 1
       },
       {
-        "venue_id": "https://openalex.org/S4122505",
-        "venue_name": "Pharmacopsychiatry",
-        "pubs": 1
-      },
-      {
         "venue_id": "https://openalex.org/S4210222969",
         "venue_name": "Psychiatry Research Neuroimaging",
         "pubs": 1
@@ -665,15 +731,15 @@
         "pubs": 1
       }
     ],
-    "total_citations": 22694
+    "total_citations": 29784
   },
   "topics": {
     "topics": [
       {
         "topic_id": "J",
         "topic": "Autoimmune seizures and epilepsy",
-        "pubs_total": 85,
-        "cites_total": 8173,
+        "pubs_total": 97,
+        "cites_total": 10504,
         "series": [
           {
             "year": 2009,
@@ -690,406 +756,338 @@
           {
             "year": 2011,
             "pubs": 2,
-            "citations": 110,
-            "cum_citations": 110
+            "citations": 124,
+            "cum_citations": 124
           },
           {
             "year": 2012,
             "pubs": 5,
-            "citations": 639,
-            "cum_citations": 749
+            "citations": 761,
+            "cum_citations": 885
           },
           {
             "year": 2013,
             "pubs": 4,
-            "citations": 65,
-            "cum_citations": 814
+            "citations": 78,
+            "cum_citations": 963
           },
           {
             "year": 2014,
             "pubs": 9,
-            "citations": 1025,
-            "cum_citations": 1839
+            "citations": 1214,
+            "cum_citations": 2177
           },
           {
             "year": 2015,
             "pubs": 6,
-            "citations": 227,
-            "cum_citations": 2066
+            "citations": 280,
+            "cum_citations": 2457
           },
           {
             "year": 2016,
             "pubs": 11,
-            "citations": 4413,
-            "cum_citations": 6479
+            "citations": 5641,
+            "cum_citations": 8098
           },
           {
             "year": 2017,
             "pubs": 7,
-            "citations": 512,
-            "cum_citations": 6991
+            "citations": 634,
+            "cum_citations": 8732
           },
           {
             "year": 2018,
             "pubs": 7,
-            "citations": 222,
-            "cum_citations": 7213
+            "citations": 268,
+            "cum_citations": 9000
           },
           {
             "year": 2019,
             "pubs": 6,
-            "citations": 196,
-            "cum_citations": 7409
+            "citations": 239,
+            "cum_citations": 9239
           },
           {
             "year": 2020,
             "pubs": 9,
-            "citations": 470,
-            "cum_citations": 7879
+            "citations": 631,
+            "cum_citations": 9870
           },
           {
             "year": 2021,
             "pubs": 5,
-            "citations": 114,
-            "cum_citations": 7993
-          },
-          {
-            "year": 2022,
-            "pubs": 6,
-            "citations": 148,
-            "cum_citations": 8141
-          },
-          {
-            "year": 2023,
-            "pubs": 3,
-            "citations": 19,
-            "cum_citations": 8160
-          },
-          {
-            "year": 2024,
-            "pubs": 5,
-            "citations": 13,
-            "cum_citations": 8173
-          }
-        ]
-      },
-      {
-        "topic_id": "C",
-        "topic": "Pharmacology",
-        "pubs_total": 76,
-        "cites_total": 5773,
-        "series": [
-          {
-            "year": 2009,
-            "pubs": 0,
-            "citations": 0,
-            "cum_citations": 0
-          },
-          {
-            "year": 2010,
-            "pubs": 0,
-            "citations": 0,
-            "cum_citations": 0
-          },
-          {
-            "year": 2011,
-            "pubs": 1,
-            "citations": 26,
-            "cum_citations": 26
-          },
-          {
-            "year": 2012,
-            "pubs": 4,
-            "citations": 249,
-            "cum_citations": 275
-          },
-          {
-            "year": 2013,
-            "pubs": 4,
-            "citations": 170,
-            "cum_citations": 445
-          },
-          {
-            "year": 2014,
-            "pubs": 2,
-            "citations": 128,
-            "cum_citations": 573
-          },
-          {
-            "year": 2015,
-            "pubs": 14,
-            "citations": 1014,
-            "cum_citations": 1587
-          },
-          {
-            "year": 2016,
-            "pubs": 10,
-            "citations": 1159,
-            "cum_citations": 2746
-          },
-          {
-            "year": 2017,
-            "pubs": 4,
-            "citations": 1519,
-            "cum_citations": 4265
-          },
-          {
-            "year": 2018,
-            "pubs": 10,
-            "citations": 482,
-            "cum_citations": 4747
-          },
-          {
-            "year": 2019,
-            "pubs": 4,
-            "citations": 599,
-            "cum_citations": 5346
-          },
-          {
-            "year": 2020,
-            "pubs": 7,
             "citations": 156,
-            "cum_citations": 5502
-          },
-          {
-            "year": 2021,
-            "pubs": 9,
-            "citations": 131,
-            "cum_citations": 5633
+            "cum_citations": 10026
           },
           {
             "year": 2022,
-            "pubs": 5,
-            "citations": 115,
-            "cum_citations": 5748
-          },
-          {
-            "year": 2023,
-            "pubs": 1,
-            "citations": 23,
-            "cum_citations": 5771
-          },
-          {
-            "year": 2024,
-            "pubs": 1,
-            "citations": 2,
-            "cum_citations": 5773
-          }
-        ]
-      },
-      {
-        "topic_id": "B",
-        "topic": "MRI",
-        "pubs_total": 70,
-        "cites_total": 2897,
-        "series": [
-          {
-            "year": 2009,
-            "pubs": 2,
-            "citations": 52,
-            "cum_citations": 52
-          },
-          {
-            "year": 2010,
-            "pubs": 4,
-            "citations": 69,
-            "cum_citations": 121
-          },
-          {
-            "year": 2011,
-            "pubs": 3,
-            "citations": 91,
-            "cum_citations": 212
-          },
-          {
-            "year": 2012,
-            "pubs": 2,
-            "citations": 58,
-            "cum_citations": 270
-          },
-          {
-            "year": 2013,
-            "pubs": 8,
-            "citations": 1171,
-            "cum_citations": 1441
-          },
-          {
-            "year": 2014,
-            "pubs": 2,
-            "citations": 32,
-            "cum_citations": 1473
-          },
-          {
-            "year": 2015,
-            "pubs": 4,
-            "citations": 353,
-            "cum_citations": 1826
-          },
-          {
-            "year": 2016,
-            "pubs": 2,
-            "citations": 246,
-            "cum_citations": 2072
-          },
-          {
-            "year": 2017,
-            "pubs": 2,
-            "citations": 38,
-            "cum_citations": 2110
-          },
-          {
-            "year": 2018,
-            "pubs": 4,
-            "citations": 118,
-            "cum_citations": 2228
-          },
-          {
-            "year": 2019,
-            "pubs": 5,
-            "citations": 179,
-            "cum_citations": 2407
-          },
-          {
-            "year": 2020,
-            "pubs": 3,
-            "citations": 67,
-            "cum_citations": 2474
-          },
-          {
-            "year": 2021,
-            "pubs": 9,
-            "citations": 225,
-            "cum_citations": 2699
-          },
-          {
-            "year": 2022,
-            "pubs": 10,
-            "citations": 150,
-            "cum_citations": 2849
-          },
-          {
-            "year": 2023,
-            "pubs": 4,
-            "citations": 21,
-            "cum_citations": 2870
-          },
-          {
-            "year": 2024,
             "pubs": 6,
-            "citations": 27,
-            "cum_citations": 2897
+            "citations": 253,
+            "cum_citations": 10279
+          },
+          {
+            "year": 2023,
+            "pubs": 3,
+            "citations": 48,
+            "cum_citations": 10327
+          },
+          {
+            "year": 2024,
+            "pubs": 5,
+            "citations": 54,
+            "cum_citations": 10381
+          },
+          {
+            "year": 2025,
+            "pubs": 8,
+            "citations": 115,
+            "cum_citations": 10496
+          },
+          {
+            "year": 2026,
+            "pubs": 4,
+            "citations": 8,
+            "cum_citations": 10504
           }
         ]
       },
       {
         "topic_id": "H",
         "topic": "Presurgical diagnostics and epilepsy surgery",
-        "pubs_total": 69,
-        "cites_total": 3868,
+        "pubs_total": 82,
+        "cites_total": 5331,
         "series": [
           {
             "year": 2009,
             "pubs": 1,
-            "citations": 23,
-            "cum_citations": 23
+            "citations": 24,
+            "cum_citations": 24
           },
           {
             "year": 2010,
             "pubs": 4,
-            "citations": 148,
-            "cum_citations": 171
+            "citations": 171,
+            "cum_citations": 195
           },
           {
             "year": 2011,
             "pubs": 2,
-            "citations": 80,
-            "cum_citations": 251
+            "citations": 85,
+            "cum_citations": 280
           },
           {
             "year": 2012,
             "pubs": 1,
             "citations": 7,
-            "cum_citations": 258
+            "cum_citations": 287
           },
           {
             "year": 2013,
             "pubs": 5,
-            "citations": 1047,
-            "cum_citations": 1305
+            "citations": 1341,
+            "cum_citations": 1628
           },
           {
             "year": 2014,
             "pubs": 2,
-            "citations": 27,
-            "cum_citations": 1332
+            "citations": 38,
+            "cum_citations": 1666
           },
           {
             "year": 2015,
             "pubs": 3,
-            "citations": 227,
-            "cum_citations": 1559
+            "citations": 276,
+            "cum_citations": 1942
           },
           {
             "year": 2016,
             "pubs": 8,
-            "citations": 497,
-            "cum_citations": 2056
+            "citations": 589,
+            "cum_citations": 2531
           },
           {
             "year": 2017,
             "pubs": 5,
-            "citations": 850,
-            "cum_citations": 2906
+            "citations": 1143,
+            "cum_citations": 3674
           },
           {
             "year": 2018,
             "pubs": 4,
-            "citations": 200,
-            "cum_citations": 3106
+            "citations": 244,
+            "cum_citations": 3918
           },
           {
             "year": 2019,
             "pubs": 6,
-            "citations": 289,
-            "cum_citations": 3395
+            "citations": 402,
+            "cum_citations": 4320
           },
           {
             "year": 2020,
             "pubs": 2,
-            "citations": 37,
-            "cum_citations": 3432
+            "citations": 47,
+            "cum_citations": 4367
           },
           {
             "year": 2021,
             "pubs": 7,
-            "citations": 164,
-            "cum_citations": 3596
+            "citations": 249,
+            "cum_citations": 4616
           },
           {
             "year": 2022,
             "pubs": 6,
-            "citations": 121,
-            "cum_citations": 3717
+            "citations": 227,
+            "cum_citations": 4843
           },
           {
             "year": 2023,
             "pubs": 5,
-            "citations": 31,
-            "cum_citations": 3748
+            "citations": 75,
+            "cum_citations": 4918
           },
           {
             "year": 2024,
             "pubs": 8,
-            "citations": 120,
-            "cum_citations": 3868
+            "citations": 375,
+            "cum_citations": 5293
+          },
+          {
+            "year": 2025,
+            "pubs": 5,
+            "citations": 29,
+            "cum_citations": 5322
+          },
+          {
+            "year": 2026,
+            "pubs": 8,
+            "citations": 9,
+            "cum_citations": 5331
+          }
+        ]
+      },
+      {
+        "topic_id": "C",
+        "topic": "Pharmacology",
+        "pubs_total": 81,
+        "cites_total": 7493,
+        "series": [
+          {
+            "year": 2009,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 0
+          },
+          {
+            "year": 2010,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 0
+          },
+          {
+            "year": 2011,
+            "pubs": 1,
+            "citations": 32,
+            "cum_citations": 32
+          },
+          {
+            "year": 2012,
+            "pubs": 4,
+            "citations": 279,
+            "cum_citations": 311
+          },
+          {
+            "year": 2013,
+            "pubs": 4,
+            "citations": 190,
+            "cum_citations": 501
+          },
+          {
+            "year": 2014,
+            "pubs": 2,
+            "citations": 140,
+            "cum_citations": 641
+          },
+          {
+            "year": 2015,
+            "pubs": 14,
+            "citations": 1195,
+            "cum_citations": 1836
+          },
+          {
+            "year": 2016,
+            "pubs": 10,
+            "citations": 1419,
+            "cum_citations": 3255
+          },
+          {
+            "year": 2017,
+            "pubs": 4,
+            "citations": 2130,
+            "cum_citations": 5385
+          },
+          {
+            "year": 2018,
+            "pubs": 10,
+            "citations": 609,
+            "cum_citations": 5994
+          },
+          {
+            "year": 2019,
+            "pubs": 4,
+            "citations": 840,
+            "cum_citations": 6834
+          },
+          {
+            "year": 2020,
+            "pubs": 7,
+            "citations": 188,
+            "cum_citations": 7022
+          },
+          {
+            "year": 2021,
+            "pubs": 9,
+            "citations": 188,
+            "cum_citations": 7210
+          },
+          {
+            "year": 2022,
+            "pubs": 5,
+            "citations": 185,
+            "cum_citations": 7395
+          },
+          {
+            "year": 2023,
+            "pubs": 1,
+            "citations": 36,
+            "cum_citations": 7431
+          },
+          {
+            "year": 2024,
+            "pubs": 1,
+            "citations": 4,
+            "cum_citations": 7435
+          },
+          {
+            "year": 2025,
+            "pubs": 2,
+            "citations": 31,
+            "cum_citations": 7466
+          },
+          {
+            "year": 2026,
+            "pubs": 3,
+            "citations": 27,
+            "cum_citations": 7493
           }
         ]
       },
       {
         "topic_id": "Q",
         "topic": "Basic research",
-        "pubs_total": 59,
-        "cites_total": 2054,
+        "pubs_total": 76,
+        "cites_total": 2954,
         "series": [
           {
             "year": 2009,
@@ -1106,94 +1104,222 @@
           {
             "year": 2011,
             "pubs": 1,
-            "citations": 11,
-            "cum_citations": 11
+            "citations": 16,
+            "cum_citations": 16
           },
           {
             "year": 2012,
             "pubs": 1,
             "citations": 7,
-            "cum_citations": 18
+            "cum_citations": 23
           },
           {
             "year": 2013,
             "pubs": 1,
-            "citations": 34,
-            "cum_citations": 52
+            "citations": 40,
+            "cum_citations": 63
           },
           {
             "year": 2014,
-            "pubs": 2,
-            "citations": 57,
-            "cum_citations": 109
+            "pubs": 3,
+            "citations": 78,
+            "cum_citations": 141
           },
           {
             "year": 2015,
             "pubs": 3,
-            "citations": 194,
-            "cum_citations": 303
+            "citations": 227,
+            "cum_citations": 368
           },
           {
             "year": 2016,
             "pubs": 5,
-            "citations": 334,
-            "cum_citations": 637
+            "citations": 418,
+            "cum_citations": 786
           },
           {
             "year": 2017,
             "pubs": 7,
-            "citations": 137,
-            "cum_citations": 774
+            "citations": 187,
+            "cum_citations": 973
           },
           {
             "year": 2018,
             "pubs": 3,
-            "citations": 493,
-            "cum_citations": 1267
+            "citations": 683,
+            "cum_citations": 1656
           },
           {
             "year": 2019,
             "pubs": 7,
-            "citations": 210,
-            "cum_citations": 1477
+            "citations": 270,
+            "cum_citations": 1926
           },
           {
             "year": 2020,
             "pubs": 4,
-            "citations": 262,
-            "cum_citations": 1739
+            "citations": 377,
+            "cum_citations": 2303
           },
           {
             "year": 2021,
             "pubs": 6,
-            "citations": 150,
-            "cum_citations": 1889
+            "citations": 219,
+            "cum_citations": 2522
           },
           {
             "year": 2022,
             "pubs": 8,
-            "citations": 113,
-            "cum_citations": 2002
+            "citations": 199,
+            "cum_citations": 2721
           },
           {
             "year": 2023,
             "pubs": 6,
-            "citations": 40,
-            "cum_citations": 2042
+            "citations": 96,
+            "cum_citations": 2817
           },
           {
             "year": 2024,
             "pubs": 5,
-            "citations": 12,
-            "cum_citations": 2054
+            "citations": 67,
+            "cum_citations": 2884
+          },
+          {
+            "year": 2025,
+            "pubs": 8,
+            "citations": 61,
+            "cum_citations": 2945
+          },
+          {
+            "year": 2026,
+            "pubs": 8,
+            "citations": 9,
+            "cum_citations": 2954
+          }
+        ]
+      },
+      {
+        "topic_id": "B",
+        "topic": "MRI",
+        "pubs_total": 76,
+        "cites_total": 3849,
+        "series": [
+          {
+            "year": 2009,
+            "pubs": 2,
+            "citations": 63,
+            "cum_citations": 63
+          },
+          {
+            "year": 2010,
+            "pubs": 4,
+            "citations": 86,
+            "cum_citations": 149
+          },
+          {
+            "year": 2011,
+            "pubs": 3,
+            "citations": 101,
+            "cum_citations": 250
+          },
+          {
+            "year": 2012,
+            "pubs": 2,
+            "citations": 61,
+            "cum_citations": 311
+          },
+          {
+            "year": 2013,
+            "pubs": 8,
+            "citations": 1489,
+            "cum_citations": 1800
+          },
+          {
+            "year": 2014,
+            "pubs": 3,
+            "citations": 45,
+            "cum_citations": 1845
+          },
+          {
+            "year": 2015,
+            "pubs": 4,
+            "citations": 411,
+            "cum_citations": 2256
+          },
+          {
+            "year": 2016,
+            "pubs": 2,
+            "citations": 309,
+            "cum_citations": 2565
+          },
+          {
+            "year": 2017,
+            "pubs": 2,
+            "citations": 49,
+            "cum_citations": 2614
+          },
+          {
+            "year": 2018,
+            "pubs": 4,
+            "citations": 137,
+            "cum_citations": 2751
+          },
+          {
+            "year": 2019,
+            "pubs": 5,
+            "citations": 251,
+            "cum_citations": 3002
+          },
+          {
+            "year": 2020,
+            "pubs": 3,
+            "citations": 94,
+            "cum_citations": 3096
+          },
+          {
+            "year": 2021,
+            "pubs": 9,
+            "citations": 329,
+            "cum_citations": 3425
+          },
+          {
+            "year": 2022,
+            "pubs": 10,
+            "citations": 241,
+            "cum_citations": 3666
+          },
+          {
+            "year": 2023,
+            "pubs": 4,
+            "citations": 60,
+            "cum_citations": 3726
+          },
+          {
+            "year": 2024,
+            "pubs": 6,
+            "citations": 113,
+            "cum_citations": 3839
+          },
+          {
+            "year": 2025,
+            "pubs": 2,
+            "citations": 10,
+            "cum_citations": 3849
+          },
+          {
+            "year": 2026,
+            "pubs": 3,
+            "citations": 0,
+            "cum_citations": 3849
           }
         ]
       },
       {
         "topic_id": "O",
         "topic": "Social issues",
-        "pubs_total": 55,
-        "cites_total": 1414,
+        "pubs_total": 66,
+        "cites_total": 1870,
         "series": [
           {
             "year": 2009,
@@ -1204,92 +1330,220 @@
           {
             "year": 2010,
             "pubs": 2,
-            "citations": 8,
-            "cum_citations": 8
+            "citations": 10,
+            "cum_citations": 10
           },
           {
             "year": 2011,
             "pubs": 1,
-            "citations": 18,
-            "cum_citations": 26
+            "citations": 19,
+            "cum_citations": 29
           },
           {
             "year": 2012,
             "pubs": 4,
-            "citations": 140,
-            "cum_citations": 166
+            "citations": 169,
+            "cum_citations": 198
           },
           {
             "year": 2013,
             "pubs": 3,
-            "citations": 221,
-            "cum_citations": 387
+            "citations": 269,
+            "cum_citations": 467
           },
           {
             "year": 2014,
             "pubs": 4,
-            "citations": 115,
-            "cum_citations": 502
+            "citations": 143,
+            "cum_citations": 610
           },
           {
             "year": 2015,
             "pubs": 4,
-            "citations": 210,
-            "cum_citations": 712
+            "citations": 240,
+            "cum_citations": 850
           },
           {
             "year": 2016,
             "pubs": 6,
-            "citations": 284,
-            "cum_citations": 996
+            "citations": 378,
+            "cum_citations": 1228
           },
           {
             "year": 2017,
             "pubs": 4,
-            "citations": 51,
-            "cum_citations": 1047
+            "citations": 72,
+            "cum_citations": 1300
           },
           {
             "year": 2018,
             "pubs": 5,
-            "citations": 96,
-            "cum_citations": 1143
+            "citations": 128,
+            "cum_citations": 1428
           },
           {
             "year": 2019,
             "pubs": 5,
-            "citations": 150,
-            "cum_citations": 1293
+            "citations": 202,
+            "cum_citations": 1630
           },
           {
             "year": 2020,
             "pubs": 1,
-            "citations": 8,
-            "cum_citations": 1301
+            "citations": 11,
+            "cum_citations": 1641
           },
           {
             "year": 2021,
             "pubs": 5,
-            "citations": 37,
-            "cum_citations": 1338
+            "citations": 53,
+            "cum_citations": 1694
           },
           {
             "year": 2022,
             "pubs": 4,
-            "citations": 44,
-            "cum_citations": 1382
+            "citations": 70,
+            "cum_citations": 1764
           },
           {
             "year": 2023,
             "pubs": 4,
-            "citations": 26,
-            "cum_citations": 1408
+            "citations": 54,
+            "cum_citations": 1818
           },
           {
             "year": 2024,
             "pubs": 3,
-            "citations": 6,
-            "cum_citations": 1414
+            "citations": 31,
+            "cum_citations": 1849
+          },
+          {
+            "year": 2025,
+            "pubs": 5,
+            "citations": 19,
+            "cum_citations": 1868
+          },
+          {
+            "year": 2026,
+            "pubs": 6,
+            "citations": 2,
+            "cum_citations": 1870
+          }
+        ]
+      },
+      {
+        "topic_id": "K",
+        "topic": "Genetics",
+        "pubs_total": 46,
+        "cites_total": 2262,
+        "series": [
+          {
+            "year": 2009,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 0
+          },
+          {
+            "year": 2010,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 0
+          },
+          {
+            "year": 2011,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 0
+          },
+          {
+            "year": 2012,
+            "pubs": 2,
+            "citations": 31,
+            "cum_citations": 31
+          },
+          {
+            "year": 2013,
+            "pubs": 2,
+            "citations": 218,
+            "cum_citations": 249
+          },
+          {
+            "year": 2014,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 249
+          },
+          {
+            "year": 2015,
+            "pubs": 1,
+            "citations": 8,
+            "cum_citations": 257
+          },
+          {
+            "year": 2016,
+            "pubs": 3,
+            "citations": 325,
+            "cum_citations": 582
+          },
+          {
+            "year": 2017,
+            "pubs": 3,
+            "citations": 227,
+            "cum_citations": 809
+          },
+          {
+            "year": 2018,
+            "pubs": 3,
+            "citations": 453,
+            "cum_citations": 1262
+          },
+          {
+            "year": 2019,
+            "pubs": 4,
+            "citations": 101,
+            "cum_citations": 1363
+          },
+          {
+            "year": 2020,
+            "pubs": 3,
+            "citations": 94,
+            "cum_citations": 1457
+          },
+          {
+            "year": 2021,
+            "pubs": 6,
+            "citations": 241,
+            "cum_citations": 1698
+          },
+          {
+            "year": 2022,
+            "pubs": 2,
+            "citations": 136,
+            "cum_citations": 1834
+          },
+          {
+            "year": 2023,
+            "pubs": 4,
+            "citations": 90,
+            "cum_citations": 1924
+          },
+          {
+            "year": 2024,
+            "pubs": 6,
+            "citations": 311,
+            "cum_citations": 2235
+          },
+          {
+            "year": 2025,
+            "pubs": 4,
+            "citations": 23,
+            "cum_citations": 2258
+          },
+          {
+            "year": 2026,
+            "pubs": 3,
+            "citations": 4,
+            "cum_citations": 2262
           }
         ]
       },
@@ -1297,7 +1551,7 @@
         "topic_id": "E",
         "topic": "Intellectual disability",
         "pubs_total": 42,
-        "cites_total": 1635,
+        "cites_total": 2222,
         "series": [
           {
             "year": 2009,
@@ -1308,412 +1562,344 @@
           {
             "year": 2010,
             "pubs": 1,
-            "citations": 1,
-            "cum_citations": 1
+            "citations": 2,
+            "cum_citations": 2
           },
           {
             "year": 2011,
             "pubs": 1,
-            "citations": 42,
-            "cum_citations": 43
+            "citations": 44,
+            "cum_citations": 46
           },
           {
             "year": 2012,
             "pubs": 3,
-            "citations": 97,
-            "cum_citations": 140
+            "citations": 113,
+            "cum_citations": 159
           },
           {
             "year": 2013,
             "pubs": 1,
-            "citations": 48,
-            "cum_citations": 188
+            "citations": 60,
+            "cum_citations": 219
           },
           {
             "year": 2014,
             "pubs": 1,
             "citations": 0,
-            "cum_citations": 188
+            "cum_citations": 219
           },
           {
             "year": 2015,
             "pubs": 3,
-            "citations": 92,
-            "cum_citations": 280
+            "citations": 105,
+            "cum_citations": 324
           },
           {
             "year": 2016,
             "pubs": 4,
-            "citations": 206,
-            "cum_citations": 486
+            "citations": 294,
+            "cum_citations": 618
           },
           {
             "year": 2017,
             "pubs": 2,
-            "citations": 112,
-            "cum_citations": 598
+            "citations": 134,
+            "cum_citations": 752
           },
           {
             "year": 2018,
             "pubs": 4,
-            "citations": 187,
-            "cum_citations": 785
+            "citations": 246,
+            "cum_citations": 998
           },
           {
             "year": 2019,
             "pubs": 7,
-            "citations": 514,
-            "cum_citations": 1299
+            "citations": 686,
+            "cum_citations": 1684
           },
           {
             "year": 2020,
             "pubs": 1,
-            "citations": 61,
-            "cum_citations": 1360
-          },
-          {
-            "year": 2021,
-            "pubs": 5,
-            "citations": 124,
-            "cum_citations": 1484
-          },
-          {
-            "year": 2022,
-            "pubs": 3,
-            "citations": 82,
-            "cum_citations": 1566
-          },
-          {
-            "year": 2023,
-            "pubs": 4,
-            "citations": 61,
-            "cum_citations": 1627
-          },
-          {
-            "year": 2024,
-            "pubs": 2,
-            "citations": 8,
-            "cum_citations": 1635
-          }
-        ]
-      },
-      {
-        "topic_id": "K",
-        "topic": "Genetics",
-        "pubs_total": 38,
-        "cites_total": 1591,
-        "series": [
-          {
-            "year": 2009,
-            "pubs": 0,
-            "citations": 0,
-            "cum_citations": 0
-          },
-          {
-            "year": 2010,
-            "pubs": 0,
-            "citations": 0,
-            "cum_citations": 0
-          },
-          {
-            "year": 2011,
-            "pubs": 0,
-            "citations": 0,
-            "cum_citations": 0
-          },
-          {
-            "year": 2012,
-            "pubs": 2,
-            "citations": 27,
-            "cum_citations": 27
-          },
-          {
-            "year": 2013,
-            "pubs": 2,
-            "citations": 191,
-            "cum_citations": 218
-          },
-          {
-            "year": 2014,
-            "pubs": 0,
-            "citations": 0,
-            "cum_citations": 218
-          },
-          {
-            "year": 2015,
-            "pubs": 1,
-            "citations": 6,
-            "cum_citations": 224
-          },
-          {
-            "year": 2016,
-            "pubs": 3,
-            "citations": 267,
-            "cum_citations": 491
-          },
-          {
-            "year": 2017,
-            "pubs": 3,
-            "citations": 189,
-            "cum_citations": 680
-          },
-          {
-            "year": 2018,
-            "pubs": 3,
-            "citations": 359,
-            "cum_citations": 1039
-          },
-          {
-            "year": 2019,
-            "pubs": 4,
-            "citations": 84,
-            "cum_citations": 1123
-          },
-          {
-            "year": 2020,
-            "pubs": 3,
             "citations": 79,
-            "cum_citations": 1202
+            "cum_citations": 1763
           },
           {
             "year": 2021,
-            "pubs": 6,
-            "citations": 162,
-            "cum_citations": 1364
+            "pubs": 5,
+            "citations": 180,
+            "cum_citations": 1943
           },
           {
             "year": 2022,
-            "pubs": 2,
-            "citations": 88,
-            "cum_citations": 1452
+            "pubs": 3,
+            "citations": 126,
+            "cum_citations": 2069
           },
           {
             "year": 2023,
             "pubs": 4,
-            "citations": 37,
-            "cum_citations": 1489
+            "citations": 128,
+            "cum_citations": 2197
           },
           {
             "year": 2024,
-            "pubs": 5,
-            "citations": 102,
-            "cum_citations": 1591
+            "pubs": 2,
+            "citations": 25,
+            "cum_citations": 2222
+          },
+          {
+            "year": 2025,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 2222
+          },
+          {
+            "year": 2026,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 2222
           }
         ]
       },
       {
         "topic_id": "F",
         "topic": "Psychiatric co-morbidity",
-        "pubs_total": 24,
-        "cites_total": 961,
+        "pubs_total": 28,
+        "cites_total": 1204,
         "series": [
           {
             "year": 2009,
             "pubs": 1,
-            "citations": 21,
-            "cum_citations": 21
+            "citations": 22,
+            "cum_citations": 22
           },
           {
             "year": 2010,
             "pubs": 3,
-            "citations": 238,
-            "cum_citations": 259
+            "citations": 276,
+            "cum_citations": 298
           },
           {
             "year": 2011,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 259
+            "cum_citations": 298
           },
           {
             "year": 2012,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 259
+            "cum_citations": 298
           },
           {
             "year": 2013,
             "pubs": 2,
-            "citations": 43,
-            "cum_citations": 302
+            "citations": 48,
+            "cum_citations": 346
           },
           {
             "year": 2014,
             "pubs": 3,
-            "citations": 160,
-            "cum_citations": 462
+            "citations": 186,
+            "cum_citations": 532
           },
           {
             "year": 2015,
             "pubs": 1,
-            "citations": 56,
-            "cum_citations": 518
+            "citations": 61,
+            "cum_citations": 593
           },
           {
             "year": 2016,
             "pubs": 3,
-            "citations": 207,
-            "cum_citations": 725
+            "citations": 251,
+            "cum_citations": 844
           },
           {
             "year": 2017,
             "pubs": 4,
-            "citations": 139,
-            "cum_citations": 864
+            "citations": 181,
+            "cum_citations": 1025
           },
           {
             "year": 2018,
             "pubs": 2,
-            "citations": 51,
-            "cum_citations": 915
+            "citations": 73,
+            "cum_citations": 1098
           },
           {
             "year": 2019,
             "pubs": 1,
-            "citations": 22,
-            "cum_citations": 937
+            "citations": 27,
+            "cum_citations": 1125
           },
           {
             "year": 2020,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 937
+            "cum_citations": 1125
           },
           {
             "year": 2021,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 937
+            "cum_citations": 1125
           },
           {
             "year": 2022,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 937
+            "cum_citations": 1125
           },
           {
             "year": 2023,
             "pubs": 2,
-            "citations": 21,
-            "cum_citations": 958
+            "citations": 57,
+            "cum_citations": 1182
           },
           {
             "year": 2024,
             "pubs": 2,
-            "citations": 3,
-            "cum_citations": 961
+            "citations": 10,
+            "cum_citations": 1192
+          },
+          {
+            "year": 2025,
+            "pubs": 2,
+            "citations": 12,
+            "cum_citations": 1204
+          },
+          {
+            "year": 2026,
+            "pubs": 2,
+            "citations": 0,
+            "cum_citations": 1204
           }
         ]
       },
       {
         "topic_id": "A",
         "topic": "EEG (electroencephalography)",
-        "pubs_total": 21,
-        "cites_total": 921,
+        "pubs_total": 26,
+        "cites_total": 1201,
         "series": [
           {
             "year": 2009,
             "pubs": 1,
-            "citations": 23,
-            "cum_citations": 23
+            "citations": 24,
+            "cum_citations": 24
           },
           {
             "year": 2010,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 23
+            "cum_citations": 24
           },
           {
             "year": 2011,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 23
+            "cum_citations": 24
           },
           {
             "year": 2012,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 23
+            "cum_citations": 24
           },
           {
             "year": 2013,
             "pubs": 4,
-            "citations": 478,
-            "cum_citations": 501
+            "citations": 575,
+            "cum_citations": 599
           },
           {
             "year": 2014,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 501
+            "cum_citations": 599
           },
           {
             "year": 2015,
             "pubs": 2,
-            "citations": 80,
-            "cum_citations": 581
+            "citations": 91,
+            "cum_citations": 690
           },
           {
             "year": 2016,
             "pubs": 1,
-            "citations": 28,
-            "cum_citations": 609
+            "citations": 30,
+            "cum_citations": 720
           },
           {
             "year": 2017,
             "pubs": 2,
-            "citations": 14,
-            "cum_citations": 623
+            "citations": 17,
+            "cum_citations": 737
           },
           {
             "year": 2018,
             "pubs": 2,
-            "citations": 35,
-            "cum_citations": 658
+            "citations": 44,
+            "cum_citations": 781
           },
           {
             "year": 2019,
             "pubs": 1,
-            "citations": 38,
-            "cum_citations": 696
+            "citations": 42,
+            "cum_citations": 823
           },
           {
             "year": 2020,
             "pubs": 2,
-            "citations": 202,
-            "cum_citations": 898
+            "citations": 311,
+            "cum_citations": 1134
           },
           {
             "year": 2021,
             "pubs": 3,
-            "citations": 19,
-            "cum_citations": 917
+            "citations": 32,
+            "cum_citations": 1166
           },
           {
             "year": 2022,
             "pubs": 1,
-            "citations": 3,
-            "cum_citations": 920
+            "citations": 8,
+            "cum_citations": 1174
           },
           {
             "year": 2023,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 920
+            "cum_citations": 1174
           },
           {
             "year": 2024,
+            "pubs": 3,
+            "citations": 20,
+            "cum_citations": 1194
+          },
+          {
+            "year": 2025,
             "pubs": 2,
-            "citations": 1,
-            "cum_citations": 921
+            "citations": 3,
+            "cum_citations": 1197
+          },
+          {
+            "year": 2026,
+            "pubs": 2,
+            "citations": 4,
+            "cum_citations": 1201
           }
         ]
       },
       {
         "topic_id": "I",
         "topic": "Neuropsychology/cognitive development",
-        "pubs_total": 21,
-        "cites_total": 415,
+        "pubs_total": 26,
+        "cites_total": 550,
         "series": [
           {
             "year": 2009,
@@ -1724,204 +1910,228 @@
           {
             "year": 2010,
             "pubs": 2,
-            "citations": 53,
-            "cum_citations": 57
+            "citations": 67,
+            "cum_citations": 71
           },
           {
             "year": 2011,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 57
+            "cum_citations": 71
           },
           {
             "year": 2012,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 57
+            "cum_citations": 71
           },
           {
             "year": 2013,
             "pubs": 3,
-            "citations": 133,
-            "cum_citations": 190
+            "citations": 174,
+            "cum_citations": 245
           },
           {
             "year": 2014,
             "pubs": 2,
-            "citations": 42,
-            "cum_citations": 232
+            "citations": 55,
+            "cum_citations": 300
           },
           {
             "year": 2015,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 232
+            "cum_citations": 300
           },
           {
             "year": 2016,
             "pubs": 2,
-            "citations": 33,
-            "cum_citations": 265
+            "citations": 41,
+            "cum_citations": 341
           },
           {
             "year": 2017,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 265
+            "cum_citations": 341
           },
           {
             "year": 2018,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 265
+            "cum_citations": 341
           },
           {
             "year": 2019,
             "pubs": 4,
-            "citations": 100,
-            "cum_citations": 365
+            "citations": 123,
+            "cum_citations": 464
           },
           {
             "year": 2020,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 365
+            "cum_citations": 464
           },
           {
             "year": 2021,
             "pubs": 4,
-            "citations": 36,
-            "cum_citations": 401
+            "citations": 54,
+            "cum_citations": 518
           },
           {
             "year": 2022,
             "pubs": 2,
-            "citations": 12,
-            "cum_citations": 413
+            "citations": 24,
+            "cum_citations": 542
           },
           {
             "year": 2023,
             "pubs": 1,
-            "citations": 2,
-            "cum_citations": 415
+            "citations": 5,
+            "cum_citations": 547
           },
           {
             "year": 2024,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 415
+            "cum_citations": 547
+          },
+          {
+            "year": 2025,
+            "pubs": 1,
+            "citations": 2,
+            "cum_citations": 549
+          },
+          {
+            "year": 2026,
+            "pubs": 4,
+            "citations": 1,
+            "cum_citations": 550
           }
         ]
       },
       {
         "topic_id": "N",
         "topic": "Epidemiology, incidence, prevalence",
-        "pubs_total": 19,
-        "cites_total": 873,
+        "pubs_total": 20,
+        "cites_total": 1017,
         "series": [
           {
             "year": 2009,
             "pubs": 1,
-            "citations": 21,
-            "cum_citations": 21
+            "citations": 22,
+            "cum_citations": 22
           },
           {
             "year": 2010,
             "pubs": 1,
-            "citations": 74,
-            "cum_citations": 95
+            "citations": 81,
+            "cum_citations": 103
           },
           {
             "year": 2011,
             "pubs": 1,
-            "citations": 89,
-            "cum_citations": 184
+            "citations": 97,
+            "cum_citations": 200
           },
           {
             "year": 2012,
             "pubs": 2,
-            "citations": 187,
-            "cum_citations": 371
+            "citations": 233,
+            "cum_citations": 433
           },
           {
             "year": 2013,
             "pubs": 1,
-            "citations": 57,
-            "cum_citations": 428
+            "citations": 69,
+            "cum_citations": 502
           },
           {
             "year": 2014,
             "pubs": 2,
-            "citations": 191,
-            "cum_citations": 619
+            "citations": 206,
+            "cum_citations": 708
           },
           {
             "year": 2015,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 619
+            "cum_citations": 708
           },
           {
             "year": 2016,
             "pubs": 1,
-            "citations": 128,
-            "cum_citations": 747
+            "citations": 155,
+            "cum_citations": 863
           },
           {
             "year": 2017,
             "pubs": 2,
-            "citations": 39,
-            "cum_citations": 786
+            "citations": 45,
+            "cum_citations": 908
           },
           {
             "year": 2018,
             "pubs": 4,
-            "citations": 61,
-            "cum_citations": 847
+            "citations": 66,
+            "cum_citations": 974
           },
           {
             "year": 2019,
             "pubs": 1,
-            "citations": 5,
-            "cum_citations": 852
+            "citations": 8,
+            "cum_citations": 982
           },
           {
             "year": 2020,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 852
+            "cum_citations": 982
           },
           {
             "year": 2021,
             "pubs": 2,
-            "citations": 19,
-            "cum_citations": 871
+            "citations": 27,
+            "cum_citations": 1009
           },
           {
             "year": 2022,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 871
+            "cum_citations": 1009
           },
           {
             "year": 2023,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 871
+            "cum_citations": 1009
           },
           {
             "year": 2024,
             "pubs": 1,
-            "citations": 2,
-            "cum_citations": 873
+            "citations": 8,
+            "cum_citations": 1017
+          },
+          {
+            "year": 2025,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 1017
+          },
+          {
+            "year": 2026,
+            "pubs": 1,
+            "citations": 0,
+            "cum_citations": 1017
           }
         ]
       },
       {
         "topic_id": "G",
         "topic": "Functional/dissociative seizures (psychogenic non-epileptic seizures)",
-        "pubs_total": 13,
-        "cites_total": 296,
+        "pubs_total": 15,
+        "cites_total": 363,
         "series": [
           {
             "year": 2009,
@@ -1950,74 +2160,86 @@
           {
             "year": 2013,
             "pubs": 1,
-            "citations": 22,
-            "cum_citations": 70
+            "citations": 26,
+            "cum_citations": 74
           },
           {
             "year": 2014,
             "pubs": 2,
-            "citations": 13,
-            "cum_citations": 83
+            "citations": 18,
+            "cum_citations": 92
           },
           {
             "year": 2015,
             "pubs": 2,
-            "citations": 107,
-            "cum_citations": 190
+            "citations": 122,
+            "cum_citations": 214
           },
           {
             "year": 2016,
             "pubs": 1,
-            "citations": 28,
-            "cum_citations": 218
+            "citations": 30,
+            "cum_citations": 244
           },
           {
             "year": 2017,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 218
+            "cum_citations": 244
           },
           {
             "year": 2018,
             "pubs": 3,
-            "citations": 58,
-            "cum_citations": 276
+            "citations": 78,
+            "cum_citations": 322
           },
           {
             "year": 2019,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 276
+            "cum_citations": 322
           },
           {
             "year": 2020,
             "pubs": 1,
-            "citations": 14,
-            "cum_citations": 290
+            "citations": 24,
+            "cum_citations": 346
           },
           {
             "year": 2021,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 290
+            "cum_citations": 346
           },
           {
             "year": 2022,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 290
+            "cum_citations": 346
           },
           {
             "year": 2023,
             "pubs": 1,
-            "citations": 5,
-            "cum_citations": 295
+            "citations": 15,
+            "cum_citations": 361
           },
           {
             "year": 2024,
             "pubs": 1,
-            "citations": 1,
-            "cum_citations": 296
+            "citations": 2,
+            "cum_citations": 363
+          },
+          {
+            "year": 2025,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 363
+          },
+          {
+            "year": 2026,
+            "pubs": 2,
+            "citations": 0,
+            "cum_citations": 363
           }
         ]
       },
@@ -2025,7 +2247,7 @@
         "topic_id": "M",
         "topic": "Genetic generalized epilepsy (idiopathic generalized epilepsy)",
         "pubs_total": 12,
-        "cites_total": 1385,
+        "cites_total": 1638,
         "series": [
           {
             "year": 2009,
@@ -2054,82 +2276,94 @@
           {
             "year": 2013,
             "pubs": 1,
-            "citations": 164,
-            "cum_citations": 164
+            "citations": 175,
+            "cum_citations": 175
           },
           {
             "year": 2014,
             "pubs": 1,
-            "citations": 97,
-            "cum_citations": 261
+            "citations": 104,
+            "cum_citations": 279
           },
           {
             "year": 2015,
             "pubs": 1,
-            "citations": 304,
-            "cum_citations": 565
+            "citations": 354,
+            "cum_citations": 633
           },
           {
             "year": 2016,
             "pubs": 2,
-            "citations": 721,
-            "cum_citations": 1286
+            "citations": 875,
+            "cum_citations": 1508
           },
           {
             "year": 2017,
             "pubs": 1,
-            "citations": 7,
-            "cum_citations": 1293
+            "citations": 10,
+            "cum_citations": 1518
           },
           {
             "year": 2018,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 1293
+            "cum_citations": 1518
           },
           {
             "year": 2019,
             "pubs": 1,
-            "citations": 7,
-            "cum_citations": 1300
+            "citations": 8,
+            "cum_citations": 1526
           },
           {
             "year": 2020,
             "pubs": 1,
-            "citations": 20,
-            "cum_citations": 1320
+            "citations": 23,
+            "cum_citations": 1549
           },
           {
             "year": 2021,
             "pubs": 1,
-            "citations": 34,
-            "cum_citations": 1354
+            "citations": 51,
+            "cum_citations": 1600
           },
           {
             "year": 2022,
             "pubs": 3,
-            "citations": 31,
-            "cum_citations": 1385
+            "citations": 38,
+            "cum_citations": 1638
           },
           {
             "year": 2023,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 1385
+            "cum_citations": 1638
           },
           {
             "year": 2024,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 1385
+            "cum_citations": 1638
+          },
+          {
+            "year": 2025,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 1638
+          },
+          {
+            "year": 2026,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 1638
           }
         ]
       },
       {
         "topic_id": "L",
         "topic": "Semiology",
-        "pubs_total": 11,
-        "cites_total": 305,
+        "pubs_total": 12,
+        "cites_total": 349,
         "series": [
           {
             "year": 2009,
@@ -2146,86 +2380,98 @@
           {
             "year": 2011,
             "pubs": 1,
-            "citations": 89,
-            "cum_citations": 89
+            "citations": 97,
+            "cum_citations": 97
           },
           {
             "year": 2012,
             "pubs": 3,
-            "citations": 87,
-            "cum_citations": 176
+            "citations": 94,
+            "cum_citations": 191
           },
           {
             "year": 2013,
             "pubs": 2,
-            "citations": 74,
-            "cum_citations": 250
+            "citations": 81,
+            "cum_citations": 272
           },
           {
             "year": 2014,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 250
+            "cum_citations": 272
           },
           {
             "year": 2015,
             "pubs": 1,
             "citations": 4,
-            "cum_citations": 254
+            "cum_citations": 276
           },
           {
             "year": 2016,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 254
+            "cum_citations": 276
           },
           {
             "year": 2017,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 254
+            "cum_citations": 276
           },
           {
             "year": 2018,
             "pubs": 1,
-            "citations": 7,
-            "cum_citations": 261
+            "citations": 5,
+            "cum_citations": 281
           },
           {
             "year": 2019,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 261
+            "cum_citations": 281
           },
           {
             "year": 2020,
             "pubs": 1,
-            "citations": 5,
-            "cum_citations": 266
+            "citations": 7,
+            "cum_citations": 288
           },
           {
             "year": 2021,
             "pubs": 1,
-            "citations": 11,
-            "cum_citations": 277
+            "citations": 17,
+            "cum_citations": 305
           },
           {
             "year": 2022,
             "pubs": 1,
-            "citations": 28,
-            "cum_citations": 305
+            "citations": 43,
+            "cum_citations": 348
           },
           {
             "year": 2023,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 305
+            "cum_citations": 348
           },
           {
             "year": 2024,
+            "pubs": 1,
+            "citations": 1,
+            "cum_citations": 349
+          },
+          {
+            "year": 2025,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 305
+            "cum_citations": 349
+          },
+          {
+            "year": 2026,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 349
           }
         ]
       },
@@ -2233,7 +2479,7 @@
         "topic_id": "D",
         "topic": "Status epilepticus",
         "pubs_total": 7,
-        "cites_total": 397,
+        "cites_total": 495,
         "series": [
           {
             "year": 2009,
@@ -2244,92 +2490,104 @@
           {
             "year": 2010,
             "pubs": 2,
-            "citations": 90,
-            "cum_citations": 90
+            "citations": 116,
+            "cum_citations": 116
           },
           {
             "year": 2011,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 90
+            "cum_citations": 116
           },
           {
             "year": 2012,
             "pubs": 1,
-            "citations": 136,
-            "cum_citations": 226
+            "citations": 154,
+            "cum_citations": 270
           },
           {
             "year": 2013,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 226
+            "cum_citations": 270
           },
           {
             "year": 2014,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 226
+            "cum_citations": 270
           },
           {
             "year": 2015,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 226
+            "cum_citations": 270
           },
           {
             "year": 2016,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 226
+            "cum_citations": 270
           },
           {
             "year": 2017,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 226
+            "cum_citations": 270
           },
           {
             "year": 2018,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 226
+            "cum_citations": 270
           },
           {
             "year": 2019,
             "pubs": 2,
-            "citations": 124,
-            "cum_citations": 350
+            "citations": 162,
+            "cum_citations": 432
           },
           {
             "year": 2020,
             "pubs": 1,
-            "citations": 45,
-            "cum_citations": 395
+            "citations": 59,
+            "cum_citations": 491
           },
           {
             "year": 2021,
             "pubs": 1,
-            "citations": 2,
-            "cum_citations": 397
+            "citations": 4,
+            "cum_citations": 495
           },
           {
             "year": 2022,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 397
+            "cum_citations": 495
           },
           {
             "year": 2023,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 397
+            "cum_citations": 495
           },
           {
             "year": 2024,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 397
+            "cum_citations": 495
+          },
+          {
+            "year": 2025,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 495
+          },
+          {
+            "year": 2026,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 495
           }
         ]
       },
@@ -2337,7 +2595,7 @@
         "topic_id": "P",
         "topic": "Medical devices, seizure detection",
         "pubs_total": 3,
-        "cites_total": 490,
+        "cites_total": 618,
         "series": [
           {
             "year": 2009,
@@ -2366,74 +2624,86 @@
           {
             "year": 2013,
             "pubs": 1,
-            "citations": 208,
-            "cum_citations": 208
+            "citations": 263,
+            "cum_citations": 263
           },
           {
             "year": 2014,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 208
+            "cum_citations": 263
           },
           {
             "year": 2015,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 208
+            "cum_citations": 263
           },
           {
             "year": 2016,
             "pubs": 1,
-            "citations": 244,
-            "cum_citations": 452
+            "citations": 313,
+            "cum_citations": 576
           },
           {
             "year": 2017,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 452
+            "cum_citations": 576
           },
           {
             "year": 2018,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 452
+            "cum_citations": 576
           },
           {
             "year": 2019,
             "pubs": 1,
-            "citations": 38,
-            "cum_citations": 490
+            "citations": 42,
+            "cum_citations": 618
           },
           {
             "year": 2020,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 490
+            "cum_citations": 618
           },
           {
             "year": 2021,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 490
+            "cum_citations": 618
           },
           {
             "year": 2022,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 490
+            "cum_citations": 618
           },
           {
             "year": 2023,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 490
+            "cum_citations": 618
           },
           {
             "year": 2024,
             "pubs": 0,
             "citations": 0,
-            "cum_citations": 490
+            "cum_citations": 618
+          },
+          {
+            "year": 2025,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 618
+          },
+          {
+            "year": 2026,
+            "pubs": 0,
+            "citations": 0,
+            "cum_citations": 618
           }
         ]
       }
@@ -2454,7 +2724,9 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025,
+      2026
     ]
   }
 }
